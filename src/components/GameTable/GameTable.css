@@ -1,0 +1,152 @@
+/* Game Table Styles */
+
+.game-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.game-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.game-table thead {
+  background-color: #f5f5f5;
+  position: sticky;
+  top: 0;
+}
+
+.game-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+}
+
+.game-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  min-width: 100px;
+  transition: background-color 0.3s;
+}
+
+.game-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.game-table tbody tr.correct-row {
+  background-color: rgba(76, 175, 80, 0.1);
+  font-weight: 500;
+}
+
+/* Field values and badges */
+.field-value {
+  display: block;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.status-badge.exact {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-badge.partial {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.status-badge.close {
+  background-color: #FF9800;
+  color: white;
+}
+
+.status-badge.wrong {
+  background-color: #F44336;
+  color: white;
+}
+
+/* Arrow display */
+.arrow-display {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 4px;
+}
+
+/* Tags display */
+.tags-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Answer section */
+.answer-section {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #4CAF50;
+}
+
+.answer-section h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.correct-game-info {
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.correct-game-info div {
+  margin-bottom: 4px;
+}
+
+.correct-game-info div:last-child {
+  margin-bottom: 0;
+}
+
+.answer-meta {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-table {
+    font-size: 12px;
+  }
+
+  .game-table td {
+    padding: 8px;
+    min-width: 60px;
+  }
+
+  .game-table th {
+    padding: 8px;
+  }
+}
