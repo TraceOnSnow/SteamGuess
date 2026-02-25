@@ -1,106 +1,95 @@
 import type { Game } from '../types/game';
+import sampleGameData from './sample-game.json';
 
-export const sampleGames: Game[] = [
-  {
-    appId: 1245620,
-    name: 'Elden Ring',
-    releaseDate: '2022-02-25',
+type RawSampleGame = {
+  appId: number;
+  name: string;
+  releaseDate: string;
+  price?: {
+    us?: { currency?: string; current?: number };
+    cn?: { currency?: string; current?: number };
+  };
+  popularity?: {
+    ccu?: number;
+    owners?: number;
+  };
+  reviews?: {
+    total?: number;
+    positive?: number;
+    negative?: number;
+  };
+  tags?: {
+    userTags?: string[];
+    developers?: string[];
+    publishers?: string[];
+  };
+  hints?: {
+    screenshotUrl?: string;
+    funnyReview?: string;
+  };
+};
+
+function inferSteamRating(positivePercent: number): Game['reviews']['steamRating'] {
+  if (positivePercent >= 95) return 'Overwhelmingly Positive';
+  if (positivePercent >= 85) return 'Very Positive';
+  if (positivePercent >= 70) return 'Positive';
+  if (positivePercent >= 45) return 'Mixed';
+  if (positivePercent >= 20) return 'Negative';
+  return 'Overwhelmingly Negative';
+}
+
+function inferPlayersFromTags(tags: string[]): Game['players'] {
+  const normalized = tags.map(tag => tag.toLowerCase());
+  const singlePlayer = normalized.some(tag => tag.includes('singleplayer') || tag.includes('single-player'));
+  const multiplayer = normalized.some(
+    tag => tag.includes('multiplayer') || tag.includes('multi-player') || tag.includes('co-op') || tag.includes('coop')
+  );
+  return {
+    singlePlayer,
+    multiplayer,
+    online: multiplayer,
+  };
+}
+
+function normalizeRawGame(raw: RawSampleGame): Game {
+  const reviewPositive = raw.reviews?.positive ?? 0;
+  const reviewTotal = raw.reviews?.total ?? 0;
+  const positivePercent = reviewTotal > 0 ? Math.round((reviewPositive / reviewTotal) * 100) : 0;
+  const userTags = raw.tags?.userTags ?? [];
+
+  return {
+    appId: raw.appId,
+    name: raw.name,
+    releaseDate: raw.releaseDate,
     price: {
-      current: 59.99,
-      historicalLow: 29.99,
+      current: raw.price?.us?.current ?? 0,
+      historicalLow: raw.price?.us?.current ?? 0,
     },
     popularity: {
-      currentWeekly: 15000,
-      peakConcurrent: 953027,
+      currentWeekly: raw.popularity?.ccu ?? 0,
+      peakConcurrent: raw.popularity?.owners ?? 0,
     },
     reviews: {
-      count: 200000,
-      positivePercent: 96,
-      steamRating: 'Overwhelmingly Positive',
+      count: reviewTotal,
+      positivePercent,
+      steamRating: inferSteamRating(positivePercent),
     },
-    players: {
-      singlePlayer: true,
-      multiplayer: true,
-      online: true,
-    },
+    players: inferPlayersFromTags(userTags),
     tags: {
-      userTags: ['Action', 'RPG', 'Adventure'],
-      genres: ['Action', 'RPG'],
-      developer: 'FromSoftware',
-      publisher: 'Bandai Namco',
+      userTags,
+      genres: [],
+      developer: raw.tags?.developers?.[0] ?? '',
+      publisher: raw.tags?.publishers?.[0] ?? '',
     },
     hints: {
-      screenshotUrl: 'elden-ring.jpg',
-      funnyReview: 'Incredible journey, legs hurt',
+      screenshotUrl: raw.hints?.screenshotUrl ?? '',
+      funnyReview: raw.hints?.funnyReview ?? '',
     },
-  },
-  {
-    appId: 570,
-    name: 'Dota 2',
-    releaseDate: '2013-07-09',
-    price: {
-      current: 0,
-      historicalLow: 0,
-    },
-    popularity: {
-      currentWeekly: 500000,
-      peakConcurrent: 1195027,
-    },
-    reviews: {
-      count: 2000000,
-      positivePercent: 52,
-      steamRating: 'Mixed',
-    },
-    players: {
-      singlePlayer: false,
-      multiplayer: true,
-      online: true,
-    },
-    tags: {
-      userTags: ['MOBA', 'Strategy', 'Competitive'],
-      genres: ['MOBA', 'Strategy'],
-      developer: 'Valve',
-      publisher: 'Valve',
-    },
-    hints: {
-      screenshotUrl: 'dota2.jpg',
-      funnyReview: 'Free game, paid friends',
-    },
-  },
-  {
-    appId: 8980,
-    name: 'Spore',
-    releaseDate: '2008-09-07',
-    price: {
-      current: 14.99,
-      historicalLow: 4.99,
-    },
-    popularity: {
-      currentWeekly: 200,
-      peakConcurrent: 40000,
-    },
-    reviews: {
-      count: 10000,
-      positivePercent: 76,
-      steamRating: 'Very Positive',
-    },
-    players: {
-      singlePlayer: true,
-      multiplayer: false,
-      online: false,
-    },
-    tags: {
-      userTags: ['Life Simulation', 'Adventure', 'Education'],
-      genres: ['Simulation', 'Adventure'],
-      developer: 'Maxis',
-      publisher: 'Electronic Arts',
-    },
-    hints: {
-      screenshotUrl: 'spore.jpg',
-      funnyReview: 'Evolution simulator, not evolution accurate',
-    },
-  },
-];
+  };
+}
+
+const rawGames = sampleGameData as Record<string, RawSampleGame>;
+export const sampleGames: Game[] = Object.values(rawGames).map(normalizeRawGame);
 
 export function searchGames(query: string): Game[] {
   const lowerQuery = query.toLowerCase();

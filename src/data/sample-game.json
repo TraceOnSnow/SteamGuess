@@ -1,0 +1,3252 @@
+{
+  "7670": {
+    "appId": 7670,
+    "name": "BioShock™",
+    "releaseDate": "2007-08-21",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 44,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 30931,
+      "positive": 29127,
+      "negative": 1804
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Atmospheric",
+        "Story Rich",
+        "Action",
+        "Singleplayer",
+        "Horror",
+        "Steampunk",
+        "First-Person",
+        "Shooter",
+        "Sci-fi",
+        "Classic",
+        "RPG",
+        "Dystopian ",
+        "Adventure",
+        "Underwater",
+        "Immersive",
+        "Dark",
+        "Political",
+        "Great Soundtrack",
+        "Alternate History"
+      ],
+      "developers": [
+        "2K Boston",
+        "2K Australia"
+      ],
+      "publishers": [
+        "2K"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/7670/0000002508.1920x1080.jpg?t=1730172622",
+      "funnyReview": ""
+    }
+  },
+  "7940": {
+    "appId": 7940,
+    "name": "Call of Duty® 4: Modern Warfare® (2007)",
+    "releaseDate": "2007-11-12",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 377,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 25070,
+      "positive": 23438,
+      "negative": 1632
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Multiplayer",
+        "Shooter",
+        "Singleplayer",
+        "First-Person",
+        "Classic",
+        "Military",
+        "War",
+        "PvP",
+        "Story Rich",
+        "Great Soundtrack",
+        "Linear",
+        "Modern",
+        "Controller",
+        "Co-op",
+        "Atmospheric",
+        "Moddable",
+        "Competitive",
+        "Zombies"
+      ],
+      "developers": [
+        "Infinity Ward"
+      ],
+      "publishers": [
+        "Activision"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/7940/0000002987.1920x1080.jpg?t=1748043968",
+      "funnyReview": ""
+    }
+  },
+  "8190": {
+    "appId": 8190,
+    "name": "Just Cause 2",
+    "releaseDate": "2010-03-23",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 14.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 90,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 50739,
+      "positive": 46001,
+      "negative": 4738
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Sandbox",
+        "Third Person",
+        "Multiplayer",
+        "Adventure",
+        "Third-Person Shooter",
+        "Shooter",
+        "Singleplayer",
+        "Destruction",
+        "Exploration",
+        "Funny",
+        "Moddable",
+        "Co-op",
+        "Beautiful",
+        "Physics",
+        "Atmospheric",
+        "3D Vision",
+        "Comedy",
+        "FPS"
+      ],
+      "developers": [
+        "Avalanche Studios"
+      ],
+      "publishers": [
+        "Square Enix"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8190/ss_8d164f548b7861512aa6e13cd8d274098ade7e92.1920x1080.jpg?t=1728396849",
+      "funnyReview": ""
+    }
+  },
+  "8850": {
+    "appId": 8850,
+    "name": "BioShock® 2",
+    "releaseDate": "2010-02-09",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 23,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 14419,
+      "positive": 12864,
+      "negative": 1555
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Singleplayer",
+        "Story Rich",
+        "Atmospheric",
+        "Horror",
+        "First-Person",
+        "Shooter",
+        "Steampunk",
+        "Sci-fi",
+        "Underwater",
+        "Multiplayer",
+        "Dystopian ",
+        "Adventure",
+        "Immersive",
+        "RPG",
+        "Dark",
+        "Great Soundtrack",
+        "Philosophical",
+        "Action RPG"
+      ],
+      "developers": [
+        "2K Marin",
+        "2K China",
+        "Digital Extremes",
+        "2K Australia"
+      ],
+      "publishers": [
+        "2K"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8850/ss_6bb369bee2bfb08d7486f39c4bb6e242375a6442.1920x1080.jpg?t=1730174099",
+      "funnyReview": ""
+    }
+  },
+  "8870": {
+    "appId": 8870,
+    "name": "BioShock Infinite",
+    "releaseDate": "2013-03-25",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 301,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 140682,
+      "positive": 131970,
+      "negative": 8712
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Story Rich",
+        "Action",
+        "Singleplayer",
+        "Steampunk",
+        "Atmospheric",
+        "Shooter",
+        "First-Person",
+        "Beautiful",
+        "Alternate History",
+        "Adventure",
+        "Great Soundtrack",
+        "Dystopian ",
+        "Sci-fi",
+        "Time Travel",
+        "Fantasy",
+        "Gore",
+        "Linear",
+        "RPG",
+        "Immersive"
+      ],
+      "developers": [
+        "Irrational Games",
+        "Virtual Programming (Linux)"
+      ],
+      "publishers": [
+        "2K"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8870/ss_26e2d983948edfb911db3e0d2c3679900b4ef9fa.1920x1080.jpg?t=1728673518",
+      "funnyReview": ""
+    }
+  },
+  "8930": {
+    "appId": 8930,
+    "name": "Sid Meier's Civilization® V",
+    "releaseDate": "2010-09-21",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 12206,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 204265,
+      "positive": 195724,
+      "negative": 8541
+    },
+    "tags": {
+      "userTags": [
+        "Turn-Based Strategy",
+        "Strategy",
+        "Turn-Based",
+        "Multiplayer",
+        "Historical",
+        "4X",
+        "Addictive",
+        "Singleplayer",
+        "Hex Grid",
+        "Grand Strategy",
+        "Replay Value",
+        "Co-op",
+        "Economy",
+        "Tactical",
+        "Diplomacy",
+        "Moddable",
+        "Simulation",
+        "Classic",
+        "Great Soundtrack",
+        "Touch-Friendly"
+      ],
+      "developers": [
+        "Firaxis Games",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
+      ],
+      "publishers": [
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8930/ss_7082faf1b0941ddbc4ba9dab5807a9b5e77d72f9.1920x1080.jpg?t=1724341158",
+      "funnyReview": ""
+    }
+  },
+  "8980": {
+    "appId": 8980,
+    "name": "Borderlands Game of the Year",
+    "releaseDate": "2023-08-31",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 142,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 32523,
+      "positive": 28944,
+      "negative": 3579
+    },
+    "tags": {
+      "userTags": [
+        "Looter Shooter",
+        "FPS",
+        "Co-op",
+        "RPG",
+        "Action",
+        "Loot",
+        "Shooter",
+        "Online Co-Op",
+        "First-Person",
+        "Open World",
+        "Comedy",
+        "Multiplayer",
+        "Sci-fi",
+        "Post-apocalyptic",
+        "Singleplayer",
+        "Action RPG",
+        "Funny",
+        "Dark Humor",
+        "Adventure",
+        "Gore"
+      ],
+      "developers": [
+        "Gearbox Software"
+      ],
+      "publishers": [
+        "2K"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8980/ss_69d39fb3791d06d76696c09c5c6a58b435176049.1920x1080.jpg?t=1692308968",
+      "funnyReview": ""
+    }
+  },
+  "9010": {
+    "appId": 9010,
+    "name": "Return to Castle Wolfenstein",
+    "releaseDate": "2007-08-03",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 4.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 26,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 8417,
+      "positive": 7832,
+      "negative": 585
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "World War II",
+        "Classic",
+        "Supernatural",
+        "Alternate History",
+        "Shooter",
+        "Singleplayer",
+        "First-Person",
+        "Horror",
+        "Atmospheric",
+        "Gore",
+        "Multiplayer",
+        "Zombies",
+        "Stealth",
+        "Sci-fi",
+        "Adventure",
+        "Retro",
+        "Great Soundtrack",
+        "Old School"
+      ],
+      "developers": [
+        "Gray Matter Studios"
+      ],
+      "publishers": [
+        "Bethesda Softworks"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/9010/0000002404.1920x1080.jpg?t=1664380265",
+      "funnyReview": ""
+    }
+  },
+  "9340": {
+    "appId": 9340,
+    "name": "Company of Heroes: Opposing Fronts",
+    "releaseDate": "2007-09-24",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 3.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 19,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 1138,
+      "positive": 1045,
+      "negative": 93
+    },
+    "tags": {
+      "userTags": [
+        "Strategy",
+        "RTS",
+        "World War II",
+        "Action",
+        "Singleplayer",
+        "Multiplayer",
+        "Military",
+        "Tactical",
+        "War",
+        "Tanks",
+        "Base-Building",
+        "Co-op",
+        "Historical",
+        "Online Co-Op",
+        "Simulation",
+        "Real Time Tactics"
+      ],
+      "developers": [
+        "Relic Entertainment"
+      ],
+      "publishers": [
+        "SEGA"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/9340/ss_6d1ee35845abac9e7c3c3330f29380218dc0b8e5.1920x1080.jpg?t=1711547477",
+      "funnyReview": ""
+    }
+  },
+  "9480": {
+    "appId": 9480,
+    "name": "Saints Row 2",
+    "releaseDate": "2009-01-07",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 2.49
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 95,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 20466,
+      "positive": 15420,
+      "negative": 5046
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Character Customization",
+        "Sandbox",
+        "Third-Person Shooter",
+        "Comedy",
+        "Co-op",
+        "Crime",
+        "Third Person",
+        "Singleplayer",
+        "Online Co-Op",
+        "Multiplayer",
+        "Funny",
+        "Shooter",
+        "Co-op Campaign",
+        "Great Soundtrack",
+        "Replay Value",
+        "Female Protagonist",
+        "Moddable",
+        "Adventure"
+      ],
+      "developers": [
+        "Volition"
+      ],
+      "publishers": [
+        "Deep Silver"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/9480/0000005027.1920x1080.jpg?t=1764670917",
+      "funnyReview": ""
+    }
+  },
+  "10090": {
+    "appId": 10090,
+    "name": "Call of Duty: World at War",
+    "releaseDate": "2008-11-18",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 433,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 50549,
+      "positive": 46665,
+      "negative": 3884
+    },
+    "tags": {
+      "userTags": [
+        "Zombies",
+        "World War II",
+        "FPS",
+        "Multiplayer",
+        "Action",
+        "Shooter",
+        "Singleplayer",
+        "Co-op",
+        "First-Person",
+        "Moddable",
+        "War",
+        "Online Co-Op",
+        "Gore",
+        "Historical",
+        "Classic",
+        "Survival",
+        "Great Soundtrack",
+        "Horror",
+        "Tanks",
+        "Adventure"
+      ],
+      "developers": [
+        "Treyarch"
+      ],
+      "publishers": [
+        "Activision"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10090/0000006191.1920x1080.jpg?t=1654830025",
+      "funnyReview": ""
+    }
+  },
+  "10180": {
+    "appId": 10180,
+    "name": "Call of Duty®: Modern Warfare® 2 (2009)",
+    "releaseDate": "2009-11-11",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 399,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 58118,
+      "positive": 54145,
+      "negative": 3973
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "First-Person",
+        "Singleplayer",
+        "War",
+        "Military",
+        "Co-op",
+        "Online Co-Op",
+        "PvP",
+        "Great Soundtrack",
+        "Story Rich",
+        "Atmospheric",
+        "Controller",
+        "Adventure",
+        "Tactical",
+        "Linear",
+        "Strategy",
+        "Moddable"
+      ],
+      "developers": [
+        "Infinity Ward"
+      ],
+      "publishers": [
+        "Activision"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10180/ss_51a130e076354ed7aa025fda1ef9ba62c3ed767a.1920x1080.jpg?t=1748044299",
+      "funnyReview": ""
+    }
+  },
+  "10190": {
+    "appId": 10190,
+    "name": "Call of Duty®: Modern Warfare® 2 (2009)",
+    "releaseDate": "2009-11-11",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 190,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 34872,
+      "positive": 31945,
+      "negative": 2927
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "First-Person",
+        "Singleplayer",
+        "War",
+        "Military",
+        "Co-op",
+        "Online Co-Op",
+        "PvP",
+        "Masterpiece",
+        "Great Soundtrack",
+        "Story Rich",
+        "Atmospheric",
+        "Adventure",
+        "Tactical",
+        "Strategy",
+        "Linear",
+        "Moddable"
+      ],
+      "developers": [
+        "Infinity Ward"
+      ],
+      "publishers": [
+        "Activision"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10180/ss_51a130e076354ed7aa025fda1ef9ba62c3ed767a.1920x1080.jpg?t=1748044299",
+      "funnyReview": ""
+    }
+  },
+  "10500": {
+    "appId": 10500,
+    "name": "Total War: EMPIRE – Definitive Edition",
+    "releaseDate": "2009-03-04",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 6.24
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 2028,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 35480,
+      "positive": 32211,
+      "negative": 3269
+    },
+    "tags": {
+      "userTags": [
+        "Strategy",
+        "Historical",
+        "Military",
+        "Grand Strategy",
+        "Turn-Based Strategy",
+        "War",
+        "Tactical",
+        "RTS",
+        "Multiplayer",
+        "Singleplayer",
+        "Turn-Based",
+        "Naval",
+        "America",
+        "Real Time Tactics",
+        "Action",
+        "Great Soundtrack",
+        "Turn-Based Tactics",
+        "Atmospheric",
+        "Classic",
+        "Adventure"
+      ],
+      "developers": [
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
+      ],
+      "publishers": [
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10500/0000005608.1920x1080.jpg?t=1763646960",
+      "funnyReview": ""
+    }
+  },
+  "10680": {
+    "appId": 10680,
+    "name": "Aliens vs. Predator™",
+    "releaseDate": "2010-02-16",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 3.74
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 49,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 19953,
+      "positive": 18175,
+      "negative": 1778
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Aliens",
+        "Multiplayer",
+        "Sci-fi",
+        "Horror",
+        "Shooter",
+        "Singleplayer",
+        "Gore",
+        "First-Person",
+        "Stealth",
+        "Atmospheric",
+        "Survival",
+        "Co-op",
+        "Blood",
+        "Hunting",
+        "Survival Horror",
+        "Adventure",
+        "Online Co-Op",
+        "Strategy"
+      ],
+      "developers": [
+        "Rebellion"
+      ],
+      "publishers": [
+        "SEGA"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10680/ss_d4e772fe9f2e75353c26ccc6395086980e88fff1.1920x1080.jpg?t=1763676764",
+      "funnyReview": ""
+    }
+  },
+  "12100": {
+    "appId": 12100,
+    "name": "Grand Theft Auto III",
+    "releaseDate": "2008-01-04",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 42,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 14600,
+      "positive": 12654,
+      "negative": 1946
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Automobile Sim",
+        "Classic",
+        "Third Person",
+        "Crime",
+        "Singleplayer",
+        "Driving",
+        "Sandbox",
+        "Shooter",
+        "Third-Person Shooter",
+        "Great Soundtrack",
+        "Violent",
+        "Adventure",
+        "Atmospheric",
+        "Silent Protagonist",
+        "Mature",
+        "Story Rich",
+        "Moddable",
+        "Multiplayer"
+      ],
+      "developers": [
+        "Rockstar Games"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12100/0000003291.1920x1080.jpg?t=1634144440",
+      "funnyReview": ""
+    }
+  },
+  "12110": {
+    "appId": 12110,
+    "name": "Grand Theft Auto: Vice City",
+    "releaseDate": "2008-01-04",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 113,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 29276,
+      "positive": 27142,
+      "negative": 2134
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Automobile Sim",
+        "1980s",
+        "Classic",
+        "Great Soundtrack",
+        "Crime",
+        "Third Person",
+        "Singleplayer",
+        "Sandbox",
+        "Driving",
+        "Atmospheric",
+        "Third-Person Shooter",
+        "Violent",
+        "Shooter",
+        "Adventure",
+        "Mature",
+        "Funny",
+        "Music",
+        "Multiplayer"
+      ],
+      "developers": [
+        "Rockstar Games"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12110/0000003313.1920x1080.jpg?t=1634144465",
+      "funnyReview": ""
+    }
+  },
+  "12120": {
+    "appId": 12120,
+    "name": "Grand Theft Auto: San Andreas",
+    "releaseDate": "2008-01-04",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 363,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 82629,
+      "positive": 76056,
+      "negative": 6573
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Crime",
+        "Classic",
+        "Third Person",
+        "Automobile Sim",
+        "Singleplayer",
+        "Multiplayer",
+        "Shooter",
+        "Driving",
+        "Story Rich",
+        "Adventure",
+        "Sandbox",
+        "Mature",
+        "Great Soundtrack",
+        "Third-Person Shooter",
+        "Moddable",
+        "Atmospheric",
+        "Funny",
+        "Comedy"
+      ],
+      "developers": [
+        "Rockstar Games"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12120/0000003303.1920x1080.jpg?t=1634144450",
+      "funnyReview": ""
+    }
+  },
+  "12200": {
+    "appId": 12200,
+    "name": "Bully: Scholarship Edition",
+    "releaseDate": "2008-10-21",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 14.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 221,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 36334,
+      "positive": 30730,
+      "negative": 5604
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Adventure",
+        "Third Person",
+        "Singleplayer",
+        "Comedy",
+        "Great Soundtrack",
+        "Funny",
+        "Classic",
+        "Dark Humor",
+        "Story Rich",
+        "Sandbox",
+        "Satire",
+        "Atmospheric",
+        "Exploration",
+        "Mature",
+        "Simulation",
+        "Controller",
+        "Multiplayer",
+        "RPG"
+      ],
+      "developers": [
+        "Rockstar New England"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12200/0000006051.1920x1080.jpg?t=1741118085",
+      "funnyReview": ""
+    }
+  },
+  "12210": {
+    "appId": 12210,
+    "name": "Grand Theft Auto IV: The Complete Edition",
+    "releaseDate": "2020-03-24",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 2122,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 175184,
+      "positive": 144493,
+      "negative": 30691
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "Action",
+        "Automobile Sim",
+        "Multiplayer",
+        "Crime",
+        "Third Person",
+        "Adventure",
+        "Singleplayer",
+        "Third-Person Shooter",
+        "Moddable",
+        "Sandbox",
+        "Shooter",
+        "Physics",
+        "Atmospheric",
+        "Classic",
+        "Dark Humor",
+        "Funny",
+        "Gore",
+        "Satire",
+        "Co-op"
+      ],
+      "developers": [
+        "Rockstar North",
+        "Rockstar Toronto"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12210/0000006360.1920x1080.jpg?t=1721061564",
+      "funnyReview": ""
+    }
+  },
+  "13520": {
+    "appId": 13520,
+    "name": "Far Cry®",
+    "releaseDate": "2008-04-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 50,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 10259,
+      "positive": 8406,
+      "negative": 1853
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Classic",
+        "Shooter",
+        "Open World",
+        "First-Person",
+        "Singleplayer",
+        "Difficult",
+        "Stealth",
+        "Multiplayer",
+        "Adventure",
+        "Atmospheric",
+        "Story Rich",
+        "Sci-fi",
+        "Horror",
+        "Sandbox",
+        "Great Soundtrack",
+        "Co-op",
+        "Survival",
+        "Zombies"
+      ],
+      "developers": [
+        "Crytek Studios"
+      ],
+      "publishers": [
+        "Ubisoft"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/13520/0000003757.1920x1080.jpg?t=1602602361",
+      "funnyReview": ""
+    }
+  },
+  "15100": {
+    "appId": 15100,
+    "name": "Assassin's Creed™: Director's Cut Edition",
+    "releaseDate": "2008-04-09",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 61,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 21897,
+      "positive": 17822,
+      "negative": 4075
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "Combat",
+        "Stealth",
+        "Adventure",
+        "Historical",
+        "Third Person",
+        "Parkour",
+        "Exploration",
+        "Assassin",
+        "Singleplayer",
+        "Medieval",
+        "Story Rich",
+        "Conspiracy",
+        "Atmospheric",
+        "Realistic",
+        "Action-Adventure",
+        "Open World",
+        "3D",
+        "Cinematic",
+        "Narration"
+      ],
+      "developers": [
+        "Ubisoft Montreal"
+      ],
+      "publishers": [
+        "Ubisoft"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/15100/0000003837.1920x1080.jpg?t=1602600542",
+      "funnyReview": ""
+    }
+  },
+  "15620": {
+    "appId": 15620,
+    "name": "Warhammer 40,000: Dawn of War II - Anniversary Edition",
+    "releaseDate": "2009-02-18",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 49.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 152,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 12774,
+      "positive": 11298,
+      "negative": 1476
+    },
+    "tags": {
+      "userTags": [
+        "Warhammer 40K",
+        "Strategy",
+        "RTS",
+        "Sci-fi",
+        "Multiplayer",
+        "Games Workshop",
+        "Tactical",
+        "Singleplayer",
+        "Co-op",
+        "Gore",
+        "Futuristic",
+        "Online Co-Op",
+        "RPG",
+        "Co-op Campaign",
+        "Real-Time",
+        "Action",
+        "Fantasy",
+        "Great Soundtrack",
+        "Atmospheric",
+        "Violent"
+      ],
+      "developers": [
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
+      ],
+      "publishers": [
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/15620/ss_bff13558d11fc776b06c20771627b60ce01429c1.1920x1080.jpg?t=1750948541",
+      "funnyReview": ""
+    }
+  },
+  "17080": {
+    "appId": 17080,
+    "name": "Tribes: Ascend",
+    "releaseDate": "2012-06-27",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 0,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 8585,
+      "positive": 6946,
+      "negative": 1639
+    },
+    "tags": {
+      "userTags": [
+        "Free to Play",
+        "FPS",
+        "Multiplayer",
+        "Action",
+        "Shooter",
+        "Fast-Paced",
+        "Sci-fi",
+        "Futuristic",
+        "First-Person",
+        "Co-op",
+        "Massively Multiplayer",
+        "Open World",
+        "Competitive",
+        "Team-Based",
+        "Online Co-Op",
+        "Difficult",
+        "Robots",
+        "Adventure",
+        "Singleplayer",
+        "RPG"
+      ],
+      "developers": [
+        "Hi-Rez Studios"
+      ],
+      "publishers": [
+        "Hi-Rez Studios"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17080/ss_ddc5b2f33a925e1c5f54eff4cdddf466a29352b0.1920x1080.jpg?t=1763425041",
+      "funnyReview": ""
+    }
+  },
+  "17300": {
+    "appId": 17300,
+    "name": "Crysis",
+    "releaseDate": "2008-09-17",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 10,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 13214,
+      "positive": 10565,
+      "negative": 2649
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Singleplayer",
+        "Shooter",
+        "Stealth",
+        "Open World",
+        "Aliens",
+        "First-Person",
+        "Benchmark",
+        "Multiplayer",
+        "Futuristic",
+        "Atmospheric",
+        "Adventure",
+        "Story Rich",
+        "Classic",
+        "Destruction",
+        "Sandbox",
+        "Great Soundtrack",
+        "Moddable"
+      ],
+      "developers": [
+        "Crytek"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17300/0000005235.1920x1080.jpg?t=1736347865",
+      "funnyReview": ""
+    }
+  },
+  "17330": {
+    "appId": 17330,
+    "name": "Crysis Warhead®",
+    "releaseDate": "2008-09-17",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 5,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 3824,
+      "positive": 3280,
+      "negative": 544
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Shooter",
+        "Singleplayer",
+        "Multiplayer",
+        "Aliens",
+        "First-Person",
+        "Military",
+        "Stealth",
+        "Open World",
+        "Benchmark",
+        "Adventure",
+        "Futuristic",
+        "Story Rich",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Crytek"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17330/0000005240.1920x1080.jpg?t=1734377275",
+      "funnyReview": ""
+    }
+  },
+  "17390": {
+    "appId": 17390,
+    "name": "SPORE™",
+    "releaseDate": "2008-12-19",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 599,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 66120,
+      "positive": 61124,
+      "negative": 4996
+    },
+    "tags": {
+      "userTags": [
+        "God Game",
+        "Open World",
+        "Sandbox",
+        "Colony Sim",
+        "Exploration",
+        "Simulation",
+        "Space",
+        "Casual",
+        "Cute",
+        "Science",
+        "Funny",
+        "Aliens",
+        "Sci-fi",
+        "Adventure",
+        "Cartoony",
+        "Colorful",
+        "Family Friendly",
+        "Resource Management",
+        "Comedy",
+        "Cartoon"
+      ],
+      "developers": [
+        "Maxis™"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17390/0000006439.1920x1080.jpg?t=1642702281",
+      "funnyReview": ""
+    }
+  },
+  "17410": {
+    "appId": 17410,
+    "name": "Mirror's Edge™",
+    "releaseDate": "2009-01-14",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 43,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 37652,
+      "positive": 32983,
+      "negative": 4669
+    },
+    "tags": {
+      "userTags": [
+        "Action-Adventure",
+        "Parkour",
+        "First-Person",
+        "Exploration",
+        "3D Platformer",
+        "Female Protagonist",
+        "Singleplayer",
+        "Platformer",
+        "Puzzle",
+        "Cyberpunk",
+        "Action",
+        "Colorful",
+        "Dystopian ",
+        "Stylized",
+        "Atmospheric",
+        "Sci-fi",
+        "Futuristic",
+        "Great Soundtrack",
+        "Adventure",
+        "Time Attack"
+      ],
+      "developers": [
+        "DICE"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17410/0000006705.1920x1080.jpg?t=1738878228",
+      "funnyReview": ""
+    }
+  },
+  "17460": {
+    "appId": 17460,
+    "name": "Mass Effect (2007)",
+    "releaseDate": "2008-12-19",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 22,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 16434,
+      "positive": 15394,
+      "negative": 1040
+    },
+    "tags": {
+      "userTags": [
+        "RPG",
+        "Sci-fi",
+        "Story Rich",
+        "Action",
+        "Space",
+        "Third-Person Shooter",
+        "Singleplayer",
+        "Choices Matter",
+        "Great Soundtrack",
+        "Third Person",
+        "Character Customization",
+        "Shooter",
+        "Adventure",
+        "Female Protagonist",
+        "Romance",
+        "Atmospheric",
+        "Open World",
+        "Action RPG",
+        "Real-Time with Pause",
+        "Immersive"
+      ],
+      "developers": [
+        "BioWare"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17460/0000006620.1920x1080.jpg?t=1684225163",
+      "funnyReview": ""
+    }
+  },
+  "17470": {
+    "appId": 17470,
+    "name": "Dead Space (2008)",
+    "releaseDate": "2009-01-09",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 43,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 27660,
+      "positive": 25388,
+      "negative": 2272
+    },
+    "tags": {
+      "userTags": [
+        "Horror",
+        "Sci-fi",
+        "Action",
+        "Space",
+        "Survival Horror",
+        "Third Person",
+        "Atmospheric",
+        "Singleplayer",
+        "Third-Person Shooter",
+        "Gore",
+        "Shooter",
+        "Aliens",
+        "Dark",
+        "Futuristic",
+        "Story Rich",
+        "Silent Protagonist",
+        "Survival",
+        "Adventure",
+        "Zombies",
+        "Immersive"
+      ],
+      "developers": [
+        "EA Redwood Shores"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17470/0000006481.1920x1080.jpg?t=1664889864",
+      "funnyReview": ""
+    }
+  },
+  "17480": {
+    "appId": 17480,
+    "name": "Command & Conquer™ Red Alert™ 3",
+    "releaseDate": "2009-01-08",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 362,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 15012,
+      "positive": 12792,
+      "negative": 2220
+    },
+    "tags": {
+      "userTags": [
+        "Family Friendly",
+        "Level Editor",
+        "Strategy",
+        "RTS",
+        "Action",
+        "Multiplayer",
+        "Co-op",
+        "Singleplayer",
+        "Base-Building",
+        "Online Co-Op",
+        "Alternate History",
+        "War",
+        "Real-Time",
+        "Sci-fi",
+        "Co-op Campaign",
+        "Classic",
+        "Great Soundtrack",
+        "Comedy",
+        "FMV",
+        "Atmospheric"
+      ],
+      "developers": [
+        "EA Los Angeles"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17480/0000006501.1920x1080.jpg?t=1741704738",
+      "funnyReview": ""
+    }
+  },
+  "20570": {
+    "appId": 20570,
+    "name": "Warhammer® 40,000: Dawn of War® II Chaos Rising",
+    "releaseDate": "2010-03-11",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 30,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 3351,
+      "positive": 3047,
+      "negative": 304
+    },
+    "tags": {
+      "userTags": [
+        "Strategy",
+        "Warhammer 40K",
+        "RTS",
+        "Sci-fi",
+        "Multiplayer",
+        "Games Workshop",
+        "Tactical",
+        "Co-op",
+        "Real-Time",
+        "RPG",
+        "Singleplayer",
+        "Gore",
+        "Action",
+        "Violent",
+        "Great Soundtrack",
+        "Real Time Tactics",
+        "Futuristic",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
+      ],
+      "publishers": [
+        "SEGA",
+        "Feral Interactive (Mac/Linux)"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/20570/ss_69ba052892689f60533332f3782f5a8f062de3b4.1920x1080.jpg?t=1726774741",
+      "funnyReview": ""
+    }
+  },
+  "20900": {
+    "appId": 20900,
+    "name": "The Witcher: Enhanced Edition Director's Cut",
+    "releaseDate": "2008-09-19",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 616,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 82704,
+      "positive": 73569,
+      "negative": 9135
+    },
+    "tags": {
+      "userTags": [
+        "RPG",
+        "Fantasy",
+        "Story Rich",
+        "Mature",
+        "Singleplayer",
+        "Choices Matter",
+        "Action",
+        "Third Person",
+        "Nudity",
+        "Adventure",
+        "Dark Fantasy",
+        "Based On A Novel",
+        "Atmospheric",
+        "Open World",
+        "Great Soundtrack",
+        "Medieval",
+        "Multiple Endings",
+        "Action RPG",
+        "Magic",
+        "Classic"
+      ],
+      "developers": [
+        "CD PROJEKT RED"
+      ],
+      "publishers": [
+        "CD PROJEKT RED",
+        "1C-SoftClub"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/20900/ss_65cf24359fc027e3fed0cc83aa3468ac9721e552.1920x1080.jpg?t=1749200362",
+      "funnyReview": ""
+    }
+  },
+  "20920": {
+    "appId": 20920,
+    "name": "The Witcher 2: Assassins of Kings Enhanced Edition",
+    "releaseDate": "2012-04-16",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 479,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 87064,
+      "positive": 77950,
+      "negative": 9114
+    },
+    "tags": {
+      "userTags": [
+        "RPG",
+        "Fantasy",
+        "Mature",
+        "Story Rich",
+        "Choices Matter",
+        "Singleplayer",
+        "Third Person",
+        "Nudity",
+        "Adventure",
+        "Dark Fantasy",
+        "Multiple Endings",
+        "Open World",
+        "Action",
+        "Atmospheric",
+        "Based On A Novel",
+        "Well-Written",
+        "Difficult",
+        "Medieval",
+        "Magic",
+        "Dark"
+      ],
+      "developers": [
+        "CD PROJEKT RED"
+      ],
+      "publishers": [
+        "CD PROJEKT RED",
+        "1C-SoftClub"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/20920/ss_50472c40c90b4771382458f8e1c691793c63e1b0.1920x1080.jpg?t=1761657279",
+      "funnyReview": ""
+    }
+  },
+  "21690": {
+    "appId": 21690,
+    "name": "Resident Evil 5",
+    "releaseDate": "2009-09-15",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 4.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 566,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 49117,
+      "positive": 42807,
+      "negative": 6310
+    },
+    "tags": {
+      "userTags": [
+        "Co-op",
+        "Action",
+        "Zombies",
+        "Co-op Campaign",
+        "Third-Person Shooter",
+        "Online Co-Op",
+        "Horror",
+        "Multiplayer",
+        "Adventure",
+        "Third Person",
+        "Survival Horror",
+        "Shooter",
+        "Local Co-Op",
+        "Singleplayer",
+        "Female Protagonist",
+        "Quick-Time Events",
+        "Survival",
+        "Gore",
+        "Split Screen",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Capcom"
+      ],
+      "publishers": [
+        "Capcom"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/21690/ss_88c3dc8ebcdc75b1bfc588f9db597604110741a3.1920x1080.jpg?t=1768960574",
+      "funnyReview": ""
+    }
+  },
+  "22320": {
+    "appId": 22320,
+    "name": "The Elder Scrolls III: Morrowind® Game of the Year Edition",
+    "releaseDate": "2009-06-16",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 14.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 635,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 26384,
+      "positive": 25172,
+      "negative": 1212
+    },
+    "tags": {
+      "userTags": [
+        "RPG",
+        "Open World",
+        "Fantasy",
+        "Classic",
+        "Great Soundtrack",
+        "Moddable",
+        "Singleplayer",
+        "First-Person",
+        "Adventure",
+        "Cult Classic",
+        "Atmospheric",
+        "Magic",
+        "Exploration",
+        "Story Rich",
+        "Sandbox",
+        "Character Customization",
+        "Action RPG",
+        "Medieval",
+        "Action",
+        "Third Person"
+      ],
+      "developers": [
+        "Bethesda Game Studios"
+      ],
+      "publishers": [
+        "Bethesda Softworks"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22320/0000009069.1920x1080.jpg?t=1760029380",
+      "funnyReview": ""
+    }
+  },
+  "22330": {
+    "appId": 22330,
+    "name": "The Elder Scrolls IV: Oblivion® Game of the Year Edition (2009)",
+    "releaseDate": "2009-06-16",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 14.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 1156,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 50661,
+      "positive": 48307,
+      "negative": 2354
+    },
+    "tags": {
+      "userTags": [
+        "RPG",
+        "Open World",
+        "Fantasy",
+        "Singleplayer",
+        "Moddable",
+        "First-Person",
+        "Adventure",
+        "Exploration",
+        "Great Soundtrack",
+        "Magic",
+        "Character Customization",
+        "Action",
+        "Story Rich",
+        "Atmospheric",
+        "Medieval",
+        "Sandbox",
+        "Classic",
+        "Action RPG",
+        "Third Person",
+        "Dark Fantasy"
+      ],
+      "developers": [
+        "Bethesda Game Studios"
+      ],
+      "publishers": [
+        "Bethesda Softworks"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22330/0000009037.1920x1080.jpg?t=1745343031",
+      "funnyReview": ""
+    }
+  },
+  "22370": {
+    "appId": 22370,
+    "name": "Fallout 3: Game of the Year Edition",
+    "releaseDate": "2009-12-17",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 19.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 318,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 50593,
+      "positive": 41078,
+      "negative": 9515
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "RPG",
+        "Post-apocalyptic",
+        "Singleplayer",
+        "Moddable",
+        "First-Person",
+        "Sci-fi",
+        "FPS",
+        "Adventure",
+        "Action",
+        "Exploration",
+        "Replay Value",
+        "Atmospheric",
+        "Sandbox",
+        "Third Person",
+        "Story Rich",
+        "Shooter",
+        "Action RPG",
+        "Cult Classic",
+        "Great Soundtrack"
+      ],
+      "developers": [
+        "Bethesda Game Studios"
+      ],
+      "publishers": [
+        "Bethesda Softworks"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22370/ss_87fb57e11912a692f29614f88411d0db2cba405a.1920x1080.jpg?t=1732208097",
+      "funnyReview": ""
+    }
+  },
+  "22380": {
+    "appId": 22380,
+    "name": "Fallout: New Vegas",
+    "releaseDate": "2010-10-19",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 3892,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 227700,
+      "positive": 218763,
+      "negative": 8937
+    },
+    "tags": {
+      "userTags": [
+        "Open World",
+        "RPG",
+        "Post-apocalyptic",
+        "Singleplayer",
+        "Moddable",
+        "Story Rich",
+        "Exploration",
+        "First-Person",
+        "Action",
+        "Adventure",
+        "FPS",
+        "Sci-fi",
+        "Western",
+        "Atmospheric",
+        "Action RPG",
+        "Character Customization",
+        "Survival",
+        "Sandbox",
+        "Shooter",
+        "Third Person"
+      ],
+      "developers": [
+        "Obsidian Entertainment"
+      ],
+      "publishers": [
+        "Bethesda Softworks"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/ss_62f8d0b006935ff6de7fe276f713e7d15e579bc9.1920x1080.jpg?t=1765992876",
+      "funnyReview": ""
+    }
+  },
+  "23310": {
+    "appId": 23310,
+    "name": "The Last Remnant™",
+    "releaseDate": "2009-04-09",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 26,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 4070,
+      "positive": 3308,
+      "negative": 762
+    },
+    "tags": {
+      "userTags": [
+        "JRPG",
+        "RPG",
+        "Singleplayer",
+        "Fantasy",
+        "Turn-Based",
+        "Great Soundtrack",
+        "Turn-Based Strategy",
+        "Story Rich",
+        "Strategy",
+        "Turn-Based Tactics",
+        "Adventure",
+        "Difficult",
+        "Tactical",
+        "Controller",
+        "Open World",
+        "Action",
+        "Turn-Based Combat"
+      ],
+      "developers": [
+        "Square Enix"
+      ],
+      "publishers": [
+        "Square Enix"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/23310/0000007444.1920x1080.jpg?t=1536078342",
+      "funnyReview": ""
+    }
+  },
+  "24010": {
+    "appId": 24010,
+    "name": "Train Simulator Classic",
+    "releaseDate": "2015-09-17",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 29.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 503,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 28187,
+      "positive": 20015,
+      "negative": 8172
+    },
+    "tags": {
+      "userTags": [
+        "Simulation",
+        "Trains",
+        "Singleplayer",
+        "Driving",
+        "Realistic",
+        "Casual",
+        "Relaxing",
+        "Open World",
+        "Building",
+        "Moddable",
+        "Sandbox",
+        "Level Editor",
+        "TrackIR",
+        "Atmospheric",
+        "Transportation",
+        "Action",
+        "Adventure",
+        "VR",
+        "City Builder",
+        "Strategy"
+      ],
+      "developers": [
+        "Dovetail Games"
+      ],
+      "publishers": [
+        "Dovetail Games - Trains",
+        "Dovetail Games"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/24010/81e7112f593ed57ec66ad75aa5b63000779b4895/ss_81e7112f593ed57ec66ad75aa5b63000779b4895.1920x1080.jpg?t=1769695552",
+      "funnyReview": ""
+    }
+  },
+  "24200": {
+    "appId": 24200,
+    "name": "DC Universe™ Online",
+    "releaseDate": "2011-11-02",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 546,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 21016,
+      "positive": 16923,
+      "negative": 4093
+    },
+    "tags": {
+      "userTags": [
+        "Free to Play",
+        "Superhero",
+        "MMORPG",
+        "Massively Multiplayer",
+        "Character Customization",
+        "Action",
+        "Comic Book",
+        "RPG",
+        "Multiplayer",
+        "Adventure",
+        "Controller",
+        "Third Person",
+        "Open World",
+        "Combat",
+        "Beat 'em up",
+        "Exploration",
+        "PvP",
+        "Online Co-Op",
+        "Fighting",
+        "Co-op"
+      ],
+      "developers": [
+        "Dimensional Ink Games"
+      ],
+      "publishers": [
+        "Daybreak Game Company"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/24200/ss_99116ecfec2858f6f24fcc33ae12ee731bccef60.1920x1080.jpg?t=1769546832",
+      "funnyReview": ""
+    }
+  },
+  "10": {
+    "appId": 10,
+    "name": "Counter-Strike",
+    "releaseDate": "2000-11-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 7323,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 250245,
+      "positive": 243818,
+      "negative": 6427
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "Classic",
+        "Team-Based",
+        "First-Person",
+        "Competitive",
+        "Tactical",
+        "1990's",
+        "e-sports",
+        "PvP",
+        "Old School",
+        "Military",
+        "Strategy",
+        "Survival",
+        "Score Attack",
+        "1980s",
+        "Assassin",
+        "Nostalgia"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10/0000000132.1920x1080.jpg?t=1745368572",
+      "funnyReview": ""
+    }
+  },
+  "40": {
+    "appId": 40,
+    "name": "Deathmatch Classic",
+    "releaseDate": "2001-06-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 4.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 7,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 3163,
+      "positive": 2618,
+      "negative": 545
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Classic",
+        "Multiplayer",
+        "Shooter",
+        "First-Person",
+        "Arena Shooter",
+        "Old School",
+        "Sci-fi",
+        "Competitive",
+        "Fast-Paced",
+        "Retro",
+        "Gore",
+        "1990's",
+        "Co-op",
+        "Difficult",
+        "PvP",
+        "Singleplayer"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40/0000000142.1920x1080.jpg?t=1745368570",
+      "funnyReview": ""
+    }
+  },
+  "50": {
+    "appId": 50,
+    "name": "Half-Life: Opposing Force",
+    "releaseDate": "1999-11-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 4.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 74,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 25561,
+      "positive": 24363,
+      "negative": 1198
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Classic",
+        "Sci-fi",
+        "Singleplayer",
+        "Shooter",
+        "First-Person",
+        "Aliens",
+        "1990's",
+        "Adventure",
+        "Military",
+        "Atmospheric",
+        "Story Rich",
+        "Silent Protagonist",
+        "Great Soundtrack",
+        "Gore",
+        "Puzzle",
+        "Moddable",
+        "Retro",
+        "Co-op"
+      ],
+      "developers": [
+        "Gearbox Software"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/50/0000000155.1920x1080.jpg?t=1745368539",
+      "funnyReview": ""
+    }
+  },
+  "70": {
+    "appId": 70,
+    "name": "Half-Life",
+    "releaseDate": "1998-11-19",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 634,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 148221,
+      "positive": 143086,
+      "negative": 5135
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Classic",
+        "1990's",
+        "Singleplayer",
+        "Sci-fi",
+        "Multiplayer",
+        "Shooter",
+        "Action",
+        "First-Person",
+        "Aliens",
+        "Story Rich",
+        "Silent Protagonist",
+        "Atmospheric",
+        "Gore",
+        "Retro",
+        "Moddable",
+        "Adventure",
+        "Action-Adventure",
+        "Difficult",
+        "PvP"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/70/0000002354.1920x1080.jpg?t=1745368462",
+      "funnyReview": ""
+    }
+  },
+  "80": {
+    "appId": 80,
+    "name": "Counter-Strike: Condition Zero",
+    "releaseDate": "2004-03-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 276,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 26558,
+      "positive": 24271,
+      "negative": 2287
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Shooter",
+        "Multiplayer",
+        "First-Person",
+        "Singleplayer",
+        "Classic",
+        "Tactical",
+        "Team-Based",
+        "Competitive",
+        "Military",
+        "Online Co-Op",
+        "Strategy",
+        "Adventure",
+        "Survival",
+        "Atmospheric",
+        "Old School",
+        "Open World",
+        "Dark",
+        "Violent"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/80/0000002528.1920x1080.jpg?t=1745368574",
+      "funnyReview": ""
+    }
+  },
+  "100": {
+    "appId": 100,
+    "name": "Counter-Strike: Condition Zero",
+    "releaseDate": "2004-03-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 83,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 14977,
+      "positive": 13442,
+      "negative": 1535
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Shooter",
+        "Multiplayer",
+        "First-Person",
+        "Classic",
+        "Singleplayer",
+        "Tactical",
+        "Team-Based",
+        "Competitive",
+        "Strategy",
+        "Online Co-Op",
+        "Military",
+        "Masterpiece",
+        "Adventure",
+        "Survival",
+        "Atmospheric",
+        "Open World",
+        "Simulation",
+        "Dark"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/80/0000002528.1920x1080.jpg?t=1745368574",
+      "funnyReview": ""
+    }
+  },
+  "130": {
+    "appId": 130,
+    "name": "Half-Life: Blue Shift",
+    "releaseDate": "2001-06-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 4.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 35,
+      "owners": 2000000
+    },
+    "reviews": {
+      "total": 18794,
+      "positive": 17384,
+      "negative": 1410
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Singleplayer",
+        "Shooter",
+        "Aliens",
+        "Classic",
+        "First-Person",
+        "Zombies",
+        "Adventure",
+        "1990's",
+        "Short",
+        "Atmospheric",
+        "Silent Protagonist",
+        "Story Rich",
+        "Puzzle",
+        "Moddable",
+        "Retro",
+        "Great Soundtrack",
+        "Violent"
+      ],
+      "developers": [
+        "Gearbox Software"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/130/0000000127.1920x1080.jpg?t=1745368541",
+      "funnyReview": ""
+    }
+  },
+  "220": {
+    "appId": 220,
+    "name": "Half-Life 2",
+    "releaseDate": "2004-11-16",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 1555,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 245627,
+      "positive": 239721,
+      "negative": 5906
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Classic",
+        "Singleplayer",
+        "Story Rich",
+        "Shooter",
+        "First-Person",
+        "Adventure",
+        "Dystopian ",
+        "Atmospheric",
+        "Zombies",
+        "Silent Protagonist",
+        "Physics",
+        "Aliens",
+        "Great Soundtrack",
+        "Horror",
+        "Multiplayer",
+        "Puzzle",
+        "Moddable"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg?t=1745368545",
+      "funnyReview": ""
+    }
+  },
+  "240": {
+    "appId": 240,
+    "name": "Counter-Strike: Source",
+    "releaseDate": "2004-11-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 6187,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 182234,
+      "positive": 175426,
+      "negative": 6808
+    },
+    "tags": {
+      "userTags": [
+        "Shooter",
+        "FPS",
+        "Action",
+        "Multiplayer",
+        "Team-Based",
+        "First-Person",
+        "Competitive",
+        "Tactical",
+        "PvP",
+        "e-sports",
+        "Military",
+        "War",
+        "Strategy",
+        "Moddable",
+        "Singleplayer",
+        "Difficult",
+        "Atmospheric",
+        "Survival",
+        "Simulation",
+        "Sandbox"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/240/0000000027.1920x1080.jpg?t=1745368575",
+      "funnyReview": ""
+    }
+  },
+  "280": {
+    "appId": 280,
+    "name": "Half-Life: Source",
+    "releaseDate": "2004-06-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 27,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 16056,
+      "positive": 11068,
+      "negative": 4988
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Classic",
+        "Sci-fi",
+        "Singleplayer",
+        "First-Person",
+        "Shooter",
+        "Aliens",
+        "1990's",
+        "Zombies",
+        "Story Rich",
+        "Adventure",
+        "Remake",
+        "Atmospheric",
+        "Silent Protagonist",
+        "Multiplayer",
+        "Horror",
+        "Great Soundtrack",
+        "Moddable",
+        "Gore"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/280/0000000187.1920x1080.jpg?t=1721932678",
+      "funnyReview": ""
+    }
+  },
+  "300": {
+    "appId": 300,
+    "name": "Day of Defeat: Source",
+    "releaseDate": "2010-07-12",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 238,
+      "owners": 5000000
+    },
+    "reviews": {
+      "total": 22689,
+      "positive": 20798,
+      "negative": 1891
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "World War II",
+        "Multiplayer",
+        "Action",
+        "Shooter",
+        "Military",
+        "War",
+        "Team-Based",
+        "First-Person",
+        "Historical",
+        "Class-Based",
+        "Classic",
+        "Tactical",
+        "Realistic",
+        "Online Co-Op",
+        "Gore",
+        "Strategy",
+        "Massively Multiplayer",
+        "Simulation",
+        "Violent"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/300/0000000023.1920x1080.jpg?t=1763407002",
+      "funnyReview": ""
+    }
+  },
+  "320": {
+    "appId": 320,
+    "name": "Half-Life 2: Deathmatch",
+    "releaseDate": "2004-11-01",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 159,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 14296,
+      "positive": 12962,
+      "negative": 1334
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "First-Person",
+        "Sci-fi",
+        "Physics",
+        "Competitive",
+        "Funny",
+        "Co-op",
+        "Old School",
+        "PvP",
+        "Arena Shooter",
+        "Moddable",
+        "Atmospheric",
+        "Adventure",
+        "Great Soundtrack",
+        "Singleplayer",
+        "Violent",
+        "Mod"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/320/ss_09a55c755073d11c5c708da922abd9005546a5ee.1920x1080.jpg?t=1749481506",
+      "funnyReview": ""
+    }
+  },
+  "340": {
+    "appId": 340,
+    "name": "Half-Life 2: Lost Coast",
+    "releaseDate": "2005-10-27",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 2,
+      "owners": 50000000
+    },
+    "reviews": {
+      "total": 13686,
+      "positive": 12215,
+      "negative": 1471
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Singleplayer",
+        "First-Person",
+        "Sci-fi",
+        "Shooter",
+        "Short",
+        "Aliens",
+        "Dystopian ",
+        "Classic",
+        "Adventure",
+        "Atmospheric",
+        "Benchmark",
+        "Futuristic",
+        "Silent Protagonist",
+        "Free to Play",
+        "Post-apocalyptic",
+        "Story Rich",
+        "Multiplayer",
+        "Great Soundtrack"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/340/0000000010.1920x1080.jpg?t=1745368547",
+      "funnyReview": ""
+    }
+  },
+  "360": {
+    "appId": 360,
+    "name": "Half-Life Deathmatch: Source",
+    "releaseDate": "2006-05-01",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 43,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 4899,
+      "positive": 3657,
+      "negative": 1242
+    },
+    "tags": {
+      "userTags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "Sci-fi",
+        "First-Person",
+        "Classic",
+        "Remake",
+        "Violent",
+        "Adventure",
+        "Competitive",
+        "Fast-Paced",
+        "Singleplayer",
+        "Atmospheric",
+        "Horror",
+        "Retro",
+        "Gore",
+        "Great Soundtrack",
+        "Arena Shooter"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/360/ss_7a571ed8e766ab8cf9913c1000a3dbf9308550b7.1920x1080.jpg?t=1745368549",
+      "funnyReview": ""
+    }
+  },
+  "380": {
+    "appId": 380,
+    "name": "Half-Life 2: Episode One",
+    "releaseDate": "2006-06-01",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 18,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 31822,
+      "positive": 30478,
+      "negative": 1344
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Singleplayer",
+        "Story Rich",
+        "First-Person",
+        "Shooter",
+        "Classic",
+        "Dystopian ",
+        "Aliens",
+        "Zombies",
+        "Adventure",
+        "Episodic",
+        "Atmospheric",
+        "Silent Protagonist",
+        "Great Soundtrack",
+        "Short",
+        "Puzzle",
+        "Cinematic",
+        "Moddable"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/380/0000000308.1920x1080.jpg?t=1745368553",
+      "funnyReview": ""
+    }
+  },
+  "400": {
+    "appId": 400,
+    "name": "Portal",
+    "releaseDate": "2007-10-10",
+    "price": {
+      "us": {
+        "currency": "USD",
+        "current": 9.99
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 638,
+      "owners": 20000000
+    },
+    "reviews": {
+      "total": 177741,
+      "positive": 175024,
+      "negative": 2717
+    },
+    "tags": {
+      "userTags": [
+        "Puzzle",
+        "Puzzle-Platformer",
+        "First-Person",
+        "3D Platformer",
+        "Singleplayer",
+        "Sci-fi",
+        "Comedy",
+        "Female Protagonist",
+        "Physics",
+        "Funny",
+        "Action",
+        "Classic",
+        "Story Rich",
+        "Platformer",
+        "Science",
+        "Atmospheric",
+        "Dark Humor",
+        "Short",
+        "FPS",
+        "Adventure"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002582.1920x1080.jpg?t=1745368554",
+      "funnyReview": ""
+    }
+  },
+  "420": {
+    "appId": 420,
+    "name": "Half-Life 2: Episode Two",
+    "releaseDate": "2007-10-10",
+    "price": {
+      "us": {
+        "currency": "",
+        "current": 0.0
+      },
+      "cn": {}
+    },
+    "popularity": {
+      "ccu": 20,
+      "owners": 10000000
+    },
+    "reviews": {
+      "total": 41782,
+      "positive": 40556,
+      "negative": 1226
+    },
+    "tags": {
+      "userTags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Singleplayer",
+        "Shooter",
+        "Story Rich",
+        "First-Person",
+        "Classic",
+        "Adventure",
+        "Aliens",
+        "Atmospheric",
+        "Zombies",
+        "Silent Protagonist",
+        "Great Soundtrack",
+        "Dystopian ",
+        "Post-apocalyptic",
+        "Episodic",
+        "Puzzle",
+        "Horror",
+        "Multiplayer"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ]
+    },
+    "hints": {
+      "screenshotUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/420/ss_d2964cd9bd36406c4c3b2a90c21ab3d6ba0e6cca.1920x1080.jpg?t=1745368556",
+      "funnyReview": ""
+    }
+  }
+}
