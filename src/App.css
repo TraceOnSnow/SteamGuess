@@ -9,6 +9,7 @@
 }
 
 .app-header {
+  position: relative;
   background: rgba(0, 0, 0, 0.1);
   color: white;
   padding: 30px 20px;
@@ -31,9 +32,17 @@
 .app-main {
   flex: 1;
   padding: 30px 20px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+}
+
+@media (min-width: 1600px) {
+  .app-main {
+    max-width: 1560px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
 }
 
 .app-footer {
@@ -56,6 +65,45 @@
   margin-bottom: 30px;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.status-actions {
+  display: flex;
+  align-items: center;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.settings-panel {
+  position: absolute;
+  top: 56px;
+  right: 16px;
+  background: white;
+  color: #1f2937;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px 12px;
+  min-width: 180px;
+  z-index: 30;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
 .status-item {
@@ -137,6 +185,15 @@
 
 .btn-primary:hover {
   background-color: #5568d3;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
 }
 
 /* Responsive */

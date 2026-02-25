@@ -10,14 +10,9 @@ import { comparisonConfig } from '../config/comparison';
 export class ComparisonEngine {
   private config = comparisonConfig;
 
-  /**
-   * Main comparison method
-   * Compares a guessed game against the correct answer game
-   */
   compare(guess: PlayerGuess, correctGame: Game): ComparisonResult {
     const result: ComparisonResult = {
       nameMatch: this.compareName(guess, correctGame),
-      playerMatch: this.comparePlayers(guess, correctGame),
       priceMatch: this.comparePrice(guess, correctGame),
       popularityMatch: this.comparePopularity(guess, correctGame),
       reviewsMatch: this.compareReviews(guess, correctGame),
@@ -27,10 +22,8 @@ export class ComparisonEngine {
       isCorrect: false,
     };
 
-    // Build allFieldsMatches array
     result.allFieldsMatches = [
       result.nameMatch,
-      result.playerMatch,
       result.priceMatch,
       result.popularityMatch,
       result.reviewsMatch,
@@ -38,15 +31,10 @@ export class ComparisonEngine {
       result.tagsMatch,
     ];
 
-    // Check if answer is correct (name must match)
     result.isCorrect = result.nameMatch.status === 'exact';
-
     return result;
   }
 
-  /**
-   * Compare game name
-   */
   private compareName(guess: PlayerGuess, correct: Game): FieldComparison {
     const userValue = guess.name;
     const correctValue = correct.name;
@@ -68,61 +56,24 @@ export class ComparisonEngine {
     };
   }
 
-  /**
-   * Compare player types (Single, Multi, Online)
-   */
-  private comparePlayers(guess: PlayerGuess, correct: Game): FieldComparison {
-    const userValue = guess.players ? this.playersToString(guess.players) : null;
-    const correctValue = this.playersToString(correct.players);
-
-    let status: MatchStatus = 'unknown';
-    if (!userValue) {
-      status = 'unknown';
-    } else {
-      const userFlags = this.extractPlayerFlags(guess.players!);
-      const correctFlags = this.extractPlayerFlags(correct.players);
-
-      if (JSON.stringify(userFlags) === JSON.stringify(correctFlags)) {
-        status = 'exact';
-      } else if (this.hasPlayerIntersection(userFlags, correctFlags)) {
-        status = 'partial';
-      } else {
-        status = 'wrong';
-      }
-    }
-
-    return {
-      fieldName: 'Players',
-      userValue,
-      correctValue,
-      status,
-    };
-  }
-
-  /**
-   * Compare price (current and historical low)
-   */
   private comparePrice(guess: PlayerGuess, correct: Game): FieldComparison {
-    const userValue = guess.price ? `$${guess.price.current} (low: $${guess.price.historicalLow})` : null;
-    const correctValue = `$${correct.price.current} (low: $${correct.price.historicalLow})`;
+    const userPrice = guess.price?.us?.current;
+    const correctPrice = correct.price.us.current;
+
+    const userValue = userPrice !== undefined ? `$${userPrice}` : null;
+    const correctValue = `$${correctPrice}`;
 
     let status: MatchStatus = 'unknown';
-    if (!userValue || !guess.price) {
+    if (userPrice === undefined) {
       status = 'unknown';
     } else {
-      const currentDiff = Math.abs(guess.price.current - correct.price.current);
-      const lowDiff = Math.abs(guess.price.historicalLow - correct.price.historicalLow);
+      const diff = Math.abs(userPrice - correctPrice);
 
-      // Both within threshold = exact
-      if (currentDiff <= this.config.priceThreshold && lowDiff <= this.config.priceThreshold) {
+      if (diff <= this.config.priceThreshold) {
         status = 'exact';
-      }
-      // At least one within threshold = partial
-      else if (currentDiff <= this.config.priceThreshold || lowDiff <= this.config.priceThreshold) {
+      } else if (diff <= this.config.priceThreshold * 2) {
         status = 'partial';
-      }
-      // Current price within 2x threshold = close
-      else if (currentDiff <= this.config.priceThreshold * 2) {
+      } else if (diff <= this.config.priceThreshold * 4) {
         status = 'close';
       } else {
         status = 'wrong';
@@ -134,32 +85,31 @@ export class ComparisonEngine {
       userValue,
       correctValue,
       status,
-      display: this.getPriceArrow(guess.price?.current, correct.price.current),
+      display: this.getPriceArrow(userPrice, correctPrice),
     };
   }
 
-  /**
-   * Compare popularity (current weekly and peak)
-   */
   private comparePopularity(guess: PlayerGuess, correct: Game): FieldComparison {
-    const userValue = guess.popularity
-      ? `${guess.popularity.currentWeekly} (peak: ${guess.popularity.peakConcurrent})`
+    const userCcu = guess.popularity?.ccu;
+    const userOwners = guess.popularity?.owners;
+
+    const userValue = userCcu !== undefined && userOwners !== undefined
+      ? `${userCcu} (owners: ${userOwners})`
       : null;
-    const correctValue = `${correct.popularity.currentWeekly} (peak: ${correct.popularity.peakConcurrent})`;
+    const correctValue = `${correct.popularity.ccu} (owners: ${correct.popularity.owners})`;
 
     let status: MatchStatus = 'unknown';
-    if (!userValue || !guess.popularity) {
+    if (userCcu === undefined || userOwners === undefined) {
       status = 'unknown';
     } else {
-      // Calculate percentage difference
-      const currentDiffPercent = this.percentDifference(guess.popularity.currentWeekly, correct.popularity.currentWeekly);
-      const peakDiffPercent = this.percentDifference(guess.popularity.peakConcurrent, correct.popularity.peakConcurrent);
+      const ccuDiffPercent = this.percentDifference(userCcu, correct.popularity.ccu);
+      const ownersDiffPercent = this.percentDifference(userOwners, correct.popularity.owners);
 
-      if (currentDiffPercent <= 20 && peakDiffPercent <= 20) {
+      if (ccuDiffPercent <= 20 && ownersDiffPercent <= 20) {
         status = 'exact';
-      } else if (currentDiffPercent <= 50 && peakDiffPercent <= 50) {
+      } else if (ccuDiffPercent <= 50 && ownersDiffPercent <= 50) {
         status = 'partial';
-      } else if (currentDiffPercent <= 100 || peakDiffPercent <= 100) {
+      } else if (ccuDiffPercent <= 100 || ownersDiffPercent <= 100) {
         status = 'close';
       } else {
         status = 'wrong';
@@ -171,35 +121,29 @@ export class ComparisonEngine {
       userValue,
       correctValue,
       status,
-      display: this.getPopularityArrow(guess.popularity?.currentWeekly, correct.popularity.currentWeekly),
+      display: this.getPopularityArrow(userCcu, correct.popularity.ccu),
     };
   }
 
-  /**
-   * Compare reviews (count and positive percent)
-   */
   private compareReviews(guess: PlayerGuess, correct: Game): FieldComparison {
+    const userRate = this.getPositiveRate(guess.reviews);
+    const correctRate = this.getPositiveRate(correct.reviews);
+
     const userValue = guess.reviews
-      ? `${guess.reviews.count} reviews, ${guess.reviews.positivePercent}% positive`
+      ? `${guess.reviews.total} reviews, ${userRate}% positive`
       : null;
-    const correctValue = `${correct.reviews.count} reviews, ${correct.reviews.positivePercent}% positive`;
+    const correctValue = `${correct.reviews.total} reviews, ${correctRate}% positive`;
 
     let status: MatchStatus = 'unknown';
-    if (!userValue || !guess.reviews) {
+    if (!guess.reviews || !userValue) {
       status = 'unknown';
     } else {
-      const rateDiff = Math.abs(guess.reviews.positivePercent - correct.reviews.positivePercent);
-
-      // Both good = exact
+      const rateDiff = Math.abs(userRate - correctRate);
       if (rateDiff <= 5) {
         status = 'exact';
-      }
-      // Rate close enough = partial
-      else if (rateDiff <= 15) {
+      } else if (rateDiff <= 15) {
         status = 'partial';
-      }
-      // Rate somewhat close = close
-      else if (rateDiff <= 30) {
+      } else if (rateDiff <= 30) {
         status = 'close';
       } else {
         status = 'wrong';
@@ -211,13 +155,10 @@ export class ComparisonEngine {
       userValue,
       correctValue,
       status,
-      display: this.getReviewArrow(guess.reviews?.positivePercent, correct.reviews.positivePercent),
+      display: this.getReviewArrow(userRate, correctRate),
     };
   }
 
-  /**
-   * Compare release date
-   */
   private compareRelease(guess: PlayerGuess, correct: Game): FieldComparison {
     const userValue = guess.releaseDate;
     const correctValue = correct.releaseDate;
@@ -250,15 +191,12 @@ export class ComparisonEngine {
     };
   }
 
-  /**
-   * Compare tags (user tags + genres + developer + publisher)
-   */
   private compareTags(guess: PlayerGuess, correct: Game): FieldComparison {
     const userValue = guess.tags ? this.tagsToString(guess.tags) : null;
     const correctValue = this.tagsToString(correct.tags);
 
     let status: MatchStatus = 'unknown';
-    if (!userValue || !guess.tags) {
+    if (!guess.tags || !userValue) {
       status = 'unknown';
     } else {
       const overlapPercent = this.calculateTagOverlap(guess.tags, correct.tags);
@@ -282,22 +220,9 @@ export class ComparisonEngine {
     };
   }
 
-  // ============ Helper Methods ============
-
-  private playersToString(players: Game['players']): string {
-    const parts: string[] = [];
-    if (players.singlePlayer) parts.push('Single-player');
-    if (players.multiplayer) parts.push('Multi-player');
-    if (players.online) parts.push('Online');
-    return parts.join(', ') || 'None';
-  }
-
-  private extractPlayerFlags(players: Game['players']): boolean[] {
-    return [players.singlePlayer, players.multiplayer, players.online];
-  }
-
-  private hasPlayerIntersection(a: boolean[], b: boolean[]): boolean {
-    return a.some((val, i) => val && b[i]);
+  private getPositiveRate(reviews: Game['reviews'] | undefined): number {
+    if (!reviews || reviews.total <= 0) return 0;
+    return Math.round((reviews.positive / reviews.total) * 100);
   }
 
   private percentDifference(a: number, b: number): number {
@@ -308,16 +233,14 @@ export class ComparisonEngine {
   private calculateTagOverlap(userTags: Game['tags'], correctTags: Game['tags']): number {
     const userSet = new Set([
       ...userTags.userTags,
-      ...userTags.genres,
-      userTags.developer,
-      userTags.publisher,
+      ...userTags.developers,
+      ...userTags.publishers,
     ]);
 
     const correctSet = new Set([
       ...correctTags.userTags,
-      ...correctTags.genres,
-      correctTags.developer,
-      correctTags.publisher,
+      ...correctTags.developers,
+      ...correctTags.publishers,
     ]);
 
     const intersection = [...userSet].filter(tag => correctSet.has(tag)).length;
@@ -328,30 +251,28 @@ export class ComparisonEngine {
 
   private tagsToString(tags: Game['tags']): string {
     return [
-      tags.developer,
-      tags.publisher,
+      ...tags.developers,
+      ...tags.publishers,
       ...tags.userTags,
-      ...tags.genres,
     ]
       .filter(t => t && t.length > 0)
       .join(', ');
   }
 
-  // Arrow display helpers
   private getPriceArrow(userPrice: number | undefined, correctPrice: number): string | undefined {
-    if (!userPrice) return undefined;
+    if (userPrice === undefined) return undefined;
     if (Math.abs(userPrice - correctPrice) <= this.config.priceThreshold) return '≈';
     return userPrice > correctPrice ? '↑' : '↓';
   }
 
   private getPopularityArrow(userPop: number | undefined, correctPop: number): string | undefined {
-    if (!userPop) return undefined;
+    if (userPop === undefined) return undefined;
     if (Math.abs(userPop - correctPop) <= correctPop * 0.2) return '≈';
     return userPop > correctPop ? '↑' : '↓';
   }
 
   private getReviewArrow(userRate: number | undefined, correctRate: number): string | undefined {
-    if (!userRate) return undefined;
+    if (userRate === undefined) return undefined;
     const diff = Math.abs(userRate - correctRate);
     if (diff <= 5) return '≈';
     return userRate > correctRate ? '↑' : '↓';

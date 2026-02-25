@@ -106,6 +106,8 @@ def build_game(appid: int, from_store: Dict[str, Any], from_spy: Dict[str, Any])
     if isinstance(first, dict):
       screenshot_url = str(first.get("path_full") or first.get("path_thumbnail") or "")
 
+  header_image = store_data.get("header_image") or ""
+
   game = {
     "appId": appid,
     "name": name,
@@ -135,6 +137,7 @@ def build_game(appid: int, from_store: Dict[str, Any], from_spy: Dict[str, Any])
       "screenshotUrl": screenshot_url,
       "funnyReview": "",
     },
+    "header_image": header_image
   }
 
   return game

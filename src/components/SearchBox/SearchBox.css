@@ -50,6 +50,9 @@
   cursor: pointer;
   border-bottom: 1px solid #eee;
   transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .result-item:hover {
@@ -63,6 +66,19 @@
 .result-name {
   font-weight: 500;
   margin-bottom: 4px;
+}
+
+.result-image {
+  width: 92px;
+  height: 34px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #e5e7eb;
+  flex: 0 0 auto;
+}
+
+.result-text {
+  min-width: 0;
 }
 
 .result-meta {

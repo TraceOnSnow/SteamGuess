@@ -50,9 +50,17 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ onSelectGame, isDisabled =
               className="result-item"
               onClick={() => handleSelectGame(game)}
             >
-              <div className="result-name">{game.name}</div>
-              <div className="result-meta">
-                {game.releaseDate.split('-')[0]}
+              <img
+                src={game.header_image || ''}
+                alt={game.name}
+                className="result-image"
+                loading="lazy"
+              />
+              <div className="result-text">
+                <div className="result-name">{game.name}</div>
+                <div className="result-meta">
+                  {game.releaseDate.split('-')[0]}
+                </div>
               </div>
             </button>
           ))}

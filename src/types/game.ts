@@ -3,32 +3,30 @@
  */
 
 export interface GamePrice {
+  currency?: string;
   current: number;
-  historicalLow: number;
+}
+
+export interface GamePriceSet {
+  us: GamePrice;
+  cn?: Partial<GamePrice>;
 }
 
 export interface GamePopularity {
-  currentWeekly: number;
-  peakConcurrent: number;
+  ccu: number;
+  owners: number;
 }
 
 export interface GameReviews {
-  count: number;
-  positivePercent: number; // 0-100
-  steamRating: 'Overwhelmingly Positive' | 'Very Positive' | 'Positive' | 'Mixed' | 'Negative' | 'Overwhelmingly Negative';
+  total: number;
+  positive: number;
+  negative: number;
 }
 
 export interface GameTags {
   userTags: string[];
-  genres: string[];
-  developer: string;
-  publisher: string;
-}
-
-export interface GamePlayers {
-  singlePlayer: boolean;
-  multiplayer: boolean;
-  online: boolean;
+  developers: string[];
+  publishers: string[];
 }
 
 export interface GameHints {
@@ -39,11 +37,11 @@ export interface GameHints {
 export interface Game {
   appId: number;
   name: string;
+  header_image?: string;
   releaseDate: string; // YYYY-MM-DD
-  price: GamePrice;
+  price: GamePriceSet;
   popularity: GamePopularity;
   reviews: GameReviews;
-  players: GamePlayers;
   tags: GameTags;
   hints?: GameHints;
 }

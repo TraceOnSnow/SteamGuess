@@ -15,7 +15,6 @@ export interface FieldComparison {
 export interface ComparisonResult {
   // Basic fields
   nameMatch: FieldComparison;
-  playerMatch: FieldComparison;
   priceMatch: FieldComparison;
   popularityMatch: FieldComparison;
   reviewsMatch: FieldComparison;
