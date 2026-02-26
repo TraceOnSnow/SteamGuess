@@ -18,8 +18,9 @@ export interface ComparisonResult {
   // Basic fields
   nameMatch: FieldComparison;
   priceMatch: FieldComparison;
-  popularityMatch: FieldComparison;
-  reviewsMatch: FieldComparison;
+  ccuMatch: FieldComparison;
+  totalReviewsMatch: FieldComparison;
+  reviewsRateMatch: FieldComparison;
   releaseMatch: FieldComparison;
 
   // Meta

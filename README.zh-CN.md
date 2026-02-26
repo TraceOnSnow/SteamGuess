@@ -144,7 +144,7 @@ interface ComparisonResult {
   playerMatch: FieldComparison;     // 玩家模式匹配
   priceMatch: FieldComparison;      // 价格匹配
   popularityMatch: FieldComparison; // 人气匹配
-  reviewsMatch: FieldComparison;    // 评价匹配
+  reviewsRateMatch: FieldComparison;    // 评价匹配
   releaseMatch: FieldComparison;    // 发行日期匹配
   tagsMatch: FieldComparison;       // 标签匹配
   allFieldsMatches: FieldComparison[];

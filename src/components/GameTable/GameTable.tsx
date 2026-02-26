@@ -48,8 +48,9 @@ function buildExactResult(game: Game): ComparisonResult {
   const result: ComparisonResult = {
     nameMatch,
     priceMatch: exactField('Price', priceValue),
-    popularityMatch: exactField('Popularity', popularityValue),
-    reviewsMatch: exactField('Reviews', reviewValue),
+    ccuMatch: exactField('Popularity', popularityValue),
+    totalReviewsMatch: exactField('Total Reviews', game.reviews.total),
+    reviewsRateMatch: exactField('Reviews', reviewValue),
     releaseMatch: exactField('Release Date', game.releaseDate),
     allFieldsMatches: [],
     isCorrect: true,
@@ -58,8 +59,9 @@ function buildExactResult(game: Game): ComparisonResult {
   result.allFieldsMatches = [
     result.nameMatch,
     result.priceMatch,
-    result.popularityMatch,
-    result.reviewsMatch,
+    result.ccuMatch,
+    result.totalReviewsMatch,
+    result.reviewsRateMatch,
     result.releaseMatch,
   ];
 
@@ -146,23 +148,28 @@ export function GameTable({ guesses, correctGame, comparisonResults, flipArrowLo
                   </div>
                 </td>
                 <td>
-                  <div className={`feedback-cell status-${result.popularityMatch.status}`}>
-                    <span className="feedback-value">{String(result.popularityMatch.userValue ?? '—')}</span>
-                    {resolveArrow(result.popularityMatch.display) && (
-                      <span className="feedback-arrow">{resolveArrow(result.popularityMatch.display)}</span>
+                  <div className={`feedback-cell status-${result.ccuMatch.status}`}>
+                    <span className="feedback-value">{String(result.ccuMatch.userValue ?? '—')}</span>
+                    {resolveArrow(result.ccuMatch.display) && (
+                      <span className="feedback-arrow">{resolveArrow(result.ccuMatch.display)}</span>
                     )}
                   </div>
                 </td>
+                
                 <td>
-                  <div className="feedback-cell">
-                    <span className="feedback-value">{guess.reviews.total}</span>
+                  <div className={`feedback-cell status-${result.totalReviewsMatch.status}`}>
+                    <span className="feedback-value">{String(result.totalReviewsMatch.userValue ?? '—')}</span>
+                    {resolveArrow(result.totalReviewsMatch.display) && (
+                      <span className="feedback-arrow">{resolveArrow(result.totalReviewsMatch.display)}</span>
+                    )}
                   </div>
                 </td>
+
                 <td>
-                  <div className={`feedback-cell status-${result.reviewsMatch.status}`}>
-                    <span className="feedback-value">{guess.reviews.total > 0 ? Math.round((guess.reviews.positive / guess.reviews.total) * 100) : 0}%</span>
-                    {resolveArrow(result.reviewsMatch.display) && (
-                      <span className="feedback-arrow">{resolveArrow(result.reviewsMatch.display)}</span>
+                  <div className={`feedback-cell status-${result.reviewsRateMatch.status}`}>
+                    <span className="feedback-value">{String(result.reviewsRateMatch.userValue ?? '—')}%</span>
+                    {resolveArrow(result.reviewsRateMatch.display) && (
+                      <span className="feedback-arrow">{resolveArrow(result.reviewsRateMatch.display)}</span>
                     )}
                   </div>
                 </td>

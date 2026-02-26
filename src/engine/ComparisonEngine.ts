@@ -16,8 +16,9 @@ export class ComparisonEngine {
     const result: ComparisonResult = {
       nameMatch: this.compareName(guess, correctGame),
       priceMatch: this.comparePrice(guess, correctGame),
-      popularityMatch: this.comparePopularity(guess, correctGame),
-      reviewsMatch: this.compareReviews(guess, correctGame),
+      ccuMatch: this.comparePopularity(guess, correctGame),
+      totalReviewsMatch: this.compareTotalReviews(guess, correctGame), // New field comparison
+      reviewsRateMatch: this.compareReviews(guess, correctGame),
       releaseMatch: this.compareRelease(guess, correctGame),
       allFieldsMatches: [],
       isCorrect: false,
@@ -26,8 +27,8 @@ export class ComparisonEngine {
     result.allFieldsMatches = [
       result.nameMatch,
       result.priceMatch,
-      result.popularityMatch,
-      result.reviewsMatch,
+      result.ccuMatch,
+      result.reviewsRateMatch,
       result.releaseMatch,
     ];
 
@@ -59,23 +60,27 @@ export class ComparisonEngine {
     });
   }
 
+  private compareTotalReviews(guess: Partial<Game>, correct: Game): FieldComparison {
+    return this.comparator.compareNumeric({
+      fieldName: 'Total Reviews',
+      userValue: guess.reviews?.total,
+      correctValue: correct.reviews.total,
+      rule: this.config.rules.popularity,
+      formatter: value => String(value),
+    });
+  }
+
   private compareReviews(guess: Partial<Game>, correct: Game): FieldComparison {
     const userRate = this.getPositiveRate(guess.reviews);
     const correctRate = this.getPositiveRate(correct.reviews);
 
-    const compared = this.comparator.compareNumeric({
+    return this.comparator.compareNumeric({
       fieldName: 'Reviews',
       userValue: guess.reviews ? userRate : undefined,
       correctValue: correctRate,
       rule: this.config.rules.reviewsRate,
-      formatter: value => `${value}% positive`,
+      formatter: value => String(value),
     });
-
-    return {
-      ...compared,
-      userValue: guess.reviews ? `${guess.reviews.total} reviews, ${userRate}% positive` : null,
-      correctValue: `${correct.reviews.total} reviews, ${correctRate}% positive`,
-    };
   }
 
   private compareRelease(guess: Partial<Game>, correct: Game): FieldComparison {
