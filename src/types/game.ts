@@ -14,7 +14,6 @@ export interface GamePriceSet {
 
 export interface GamePopularity {
   ccu: number;
-  owners: number;
 }
 
 export interface GameReviews {
@@ -46,4 +45,3 @@ export interface Game {
   hints?: GameHints;
 }
 
-export type PlayerGuess = Partial<Game>;

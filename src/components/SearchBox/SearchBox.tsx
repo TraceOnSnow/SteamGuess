@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Game } from '../../types/game';
 import { searchGames } from '../../data/games';
 import './SearchBox.css';
@@ -14,6 +15,7 @@ interface SearchBoxProps {
 }
 
 export const SearchBox: React.FC<SearchBoxProps> = ({ onSelectGame, isDisabled = false }) => {
+  const { t } = useTranslation();
   const [query, setQuery] = useState('');
   const [showResults, setShowResults] = useState(false);
 
@@ -32,7 +34,7 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ onSelectGame, isDisabled =
     <div className="search-box">
       <input
         type="text"
-        placeholder="Search for a game..."
+        placeholder={t('search.placeholder')}
         value={query}
         onChange={e => {
           setQuery(e.target.value);

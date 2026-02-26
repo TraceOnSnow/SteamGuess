@@ -4,6 +4,8 @@
 
 export type MatchStatus = 'exact' | 'partial' | 'close' | 'wrong' | 'unknown';
 
+export type NumericCompareMode = 'absolute' | 'percent';
+
 export interface FieldComparison {
   fieldName: string;
   userValue: any;
@@ -19,7 +21,6 @@ export interface ComparisonResult {
   popularityMatch: FieldComparison;
   reviewsMatch: FieldComparison;
   releaseMatch: FieldComparison;
-  tagsMatch: FieldComparison;
 
   // Meta
   allFieldsMatches: FieldComparison[];
@@ -27,17 +28,30 @@ export interface ComparisonResult {
 }
 
 export interface ComparisonConfig {
-  priceThreshold: number; // USD, e.g., 10
-  popularityThresholdPercent: number; // e.g., 50
-  ratingThresholdPercent: number; // e.g., 5
-  yearThreshold: number; // e.g., 1
-  tagOverlapPercent: number; // e.g., 50 for "exact", 20 for "partial"
+  rules: {
+    price: {
+      mode: NumericCompareMode;
+      exact: number;
+      partial: number;
+      close: number;
+    };
+    popularity: {
+      mode: NumericCompareMode;
+      exact: number;
+      partial: number;
+      close: number;
+    };
+    reviewsRate: {
+      mode: NumericCompareMode;
+      exact: number;
+      partial: number;
+      close: number;
+    };
+    releaseYear: {
+      exact: number;
+      partial: number;
+      close: number;
+    };
+  };
 }
 
-export interface ColorThreshold {
-  exact: string; // CSS color, e.g., '#4CAF50' (green)
-  partial: string; // e.g., '#FFC107' (yellow)
-  close: string; // e.g., '#FF9800' (orange)
-  wrong: string; // e.g., '#F44336' (red)
-  unknown: string; // e.g., '#9E9E9E' (gray)
-}

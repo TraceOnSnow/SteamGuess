@@ -16,10 +16,6 @@ export function searchGames(query: string): Game[] {
   );
 }
 
-export function getGameById(appId: number): Game | undefined {
-  return sampleGames.find(game => game.appId === appId);
-}
-
 export function getRandomGame(): Game {
   return sampleGames[Math.floor(Math.random() * sampleGames.length)];
 }
