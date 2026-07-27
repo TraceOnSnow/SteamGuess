@@ -20,10 +20,10 @@ export const comparisonConfig: ComparisonConfig = {
       partial: 5,
       close: 10,
     },
-    releaseYear: {
-      exact: 0.2,
-      partial: 1,
-      close: 3,
+    releaseDate: {
+      exactYears: 0.2,
+      partialYears: 1,
+      closeYears: 3,
     },
   },
 };

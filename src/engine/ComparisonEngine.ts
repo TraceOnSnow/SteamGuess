@@ -1,102 +1,81 @@
-/**
- * Game Comparison Engine
- * Core logic for comparing guessed games with correct answer
- */
-
 import type { Game } from '../types/game';
 import type { ComparisonResult, FieldComparison } from '../types/comparison';
 import { comparisonConfig } from '../config/comparison';
 import { FieldComparator } from './FieldComparator';
 
-export class ComparisonEngine {
-  private config = comparisonConfig;
-  private comparator = new FieldComparator();
+const numberFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
+const priceFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
+});
 
-  compare(guess: Partial<Game>, correctGame: Game): ComparisonResult {
+export class ComparisonEngine {
+  private readonly comparator = new FieldComparator();
+
+  compare(guess: Game, correctGame: Game): ComparisonResult {
+    const nameMatch: FieldComparison = {
+      fieldName: 'Name',
+      userValue: guess.name,
+      correctValue: correctGame.name,
+      status: guess.appId === correctGame.appId ? 'exact' : 'wrong',
+    };
+
     const result: ComparisonResult = {
-      nameMatch: this.compareName(guess, correctGame),
-      priceMatch: this.comparePrice(guess, correctGame),
-      ccuMatch: this.comparePopularity(guess, correctGame),
-      totalReviewsMatch: this.compareTotalReviews(guess, correctGame), // New field comparison
-      reviewsRateMatch: this.compareReviews(guess, correctGame),
-      releaseMatch: this.compareRelease(guess, correctGame),
+      nameMatch,
+      priceMatch: this.comparator.compareNumeric({
+        fieldName: 'Price',
+        userValue: guess.price.us.current,
+        correctValue: correctGame.price.us.current,
+        rule: comparisonConfig.rules.price,
+        formatter: value => priceFormatter.format(value),
+      }),
+      ccuMatch: this.comparator.compareNumeric({
+        fieldName: 'Popularity',
+        userValue: guess.popularity.ccu,
+        correctValue: correctGame.popularity.ccu,
+        rule: comparisonConfig.rules.popularity,
+        formatter: value => numberFormatter.format(value),
+      }),
+      totalReviewsMatch: this.comparator.compareNumeric({
+        fieldName: 'Total Reviews',
+        userValue: guess.reviews.total,
+        correctValue: correctGame.reviews.total,
+        rule: comparisonConfig.rules.popularity,
+        formatter: value => numberFormatter.format(value),
+      }),
+      reviewsRateMatch: this.comparator.compareNumeric({
+        fieldName: 'Reviews Rate',
+        userValue: this.getPositiveRate(guess),
+        correctValue: this.getPositiveRate(correctGame),
+        rule: comparisonConfig.rules.reviewsRate,
+        formatter: value => `${value.toFixed(1)}%`,
+      }),
+      releaseMatch: this.comparator.compareDate(
+        'Release Date',
+        guess.releaseDate,
+        correctGame.releaseDate,
+        comparisonConfig.rules.releaseDate,
+      ),
       allFieldsMatches: [],
-      isCorrect: false,
+      isCorrect: guess.appId === correctGame.appId,
     };
 
     result.allFieldsMatches = [
       result.nameMatch,
       result.priceMatch,
       result.ccuMatch,
+      result.totalReviewsMatch,
       result.reviewsRateMatch,
       result.releaseMatch,
     ];
 
-    result.isCorrect = result.nameMatch.status === 'exact';
     return result;
   }
 
-  private compareName(guess: Partial<Game>, correct: Game): FieldComparison {
-    return this.comparator.compareExactText('Name', guess.name, correct.name);
+  private getPositiveRate(game: Game): number {
+    if (game.reviews.total <= 0) return 0;
+    return (game.reviews.positive / game.reviews.total) * 100;
   }
-
-  private comparePrice(guess: Partial<Game>, correct: Game): FieldComparison {
-    return this.comparator.compareNumeric({
-      fieldName: 'Price',
-      userValue: guess.price?.us?.current,
-      correctValue: correct.price.us.current,
-      rule: this.config.rules.price,
-      formatter: value => `$${value}`,
-    });
-  }
-
-  private comparePopularity(guess: Partial<Game>, correct: Game): FieldComparison {
-    return this.comparator.compareNumeric({
-      fieldName: 'Popularity',
-      userValue: guess.popularity?.ccu,
-      correctValue: correct.popularity.ccu,
-      rule: this.config.rules.popularity,
-      formatter: value => String(value),
-    });
-  }
-
-  private compareTotalReviews(guess: Partial<Game>, correct: Game): FieldComparison {
-    return this.comparator.compareNumeric({
-      fieldName: 'Total Reviews',
-      userValue: guess.reviews?.total,
-      correctValue: correct.reviews.total,
-      rule: this.config.rules.popularity,
-      formatter: value => String(value),
-    });
-  }
-
-  private compareReviews(guess: Partial<Game>, correct: Game): FieldComparison {
-    const userRate = this.getPositiveRate(guess.reviews);
-    const correctRate = this.getPositiveRate(correct.reviews);
-
-    return this.comparator.compareNumeric({
-      fieldName: 'Reviews',
-      userValue: guess.reviews ? userRate : undefined,
-      correctValue: correctRate,
-      rule: this.config.rules.reviewsRate,
-      formatter: value => String(value),
-    });
-  }
-
-  private compareRelease(guess: Partial<Game>, correct: Game): FieldComparison {
-    return this.comparator.compareYear(
-      'Release Date',
-      guess.releaseDate,
-      correct.releaseDate,
-      this.config.rules.releaseYear
-    );
-  }
-
-
-
-  private getPositiveRate(reviews: Game['reviews'] | undefined): number {
-    if (!reviews || reviews.total <= 0) return 0;
-    return Math.round((reviews.positive / reviews.total) * 100);
-  }
-
 }

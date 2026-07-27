@@ -1,18 +1,16 @@
-import type { FieldComparison, MatchStatus, NumericCompareMode } from '../types/comparison';
 import { differenceInCalendarDays, isValid, parseISO } from 'date-fns';
-
-export interface NumericRule {
-  mode: NumericCompareMode;
-  exact: number;
-  partial: number;
-  close: number;
-}
+import type {
+  ComparisonDirection,
+  FieldComparison,
+  MatchStatus,
+  NumericRuleConfig,
+} from '../types/comparison';
 
 export interface NumericCompareParams {
   fieldName: string;
   userValue: number | undefined;
   correctValue: number;
-  rule: NumericRule;
+  rule: NumericRuleConfig;
   formatter?: (value: number) => string;
 }
 
@@ -22,15 +20,17 @@ export class FieldComparator {
       return { fieldName, userValue: null, correctValue, status: 'unknown' };
     }
 
-    const status: MatchStatus = userValue.toLowerCase() === correctValue.toLowerCase() ? 'exact' : 'wrong';
+    const status: MatchStatus = userValue.localeCompare(correctValue, undefined, { sensitivity: 'accent' }) === 0
+      ? 'exact'
+      : 'wrong';
+
     return { fieldName, userValue, correctValue, status };
   }
 
-  compareNumeric(params: NumericCompareParams): FieldComparison {
-    const { fieldName, userValue, correctValue, rule, formatter } = params;
+  compareNumeric({ fieldName, userValue, correctValue, rule, formatter }: NumericCompareParams): FieldComparison {
+    const print = formatter ?? String;
 
-    const print = formatter ?? ((value: number) => String(value));
-    if (userValue === undefined) {
+    if (userValue === undefined || !Number.isFinite(userValue)) {
       return {
         fieldName,
         userValue: null,
@@ -47,74 +47,63 @@ export class FieldComparator {
       userValue: print(userValue),
       correctValue: print(correctValue),
       status,
-      display: this.getArrow(userValue, correctValue, distance, rule.exact),
+      direction: this.getDirection(userValue, correctValue, status),
     };
   }
 
-  compareYear(fieldName: string, userDate: string | undefined, correctDate: string, thresholds: { exact: number; partial: number; close: number }): FieldComparison {
+  compareDate(
+    fieldName: string,
+    userDate: string | undefined,
+    correctDate: string,
+    thresholds: { exactYears: number; partialYears: number; closeYears: number },
+  ): FieldComparison {
     if (!userDate) {
-      return {
-        fieldName,
-        userValue: null,
-        correctValue: correctDate,
-        status: 'unknown',
-      };
+      return { fieldName, userValue: null, correctValue: correctDate, status: 'unknown' };
     }
 
     const userParsed = this.parseDate(userDate);
     const correctParsed = this.parseDate(correctDate);
 
     if (!userParsed || !correctParsed) {
-      return {
-        fieldName,
-        userValue: userDate,
-        correctValue: correctDate,
-        status: 'unknown',
-      };
+      return { fieldName, userValue: userDate, correctValue: correctDate, status: 'unknown' };
     }
 
     const diffDays = Math.abs(differenceInCalendarDays(userParsed, correctParsed));
-    const exactDays = this.yearsToDays(thresholds.exact);
-    const partialDays = this.yearsToDays(thresholds.partial);
-    const closeDays = this.yearsToDays(thresholds.close);
+    const exactDays = this.yearsToDays(thresholds.exactYears);
+    const partialDays = this.yearsToDays(thresholds.partialYears);
+    const closeDays = this.yearsToDays(thresholds.closeYears);
 
-    let status: MatchStatus;
+    let status: MatchStatus = 'wrong';
     if (diffDays <= exactDays) status = 'exact';
     else if (diffDays <= partialDays) status = 'partial';
     else if (diffDays <= closeDays) status = 'close';
-    else status = 'wrong';
 
     return {
       fieldName,
       userValue: userDate,
       correctValue: correctDate,
       status,
-      display: this.getArrow(userParsed.getTime(), correctParsed.getTime(), diffDays, exactDays),
+      direction: this.getDirection(userParsed.getTime(), correctParsed.getTime(), status),
     };
   }
 
-  private getDistance(user: number, correct: number, mode: NumericCompareMode): number {
-    if (mode === 'absolute') {
-      return Math.abs(user - correct);
-    }
-
-    if (correct === 0) {
-      return user === 0 ? 0 : 100;
-    }
-    return Math.abs(Math.max(user, correct) / Math.min(user, correct)) * 100;
+  private getDistance(user: number, correct: number, mode: NumericRuleConfig['mode']): number {
+    if (mode === 'absolute') return Math.abs(user - correct);
+    if (correct === 0) return user === 0 ? 0 : 100;
+    return (Math.abs(user - correct) / Math.abs(correct)) * 100;
   }
 
-  private getStatusByDistance(distance: number, rule: NumericRule): MatchStatus {
+  private getStatusByDistance(distance: number, rule: NumericRuleConfig): MatchStatus {
     if (distance <= rule.exact) return 'exact';
     if (distance <= rule.partial) return 'partial';
     if (distance <= rule.close) return 'close';
     return 'wrong';
   }
 
-  private getArrow(user: number, correct: number, distance: number, exactThreshold: number): string {
-    if (distance <= 0.01) return '=';
-    if (distance <= exactThreshold) return '≈';
-    return user > correct ? '↑' : '↓';
+  private getDirection(user: number, correct: number, status: MatchStatus): ComparisonDirection {
+    if (user === correct) return 'equal';
+    if (status === 'exact') return 'near';
+    return correct > user ? 'higher' : 'lower';
   }
 
   private parseDate(date: string): Date | undefined {
@@ -123,6 +112,6 @@ export class FieldComparator {
   }
 
   private yearsToDays(years: number): number {
-    return years * 365;
+    return years * 365.2425;
   }
 }

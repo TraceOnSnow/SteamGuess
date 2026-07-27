@@ -1,73 +1,125 @@
-/**
- * Game Search Box Component
- * Allows users to search and select a game
- */
-
-import React, { useState, useMemo } from 'react';
+import { useId, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Game } from '../../types/game';
 import { searchGames } from '../../data/games';
 import './SearchBox.css';
 
 interface SearchBoxProps {
+  games: Game[];
+  excludedAppIds: ReadonlySet<number>;
   onSelectGame: (game: Game) => void;
   isDisabled?: boolean;
 }
 
-export const SearchBox: React.FC<SearchBoxProps> = ({ onSelectGame, isDisabled = false }) => {
+export function SearchBox({ games, excludedAppIds, onSelectGame, isDisabled = false }: SearchBoxProps) {
   const { t } = useTranslation();
+  const listboxId = useId();
   const [query, setQuery] = useState('');
-  const [showResults, setShowResults] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const results = useMemo(() => {
-    if (!query.trim()) return [];
-    return searchGames(query);
-  }, [query]);
+  const results = useMemo(
+    () => searchGames(games, query, excludedAppIds),
+    [excludedAppIds, games, query],
+  );
 
-  const handleSelectGame = (game: Game) => {
+  const selectGame = (game: Game) => {
     onSelectGame(game);
     setQuery('');
-    setShowResults(false);
+    setIsOpen(false);
+    setActiveIndex(0);
   };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+      return;
+    }
+
+    if (results.length === 0) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setIsOpen(true);
+      setActiveIndex(index => (index + 1) % results.length);
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      setIsOpen(true);
+      setActiveIndex(index => (index - 1 + results.length) % results.length);
+    } else if (event.key === 'Enter' && isOpen) {
+      event.preventDefault();
+      selectGame(results[Math.min(activeIndex, results.length - 1)]);
+    }
+  };
+
+  const showMenu = isOpen && query.trim().length > 0;
 
   return (
     <div className="search-box">
-      <input
-        type="text"
-        placeholder={t('search.placeholder')}
-        value={query}
-        onChange={e => {
-          setQuery(e.target.value);
-          setShowResults(true);
-        }}
-        disabled={isDisabled}
-        className="search-input"
-      />
+      <label className="search-label" htmlFor={`${listboxId}-input`}>
+        {t('search.label')}
+      </label>
+      <div className="search-input-wrap">
+        <span className="search-icon" aria-hidden="true">⌕</span>
+        <input
+          id={`${listboxId}-input`}
+          type="search"
+          value={query}
+          placeholder={t('search.placeholder')}
+          disabled={isDisabled}
+          className="search-input"
+          autoComplete="off"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-controls={listboxId}
+          aria-expanded={showMenu}
+          aria-activedescendant={showMenu && results.length > 0 ? `${listboxId}-${activeIndex}` : undefined}
+          onFocus={() => setIsOpen(true)}
+          onChange={event => {
+            setQuery(event.target.value);
+            setActiveIndex(0);
+            setIsOpen(true);
+          }}
+          onKeyDown={handleKeyDown}
+          onBlur={event => {
+            if (!event.currentTarget.parentElement?.parentElement?.contains(event.relatedTarget)) {
+              setIsOpen(false);
+            }
+          }}
+        />
+      </div>
 
-      {showResults && results.length > 0 && (
-        <div className="search-results">
-          {results.map((game: Game) => (
+      {showMenu && (
+        <div className="search-results" id={listboxId} role="listbox">
+          {results.length > 0 ? results.map((game, index) => (
             <button
+              id={`${listboxId}-${index}`}
               key={game.appId}
-              className="result-item"
-              onClick={() => handleSelectGame(game)}
+              type="button"
+              role="option"
+              aria-selected={index === activeIndex}
+              className={`result-item ${index === activeIndex ? 'active' : ''}`}
+              onMouseDown={event => event.preventDefault()}
+              onMouseEnter={() => setActiveIndex(index)}
+              onClick={() => selectGame(game)}
             >
-              <img
-                src={game.header_image || ''}
-                alt={game.name}
-                className="result-image"
-                loading="lazy"
-              />
-              <div className="result-text">
-                <div className="result-name">{game.name}</div>
-                <div className="result-meta">
-                  {game.releaseDate.split('-')[0]}
-                </div>
-              </div>
+              {game.header_image ? (
+                <img src={game.header_image} alt="" className="result-image" loading="lazy" />
+              ) : (
+                <span className="result-image placeholder" aria-hidden="true" />
+              )}
+              <span className="result-text">
+                <span className="result-name">{game.name}</span>
+                <span className="result-meta">
+                  {game.releaseDate.slice(0, 4)} · App {game.appId}
+                </span>
+              </span>
             </button>
-          ))}
+          )) : (
+            <p className="search-empty" role="status">{t('search.noResults')}</p>
+          )}
         </div>
       )}
     </div>
   );
-};
+}
