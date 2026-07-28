@@ -26,3 +26,6 @@ data/raw
 
 
 token
+# Python generated files
+__pycache__/
+*.py[cod]

@@ -1,0 +1,8 @@
+{
+  "labels": [
+    { "appId": 730, "level": "easy", "excluded": false },
+    { "appId": 1245620, "level": "easy", "excluded": false },
+    { "appId": 435120, "level": "normal", "excluded": false },
+    { "appId": 0, "level": null, "excluded": true }
+  ]
+}

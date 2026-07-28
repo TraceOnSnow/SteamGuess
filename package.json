@@ -9,7 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "pics:tags": "node scripts/pics_tags_poc.mjs"
+    "pics:tags": "node scripts/pics_tags_poc.mjs",
+    "data:discover": "python3 scripts/build_steamspy_catalog.py",
+    "data:normalize": "python3 scripts/build_steamspy_catalog.py --from-raw",
+    "data:fit": "python3 scripts/fit_difficulty_regression.py",
+    "test:data": "python3 -m unittest discover -s scripts/tests -p \"test_*.py\""
   },
   "dependencies": {
     "date-fns": "^4.1.0",
