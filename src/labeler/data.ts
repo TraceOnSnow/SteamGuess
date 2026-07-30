@@ -1,3 +1,4 @@
+import { localizedGameNames } from '../data/localization';
 import type { LabelingCatalog, LabelingGame } from './types';
 
 const CATALOG_URL = `${import.meta.env.BASE_URL}labeling_catalog.json`;
@@ -15,12 +16,12 @@ export function searchLabelingGames(games: LabelingGame[], query: string, limit 
   if (!normalized) return [];
   const appIdQuery = Number.parseInt(normalized, 10);
   return games
-    .filter(game => game.name.toLocaleLowerCase().includes(normalized) || game.appId === appIdQuery)
+    .filter(game => localizedGameNames(game).some(name => name.toLocaleLowerCase().includes(normalized)) || game.appId === appIdQuery)
     .sort((left, right) => {
       if (left.appId === appIdQuery) return -1;
       if (right.appId === appIdQuery) return 1;
-      const leftStarts = left.name.toLocaleLowerCase().startsWith(normalized);
-      const rightStarts = right.name.toLocaleLowerCase().startsWith(normalized);
+      const leftStarts = localizedGameNames(left).some(name => name.toLocaleLowerCase().startsWith(normalized));
+      const rightStarts = localizedGameNames(right).some(name => name.toLocaleLowerCase().startsWith(normalized));
       if (leftStarts !== rightStarts) return leftStarts ? -1 : 1;
       return right.recognitionScore - left.recognitionScore;
     })

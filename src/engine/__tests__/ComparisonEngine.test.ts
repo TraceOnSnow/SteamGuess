@@ -7,7 +7,7 @@ function makeGame(overrides: Partial<Game> = {}): Game {
     appId: 10,
     name: 'Shared Name',
     releaseDate: '2020-01-01',
-    price: { us: { currency: 'USD', current: 20 } },
+    price: { us: { currency: 'USD', regular: 20 } },
     popularity: { ccu: 1_000 },
     reviews: { total: 100, positive: 80, negative: 20 },
     tags: { userTags: ['Action'], developers: ['Studio'], publishers: ['Publisher'] },

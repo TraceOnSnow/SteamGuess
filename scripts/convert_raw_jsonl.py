@@ -77,12 +77,12 @@ def build_game(appid: int, from_store: Dict[str, Any], from_spy: Dict[str, Any])
 
   price_overview = store_data.get("price_overview") or {}
   us_currency = ""
-  us_current = 0.0
+  us_regular = 0.0
   if isinstance(price_overview, dict):
     us_currency = str(price_overview.get("currency") or "")
-    us_current = round((to_int(price_overview.get("final"), 0) or 0) / 100, 2)
+    us_regular = round((to_int(price_overview.get("initial"), 0) or 0) / 100, 2)
   if bool(store_data.get("is_free")):
-    us_current = 0.0
+    us_regular = 0.0
 
   ccu = to_int(from_spy.get("ccu"), 0)
   owners_upper = parse_owners_upper(str(from_spy.get("owners", "")))
@@ -115,7 +115,7 @@ def build_game(appid: int, from_store: Dict[str, Any], from_spy: Dict[str, Any])
     "price": {
       "us": {
         "currency": us_currency,
-        "current": us_current,
+        "regular": us_regular,
       },
       "cn": {},
     },

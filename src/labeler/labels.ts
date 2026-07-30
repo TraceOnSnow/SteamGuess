@@ -32,13 +32,19 @@ export function parseLabels(payload: unknown): Map<number, DifficultyLabel> {
     const appId = Number(item.appId);
     const excluded = item.excluded === true;
     const level = item.level ?? null;
+    const score = typeof item.score === 'number' && Number.isFinite(item.score)
+      ? Math.max(0, Math.min(100, item.score))
+      : undefined;
     if (!Number.isInteger(appId) || appId <= 0) continue;
     if (!excluded && !LEVELS.has(level as DifficultyLevel)) continue;
     result.set(appId, {
       appId,
       level: LEVELS.has(level as DifficultyLevel) ? level as DifficultyLevel : null,
+      score,
       excluded,
       reviewedAt: typeof item.reviewedAt === 'string' ? item.reviewedAt : new Date().toISOString(),
+      automatic: item.automatic === true,
+      excludedReason: item.excludedReason === 'software' ? 'software' : item.excludedReason === 'manual' ? 'manual' : undefined,
     });
   }
   return result;
@@ -51,4 +57,33 @@ export function buildExportPayload(labels: ReadonlyMap<number, DifficultyLabel>,
     sourceCatalog: catalog,
     labels: [...labels.values()].sort((left, right) => left.appId - right.appId),
   };
+}
+
+
+export function isSoftwareApp(appType?: string | null): boolean {
+  return appType?.toLocaleLowerCase() === 'application';
+}
+
+export function applyAutomaticSoftwareExclusions(
+  labels: ReadonlyMap<number, DifficultyLabel>,
+  games: ReadonlyArray<{ appId: number; appType?: string | null }>,
+  now = () => new Date().toISOString(),
+): { labels: Map<number, DifficultyLabel>; changed: number } {
+  const next = new Map(labels);
+  let changed = 0;
+  for (const game of games) {
+    if (!isSoftwareApp(game.appType)) continue;
+    const existing = next.get(game.appId);
+    if (existing?.excluded && existing.excludedReason === 'software') continue;
+    next.set(game.appId, {
+      appId: game.appId,
+      level: null,
+      excluded: true,
+      reviewedAt: existing?.reviewedAt ?? now(),
+      automatic: true,
+      excludedReason: 'software',
+    });
+    changed += 1;
+  }
+  return { labels: next, changed };
 }

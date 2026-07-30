@@ -31,6 +31,11 @@
       "properties": {
         "appId": { "type": "integer", "minimum": 1 },
         "name": { "type": "string", "minLength": 1 },
+        "localizedNames": {
+          "type": "object",
+          "properties": { "zh": { "type": "string", "minLength": 1 } },
+          "additionalProperties": { "type": "string" }
+        },
         "type": { "type": ["string", "null"] },
         "releaseDate": { "type": ["string", "null"] },
         "developers": { "type": "array", "items": { "type": "string" } },

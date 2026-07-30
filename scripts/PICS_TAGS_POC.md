@@ -30,6 +30,7 @@ both the requested localized name and Steam's English name when available.
 
 ## Notes
 
+- App ID input accepts arrays, `{ "appids": [...] }`, and catalog `{ "games": [{ "appId": ... }] }` files.
 - No Steam account or Web API key is required; the script logs in anonymously.
 - Anonymous PICS works in the current test. If Steam rejects the unified tag-name lookup, the script automatically uses the public Storefront tag dictionary.
 - The script disables `steam-user`'s persistent data directory.

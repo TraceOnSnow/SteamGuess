@@ -111,6 +111,8 @@ async function loadAppids(options) {
       values.push(...parsed);
     } else if (parsed && Array.isArray(parsed.appids)) {
       values.push(...parsed.appids);
+    } else if (parsed && Array.isArray(parsed.games)) {
+      values.push(...parsed.games.map((game) => game?.appId));
     } else {
       throw new Error(`Unsupported appid file format: ${options.file}`);
     }

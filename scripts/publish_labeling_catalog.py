@@ -19,17 +19,21 @@ def compact_game(game: dict[str, Any], demo: dict[int, dict[str, Any]]) -> dict[
     appid = int(game["appId"])
     rich = demo.get(appid, {})
     tags = rich.get("tags", {})
+    pics_tags = [str(tag.get("name") or "") for tag in game.get("tags", []) if tag.get("name")]
     hints = rich.get("hints", {})
     return {
         "appId": appid,
         "name": game["name"],
-        "developers": game.get("developers", []),
-        "publishers": game.get("publishers", []),
-        "userTags": tags.get("userTags", []),
+        "localizedNames": game.get("localizedNames", {}),
+        "appType": game.get("type"),
+        "developers": tags.get("developers", []) or game.get("developers", []),
+        "publishers": tags.get("publishers", []) or game.get("publishers", []),
+        "userTags": tags.get("userTags", []) or pics_tags,
         "headerImage": rich.get("header_image"),
         "screenshotUrl": hints.get("screenshotUrl"),
         "metrics": game["metrics"],
         "recognitionScore": game["recognition"]["score"],
+        "recognitionFeatures": game["recognition"]["features"],
         "suggestedLevel": game["difficulty"]["level"],
     }
 

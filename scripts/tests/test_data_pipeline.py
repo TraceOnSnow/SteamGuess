@@ -14,6 +14,8 @@ def load(name, relative):
 
 catalog = load("catalog", "scripts/build_steamspy_catalog.py")
 regression = load("regression", "scripts/fit_difficulty_regression.py")
+converter = load("converter", "scripts/convert_raw_jsonl.py")
+localization = load("localization", "scripts/fetch_localized_names.py")
 
 
 class CatalogTests(unittest.TestCase):
@@ -48,6 +50,27 @@ class RegressionTests(unittest.TestCase):
         self.assertEqual(regression.level_for_score(30), "normal")
         self.assertEqual(regression.level_for_score(60), "hard")
         self.assertEqual(regression.level_for_score(90), "hell")
+
+
+class PlayableCatalogTests(unittest.TestCase):
+    def test_store_conversion_uses_regular_price_not_sale_price(self):
+        store = {"data": {
+            "name": "Sale Game",
+            "price_overview": {"currency": "USD", "initial": 1999, "final": 399},
+            "release_date": {"date": "1 Jan, 2020"},
+        }}
+        game = converter.build_game(10, store, {})
+        self.assertEqual(game["price"]["us"]["regular"], 19.99)
+        self.assertNotIn("current", game["price"]["us"])
+
+
+class LocalizationTests(unittest.TestCase):
+    def test_extracts_exact_localized_store_name(self):
+        payload = {"1245620": {"success": True, "data": {"name": "艾尔登法环"}}}
+        self.assertEqual(localization.extract_localized_name(payload, 1245620), "艾尔登法环")
+
+    def test_rejects_unsuccessful_store_payload(self):
+        self.assertIsNone(localization.extract_localized_name({"10": {"success": False}}, 10))
 
 
 if __name__ == "__main__":

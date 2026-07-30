@@ -4,7 +4,7 @@
 
 export interface GamePrice {
   currency?: string;
-  current: number;
+  regular: number;
 }
 
 export interface GamePriceSet {
@@ -33,9 +33,17 @@ export interface GameHints {
   funnyReview?: string;
 }
 
+export interface GameDifficulty {
+  level: 'easy' | 'normal' | 'hard' | 'hell';
+  score: number;
+  confidence: number;
+  source: 'manual' | 'regression' | 'fallback';
+}
+
 export interface Game {
   appId: number;
   name: string;
+  localizedNames?: { zh?: string };
   header_image?: string;
   releaseDate: string; // YYYY-MM-DD
   price: GamePriceSet;
@@ -43,5 +51,6 @@ export interface Game {
   reviews: GameReviews;
   tags: GameTags;
   hints?: GameHints;
+  difficulty?: GameDifficulty;
 }
 

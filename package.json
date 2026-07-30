@@ -14,7 +14,10 @@
     "data:normalize": "python3 scripts/build_steamspy_catalog.py --from-raw",
     "data:fit": "python3 scripts/fit_difficulty_regression.py",
     "test:data": "python3 -m unittest discover -s scripts/tests -p \"test_*.py\"",
-    "data:publish-labeler": "python3 scripts/publish_labeling_catalog.py"
+    "data:publish-labeler": "python3 scripts/publish_labeling_catalog.py",
+    "data:merge-pics": "python3 scripts/merge_pics_catalog.py",
+    "data:publish-playable": "python3 scripts/publish_playable_catalog.py",
+    "data:localize-names": "python3 scripts/fetch_localized_names.py"
   },
   "dependencies": {
     "date-fns": "^4.1.0",

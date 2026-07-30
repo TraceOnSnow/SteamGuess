@@ -11,9 +11,19 @@ export interface LabelingMetrics {
   averageTwoWeeksMinutes: number;
 }
 
+export interface RecognitionFeatures {
+  owners: number;
+  ccu: number;
+  reviews: number;
+  playtime: number;
+  positiveRatio: number;
+}
+
 export interface LabelingGame {
   appId: number;
   name: string;
+  localizedNames?: { zh?: string };
+  appType?: string | null;
   developers: string[];
   publishers: string[];
   userTags: string[];
@@ -21,14 +31,18 @@ export interface LabelingGame {
   screenshotUrl?: string | null;
   metrics: LabelingMetrics;
   recognitionScore: number;
+  recognitionFeatures?: RecognitionFeatures;
   suggestedLevel: DifficultyLevel;
 }
 
 export interface DifficultyLabel {
   appId: number;
   level: DifficultyLevel | null;
+  score?: number;
   excluded: boolean;
   reviewedAt: string;
+  automatic?: boolean;
+  excludedReason?: 'manual' | 'software';
 }
 
 export interface LabelingCatalog {

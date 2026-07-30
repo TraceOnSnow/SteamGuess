@@ -7,7 +7,7 @@ function game(appId: number, name: string): Game {
     appId,
     name,
     releaseDate: '2020-01-01',
-    price: { us: { current: 0 } },
+    price: { us: { regular: 0 } },
     popularity: { ccu: 0 },
     reviews: { total: 1, positive: 1, negative: 0 },
     tags: { userTags: [], developers: [], publishers: [] },
@@ -25,6 +25,11 @@ describe('game catalog helpers', () => {
   it('prioritizes prefix matches and excludes previous guesses', () => {
     const results = searchGames(games, 'half', new Set([2]));
     expect(results.map(item => item.appId)).toEqual([1, 3]);
+  });
+
+  it('searches optional Chinese aliases without changing the difficulty pool', () => {
+    const localized = { ...game(5, 'ELDEN RING'), localizedNames: { zh: '艾尔登法环' } };
+    expect(searchGames([...games, localized], '艾尔登', new Set()).map(item => item.appId)).toEqual([5]);
   });
 
   it('caps search results', () => {

@@ -26,8 +26,8 @@ export class ComparisonEngine {
       nameMatch,
       priceMatch: this.comparator.compareNumeric({
         fieldName: 'Price',
-        userValue: guess.price.us.current,
-        correctValue: correctGame.price.us.current,
+        userValue: guess.price.us.regular,
+        correctValue: correctGame.price.us.regular,
         rule: comparisonConfig.rules.price,
         formatter: value => priceFormatter.format(value),
       }),

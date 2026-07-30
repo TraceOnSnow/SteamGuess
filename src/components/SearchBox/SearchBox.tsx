@@ -12,7 +12,7 @@ interface SearchBoxProps {
 }
 
 export function SearchBox({ games, excludedAppIds, onSelectGame, isDisabled = false }: SearchBoxProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const listboxId = useId();
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -109,9 +109,9 @@ export function SearchBox({ games, excludedAppIds, onSelectGame, isDisabled = fa
                 <span className="result-image placeholder" aria-hidden="true" />
               )}
               <span className="result-text">
-                <span className="result-name">{game.name}</span>
+                <span className="result-name">{i18n.language.startsWith('zh') && game.localizedNames?.zh ? game.localizedNames.zh : game.name}</span>
                 <span className="result-meta">
-                  {game.releaseDate.slice(0, 4)} · App {game.appId}
+                  {game.localizedNames?.zh && game.localizedNames.zh !== game.name ? `${game.name} · ` : ''}{game.releaseDate.slice(0, 4)} · App {game.appId}
                 </span>
               </span>
             </button>

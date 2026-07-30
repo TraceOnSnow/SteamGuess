@@ -246,23 +246,12 @@
   opacity: 0.48;
 }
 
-.guess-prompt {
-  margin: 28px 0 20px;
-}
-
-.guess-prompt h2,
 .outcome-card h2,
 .table-heading h2 {
   margin: 0;
   color: var(--ink);
   font-size: clamp(22px, 3vw, 30px);
   letter-spacing: -0.025em;
-}
-
-.guess-prompt p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  line-height: 1.6;
 }
 
 .outcome-card {
@@ -387,5 +376,70 @@
 
   .outcome-card .btn {
     width: 100%;
+  }
+}
+
+.settings-panel .difficulty-control { flex-wrap: wrap; }
+.settings-panel .model-status {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, .72);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.settings-panel {
+  display: grid;
+  min-width: min(440px, calc(100vw - 32px));
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+.settings-panel .segmented-control { justify-self: end; }
+.settings-panel .model-status { color: var(--muted); }
+
+/* Once the first guess is submitted, the game surface becomes the page header. */
+.game-started .app-header {
+  display: none;
+}
+
+.game-started .app-main {
+  margin-top: 0;
+  padding-top: 14px;
+}
+
+.game-started .game-panel {
+  padding: 14px 18px;
+}
+
+.game-search-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 680px) auto;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.game-search-row .search-box {
+  width: 100%;
+  max-width: none;
+}
+
+.game-toolbar {
+  align-items: center;
+  padding: 0;
+  border: 0;
+}
+
+.game-started .app-footer {
+  padding-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .game-search-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .game-toolbar {
+    justify-content: space-between;
   }
 }
