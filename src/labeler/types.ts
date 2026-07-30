@@ -2,6 +2,9 @@ export type DifficultyLevel = 'easy' | 'normal' | 'hard' | 'hell';
 
 export interface LabelingMetrics {
   ccu: number;
+  peakYesterday?: number;
+  peak7d?: number;
+  peak7dSamples?: number;
   ownersMin: number;
   ownersMax: number;
   positive: number;

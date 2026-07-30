@@ -111,7 +111,7 @@ export function SearchBox({ games, excludedAppIds, onSelectGame, isDisabled = fa
               <span className="result-text">
                 <span className="result-name">{i18n.language.startsWith('zh') && game.localizedNames?.zh ? game.localizedNames.zh : game.name}</span>
                 <span className="result-meta">
-                  {game.localizedNames?.zh && game.localizedNames.zh !== game.name ? `${game.name} · ` : ''}{game.releaseDate.slice(0, 4)} · App {game.appId}
+                  {game.localizedNames?.zh && game.localizedNames.zh !== game.name ? `${game.name} · ` : ''}{game.releaseDate ? game.releaseDate.slice(0, 4) : '—'} · App {game.appId}
                 </span>
               </span>
             </button>

@@ -76,31 +76,12 @@
   cursor: pointer;
 }
 
+.header-actions { display: flex; align-items: center; gap: 8px; }
+
+.icon-button { text-decoration: none; font: inherit; }
+
 .icon-button:hover {
   background: rgba(255, 255, 255, 0.15);
-}
-
-.settings-panel {
-  position: absolute;
-  z-index: 5;
-  top: 76px;
-  right: max(24px, calc((100vw - 1240px) / 2));
-  display: flex;
-  min-width: 270px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  color: var(--ink);
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-
-.settings-panel > span {
-  font-size: 14px;
-  font-weight: 700;
 }
 
 .segmented-control {
@@ -354,12 +335,6 @@
     margin-top: 48px;
   }
 
-  .settings-panel {
-    top: 70px;
-    right: 20px;
-    left: 20px;
-  }
-
   .app-main {
     width: min(100% - 20px, 1240px);
     margin-top: -32px;
@@ -378,23 +353,6 @@
     width: 100%;
   }
 }
-
-.settings-panel .difficulty-control { flex-wrap: wrap; }
-.settings-panel .model-status {
-  grid-column: 1 / -1;
-  color: rgba(255, 255, 255, .72);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.settings-panel {
-  display: grid;
-  min-width: min(440px, calc(100vw - 32px));
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-}
-.settings-panel .segmented-control { justify-self: end; }
-.settings-panel .model-status { color: var(--muted); }
 
 /* Once the first guess is submitted, the game surface becomes the page header. */
 .game-started .app-header {
@@ -441,5 +399,19 @@
 
   .game-toolbar {
     justify-content: space-between;
+  }
+}
+
+.outcome-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+}
+
+@media (max-width: 700px) {
+  .outcome-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }

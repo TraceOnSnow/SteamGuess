@@ -488,7 +488,10 @@ function DifficultyLabeler() {
               </div>
 
               <dl className="metric-grid">
-                <div><dt>当前在线</dt><dd>{formatNumber(currentGame.metrics.ccu)}</dd></div>
+                <div>
+                  <dt>{currentGame.metrics.peak7d !== undefined ? '近 7 日峰值' : '昨日峰值'}</dt>
+                  <dd>{formatNumber(currentGame.metrics.peak7d ?? currentGame.metrics.peakYesterday ?? currentGame.metrics.ccu)}</dd>
+                </div>
                 <div><dt>预计拥有者</dt><dd>{formatNumber(currentGame.metrics.ownersMin)}–{formatNumber(currentGame.metrics.ownersMax)}</dd></div>
                 <div><dt>评价数量</dt><dd>{formatNumber(currentGame.metrics.reviewsTotal)}</dd></div>
                 <div><dt>好评比例</dt><dd>{positiveRatio}%</dd></div>

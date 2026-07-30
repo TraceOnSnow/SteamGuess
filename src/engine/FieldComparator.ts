@@ -9,7 +9,7 @@ import type {
 export interface NumericCompareParams {
   fieldName: string;
   userValue: number | undefined;
-  correctValue: number;
+  correctValue: number | undefined;
   rule: NumericRuleConfig;
   formatter?: (value: number) => string;
 }
@@ -30,11 +30,16 @@ export class FieldComparator {
   compareNumeric({ fieldName, userValue, correctValue, rule, formatter }: NumericCompareParams): FieldComparison {
     const print = formatter ?? String;
 
-    if (userValue === undefined || !Number.isFinite(userValue)) {
+    if (
+      userValue === undefined
+      || correctValue === undefined
+      || !Number.isFinite(userValue)
+      || !Number.isFinite(correctValue)
+    ) {
       return {
         fieldName,
-        userValue: null,
-        correctValue: print(correctValue),
+        userValue: userValue === undefined || !Number.isFinite(userValue) ? null : print(userValue),
+        correctValue: correctValue === undefined || !Number.isFinite(correctValue) ? null : print(correctValue),
         status: 'unknown',
       };
     }

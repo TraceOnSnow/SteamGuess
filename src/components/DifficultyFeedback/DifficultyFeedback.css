@@ -1,0 +1,84 @@
+.difficulty-feedback {
+  margin-top: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(26, 48, 36, .07);
+}
+.difficulty-feedback-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.difficulty-feedback h3 { margin: 0; color: var(--ink); font-size: 19px; }
+.feedback-close {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+.feedback-close:hover { background: var(--surface-soft); color: var(--ink); }
+.difficulty-level-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+.difficulty-level-options button {
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--muted);
+  background: #fff;
+  font-weight: 750;
+  cursor: pointer;
+}
+.difficulty-level-options button:hover,
+.difficulty-level-options button.selected {
+  border-color: var(--brand);
+  color: var(--brand-dark);
+  background: var(--brand-soft);
+}
+.difficulty-score-editor {
+  display: grid;
+  grid-template-columns: auto minmax(160px, 1fr) 78px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.difficulty-score-editor label { color: var(--ink); font-weight: 750; }
+.difficulty-score-editor input[type='range'] { width: 100%; accent-color: var(--brand); }
+.difficulty-score-number {
+  width: 78px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: #fff;
+  font: 750 16px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-align: center;
+}
+.difficulty-feedback-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 16px;
+}
+.feedback-submit-status { color: var(--muted); font-size: 13px; }
+.feedback-submit-status.status-saved { color: var(--brand-dark); }
+.feedback-submit-status.status-error { color: var(--danger); }
+@media (max-width: 620px) {
+  .difficulty-level-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .difficulty-score-editor { grid-template-columns: 1fr 74px; }
+  .difficulty-score-editor label { grid-column: 1 / -1; }
+  .difficulty-feedback-actions { align-items: stretch; flex-direction: column; }
+}

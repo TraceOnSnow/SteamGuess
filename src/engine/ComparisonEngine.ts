@@ -4,12 +4,26 @@ import { comparisonConfig } from '../config/comparison';
 import { FieldComparator } from './FieldComparator';
 
 const numberFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
-const priceFormatter = new Intl.NumberFormat('en-US', {
+export function getPlayerPeak(game: Game): number {
+  return game.popularity.peak7d ?? game.popularity.peakYesterday ?? game.popularity.ccu;
+}
+
+const priceFormatter = new Intl.NumberFormat('zh-CN', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'CNY',
   minimumFractionDigits: 0,
   maximumFractionDigits: 2,
 });
+
+export function getRegularPrice(game: Game): number | undefined {
+  const price = game.price.cn?.regular;
+  return typeof price === 'number' && Number.isFinite(price) ? price : undefined;
+}
+
+export function formatRegularPrice(game: Game): string {
+  const price = getRegularPrice(game);
+  return price === undefined ? '—' : priceFormatter.format(price);
+}
 
 export class ComparisonEngine {
   private readonly comparator = new FieldComparator();
@@ -26,15 +40,15 @@ export class ComparisonEngine {
       nameMatch,
       priceMatch: this.comparator.compareNumeric({
         fieldName: 'Price',
-        userValue: guess.price.us.regular,
-        correctValue: correctGame.price.us.regular,
+        userValue: getRegularPrice(guess),
+        correctValue: getRegularPrice(correctGame),
         rule: comparisonConfig.rules.price,
         formatter: value => priceFormatter.format(value),
       }),
       ccuMatch: this.comparator.compareNumeric({
         fieldName: 'Popularity',
-        userValue: guess.popularity.ccu,
-        correctValue: correctGame.popularity.ccu,
+        userValue: getPlayerPeak(guess),
+        correctValue: getPlayerPeak(correctGame),
         rule: comparisonConfig.rules.popularity,
         formatter: value => numberFormatter.format(value),
       }),

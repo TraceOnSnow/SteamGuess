@@ -7,7 +7,7 @@ function makeGame(overrides: Partial<Game> = {}): Game {
     appId: 10,
     name: 'Shared Name',
     releaseDate: '2020-01-01',
-    price: { us: { currency: 'USD', regular: 20 } },
+    price: { us: { currency: 'USD', regular: 20 }, cn: { currency: 'CNY', regular: 68 } },
     popularity: { ccu: 1_000 },
     reviews: { total: 100, positive: 80, negative: 20 },
     tags: { userTags: ['Action'], developers: ['Studio'], publishers: ['Publisher'] },
@@ -31,6 +31,23 @@ describe('ComparisonEngine', () => {
     expect(result.isCorrect).toBe(true);
     expect(result.allFieldsMatches).toHaveLength(6);
     expect(result.allFieldsMatches.every(field => field.status === 'exact')).toBe(true);
+  });
+
+  it('uses the mainland-China regular price', () => {
+    const guess = makeGame({ price: { us: { regular: 1 }, cn: { currency: 'CNY', regular: 68 } } });
+    const answer = makeGame({ price: { us: { regular: 999 }, cn: { currency: 'CNY', regular: 68 } } });
+    const result = engine.compare(guess, answer);
+    expect(result.priceMatch.status).toBe('exact');
+    expect(result.priceMatch.userValue).toContain('68');
+  });
+
+  it('marks a missing mainland-China price as unknown instead of converting USD', () => {
+    const result = engine.compare(
+      makeGame({ price: { us: { regular: 20 }, cn: {} } }),
+      makeGame(),
+    );
+    expect(result.priceMatch.status).toBe('unknown');
+    expect(result.priceMatch.userValue).toBeNull();
   });
 
   it('includes total reviews in allFieldsMatches', () => {

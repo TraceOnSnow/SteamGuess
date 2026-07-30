@@ -9,8 +9,16 @@
  */
 
 import { readFile, writeFile } from 'node:fs/promises';
+import { isAbsolute, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 import SteamUser from 'steam-user';
+
+const PROJECT_ROOT = fileURLToPath(new URL('../..', import.meta.url));
+
+function projectPath(value) {
+  return isAbsolute(value) ? value : resolve(PROJECT_ROOT, value);
+}
 
 const DEFAULT_APPIDS = [730, 1245620, 1091500];
 const DEFAULT_BATCH_SIZE = 50;
@@ -106,7 +114,7 @@ async function loadAppids(options) {
   const values = [...options.appids];
 
   if (options.file) {
-    const parsed = JSON.parse(await readFile(options.file, 'utf8'));
+    const parsed = JSON.parse(await readFile(projectPath(options.file), 'utf8'));
     if (Array.isArray(parsed)) {
       values.push(...parsed);
     } else if (parsed && Array.isArray(parsed.appids)) {
@@ -323,7 +331,7 @@ async function run() {
     console.log(json);
 
     if (options.out) {
-      await writeFile(options.out, `${json}\n`, 'utf8');
+      await writeFile(projectPath(options.out), `${json}\n`, 'utf8');
       console.error(`[PICS] wrote ${options.out}`);
     }
   } finally {

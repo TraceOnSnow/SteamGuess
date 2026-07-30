@@ -46,6 +46,17 @@ describe('FieldComparator', () => {
     }).status).toBe('close');
   });
 
+  it('returns unknown when the answer value is missing', () => {
+    const result = comparator.compareNumeric({
+      fieldName: 'Price',
+      userValue: 68,
+      correctValue: undefined,
+      rule: percentRule,
+    });
+    expect(result.status).toBe('unknown');
+    expect(result.correctValue).toBeNull();
+  });
+
   it('compares full release dates and exposes the answer direction', () => {
     const result = comparator.compareDate(
       'Release Date',

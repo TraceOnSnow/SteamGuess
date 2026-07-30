@@ -4,9 +4,9 @@ export const comparisonConfig: ComparisonConfig = {
   rules: {
     price: {
       mode: 'absolute',
-      exact: 1,
-      partial: 5,
-      close: 15,
+      exact: 5,
+      partial: 25,
+      close: 75,
     },
     popularity: {
       mode: 'percent',

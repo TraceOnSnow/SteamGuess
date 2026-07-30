@@ -184,7 +184,9 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
             "publishers": [str(row["publisher"]).strip()] if row.get("publisher") else [],
             "tags": [],
             "metrics": {
+                # SteamSpy documents ccu as the previous day's peak, not a live count.
                 "ccu": as_int(row.get("ccu")),
+                "peakYesterday": as_int(row.get("ccu")),
                 "ownersMin": owners_min,
                 "ownersMax": owners_max,
                 "positive": positive,
@@ -245,6 +247,30 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
     }
 
 
+
+def preserve_enrichment(catalog: dict[str, Any], previous: dict[str, Any]) -> None:
+    """Carry forward slower-changing enrichment when refreshing SteamSpy rows."""
+    old_games = {int(game["appId"]): game for game in previous.get("games", []) if game.get("appId")}
+    for game in catalog.get("games", []):
+        old = old_games.get(int(game["appId"]))
+        if not old:
+            continue
+        for field in ("localizedNames", "type", "picsChangeNumber", "tags"):
+            if old.get(field) not in (None, [], {}):
+                game[field] = old[field]
+        old_metrics = old.get("metrics", {})
+        for field in ("peak7d", "peak7dSamples"):
+            if field in old_metrics:
+                game["metrics"][field] = old_metrics[field]
+        preserved_sources = [
+            source for source in old.get("sources", [])
+            if source.get("service") != "steamspy"
+        ]
+        game["sources"].extend(preserved_sources)
+        for field, source in old.get("fieldSources", {}).items():
+            if field not in {"identity", "developers", "publishers", "metrics", "recognition", "difficulty"}:
+                game["fieldSources"][field] = source
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--pages", default="0,1", help="Comma-separated SteamSpy page numbers")
@@ -284,8 +310,11 @@ def main() -> None:
         print(f"page={page} rows={len(payload)} transport={transport} raw={path}")
         raw_pages.append((page, payload, retrieved_at, transport))
 
-    catalog = normalize(raw_pages)
     out = Path(args.out)
+    previous = json.loads(out.read_text(encoding="utf-8")) if out.exists() else None
+    catalog = normalize(raw_pages)
+    if isinstance(previous, dict):
+        preserve_enrichment(catalog, previous)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(catalog["stats"], ensure_ascii=False, indent=2))

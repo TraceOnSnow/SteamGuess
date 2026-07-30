@@ -13,7 +13,11 @@ export interface GamePriceSet {
 }
 
 export interface GamePopularity {
+  /** Legacy SteamSpy field: peak concurrent users for the previous day. */
   ccu: number;
+  peakYesterday?: number;
+  peak7d?: number;
+  peak7dSamples?: number;
 }
 
 export interface GameReviews {
