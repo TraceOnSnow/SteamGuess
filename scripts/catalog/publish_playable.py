@@ -14,6 +14,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from scripts.catalog.common import split_company_names
+
 
 def values(payload: Any) -> list[dict[str, Any]]:
     if isinstance(payload, list):
@@ -79,8 +81,8 @@ def build_game(source: dict[str, Any], previous: dict[str, Any]) -> dict[str, An
         "reviews": {"total": positive + negative, "positive": positive, "negative": negative},
         "tags": {
             "userTags": previous_tags.get("userTags") or tag_names(source),
-            "developers": source.get("developers", []) or previous_tags.get("developers", []),
-            "publishers": source.get("publishers", []) or previous_tags.get("publishers", []),
+            "developers": split_company_names(source.get("developers", []) or previous_tags.get("developers", [])),
+            "publishers": split_company_names(source.get("publishers", []) or previous_tags.get("publishers", [])),
         },
         "hints": hints,
         "header_image": header_image(appid, previous),

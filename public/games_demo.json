@@ -540,7 +540,8 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "FromSoftware, Inc., Bandai Namco Entertainment"
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
       ]
     },
     "hints": {
@@ -1748,7 +1749,8 @@
         "Horror"
       ],
       "developers": [
-        "Nicalis, Inc., Edmund McMillen"
+        "Nicalis, Inc.",
+        "Edmund McMillen"
       ],
       "publishers": [
         "Nicalis, Inc."
@@ -1870,10 +1872,14 @@
         "Touch-Friendly"
       ],
       "developers": [
-        "Firaxis Games, Aspyr (Mac), Aspyr (Linux)"
+        "Firaxis Games",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ],
       "publishers": [
-        "2K, Aspyr (Mac), Aspyr (Linux)"
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ]
     },
     "hints": {
@@ -1995,7 +2001,10 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "Activision (Excluding Japan and Asia), FromSoftware, Inc. (Japan), 方块游戏 (Asia)"
+        "Activision (Excluding Japan and Asia)",
+        "FromSoftware",
+        "Inc. (Japan)",
+        "方块游戏 (Asia)"
       ]
     },
     "hints": {
@@ -2413,10 +2422,14 @@
         "Indie"
       ],
       "developers": [
-        "Studio Wildcard, Instinct Games, Efecto Studios, Virtual Basement LLC"
+        "Studio Wildcard",
+        "Instinct Games",
+        "Efecto Studios",
+        "Virtual Basement LLC"
       ],
       "publishers": [
-        "Studio Wildcard, Snail Games USA"
+        "Studio Wildcard",
+        "Snail Games USA"
       ]
     },
     "hints": {
@@ -2652,10 +2665,14 @@
         "Sci-fi"
       ],
       "developers": [
-        "Gearbox Software, Aspyr (Mac), Aspyr (Linux)"
+        "Gearbox Software",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ],
       "publishers": [
-        "2K, Aspyr (Mac), Aspyr (Linux)"
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ]
     },
     "hints": {
@@ -3016,10 +3033,14 @@
         "Atmospheric"
       ],
       "developers": [
-        "Firaxis Games, Aspyr (Mac), Aspyr (Linux)"
+        "Firaxis Games",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ],
       "publishers": [
-        "2K, Aspyr (Mac), Aspyr (Linux)"
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ]
     },
     "hints": {
@@ -3807,7 +3828,8 @@
         "Hopoo Games"
       ],
       "publishers": [
-        "Gearbox Publishing, 2K"
+        "Gearbox Publishing",
+        "2K"
       ]
     },
     "hints": {
@@ -3929,7 +3951,8 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "FromSoftware, Inc., Bandai Namco Entertainment"
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
       ]
     },
     "hints": {
@@ -3984,7 +4007,15 @@
         "Third Person"
       ],
       "developers": [
-        "Treyarch, Raven Software, Beenox, High Moon Studios, Activision Shanghai, Sledgehammer Games, Infinity Ward, Demonware, Toys for Bob"
+        "Treyarch",
+        "Raven Software",
+        "Beenox",
+        "High Moon Studios",
+        "Activision Shanghai",
+        "Sledgehammer Games",
+        "Infinity Ward",
+        "Demonware",
+        "Toys for Bob"
       ],
       "publishers": [
         "Activision"
@@ -5858,7 +5889,11 @@
         "Online Co-Op"
       ],
       "developers": [
-        "343 Industries, Splash Damage, Ruffian Games, Bungie, Saber Interactive"
+        "343 Industries",
+        "Splash Damage",
+        "Ruffian Games",
+        "Bungie",
+        "Saber Interactive"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -6460,7 +6495,8 @@
         "Multiplayer"
       ],
       "developers": [
-        "Paradox Development Studio, Paradox Tinto"
+        "Paradox Development Studio",
+        "Paradox Tinto"
       ],
       "publishers": [
         "Paradox Interactive"
@@ -6765,7 +6801,12 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "World's Edge, Forgotten Empires, CaptureAge, Tantalus Media, Wicked Witch, Feral Interactive"
+        "World's Edge",
+        "Forgotten Empires",
+        "CaptureAge",
+        "Tantalus Media",
+        "Wicked Witch",
+        "Feral Interactive"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -6948,10 +6989,12 @@
         "Split Screen"
       ],
       "developers": [
-        "Treyarch, Aspyr (Mac)"
+        "Treyarch",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "Activision, Aspyr (Mac)"
+        "Activision",
+        "Aspyr (Mac)"
       ]
     },
     "hints": {
@@ -7620,7 +7663,8 @@
         "Eleventh Hour Games"
       ],
       "publishers": [
-        "Eleventh Hour Games, KRAFTON, Inc"
+        "Eleventh Hour Games",
+        "KRAFTON, Inc"
       ]
     },
     "hints": {},
@@ -7676,7 +7720,8 @@
         "PvE"
       ],
       "developers": [
-        "Santa Monica Studio, Jetpack Interactive"
+        "Santa Monica Studio",
+        "Jetpack Interactive"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -7737,7 +7782,13 @@
         "Choose Your Own Adventure"
       ],
       "developers": [
-        "Ubisoft Quebec, Ubisoft Montreal, Ubisoft Bucharest, Ubisoft Singapore, Ubisoft Montpellier, Ubisoft Kiev, Ubisoft Shanghai"
+        "Ubisoft Quebec",
+        "Ubisoft Montreal",
+        "Ubisoft Bucharest",
+        "Ubisoft Singapore",
+        "Ubisoft Montpellier",
+        "Ubisoft Kiev",
+        "Ubisoft Shanghai"
       ],
       "publishers": [
         "Ubisoft"
@@ -7798,7 +7849,10 @@
         "Adventure"
       ],
       "developers": [
-        "Skybox Labs, Hidden Path Entertainment, Ensemble Studios, Forgotten Empires"
+        "Skybox Labs",
+        "Hidden Path Entertainment",
+        "Ensemble Studios",
+        "Forgotten Empires"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -8226,7 +8280,8 @@
         "PopCap Games, Inc."
       ],
       "publishers": [
-        "PopCap Games, Inc., Electronic Arts"
+        "PopCap Games, Inc.",
+        "Electronic Arts"
       ]
     },
     "hints": {
@@ -8465,7 +8520,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Orteil, DashNet"
+        "Orteil",
+        "DashNet"
       ],
       "publishers": [
         "Playsaurus"
@@ -8828,10 +8884,14 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -9255,7 +9315,8 @@
         "Co-op"
       ],
       "developers": [
-        "Rockstar North, Rockstar Toronto"
+        "Rockstar North",
+        "Rockstar Toronto"
       ],
       "publishers": [
         "Rockstar Games"
@@ -9375,7 +9436,8 @@
         "PvP"
       ],
       "developers": [
-        "Funcom, Inflexion Games"
+        "Funcom",
+        "Inflexion Games"
       ],
       "publishers": [
         "Funcom"
@@ -9611,10 +9673,14 @@
         "Singleplayer"
       ],
       "developers": [
-        "Firaxis Games, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Firaxis Games",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "2K, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "2K",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -9672,10 +9738,12 @@
         "Co-op"
       ],
       "developers": [
-        "QLOC, FromSoftware, Inc."
+        "QLOC",
+        "FromSoftware, Inc."
       ],
       "publishers": [
-        "FromSoftware, Inc., Bandai Namco Entertainment"
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
       ]
     },
     "hints": {
@@ -9792,10 +9860,14 @@
         "3D Vision"
       ],
       "developers": [
-        "Crystal Dynamics, Eidos-Montréal, Feral Interactive (Mac), Nixxes"
+        "Crystal Dynamics",
+        "Eidos-Montréal",
+        "Feral Interactive (Mac)",
+        "Nixxes"
       ],
       "publishers": [
-        "Crystal Dynamics, Feral Interactive (Mac)"
+        "Crystal Dynamics",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -10033,7 +10105,11 @@
         "Mystery"
       ],
       "developers": [
-        "Zorro, Wilnyl, Philip, thePetHen, Skog"
+        "Zorro",
+        "Wilnyl",
+        "Philip",
+        "thePetHen",
+        "Skog"
       ],
       "publishers": [
         "Evil Landfall?"
@@ -10453,10 +10529,14 @@
         "Destruction"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -10570,7 +10650,8 @@
         "LGBTQ+"
       ],
       "developers": [
-        "EA Canada, EA Romania"
+        "EA Canada",
+        "EA Romania"
       ],
       "publishers": [
         "Electronic Arts"
@@ -10695,7 +10776,8 @@
         "Nimble Neuron"
       ],
       "publishers": [
-        "Nimble Neuron, SapStaR Games"
+        "Nimble Neuron",
+        "SapStaR Games"
       ]
     },
     "hints": {
@@ -10750,7 +10832,8 @@
         "Early Access"
       ],
       "developers": [
-        "EA Canada, EA Romania"
+        "EA Canada",
+        "EA Romania"
       ],
       "publishers": [
         "Electronic Arts"
@@ -10872,7 +10955,10 @@
         "MOBA"
       ],
       "developers": [
-        "Ubisoft Montreal, Ubisoft Quebec, Ubisoft Toronto, Blue Byte"
+        "Ubisoft Montreal",
+        "Ubisoft Quebec",
+        "Ubisoft Toronto",
+        "Blue Byte"
       ],
       "publishers": [
         "Ubisoft"
@@ -10931,10 +11017,14 @@
         "Adventure"
       ],
       "developers": [
-        "Relic Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Relic Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -11175,10 +11265,12 @@
         "Online Co-Op"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive"
       ],
       "publishers": [
-        "SEGA, Feral Interactive"
+        "SEGA",
+        "Feral Interactive"
       ]
     },
     "hints": {
@@ -11297,7 +11389,8 @@
         "Exploration"
       ],
       "developers": [
-        "Maddy Makes Games Inc., Extremely OK Games, Ltd."
+        "Maddy Makes Games Inc.",
+        "Extremely OK Games, Ltd."
       ],
       "publishers": [
         "Maddy Makes Games Inc."
@@ -11847,7 +11940,8 @@
         "Warhorse Studios"
       ],
       "publishers": [
-        "Warhorse Studios, Deep Silver"
+        "Warhorse Studios",
+        "Deep Silver"
       ]
     },
     "hints": {
@@ -12208,7 +12302,10 @@
         "Mature"
       ],
       "developers": [
-        "World's Edge, Relic Entertainment, Forgotten Empires, Climax Studios"
+        "World's Edge",
+        "Relic Entertainment",
+        "Forgotten Empires",
+        "Climax Studios"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -12269,7 +12366,8 @@
         "Controller"
       ],
       "developers": [
-        "Insomniac Games, Nixxes Software"
+        "Insomniac Games",
+        "Nixxes Software"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -12753,7 +12851,8 @@
         "Early Access"
       ],
       "developers": [
-        "FakeFish, Undertow Games"
+        "FakeFish",
+        "Undertow Games"
       ],
       "publishers": [
         "Daedalic Entertainment"
@@ -12878,7 +12977,8 @@
         "鬼谷工作室"
       ],
       "publishers": [
-        "鬼谷工作室, Lightning Games"
+        "鬼谷工作室",
+        "Lightning Games"
       ]
     },
     "hints": {
@@ -12936,7 +13036,8 @@
         "Dungeon Crawler"
       ],
       "developers": [
-        "Fancy Games, Blackbird Interactive"
+        "Fancy Games",
+        "Blackbird Interactive"
       ],
       "publishers": [
         "Secret Mode"
@@ -13543,7 +13644,8 @@
         "Empyrean"
       ],
       "publishers": [
-        "Frozen District, PlayWay S.A."
+        "Frozen District",
+        "PlayWay S.A."
       ]
     },
     "hints": {
@@ -13723,10 +13825,12 @@
         "Education"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive"
       ],
       "publishers": [
-        "SEGA, Feral Interactive"
+        "SEGA",
+        "Feral Interactive"
       ]
     },
     "hints": {
@@ -13909,7 +14013,8 @@
         "7th Beat Games"
       ],
       "publishers": [
-        "7th Beat Games, indienova"
+        "7th Beat Games",
+        "indienova"
       ]
     },
     "hints": {
@@ -14092,7 +14197,8 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "FromSoftware, Inc., Bandai Namco Entertainment"
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
       ]
     },
     "hints": {},
@@ -14389,10 +14495,16 @@
         "Quick-Time Events"
       ],
       "developers": [
-        "Crystal Dynamics, Eidos-Montréal, Feral Interactive (Mac), Feral Interactive (Linux), Nixxes"
+        "Crystal Dynamics",
+        "Eidos-Montréal",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)",
+        "Nixxes"
       ],
       "publishers": [
-        "Crystal Dynamics, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Crystal Dynamics",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -14572,7 +14684,9 @@
         "GSC Game World"
       ],
       "publishers": [
-        "GSC Game World (worldwide), SEGA (Japan), 4Divinity (China and South East Asia)"
+        "GSC Game World (worldwide)",
+        "SEGA (Japan)",
+        "4Divinity (China and South East Asia)"
       ]
     },
     "hints": {
@@ -14689,7 +14803,8 @@
         "Co-op"
       ],
       "developers": [
-        "Sucker Punch Productions, Nixxes Software"
+        "Sucker Punch Productions",
+        "Nixxes Software"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -14750,10 +14865,14 @@
         "Memes"
       ],
       "developers": [
-        "DONTNOD Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "DONTNOD Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Square Enix, Feral interactive (Mac), Feral Interactive (Linux)"
+        "Square Enix",
+        "Feral interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -14936,7 +15055,8 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "Bandai Namco Entertainment, FromSoftware, Inc."
+        "Bandai Namco Entertainment",
+        "FromSoftware, Inc."
       ]
     },
     "hints": {
@@ -14994,7 +15114,8 @@
         "Colorful"
       ],
       "developers": [
-        "Ghost Town Games Ltd., Team17"
+        "Ghost Town Games Ltd.",
+        "Team17"
       ],
       "publishers": [
         "Team17"
@@ -15358,7 +15479,11 @@
         "Psychedelic"
       ],
       "developers": [
-        "Ubisoft Montreal, Red Storm, Ubisoft Shanghai, Ubisoft Toronto, Ubisoft Kiev"
+        "Ubisoft Montreal",
+        "Red Storm",
+        "Ubisoft Shanghai",
+        "Ubisoft Toronto",
+        "Ubisoft Kiev"
       ],
       "publishers": [
         "Ubisoft"
@@ -15722,7 +15847,9 @@
         "Early Access"
       ],
       "developers": [
-        "SgtOkiDoki, Vilaskis, TheLiquidHorse"
+        "SgtOkiDoki",
+        "Vilaskis",
+        "TheLiquidHorse"
       ],
       "publishers": [
         "SgtOkiDoki"
@@ -15783,10 +15910,13 @@
         "Sci-fi"
       ],
       "developers": [
-        "Studio Wildcard, Grove Street Games, Instinct Games"
+        "Studio Wildcard",
+        "Grove Street Games",
+        "Instinct Games"
       ],
       "publishers": [
-        "Studio Wildcard, Snail Games USA"
+        "Studio Wildcard",
+        "Snail Games USA"
       ]
     },
     "hints": {
@@ -15844,7 +15974,8 @@
         "Casual"
       ],
       "developers": [
-        "Introversion Software, Double Eleven"
+        "Introversion Software",
+        "Double Eleven"
       ],
       "publishers": [
         "Paradox Interactive"
@@ -15966,7 +16097,8 @@
         "Medieval"
       ],
       "developers": [
-        "Bethesda Game Studios, Virtuos"
+        "Bethesda Game Studios",
+        "Virtuos"
       ],
       "publishers": [
         "Bethesda Softworks"
@@ -16208,10 +16340,13 @@
         "Horror"
       ],
       "developers": [
-        "NetherRealm Studios, QLOC, Shiver"
+        "NetherRealm Studios",
+        "QLOC",
+        "Shiver"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {
@@ -16272,7 +16407,8 @@
         "Monolith Productions"
       ],
       "publishers": [
-        "Warner Bros. Interactive Entertainment, Warner Bros. Games"
+        "Warner Bros. Interactive Entertainment",
+        "Warner Bros. Games"
       ]
     },
     "hints": {
@@ -16632,7 +16768,8 @@
         "FromSoftware, Inc."
       ],
       "publishers": [
-        "FromSoftware, Inc., Bandai Namco Entertainment Inc."
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment Inc."
       ]
     },
     "hints": {
@@ -16812,7 +16949,8 @@
         "Violent"
       ],
       "developers": [
-        "Square Enix, PlatinumGames Inc."
+        "Square Enix",
+        "PlatinumGames Inc."
       ],
       "publishers": [
         "Square Enix"
@@ -16934,7 +17072,8 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Iceflake Studios, Colossal Order"
+        "Iceflake Studios",
+        "Colossal Order"
       ],
       "publishers": [
         "Paradox Interactive"
@@ -16995,7 +17134,13 @@
         "PvP"
       ],
       "developers": [
-        "Ubisoft Paris, Ubisoft Annecy, Ubisoft Bucharest, Ubisoft Montpellier, Ubisoft Milan, Reflections, Ubisoft Belgrade"
+        "Ubisoft Paris",
+        "Ubisoft Annecy",
+        "Ubisoft Bucharest",
+        "Ubisoft Montpellier",
+        "Ubisoft Milan",
+        "Reflections",
+        "Ubisoft Belgrade"
       ],
       "publishers": [
         "Ubisoft"
@@ -17117,10 +17262,12 @@
         "Team-Based"
       ],
       "developers": [
-        "MADFINGER Games, a.s."
+        "MADFINGER Games",
+        "a.s."
       ],
       "publishers": [
-        "MADFINGER Games, a.s."
+        "MADFINGER Games",
+        "a.s."
       ]
     },
     "hints": {
@@ -18339,7 +18486,8 @@
         "Avalanche Studios"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {
@@ -18397,7 +18545,8 @@
         "Online Co-Op"
       ],
       "developers": [
-        "Blacklight Interactive, Team17"
+        "Blacklight Interactive",
+        "Team17"
       ],
       "publishers": [
         "Team17"
@@ -18641,7 +18790,9 @@
         "RPG"
       ],
       "developers": [
-        "Ubisoft Montreal, Massive Entertainment, and Ubisoft Shanghai"
+        "Ubisoft Montreal",
+        "Massive Entertainment",
+        "and Ubisoft Shanghai"
       ],
       "publishers": [
         "Ubisoft"
@@ -18702,10 +18853,12 @@
         "God Game"
       ],
       "developers": [
-        "Frontier Developments, Aspyr (Mac)"
+        "Frontier Developments",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "Frontier Developments, Aspyr (Mac)"
+        "Frontier Developments",
+        "Aspyr (Mac)"
       ]
     },
     "hints": {},
@@ -18761,7 +18914,8 @@
         "Immersive"
       ],
       "developers": [
-        "Irrational Games, Virtual Programming (Linux)"
+        "Irrational Games",
+        "Virtual Programming (Linux)"
       ],
       "publishers": [
         "2K"
@@ -19005,7 +19159,8 @@
         "CD PROJEKT RED"
       ],
       "publishers": [
-        "CD PROJEKT RED, 1C-SoftClub"
+        "CD PROJEKT RED",
+        "1C-SoftClub"
       ]
     },
     "hints": {
@@ -19368,10 +19523,12 @@
         "Remake"
       ],
       "developers": [
-        "United Front Games, Feral Interactive (Mac)"
+        "United Front Games",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "Square Enix, Feral Interactive (Mac)"
+        "Square Enix",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -19551,7 +19708,8 @@
         "CD PROJEKT RED"
       ],
       "publishers": [
-        "CD PROJEKT RED, 1C-SoftClub"
+        "CD PROJEKT RED",
+        "1C-SoftClub"
       ]
     },
     "hints": {
@@ -20203,10 +20361,12 @@
         "Futuristic"
       ],
       "developers": [
-        "Firaxis Games, Feral Interactive (Linux)"
+        "Firaxis Games",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "2K, Feral Interactive (Linux)"
+        "2K",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -20570,7 +20730,8 @@
         "Owlcat Games"
       ],
       "publishers": [
-        "META Publishing, Owlcat Games"
+        "META Publishing",
+        "Owlcat Games"
       ]
     },
     "hints": {
@@ -20686,10 +20847,16 @@
         "Heist"
       ],
       "developers": [
-        "Eidos-Montréal, Crystal Dynamics, Nixxes, Feral Interactive (Mac), Feral interactive (Linux)"
+        "Eidos-Montréal",
+        "Crystal Dynamics",
+        "Nixxes",
+        "Feral Interactive (Mac)",
+        "Feral interactive (Linux)"
       ],
       "publishers": [
-        "Crystal Dynamics, Feral Interactive (Mac), Feral interactive (Linux)"
+        "Crystal Dynamics",
+        "Feral Interactive (Mac)",
+        "Feral interactive (Linux)"
       ]
     },
     "hints": {
@@ -20869,7 +21036,8 @@
         "RPG"
       ],
       "developers": [
-        "WB Games Montreal, Splash Damage"
+        "WB Games Montreal",
+        "Splash Damage"
       ],
       "publishers": [
         "Warner Bros. Interactive Entertainment"
@@ -21471,7 +21639,9 @@
         "Action"
       ],
       "developers": [
-        "SkyBox Labs, Ensemble Studios, Forgotten Empires"
+        "SkyBox Labs",
+        "Ensemble Studios",
+        "Forgotten Empires"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -21773,7 +21943,11 @@
         "Action RPG"
       ],
       "developers": [
-        "Ubisoft Montreal, Red Storm, Shanghai, Toronto, Kiev"
+        "Ubisoft Montreal",
+        "Red Storm",
+        "Shanghai",
+        "Toronto",
+        "Kiev"
       ],
       "publishers": [
         "Ubisoft"
@@ -21954,7 +22128,8 @@
         "Adventure"
       ],
       "developers": [
-        "VALOFE, NS STUDIO"
+        "VALOFE",
+        "NS STUDIO"
       ],
       "publishers": [
         "VALOFE"
@@ -22198,10 +22373,12 @@
         "Adventure"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive"
       ],
       "publishers": [
-        "SEGA, Feral Interactive"
+        "SEGA",
+        "Feral Interactive"
       ]
     },
     "hints": {
@@ -22320,7 +22497,8 @@
         "Action"
       ],
       "developers": [
-        "The Sims Studio, Maxis"
+        "The Sims Studio",
+        "Maxis"
       ],
       "publishers": [
         "Electronic Arts"
@@ -22384,7 +22562,9 @@
         "Pandemic Studios"
       ],
       "publishers": [
-        "Lucasfilm, LucasArts, Disney"
+        "Lucasfilm",
+        "LucasArts",
+        "Disney"
       ]
     },
     "hints": {
@@ -22503,7 +22683,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "Antimatter Games, Tripwire Interactive"
+        "Antimatter Games",
+        "Tripwire Interactive"
       ],
       "publishers": [
         "Tripwire Interactive"
@@ -22561,10 +22742,14 @@
         "Action"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -22988,10 +23173,12 @@
         "Female Protagonist"
       ],
       "developers": [
-        "NetherRealm Studios, QLOC"
+        "NetherRealm Studios",
+        "QLOC"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {
@@ -23230,7 +23417,8 @@
         "Level Editor"
       ],
       "developers": [
-        "Iron Lore Entertainment, THQ Nordic"
+        "Iron Lore Entertainment",
+        "THQ Nordic"
       ],
       "publishers": [
         "THQ Nordic"
@@ -23411,7 +23599,8 @@
         "Indie"
       ],
       "developers": [
-        "Boneloaf, Rocket Science"
+        "Boneloaf",
+        "Rocket Science"
       ],
       "publishers": [
         "Boneloaf"
@@ -23597,7 +23786,8 @@
         "Pugstorm"
       ],
       "publishers": [
-        "Fireshine Games, bilibili"
+        "Fireshine Games",
+        "bilibili"
       ]
     },
     "hints": {
@@ -23884,7 +24074,8 @@
         "Gunfire Games"
       ],
       "publishers": [
-        "Arc Games, THQ Nordic"
+        "Arc Games",
+        "THQ Nordic"
       ]
     },
     "hints": {
@@ -24347,7 +24538,8 @@
         "AIHASTO"
       ],
       "publishers": [
-        "IndieArk, Shochiku (Japan)"
+        "IndieArk",
+        "Shochiku (Japan)"
       ]
     },
     "hints": {
@@ -24466,7 +24658,8 @@
         "Violent"
       ],
       "developers": [
-        "Naughty Dog LLC, Iron Galaxy Studios"
+        "Naughty Dog LLC",
+        "Iron Galaxy Studios"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -24525,10 +24718,14 @@
         "VR"
       ],
       "developers": [
-        "Creative Assembly, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Creative Assembly",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -24645,10 +24842,14 @@
         "RPG"
       ],
       "developers": [
-        "2K Boston, 2K Australia, Blind Squirrel, Feral Interactive (Mac)"
+        "2K Boston",
+        "2K Australia",
+        "Blind Squirrel",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "2K, Feral Interactive (Mac)"
+        "2K",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -25011,10 +25212,12 @@
         "Casual"
       ],
       "developers": [
-        "Expansive Worlds, Avalanche Studios"
+        "Expansive Worlds",
+        "Avalanche Studios"
       ],
       "publishers": [
-        "Expansive Worlds, Avalanche Studios"
+        "Expansive Worlds",
+        "Avalanche Studios"
       ]
     },
     "hints": {
@@ -25252,7 +25455,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Valve, NEXON"
+        "Valve",
+        "NEXON"
       ],
       "publishers": [
         "NEXON"
@@ -25316,7 +25520,9 @@
         "Petroglyph"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {
@@ -26083,7 +26289,10 @@
         "Shooter"
       ],
       "developers": [
-        "One More Level, 3D Realms, Slipgate Ironworks™, All in! Games"
+        "One More Level",
+        "3D Realms",
+        "Slipgate Ironworks™",
+        "All in! Games"
       ],
       "publishers": [
         "505 Games"
@@ -26142,10 +26351,14 @@
         "Open World"
       ],
       "developers": [
-        "BioWare, Aspyr (Mac)"
+        "BioWare",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "LucasArts, Aspyr (Mac), Disney, Lucasfilm"
+        "LucasArts",
+        "Aspyr (Mac)",
+        "Disney",
+        "Lucasfilm"
       ]
     },
     "hints": {
@@ -26203,10 +26416,13 @@
         "Atmospheric"
       ],
       "developers": [
-        "2K Australia, Gearbox Software, Aspyr (Linux)"
+        "2K Australia",
+        "Gearbox Software",
+        "Aspyr (Linux)"
       ],
       "publishers": [
-        "2K, Aspyr (Linux)"
+        "2K",
+        "Aspyr (Linux)"
       ]
     },
     "hints": {
@@ -26931,7 +27147,8 @@
         "Freebird Games"
       ],
       "publishers": [
-        "Freebird Games, Serenity Forge"
+        "Freebird Games",
+        "Serenity Forge"
       ]
     },
     "hints": {
@@ -27410,10 +27627,14 @@
         "4X"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -27765,7 +27986,9 @@
         "Level Editor"
       ],
       "developers": [
-        "World's Edge, Tantalus Media, Forgotten Empires"
+        "World's Edge",
+        "Tantalus Media",
+        "Forgotten Empires"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -28065,10 +28288,14 @@
         "Classic"
       ],
       "developers": [
-        "DONTNOD Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "DONTNOD Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Square Enix, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Square Enix",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -28606,7 +28833,8 @@
         "Gunfire Games"
       ],
       "publishers": [
-        "Arc Games, THQ Nordic"
+        "Arc Games",
+        "THQ Nordic"
       ]
     },
     "hints": {},
@@ -29452,7 +29680,8 @@
         "Campo Santo"
       ],
       "publishers": [
-        "Panic, Campo Santo"
+        "Panic",
+        "Campo Santo"
       ]
     },
     "hints": {
@@ -29752,7 +29981,8 @@
         "Heist"
       ],
       "developers": [
-        "Sledgehammer Games, Raven Software"
+        "Sledgehammer Games",
+        "Raven Software"
       ],
       "publishers": [
         "Activision"
@@ -29813,7 +30043,8 @@
         "Remake"
       ],
       "developers": [
-        "Hangar 13, D3T"
+        "Hangar 13",
+        "D3T"
       ],
       "publishers": [
         "2K"
@@ -29929,7 +30160,8 @@
         "Moddable"
       ],
       "developers": [
-        "Haemimont Games, Abstraction"
+        "Haemimont Games",
+        "Abstraction"
       ],
       "publishers": [
         "Paradox Interactive"
@@ -30098,10 +30330,14 @@
         "Adventure"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "SEGA",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -30885,7 +31121,8 @@
         "Difficult"
       ],
       "developers": [
-        "Team17, Mouldy Toof Studios"
+        "Team17",
+        "Mouldy Toof Studios"
       ],
       "publishers": [
         "Team17"
@@ -31372,7 +31609,8 @@
         "Ninja Theory"
       ],
       "publishers": [
-        "Ninja Theory, Xbox Game Studios"
+        "Ninja Theory",
+        "Xbox Game Studios"
       ]
     },
     "hints": {
@@ -31849,7 +32087,8 @@
         "Dragons"
       ],
       "developers": [
-        "QLOC, Dimps Corporation"
+        "QLOC",
+        "Dimps Corporation"
       ],
       "publishers": [
         "Bandai Namco Entertainment"
@@ -32151,7 +32390,8 @@
         "TT Games"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {
@@ -32326,10 +32566,12 @@
         "Adventure"
       ],
       "developers": [
-        "Eidos Montreal, Feral Interactive (Linux/Mac)"
+        "Eidos Montreal",
+        "Feral Interactive (Linux/Mac)"
       ],
       "publishers": [
-        "Eidos Interactive Corp., Feral Interactive (Linux/Mac)"
+        "Eidos Interactive Corp.",
+        "Feral Interactive (Linux/Mac)"
       ]
     },
     "hints": {
@@ -32631,7 +32873,8 @@
         "Family Friendly"
       ],
       "developers": [
-        "Infinity Ward, Sledgehammer Games"
+        "Infinity Ward",
+        "Sledgehammer Games"
       ],
       "publishers": [
         "Activision"
@@ -33292,7 +33535,8 @@
         "Souls-like"
       ],
       "developers": [
-        "Santa Monica Studio, Jetpack Interactive"
+        "Santa Monica Studio",
+        "Jetpack Interactive"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -33535,7 +33779,8 @@
         "KW Studios"
       ],
       "publishers": [
-        "KW Studios, RaceRoom Entertainment AG"
+        "KW Studios",
+        "RaceRoom Entertainment AG"
       ]
     },
     "hints": {
@@ -33772,7 +34017,8 @@
         "Codemasters"
       ],
       "publishers": [
-        "Codemasters, Electronic Arts"
+        "Codemasters",
+        "Electronic Arts"
       ]
     },
     "hints": {
@@ -34556,7 +34802,8 @@
         "3D Vision"
       ],
       "developers": [
-        "Team Bondi, Rockstar Leeds"
+        "Team Bondi",
+        "Rockstar Leeds"
       ],
       "publishers": [
         "Rockstar Games"
@@ -34678,10 +34925,12 @@
         "FPS"
       ],
       "developers": [
-        "Hangar 13, Aspyr (Mac)"
+        "Hangar 13",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "2K, Aspyr (Mac)"
+        "2K",
+        "Aspyr (Mac)"
       ]
     },
     "hints": {
@@ -35217,7 +35466,8 @@
         "LGBTQ+"
       ],
       "developers": [
-        "Insomniac Games, Nixxes Software"
+        "Insomniac Games",
+        "Nixxes Software"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -35745,10 +35995,15 @@
         "Family Friendly"
       ],
       "developers": [
-        "Codemasters, Feral Interactive (Linux), Feral Interactive (Mac)"
+        "Codemasters",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "Codemasters, Feral Interactive (Linux), Feral Interactive (Mac), Electronic Arts"
+        "Codemasters",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)",
+        "Electronic Arts"
       ]
     },
     "hints": {
@@ -36220,7 +36475,8 @@
         "Bullet Hell"
       ],
       "developers": [
-        "Edmund McMillen, Florian Himsl"
+        "Edmund McMillen",
+        "Florian Himsl"
       ],
       "publishers": [
         "Edmund McMillen"
@@ -36399,7 +36655,8 @@
         "Cygames, Inc."
       ],
       "publishers": [
-        "Cygames, Inc., Cygames Korea Inc."
+        "Cygames, Inc.",
+        "Cygames Korea Inc."
       ]
     },
     "hints": {
@@ -36516,7 +36773,16 @@
         "RPG"
       ],
       "developers": [
-        "Ubisoft Quebec, in collaboration with Ubisoft Annecy, Bucharest, Kiev, Montreal, Montpellier, Shanghai, Singapore, Sofia, Toronto studios"
+        "Ubisoft Quebec",
+        "in collaboration with Ubisoft Annecy",
+        "Bucharest",
+        "Kiev",
+        "Montreal",
+        "Montpellier",
+        "Shanghai",
+        "Singapore",
+        "Sofia",
+        "Toronto studios"
       ],
       "publishers": [
         "Ubisoft"
@@ -37176,7 +37442,8 @@
         "Replay Value"
       ],
       "developers": [
-        "Barbedwire Studios, Digitalmindsoft"
+        "Barbedwire Studios",
+        "Digitalmindsoft"
       ],
       "publishers": [
         "Digitalmindsoft"
@@ -37416,7 +37683,8 @@
         "Retro"
       ],
       "developers": [
-        "Petroglyph, Lemon Sky Studios"
+        "Petroglyph",
+        "Lemon Sky Studios"
       ],
       "publishers": [
         "Electronic Arts"
@@ -37536,10 +37804,12 @@
         "Classic"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Mac)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac)"
+        "SEGA",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -37661,7 +37931,8 @@
         "It's happening"
       ],
       "publishers": [
-        "Yogscast Games, Gamersky Games"
+        "Yogscast Games",
+        "Gamersky Games"
       ]
     },
     "hints": {
@@ -37719,7 +37990,8 @@
         "YAGER"
       ],
       "publishers": [
-        "2K, Missing Link Games"
+        "2K",
+        "Missing Link Games"
       ]
     },
     "hints": {
@@ -37956,7 +38228,8 @@
         "Third Person"
       ],
       "developers": [
-        "Darkflow Software, Matter Team"
+        "Darkflow Software",
+        "Matter Team"
       ],
       "publishers": [
         "Gaijin Network Ltd"
@@ -38139,7 +38412,8 @@
         "3D"
       ],
       "developers": [
-        "Ironclad Games Corporation, Stardock Entertainment"
+        "Ironclad Games Corporation",
+        "Stardock Entertainment"
       ],
       "publishers": [
         "Stardock Entertainment"
@@ -38201,7 +38475,8 @@
         "零创游戏(ZerocreationGame)"
       ],
       "publishers": [
-        "零创游戏(ZerocreationGame), 2P Games"
+        "零创游戏(ZerocreationGame)",
+        "2P Games"
       ]
     },
     "hints": {},
@@ -38260,7 +38535,8 @@
         "Overhype Studios"
       ],
       "publishers": [
-        "Hooded Horse, Overhype Studios"
+        "Hooded Horse",
+        "Overhype Studios"
       ]
     },
     "hints": {},
@@ -38375,10 +38651,16 @@
         "Multiplayer"
       ],
       "developers": [
-        "2K Marin, 2K China, Digital Extremes, 2K Australia, Blind Squirrel, Feral Interactive (Mac)"
+        "2K Marin",
+        "2K China",
+        "Digital Extremes",
+        "2K Australia",
+        "Blind Squirrel",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "2K, Feral Interactive (Mac)"
+        "2K",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -38681,7 +38963,8 @@
         "Veewo Games"
       ],
       "publishers": [
-        "Team17, Veewo Games"
+        "Team17",
+        "Veewo Games"
       ]
     },
     "hints": {
@@ -38739,7 +39022,8 @@
         "Politics"
       ],
       "developers": [
-        "Guerrilla, Nixxes Software"
+        "Guerrilla",
+        "Nixxes Software"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -38921,7 +39205,8 @@
         "Mundfish"
       ],
       "publishers": [
-        "Focus Entertainment, 4Divinity"
+        "Focus Entertainment",
+        "4Divinity"
       ]
     },
     "hints": {
@@ -39876,10 +40161,14 @@
         "Gore"
       ],
       "developers": [
-        "CREATIVE ASSEMBLY, Feral Interactive (Linux), Feral Interactive (Mac)"
+        "CREATIVE ASSEMBLY",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Linux), Feral Interactive (Mac)"
+        "SEGA",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -39937,10 +40226,12 @@
         "Adventure"
       ],
       "developers": [
-        "WSS playground, xemono"
+        "WSS playground",
+        "xemono"
       ],
       "publishers": [
-        "WSS playground, Alliance Arts"
+        "WSS playground",
+        "Alliance Arts"
       ]
     },
     "hints": {},
@@ -40055,10 +40346,16 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Obsidian Entertainment, Aspyr (Mac, Linux, & Windows Update)"
+        "Obsidian Entertainment",
+        "Aspyr (Mac",
+        "Linux",
+        "& Windows Update)"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Aspyr (Mac, Linux)"
+        "LucasArts",
+        "Lucasfilm",
+        "Aspyr (Mac",
+        "Linux)"
       ]
     },
     "hints": {
@@ -40116,10 +40413,14 @@
         "Memes"
       ],
       "developers": [
-        "Deck Nine, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Deck Nine",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Square Enix, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Square Enix",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -40234,7 +40535,8 @@
         "Codemasters"
       ],
       "publishers": [
-        "Codemasters, Electronic Arts"
+        "Codemasters",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -40412,7 +40714,8 @@
         "Alternate History"
       ],
       "developers": [
-        "2K Boston, 2K Australia"
+        "2K Boston",
+        "2K Australia"
       ],
       "publishers": [
         "2K"
@@ -40888,7 +41191,8 @@
         "Top-Down"
       ],
       "developers": [
-        "Limbic Entertainment, Realmforge Studios"
+        "Limbic Entertainment",
+        "Realmforge Studios"
       ],
       "publishers": [
         "Kalypso Media"
@@ -41008,7 +41312,8 @@
         "MOBA"
       ],
       "developers": [
-        "Noah System, Mgame"
+        "Noah System",
+        "Mgame"
       ],
       "publishers": [
         "NTTGame"
@@ -41432,7 +41737,8 @@
         "Galactic Cafe"
       ],
       "publishers": [
-        "Galactic Cafe, Klei Publishing"
+        "Galactic Cafe",
+        "Klei Publishing"
       ]
     },
     "hints": {
@@ -41549,10 +41855,12 @@
         "PvE"
       ],
       "developers": [
-        "Grapeshot Games, Instinct Games"
+        "Grapeshot Games",
+        "Instinct Games"
       ],
       "publishers": [
-        "Grapeshot Games, Snail Games USA"
+        "Grapeshot Games",
+        "Snail Games USA"
       ]
     },
     "hints": {},
@@ -41791,7 +42099,8 @@
         "Zombies"
       ],
       "developers": [
-        "Live Wire, Adglobe"
+        "Live Wire",
+        "Adglobe"
       ],
       "publishers": [
         "Binary Haze Interactive"
@@ -41850,7 +42159,8 @@
         "Indie"
       ],
       "developers": [
-        "Claudiu Kiss, The Irregular Corporation"
+        "Claudiu Kiss",
+        "The Irregular Corporation"
       ],
       "publishers": [
         "The Irregular Corporation"
@@ -41911,7 +42221,8 @@
         "Difficult"
       ],
       "developers": [
-        "id Software, Nightdive Studios"
+        "id Software",
+        "Nightdive Studios"
       ],
       "publishers": [
         "Bethesda"
@@ -41969,10 +42280,14 @@
         "Multiplayer"
       ],
       "developers": [
-        "IO Interactive A/S, Feral Interactive (Linux), Feral Interactive (Mac)"
+        "IO Interactive A/S",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "IO Interactive A/S, Feral Interactive (Linux), Feral Interactive (Mac)"
+        "IO Interactive A/S",
+        "Feral Interactive (Linux)",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {},
@@ -42267,7 +42582,8 @@
         "MrFatcat"
       ],
       "publishers": [
-        "MrFatcat, Dropsiick"
+        "MrFatcat",
+        "Dropsiick"
       ]
     },
     "hints": {
@@ -42389,7 +42705,9 @@
         "Traveller's Tales"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -43229,7 +43547,8 @@
         "Character Action Game"
       ],
       "developers": [
-        "Gearbox Software, Blind Squirrel Games"
+        "Gearbox Software",
+        "Blind Squirrel Games"
       ],
       "publishers": [
         "2K"
@@ -44008,7 +44327,8 @@
         "Norsfell"
       ],
       "publishers": [
-        "Gearbox Publishing, 2K"
+        "Gearbox Publishing",
+        "2K"
       ]
     },
     "hints": {},
@@ -44186,7 +44506,8 @@
         "Memes"
       ],
       "developers": [
-        "Spike Chunsoft Co., Ltd., Abstraction Games"
+        "Spike Chunsoft Co., Ltd.",
+        "Abstraction Games"
       ],
       "publishers": [
         "Spike Chunsoft Co., Ltd."
@@ -44666,7 +44987,10 @@
         "Zombies"
       ],
       "developers": [
-        "Infinity Ward, Beenox, High Moon Studios, Raven Software"
+        "Infinity Ward",
+        "Beenox",
+        "High Moon Studios",
+        "Raven Software"
       ],
       "publishers": [
         "Activision"
@@ -44787,7 +45111,8 @@
         "Dovetail Games"
       ],
       "publishers": [
-        "Dovetail Games - Trains, Dovetail Games"
+        "Dovetail Games - Trains",
+        "Dovetail Games"
       ]
     },
     "hints": {
@@ -45025,7 +45350,8 @@
         "Nine Dots Studio"
       ],
       "publishers": [
-        "Prime Matter, Deep Silver"
+        "Prime Matter",
+        "Deep Silver"
       ]
     },
     "hints": {
@@ -45142,10 +45468,10 @@
         "CRPG"
       ],
       "developers": [
-        "IMCGAMES Co.,Ltd."
+        "IMCGAMES Co., Ltd."
       ],
       "publishers": [
-        "IMCGAMES Co.,Ltd."
+        "IMCGAMES Co., Ltd."
       ]
     },
     "hints": {
@@ -46506,7 +46832,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "Toys for Bob, Iron Galaxy Studios"
+        "Toys for Bob",
+        "Iron Galaxy Studios"
       ],
       "publishers": [
         "Activision"
@@ -46570,7 +46897,8 @@
         "Hopoo Games"
       ],
       "publishers": [
-        "Gearbox Publishing, 2K"
+        "Gearbox Publishing",
+        "2K"
       ]
     },
     "hints": {},
@@ -47046,7 +47374,8 @@
         "Croteam"
       ],
       "publishers": [
-        "Devolver Digital, Croteam"
+        "Devolver Digital",
+        "Croteam"
       ]
     },
     "hints": {
@@ -47404,7 +47733,8 @@
         "Drakeling Labs"
       ],
       "publishers": [
-        "Funbox Media Ltd, ZOOM Platform Media"
+        "Funbox Media Ltd",
+        "ZOOM Platform Media"
       ]
     },
     "hints": {
@@ -47462,7 +47792,8 @@
         "Roguelite"
       ],
       "developers": [
-        "Mossmouth, BlitWorks"
+        "Mossmouth",
+        "BlitWorks"
       ],
       "publishers": [
         "Mossmouth"
@@ -47580,7 +47911,8 @@
         "Sexual Content"
       ],
       "developers": [
-        "上海烛龙信息科技有限公司, Aurogon Shanghai"
+        "上海烛龙信息科技有限公司",
+        "Aurogon Shanghai"
       ],
       "publishers": [
         "北京网元圣唐娱乐科技有限公司"
@@ -47818,7 +48150,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "BlackFoot Studios, MicroProse Software"
+        "BlackFoot Studios",
+        "MicroProse Software"
       ],
       "publishers": [
         "MicroProse Software"
@@ -48530,7 +48863,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "Noio, Licorice"
+        "Noio",
+        "Licorice"
       ],
       "publishers": [
         "Raw Fury"
@@ -48767,7 +49101,9 @@
         "LGBTQ+"
       ],
       "developers": [
-        "Ubisoft Montreal, Ubisoft Kiev, Ubisoft Shanghai"
+        "Ubisoft Montreal",
+        "Ubisoft Kiev",
+        "Ubisoft Shanghai"
       ],
       "publishers": [
         "Ubisoft"
@@ -48887,7 +49223,8 @@
         "Survival Horror"
       ],
       "developers": [
-        "Orange_Juice, Fruitbat Factory"
+        "Orange_Juice",
+        "Fruitbat Factory"
       ],
       "publishers": [
         "Fruitbat Factory"
@@ -49479,7 +49816,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "SkyBox Labs, Big Huge Games"
+        "SkyBox Labs",
+        "Big Huge Games"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -49599,10 +49937,12 @@
         "Violent"
       ],
       "developers": [
-        "Relic Entertainment, Feral Interactive (Mac/Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
       ],
       "publishers": [
-        "Relic Entertainment, Feral Interactive (Mac/Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
       ]
     },
     "hints": {
@@ -49900,7 +50240,8 @@
         "Local Co-Op"
       ],
       "developers": [
-        "NetherRealm Studios, QLOC"
+        "NetherRealm Studios",
+        "QLOC"
       ],
       "publishers": [
         "WB Games"
@@ -50071,10 +50412,10 @@
         "Casual"
       ],
       "developers": [
-        "WipleGames Inc.,"
+        "WipleGames Inc."
       ],
       "publishers": [
-        "WipleGames Inc.,"
+        "WipleGames Inc."
       ]
     },
     "hints": {
@@ -50191,7 +50532,8 @@
         "Cold Iron Studios"
       ],
       "publishers": [
-        "Cold Iron Studios, Focus Entertainment"
+        "Cold Iron Studios",
+        "Focus Entertainment"
       ]
     },
     "hints": {},
@@ -50366,7 +50708,8 @@
         "Multiplayer"
       ],
       "developers": [
-        "Vicarious Visions, Iron Galaxy Studios"
+        "Vicarious Visions",
+        "Iron Galaxy Studios"
       ],
       "publishers": [
         "Activision"
@@ -51081,7 +51424,8 @@
         "Worldwalker Games LLC"
       ],
       "publishers": [
-        "Worldwalker Games LLC, WhisperGames"
+        "Worldwalker Games LLC",
+        "WhisperGames"
       ]
     },
     "hints": {},
@@ -51262,7 +51606,8 @@
         "Double Fine Productions"
       ],
       "publishers": [
-        "Double Fine Productions, Xbox Game Studios"
+        "Double Fine Productions",
+        "Xbox Game Studios"
       ]
     },
     "hints": {
@@ -51384,7 +51729,8 @@
         "Brace Yourself Games"
       ],
       "publishers": [
-        "Brace Yourself Games, Klei Entertainment"
+        "Brace Yourself Games",
+        "Klei Entertainment"
       ]
     },
     "hints": {
@@ -51501,7 +51847,9 @@
         "Metroidvania"
       ],
       "developers": [
-        "Gunfire Games, Vigil Games, THQ Nordic"
+        "Gunfire Games",
+        "Vigil Games",
+        "THQ Nordic"
       ],
       "publishers": [
         "THQ Nordic"
@@ -51741,7 +52089,8 @@
         "NEXT Studios"
       ],
       "publishers": [
-        "NEXT Studios, 505 Games"
+        "NEXT Studios",
+        "505 Games"
       ]
     },
     "hints": {
@@ -51919,7 +52268,9 @@
         "Snow"
       ],
       "developers": [
-        "Ubisoft Annecy, Ubisoft Montpellier, Ubisoft Kiev"
+        "Ubisoft Annecy",
+        "Ubisoft Montpellier",
+        "Ubisoft Kiev"
       ],
       "publishers": [
         "Ubisoft"
@@ -52860,7 +53211,8 @@
         "Obsidian Entertainment"
       ],
       "publishers": [
-        "Private Division, Xbox Game Studios"
+        "Private Division",
+        "Xbox Game Studios"
       ]
     },
     "hints": {},
@@ -52919,7 +53271,8 @@
         "FYQD-Studio"
       ],
       "publishers": [
-        "FYQD-Studio, PLAYISM"
+        "FYQD-Studio",
+        "PLAYISM"
       ]
     },
     "hints": {},
@@ -52978,7 +53331,9 @@
         "Obsidian Entertainment"
       ],
       "publishers": [
-        "Versus Evil, Obsidian Entertainment, Xbox Game Studios"
+        "Versus Evil",
+        "Obsidian Entertainment",
+        "Xbox Game Studios"
       ]
     },
     "hints": {},
@@ -53098,7 +53453,8 @@
         "EXOR Studios"
       ],
       "publishers": [
-        "EXOR Studios, Surefire.Games"
+        "EXOR Studios",
+        "Surefire.Games"
       ]
     },
     "hints": {
@@ -53156,10 +53512,14 @@
         "Action"
       ],
       "developers": [
-        "Firaxis Games, Aspyr (Mac), Aspyr (Linux)"
+        "Firaxis Games",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ],
       "publishers": [
-        "2K, Aspyr (Mac), Aspyr (Linux)"
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
       ]
     },
     "hints": {
@@ -54104,7 +54464,9 @@
         "Remake"
       ],
       "developers": [
-        "Christian Whitehead, Headcannon, PagodaWest Games"
+        "Christian Whitehead",
+        "Headcannon",
+        "PagodaWest Games"
       ],
       "publishers": [
         "SEGA"
@@ -54814,7 +55176,8 @@
         "Fantasy"
       ],
       "developers": [
-        "Wild Shadow Studios, Deca Live Operations GmbH"
+        "Wild Shadow Studios",
+        "Deca Live Operations GmbH"
       ],
       "publishers": [
         "Deca Live Operations GmbH"
@@ -55237,7 +55600,8 @@
         "KOEI TECMO GAMES CO., LTD."
       ],
       "publishers": [
-        "KOEI TECMO GAMES CO., LTD., CE-Asia(Asia)"
+        "KOEI TECMO GAMES CO., LTD.",
+        "CE-Asia(Asia)"
       ]
     },
     "hints": {},
@@ -55477,7 +55841,8 @@
         "Acid Wizard Studio"
       ],
       "publishers": [
-        "Hooded Horse, Acid Wizard Studio"
+        "Hooded Horse",
+        "Acid Wizard Studio"
       ]
     },
     "hints": {},
@@ -55771,7 +56136,8 @@
         "Funny"
       ],
       "developers": [
-        "Mojang Studios, ‪Double Eleven"
+        "Mojang Studios",
+        "‪Double Eleven"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -56067,7 +56433,8 @@
         "Donkey Crew"
       ],
       "publishers": [
-        "Donkey Crew, Snail Games USA"
+        "Donkey Crew",
+        "Snail Games USA"
       ]
     },
     "hints": {},
@@ -56303,7 +56670,8 @@
         "Dreamsite Games"
       ],
       "publishers": [
-        "Paradox Interactive, Paradox Arc"
+        "Paradox Interactive",
+        "Paradox Arc"
       ]
     },
     "hints": {},
@@ -56714,7 +57082,9 @@
         "Co-op Campaign"
       ],
       "developers": [
-        "Crystal Dynamics, Eidos-Montréal, Nixxes"
+        "Crystal Dynamics",
+        "Eidos-Montréal",
+        "Nixxes"
       ],
       "publishers": [
         "Crystal Dynamics"
@@ -57126,7 +57496,8 @@
         "Linear"
       ],
       "developers": [
-        "Ubisoft Sofia, Ubisoft Kiev"
+        "Ubisoft Sofia",
+        "Ubisoft Kiev"
       ],
       "publishers": [
         "Ubisoft"
@@ -57543,10 +57914,12 @@
         "Remake"
       ],
       "developers": [
-        "Eidos-Montréal, Feral Interactive (Mac)"
+        "Eidos-Montréal",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "Eidos Interactive Corp., Feral Interactive (Mac)"
+        "Eidos Interactive Corp.",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {
@@ -58145,10 +58518,12 @@
         "Multiple Endings"
       ],
       "developers": [
-        "二色幽紫蝶, Re零同人社"
+        "二色幽紫蝶",
+        "Re零同人社"
       ],
       "publishers": [
-        "二色幽紫蝶, Re零同人社"
+        "二色幽紫蝶",
+        "Re零同人社"
       ]
     },
     "hints": {},
@@ -59158,10 +59533,12 @@
         "Multiplayer"
       ],
       "developers": [
-        "Monolith Productions, Inc., Timegate"
+        "Monolith Productions, Inc.",
+        "Timegate"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {},
@@ -60698,7 +61075,8 @@
         "Comedy"
       ],
       "developers": [
-        "Hologryph, Eerie Guest Studios"
+        "Hologryph",
+        "Eerie Guest Studios"
       ],
       "publishers": [
         "tinyBuild"
@@ -60760,7 +61138,10 @@
         "Pathea Games"
       ],
       "publishers": [
-        "Pathea Games, Focus Entertainment, PM Studios, Inc., DMM Games"
+        "Pathea Games",
+        "Focus Entertainment",
+        "PM Studios, Inc.",
+        "DMM Games"
       ]
     },
     "hints": {},
@@ -61596,7 +61977,8 @@
         "Double Fine Productions"
       ],
       "publishers": [
-        "Double Fine Productions, Xbox Game Studios"
+        "Double Fine Productions",
+        "Xbox Game Studios"
       ]
     },
     "hints": {},
@@ -61770,7 +62152,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "MachineGames, Arkane Studios"
+        "MachineGames",
+        "Arkane Studios"
       ],
       "publishers": [
         "Bethesda Softworks"
@@ -61890,7 +62273,8 @@
         "LGBTQ+"
       ],
       "developers": [
-        "NetherRealm Studios, QLOC"
+        "NetherRealm Studios",
+        "QLOC"
       ],
       "publishers": [
         "Warner Bros. Games"
@@ -61952,7 +62336,9 @@
         "LucasArts"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {
@@ -62191,10 +62577,14 @@
         "Casual"
       ],
       "developers": [
-        "Relic Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Relic Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -62252,7 +62642,9 @@
         "Co-op"
       ],
       "developers": [
-        "id Software, Nightdive Studios, MachineGames"
+        "id Software",
+        "Nightdive Studios",
+        "MachineGames"
       ],
       "publishers": [
         "Bethesda Softworks"
@@ -62962,7 +63354,8 @@
         "Fantasy"
       ],
       "developers": [
-        "NetherRealm Studios, High Voltage Software"
+        "NetherRealm Studios",
+        "High Voltage Software"
       ],
       "publishers": [
         "Warner Bros. Interactive Entertainment"
@@ -63259,7 +63652,8 @@
         "Bad Pixel"
       ],
       "publishers": [
-        "Bad Pixel, tinyBuild"
+        "Bad Pixel",
+        "tinyBuild"
       ]
     },
     "hints": {},
@@ -63489,7 +63883,10 @@
         "Indie"
       ],
       "developers": [
-        "Studio Wildcard, Instinct Games, Efecto Studios, Virtual Basement LLC"
+        "Studio Wildcard",
+        "Instinct Games",
+        "Efecto Studios",
+        "Virtual Basement LLC"
       ],
       "publishers": [
         "Studio Wildcard"
@@ -63611,7 +64008,8 @@
         "Shiro Games"
       ],
       "publishers": [
-        "Funcom, Shiro Games"
+        "Funcom",
+        "Shiro Games"
       ]
     },
     "hints": {},
@@ -63667,7 +64065,8 @@
         "Action RPG"
       ],
       "developers": [
-        "KAIKO, Vigil Games"
+        "KAIKO",
+        "Vigil Games"
       ],
       "publishers": [
         "THQ Nordic"
@@ -64795,7 +65194,8 @@
         "DRAGO entertainment"
       ],
       "publishers": [
-        "DRAGO entertainment, Shochiku"
+        "DRAGO entertainment",
+        "Shochiku"
       ]
     },
     "hints": {},
@@ -64854,7 +65254,8 @@
         "FYQD-Studio"
       ],
       "publishers": [
-        "FYQD-Studio, PLAYISM"
+        "FYQD-Studio",
+        "PLAYISM"
       ]
     },
     "hints": {},
@@ -65024,7 +65425,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Xelu, Those Awesome Guys"
+        "Xelu",
+        "Those Awesome Guys"
       ],
       "publishers": [
         "Those Awesome Guys"
@@ -65383,7 +65785,8 @@
         "2D"
       ],
       "developers": [
-        "NetherRealm Studios, High Voltage Software"
+        "NetherRealm Studios",
+        "High Voltage Software"
       ],
       "publishers": [
         "Warner Bros. Interactive Entertainment"
@@ -65565,7 +65968,8 @@
         "President Studio"
       ],
       "publishers": [
-        "President Studio, PlayWay S.A."
+        "President Studio",
+        "PlayWay S.A."
       ]
     },
     "hints": {},
@@ -65799,7 +66203,8 @@
         "2D Fighter"
       ],
       "developers": [
-        "BANDAI NAMCO Studios Inc., Dimps Corporation"
+        "BANDAI NAMCO Studios Inc.",
+        "Dimps Corporation"
       ],
       "publishers": [
         "BANDAI NAMCO Entertainment"
@@ -65919,10 +66324,13 @@
         "4X"
       ],
       "developers": [
-        "Gearbox Software, Aspyr (Mac)"
+        "Gearbox Software",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "Gearbox Publishing, Aspyr (Mac), 2K"
+        "Gearbox Publishing",
+        "Aspyr (Mac)",
+        "2K"
       ]
     },
     "hints": {},
@@ -65978,7 +66386,8 @@
         "Platformer"
       ],
       "developers": [
-        "Naughty Dog LLC, Iron Galaxy Studios"
+        "Naughty Dog LLC",
+        "Iron Galaxy Studios"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -66282,7 +66691,9 @@
         "LucasArts"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {
@@ -66637,7 +67048,8 @@
         "Open World"
       ],
       "developers": [
-        "Ubisoft - San Francisco, Ubisoft - Osaka"
+        "Ubisoft - San Francisco",
+        "Ubisoft - Osaka"
       ],
       "publishers": [
         "Ubisoft"
@@ -67112,7 +67524,8 @@
         "Gore"
       ],
       "developers": [
-        "Toadman Interactive, Artplant"
+        "Toadman Interactive",
+        "Artplant"
       ],
       "publishers": [
         "Toadman Interactive"
@@ -67176,7 +67589,8 @@
         "Unknown Worlds Entertainment"
       ],
       "publishers": [
-        "Unknown Worlds Entertainment, KRAFTON, Inc."
+        "Unknown Worlds Entertainment",
+        "KRAFTON, Inc."
       ]
     },
     "hints": {
@@ -67711,7 +68125,8 @@
         "KING Art"
       ],
       "publishers": [
-        "Prime Matter, Deep Silver"
+        "Prime Matter",
+        "Deep Silver"
       ]
     },
     "hints": {},
@@ -68127,7 +68542,11 @@
         "Tutorial"
       ],
       "developers": [
-        "World's Edge, Forgotten Empires, Tantalus Media, CaptureAge, Virtuos Games"
+        "World's Edge",
+        "Forgotten Empires",
+        "Tantalus Media",
+        "CaptureAge",
+        "Virtuos Games"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -68532,7 +68951,8 @@
         "Drinkbox Studios"
       ],
       "publishers": [
-        "Drinkbox Studios, Kepler Ghost"
+        "Drinkbox Studios",
+        "Kepler Ghost"
       ]
     },
     "hints": {
@@ -68936,7 +69356,8 @@
         "Realistic"
       ],
       "developers": [
-        "Kaos Studios, Digital Extremes"
+        "Kaos Studios",
+        "Digital Extremes"
       ],
       "publishers": [
         "Deep Silver"
@@ -69459,7 +69880,9 @@
         "Atmospheric"
       ],
       "developers": [
-        "id Software, Nightdive Studios, MachineGames"
+        "id Software",
+        "Nightdive Studios",
+        "MachineGames"
       ],
       "publishers": [
         "Bethesda Softworks"
@@ -69579,7 +70002,8 @@
         "PlayWithFurcifer"
       ],
       "publishers": [
-        "IndieArk, Shochiku (Japan)"
+        "IndieArk",
+        "Shochiku (Japan)"
       ]
     },
     "hints": {},
@@ -69632,7 +70056,7 @@
         "Zombies"
       ],
       "developers": [
-        "Free Reign Entertainment, Free Reign Entertainment"
+        "Free Reign Entertainment"
       ],
       "publishers": [
         "Free Reign Entertainment"
@@ -69994,7 +70418,8 @@
         "GSQ Games"
       ],
       "publishers": [
-        "GSQ Games, Gamirror Games"
+        "GSQ Games",
+        "Gamirror Games"
       ]
     },
     "hints": {},
@@ -70050,7 +70475,11 @@
         "PvE"
       ],
       "developers": [
-        "Ubisoft Toronto, Ubisoft Montreal, Ubisoft Kyiv, Ubisoft Shanghai, Ubisoft Berlin"
+        "Ubisoft Toronto",
+        "Ubisoft Montreal",
+        "Ubisoft Kyiv",
+        "Ubisoft Shanghai",
+        "Ubisoft Berlin"
       ],
       "publishers": [
         "Ubisoft"
@@ -70641,7 +71070,8 @@
         "Hack and Slash"
       ],
       "developers": [
-        "GrizzlyGames, Mythwright"
+        "GrizzlyGames",
+        "Mythwright"
       ],
       "publishers": [
         "Mythwright"
@@ -70874,7 +71304,8 @@
         "Gaming Corps AB"
       ],
       "publishers": [
-        "Microids Indie, Microids"
+        "Microids Indie",
+        "Microids"
       ]
     },
     "hints": {
@@ -71592,7 +72023,8 @@
         "Sloclap"
       ],
       "publishers": [
-        "Sloclap, Kepler Interactive"
+        "Sloclap",
+        "Kepler Interactive"
       ]
     },
     "hints": {},
@@ -71648,7 +72080,8 @@
         "Sexual Content"
       ],
       "developers": [
-        "Spike Chunsoft Co., Ltd., Abstraction Games"
+        "Spike Chunsoft Co., Ltd.",
+        "Abstraction Games"
       ],
       "publishers": [
         "Spike Chunsoft Co., Ltd."
@@ -71768,7 +72201,8 @@
         "RedRuins Softworks"
       ],
       "publishers": [
-        "HypeTrain Digital, RedRuins Softworks"
+        "HypeTrain Digital",
+        "RedRuins Softworks"
       ]
     },
     "hints": {},
@@ -72163,10 +72597,12 @@
         "Controller"
       ],
       "developers": [
-        "Codemasters, Feral Interactive (Linux)"
+        "Codemasters",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Codemasters, Feral Interactive (Linux)"
+        "Codemasters",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {
@@ -72347,7 +72783,8 @@
         "Obb Studio Inc."
       ],
       "publishers": [
-        "Paras Games, Obb Studio Inc."
+        "Paras Games",
+        "Obb Studio Inc."
       ]
     },
     "hints": {},
@@ -72579,7 +73016,9 @@
         "Slightly Mad Studios"
       ],
       "publishers": [
-        "Codemasters, Slightly Mad Studios, Electronic Arts"
+        "Codemasters",
+        "Slightly Mad Studios",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -72794,7 +73233,8 @@
         "Action"
       ],
       "developers": [
-        "Sledgehammer Games, Raven Software"
+        "Sledgehammer Games",
+        "Raven Software"
       ],
       "publishers": [
         "Activision"
@@ -73493,7 +73933,12 @@
         "Sexual Content"
       ],
       "developers": [
-        "Treyarch, Raven Software, High Moon Studios, Beenox, Activision Shanghai, Sledgehammer Games"
+        "Treyarch",
+        "Raven Software",
+        "High Moon Studios",
+        "Beenox",
+        "Activision Shanghai",
+        "Sledgehammer Games"
       ],
       "publishers": [
         "Activision"
@@ -73672,7 +74117,10 @@
         "Action RPG"
       ],
       "developers": [
-        "2K Marin, 2K China, Digital Extremes, 2K Australia"
+        "2K Marin",
+        "2K China",
+        "Digital Extremes",
+        "2K Australia"
       ],
       "publishers": [
         "2K"
@@ -74027,7 +74475,8 @@
         "Multiplayer"
       ],
       "developers": [
-        "PixelShard, KillHouse Games"
+        "PixelShard",
+        "KillHouse Games"
       ],
       "publishers": [
         "KillHouse Games"
@@ -74089,7 +74538,8 @@
         "Isolated Games"
       ],
       "publishers": [
-        "Isolated Games, IndieArk"
+        "Isolated Games",
+        "IndieArk"
       ]
     },
     "hints": {},
@@ -74552,10 +75002,12 @@
         "Casual"
       ],
       "developers": [
-        "Traveller's Tales, Feral Interactive (Mac)"
+        "Traveller's Tales",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "Warner Bros. Interactive Entertainment, Feral Interactive (Mac)"
+        "Warner Bros. Interactive Entertainment",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {},
@@ -74731,7 +75183,8 @@
         "Female Protagonist"
       ],
       "developers": [
-        "Square Enix, Toylogic Inc."
+        "Square Enix",
+        "Toylogic Inc."
       ],
       "publishers": [
         "Square Enix"
@@ -74910,7 +75363,9 @@
         "Remake"
       ],
       "developers": [
-        "KAIKO, Big Huge Games, 38 Studios"
+        "KAIKO",
+        "Big Huge Games",
+        "38 Studios"
       ],
       "publishers": [
         "THQ Nordic"
@@ -75090,7 +75545,8 @@
         "Black Tabby Games"
       ],
       "publishers": [
-        "Black Tabby Games, Serenity Forge"
+        "Black Tabby Games",
+        "Serenity Forge"
       ]
     },
     "hints": {},
@@ -75205,7 +75661,8 @@
         "Stealth"
       ],
       "developers": [
-        "Crytek, Saber Interactive"
+        "Crytek",
+        "Saber Interactive"
       ],
       "publishers": [
         "Crytek"
@@ -75325,7 +75782,8 @@
         "Sukeban Games"
       ],
       "publishers": [
-        "Ysbryd Games, PLAYISM"
+        "Ysbryd Games",
+        "PLAYISM"
       ]
     },
     "hints": {},
@@ -75677,10 +76135,12 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Big Huge Games, 38 Studios"
+        "Big Huge Games",
+        "38 Studios"
       ],
       "publishers": [
-        "38 Studios, Electronic Arts"
+        "38 Studios",
+        "Electronic Arts"
       ]
     },
     "hints": {
@@ -75916,7 +76376,8 @@
         "Bossa Studios"
       ],
       "publishers": [
-        "Infogrames, Atari"
+        "Infogrames",
+        "Atari"
       ]
     },
     "hints": {},
@@ -76319,7 +76780,8 @@
         "Co-op"
       ],
       "developers": [
-        "Black Forest Games, Pandemic Studios"
+        "Black Forest Games",
+        "Pandemic Studios"
       ],
       "publishers": [
         "THQ Nordic"
@@ -76672,7 +77134,8 @@
         "Asteroid Lab"
       ],
       "publishers": [
-        "Goblinz Publishing, IndieArk"
+        "Goblinz Publishing",
+        "IndieArk"
       ]
     },
     "hints": {},
@@ -76787,7 +77250,8 @@
         "Co-op"
       ],
       "developers": [
-        "GRASSHOPPER MANUFACTURE INC., SUPERTRICK GAMES, Inc."
+        "GRASSHOPPER MANUFACTURE INC.",
+        "SUPERTRICK GAMES, Inc."
       ],
       "publishers": [
         "GungHo Online Entertainment America, Inc."
@@ -77670,7 +78134,8 @@
         "Funny"
       ],
       "developers": [
-        "Redemption Road, Pixel Dash Studios"
+        "Redemption Road",
+        "Pixel Dash Studios"
       ],
       "publishers": [
         "Tripwire Presents"
@@ -78258,7 +78723,8 @@
         "Zombies"
       ],
       "developers": [
-        "Double Action Factory, Jorge Rodriguez"
+        "Double Action Factory",
+        "Jorge Rodriguez"
       ],
       "publishers": [
         "Double Action Factory"
@@ -78377,7 +78843,9 @@
         "Pandemic Studios"
       ],
       "publishers": [
-        "Lucasfilm, LucasArts, Disney"
+        "Lucasfilm",
+        "LucasArts",
+        "Disney"
       ]
     },
     "hints": {
@@ -78438,7 +78906,8 @@
         "inXile Entertainment"
       ],
       "publishers": [
-        "inXile Entertainment, Xbox Game Studios"
+        "inXile Entertainment",
+        "Xbox Game Studios"
       ]
     },
     "hints": {},
@@ -78674,7 +79143,8 @@
         "Team-Based"
       ],
       "developers": [
-        "Obsidian Entertainment, Wishlist Games"
+        "Obsidian Entertainment",
+        "Wishlist Games"
       ],
       "publishers": [
         "Wishlist Games"
@@ -78852,7 +79322,8 @@
         "Tower Defense"
       ],
       "developers": [
-        "Dekovir Entertainment, Sibear Games"
+        "Dekovir Entertainment",
+        "Sibear Games"
       ],
       "publishers": [
         "Dekovir Ltd"
@@ -78911,7 +79382,9 @@
         "1990's"
       ],
       "developers": [
-        "World's Edge, Forgotten Empires, Tantalus"
+        "World's Edge",
+        "Forgotten Empires",
+        "Tantalus"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -78970,7 +79443,8 @@
         "Violent"
       ],
       "developers": [
-        "Crytek, Saber Interactive"
+        "Crytek",
+        "Saber Interactive"
       ],
       "publishers": [
         "Crytek"
@@ -79269,7 +79743,8 @@
         "Adventure"
       ],
       "developers": [
-        "Flaming Fowl Studios, Saber Interactive"
+        "Flaming Fowl Studios",
+        "Saber Interactive"
       ],
       "publishers": [
         "Twin Sails Interactive"
@@ -79853,7 +80328,8 @@
         "Ghostpie Studio"
       ],
       "publishers": [
-        "Ghostpie Studio, Gamera Games"
+        "Ghostpie Studio",
+        "Gamera Games"
       ]
     },
     "hints": {},
@@ -80203,7 +80679,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "Warner Bros. Games Montréal, QLOC"
+        "Warner Bros. Games Montréal",
+        "QLOC"
       ],
       "publishers": [
         "Warner Bros. Games"
@@ -80382,7 +80859,8 @@
         "Puzzle"
       ],
       "developers": [
-        "Virtual Heroes, Army Game Studio"
+        "Virtual Heroes",
+        "Army Game Studio"
       ],
       "publishers": [
         "NASA"
@@ -80441,7 +80919,8 @@
         "Classic"
       ],
       "developers": [
-        "Creative Assembly, Feral Interactive"
+        "Creative Assembly",
+        "Feral Interactive"
       ],
       "publishers": [
         "SEGA"
@@ -80670,7 +81149,10 @@
         "Ishtar Games"
       ],
       "publishers": [
-        "Nacon, The Arcade Crew, Gamera Games, DANGEN Entertainment"
+        "Nacon",
+        "The Arcade Crew",
+        "Gamera Games",
+        "DANGEN Entertainment"
       ]
     },
     "hints": {},
@@ -80959,7 +81441,8 @@
         "Comedy"
       ],
       "developers": [
-        "SNK CORPORATION, Dotemu"
+        "SNK CORPORATION",
+        "Dotemu"
       ],
       "publishers": [
         "SNK CORPORATION"
@@ -81421,7 +81904,11 @@
         "Simulation"
       ],
       "developers": [
-        "Ubisoft Annecy, Ubisoft Belgrade, Ubisoft Kyiv, Ubisoft Pune, Ubisoft Odesa"
+        "Ubisoft Annecy",
+        "Ubisoft Belgrade",
+        "Ubisoft Kyiv",
+        "Ubisoft Pune",
+        "Ubisoft Odesa"
       ],
       "publishers": [
         "Ubisoft Entertainment"
@@ -81960,7 +82447,8 @@
         "Online Co-Op"
       ],
       "developers": [
-        "Traveller's Tales, TT Games"
+        "Traveller's Tales",
+        "TT Games"
       ],
       "publishers": [
         "Warner Bros. Interactive Entertainment"
@@ -82018,7 +82506,8 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Victor Solodilov, Denis Novikov"
+        "Victor Solodilov",
+        "Denis Novikov"
       ],
       "publishers": [
         "tinyBuild"
@@ -82251,7 +82740,8 @@
         "Sector D2"
       ],
       "publishers": [
-        "Sector D2, Balor Games"
+        "Sector D2",
+        "Balor Games"
       ]
     },
     "hints": {},
@@ -82430,7 +82920,8 @@
         "DoubleBee"
       ],
       "publishers": [
-        "rokaplay select, Drillhounds"
+        "rokaplay select",
+        "Drillhounds"
       ]
     },
     "hints": {},
@@ -82483,7 +82974,9 @@
         "Aspyr Studios"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -82838,7 +83331,8 @@
         "7th Beat Games"
       ],
       "publishers": [
-        "7th Beat Games, indienova"
+        "7th Beat Games",
+        "indienova"
       ]
     },
     "hints": {},
@@ -83012,7 +83506,9 @@
         "Football (American)"
       ],
       "developers": [
-        "Bugbear Entertainment, ZOOM Platform Media, Jordan Freeman Group"
+        "Bugbear Entertainment",
+        "ZOOM Platform Media",
+        "Jordan Freeman Group"
       ],
       "publishers": [
         "Strategy First"
@@ -83186,7 +83682,8 @@
         "Fantasy"
       ],
       "developers": [
-        "Square Enix, ACQUIRE Corp."
+        "Square Enix",
+        "ACQUIRE Corp."
       ],
       "publishers": [
         "Square Enix"
@@ -84362,7 +84859,8 @@
         "Hopoo Games"
       ],
       "publishers": [
-        "Gearbox Publishing, 2K"
+        "Gearbox Publishing",
+        "2K"
       ]
     },
     "hints": {},
@@ -84476,7 +84974,8 @@
         "PopCap Games, Inc."
       ],
       "publishers": [
-        "PopCap Games, Inc., Electronic Arts"
+        "PopCap Games, Inc.",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -85048,10 +85547,12 @@
         "Atmospheric"
       ],
       "developers": [
-        "Relic Entertainment, Feral Interactive (Mac/Linux)"
+        "Relic Entertainment",
+        "Feral Interactive (Mac/Linux)"
       ],
       "publishers": [
-        "SEGA, Feral Interactive (Mac/Linux)"
+        "SEGA",
+        "Feral Interactive (Mac/Linux)"
       ]
     },
     "hints": {
@@ -85112,7 +85613,8 @@
         "Contingent99"
       ],
       "publishers": [
-        "Contingent99, Balor Games"
+        "Contingent99",
+        "Balor Games"
       ]
     },
     "hints": {},
@@ -85171,7 +85673,9 @@
         "Raven Software"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -85746,7 +86250,9 @@
         "FPS"
       ],
       "developers": [
-        "Volition, Reactor Zero, THQ Nordic"
+        "Volition",
+        "Reactor Zero",
+        "THQ Nordic"
       ],
       "publishers": [
         "Deep Silver"
@@ -85867,7 +86373,8 @@
         "Triumph Studios"
       ],
       "publishers": [
-        "Codemasters, Electronic Arts"
+        "Codemasters",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -86041,7 +86548,9 @@
         "Colorful"
       ],
       "developers": [
-        "Dotemu, Guard Crush, Lizardcube"
+        "Dotemu",
+        "Guard Crush",
+        "Lizardcube"
       ],
       "publishers": [
         "Dotemu"
@@ -86382,7 +86891,10 @@
         "Radical Fish Games"
       ],
       "publishers": [
-        "Deck13, WhisperGames, DANGEN Entertainment, Mayflower Entertainment"
+        "Deck13",
+        "WhisperGames",
+        "DANGEN Entertainment",
+        "Mayflower Entertainment"
       ]
     },
     "hints": {},
@@ -86438,10 +86950,11 @@
         "Combat"
       ],
       "developers": [
-        "USERJOY Technology Co.,Ltd."
+        "USERJOY Technology Co., Ltd."
       ],
       "publishers": [
-        "USERJOY Technology Co.,Ltd., Phoenix Game"
+        "USERJOY Technology Co., Ltd.",
+        "Phoenix Game"
       ]
     },
     "hints": {},
@@ -86767,7 +87280,7 @@
         "Co-op"
       ],
       "developers": [
-        "Softstar Technology (Beijing) Co.,Ltd"
+        "Softstar Technology (Beijing) Co., Ltd"
       ],
       "publishers": [
         "SOFTSTAR ENTERTAINMENT"
@@ -86938,7 +87451,8 @@
         "FPS"
       ],
       "developers": [
-        "WeMade, VALOFE"
+        "WeMade",
+        "VALOFE"
       ],
       "publishers": [
         "VALOFE"
@@ -87808,7 +88322,8 @@
         "Code Horizon"
       ],
       "publishers": [
-        "Code Horizon, PlayWay S.A."
+        "Code Horizon",
+        "PlayWay S.A."
       ]
     },
     "hints": {},
@@ -88319,7 +88834,9 @@
         "Third Person"
       ],
       "developers": [
-        "Poppermost Productions, WastedStudios, Crytek"
+        "Poppermost Productions",
+        "WastedStudios",
+        "Crytek"
       ],
       "publishers": [
         "Crytek"
@@ -88591,7 +89108,8 @@
         "Gore"
       ],
       "developers": [
-        "Bohemia Interactive, Josef Šimánek (retro)"
+        "Bohemia Interactive",
+        "Josef Šimánek (retro)"
       ],
       "publishers": [
         "Bohemia Interactive"
@@ -88766,7 +89284,9 @@
         "Turn-Based Strategy"
       ],
       "developers": [
-        "Edmund McMillen, James Interactive, Ridiculon"
+        "Edmund McMillen",
+        "James Interactive",
+        "Ridiculon"
       ],
       "publishers": [
         "Edmund McMillen"
@@ -89588,7 +90108,8 @@
         "David Moralejo Sánchez"
       ],
       "publishers": [
-        "GrabTheGames, UpgradePoint"
+        "GrabTheGames",
+        "UpgradePoint"
       ]
     },
     "hints": {},
@@ -89647,7 +90168,8 @@
         "Smola Game Studio"
       ],
       "publishers": [
-        "Smola Game Studio, Agafonoff"
+        "Smola Game Studio",
+        "Agafonoff"
       ]
     },
     "hints": {},
@@ -89745,7 +90267,8 @@
         "FPS"
       ],
       "developers": [
-        "Sledgehammer Games, Raven Software"
+        "Sledgehammer Games",
+        "Raven Software"
       ],
       "publishers": [
         "Activision"
@@ -89804,7 +90327,8 @@
         "Free Reign Entertainment"
       ],
       "publishers": [
-        "OP Productions LLC, Free Reign East LLC"
+        "OP Productions LLC",
+        "Free Reign East LLC"
       ]
     },
     "hints": {
@@ -89865,7 +90389,8 @@
         "Jaspel"
       ],
       "publishers": [
-        "Pretty Soon, IndieArk"
+        "Pretty Soon",
+        "IndieArk"
       ]
     },
     "hints": {},
@@ -90272,7 +90797,8 @@
         "Strategy"
       ],
       "developers": [
-        "AN Productions, Poxpower"
+        "AN Productions",
+        "Poxpower"
       ],
       "publishers": [
         "Armor Games Studios"
@@ -90334,7 +90860,8 @@
         "Beautiful Glitch"
       ],
       "publishers": [
-        "Xelu, Those Awesome Guys"
+        "Xelu",
+        "Those Awesome Guys"
       ]
     },
     "hints": {},
@@ -90841,7 +91368,8 @@
         "软星科技(SoftStarlight)"
       ],
       "publishers": [
-        "方块游戏(CubeGame), 软星科技(SoftStarlight)"
+        "方块游戏(CubeGame)",
+        "软星科技(SoftStarlight)"
       ]
     },
     "hints": {},
@@ -91063,7 +91591,8 @@
         "Flow Fire Games"
       ],
       "publishers": [
-        "Flow Fire Games, WhisperGames"
+        "Flow Fire Games",
+        "WhisperGames"
       ]
     },
     "hints": {},
@@ -91119,10 +91648,12 @@
         "Strategy"
       ],
       "developers": [
-        "TOM CREATE, 株式会社トムクリエイト"
+        "TOM CREATE",
+        "株式会社トムクリエイト"
       ],
       "publishers": [
-        "BANDAI NAMCO Entertainment, 株式会社バンダイナムコエンターテインメント"
+        "BANDAI NAMCO Entertainment",
+        "株式会社バンダイナムコエンターテインメント"
       ]
     },
     "hints": {},
@@ -91178,7 +91709,8 @@
         "World War II"
       ],
       "developers": [
-        "Raven Software, Beenox"
+        "Raven Software",
+        "Beenox"
       ],
       "publishers": [
         "Activision"
@@ -91466,7 +91998,8 @@
         "3D Platformer"
       ],
       "developers": [
-        "Insomniac Games, Blind Squirrel Games"
+        "Insomniac Games",
+        "Blind Squirrel Games"
       ],
       "publishers": [
         "Xbox Game Studios"
@@ -91873,7 +92406,8 @@
         "VR"
       ],
       "developers": [
-        "CyberCoconut, Fabio Ferrara"
+        "CyberCoconut",
+        "Fabio Ferrara"
       ],
       "publishers": [
         "CyberCoconut"
@@ -92333,7 +92867,9 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Space Cat Studios, SnowFlame, Back To Basics Gaming"
+        "Space Cat Studios",
+        "SnowFlame",
+        "Back To Basics Gaming"
       ],
       "publishers": [
         "Back To Basics Gaming"
@@ -93211,7 +93747,9 @@
         "PvP"
       ],
       "developers": [
-        "Monstars Inc., Resonair, Stage Games"
+        "Monstars Inc.",
+        "Resonair",
+        "Stage Games"
       ],
       "publishers": [
         "Enhance"
@@ -93723,7 +94261,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Wangyuan Shengtang Entertainment Technology CO., 上海烛龙信息科技有限公司"
+        "Wangyuan Shengtang Entertainment Technology CO.",
+        "上海烛龙信息科技有限公司"
       ],
       "publishers": [
         "Gameforge 4D GmbH"
@@ -94472,10 +95011,15 @@
         "Adventure"
       ],
       "developers": [
-        "Codemasters, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Codemasters",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Codemasters, Feral Interactive (Mac), Feral Interactive (Linux), Electronic Arts"
+        "Codemasters",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -95326,7 +95870,8 @@
         "Survival"
       ],
       "developers": [
-        "TT Games, Traveller's Tales"
+        "TT Games",
+        "Traveller's Tales"
       ],
       "publishers": [
         "Warner Bros. Interactive Entertainment"
@@ -96130,7 +96675,8 @@
         "Co-op"
       ],
       "developers": [
-        "id Software, Avalanche Studios"
+        "id Software",
+        "Avalanche Studios"
       ],
       "publishers": [
         "Bethesda Softworks"
@@ -96189,10 +96735,13 @@
         "Controller"
       ],
       "developers": [
-        "Traveller's Tales, TT Games, Feral Interactive (Mac)"
+        "Traveller's Tales",
+        "TT Games",
+        "Feral Interactive (Mac)"
       ],
       "publishers": [
-        "Warner Bros. Interactive Entertainment, Feral Interactive (Mac)"
+        "Warner Bros. Interactive Entertainment",
+        "Feral Interactive (Mac)"
       ]
     },
     "hints": {},
@@ -96419,10 +96968,12 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Team Ladybug, WSS playground"
+        "Team Ladybug",
+        "WSS playground"
       ],
       "publishers": [
-        "WSS playground, Alliance Arts"
+        "WSS playground",
+        "Alliance Arts"
       ]
     },
     "hints": {},
@@ -96678,7 +97229,8 @@
         "Compulsion Games"
       ],
       "publishers": [
-        "Gearbox Publishing,  Xbox Game Studios"
+        "Gearbox Publishing",
+        "Xbox Game Studios"
       ]
     },
     "hints": {},
@@ -96796,7 +97348,8 @@
         "Artefacts Studio"
       ],
       "publishers": [
-        "Dear Villagers, E-Home Entertainment"
+        "Dear Villagers",
+        "E-Home Entertainment"
       ]
     },
     "hints": {},
@@ -96895,7 +97448,8 @@
         "JDM4iK Games"
       ],
       "publishers": [
-        "SA Industry, BATYSTORE LTD"
+        "SA Industry",
+        "BATYSTORE LTD"
       ]
     },
     "hints": {},
@@ -97200,10 +97754,12 @@
         "Action"
       ],
       "developers": [
-        "Monolith Productions, Inc., Timegate"
+        "Monolith Productions, Inc.",
+        "Timegate"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {},
@@ -97880,7 +98436,8 @@
         "Character Customization"
       ],
       "developers": [
-        "Piranha Bytes, THQ Nordic"
+        "Piranha Bytes",
+        "THQ Nordic"
       ],
       "publishers": [
         "THQ Nordic"
@@ -97920,10 +98477,12 @@
         "Action"
       ],
       "developers": [
-        "Monolith Productions, Inc., Timegate"
+        "Monolith Productions, Inc.",
+        "Timegate"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {},
@@ -98085,7 +98644,8 @@
         "Point & Click"
       ],
       "developers": [
-        "AN Productions, Poxpower"
+        "AN Productions",
+        "Poxpower"
       ],
       "publishers": [
         "Armor Games Studios"
@@ -98144,7 +98704,8 @@
         "Arcade"
       ],
       "developers": [
-        "Housemarque, Climax Studios"
+        "Housemarque",
+        "Climax Studios"
       ],
       "publishers": [
         "PlayStation Publishing LLC"
@@ -98383,7 +98944,8 @@
         "Two Star Games"
       ],
       "publishers": [
-        "V Publishing, Surefire.Games"
+        "V Publishing",
+        "Surefire.Games"
       ]
     },
     "hints": {},
@@ -98436,7 +98998,8 @@
         "Experimental"
       ],
       "developers": [
-        "Fabio Ferrara, Giulia Airoldi"
+        "Fabio Ferrara",
+        "Giulia Airoldi"
       ],
       "publishers": [
         "Chubby Pixel"
@@ -98925,7 +99488,8 @@
         "Story Rich"
       ],
       "developers": [
-        "Blue Byte, Related Designs"
+        "Blue Byte",
+        "Related Designs"
       ],
       "publishers": [
         "Ubisoft"
@@ -99036,7 +99600,8 @@
         "Memes"
       ],
       "developers": [
-        "SnowFlame, Back To Basics Gaming"
+        "SnowFlame",
+        "Back To Basics Gaming"
       ],
       "publishers": [
         "Back To Basics Gaming"
@@ -99334,7 +99899,8 @@
         "ION LANDS"
       ],
       "publishers": [
-        "ION LANDS, Maple Whispering Limited"
+        "ION LANDS",
+        "Maple Whispering Limited"
       ]
     },
     "hints": {},
@@ -99393,7 +99959,8 @@
         "Green Tile Digital"
       ],
       "publishers": [
-        "Green Tile Digital, THQ Nordic"
+        "Green Tile Digital",
+        "THQ Nordic"
       ]
     },
     "hints": {
@@ -99451,7 +100018,11 @@
         "Tutorial"
       ],
       "developers": [
-        "FRENCH-BREAD, TYPE-MOON, Lasengle Inc., TAMSOFT CORPORATION, GameLoop Inc."
+        "FRENCH-BREAD",
+        "TYPE-MOON",
+        "Lasengle Inc.",
+        "TAMSOFT CORPORATION",
+        "GameLoop Inc."
       ],
       "publishers": [
         "Lasengle Inc."
@@ -99669,7 +100240,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Free Games Info, hyperboreanGames"
+        "Free Games Info",
+        "hyperboreanGames"
       ],
       "publishers": [
         "Back To Basics Gaming"
@@ -100040,7 +100612,8 @@
         "Boomer Shooter"
       ],
       "developers": [
-        "Nightdive Studios, Monolith Productions"
+        "Nightdive Studios",
+        "Monolith Productions"
       ],
       "publishers": [
         "Atari"
@@ -100509,7 +101082,8 @@
         "Cyanide Studio"
       ],
       "publishers": [
-        "Cyanide Studio, Nacon"
+        "Cyanide Studio",
+        "Nacon"
       ]
     },
     "hints": {},
@@ -100554,7 +101128,8 @@
         "Sci-fi"
       ],
       "developers": [
-        "Eric Ruts, Jacob Kooiman"
+        "Eric Ruts",
+        "Jacob Kooiman"
       ],
       "publishers": [
         "HyperReuts"
@@ -101494,7 +102069,8 @@
         "Indie"
       ],
       "developers": [
-        "Pancake Games, Bit Golem"
+        "Pancake Games",
+        "Bit Golem"
       ],
       "publishers": [
         "Ultimate Games S.A."
@@ -101556,7 +102132,8 @@
         "Monolith"
       ],
       "publishers": [
-        "Warner Bros. Games, Warner Bros. Interactive Entertainment"
+        "Warner Bros. Games",
+        "Warner Bros. Interactive Entertainment"
       ]
     },
     "hints": {},
@@ -101908,7 +102485,8 @@
         "Bureau 81"
       ],
       "publishers": [
-        "Bureau 81, indienova"
+        "Bureau 81",
+        "indienova"
       ]
     },
     "hints": {},
@@ -102238,7 +102816,8 @@
         "Competitive"
       ],
       "developers": [
-        "Circle Five Studios, Pub Games"
+        "Circle Five Studios",
+        "Pub Games"
       ],
       "publishers": [
         "Circle Five Publishing"
@@ -102420,7 +102999,8 @@
         "Benjamin \"ThingOnItsOwn\" Hauer"
       ],
       "publishers": [
-        "Goblinz Publishing, Maple Whispering Limited"
+        "Goblinz Publishing",
+        "Maple Whispering Limited"
       ]
     },
     "hints": {},
@@ -103514,7 +104094,8 @@
         "Post-apocalyptic"
       ],
       "developers": [
-        "Vertigo Games, Jaywalkers Interactive"
+        "Vertigo Games",
+        "Jaywalkers Interactive"
       ],
       "publishers": [
         "Vertigo Games"
@@ -103693,7 +104274,8 @@
         "People Can Fly"
       ],
       "publishers": [
-        "Gearbox Publishing, 2K"
+        "Gearbox Publishing",
+        "2K"
       ]
     },
     "hints": {},
@@ -103808,7 +104390,8 @@
         "Psychological Horror"
       ],
       "developers": [
-        "Sparpweed, Codeglue"
+        "Sparpweed",
+        "Codeglue"
       ],
       "publishers": [
         "Sparpweed"
@@ -103984,7 +104567,9 @@
         "Raven Software"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -104043,7 +104628,8 @@
         "Maschinen-Mensch"
       ],
       "publishers": [
-        "Maschinen-Mensch, Saftladen Berlin"
+        "Maschinen-Mensch",
+        "Saftladen Berlin"
       ]
     },
     "hints": {},
@@ -104391,10 +104977,12 @@
         "Adventure"
       ],
       "developers": [
-        "Frontier, Aspyr (Mac)"
+        "Frontier",
+        "Aspyr (Mac)"
       ],
       "publishers": [
-        "Frontier, Aspyr (Mac)"
+        "Frontier",
+        "Aspyr (Mac)"
       ]
     },
     "hints": {},
@@ -104742,7 +105330,9 @@
         "Walking Simulator"
       ],
       "developers": [
-        "Shokunin, Thomas M. Visser, Vincent Thiele"
+        "Shokunin",
+        "Thomas M. Visser",
+        "Vincent Thiele"
       ],
       "publishers": [
         "Self Published"
@@ -104914,7 +105504,8 @@
         "Gore"
       ],
       "developers": [
-        "UNDEFEATED Games, Indie-us Games"
+        "UNDEFEATED Games",
+        "Indie-us Games"
       ],
       "publishers": [
         "Vantan Game Academy"
@@ -104975,7 +105566,9 @@
         "LucasArts"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -105143,7 +105736,8 @@
         "Abrakam Entertainment SA"
       ],
       "publishers": [
-        "Versus Evil, tinyBuild"
+        "Versus Evil",
+        "tinyBuild"
       ]
     },
     "hints": {},
@@ -105433,7 +106027,8 @@
         "Falling Blocks"
       ],
       "developers": [
-        "Sonic Team, Bitbaboon"
+        "Sonic Team",
+        "Bitbaboon"
       ],
       "publishers": [
         "SEGA"
@@ -105657,7 +106252,8 @@
         "Great Soundtrack"
       ],
       "developers": [
-        "Rooster Teeth Games, FarBridge"
+        "Rooster Teeth Games",
+        "FarBridge"
       ],
       "publishers": [
         "FarBridge"
@@ -105772,10 +106368,14 @@
         "Beautiful"
       ],
       "developers": [
-        "Codemasters Racing, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Codemasters Racing",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ],
       "publishers": [
-        "Codemasters, Feral Interactive (Mac), Feral Interactive (Linux)"
+        "Codemasters",
+        "Feral Interactive (Mac)",
+        "Feral Interactive (Linux)"
       ]
     },
     "hints": {},
@@ -106411,7 +107011,8 @@
         "Nudity"
       ],
       "developers": [
-        "Deep Silver Volition, High Voltage Software"
+        "Deep Silver Volition",
+        "High Voltage Software"
       ],
       "publishers": [
         "Deep Silver"
@@ -106696,7 +107297,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "Virtual Basement LLC, Code Headquarters LLC"
+        "Virtual Basement LLC",
+        "Code Headquarters LLC"
       ],
       "publishers": [
         "Virtual Basement LLC"
@@ -107053,7 +107655,8 @@
         "Reality Pump Studios"
       ],
       "publishers": [
-        "Topware Interactive, ACE"
+        "Topware Interactive",
+        "ACE"
       ]
     },
     "hints": {},
@@ -108194,7 +108797,8 @@
         "Haemimont Games"
       ],
       "publishers": [
-        "Haemimont Games, EuroVideo Medien"
+        "Haemimont Games",
+        "EuroVideo Medien"
       ]
     },
     "hints": {},
@@ -108932,10 +109536,12 @@
         "Wuxia"
       ],
       "developers": [
-        "SOFTSTAR, DOMO Studio"
+        "SOFTSTAR",
+        "DOMO Studio"
       ],
       "publishers": [
-        "SOFTSTAR, Yooreka Studio"
+        "SOFTSTAR",
+        "Yooreka Studio"
       ]
     },
     "hints": {},
@@ -110335,7 +110941,9 @@
         "RPG"
       ],
       "developers": [
-        "Nightdive Studios, Irrational Games, Looking Glass Studios"
+        "Nightdive Studios",
+        "Irrational Games",
+        "Looking Glass Studios"
       ],
       "publishers": [
         "Nightdive Studios"
@@ -110899,7 +111507,9 @@
         "LucasArts"
       ],
       "publishers": [
-        "LucasArts, Lucasfilm, Disney"
+        "LucasArts",
+        "Lucasfilm",
+        "Disney"
       ]
     },
     "hints": {},
@@ -110950,7 +111560,8 @@
         "Survival"
       ],
       "developers": [
-        "VALOFE, NEXON"
+        "VALOFE",
+        "NEXON"
       ],
       "publishers": [
         "VALOFE"
@@ -111224,7 +111835,8 @@
         "Nimble Neuron"
       ],
       "publishers": [
-        "Nimble Neuron, Boltrend Global PTE.LTD"
+        "Nimble Neuron",
+        "Boltrend Global PTE.LTD"
       ]
     },
     "hints": {},
@@ -111712,7 +112324,8 @@
         "Vertigo Games America"
       ],
       "publishers": [
-        "Papaya Play, Vertigo Games America"
+        "Papaya Play",
+        "Vertigo Games America"
       ]
     },
     "hints": {},
@@ -111937,10 +112550,12 @@
         "Space Sim"
       ],
       "developers": [
-        "Six Foot, YAGER"
+        "Six Foot",
+        "YAGER"
       ],
       "publishers": [
-        "Grey Box, Six Foot"
+        "Grey Box",
+        "Six Foot"
       ]
     },
     "hints": {},
@@ -112890,7 +113505,8 @@
         "Codemasters"
       ],
       "publishers": [
-        "Codemasters, Electronic Arts"
+        "Codemasters",
+        "Electronic Arts"
       ]
     },
     "hints": {},
@@ -113058,7 +113674,9 @@
         "Walking Simulator"
       ],
       "developers": [
-        "Capybara, Superbrothers, Jim Guthrie"
+        "Capybara",
+        "Superbrothers",
+        "Jim Guthrie"
       ],
       "publishers": [
         "Capybara Games"
@@ -113394,7 +114012,8 @@
         "Action RPG"
       ],
       "developers": [
-        "Creative Assembly, PC Port - Hardlight"
+        "Creative Assembly",
+        "PC Port - Hardlight"
       ],
       "publishers": [
         "SEGA"
@@ -114075,7 +114694,8 @@
         "Third Person"
       ],
       "developers": [
-        "VALOFE, Webzen"
+        "VALOFE",
+        "Webzen"
       ],
       "publishers": [
         "VALOFE"
@@ -114359,7 +114979,8 @@
         "Singleplayer"
       ],
       "developers": [
-        "Carbomb Software, Nova Dimension"
+        "Carbomb Software",
+        "Nova Dimension"
       ],
       "publishers": [
         "Nova Dimension"
@@ -114510,7 +115131,8 @@
         "Dark"
       ],
       "developers": [
-        "Shub-Niggurath Games, ShopaLover"
+        "Shub-Niggurath Games",
+        "ShopaLover"
       ],
       "publishers": [
         "ShopaLover"
@@ -114569,7 +115191,8 @@
         "Atmospheric"
       ],
       "developers": [
-        "X1 Software, AWAR"
+        "X1 Software",
+        "AWAR"
       ],
       "publishers": [
         "Deep Silver"
@@ -114628,7 +115251,8 @@
         "Artificial Intelligence"
       ],
       "developers": [
-        "Falco Software, Laush Dmitriy Sergeevich"
+        "Falco Software",
+        "Laush Dmitriy Sergeevich"
       ],
       "publishers": [
         "Laush Studio"

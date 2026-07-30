@@ -60,13 +60,15 @@ Persist `/app/data`. Only enable `STEAMGUESS_TRUST_PROXY=true` behind a trusted 
 The current 1,999 SteamSpy candidates publish to **1,964 playable games** after non-game records are removed. The published catalog contains 1,963 Chinese names, 1,704 mainland-China regular prices, and 890 retained screenshots.
 
 ```bash
-npm run data:publish-labeler   # offline publish
-npm run data:publish-playable  # offline publish
+npm run data:catalog-import    # bootstrap/upsert the canonical catalog SQLite database
+npm run data:catalog-status    # inspect completeness and pending enrichment
+npm run data:publish-labeler   # offline browser artifact publish
+npm run data:publish-playable  # offline browser artifact publish
 npm run data:sample-peaks      # daily SteamSpy peak sample
-npm run data:update-weekly     # weekly discovery and publish
+npm run data:update-weekly     # fetch SteamSpy pages 0..19 and upsert discovery
 ```
 
-SteamSpy `ccu` is the previous day's peak, not a live count. The UI uses a rolling seven-day peak when sample history exists. Prices use mainland-China regular prices only, never promotional prices or converted USD values.
+The persistent catalog database is separate from the player/runtime database; see `docs/catalog-pipeline.md`. SteamSpy `ccu` is the previous day's peak, not a live count. The UI uses a rolling seven-day peak when sample history exists. Prices use mainland-China regular prices only, never promotional prices or converted USD values.
 
 The experimental PICS dependency is isolated from the production project:
 

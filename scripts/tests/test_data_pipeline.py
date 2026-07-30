@@ -1,24 +1,18 @@
-import importlib.util
+import json
+import sqlite3
+import tempfile
 import unittest
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-
-
-def load(name, relative):
-    spec = importlib.util.spec_from_file_location(name, ROOT / relative)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-catalog = load("catalog", "scripts/build_steamspy_catalog.py")
-regression = load("regression", "scripts/fit_difficulty_regression.py")
-converter = load("converter", "scripts/convert_raw_jsonl.py")
-localization = load("localization", "scripts/fetch_localized_names.py")
-sample_peaks = load("sample_peaks", "scripts/sample_player_peaks.py")
-publisher = load("publisher", "scripts/publish_playable_catalog.py")
-cn_prices = load("cn_prices", "scripts/fetch_cn_prices.py")
+from scripts.catalog import discover_steamspy as catalog
+from scripts.catalog import enrich_cn_prices as cn_prices
+from scripts.catalog import enrich_storefront as localization
+from scripts.catalog import fit_difficulty as regression
+from scripts.catalog import publish_playable as publisher
+from scripts.catalog import refresh_metrics as sample_peaks
+from scripts.catalog.database import initialize
+from scripts.catalog.import_current import import_catalog
+from scripts.legacy import convert_raw_jsonl as converter
 
 
 class CatalogTests(unittest.TestCase):
@@ -28,6 +22,12 @@ class CatalogTests(unittest.TestCase):
 
     def test_parse_owners(self):
         self.assertEqual(catalog.parse_owners("1,000,000 .. 2,000,000"), (1_000_000, 2_000_000))
+
+    def test_splits_steamspy_companies_and_preserves_legal_suffixes(self):
+        self.assertEqual(
+            catalog.split_company_names("FromSoftware, Inc., Bandai Namco Entertainment"),
+            ["FromSoftware, Inc.", "Bandai Namco Entertainment"],
+        )
 
     def test_normalize_filters_and_scores(self):
         payload = {
@@ -100,6 +100,12 @@ class LocalizationTests(unittest.TestCase):
 
 
 class PublishCatalogTests(unittest.TestCase):
+    def test_normalizes_combined_company_values_when_publishing(self):
+        self.assertEqual(
+            publisher.split_company_names(["FromSoftware, Inc., Bandai Namco Entertainment"]),
+            ["FromSoftware, Inc.", "Bandai Namco Entertainment"],
+        )
+
     def test_publishes_cn_regular_price_and_ignores_current_price(self):
         catalog_payload = {"games": [{
             "appId": 10,
@@ -189,6 +195,79 @@ class PlayerPeakTests(unittest.TestCase):
         sample_peaks.update_catalog(playable_payload, sample, rolling)
         self.assertEqual(catalog_payload["games"][0]["metrics"]["peak7d"], 90)
         self.assertEqual(playable_payload[0]["popularity"]["peakYesterday"], 40)
+
+
+class CatalogDatabaseTests(unittest.TestCase):
+    def test_schema_enforces_unique_appid_and_keeps_source_metadata(self):
+        connection = sqlite3.connect(":memory:")
+        try:
+            initialize(connection)
+            connection.execute(
+                "INSERT INTO apps(appid, canonical_name, created_at, updated_at) VALUES (10, 'Game', 'now', 'now')"
+            )
+            with self.assertRaises(sqlite3.IntegrityError):
+                connection.execute(
+                    "INSERT INTO apps(appid, canonical_name, created_at, updated_at) VALUES (10, 'Duplicate', 'now', 'now')"
+                )
+            tables = {row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type = 'table'")}
+            self.assertIn("source_observations", tables)
+            self.assertIn("enrichment_jobs", tables)
+        finally:
+            connection.close()
+
+    def test_import_merges_rich_playable_fields_and_is_idempotent(self):
+        catalog_payload = {
+            "generatedAt": "2026-07-30T00:00:00Z",
+            "games": [{
+                "appId": 10,
+                "name": "Test Game",
+                "type": "Game",
+                "releaseDate": None,
+                "developers": ["Studio, Inc."],
+                "publishers": ["Studio, Inc., Publisher"],
+                "tags": [{"id": 1, "rank": 1, "name": "Puzzle"}],
+                "metrics": {"ccu": 2, "ownersMin": 10, "ownersMax": 20, "positive": 3, "negative": 1, "reviewsTotal": 4},
+                "recognition": {"score": 50, "features": {}},
+                "difficulty": {"score": 50, "level": "normal", "source": "heuristic", "excluded": False, "manualLevel": None},
+                "localizedNames": {"zh": "测试游戏"},
+                "regionalPrices": {"cn": {"status": "available", "currency": "CNY", "regularCents": 6800, "currentCents": 3400, "discountPercent": 50, "retrievedAt": "2026-07-30T00:00:00Z"}},
+                "picsChangeNumber": 123,
+                "sources": [
+                    {"service": "steamspy", "endpoint": "request=all&page=0", "retrievedAt": "2026-07-30T00:00:00Z"},
+                    {"service": "pics", "endpoint": "PICS ProductInfo", "retrievedAt": "2026-07-30T00:00:00Z"},
+                    {"service": "storefront", "endpoint": "appdetails", "retrievedAt": "2026-07-30T00:00:00Z"},
+                ],
+                "fieldSources": {"tags": "pics", "developers": "steamspy", "publishers": "steamspy"},
+            }],
+        }
+        playable_payload = {"10": {
+            "appId": 10,
+            "name": "Test Game",
+            "releaseDate": "2020-01-01",
+            "price": {"us": {"currency": "USD", "regular": 19.99}},
+            "hints": {"screenshotUrl": "https://example.test/shot.jpg"},
+            "header_image": "https://example.test/header.jpg",
+        }}
+        labeling_payload = {"games": [{"appId": 10, "name": "Test Game"}], "generatedAt": "2026-07-30T00:00:00Z"}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            paths = [root / "catalog.json", root / "playable.json", root / "labeling.json"]
+            for path, payload in zip(paths, (catalog_payload, playable_payload, labeling_payload), strict=True):
+                path.write_text(json.dumps(payload), encoding="utf-8")
+            database = root / "catalog.sqlite"
+            first = import_catalog(database, *paths)
+            second = import_catalog(database, *paths)
+            self.assertEqual(first["apps"], 1)
+            self.assertEqual(second["apps"], 1)
+            connection = sqlite3.connect(database)
+            try:
+                self.assertEqual(connection.execute("SELECT release_date FROM apps WHERE appid = 10").fetchone()[0], "2020-01-01")
+                self.assertEqual(connection.execute("SELECT name FROM app_companies WHERE role = 'publisher' ORDER BY position").fetchall(), [("Studio, Inc.",), ("Publisher",)])
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM app_media WHERE kind = 'screenshot'").fetchone()[0], 1)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM catalog_memberships WHERE catalog = 'playable'").fetchone()[0], 1)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM source_observations").fetchone()[0], 4)
+            finally:
+                connection.close()
 
 
 if __name__ == "__main__":

@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from scripts.catalog.common import split_company_names
+
 
 def load_demo(path: Path) -> dict[int, dict[str, Any]]:
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -26,8 +28,8 @@ def compact_game(game: dict[str, Any], demo: dict[int, dict[str, Any]]) -> dict[
         "name": game["name"],
         "localizedNames": game.get("localizedNames", {}),
         "appType": game.get("type"),
-        "developers": tags.get("developers", []) or game.get("developers", []),
-        "publishers": tags.get("publishers", []) or game.get("publishers", []),
+        "developers": split_company_names(tags.get("developers", []) or game.get("developers", [])),
+        "publishers": split_company_names(tags.get("publishers", []) or game.get("publishers", [])),
         "userTags": tags.get("userTags", []) or pics_tags,
         "headerImage": rich.get("header_image"),
         "screenshotUrl": hints.get("screenshotUrl"),

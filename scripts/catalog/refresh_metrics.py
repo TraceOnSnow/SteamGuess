@@ -10,18 +10,13 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Any
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-if str(SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_DIR))
-
-from build_steamspy_catalog import as_int, fetch_page, utc_now
+from scripts.catalog.discover_steamspy import as_int, fetch_page, utc_now
 
 
 def game_values(payload: Any) -> list[dict[str, Any]]:

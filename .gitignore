@@ -35,3 +35,21 @@ __pycache__/
 
 # Local database backups
 /data/backups/
+
+# Generated canonical catalog database (rebuild/import locally; persist in production)
+/data/catalog/*.sqlite
+/data/catalog/*.sqlite-shm
+/data/catalog/*.sqlite-wal
+/data/catalog/steamspy_candidates.json
+
+# Versioned bootstrap snapshot used to continue catalog work on another host.
+!/data/catalog/catalog.sqlite
+!data/raw/
+/data/raw/*
+!data/raw/pics/
+/data/raw/pics/*
+!/data/raw/pics/pics_top_1999_20260729.json
+!data/raw/steamspy/
+/data/raw/steamspy/*
+!/data/raw/steamspy/page_0_20260728_082714.554420.json
+!/data/raw/steamspy/page_1_20260728_082820.715028.json

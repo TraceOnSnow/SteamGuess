@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch two SteamSpy `request=all` pages and build a normalized candidate catalog."""
+"""Fetch selected SteamSpy `request=all` pages and build a normalized candidate catalog."""
 
 from __future__ import annotations
 
@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
+
+from scripts.catalog.common import split_company_names
 
 API = "https://steamspy.com/api.php?request=all&page={page}"
 JINA_FALLBACK = "https://r.jina.ai/http://steamspy.com/api.php?request=all%26page={page}"
@@ -180,8 +182,8 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
             "name": str(row.get("name") or "").strip(),
             "type": None,
             "releaseDate": None,
-            "developers": [str(row["developer"]).strip()] if row.get("developer") else [],
-            "publishers": [str(row["publisher"]).strip()] if row.get("publisher") else [],
+            "developers": split_company_names(row.get("developer")),
+            "publishers": split_company_names(row.get("publisher")),
             "tags": [],
             "metrics": {
                 # SteamSpy documents ccu as the previous day's peak, not a live count.

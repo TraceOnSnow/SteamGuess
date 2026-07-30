@@ -80,18 +80,22 @@ VITE_LABELER_ENABLED=false         # 构建期变量，线上保持 false
 本次已把 SteamSpy 前两页 1999 条候选发布为 **1964 款可玩游戏**：中文名 1963 款，国区常态价格 1704 款，已有截图 890 款。非游戏 application、tool、DLC、demo 等不会进入正式题库。
 
 ```bash
-# 使用已有候选数据重新发布，不联网
+# 将当前 JSON 目录幂等导入持久化 catalog SQLite
+npm run data:catalog-import
+npm run data:catalog-status
+
+# 使用已有候选数据重新发布浏览器文件，不联网
 npm run data:publish-labeler
 npm run data:publish-playable
 
 # 每日记录 SteamSpy 前两页的昨日峰值，形成滚动近 7 日峰值
 npm run data:sample-peaks
 
-# 每周刷新候选目录，并重新发布标注目录与正式题库
+# 每周抓取 SteamSpy request=all 第 0..19 页并写入 discovery 数据库
 npm run data:update-weekly
 ```
 
-SteamSpy 的 `ccu` 是前一日峰值，不是实时在线。累计采样后页面显示近 7 日峰值；样本不足时降级显示昨日峰值。常态价格只读取国区原价，不使用促销价，也不把美元价格换算成人民币。
+目录数据库 `data/catalog/catalog.sqlite` 与玩家运行时数据库相互独立，完整设计见 `docs/catalog-pipeline.md`。SteamSpy 的 `ccu` 是前一日峰值，不是实时在线。累计采样后页面显示近 7 日峰值；样本不足时降级显示昨日峰值。常态价格只读取国区原价，不使用促销价，也不把美元价格换算成人民币。
 
 PICS 验证工具的 `steam-user` 依赖已从主项目隔离，避免进入生产安装和镜像：
 
