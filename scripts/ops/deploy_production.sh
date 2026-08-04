@@ -18,7 +18,20 @@ git -C "$root" checkout --detach --quiet "$sha"
 IMAGE_TAG=$sha docker compose -f "$root/compose.production.yaml" pull
 IMAGE_TAG=$sha docker compose -f "$root/compose.production.yaml" up -d --remove-orphans
 
-local_health=$(curl --fail --silent --show-error --max-time 15 http://127.0.0.1:4173/api/health)
-public_health=$(curl --fail --silent --show-error --max-time 15 https://steamguess.traceonsnow.com/api/health)
-[[ $local_health == *'"ok":true'* && $public_health == *'"ok":true'* ]]
+wait_for_health() {
+  local endpoint=$1
+  local body
+  for _ in {1..30}; do
+    if body=$(curl --fail --silent --show-error --max-time 5 "$endpoint" 2>/dev/null) \
+      && [[ $body == *'"ok":true'* ]]; then
+      return 0
+    fi
+    sleep 1
+  done
+  printf 'Health check did not become ready: %s\n' "$endpoint" >&2
+  return 1
+}
+
+wait_for_health http://127.0.0.1:4173/api/health
+wait_for_health https://steamguess.traceonsnow.com/api/health
 printf 'Deployed %s\n' "$sha"
