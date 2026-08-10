@@ -1,0 +1,11 @@
+import type { ComparisonDirection, MatchStatus, NumericRuleConfig } from '../src/types/comparison';
+import type { Game } from '../src/types/game';
+export const COMPARISON_RULES: Readonly<{ price: NumericRuleConfig; popularity: NumericRuleConfig; reviewsRate: NumericRuleConfig; releaseDate: Readonly<{ exactYears: number; partialYears: number; closeYears: number }> }>;
+export function getPlayerPeak(game: Game): number;
+export function getRegularPrice(game: Game): number | undefined;
+export function getPositiveRate(game: Game): number;
+export function numericDistance(user: number, correct: number, mode: NumericRuleConfig['mode']): number;
+export function statusByDistance(distance: number, rule: NumericRuleConfig): MatchStatus;
+export function comparisonDirection(user: number, correct: number, status: MatchStatus): ComparisonDirection;
+export function compareNumericValues(user: number | undefined, correct: number | undefined, rule: NumericRuleConfig): { status: MatchStatus; direction?: ComparisonDirection };
+export function compareDateValues(userDate: string, correctDate: string, thresholds?: { exactYears: number; partialYears: number; closeYears: number }): { status: MatchStatus; direction?: ComparisonDirection };

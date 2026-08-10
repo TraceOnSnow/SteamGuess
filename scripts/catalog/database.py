@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 SCHEMA_PATH = Path(__file__).with_name("schema.sql")
 
 
@@ -27,6 +27,16 @@ def connect(path: Path) -> sqlite3.Connection:
 
 def initialize(connection: sqlite3.Connection) -> None:
     connection.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+    # v2 formalizes the incremental enrichment model.  The schema file is
+    # intentionally additive so a fresh database and an existing v1 database
+    # converge on the same shape.
+    applied = {row[0] for row in connection.execute("SELECT version FROM schema_migrations")}
+    if 2 not in applied:
+        connection.execute("UPDATE app_prices SET current_cents = NULL, discount_percent = NULL")
+        connection.execute(
+            "INSERT INTO schema_migrations(version, applied_at) VALUES (?, ?)",
+            (2, utc_now()),
+        )
     connection.execute(
         "INSERT OR IGNORE INTO schema_migrations(version, applied_at) VALUES (?, ?)",
         (SCHEMA_VERSION, utc_now()),

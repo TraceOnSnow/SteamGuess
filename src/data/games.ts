@@ -28,6 +28,15 @@ export async function loadGameExperience(signal?: AbortSignal): Promise<GameExpe
         const manuallyExcluded = labels.get(game.appId)?.excluded === true;
         const software = catalogGame?.appType?.toLocaleLowerCase() === 'application';
         if (prediction?.excluded || manuallyExcluded || software) return null;
+        const serverDifficulty = game.difficulty;
+        const serverCalibrated = serverDifficulty?.source === 'calibrated-distribution-v1';
+        if (serverCalibrated) {
+          return {
+            ...game,
+            localizedNames: catalogGame?.localizedNames ?? game.localizedNames,
+            difficulty: serverDifficulty,
+          };
+        }
         if (prediction) {
           return {
             ...game,
@@ -61,7 +70,7 @@ export async function loadGameExperience(signal?: AbortSignal): Promise<GameExpe
 }
 
 export async function loadGames(signal?: AbortSignal): Promise<Game[]> {
-  const response = await fetch(CATALOG_URL, { signal });
+  const response = await fetch(CATALOG_URL, { signal, cache: 'no-store' });
   if (!response.ok) throw new Error(`Failed to load game catalog (${response.status})`);
 
   const raw: unknown = await response.json();

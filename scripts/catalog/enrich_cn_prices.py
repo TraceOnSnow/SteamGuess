@@ -59,8 +59,6 @@ def extract_cn_prices(payload: Any, appids: list[int], retrieved_at: str) -> dic
             "status": "available",
             "currency": "CNY",
             "regularCents": initial,
-            "currentCents": final if isinstance(final, int) and final >= 0 else initial,
-            "discountPercent": int(price.get("discount_percent") or 0),
             "retrievedAt": retrieved_at,
         }
     return results

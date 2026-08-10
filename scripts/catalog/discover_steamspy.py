@@ -16,7 +16,7 @@ from urllib.request import Request, urlopen
 from scripts.catalog.common import split_company_names
 
 API = "https://steamspy.com/api.php?request=all&page={page}"
-JINA_FALLBACK = "https://r.jina.ai/http://steamspy.com/api.php?request=all%26page={page}"
+JINA_FALLBACK = "https://r.jina.ai/http://steamspy.com/api.php?request=all%26page%3D{page}"
 OBVIOUS_NON_GAME = re.compile(
     r"(?:\bdedicated server\b|\bserver tool\b|\bsoundtrack\b|\bplaytest\b|\bbenchmark\b)",
     re.IGNORECASE,
@@ -46,24 +46,32 @@ def parse_owners(value: Any) -> tuple[int, int]:
 
 
 def decode_payload(body: str) -> dict[str, Any]:
-    """Decode direct JSON or the Markdown wrapper returned by the read-only fallback."""
+    """Decode direct JSON and the JSON/Markdown wrappers used by proxies."""
     stripped = body.strip()
-    if not stripped.startswith("{"):
-        marker = "Markdown Content:"
-        if marker not in stripped:
-            raise ValueError("Response contains neither JSON nor a Markdown Content section")
+    marker = "Markdown Content:"
+    if marker in stripped:
         stripped = stripped.split(marker, 1)[1].strip()
-    payload = json.loads(stripped)
+    try:
+        payload = json.loads(stripped)
+    except json.JSONDecodeError:
+        # Some read-only proxies add a title or a fenced block around JSON.
+        start, end = stripped.find("{"), stripped.rfind("}")
+        if start < 0 or end <= start:
+            raise ValueError("Response contains no JSON object")
+        payload = json.loads(stripped[start:end + 1])
     if not isinstance(payload, dict):
         raise ValueError("SteamSpy response is not an object")
     return payload
 
 
-def fetch_page(page: int, timeout: int, retries: int) -> tuple[dict[str, Any], str]:
+def fetch_page(page: int, timeout: int, retries: int, retry_delay: float = 30.0) -> tuple[dict[str, Any], str]:
     endpoints = ((API.format(page=page), "direct"), (JINA_FALLBACK.format(page=page), "r.jina.ai"))
     errors = []
     for url, transport in endpoints:
-        request = Request(url, headers={"User-Agent": "SteamGuess-data-pipeline/1"})
+        request = Request(url, headers={
+            "Accept": "application/json, text/plain;q=0.9, */*;q=0.1",
+            "User-Agent": "SteamGuess-data-pipeline/1",
+        })
         for attempt in range(retries + 1):
             try:
                 with urlopen(request, timeout=timeout) as response:
@@ -72,8 +80,10 @@ def fetch_page(page: int, timeout: int, retries: int) -> tuple[dict[str, Any], s
             except Exception as error:  # network errors vary by Python version
                 errors.append(f"{transport}: {error}")
                 if attempt < retries:
-                    time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"SteamSpy page {page} failed: {'; '.join(errors)}")
+                    delay = retry_delay * (attempt + 1)
+                    print(f"page={page} transport={transport} attempt={attempt + 1}/{retries} failed={error}; retrying in {delay:g}s", flush=True)
+                    time.sleep(delay)
+    raise RuntimeError(f"SteamSpy page {page} failed after all transports: {'; '.join(errors)}")
 
 
 def percentile(values: list[float], value: float) -> float:
@@ -280,8 +290,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out", default="data/catalog/steamspy_top_2000.json")
     parser.add_argument("--timeout", type=int, default=45)
     parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument("--retry-delay", type=float, default=30.0, help="Base delay between retries for a failed page")
     parser.add_argument("--interval", type=float, default=65, help="Delay between request=all calls")
     parser.add_argument("--from-raw", action="store_true", help="Use newest matching raw page files instead of network")
+    parser.add_argument("--resume", action="store_true", help="Reuse raw page checkpoints already present in --raw-dir")
     return parser.parse_args()
 
 
@@ -302,13 +314,21 @@ def main() -> None:
             payload, retrieved_at = envelope["payload"], envelope["retrievedAt"]
             transport = envelope.get("transport", "unknown")
         else:
-            if index and args.interval > 0:
-                time.sleep(args.interval)
-            retrieved_at = utc_now()
-            payload, transport = fetch_page(page, args.timeout, args.retries)
-            stamp = retrieved_at.replace("-", "").replace(":", "").replace("T", "_").replace("Z", "")
-            path = raw_dir / f"page_{page}_{stamp}.json"
-            path.write_text(json.dumps({"page": page, "retrievedAt": retrieved_at, "transport": transport, "payload": payload}, ensure_ascii=False), encoding="utf-8")
+            existing = sorted(raw_dir.glob(f"page_{page}_*.json")) if args.resume else []
+            if existing:
+                path = existing[-1]
+                envelope = json.loads(path.read_text(encoding="utf-8"))
+                payload, retrieved_at = envelope["payload"], envelope["retrievedAt"]
+                transport = envelope.get("transport", "checkpoint")
+                print(f"page={page} resumed raw={path}", flush=True)
+            else:
+                if index and args.interval > 0:
+                    time.sleep(args.interval)
+                retrieved_at = utc_now()
+                payload, transport = fetch_page(page, args.timeout, args.retries, args.retry_delay)
+                stamp = retrieved_at.replace("-", "").replace(":", "").replace("T", "_").replace("Z", "")
+                path = raw_dir / f"page_{page}_{stamp}.json"
+                path.write_text(json.dumps({"page": page, "retrievedAt": retrieved_at, "transport": transport, "payload": payload}, ensure_ascii=False), encoding="utf-8")
         print(f"page={page} rows={len(payload)} transport={transport} raw={path}")
         raw_pages.append((page, payload, retrieved_at, transport))
 

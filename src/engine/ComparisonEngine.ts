@@ -1,24 +1,17 @@
 import type { Game } from '../types/game';
 import type { ComparisonResult, FieldComparison } from '../types/comparison';
 import { comparisonConfig } from '../config/comparison';
+import { getPlayerPeak, getRegularPrice } from '../../shared/game-rules.js';
+export { getPlayerPeak, getRegularPrice } from '../../shared/game-rules.js';
 import { FieldComparator } from './FieldComparator';
 
 const numberFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
-export function getPlayerPeak(game: Game): number {
-  return game.popularity.peak7d ?? game.popularity.peakYesterday ?? game.popularity.ccu;
-}
-
 const priceFormatter = new Intl.NumberFormat('zh-CN', {
   style: 'currency',
   currency: 'CNY',
   minimumFractionDigits: 0,
   maximumFractionDigits: 2,
 });
-
-export function getRegularPrice(game: Game): number | undefined {
-  const price = game.price.cn?.regular;
-  return typeof price === 'number' && Number.isFinite(price) ? price : undefined;
-}
 
 export function formatRegularPrice(game: Game): string {
   const price = getRegularPrice(game);

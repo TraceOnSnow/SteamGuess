@@ -1,0 +1,15 @@
+[Unit]
+Description=SteamGuess weekly catalog refresh
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=steamguess
+Group=steamguess
+WorkingDirectory=/srv/SteamGuess
+EnvironmentFile=-/srv/SteamGuess/.env
+ExecStart=/srv/SteamGuess/scripts/ops/run_weekly_catalog.sh
+TimeoutStartSec=3h
+# Do not let an interrupted update leave a second process behind.
+KillMode=mixed

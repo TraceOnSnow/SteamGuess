@@ -2,19 +2,23 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, relative, resolve, sep } from 'node:path';
 import { createApiHandler } from './api.js';
+import { createMultiplayerServer } from './multiplayer/index.js';
 
 const rootDir = resolve(process.cwd());
 const distDir = resolve(rootDir, 'dist');
 const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '0.0.0.0';
 const trustProxy = process.env.STEAMGUESS_TRUST_PROXY === 'true';
+let multiplayer;
+const databasePath = process.env.STEAMGUESS_DB_PATH || resolve(rootDir, 'data/runtime/steamguess.sqlite');
 const api = createApiHandler({
   rootDir,
-  dbPath: process.env.STEAMGUESS_DB_PATH,
+  dbPath: databasePath,
   steamApiKey: process.env.STEAM_WEB_API_KEY || '',
   trustProxy,
   writeRateLimit: Number(process.env.STEAMGUESS_WRITE_RATE_LIMIT || 60),
   profileRateLimit: Number(process.env.STEAMGUESS_PROFILE_RATE_LIMIT || 12),
+  health: () => multiplayer?.health() ?? { status: 'starting' },
 });
 const mime = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -73,18 +77,22 @@ const server = createServer(async (request, response) => {
   response.statusCode = 200;
   response.setHeader('Content-Type', mime[extname(file)] || 'application/octet-stream');
   if (file.endsWith('index.html')) response.setHeader('Cache-Control', 'no-cache');
+  else if (extname(file) === '.json') response.setHeader('Cache-Control', 'no-store');
   else response.setHeader('Cache-Control', 'public, max-age=3600');
   if (request.method === 'HEAD') return response.end();
   createReadStream(file).pipe(response);
 });
 
+multiplayer = createMultiplayerServer(server, { rootDir, dbPath: databasePath });
+
 server.listen(port, host, () => {
   console.log(`SteamGuess server listening on http://${host}:${port}`);
 });
 
-function shutdown(signal) {
+async function shutdown(signal) {
   console.log(`${signal} received; shutting down.`);
-  server.close(() => {
+  server.close(async () => {
+    await multiplayer?.close();
     api.close();
     process.exit(0);
   });

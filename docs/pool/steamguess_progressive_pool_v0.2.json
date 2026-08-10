@@ -1,0 +1,5653 @@
+{
+  "version": "0.2",
+  "model": "cumulative",
+  "targets": {
+    "easy": 75,
+    "normal": 200,
+    "hard": 350,
+    "hell": 625
+  },
+  "exclusive_additions": {
+    "1": 75,
+    "2": 125,
+    "3": 150,
+    "4": 275
+  },
+  "games": [
+    {
+      "game": "Amnesia: The Dark Descent",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Apex Legends",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Assassin's Creed Odyssey",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Assassin's Creed Origins",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Balatro",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Baldur's Gate 3",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Batman: Arkham Knight",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Battlefield 1",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Battlefield 4",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "BioShock Infinite",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Borderlands 3",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Brotato",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Call of Duty®: Black Ops III",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Call of Duty®: Modern Warfare® III",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Celeste",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Counter-Strike 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Crusader Kings III",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cult of the Lamb",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cyberpunk 2077",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "DARK SOULS III",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Darkest Dungeon",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dave the Diver",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dead by Daylight",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Death Stranding",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Don't Starve Together",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dota 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ELDEN RING",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Euro Truck Simulator 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Europa Universalis IV",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Far Cry 3",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Far Cry 5",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Forza Horizon 5",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Frostpunk",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ghost of Tsushima DIRECTOR'S CUT",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "God of War",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Grand Theft Auto V",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Half-Life 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hearts of Iron IV",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Helldivers 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hogwarts Legacy",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hollow Knight",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Human: Fall Flat",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Inscryption",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "It Takes Two",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Kingdom Come: Deliverance II",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Left 4 Dead 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Little Nightmares",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Marvel's Spider-Man Remastered",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Monster Hunter Rise",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Monster Hunter Wilds",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Monster Hunter: World",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nioh 2 – The Complete Edition",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Ori and the Blind Forest",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Ori and the Will of the Wisps",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Outlast",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Palworld",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Persona 5 Royal",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Portal 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "PUBG: BATTLEGROUNDS",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Red Dead Redemption 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Resident Evil 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Resident Evil Village",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sekiro: Shadows Die Twice",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sid Meier's Civilization VI",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Slay the Spire",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Stardew Valley",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Stellaris",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "Street Fighter 6",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Team Fortress 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Terraria",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Elder Scrolls V: Skyrim Special Edition",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "The Last of Us™ Part I",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "The Long Dark",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Witcher 3: Wild Hunt",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Watch_Dogs 2",
+      "difficulty": 1,
+      "tier": "Easy",
+      "user_rating": 1,
+      "basis": "User label"
+    },
+    {
+      "game": "A Plague Tale: Innocence",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Age of Empires II: Definitive Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Age of Empires IV: Anniversary Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Age of Mythology: Retold",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "American Truck Simulator",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Among Us",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Anno 1800",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ARK: Survival Evolved",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Banished",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Batman: Arkham Asylum Game of the Year Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Batman: Arkham City - Game of the Year Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "BioShock",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Black Myth: Wukong",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Borderlands 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Car Mechanic Simulator 2021",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cities: Skylines II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Company of Heroes 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Control",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Crusader Kings II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Days Gone",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dead Cells",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Deep Rock Galactic",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Destiny 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Deus Ex: Human Revolution - Director's Cut",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Devil May Cry 5",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Disco Elysium",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Divinity: Original Sin 2 - Definitive Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "DOOM",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "DOOM Eternal",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "DRAGON BALL FighterZ",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dying Light",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Dyson Sphere Program",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Enter the Gungeon",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Factorio",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Fallout 4",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Fallout: New Vegas",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Farming Simulator 22",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Farthest Frontier",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "For Honor",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "For The King",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Foundation",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Game Dev Tycoon",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Garry's Mod",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Grim Dawn",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "GUILTY GEAR -STRIVE-",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hades",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Halo: The Master Chief Collection",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Hell Let Loose",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "House Flipper",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Kerbal Space Program",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Kingdom: Two Crowns",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lethal Company",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Lies of P",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Little Nightmares II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mafia: Definitive Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Manor Lords",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Metro 2033 Redux",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Metro Exodus",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Middle-earth: Shadow of Mordor",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Middle-earth: Shadow of War",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mortal Kombat 11",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mount & Blade II: Bannerlord",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "NieR:Automata",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Northgard",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Outer Wilds",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Overcooked! 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Oxygen Not Included",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Path of Exile",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "PC Building Simulator",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Persona 4 Golden",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Planet Coaster",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Planet Crafter",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Planet Zoo",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Portal",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "PowerWash Simulator",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Prison Architect",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Project Zomboid",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Raft",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Railway Empire",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ready or Not",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Remnant II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Resident Evil 7 biohazard",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "RimWorld",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Rise of the Tomb Raider",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Rust",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Satisfactory",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Shadow of the Tomb Raider",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Shapez",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "shapez 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sid Meier's Civilization V",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sleeping Dogs: Definitive Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SnowRunner",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sons Of The Forest",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Spiritfarer",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Squad",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "STAR WARS Jedi: Fallen Order",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "STAR WARS Jedi: Survivor",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Surviving Mars",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "TEKKEN 8",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "The Binding of Isaac: Rebirth",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "The Forest",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "The Witness",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "They Are Billions",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "This War of Mine",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Timberborn",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Titanfall 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Tom Clancy's Rainbow Six Siege",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Tom Clancy's The Division 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Tomb Raider",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Total War: ROME II - Emperor Edition",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Total War: THREE KINGDOMS",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Total War: WARHAMMER II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Total War: WARHAMMER III",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Transport Fever 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Two Point Hospital",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Undertale",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Valheim",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Vampire Survivors",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "War Thunder",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Warframe",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Warhammer 40,000: Dawn of War II",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "XCOM 2",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "XCOM: Enemy Unknown",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Yakuza 0",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": 2,
+      "basis": "User label"
+    },
+    {
+      "game": "Yu-Gi-Oh! Master Duel",
+      "difficulty": 2,
+      "tier": "Normal",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "7 Days to Die",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Afterimage",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Against the Storm",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "AI LIMIT",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Alien: Isolation",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Arma 3",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Assassin's Creed IV Black Flag",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Assassin's Creed Unity",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Assetto Corsa",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Barotrauma",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Battle Brothers",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Battlefield 2042",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Battlefield V",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "BeamNG.drive",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Bloons TD 6",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Brawlhalla",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Bug Fables: The Everlasting Sapling",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Chained Echoes",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cities: Skylines",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "CODE VEIN",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Conan Exiles",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Counter-Strike",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Counter-Strike: Source",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cuphead",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "DiRT Rally 2.0",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dishonored",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "DOOM (1993)",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "DOOM II",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dragon Age: Inquisition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dragon Age: Origins - Ultimate Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dragon's Dogma 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dragon's Dogma: Dark Arisen",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "DREDGE",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "DUSK",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Eastward",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ENDER LILIES: Quietus of the Knights",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "F1® 24",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fall Guys",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fallout 3: Game of the Year Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Far Cry 4",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Far Cry 6",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "FINAL FANTASY VII REMAKE INTERGRADE",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "FINAL FANTASY XIV Online",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "FINAL FANTASY XV WINDOWS EDITION",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Firewatch",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Five Nights at Freddy's",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Forza Horizon 4",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Geometry Dash",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Ghost Recon Breakpoint",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ghost Recon Wildlands",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ghostrunner",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Green Hell",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "GRIME",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "GRIS",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Grounded",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hades II",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Half-Life",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Half-Life: Alyx",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Halo Infinite",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hello Neighbor",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Horizon Forbidden West™ Complete Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Horizon Zero Dawn™ Complete Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hunt: Showdown 1896",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Icarus",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Inside",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Insurgency: Sandstorm",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Journey",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Judgment",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Just Cause 3",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Kenshi",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Killing Floor 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Kingdom Come: Deliverance",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Left 4 Dead",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Library Of Ruina",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Like a Dragon: Infinite Wealth",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "LIMBO",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lost Ark",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lost Judgment",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Marvel Rivals",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Marvel’s Spider-Man: Miles Morales",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mass Effect Legendary Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Metal: Hellsinger",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Metaphor: ReFantazio",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mortal Shell",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "MultiVersus",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Need for Speed™ Heat",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Neon White",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "New World: Aeternum",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nioh: Complete Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Noita",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Once Human",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Patrick's Parabox",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "PAYDAY 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Persona 3 Reload",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Phasmophobia",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Pizza Tower",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Poppy Playtime",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Potion Craft: Alchemist Simulator",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Prey",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Psychonauts 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Quake",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Quake II",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Rain World",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ratchet & Clank: Rift Apart",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Remnant: From the Ashes",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Return of the Obra Dinn",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Risk of Rain 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Rocket League",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Salt and Sanctuary",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SCP: Secret Laboratory",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "SCUM",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SOMA",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Sonic Frontiers",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sonic Mania",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Stacklands",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "STAR WARS™ Battlefront™ II",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "State of Decay 2: Juggernaut Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Strange Horticulture",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Streets of Rogue",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Subnautica",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "Subnautica: Below Zero",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Superliminal",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "The Elder Scrolls III: Morrowind",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Elder Scrolls IV: Oblivion Game of the Year Edition",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Elder Scrolls Online",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Finals",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Outer Worlds",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Surge 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Talos Principle",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": 3,
+      "basis": "User label"
+    },
+    {
+      "game": "The Talos Principle 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tom Clancy's The Division",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Trackmania",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "TUNIC",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "ULTRAKILL",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "UNCHARTED™: Legacy of Thieves Collection",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Unturned",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "V Rising",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Warhammer 40,000: Space Marine 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wartales",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Watch_Dogs",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "What Remains of Edith Finch",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Wildermyth",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "Wo Long: Fallen Dynasty",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wolfenstein II: The New Colossus",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wolfenstein: The New Order",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wreckfest",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Yakuza Kiwami",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Yakuza Kiwami 2",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Yakuza: Like a Dragon",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ZERO Sievert",
+      "difficulty": 3,
+      "tier": "Hard",
+      "user_rating": null,
+      "basis": "Conversation calibration"
+    },
+    {
+      "game": "20XX",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "30XX",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "911 Operator",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": 4,
+      "basis": "User label"
+    },
+    {
+      "game": "A Hat in Time",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "A Short Hike",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Across the Obelisk",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Alina of the Arena",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "AMID EVIL",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Anger Foot",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Animal Well",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Antichamber",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "APE OUT",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ASTLIBRA Revision",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Astral Ascent",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Astrea: Six-Sided Oracles",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Astroneer",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ATOM RPG: Post-apocalyptic indie game",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Avowed",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Axiom Verge",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Axiom Verge 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Baba Is You",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Backpack Battles",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Backpack Hero",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Banners of Ruin",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Bastion",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Battle Chasers: Nightwar",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Beneath Oresa",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Black Mesa",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Blasphemous",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Blasphemous 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "BlazBlue Entropy Effect",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Bloodstained: Ritual of the Night",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "BPM: BULLETS PER MINUTE",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cat Quest II",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cat Quest III",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Caveblazers",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Caves of Qud",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Chants of Sennaar",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Children of Morta",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Chronicon",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Chrono Ark",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Circus Electrique",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Citizen Sleeper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cobalt Core",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "COCOON",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cogmind",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Colony Ship: A Post-Earth Role Playing Game",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Content Warning",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Core Keeper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Crab Game",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "CrossCode",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cultic",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Cultist Simulator",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Curse of the Dead Gods",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Danganronpa: Trigger Happy Havoc",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dark Deity",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Darkest Dungeon II",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Darkwood",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dead Estate",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Deadlink",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Death's Door",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Death's Gambit: Afterlife",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dicey Dungeons",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Disgaea 5 Complete",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Disgaea 7: Vows of the Virtueless",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Disgaea PC",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Divinity: Original Sin - Enhanced Edition",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dome Keeper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Downwell",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dread Delusion",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dreamscaper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Drova - Forsaken Kin",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dungeon Drafters",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "DungeonTop",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Dungreed",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Duskers",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ELEX",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ELEX II",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ember Knights",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Encased: A Sci-Fi Post-Apocalyptic RPG",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ENDER MAGNOLIA: Bloom in the Mist",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Escape Simulator",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Exanima",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Exit the Gungeon",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Expeditions: Rome",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fae Tactics",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fashion Police Squad",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fell Seal: Arbiter's Mark",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Fights in Tight Spaces",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Flinthook",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "For The King II",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Forgive Me Father",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Forgive Me Father 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "FRAMED Collection",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": 4,
+      "basis": "User label"
+    },
+    {
+      "game": "Furi",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gang Beasts",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gedonia",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Get To The Orange Door",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ghostrunner 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gloomhaven",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gordian Quest",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gorogoa",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gothic 1 Classic",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gothic 3",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gothic II: Gold Classic",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "GreedFall",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Griftlands",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "GTFO",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Gunfire Reborn",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hammerwatch II",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hard West 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Have a Nice Death",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Heat Signature",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Heroes of Hammerwatch",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hob",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Horizon's Gate",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hotline Miami",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hotline Miami 2: Wrong Number",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "HROT",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Hyper Light Drifter",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Inkbound",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Invisible, Inc.",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ion Fury",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Iratus: Lord of the Dead",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Katana ZERO",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "King Arthur: Knight's Tale",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Knock on the Coffin Lid",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Legend of Keepers: Career of a Dungeon Manager",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Limbus Company",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lobotomy Corporation | Monster Management Simulation",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Loop Hero",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Loopmancer",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lost Eidolons",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lost Eidolons: Veil of the Witch",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Low Magic Age",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Luck be a Landlord",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Lunacid",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mad Max",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": 4,
+      "basis": "User label"
+    },
+    {
+      "game": "Manifold Garden",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Maximum Action",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Minoria",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Momodora: Moonlit Farewell",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Momodora: Reverie Under the Moonlight",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Monster Train",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Moonlighter",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mordheim: City of the Damned",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mount & Blade: Warband",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mount & Blade: With Fire & Sword",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Mullet MadJack",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "My Friend Pedro",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Neon Abyss",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nightmare Reaper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nine Sols",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nobody Saves the World",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nova Drift",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Nuclear Throne",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Oblivion Override",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "OMORI",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "One Step From Eden",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Opus Magnum",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Othercide",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "OTXO",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Our Adventurer Guild",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Outward Definitive Edition",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Papers, Please",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Paradise Killer",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Party Animals",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pathfinder: Kingmaker",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pathfinder: Wrath of the Righteous - Enhanced Edition",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pathologic 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Peglin",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pentiment",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Phoenix Wright: Ace Attorney Trilogy",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pillars of Eternity",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pillars of Eternity II: Deadfire",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Poker Quest",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Postal: Brain-Damaged",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Prince of Persia The Lost Crown",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Prodeus",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pummel Party",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Pyre",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Revita",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ring of Pain",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Risen",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Risen 2: Dark Waters",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Risen 3 - Titan Lords",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Risk of Rain",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Risk of Rain Returns",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Roadwarden",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ROBOBEAT",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Roboquest",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Rogue Heroes: Ruins of Tasos",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Rogue Legacy",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Rogue Legacy 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Roguebook",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "RUINER",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Salt and Sacrifice",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sanabi",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "ScourgeBringer",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sea Dogs: To Each His Own",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sea of Stars",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Selaco",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Severed Steel",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Shadowrun Returns",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Shadowrun: Dragonfall - Director's Cut",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Shadowrun: Hong Kong - Extended Edition",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SHENZHEN I/O",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": 4,
+      "basis": "User label"
+    },
+    {
+      "game": "Shovel Knight: Treasure Trove",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Siralim Ultimate",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SKALD: Against the Black Priory",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Skul: The Hero Slayer",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Slice & Dice",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Solar Ash",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Solasta: Crown of the Magister",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Space Engineers",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Spelunky",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Spelunky 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Spiritfall",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Star Renegades",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SteamWorld Heist",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Stoneshard",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Streets of Rogue 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Sunless Sea",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Symphony of War: The Nephilim Saga",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SYNTHETIK 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "SYNTHETIK: Legion Rising",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tactics Ogre: Reborn",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tainted Grail: Conquest",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Banner Saga",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Banner Saga 2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Banner Saga 3",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Beginner's Guide",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Case of the Golden Idol",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Dungeon Of Naheulbeuk: The Amulet Of Chaos",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Forgotten City",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Hong Kong Massacre",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Iron Oath",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Last Flame",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Last Spell",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Messenger",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Pedestrian",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Stanley Parable: Ultra Deluxe",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "The Swapper",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "There Is No Game: Wrong Dimension",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Thronefall",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Timespinner",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tiny Rogues",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tooth and Tail",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Torment: Tides of Numenera",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Transistor",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Trepang2",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Trials of Fire",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Triangle Strategy",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Trinity Fusion",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "TROUBLESHOOTER: Abandoned Children",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Turbo Overkill",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Tyranny",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Ultimate Chicken Horse",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "UnderRail",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Unrailed!",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": 4,
+      "basis": "User label"
+    },
+    {
+      "game": "Unsighted",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Urtuk: The Desolation",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "VA-11 Hall-A: Cyberpunk Bartender Action",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Vagante",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Vagrus - The Riven Realms",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Vault of the Void",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Vestaria Saga I: War of the Scions",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Viewfinder",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Voidigo",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Warhammer 40,000: Rogue Trader",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Warm Snow",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wasteland 2: Director's Cut",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wasteland 3",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wildfrost",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    },
+    {
+      "game": "Wizard of Legend",
+      "difficulty": 4,
+      "tier": "Hell",
+      "user_rating": null,
+      "basis": "Curated carryover"
+    }
+  ],
+  "pools": {
+    "easy": [
+      "Amnesia: The Dark Descent",
+      "Apex Legends",
+      "Assassin's Creed Odyssey",
+      "Assassin's Creed Origins",
+      "Balatro",
+      "Baldur's Gate 3",
+      "Batman: Arkham Knight",
+      "Battlefield 1",
+      "Battlefield 4",
+      "BioShock Infinite",
+      "Borderlands 3",
+      "Brotato",
+      "Call of Duty®: Black Ops III",
+      "Call of Duty®: Modern Warfare® III",
+      "Celeste",
+      "Counter-Strike 2",
+      "Crusader Kings III",
+      "Cult of the Lamb",
+      "Cyberpunk 2077",
+      "DARK SOULS III",
+      "Darkest Dungeon",
+      "Dave the Diver",
+      "Dead by Daylight",
+      "Death Stranding",
+      "Don't Starve Together",
+      "Dota 2",
+      "ELDEN RING",
+      "Euro Truck Simulator 2",
+      "Europa Universalis IV",
+      "Far Cry 3",
+      "Far Cry 5",
+      "Forza Horizon 5",
+      "Frostpunk",
+      "Ghost of Tsushima DIRECTOR'S CUT",
+      "God of War",
+      "Grand Theft Auto V",
+      "Half-Life 2",
+      "Hearts of Iron IV",
+      "Helldivers 2",
+      "Hogwarts Legacy",
+      "Hollow Knight",
+      "Human: Fall Flat",
+      "Inscryption",
+      "It Takes Two",
+      "Kingdom Come: Deliverance II",
+      "Left 4 Dead 2",
+      "Little Nightmares",
+      "Marvel's Spider-Man Remastered",
+      "Monster Hunter Rise",
+      "Monster Hunter Wilds",
+      "Monster Hunter: World",
+      "Nioh 2 – The Complete Edition",
+      "Ori and the Blind Forest",
+      "Ori and the Will of the Wisps",
+      "Outlast",
+      "Palworld",
+      "Persona 5 Royal",
+      "Portal 2",
+      "PUBG: BATTLEGROUNDS",
+      "Red Dead Redemption 2",
+      "Resident Evil 2",
+      "Resident Evil Village",
+      "Sekiro: Shadows Die Twice",
+      "Sid Meier's Civilization VI",
+      "Slay the Spire",
+      "Stardew Valley",
+      "Stellaris",
+      "Street Fighter 6",
+      "Team Fortress 2",
+      "Terraria",
+      "The Elder Scrolls V: Skyrim Special Edition",
+      "The Last of Us™ Part I",
+      "The Long Dark",
+      "The Witcher 3: Wild Hunt",
+      "Watch_Dogs 2"
+    ],
+    "normal": [
+      "Amnesia: The Dark Descent",
+      "Apex Legends",
+      "Assassin's Creed Odyssey",
+      "Assassin's Creed Origins",
+      "Balatro",
+      "Baldur's Gate 3",
+      "Batman: Arkham Knight",
+      "Battlefield 1",
+      "Battlefield 4",
+      "BioShock Infinite",
+      "Borderlands 3",
+      "Brotato",
+      "Call of Duty®: Black Ops III",
+      "Call of Duty®: Modern Warfare® III",
+      "Celeste",
+      "Counter-Strike 2",
+      "Crusader Kings III",
+      "Cult of the Lamb",
+      "Cyberpunk 2077",
+      "DARK SOULS III",
+      "Darkest Dungeon",
+      "Dave the Diver",
+      "Dead by Daylight",
+      "Death Stranding",
+      "Don't Starve Together",
+      "Dota 2",
+      "ELDEN RING",
+      "Euro Truck Simulator 2",
+      "Europa Universalis IV",
+      "Far Cry 3",
+      "Far Cry 5",
+      "Forza Horizon 5",
+      "Frostpunk",
+      "Ghost of Tsushima DIRECTOR'S CUT",
+      "God of War",
+      "Grand Theft Auto V",
+      "Half-Life 2",
+      "Hearts of Iron IV",
+      "Helldivers 2",
+      "Hogwarts Legacy",
+      "Hollow Knight",
+      "Human: Fall Flat",
+      "Inscryption",
+      "It Takes Two",
+      "Kingdom Come: Deliverance II",
+      "Left 4 Dead 2",
+      "Little Nightmares",
+      "Marvel's Spider-Man Remastered",
+      "Monster Hunter Rise",
+      "Monster Hunter Wilds",
+      "Monster Hunter: World",
+      "Nioh 2 – The Complete Edition",
+      "Ori and the Blind Forest",
+      "Ori and the Will of the Wisps",
+      "Outlast",
+      "Palworld",
+      "Persona 5 Royal",
+      "Portal 2",
+      "PUBG: BATTLEGROUNDS",
+      "Red Dead Redemption 2",
+      "Resident Evil 2",
+      "Resident Evil Village",
+      "Sekiro: Shadows Die Twice",
+      "Sid Meier's Civilization VI",
+      "Slay the Spire",
+      "Stardew Valley",
+      "Stellaris",
+      "Street Fighter 6",
+      "Team Fortress 2",
+      "Terraria",
+      "The Elder Scrolls V: Skyrim Special Edition",
+      "The Last of Us™ Part I",
+      "The Long Dark",
+      "The Witcher 3: Wild Hunt",
+      "Watch_Dogs 2",
+      "A Plague Tale: Innocence",
+      "Age of Empires II: Definitive Edition",
+      "Age of Empires IV: Anniversary Edition",
+      "Age of Mythology: Retold",
+      "American Truck Simulator",
+      "Among Us",
+      "Anno 1800",
+      "ARK: Survival Evolved",
+      "Banished",
+      "Batman: Arkham Asylum Game of the Year Edition",
+      "Batman: Arkham City - Game of the Year Edition",
+      "BioShock",
+      "Black Myth: Wukong",
+      "Borderlands 2",
+      "Car Mechanic Simulator 2021",
+      "Cities: Skylines II",
+      "Company of Heroes 2",
+      "Control",
+      "Crusader Kings II",
+      "Days Gone",
+      "Dead Cells",
+      "Deep Rock Galactic",
+      "Destiny 2",
+      "Deus Ex: Human Revolution - Director's Cut",
+      "Devil May Cry 5",
+      "Disco Elysium",
+      "Divinity: Original Sin 2 - Definitive Edition",
+      "DOOM",
+      "DOOM Eternal",
+      "DRAGON BALL FighterZ",
+      "Dying Light",
+      "Dyson Sphere Program",
+      "Enter the Gungeon",
+      "Factorio",
+      "Fallout 4",
+      "Fallout: New Vegas",
+      "Farming Simulator 22",
+      "Farthest Frontier",
+      "For Honor",
+      "For The King",
+      "Foundation",
+      "Game Dev Tycoon",
+      "Garry's Mod",
+      "Grim Dawn",
+      "GUILTY GEAR -STRIVE-",
+      "Hades",
+      "Halo: The Master Chief Collection",
+      "Hell Let Loose",
+      "House Flipper",
+      "Kerbal Space Program",
+      "Kingdom: Two Crowns",
+      "Lethal Company",
+      "Lies of P",
+      "Little Nightmares II",
+      "Mafia: Definitive Edition",
+      "Manor Lords",
+      "Metro 2033 Redux",
+      "Metro Exodus",
+      "Middle-earth: Shadow of Mordor",
+      "Middle-earth: Shadow of War",
+      "Mortal Kombat 11",
+      "Mount & Blade II: Bannerlord",
+      "NieR:Automata",
+      "Northgard",
+      "Outer Wilds",
+      "Overcooked! 2",
+      "Oxygen Not Included",
+      "Path of Exile",
+      "PC Building Simulator",
+      "Persona 4 Golden",
+      "Planet Coaster",
+      "Planet Crafter",
+      "Planet Zoo",
+      "Portal",
+      "PowerWash Simulator",
+      "Prison Architect",
+      "Project Zomboid",
+      "Raft",
+      "Railway Empire",
+      "Ready or Not",
+      "Remnant II",
+      "Resident Evil 7 biohazard",
+      "RimWorld",
+      "Rise of the Tomb Raider",
+      "Rust",
+      "Satisfactory",
+      "Shadow of the Tomb Raider",
+      "Shapez",
+      "shapez 2",
+      "Sid Meier's Civilization V",
+      "Sleeping Dogs: Definitive Edition",
+      "SnowRunner",
+      "Sons Of The Forest",
+      "Spiritfarer",
+      "Squad",
+      "STAR WARS Jedi: Fallen Order",
+      "STAR WARS Jedi: Survivor",
+      "Surviving Mars",
+      "TEKKEN 8",
+      "The Binding of Isaac: Rebirth",
+      "The Forest",
+      "The Witness",
+      "They Are Billions",
+      "This War of Mine",
+      "Timberborn",
+      "Titanfall 2",
+      "Tom Clancy's Rainbow Six Siege",
+      "Tom Clancy's The Division 2",
+      "Tomb Raider",
+      "Total War: ROME II - Emperor Edition",
+      "Total War: THREE KINGDOMS",
+      "Total War: WARHAMMER II",
+      "Total War: WARHAMMER III",
+      "Transport Fever 2",
+      "Two Point Hospital",
+      "Undertale",
+      "Valheim",
+      "Vampire Survivors",
+      "War Thunder",
+      "Warframe",
+      "Warhammer 40,000: Dawn of War II",
+      "XCOM 2",
+      "XCOM: Enemy Unknown",
+      "Yakuza 0",
+      "Yu-Gi-Oh! Master Duel"
+    ],
+    "hard": [
+      "Amnesia: The Dark Descent",
+      "Apex Legends",
+      "Assassin's Creed Odyssey",
+      "Assassin's Creed Origins",
+      "Balatro",
+      "Baldur's Gate 3",
+      "Batman: Arkham Knight",
+      "Battlefield 1",
+      "Battlefield 4",
+      "BioShock Infinite",
+      "Borderlands 3",
+      "Brotato",
+      "Call of Duty®: Black Ops III",
+      "Call of Duty®: Modern Warfare® III",
+      "Celeste",
+      "Counter-Strike 2",
+      "Crusader Kings III",
+      "Cult of the Lamb",
+      "Cyberpunk 2077",
+      "DARK SOULS III",
+      "Darkest Dungeon",
+      "Dave the Diver",
+      "Dead by Daylight",
+      "Death Stranding",
+      "Don't Starve Together",
+      "Dota 2",
+      "ELDEN RING",
+      "Euro Truck Simulator 2",
+      "Europa Universalis IV",
+      "Far Cry 3",
+      "Far Cry 5",
+      "Forza Horizon 5",
+      "Frostpunk",
+      "Ghost of Tsushima DIRECTOR'S CUT",
+      "God of War",
+      "Grand Theft Auto V",
+      "Half-Life 2",
+      "Hearts of Iron IV",
+      "Helldivers 2",
+      "Hogwarts Legacy",
+      "Hollow Knight",
+      "Human: Fall Flat",
+      "Inscryption",
+      "It Takes Two",
+      "Kingdom Come: Deliverance II",
+      "Left 4 Dead 2",
+      "Little Nightmares",
+      "Marvel's Spider-Man Remastered",
+      "Monster Hunter Rise",
+      "Monster Hunter Wilds",
+      "Monster Hunter: World",
+      "Nioh 2 – The Complete Edition",
+      "Ori and the Blind Forest",
+      "Ori and the Will of the Wisps",
+      "Outlast",
+      "Palworld",
+      "Persona 5 Royal",
+      "Portal 2",
+      "PUBG: BATTLEGROUNDS",
+      "Red Dead Redemption 2",
+      "Resident Evil 2",
+      "Resident Evil Village",
+      "Sekiro: Shadows Die Twice",
+      "Sid Meier's Civilization VI",
+      "Slay the Spire",
+      "Stardew Valley",
+      "Stellaris",
+      "Street Fighter 6",
+      "Team Fortress 2",
+      "Terraria",
+      "The Elder Scrolls V: Skyrim Special Edition",
+      "The Last of Us™ Part I",
+      "The Long Dark",
+      "The Witcher 3: Wild Hunt",
+      "Watch_Dogs 2",
+      "A Plague Tale: Innocence",
+      "Age of Empires II: Definitive Edition",
+      "Age of Empires IV: Anniversary Edition",
+      "Age of Mythology: Retold",
+      "American Truck Simulator",
+      "Among Us",
+      "Anno 1800",
+      "ARK: Survival Evolved",
+      "Banished",
+      "Batman: Arkham Asylum Game of the Year Edition",
+      "Batman: Arkham City - Game of the Year Edition",
+      "BioShock",
+      "Black Myth: Wukong",
+      "Borderlands 2",
+      "Car Mechanic Simulator 2021",
+      "Cities: Skylines II",
+      "Company of Heroes 2",
+      "Control",
+      "Crusader Kings II",
+      "Days Gone",
+      "Dead Cells",
+      "Deep Rock Galactic",
+      "Destiny 2",
+      "Deus Ex: Human Revolution - Director's Cut",
+      "Devil May Cry 5",
+      "Disco Elysium",
+      "Divinity: Original Sin 2 - Definitive Edition",
+      "DOOM",
+      "DOOM Eternal",
+      "DRAGON BALL FighterZ",
+      "Dying Light",
+      "Dyson Sphere Program",
+      "Enter the Gungeon",
+      "Factorio",
+      "Fallout 4",
+      "Fallout: New Vegas",
+      "Farming Simulator 22",
+      "Farthest Frontier",
+      "For Honor",
+      "For The King",
+      "Foundation",
+      "Game Dev Tycoon",
+      "Garry's Mod",
+      "Grim Dawn",
+      "GUILTY GEAR -STRIVE-",
+      "Hades",
+      "Halo: The Master Chief Collection",
+      "Hell Let Loose",
+      "House Flipper",
+      "Kerbal Space Program",
+      "Kingdom: Two Crowns",
+      "Lethal Company",
+      "Lies of P",
+      "Little Nightmares II",
+      "Mafia: Definitive Edition",
+      "Manor Lords",
+      "Metro 2033 Redux",
+      "Metro Exodus",
+      "Middle-earth: Shadow of Mordor",
+      "Middle-earth: Shadow of War",
+      "Mortal Kombat 11",
+      "Mount & Blade II: Bannerlord",
+      "NieR:Automata",
+      "Northgard",
+      "Outer Wilds",
+      "Overcooked! 2",
+      "Oxygen Not Included",
+      "Path of Exile",
+      "PC Building Simulator",
+      "Persona 4 Golden",
+      "Planet Coaster",
+      "Planet Crafter",
+      "Planet Zoo",
+      "Portal",
+      "PowerWash Simulator",
+      "Prison Architect",
+      "Project Zomboid",
+      "Raft",
+      "Railway Empire",
+      "Ready or Not",
+      "Remnant II",
+      "Resident Evil 7 biohazard",
+      "RimWorld",
+      "Rise of the Tomb Raider",
+      "Rust",
+      "Satisfactory",
+      "Shadow of the Tomb Raider",
+      "Shapez",
+      "shapez 2",
+      "Sid Meier's Civilization V",
+      "Sleeping Dogs: Definitive Edition",
+      "SnowRunner",
+      "Sons Of The Forest",
+      "Spiritfarer",
+      "Squad",
+      "STAR WARS Jedi: Fallen Order",
+      "STAR WARS Jedi: Survivor",
+      "Surviving Mars",
+      "TEKKEN 8",
+      "The Binding of Isaac: Rebirth",
+      "The Forest",
+      "The Witness",
+      "They Are Billions",
+      "This War of Mine",
+      "Timberborn",
+      "Titanfall 2",
+      "Tom Clancy's Rainbow Six Siege",
+      "Tom Clancy's The Division 2",
+      "Tomb Raider",
+      "Total War: ROME II - Emperor Edition",
+      "Total War: THREE KINGDOMS",
+      "Total War: WARHAMMER II",
+      "Total War: WARHAMMER III",
+      "Transport Fever 2",
+      "Two Point Hospital",
+      "Undertale",
+      "Valheim",
+      "Vampire Survivors",
+      "War Thunder",
+      "Warframe",
+      "Warhammer 40,000: Dawn of War II",
+      "XCOM 2",
+      "XCOM: Enemy Unknown",
+      "Yakuza 0",
+      "Yu-Gi-Oh! Master Duel",
+      "7 Days to Die",
+      "Afterimage",
+      "Against the Storm",
+      "AI LIMIT",
+      "Alien: Isolation",
+      "Arma 3",
+      "Assassin's Creed IV Black Flag",
+      "Assassin's Creed Unity",
+      "Assetto Corsa",
+      "Barotrauma",
+      "Battle Brothers",
+      "Battlefield 2042",
+      "Battlefield V",
+      "BeamNG.drive",
+      "Bloons TD 6",
+      "Brawlhalla",
+      "Bug Fables: The Everlasting Sapling",
+      "Chained Echoes",
+      "Cities: Skylines",
+      "CODE VEIN",
+      "Conan Exiles",
+      "Counter-Strike",
+      "Counter-Strike: Source",
+      "Cuphead",
+      "DiRT Rally 2.0",
+      "Dishonored",
+      "DOOM (1993)",
+      "DOOM II",
+      "Dragon Age: Inquisition",
+      "Dragon Age: Origins - Ultimate Edition",
+      "Dragon's Dogma 2",
+      "Dragon's Dogma: Dark Arisen",
+      "DREDGE",
+      "DUSK",
+      "Eastward",
+      "ENDER LILIES: Quietus of the Knights",
+      "F1® 24",
+      "Fall Guys",
+      "Fallout 3: Game of the Year Edition",
+      "Far Cry 4",
+      "Far Cry 6",
+      "FINAL FANTASY VII REMAKE INTERGRADE",
+      "FINAL FANTASY XIV Online",
+      "FINAL FANTASY XV WINDOWS EDITION",
+      "Firewatch",
+      "Five Nights at Freddy's",
+      "Forza Horizon 4",
+      "Geometry Dash",
+      "Ghost Recon Breakpoint",
+      "Ghost Recon Wildlands",
+      "Ghostrunner",
+      "Green Hell",
+      "GRIME",
+      "GRIS",
+      "Grounded",
+      "Hades II",
+      "Half-Life",
+      "Half-Life: Alyx",
+      "Halo Infinite",
+      "Hello Neighbor",
+      "Horizon Forbidden West™ Complete Edition",
+      "Horizon Zero Dawn™ Complete Edition",
+      "Hunt: Showdown 1896",
+      "Icarus",
+      "Inside",
+      "Insurgency: Sandstorm",
+      "Journey",
+      "Judgment",
+      "Just Cause 3",
+      "Kenshi",
+      "Killing Floor 2",
+      "Kingdom Come: Deliverance",
+      "Left 4 Dead",
+      "Library Of Ruina",
+      "Like a Dragon: Infinite Wealth",
+      "LIMBO",
+      "Lost Ark",
+      "Lost Judgment",
+      "Marvel Rivals",
+      "Marvel’s Spider-Man: Miles Morales",
+      "Mass Effect Legendary Edition",
+      "Metal: Hellsinger",
+      "Metaphor: ReFantazio",
+      "Mortal Shell",
+      "MultiVersus",
+      "Need for Speed™ Heat",
+      "Neon White",
+      "New World: Aeternum",
+      "Nioh: Complete Edition",
+      "Noita",
+      "Once Human",
+      "Patrick's Parabox",
+      "PAYDAY 2",
+      "Persona 3 Reload",
+      "Phasmophobia",
+      "Pizza Tower",
+      "Poppy Playtime",
+      "Potion Craft: Alchemist Simulator",
+      "Prey",
+      "Psychonauts 2",
+      "Quake",
+      "Quake II",
+      "Rain World",
+      "Ratchet & Clank: Rift Apart",
+      "Remnant: From the Ashes",
+      "Return of the Obra Dinn",
+      "Risk of Rain 2",
+      "Rocket League",
+      "Salt and Sanctuary",
+      "SCP: Secret Laboratory",
+      "SCUM",
+      "SOMA",
+      "Sonic Frontiers",
+      "Sonic Mania",
+      "Stacklands",
+      "STAR WARS™ Battlefront™ II",
+      "State of Decay 2: Juggernaut Edition",
+      "Strange Horticulture",
+      "Streets of Rogue",
+      "Subnautica",
+      "Subnautica: Below Zero",
+      "Superliminal",
+      "The Elder Scrolls III: Morrowind",
+      "The Elder Scrolls IV: Oblivion Game of the Year Edition",
+      "The Elder Scrolls Online",
+      "The Finals",
+      "The Outer Worlds",
+      "The Surge 2",
+      "The Talos Principle",
+      "The Talos Principle 2",
+      "Tom Clancy's The Division",
+      "Trackmania",
+      "TUNIC",
+      "ULTRAKILL",
+      "UNCHARTED™: Legacy of Thieves Collection",
+      "Unturned",
+      "V Rising",
+      "Warhammer 40,000: Space Marine 2",
+      "Wartales",
+      "Watch_Dogs",
+      "What Remains of Edith Finch",
+      "Wildermyth",
+      "Wo Long: Fallen Dynasty",
+      "Wolfenstein II: The New Colossus",
+      "Wolfenstein: The New Order",
+      "Wreckfest",
+      "Yakuza Kiwami",
+      "Yakuza Kiwami 2",
+      "Yakuza: Like a Dragon",
+      "ZERO Sievert"
+    ],
+    "hell": [
+      "Amnesia: The Dark Descent",
+      "Apex Legends",
+      "Assassin's Creed Odyssey",
+      "Assassin's Creed Origins",
+      "Balatro",
+      "Baldur's Gate 3",
+      "Batman: Arkham Knight",
+      "Battlefield 1",
+      "Battlefield 4",
+      "BioShock Infinite",
+      "Borderlands 3",
+      "Brotato",
+      "Call of Duty®: Black Ops III",
+      "Call of Duty®: Modern Warfare® III",
+      "Celeste",
+      "Counter-Strike 2",
+      "Crusader Kings III",
+      "Cult of the Lamb",
+      "Cyberpunk 2077",
+      "DARK SOULS III",
+      "Darkest Dungeon",
+      "Dave the Diver",
+      "Dead by Daylight",
+      "Death Stranding",
+      "Don't Starve Together",
+      "Dota 2",
+      "ELDEN RING",
+      "Euro Truck Simulator 2",
+      "Europa Universalis IV",
+      "Far Cry 3",
+      "Far Cry 5",
+      "Forza Horizon 5",
+      "Frostpunk",
+      "Ghost of Tsushima DIRECTOR'S CUT",
+      "God of War",
+      "Grand Theft Auto V",
+      "Half-Life 2",
+      "Hearts of Iron IV",
+      "Helldivers 2",
+      "Hogwarts Legacy",
+      "Hollow Knight",
+      "Human: Fall Flat",
+      "Inscryption",
+      "It Takes Two",
+      "Kingdom Come: Deliverance II",
+      "Left 4 Dead 2",
+      "Little Nightmares",
+      "Marvel's Spider-Man Remastered",
+      "Monster Hunter Rise",
+      "Monster Hunter Wilds",
+      "Monster Hunter: World",
+      "Nioh 2 – The Complete Edition",
+      "Ori and the Blind Forest",
+      "Ori and the Will of the Wisps",
+      "Outlast",
+      "Palworld",
+      "Persona 5 Royal",
+      "Portal 2",
+      "PUBG: BATTLEGROUNDS",
+      "Red Dead Redemption 2",
+      "Resident Evil 2",
+      "Resident Evil Village",
+      "Sekiro: Shadows Die Twice",
+      "Sid Meier's Civilization VI",
+      "Slay the Spire",
+      "Stardew Valley",
+      "Stellaris",
+      "Street Fighter 6",
+      "Team Fortress 2",
+      "Terraria",
+      "The Elder Scrolls V: Skyrim Special Edition",
+      "The Last of Us™ Part I",
+      "The Long Dark",
+      "The Witcher 3: Wild Hunt",
+      "Watch_Dogs 2",
+      "A Plague Tale: Innocence",
+      "Age of Empires II: Definitive Edition",
+      "Age of Empires IV: Anniversary Edition",
+      "Age of Mythology: Retold",
+      "American Truck Simulator",
+      "Among Us",
+      "Anno 1800",
+      "ARK: Survival Evolved",
+      "Banished",
+      "Batman: Arkham Asylum Game of the Year Edition",
+      "Batman: Arkham City - Game of the Year Edition",
+      "BioShock",
+      "Black Myth: Wukong",
+      "Borderlands 2",
+      "Car Mechanic Simulator 2021",
+      "Cities: Skylines II",
+      "Company of Heroes 2",
+      "Control",
+      "Crusader Kings II",
+      "Days Gone",
+      "Dead Cells",
+      "Deep Rock Galactic",
+      "Destiny 2",
+      "Deus Ex: Human Revolution - Director's Cut",
+      "Devil May Cry 5",
+      "Disco Elysium",
+      "Divinity: Original Sin 2 - Definitive Edition",
+      "DOOM",
+      "DOOM Eternal",
+      "DRAGON BALL FighterZ",
+      "Dying Light",
+      "Dyson Sphere Program",
+      "Enter the Gungeon",
+      "Factorio",
+      "Fallout 4",
+      "Fallout: New Vegas",
+      "Farming Simulator 22",
+      "Farthest Frontier",
+      "For Honor",
+      "For The King",
+      "Foundation",
+      "Game Dev Tycoon",
+      "Garry's Mod",
+      "Grim Dawn",
+      "GUILTY GEAR -STRIVE-",
+      "Hades",
+      "Halo: The Master Chief Collection",
+      "Hell Let Loose",
+      "House Flipper",
+      "Kerbal Space Program",
+      "Kingdom: Two Crowns",
+      "Lethal Company",
+      "Lies of P",
+      "Little Nightmares II",
+      "Mafia: Definitive Edition",
+      "Manor Lords",
+      "Metro 2033 Redux",
+      "Metro Exodus",
+      "Middle-earth: Shadow of Mordor",
+      "Middle-earth: Shadow of War",
+      "Mortal Kombat 11",
+      "Mount & Blade II: Bannerlord",
+      "NieR:Automata",
+      "Northgard",
+      "Outer Wilds",
+      "Overcooked! 2",
+      "Oxygen Not Included",
+      "Path of Exile",
+      "PC Building Simulator",
+      "Persona 4 Golden",
+      "Planet Coaster",
+      "Planet Crafter",
+      "Planet Zoo",
+      "Portal",
+      "PowerWash Simulator",
+      "Prison Architect",
+      "Project Zomboid",
+      "Raft",
+      "Railway Empire",
+      "Ready or Not",
+      "Remnant II",
+      "Resident Evil 7 biohazard",
+      "RimWorld",
+      "Rise of the Tomb Raider",
+      "Rust",
+      "Satisfactory",
+      "Shadow of the Tomb Raider",
+      "Shapez",
+      "shapez 2",
+      "Sid Meier's Civilization V",
+      "Sleeping Dogs: Definitive Edition",
+      "SnowRunner",
+      "Sons Of The Forest",
+      "Spiritfarer",
+      "Squad",
+      "STAR WARS Jedi: Fallen Order",
+      "STAR WARS Jedi: Survivor",
+      "Surviving Mars",
+      "TEKKEN 8",
+      "The Binding of Isaac: Rebirth",
+      "The Forest",
+      "The Witness",
+      "They Are Billions",
+      "This War of Mine",
+      "Timberborn",
+      "Titanfall 2",
+      "Tom Clancy's Rainbow Six Siege",
+      "Tom Clancy's The Division 2",
+      "Tomb Raider",
+      "Total War: ROME II - Emperor Edition",
+      "Total War: THREE KINGDOMS",
+      "Total War: WARHAMMER II",
+      "Total War: WARHAMMER III",
+      "Transport Fever 2",
+      "Two Point Hospital",
+      "Undertale",
+      "Valheim",
+      "Vampire Survivors",
+      "War Thunder",
+      "Warframe",
+      "Warhammer 40,000: Dawn of War II",
+      "XCOM 2",
+      "XCOM: Enemy Unknown",
+      "Yakuza 0",
+      "Yu-Gi-Oh! Master Duel",
+      "7 Days to Die",
+      "Afterimage",
+      "Against the Storm",
+      "AI LIMIT",
+      "Alien: Isolation",
+      "Arma 3",
+      "Assassin's Creed IV Black Flag",
+      "Assassin's Creed Unity",
+      "Assetto Corsa",
+      "Barotrauma",
+      "Battle Brothers",
+      "Battlefield 2042",
+      "Battlefield V",
+      "BeamNG.drive",
+      "Bloons TD 6",
+      "Brawlhalla",
+      "Bug Fables: The Everlasting Sapling",
+      "Chained Echoes",
+      "Cities: Skylines",
+      "CODE VEIN",
+      "Conan Exiles",
+      "Counter-Strike",
+      "Counter-Strike: Source",
+      "Cuphead",
+      "DiRT Rally 2.0",
+      "Dishonored",
+      "DOOM (1993)",
+      "DOOM II",
+      "Dragon Age: Inquisition",
+      "Dragon Age: Origins - Ultimate Edition",
+      "Dragon's Dogma 2",
+      "Dragon's Dogma: Dark Arisen",
+      "DREDGE",
+      "DUSK",
+      "Eastward",
+      "ENDER LILIES: Quietus of the Knights",
+      "F1® 24",
+      "Fall Guys",
+      "Fallout 3: Game of the Year Edition",
+      "Far Cry 4",
+      "Far Cry 6",
+      "FINAL FANTASY VII REMAKE INTERGRADE",
+      "FINAL FANTASY XIV Online",
+      "FINAL FANTASY XV WINDOWS EDITION",
+      "Firewatch",
+      "Five Nights at Freddy's",
+      "Forza Horizon 4",
+      "Geometry Dash",
+      "Ghost Recon Breakpoint",
+      "Ghost Recon Wildlands",
+      "Ghostrunner",
+      "Green Hell",
+      "GRIME",
+      "GRIS",
+      "Grounded",
+      "Hades II",
+      "Half-Life",
+      "Half-Life: Alyx",
+      "Halo Infinite",
+      "Hello Neighbor",
+      "Horizon Forbidden West™ Complete Edition",
+      "Horizon Zero Dawn™ Complete Edition",
+      "Hunt: Showdown 1896",
+      "Icarus",
+      "Inside",
+      "Insurgency: Sandstorm",
+      "Journey",
+      "Judgment",
+      "Just Cause 3",
+      "Kenshi",
+      "Killing Floor 2",
+      "Kingdom Come: Deliverance",
+      "Left 4 Dead",
+      "Library Of Ruina",
+      "Like a Dragon: Infinite Wealth",
+      "LIMBO",
+      "Lost Ark",
+      "Lost Judgment",
+      "Marvel Rivals",
+      "Marvel’s Spider-Man: Miles Morales",
+      "Mass Effect Legendary Edition",
+      "Metal: Hellsinger",
+      "Metaphor: ReFantazio",
+      "Mortal Shell",
+      "MultiVersus",
+      "Need for Speed™ Heat",
+      "Neon White",
+      "New World: Aeternum",
+      "Nioh: Complete Edition",
+      "Noita",
+      "Once Human",
+      "Patrick's Parabox",
+      "PAYDAY 2",
+      "Persona 3 Reload",
+      "Phasmophobia",
+      "Pizza Tower",
+      "Poppy Playtime",
+      "Potion Craft: Alchemist Simulator",
+      "Prey",
+      "Psychonauts 2",
+      "Quake",
+      "Quake II",
+      "Rain World",
+      "Ratchet & Clank: Rift Apart",
+      "Remnant: From the Ashes",
+      "Return of the Obra Dinn",
+      "Risk of Rain 2",
+      "Rocket League",
+      "Salt and Sanctuary",
+      "SCP: Secret Laboratory",
+      "SCUM",
+      "SOMA",
+      "Sonic Frontiers",
+      "Sonic Mania",
+      "Stacklands",
+      "STAR WARS™ Battlefront™ II",
+      "State of Decay 2: Juggernaut Edition",
+      "Strange Horticulture",
+      "Streets of Rogue",
+      "Subnautica",
+      "Subnautica: Below Zero",
+      "Superliminal",
+      "The Elder Scrolls III: Morrowind",
+      "The Elder Scrolls IV: Oblivion Game of the Year Edition",
+      "The Elder Scrolls Online",
+      "The Finals",
+      "The Outer Worlds",
+      "The Surge 2",
+      "The Talos Principle",
+      "The Talos Principle 2",
+      "Tom Clancy's The Division",
+      "Trackmania",
+      "TUNIC",
+      "ULTRAKILL",
+      "UNCHARTED™: Legacy of Thieves Collection",
+      "Unturned",
+      "V Rising",
+      "Warhammer 40,000: Space Marine 2",
+      "Wartales",
+      "Watch_Dogs",
+      "What Remains of Edith Finch",
+      "Wildermyth",
+      "Wo Long: Fallen Dynasty",
+      "Wolfenstein II: The New Colossus",
+      "Wolfenstein: The New Order",
+      "Wreckfest",
+      "Yakuza Kiwami",
+      "Yakuza Kiwami 2",
+      "Yakuza: Like a Dragon",
+      "ZERO Sievert",
+      "20XX",
+      "30XX",
+      "911 Operator",
+      "A Hat in Time",
+      "A Short Hike",
+      "Across the Obelisk",
+      "Alina of the Arena",
+      "AMID EVIL",
+      "Anger Foot",
+      "Animal Well",
+      "Antichamber",
+      "APE OUT",
+      "ASTLIBRA Revision",
+      "Astral Ascent",
+      "Astrea: Six-Sided Oracles",
+      "Astroneer",
+      "ATOM RPG: Post-apocalyptic indie game",
+      "Avowed",
+      "Axiom Verge",
+      "Axiom Verge 2",
+      "Baba Is You",
+      "Backpack Battles",
+      "Backpack Hero",
+      "Banners of Ruin",
+      "Bastion",
+      "Battle Chasers: Nightwar",
+      "Beneath Oresa",
+      "Black Mesa",
+      "Blasphemous",
+      "Blasphemous 2",
+      "BlazBlue Entropy Effect",
+      "Bloodstained: Ritual of the Night",
+      "BPM: BULLETS PER MINUTE",
+      "Cat Quest II",
+      "Cat Quest III",
+      "Caveblazers",
+      "Caves of Qud",
+      "Chants of Sennaar",
+      "Children of Morta",
+      "Chronicon",
+      "Chrono Ark",
+      "Circus Electrique",
+      "Citizen Sleeper",
+      "Cobalt Core",
+      "COCOON",
+      "Cogmind",
+      "Colony Ship: A Post-Earth Role Playing Game",
+      "Content Warning",
+      "Core Keeper",
+      "Crab Game",
+      "CrossCode",
+      "Cultic",
+      "Cultist Simulator",
+      "Curse of the Dead Gods",
+      "Danganronpa: Trigger Happy Havoc",
+      "Dark Deity",
+      "Darkest Dungeon II",
+      "Darkwood",
+      "Dead Estate",
+      "Deadlink",
+      "Death's Door",
+      "Death's Gambit: Afterlife",
+      "Dicey Dungeons",
+      "Disgaea 5 Complete",
+      "Disgaea 7: Vows of the Virtueless",
+      "Disgaea PC",
+      "Divinity: Original Sin - Enhanced Edition",
+      "Dome Keeper",
+      "Downwell",
+      "Dread Delusion",
+      "Dreamscaper",
+      "Drova - Forsaken Kin",
+      "Dungeon Drafters",
+      "DungeonTop",
+      "Dungreed",
+      "Duskers",
+      "ELEX",
+      "ELEX II",
+      "Ember Knights",
+      "Encased: A Sci-Fi Post-Apocalyptic RPG",
+      "ENDER MAGNOLIA: Bloom in the Mist",
+      "Escape Simulator",
+      "Exanima",
+      "Exit the Gungeon",
+      "Expeditions: Rome",
+      "Fae Tactics",
+      "Fashion Police Squad",
+      "Fell Seal: Arbiter's Mark",
+      "Fights in Tight Spaces",
+      "Flinthook",
+      "For The King II",
+      "Forgive Me Father",
+      "Forgive Me Father 2",
+      "FRAMED Collection",
+      "Furi",
+      "Gang Beasts",
+      "Gedonia",
+      "Get To The Orange Door",
+      "Ghostrunner 2",
+      "Gloomhaven",
+      "Gordian Quest",
+      "Gorogoa",
+      "Gothic 1 Classic",
+      "Gothic 3",
+      "Gothic II: Gold Classic",
+      "GreedFall",
+      "Griftlands",
+      "GTFO",
+      "Gunfire Reborn",
+      "Hammerwatch II",
+      "Hard West 2",
+      "Have a Nice Death",
+      "Heat Signature",
+      "Heroes of Hammerwatch",
+      "Hob",
+      "Horizon's Gate",
+      "Hotline Miami",
+      "Hotline Miami 2: Wrong Number",
+      "HROT",
+      "Hyper Light Drifter",
+      "Inkbound",
+      "Invisible, Inc.",
+      "Ion Fury",
+      "Iratus: Lord of the Dead",
+      "Katana ZERO",
+      "King Arthur: Knight's Tale",
+      "Knock on the Coffin Lid",
+      "Legend of Keepers: Career of a Dungeon Manager",
+      "Limbus Company",
+      "Lobotomy Corporation | Monster Management Simulation",
+      "Loop Hero",
+      "Loopmancer",
+      "Lost Eidolons",
+      "Lost Eidolons: Veil of the Witch",
+      "Low Magic Age",
+      "Luck be a Landlord",
+      "Lunacid",
+      "Mad Max",
+      "Manifold Garden",
+      "Maximum Action",
+      "Minoria",
+      "Momodora: Moonlit Farewell",
+      "Momodora: Reverie Under the Moonlight",
+      "Monster Train",
+      "Moonlighter",
+      "Mordheim: City of the Damned",
+      "Mount & Blade: Warband",
+      "Mount & Blade: With Fire & Sword",
+      "Mullet MadJack",
+      "My Friend Pedro",
+      "Neon Abyss",
+      "Nightmare Reaper",
+      "Nine Sols",
+      "Nobody Saves the World",
+      "Nova Drift",
+      "Nuclear Throne",
+      "Oblivion Override",
+      "OMORI",
+      "One Step From Eden",
+      "Opus Magnum",
+      "Othercide",
+      "OTXO",
+      "Our Adventurer Guild",
+      "Outward Definitive Edition",
+      "Papers, Please",
+      "Paradise Killer",
+      "Party Animals",
+      "Pathfinder: Kingmaker",
+      "Pathfinder: Wrath of the Righteous - Enhanced Edition",
+      "Pathologic 2",
+      "Peglin",
+      "Pentiment",
+      "Phoenix Wright: Ace Attorney Trilogy",
+      "Pillars of Eternity",
+      "Pillars of Eternity II: Deadfire",
+      "Poker Quest",
+      "Postal: Brain-Damaged",
+      "Prince of Persia The Lost Crown",
+      "Prodeus",
+      "Pummel Party",
+      "Pyre",
+      "Revita",
+      "Ring of Pain",
+      "Risen",
+      "Risen 2: Dark Waters",
+      "Risen 3 - Titan Lords",
+      "Risk of Rain",
+      "Risk of Rain Returns",
+      "Roadwarden",
+      "ROBOBEAT",
+      "Roboquest",
+      "Rogue Heroes: Ruins of Tasos",
+      "Rogue Legacy",
+      "Rogue Legacy 2",
+      "Roguebook",
+      "RUINER",
+      "Salt and Sacrifice",
+      "Sanabi",
+      "ScourgeBringer",
+      "Sea Dogs: To Each His Own",
+      "Sea of Stars",
+      "Selaco",
+      "Severed Steel",
+      "Shadowrun Returns",
+      "Shadowrun: Dragonfall - Director's Cut",
+      "Shadowrun: Hong Kong - Extended Edition",
+      "SHENZHEN I/O",
+      "Shovel Knight: Treasure Trove",
+      "Siralim Ultimate",
+      "SKALD: Against the Black Priory",
+      "Skul: The Hero Slayer",
+      "Slice & Dice",
+      "Solar Ash",
+      "Solasta: Crown of the Magister",
+      "Space Engineers",
+      "Spelunky",
+      "Spelunky 2",
+      "Spiritfall",
+      "Star Renegades",
+      "SteamWorld Heist",
+      "Stoneshard",
+      "Streets of Rogue 2",
+      "Sunless Sea",
+      "Symphony of War: The Nephilim Saga",
+      "SYNTHETIK 2",
+      "SYNTHETIK: Legion Rising",
+      "Tactics Ogre: Reborn",
+      "Tainted Grail: Conquest",
+      "The Banner Saga",
+      "The Banner Saga 2",
+      "The Banner Saga 3",
+      "The Beginner's Guide",
+      "The Case of the Golden Idol",
+      "The Dungeon Of Naheulbeuk: The Amulet Of Chaos",
+      "The Forgotten City",
+      "The Hong Kong Massacre",
+      "The Iron Oath",
+      "The Last Flame",
+      "The Last Spell",
+      "The Messenger",
+      "The Pedestrian",
+      "The Stanley Parable: Ultra Deluxe",
+      "The Swapper",
+      "There Is No Game: Wrong Dimension",
+      "Thronefall",
+      "Timespinner",
+      "Tiny Rogues",
+      "Tooth and Tail",
+      "Torment: Tides of Numenera",
+      "Transistor",
+      "Trepang2",
+      "Trials of Fire",
+      "Triangle Strategy",
+      "Trinity Fusion",
+      "TROUBLESHOOTER: Abandoned Children",
+      "Turbo Overkill",
+      "Tyranny",
+      "Ultimate Chicken Horse",
+      "UnderRail",
+      "Unrailed!",
+      "Unsighted",
+      "Urtuk: The Desolation",
+      "VA-11 Hall-A: Cyberpunk Bartender Action",
+      "Vagante",
+      "Vagrus - The Riven Realms",
+      "Vault of the Void",
+      "Vestaria Saga I: War of the Scions",
+      "Viewfinder",
+      "Voidigo",
+      "Warhammer 40,000: Rogue Trader",
+      "Warm Snow",
+      "Wasteland 2: Director's Cut",
+      "Wasteland 3",
+      "Wildfrost",
+      "Wizard of Legend"
+    ]
+  }
+}

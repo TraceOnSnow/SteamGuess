@@ -121,6 +121,7 @@ export function createApiHandler({
   writeRateLimit = 60,
   profileRateLimit = 12,
   rateLimitWindowMs = 60_000,
+  health = () => ({}),
 } = {}) {
   let db;
   const database = () => db ??= openDatabase(dbPath ?? resolve(rootDir, 'data/runtime/steamguess.sqlite'));
@@ -144,7 +145,7 @@ export function createApiHandler({
 
       if (request.method === 'GET' && url.pathname === '/api/health') {
         database();
-        return json(response, 200, { ok: true });
+        return json(response, 200, { ok: true, multiplayer: health() });
       }
 
       if (request.method === 'GET' && url.pathname === '/api/steam-library') {

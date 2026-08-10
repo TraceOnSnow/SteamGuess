@@ -1,6 +1,5 @@
-import { differenceInCalendarDays, isValid, parseISO } from 'date-fns';
+import { compareDateValues, compareNumericValues } from '../../shared/game-rules.js';
 import type {
-  ComparisonDirection,
   FieldComparison,
   MatchStatus,
   NumericRuleConfig,
@@ -44,16 +43,8 @@ export class FieldComparator {
       };
     }
 
-    const distance = this.getDistance(userValue, correctValue, rule.mode);
-    const status = this.getStatusByDistance(distance, rule);
-
-    return {
-      fieldName,
-      userValue: print(userValue),
-      correctValue: print(correctValue),
-      status,
-      direction: this.getDirection(userValue, correctValue, status),
-    };
+    const comparison = compareNumericValues(userValue, correctValue, rule);
+    return { fieldName, userValue: print(userValue), correctValue: print(correctValue), ...comparison };
   }
 
   compareDate(
@@ -66,57 +57,8 @@ export class FieldComparator {
       return { fieldName, userValue: null, correctValue: correctDate, status: 'unknown' };
     }
 
-    const userParsed = this.parseDate(userDate);
-    const correctParsed = this.parseDate(correctDate);
-
-    if (!userParsed || !correctParsed) {
-      return { fieldName, userValue: userDate, correctValue: correctDate, status: 'unknown' };
-    }
-
-    const diffDays = Math.abs(differenceInCalendarDays(userParsed, correctParsed));
-    const exactDays = this.yearsToDays(thresholds.exactYears);
-    const partialDays = this.yearsToDays(thresholds.partialYears);
-    const closeDays = this.yearsToDays(thresholds.closeYears);
-
-    let status: MatchStatus = 'wrong';
-    if (diffDays <= exactDays) status = 'exact';
-    else if (diffDays <= partialDays) status = 'partial';
-    else if (diffDays <= closeDays) status = 'close';
-
-    return {
-      fieldName,
-      userValue: userDate,
-      correctValue: correctDate,
-      status,
-      direction: this.getDirection(userParsed.getTime(), correctParsed.getTime(), status),
-    };
+    const comparison = compareDateValues(userDate, correctDate, thresholds);
+    return { fieldName, userValue: userDate, correctValue: correctDate, ...comparison };
   }
 
-  private getDistance(user: number, correct: number, mode: NumericRuleConfig['mode']): number {
-    if (mode === 'absolute') return Math.abs(user - correct);
-    if (correct === 0) return user === 0 ? 0 : 100;
-    return (Math.abs(user - correct) / Math.abs(correct)) * 100;
-  }
-
-  private getStatusByDistance(distance: number, rule: NumericRuleConfig): MatchStatus {
-    if (distance <= rule.exact) return 'exact';
-    if (distance <= rule.partial) return 'partial';
-    if (distance <= rule.close) return 'close';
-    return 'wrong';
-  }
-
-  private getDirection(user: number, correct: number, status: MatchStatus): ComparisonDirection {
-    if (user === correct) return 'equal';
-    if (status === 'exact') return 'near';
-    return correct > user ? 'higher' : 'lower';
-  }
-
-  private parseDate(date: string): Date | undefined {
-    const parsed = parseISO(date);
-    return isValid(parsed) ? parsed : undefined;
-  }
-
-  private yearsToDays(years: number): number {
-    return years * 365.2425;
-  }
 }

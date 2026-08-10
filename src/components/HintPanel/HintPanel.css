@@ -170,3 +170,25 @@
     transition: none;
   }
 }
+
+.review-dialog {
+  width: min(640px, 100%);
+}
+
+.review-hint {
+  margin: 0 20px;
+  padding: 20px;
+  border-left: 4px solid var(--accent, #0f513a);
+  border-radius: 10px;
+  color: var(--ink);
+  background: var(--surface-soft);
+  font-size: 18px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.review-caption {
+  margin: 12px 20px 20px;
+  color: var(--muted);
+  font-size: 12px;
+}

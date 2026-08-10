@@ -41,7 +41,7 @@ export interface GameDifficulty {
   level: 'easy' | 'normal' | 'hard' | 'hell';
   score: number;
   confidence: number;
-  source: 'manual' | 'regression' | 'fallback';
+  source: 'manual' | 'regression' | 'fallback' | 'calibrated-distribution-v1';
 }
 
 export interface Game {

@@ -1,109 +1,206 @@
 # SteamGuess
 
-SteamGuess is a Wordle-like browser game for Steam titles. Players have ten attempts and use mainland-China regular price, player peaks, review metrics, release date, companies, and user tags to identify the answer.
+> A data-driven Steam game guessing game — built for daily play, explainable clues, and future multiplayer.
 
-## 1. Features
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)](https://vite.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-22%2B-5fa04e?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-- **1,964 playable `type=game` titles** and 1,999 internal labeling candidates.
-- Chinese/English title search, keyboard navigation, duplicate-guess prevention, and custom AppID pools.
-- Configurable clue fields: price, activity, rating, release date, ownership, companies, and tags.
-- Screenshot hints only when `hints.screenshotUrl` already exists in the catalog.
-- Post-game 0–100 difficulty feedback with preset levels.
-- Local AppID import and server-side import of public Steam libraries.
+[简体中文](README.zh-CN.md)
 
-## 2. Stack and layout
+SteamGuess is a Wordle-like web game for identifying Steam games from structured clues. Search by a Chinese or English title, submit a guess, and progressively narrow the answer using price, player activity, review metrics, release date, companies, and Steam user tags.
 
-- React 19, TypeScript 5.9, Vite 7, i18next.
-- Node.js HTTP service and Node's built-in SQLite.
-- `public/games_demo.json`: 1,964-game playable catalog.
-- `public/labeling_catalog.json`: 1,999 internal candidates.
-- `server/`: API, rate limiting, migrations, and static serving.
-- `data/runtime/`: persistent, untracked runtime database.
+The project is intentionally split into two layers:
 
-The internal labeler is available in development and disabled in production unless the build explicitly sets `VITE_LABELER_ENABLED=true`.
+- **Playable experience** — a fast browser catalog used by players.
+- **Data and feedback platform** — a persistent catalog, enrichment jobs, difficulty feedback, and the foundation for multiplayer.
 
-## 3. Development and checks
+## Product surface
+
+| Entry | Description |
+| --- | --- |
+| `/` | Mode selection: single-player or multiplayer |
+| `/singleplayer` | Main guessing game with configurable clue fields and hints |
+| `/multiplayer` | Private room, same-question race for 2–8 players |
+| `/labeler` | Internal difficulty-labeling tool; disabled in production by default |
+| `/api/health` | Service health check |
+
+### Highlights
+
+- Chinese/English game-name search with keyboard navigation.
+- Ten-guess single-player loop with duplicate-guess prevention.
+- Four preset difficulty pools: Easy, Normal, Hard, and Hell.
+- Custom pools from uploaded AppIDs or a public Steam profile.
+- Mainland-China regular prices in CNY; promotional prices are deliberately excluded from statistics.
+- Seven-day player peak when samples are available; SteamSpy's `ccu` is treated as a historical peak, not live online count.
+- Screenshot and review hints when the catalog already contains the required source data.
+- Post-game difficulty feedback on a 0–100 scale or through preset levels.
+- Server-side persistence for sessions, outcomes, and feedback.
+- Multiplayer room codes with one-click copy, ready checks, server-authoritative rounds, surrender, rematch, and reconnect support.
+
+## Architecture
+
+```text
+SteamSpy request=all ─┐
+Steam Storefront API ─┼─> catalog JSON ─> catalog SQLite ─> playable artifacts ─> web client
+Steam Reviews API ────┤              └─> enrichment checkpoints
+Steam PICS (optional) ┘
+
+web client ──HTTP API──> Node.js service ──> runtime SQLite
+             Socket.IO ─> multiplayer room engine
+```
+
+| Area | Location | Responsibility |
+| --- | --- | --- |
+| Frontend | `src/` | React UI, game engine, search, hints, settings, multiplayer client |
+| HTTP/API server | `server/` | Static serving, API routes, rate limits, migrations, runtime persistence |
+| Catalog pipeline | `scripts/catalog/` | Discovery, normalization, enrichment, publishing, import, status |
+| Operations | `scripts/ops/` | Production weekly runner, release validation, backup and smoke tools |
+| Public artifacts | `public/` | Browser-ready game and labeling catalogs |
+| Documentation | `docs/` | Pipeline, schema, labeler, multiplayer research and operations |
+
+The catalog database and player/runtime database are separate. This keeps a catalog refresh independent from player sessions and feedback.
+
+## Quick start
+
+Requirements: Node.js 24+, npm, and Python 3.12+ for catalog tooling.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Run the complete release gate with:
+Open the Vite URL and start at `/`. To run the production-shaped server locally:
+
+```bash
+npm run build
+npm start
+```
+
+The default server listens on `0.0.0.0:4173`.
+
+## Quality gates
+
+Run the full local release gate before deployment:
 
 ```bash
 npm run release:check
 ```
 
-This runs lint, frontend/backend tests, data tests, a production build, and preflight validation.
-
-## 4. Production deployment
+It covers frontend linting, frontend/backend tests, data-pipeline tests, TypeScript compilation, production build, and deployment preflight checks. Useful focused commands:
 
 ```bash
-cp .env.example .env
-npm ci
+npm run lint
+npm test
+npm run test:data
 npm run build
-npm start
+npm run release:preflight
 ```
 
-The server defaults to `0.0.0.0:4173`; health is exposed at `/api/health`. Docker Compose is also provided:
+## Catalog workflow
+
+The current catalog is a checked-in browser snapshot. The intended weekly workflow is incremental and resumable:
+
+1. Fetch SteamSpy `request=all` pages `0..19` (the top 20 pages).
+2. Normalize and deduplicate by unique AppID.
+3. Keep the first `6,000` games active; retain later candidates as reserve data.
+4. Enrich only active games that are missing completed PICS, Storefront, or review jobs.
+5. Save raw pages and enrichment state as checkpoints.
+6. Publish browser artifacts, validate consistency, and import the catalog SQLite snapshot atomically.
+7. Preserve the previous successful snapshot and staging directory on failure.
+
+The production entry point is:
+
+```bash
+./scripts/ops/run_weekly_catalog.sh
+```
+
+Important defaults:
+
+```text
+SteamSpy pages:              0..19
+Delay between SteamSpy pages: 120 seconds
+Storefront delay:            5 seconds
+Reviews delay:               5 seconds
+SteamSpy retries:            2
+Review retries:              3
+Active catalog limit:        6,000
+```
+
+A failed run can be resumed by running the same command again. Staging is kept at `data/catalog/.weekly-work/current`. Relevant overrides include:
+
+```bash
+STEAMGUESS_ACTIVE_LIMIT=6000
+STEAMGUESS_STEAMSPY_INTERVAL=120
+STEAMGUESS_STEAMSPY_RETRIES=2
+STEAMGUESS_STEAMSPY_RETRY_DELAY=30
+STEAMGUESS_STOREFRONT_DELAY=5
+STEAMGUESS_REVIEWS_DELAY=5
+STEAMGUESS_REVIEWS_RETRIES=3
+STEAMGUESS_REVIEWS_RETRY_DELAY=30
+```
+
+For a dry plan from an existing catalog:
+
+```bash
+STEAMGUESS_WEEKLY_FROM_EXISTING=1 \
+STEAMGUESS_WEEKLY_SKIP_ENRICHMENT=1 \
+./scripts/ops/run_weekly_catalog.sh
+```
+
+Further details: [`docs/data-pipeline.md`](docs/data-pipeline.md), [`docs/catalog-pipeline.md`](docs/catalog-pipeline.md), and [`docs/data-schema.md`](docs/data-schema.md).
+
+## Database and operations
+
+Schema changes are tracked through `schema_migrations`. The server refuses to open a database newer than the schema it supports.
+
+```bash
+npm run db:backup
+npm run db:stats
+npm run data:catalog-status
+```
+
+Persist `data/` in production, schedule backups, copy backups off-host, and perform a real restore drill before launch. Docker Compose is available for a deployment-shaped setup:
 
 ```bash
 docker compose up -d --build
 docker compose ps
 ```
 
-Persist `/app/data`. Only enable `STEAMGUESS_TRUST_PROXY=true` behind a trusted reverse proxy. See `.env.example` for the Steam Web API key, SQLite path, rate limits, logging, and build-time labeler switch.
-
-## 5. Catalog refresh
-
-The current 1,999 SteamSpy candidates publish to **1,964 playable games** after non-game records are removed. The published catalog contains 1,963 Chinese names, 1,704 mainland-China regular prices, and 890 retained screenshots.
+## Configuration and security
 
 ```bash
-npm run data:catalog-import    # bootstrap/upsert the canonical catalog SQLite database
-npm run data:catalog-status    # inspect completeness and pending enrichment
-npm run data:publish-labeler   # offline browser artifact publish
-npm run data:publish-playable  # offline browser artifact publish
-npm run data:sample-peaks      # daily SteamSpy peak sample
-npm run data:update-weekly     # fetch SteamSpy pages 0..19 and upsert discovery
+cp .env.example .env
 ```
 
-The persistent catalog database is separate from the player/runtime database; see `docs/catalog-pipeline.md`. SteamSpy `ccu` is the previous day's peak, not a live count. The UI uses a rolling seven-day peak when sample history exists. Prices use mainland-China regular prices only, never promotional prices or converted USD values.
+`STEAM_WEB_API_KEY` is server-only and is used for public Steam profile/library imports. It is not required for the catalog's review endpoint. Never put it in frontend code or commit it to Git.
 
-The experimental PICS dependency is isolated from the production project:
+The service applies request size limits, write/profile-import rate limits, upstream timeouts, security headers, and SQLite migrations. Set `STEAMGUESS_TRUST_PROXY=true` only when the service is behind a trusted reverse proxy. The internal labeler requires an explicit production build flag:
 
-```bash
-npm run pics:install
-npm run pics:tags -- 730 --language schinese
+```env
+VITE_LABELER_ENABLED=false
 ```
 
-## 6. SQLite operations
+## Multiplayer status
 
-Schema changes run through the `schema_migrations` table. A server refuses to open a database newer than the schema version it supports.
+The multiplayer MVP supports private rooms for 2–8 players, BO1/BO3/BO5, ready checks, room-code sharing, server-authoritative answer selection and scoring, round timers, surrender, rematch, and short reconnect recovery.
 
-```bash
-npm run db:backup  # consistent VACUUM INTO backup; keeps 14 by default
-npm run db:stats   # players, sessions, outcomes, and difficulty feedback
-```
+Active rooms currently live in one Node.js process. A process restart ends active rooms, so production should remain single-instance until a shared room store (for example Redis) is introduced. Leaderboards, matchmaking, and durable room recovery are intentionally out of scope for the current release.
 
-Persist `data/runtime/`, schedule backups, copy backups off-host, and test an actual restore before launch.
+See [`docs/multiplayer-research.md`](docs/multiplayer-research.md) for the implementation direction.
 
-## 7. Security
+## Roadmap
 
-- POST writes are limited to 60 requests/IP/minute; Steam profile imports to 12.
-- JSON request bodies are limited to 32 KB and Steam upstream calls time out after 12 seconds.
-- Production responses include CSP, MIME-sniffing protection, frame denial, Referrer Policy, and Permissions Policy.
-- `STEAM_WEB_API_KEY` is server-only. Steam game details must be public for library import.
-- The ignored root `token` must never be committed; rotate any credential that has appeared in Git history.
-- The isolated PICS PoC has upstream audit warnings, but is absent from the main dependency tree and production runtime image. The main project audit is clean.
+- [x] Single-player guessing loop and difficulty pools
+- [x] Persistent player feedback and catalog database
+- [x] Resumable weekly catalog staging
+- [x] Screenshot/review hint interfaces
+- [x] Multiplayer MVP foundation
+- [ ] More complete Chinese metadata and review coverage
+- [ ] Shared multiplayer room state and durable reconnects
+- [ ] Matchmaking, rankings, and social features
 
-## 8. Launch checklist
+## License and data attribution
 
-1. Configure HTTPS, domain, reverse proxy, and the Steam Web API key.
-2. Verify `/app/data` survives a container rebuild.
-3. Run `npm run release:check` and request `/api/health`.
-4. Test Chinese search, catalog loading, custom AppIDs, and public-library import.
-5. Test screenshot/no-screenshot hints and unknown price/date rendering.
-6. Schedule database backups and weekly catalog refreshes.
-7. Monitor 429/502 responses, feedback failures, database growth, and page load time.
-8. Keep leaderboard and multiplayer deferred while retaining the player/session foundation.
+SteamGuess code and generated data are maintained separately. Steam metadata, images, tags, and reviews remain subject to their respective providers' terms and copyrights. Do not redistribute upstream data without checking the applicable terms.

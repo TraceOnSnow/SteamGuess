@@ -2,7 +2,7 @@
 
 ## 1. Source of truth
 
-`data/catalog/catalog.sqlite` is the canonical metadata store. The current bootstrap snapshot is versioned together with `data/catalog/bootstrap-manifest.json` so development can move to another host without repeating the existing fetches. Steam App ID is
+`data/catalog/catalog.sqlite` is the canonical metadata store. Because the live database exceeds GitHub’s per-file limit, the versioned bootstrap snapshot is stored as `data/catalog/catalog.sqlite.gz` together with `data/catalog/bootstrap-manifest.json`, so development can move to another host without repeating the existing fetches. Steam App ID is
 the only application identity:
 
 ```sql
@@ -76,6 +76,14 @@ The current publishers still read the normalized JSON snapshot. A later bounded
 change should publish directly from SQLite after the eligibility worker exists.
 
 ## 7. Bootstrap and inspection
+
+After a fresh clone, restore the canonical database snapshot once:
+
+```bash
+gzip -dk data/catalog/catalog.sqlite.gz
+```
+
+The generated `catalog.sqlite` stays ignored by Git; weekly runs update it in place.
 
 ```bash
 npm run data:catalog-import

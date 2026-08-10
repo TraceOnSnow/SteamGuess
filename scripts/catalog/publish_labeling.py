@@ -36,7 +36,7 @@ def compact_game(game: dict[str, Any], demo: dict[int, dict[str, Any]]) -> dict[
         "metrics": game["metrics"],
         "recognitionScore": game["recognition"]["score"],
         "recognitionFeatures": game["recognition"]["features"],
-        "suggestedLevel": game["difficulty"]["level"],
+        "suggestedLevel": (rich.get("difficulty", {}).get("level") if isinstance(rich.get("difficulty"), dict) else None) or game.get("difficulty", {}).get("level"),
     }
 
 
@@ -45,14 +45,17 @@ def main() -> None:
     parser.add_argument("--catalog", default="data/catalog/steamspy_top_2000.json")
     parser.add_argument("--demo", default="public/games_demo.json")
     parser.add_argument("--out", default="public/labeling_catalog.json")
+    parser.add_argument("--active-limit", type=int, default=0, help="Publish only the first N catalog rows; 0 means all")
     args = parser.parse_args()
 
     catalog = json.loads(Path(args.catalog).read_text(encoding="utf-8"))
+    if args.active_limit > 0 and isinstance(catalog.get("games"), list):
+        catalog = {**catalog, "games": catalog["games"][:args.active_limit]}
     demo = load_demo(Path(args.demo))
     games = [compact_game(game, demo) for game in catalog["games"]]
     payload = {
         "schemaVersion": 1,
-        "generatedAt": catalog["generatedAt"],
+        "generatedAt": catalog.get("generatedAt"),
         "sourceCatalog": Path(args.catalog).name,
         "games": games,
     }

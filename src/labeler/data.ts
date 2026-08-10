@@ -4,7 +4,7 @@ import type { LabelingCatalog, LabelingGame } from './types';
 const CATALOG_URL = `${import.meta.env.BASE_URL}labeling_catalog.json`;
 
 export async function loadLabelingCatalog(signal?: AbortSignal): Promise<LabelingCatalog> {
-  const response = await fetch(CATALOG_URL, { signal });
+  const response = await fetch(CATALOG_URL, { signal, cache: 'no-store' });
   if (!response.ok) throw new Error(`标注目录加载失败（${response.status}）`);
   const payload: unknown = await response.json();
   if (!isCatalog(payload)) throw new Error('标注目录格式无效');

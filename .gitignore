@@ -16,6 +16,8 @@ data/raw
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 .idea
 .DS_Store
 *.suo
@@ -43,7 +45,7 @@ __pycache__/
 /data/catalog/steamspy_candidates.json
 
 # Versioned bootstrap snapshot used to continue catalog work on another host.
-!/data/catalog/catalog.sqlite
+!/data/catalog/catalog.sqlite.gz
 !data/raw/
 /data/raw/*
 !data/raw/pics/
@@ -53,3 +55,6 @@ __pycache__/
 /data/raw/steamspy/*
 !/data/raw/steamspy/page_0_20260728_082714.554420.json
 !/data/raw/steamspy/page_1_20260728_082820.715028.json
+
+# Weekly catalog runtime lock
+data/catalog/.weekly-update.lock

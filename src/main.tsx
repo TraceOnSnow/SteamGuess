@@ -2,11 +2,15 @@ import { lazy, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import './i18n'
-import App from './App.tsx'
+import HomePage from './pages/HomePage.tsx'
+import SinglePlayerPage from './pages/SinglePlayerPage.tsx'
 
 const DifficultyLabeler = lazy(() => import('./labeler/DifficultyLabeler.tsx'))
+const MultiplayerPage = lazy(() => import('./multiplayer/MultiplayerPage.tsx'))
 const labelerRequested = new URLSearchParams(window.location.search).get('tool') === 'labeler'
   || window.location.pathname.endsWith('/labeler')
+const multiplayerRequested = window.location.pathname.endsWith('/multiplayer')
+const singlePlayerRequested = window.location.pathname.endsWith('/singleplayer')
 const labelerEnabled = import.meta.env.DEV || import.meta.env.VITE_LABELER_ENABLED === 'true'
 
 const labelerUnavailable = (
@@ -26,6 +30,8 @@ createRoot(document.getElementById('root')!).render(
           <DifficultyLabeler />
         </Suspense>
       ) : labelerUnavailable
-    ) : <App />}
+    ) : multiplayerRequested ? (
+      <Suspense fallback={<main className="centered-state"><div className="loader" /></main>}><MultiplayerPage /></Suspense>
+    ) : singlePlayerRequested ? <SinglePlayerPage /> : <HomePage />}
   </StrictMode>,
 )

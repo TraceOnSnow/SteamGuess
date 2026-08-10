@@ -5,15 +5,18 @@ import './HintPanel.css';
 
 interface HintPanelProps {
   screenshotUrl?: string;
+  reviewText?: string;
   revealOriginal?: boolean;
   onUseHint: () => void;
 }
 
-export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: HintPanelProps) {
+export function HintPanel({ screenshotUrl, reviewText, revealOriginal = false, onUseHint }: HintPanelProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [showScreenshot, setShowScreenshot] = useState(false);
   const [usedScreenshot, setUsedScreenshot] = useState(false);
+  const [showReview, setShowReview] = useState(false);
+  const [usedReview, setUsedReview] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -27,7 +30,7 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
   }, []);
 
   useEffect(() => {
-    if (!showScreenshot) return;
+    if (!showScreenshot && !showReview) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     closeRef.current?.focus();
@@ -35,6 +38,7 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return;
       setShowScreenshot(false);
+      setShowReview(false);
       triggerRef.current?.focus();
     };
     document.addEventListener('keydown', closeOnEscape);
@@ -42,7 +46,7 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', closeOnEscape);
     };
-  }, [showScreenshot]);
+  }, [showReview, showScreenshot]);
 
   const revealScreenshot = () => {
     if (!screenshotUrl) return;
@@ -56,6 +60,21 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
 
   const closeScreenshot = () => {
     setShowScreenshot(false);
+    triggerRef.current?.focus();
+  };
+
+  const revealReview = () => {
+    if (!reviewText) return;
+    setShowReview(true);
+    setOpen(false);
+    if (!usedReview && !revealOriginal) {
+      setUsedReview(true);
+      onUseHint();
+    }
+  };
+
+  const closeReview = () => {
+    setShowReview(false);
     triggerRef.current?.focus();
   };
 
@@ -81,6 +100,10 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
           >
             <strong>{revealOriginal ? t('hint.originalScreenshot') : t('hint.screenshot')}</strong>
             <span>{screenshotUrl ? (revealOriginal ? t('hint.originalHelp') : t('hint.screenshotHelp')) : t('hint.unavailable')}</span>
+          </button>
+          <button type="button" role="menuitem" disabled={!reviewText} onClick={revealReview}>
+            <strong>{t('hint.review')}</strong>
+            <span>{reviewText ? t('hint.reviewHelp') : t('hint.unavailable')}</span>
           </button>
         </div>
       )}
@@ -118,6 +141,21 @@ export function HintPanel({ screenshotUrl, revealOriginal = false, onUseHint }: 
               </div>
               <figcaption>{revealOriginal ? t('hint.originalCaption') : t('hint.screenshotCaption')}</figcaption>
             </figure>
+          </section>
+        </div>,
+        document.body,
+      )}
+      {showReview && reviewText && createPortal(
+        <div className="screenshot-dialog-backdrop" onMouseDown={event => {
+          if (event.target === event.currentTarget) closeReview();
+        }}>
+          <section className="screenshot-dialog review-dialog" role="dialog" aria-modal="true" aria-labelledby="review-dialog-title">
+            <header className="screenshot-dialog-header">
+              <h2 id="review-dialog-title">{t('hint.reviewTitle')}</h2>
+              <button ref={closeRef} className="screenshot-dialog-close" type="button" onClick={closeReview} aria-label={t('hint.close')}>×</button>
+            </header>
+            <blockquote className="review-hint">{reviewText}</blockquote>
+            <p className="review-caption">{t('hint.reviewCaption')}</p>
           </section>
         </div>,
         document.body,

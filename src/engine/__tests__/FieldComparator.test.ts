@@ -69,6 +69,18 @@ describe('FieldComparator', () => {
     expect(result.direction).toBe('higher');
   });
 
+  it('compares Steam Simplified Chinese release dates', () => {
+    const result = comparator.compareDate(
+      'Release Date',
+      '2016 年 2 月 26 日',
+      '2018 年 2 月 26 日',
+      { exactYears: 0.2, partialYears: 1, closeYears: 3 },
+    );
+
+    expect(result.status).toBe('close');
+    expect(result.direction).toBe('higher');
+  });
+
   it('returns unknown for invalid dates', () => {
     expect(comparator.compareDate(
       'Release Date',

@@ -1,18 +1,21 @@
 {
   "schemaVersion": 1,
-  "createdAt": "2026-07-30T12:06:33.488472Z",
+  "createdAt": "2026-08-10T09:43:33.126398Z",
   "purpose": "Bootstrap snapshot for continuing catalog development without refetching existing Steam data.",
   "catalogStats": {
-    "apps": 1999,
-    "searchable": 1964,
-    "playable": 1964,
-    "sourceObservations": 7994
+    "apps": 19669,
+    "active": 1000,
+    "searchable": 997,
+    "playable": 997,
+    "reviews": 973
   },
   "files": [
     {
-      "path": "data/catalog/catalog.sqlite",
-      "bytes": 20172800,
-      "sha256": "cf6bf4dc7c64a0cb6ffa30015c920eab517c936521749bfeb1f474bef3514176"
+      "path": "data/catalog/catalog.sqlite.gz",
+      "bytes": 58289591,
+      "sha256": "535b0882626d0bef2c744c0f7c132620df4a174278ce9aec56687c33e7fb70c1",
+      "compression": "gzip",
+      "restoresTo": "data/catalog/catalog.sqlite"
     },
     {
       "path": "data/catalog/steamspy_top_2000.json",

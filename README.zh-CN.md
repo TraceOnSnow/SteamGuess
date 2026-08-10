@@ -1,145 +1,219 @@
 # SteamGuess
 
-SteamGuess 是一个 Wordle 风格的 Steam 游戏猜谜网页。玩家每局有 10 次机会，根据国区常态价格、近 7 日/昨日峰值、评测数、好评率、发行日期、厂商和用户标签逐步找出答案。
+> 一个面向 Steam 游戏的猜游戏网页：用结构化线索逐步缩小答案，也为多人竞技和持续更新的数据平台打基础。
 
-## 一、当前功能
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)](https://vite.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-22%2B-5fa04e?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-- 正式题库为 **1964 款 `type=game` 的游戏**；内部候选与标注目录为 1999 条。
-- 支持中英文游戏名搜索、键盘选择、重复猜测排除和自定义题库 AppID。
-- 可配置显示价格、活跃度、好评率、发行日期、是否拥有、厂商和用户标签。
-- 截图提示只使用题库已有的 `hints.screenshotUrl`；猜题结束后显示原图。
-- 游戏结束后可以提交 0–100 难度分数及简单/普通/困难/地狱等级。
-- 可导入本地 AppID 文件，或通过服务端导入公开 Steam 个人游戏库。
+[English](README.md)
 
-## 二、技术与目录
+SteamGuess 是一个类似 Wordle 的 Steam 游戏猜测游戏。玩家可以使用中文或英文搜索游戏名称，然后根据国区常态价格、玩家峰值、评测数据、发行日期、开发商/发行商和 Steam 用户标签逐步猜出答案。
 
-- 前端：React 19、TypeScript 5.9、Vite 7、i18next。
-- 后端：Node.js HTTP 服务与 Node 内置 SQLite。
-- `public/games_demo.json`：1964 款正式题库。
-- `public/labeling_catalog.json`：1999 条内部标注候选。
-- `server/`：API、数据库迁移、限流、静态文件服务。
-- `data/runtime/`：运行时 SQLite，禁止提交并必须持久化。
+项目分为两个相互独立但共享数据的部分：
 
-内部标注器在开发环境可用，生产构建默认关闭。只有显式设置 `VITE_LABELER_ENABLED=true` 才会暴露 `/labeler`。
+- **可玩产品**：面向玩家的轻量浏览器题库和猜测流程。
+- **数据与反馈平台**：持久化 catalog、增量数据补全、难度反馈以及多人模式基础设施。
 
-## 三、本地运行与检查
+## 产品入口
+
+| 入口 | 说明 |
+| --- | --- |
+| `/` | 首页模式选择：单人或多人 |
+| `/singleplayer` | 单人猜游戏，支持线索设置和提示 |
+| `/multiplayer` | 2–8 人私人房间同题竞速 |
+| `/labeler` | 内部难度标注工具，生产环境默认关闭 |
+| `/api/health` | 服务健康检查 |
+
+### 当前功能
+
+- 中文/英文游戏名搜索和键盘操作。
+- 最多十次猜测，自动阻止重复猜测。
+- 简单、普通、困难、地狱四个预制难度题库。
+- 支持上传 AppID 或导入公开 Steam 个人资料建立自定义题库。
+- 国区人民币常态价格；促销价明确不参与统计。
+- 有采样数据时显示近七日玩家峰值；SteamSpy 的 `ccu` 被视为历史峰值，不是实时在线人数。
+- 根据 catalog 中已有数据展示截图提示和评论提示。
+- 游戏结束后支持 0–100 难度评分，也支持选择预制难度。
+- 服务端持久化游戏会话、结果和玩家反馈。
+- 多人房间支持房间码、一键复制、准备状态、服务端权威结算、投降、再来一局和短时断线恢复。
+
+## 技术架构
+
+```text
+SteamSpy request=all ─┐
+Steam Storefront API ─┼─> catalog JSON ─> catalog SQLite ─> 浏览器题库
+Steam Reviews API ────┤              └─> 增量任务 checkpoint
+Steam PICS（可选）───┘
+
+浏览器 ──HTTP API──> Node.js 服务 ──> runtime SQLite
+        Socket.IO ──> 多人房间引擎
+```
+
+| 模块 | 目录 | 职责 |
+| --- | --- | --- |
+| 前端 | `src/` | React 界面、游戏引擎、搜索、提示、设置、多人客户端 |
+| HTTP/API 服务 | `server/` | 静态文件、API、限流、迁移、运行时持久化 |
+| Catalog 流水线 | `scripts/catalog/` | 抓取、规范化、补全、发布、导入、状态检查 |
+| 运维脚本 | `scripts/ops/` | 周更入口、发布校验、备份和 smoke test |
+| 浏览器数据 | `public/` | 可玩的题库和内部标注题库 |
+| 文档 | `docs/` | 数据流水线、数据结构、标注器、多人模式和部署说明 |
+
+Catalog 数据库与玩家运行时数据库相互独立，数据更新不会直接影响玩家会话和反馈。
+
+## 快速开始
+
+环境要求：Node.js 24+、npm；运行 catalog 脚本还需要 Python 3.12+。
 
 ```bash
 npm ci
 npm run dev
 ```
 
-完整上线检查：
+打开 Vite 输出的地址，根路径 `/` 会先进入模式选择页。也可以直接访问：
+
+```text
+/singleplayer
+/multiplayer
+```
+
+运行接近生产环境的 Node 服务：
+
+```bash
+npm run build
+npm start
+```
+
+默认监听 `0.0.0.0:4173`。
+
+## 质量检查
+
+发布前运行完整检查：
 
 ```bash
 npm run release:check
 ```
 
-它会依次运行 ESLint、前后端测试、数据测试、生产构建和上线前检查。单独命令：
+它会执行前端 lint、前后端测试、数据流水线测试、TypeScript 编译、生产构建和部署前检查。常用的单项命令：
 
 ```bash
-npm run test
+npm run lint
+npm test
 npm run test:data
 npm run build
 npm run release:preflight
 ```
 
-## 四、生产部署
+## Catalog 数据流水线
 
-复制配置并启动 Node 服务：
+当前浏览器使用的是一个可版本化的 catalog 快照。计划中的每周更新是增量且可恢复的：
+
+1. 抓取 SteamSpy `request=all` 前 20 页，即 page `0..19`。
+2. 按唯一 AppID 规范化、去重并保留原始来源信息。
+3. 前 `6,000` 款进入 active catalog，后续候选保留为 reserve 数据。
+4. 只为 active 中尚未完成的游戏补全 PICS、Storefront 和评论。
+5. 每个原始页面和补全任务都保存 checkpoint。
+6. 生成浏览器数据，执行一致性校验，再原子导入 catalog SQLite。
+7. 失败时保留 staging 和上一版正式快照，不发布半成品。
+
+生产周更入口：
 
 ```bash
-cp .env.example .env
-npm ci
-npm run build
-npm start
+./scripts/ops/run_weekly_catalog.sh
 ```
 
-默认监听 `0.0.0.0:4173`，健康检查为 `/api/health`。推荐使用 Compose：
+默认参数：
+
+```text
+SteamSpy 页面：              0..19
+SteamSpy 页面间隔：          120 秒
+Storefront 请求间隔：        5 秒
+评论请求间隔：               5 秒
+SteamSpy 单页重试：          2 次
+评论重试：                   3 次
+Active catalog 上限：        6,000 款
+```
+
+如果任务失败，保留目录：
+
+```text
+data/catalog/.weekly-work/current
+```
+
+再次运行同一个入口即可从已有 checkpoint 继续，不会重新抓取已经成功的页面。
+
+常用覆盖参数：
+
+```bash
+STEAMGUESS_ACTIVE_LIMIT=6000
+STEAMGUESS_STEAMSPY_INTERVAL=120
+STEAMGUESS_STEAMSPY_RETRIES=2
+STEAMGUESS_STEAMSPY_RETRY_DELAY=30
+STEAMGUESS_STOREFRONT_DELAY=5
+STEAMGUESS_REVIEWS_DELAY=5
+STEAMGUESS_REVIEWS_RETRIES=3
+STEAMGUESS_REVIEWS_RETRY_DELAY=30
+```
+
+详细说明见：[`docs/data-pipeline.md`](docs/data-pipeline.md)、[`docs/catalog-pipeline.md`](docs/catalog-pipeline.md)、[`docs/data-schema.md`](docs/data-schema.md)。
+
+## 数据库和生产运维
+
+数据库迁移通过 `schema_migrations` 表跟踪。若服务发现数据库版本高于当前代码支持的版本，会拒绝启动，避免旧程序破坏新数据。
+
+```bash
+npm run db:backup
+npm run db:stats
+npm run data:catalog-status
+```
+
+生产环境需要持久化 `data/`，配置定期备份，把备份复制到服务器之外，并在上线前实际演练一次恢复。Docker Compose 示例：
 
 ```bash
 docker compose up -d --build
 docker compose ps
 ```
 
-Compose 会把 `/app/data` 挂载到 `steamguess-data` volume。反向代理必须只在确实由可信代理转发时设置 `STEAMGUESS_TRUST_PROXY=true`。
+## 配置与安全
 
-主要环境变量：
+```bash
+cp .env.example .env
+```
+
+`STEAM_WEB_API_KEY` 只放在服务端，用于导入公开 Steam 个人资料/游戏库；评论接口不依赖这个 Key。不要将它写入前端代码，也不要提交到 Git。
+
+服务端包含请求体大小限制、写接口和资料导入限流、上游请求超时、安全响应头以及 SQLite 迁移保护。只有在服务确实位于可信反向代理之后时，才设置：
 
 ```env
-STEAM_WEB_API_KEY=                 # 导入公开 Steam 库时需要，只能放服务端
-STEAMGUESS_DB_PATH=                # 默认 data/runtime/steamguess.sqlite
-STEAMGUESS_TRUST_PROXY=false
-STEAMGUESS_WRITE_RATE_LIMIT=60     # 每 IP 每分钟写请求
-STEAMGUESS_PROFILE_RATE_LIMIT=12   # 每 IP 每分钟 Steam 库导入请求
-VITE_LABELER_ENABLED=false         # 构建期变量，线上保持 false
+STEAMGUESS_TRUST_PROXY=true
 ```
 
-## 五、数据更新
+内部标注工具生产环境需要显式打开：
 
-本次已把 SteamSpy 前两页 1999 条候选发布为 **1964 款可玩游戏**：中文名 1963 款，国区常态价格 1704 款，已有截图 890 款。非游戏 application、tool、DLC、demo 等不会进入正式题库。
-
-```bash
-# 将当前 JSON 目录幂等导入持久化 catalog SQLite
-npm run data:catalog-import
-npm run data:catalog-status
-
-# 使用已有候选数据重新发布浏览器文件，不联网
-npm run data:publish-labeler
-npm run data:publish-playable
-
-# 每日记录 SteamSpy 前两页的昨日峰值，形成滚动近 7 日峰值
-npm run data:sample-peaks
-
-# 每周抓取 SteamSpy request=all 第 0..19 页并写入 discovery 数据库
-npm run data:update-weekly
+```env
+VITE_LABELER_ENABLED=false
 ```
 
-目录数据库 `data/catalog/catalog.sqlite` 与玩家运行时数据库相互独立，完整设计见 `docs/catalog-pipeline.md`。SteamSpy 的 `ccu` 是前一日峰值，不是实时在线。累计采样后页面显示近 7 日峰值；样本不足时降级显示昨日峰值。常态价格只读取国区原价，不使用促销价，也不把美元价格换算成人民币。
+## 多人模式状态
 
-PICS 验证工具的 `steam-user` 依赖已从主项目隔离，避免进入生产安装和镜像：
+多人 MVP 当前支持 2–8 人私人房间、BO1/BO3/BO5、准备状态、房间码分享、服务端选题和结算、回合计时、投降、再来一局以及短时间断线恢复。
 
-```bash
-npm run pics:install
-npm run pics:tags -- 730 --language schinese
-```
+当前房间状态保存在单个 Node.js 进程内。服务重启会结束活动房间，因此生产环境暂时保持单实例；后续需要多人房间共享状态和持久恢复时，再接入 Redis 或其他共享存储。排行榜、匹配系统和社交功能暂不属于当前范围。
 
-## 六、SQLite、备份与反馈
+多人模式设计记录见 [`docs/multiplayer-research.md`](docs/multiplayer-research.md)。
 
-数据库首次访问时自动创建并按 `schema_migrations` 顺序迁移。服务器若遇到比自身更新的数据库版本会拒绝启动，避免旧程序破坏新数据。
+## 路线图
 
-```bash
-# 一致性备份，默认保留 14 份
-npm run db:backup
+- [x] 单人猜游戏流程和四档难度题库
+- [x] 玩家反馈和 catalog SQLite 持久化
+- [x] 可恢复的每周 catalog 更新
+- [x] 截图/评论提示接口
+- [x] 多人模式 MVP 基础设施
+- [ ] 更完整的中文元数据和评论覆盖
+- [ ] 共享多人房间状态与可靠断线恢复
+- [ ] 匹配系统、排行榜和社交功能
 
-# 查看玩家、对局、结局和难度反馈统计
-npm run db:stats
-```
+## 数据来源与版权
 
-可用 cron 每天备份：
-
-```cron
-15 3 * * * cd /srv/SteamGuess && /usr/bin/npm run db:backup >> /var/log/steamguess-backup.log 2>&1
-```
-
-备份目录默认是 `data/backups/`。上线前应实际执行一次恢复演练，并把备份同步到服务器之外。
-
-## 七、安全与接口
-
-- POST 写接口默认每 IP 60 次/分钟，Steam 库导入默认 12 次/分钟；超限返回 `429`。
-- JSON 请求体上限 32 KB；Steam 上游请求超时 12 秒。
-- 生产服务已设置 CSP、禁止 MIME 嗅探、禁止 iframe、Referrer Policy 和 Permissions Policy。
-- `STEAM_WEB_API_KEY` 不会进入前端构建；用户的 Steam“游戏详情”必须公开。
-- 根目录 `token` 已忽略。若真实密钥曾经提交到 Git 历史，必须在对应服务撤销并轮换。
-- PICS PoC 的旧依赖存在上游审计告警，但它位于独立工具目录，不属于主项目依赖，也不会进入生产 Runtime 镜像。主项目 `npm audit` 应为 0。
-
-## 八、初版上线清单
-
-1. 配置域名、HTTPS、反向代理和 `STEAM_WEB_API_KEY`。
-2. 挂载持久化 `/app/data`，确认容器重建后 SQLite 不丢失。
-3. 执行 `npm run release:check`，再访问 `/api/health`。
-4. 实测中文搜索、1964 款题库加载、自定义 AppID 和公开 Steam 库导入。
-5. 实测有截图和无截图游戏的提示状态，以及未知价格/发行日期显示 `—`。
-6. 配置每日数据库备份和每周数据更新任务。
-7. 上线初期观察 429、502、数据库体积、反馈提交失败率和页面加载时间。
-8. 暂不开发排行榜和多人模式，但保留现有 player/session schema 作为后续基建。
+SteamGuess 代码与生成数据分开维护。Steam 的游戏元数据、图片、标签和评论受各自服务条款与版权约束。重新发布上游数据前，请确认对应服务的使用和再分发条款。

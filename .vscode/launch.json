@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SteamGuess 全栈开发（含多人模式）",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/index.js",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": ["--env-file-if-exists=.env"],
+      "env": {
+        "HOST": "127.0.0.1",
+        "PORT": "4173",
+        "STEAMGUESS_TRUST_PROXY": "false",
+        "VITE_BACKEND_ENABLED": "true"
+      },
+      "preLaunchTask": "SteamGuess: build",
+      "console": "integratedTerminal",
+      "restart": true,
+      "serverReadyAction": {
+        "action": "startBrowser",
+        "pattern": "SteamGuess server listening on http://127\\.0\\.0\\.1:4173",
+        "uriFormat": "http://127.0.0.1:4173/"
+      }
+    }
+  ],
+  "compounds": []
+}

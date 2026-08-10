@@ -1,29 +1,4 @@
 import type { ComparisonConfig } from '../types/comparison';
+import { COMPARISON_RULES } from '../../shared/game-rules.js';
 
-export const comparisonConfig: ComparisonConfig = {
-  rules: {
-    price: {
-      mode: 'absolute',
-      exact: 5,
-      partial: 25,
-      close: 75,
-    },
-    popularity: {
-      mode: 'percent',
-      exact: 5,
-      partial: 50,
-      close: 100,
-    },
-    reviewsRate: {
-      mode: 'absolute',
-      exact: 1,
-      partial: 5,
-      close: 10,
-    },
-    releaseDate: {
-      exactYears: 0.2,
-      partialYears: 1,
-      closeYears: 3,
-    },
-  },
-};
+export const comparisonConfig: ComparisonConfig = { rules: COMPARISON_RULES };

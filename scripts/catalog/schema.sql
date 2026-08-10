@@ -162,6 +162,23 @@ CREATE TABLE IF NOT EXISTS catalog_memberships (
 );
 CREATE INDEX IF NOT EXISTS idx_catalog_memberships_app ON catalog_memberships(appid, catalog);
 
+-- Human-curated preset pool. This is intentionally separate from the
+-- regression score so weekly catalog refreshes cannot erase editorial choices.
+CREATE TABLE IF NOT EXISTS curated_pool_entries (
+    pool_version TEXT NOT NULL,
+    appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
+    source_name TEXT NOT NULL,
+    difficulty_rank INTEGER NOT NULL CHECK (difficulty_rank BETWEEN 1 AND 4),
+    tier TEXT NOT NULL CHECK (tier IN ('easy', 'normal', 'hard', 'hell')),
+    basis TEXT,
+    user_rating REAL,
+    match_method TEXT NOT NULL,
+    included_at TEXT NOT NULL,
+    PRIMARY KEY (pool_version, appid)
+);
+CREATE INDEX IF NOT EXISTS idx_curated_pool_entries_difficulty
+    ON curated_pool_entries(pool_version, difficulty_rank);
+
 CREATE TABLE IF NOT EXISTS enrichment_jobs (
     appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
     service TEXT NOT NULL,
@@ -197,3 +214,23 @@ WHERE price.retrieved_at = (
       AND candidate.country = price.country
       AND candidate.source = price.source
 );
+
+CREATE TABLE IF NOT EXISTS app_reviews (
+    appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
+    language TEXT NOT NULL CHECK (language IN ('english', 'schinese')),
+    position INTEGER NOT NULL CHECK (position >= 1 AND position <= 10),
+    review_id TEXT NOT NULL,
+    review_text TEXT NOT NULL,
+    voted_up INTEGER,
+    votes_up INTEGER,
+    votes_funny INTEGER,
+    weighted_vote_score REAL,
+    timestamp_created INTEGER,
+    timestamp_updated INTEGER,
+    source TEXT NOT NULL,
+    retrieved_at TEXT NOT NULL,
+    review_hash TEXT NOT NULL,
+    PRIMARY KEY (appid, language, position),
+    UNIQUE (appid, language, review_hash)
+);
+CREATE INDEX IF NOT EXISTS idx_app_reviews_app ON app_reviews(appid, language, position);

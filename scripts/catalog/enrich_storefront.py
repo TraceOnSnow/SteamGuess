@@ -38,6 +38,8 @@ def payload_values(payload: Any) -> list[dict[str, Any]]:
 
 def load_app_ids(path: Path) -> list[int]:
     payload = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(payload, dict) and isinstance(payload.get("appIds"), list):
+        return [int(value) for value in payload["appIds"]]
     return [int(game["appId"]) for game in payload_values(payload) if game.get("appId")]
 
 
@@ -52,7 +54,27 @@ def extract_storefront_details(payload: Any, appid: int) -> dict[str, Any] | Non
     name = str(data.get("name") or "").strip() or None
     is_free = data.get("is_free") is True
     price = data.get("price_overview")
-    result: dict[str, Any] = {"name": name, "isFree": is_free, "price": None}
+    release_date = data.get("release_date")
+    release_text = release_date.get("date") if isinstance(release_date, dict) else None
+    result: dict[str, Any] = {
+        "name": name,
+        "isFree": is_free,
+        "price": None,
+        "type": str(data.get("type") or "").strip() or None,
+        "releaseDate": str(release_text or "").strip() or None,
+        "developers": [str(value).strip() for value in data.get("developers", []) if str(value).strip()],
+        "publishers": [str(value).strip() for value in data.get("publishers", []) if str(value).strip()],
+        "screenshots": [
+            {
+                "id": item.get("id"),
+                "path": str(item.get("path_full") or item.get("path_thumbnail") or "").strip(),
+                "pathThumbnail": str(item.get("path_thumbnail") or "").strip(),
+            }
+            for item in data.get("screenshots", [])
+            if isinstance(item, dict) and (item.get("path_full") or item.get("path_thumbnail"))
+        ],
+        "headerImage": str(data.get("header_image") or "").strip() or None,
+    }
     if isinstance(price, dict):
         initial = price.get("initial")
         final = price.get("final")
@@ -114,8 +136,6 @@ def regional_price_record(details: dict[str, Any], country: str, retrieved_at: s
             "status": "free",
             "currency": expected_currency or "",
             "regularCents": 0,
-            "currentCents": 0,
-            "discountPercent": 0,
             "retrievedAt": retrieved_at,
         }
 
@@ -125,8 +145,6 @@ def regional_price_record(details: dict[str, Any], country: str, retrieved_at: s
             "status": "available",
             "currency": price.get("currency"),
             "regularCents": price.get("initialCents"),
-            "currentCents": price.get("finalCents"),
-            "discountPercent": price.get("discountPercent", 0),
             "retrievedAt": retrieved_at,
         }
 
@@ -194,10 +212,16 @@ def main() -> None:
         appid = int(game["appId"])
         if appid not in selected:
             continue
-        missing_name = not str(game.get("localizedNames", {}).get(language_key, "")).strip()
+        localized = game.get("localizedNames")
+        missing_name = not str(localized.get(language_key, "") if isinstance(localized, dict) else "").strip()
         name_known_unavailable = app_state.get(str(appid), {}).get("status") == "unavailable"
         missing_price = not has_regional_price_status(game, primary_country)
-        if (missing_name and not name_known_unavailable) or missing_price:
+        # A prior job can be marked complete while the current catalog snapshot
+        # still lacks fields (for example after a fresh SteamSpy discovery).
+        # ``type`` is required by publish_playable and must therefore be part of
+        # the actual pending check, not inferred from the job table alone.
+        missing_type = not str(game.get("type") or "").strip()
+        if (missing_name and not name_known_unavailable) or missing_price or missing_type:
             pending.append(game)
     if args.limit > 0:
         pending = pending[:args.limit]
@@ -254,6 +278,28 @@ def main() -> None:
             any_details = primary or next(iter(details_by_country.values()), None)
             name = next((item.get("name") for item in details_by_country.values() if item.get("name")), None)
 
+            if any_details:
+                # Storefront appdetails is the authoritative rich metadata response.
+                # Persist it even when the CN request is unavailable, using the first
+                # successful country response as a fallback.
+                if any_details.get("type"):
+                    game["type"] = any_details["type"]
+                    game.setdefault("fieldSources", {})["type"] = "storefront"
+                if any_details.get("releaseDate"):
+                    game["releaseDate"] = any_details["releaseDate"]
+                    game.setdefault("fieldSources", {})["releaseDate"] = "storefront"
+                for field in ("developers", "publishers"):
+                    if any_details.get(field):
+                        game[field] = any_details[field]
+                        game.setdefault("fieldSources", {})[field] = "storefront"
+                if any_details.get("headerImage"):
+                    game["headerImage"] = any_details["headerImage"]
+                screenshots = any_details.get("screenshots") or []
+                if screenshots:
+                    game["screenshots"] = screenshots
+                    game.setdefault("hints", {})["screenshotUrl"] = screenshots[0].get("path")
+                    game.setdefault("fieldSources", {})["screenshots"] = "storefront"
+
             if primary:
                 price_record = regional_price_record(primary, primary_country, retrieved_at)
                 game.setdefault("regionalPrices", {})[primary_country] = price_record
@@ -308,6 +354,8 @@ def main() -> None:
         f"pending={len(pending)} requests={requests} localized={localized} priced={priced} "
         f"unavailable={unavailable} transient_failures={transient_failures} out={output_path} state={state_path}"
     )
+    if transient_failures:
+        raise SystemExit(2)
 
 
 if __name__ == "__main__":

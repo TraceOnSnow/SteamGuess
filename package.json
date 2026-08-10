@@ -21,7 +21,9 @@
     "data:localize-names": "python3 -m scripts.catalog.enrich_storefront",
     "data:fetch-cn-prices": "python3 -m scripts.catalog.enrich_cn_prices",
     "data:sample-peaks": "python3 -m scripts.catalog.refresh_metrics",
-    "data:update-weekly": "npm run data:discover-weekly && python3 -m scripts.catalog.import_current --catalog data/catalog/steamspy_candidates.json",
+    "data:update-weekly": "python3 -m scripts.catalog.update_weekly",
+    "data:update-weekly-production": "./scripts/ops/run_weekly_catalog.sh",
+    "data:validate-release": "python3 scripts/ops/validate_catalog_release.py",
     "start": "node --env-file-if-exists=.env server/index.js",
     "test:server": "node --test server/tests/*.node.js",
     "db:backup": "node scripts/ops/backup_database.mjs",
@@ -30,14 +32,19 @@
     "release:check": "npm run lint && npm test && npm run test:data && npm run build && npm run release:preflight",
     "data:discover-weekly": "python3 -m scripts.catalog.discover_steamspy --pages 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 --out data/catalog/steamspy_candidates.json",
     "data:catalog-import": "python3 -m scripts.catalog.import_current",
-    "data:catalog-status": "python3 -m scripts.catalog.status"
+    "data:catalog-status": "python3 -m scripts.catalog.status",
+    "test:multiplayer-load": "node scripts/ops/multiplayer_load.mjs",
+    "data:enrich-reviews": "python3 -m scripts.catalog.enrich_reviews"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
     "i18next": "^25.8.13",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-i18next": "^16.5.4"
+    "react-i18next": "^16.5.4",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

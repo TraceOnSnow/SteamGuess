@@ -4,7 +4,7 @@ import { rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { LATEST_SCHEMA_VERSION, openDatabase, insertDifficultyFeedback, upsertSession } from '../database.js';
+import { LATEST_SCHEMA_VERSION, openDatabase, insertDifficultyFeedback, getDifficultyFeedbackSummary, upsertSession } from '../database.js';
 import { createRateLimiter } from '../api.js';
 
 const paths = [];
@@ -35,6 +35,11 @@ describe('feedback database', () => {
     assert.ok(id > 0);
     assert.deepEqual({ ...db.prepare('SELECT app_id, score, level FROM difficulty_feedback').get() }, {
       app_id: 10, score: 72, level: 'hard',
+    });
+    insertDifficultyFeedback(db, { playerId: 'player_test_124', appId: 10, score: 48, level: 'normal' }, '2026-07-30T00:00:00.000Z');
+    assert.deepEqual({ ...getDifficultyFeedbackSummary(db, 10) }, {
+      app_id: 10, feedback_count: 2, score_sum: 120, average_score: 60,
+      easy_count: 0, normal_count: 1, hard_count: 1, hell_count: 0, updated_at: '2026-07-30T00:00:00.000Z',
     });
     db.close();
   });
