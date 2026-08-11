@@ -11,11 +11,22 @@ import { openDatabase } from '../database.js';
 
 const cleanup = [];
 afterEach(async () => { while (cleanup.length) await cleanup.pop()(); });
+
+const testCatalog = [10, 30].map((appId, index) => ({
+  appId,
+  name: `Test Game ${appId}`,
+  localizedNames: { zh: `测试游戏 ${appId}` },
+  releaseDate: `202${index}-01-01`,
+  price: { us: { currency: 'USD', regular: index + 1 }, cn: { currency: 'CNY', regular: (index + 1) * 10 } },
+  popularity: { current: 100 + index, peak: 1000 + index },
+  reviews: { total: 100 + index, positive: 90 + index, negative: 10 },
+  tags: { developers: [`Test Dev ${appId}`], publishers: [`Test Pub ${appId}`], userTags: [`Test Tag ${appId}`] },
+}));
 function emit(socket, event, payload) { return new Promise(resolve => socket.emit(event, payload, resolve)); }
 async function fixture(options = {}) {
   const http = createServer((_, response) => response.end('ok'));
   const dbPath = join(tmpdir(), `steamguess-mp-${randomUUID()}.sqlite`);
-  const multiplayer = createMultiplayerServer(http, { rootDir: process.cwd(), dbPath, random: () => 0, countdownMs: 5, nextRoundDelayMs: 5, disconnectGraceMs: 15, ...options });
+  const multiplayer = createMultiplayerServer(http, { rootDir: process.cwd(), dbPath, catalog: testCatalog, random: () => 0, countdownMs: 5, nextRoundDelayMs: 5, disconnectGraceMs: 15, ...options });
   await new Promise(resolve => http.listen(0, '127.0.0.1', resolve));
   const { port } = http.address();
   const connect = () => createClient(`http://127.0.0.1:${port}`, { transports: ['websocket'], forceNew: true });

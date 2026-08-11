@@ -12,8 +12,8 @@ function publicGame(game) {
   return { appId: game.appId, name: game.name, localizedNames: game.localizedNames, header_image: game.header_image, releaseDate: game.releaseDate, price: game.price, popularity: game.popularity, reviews: game.reviews, tags: game.tags };
 }
 
-export function createMultiplayerServer(httpServer, { rootDir, dbPath, now = () => Date.now(), random = Math.random, countdownMs = 3_000, nextRoundDelayMs = 3_500, disconnectGraceMs = 30_000 } = {}) {
-  const catalog = loadCatalog(rootDir);
+export function createMultiplayerServer(httpServer, { rootDir, dbPath, catalog: catalogOverride, now = () => Date.now(), random = Math.random, countdownMs = 3_000, nextRoundDelayMs = 3_500, disconnectGraceMs = 30_000 } = {}) {
+  const catalog = catalogOverride ?? loadCatalog(rootDir);
   const catalogById = new Map(catalog.map(game => [game.appId, game]));
   const store = new MemoryRoomStore({ now });
   const io = new Server(httpServer, {

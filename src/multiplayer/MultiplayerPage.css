@@ -11,3 +11,13 @@
 .mp-room-code span { color: #aab5bf; font-size: .84rem; }
 .mp-room-code strong { color: #8ee6b0; font-size: 1.7rem; letter-spacing: .16em; }
 @media(max-width:700px){.mp-room-code{align-items:stretch; flex-direction:column}.mp-room-code .btn{width:100%}}
+
+.mp-connection-status {
+  margin: -4px 0 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 193, 92, .35);
+  border-radius: 10px;
+  color: #ffd38a;
+  background: rgba(128, 87, 24, .2);
+  text-align: center;
+}

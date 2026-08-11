@@ -139,9 +139,9 @@ export function GameTable({ records, correctGame, revealAnswer, visibleFields, o
                     <span className="game-title">{game.localizedNames?.zh && i18n.language.startsWith('zh') ? game.localizedNames.zh : game.name}</span>
                     {isAnswer && <span className="answer-label">{t('table.answer')}</span>}
                   </th>
-                  {visibleFields.has('price') && <td>{renderFeedback(result.priceMatch)}</td>}
+                  {visibleFields.has('price') && <td data-label={t('table.price')}>{renderFeedback(result.priceMatch)}</td>}
                   {visibleFields.has('activity') && (
-                    <td className="activity-cell">
+                    <td className="activity-cell" data-label={t('table.activity')}>
                       <div className="stacked-feedback">
                         <div className="stacked-feedback-item">
                           {/* <span className="stacked-label">{peakLabel}</span> */}
@@ -154,10 +154,10 @@ export function GameTable({ records, correctGame, revealAnswer, visibleFields, o
                       </div>
                     </td>
                   )}
-                  {visibleFields.has('rating') && <td className="rating-cell compact-clue-cell">{renderFeedback(result.reviewsRateMatch)}</td>}
-                  {visibleFields.has('releaseDate') && <td className="release-cell compact-clue-cell">{renderFeedback(result.releaseMatch)}</td>}
+                  {visibleFields.has('rating') && <td className="rating-cell compact-clue-cell" data-label={t('table.rate')}>{renderFeedback(result.reviewsRateMatch)}</td>}
+                  {visibleFields.has('releaseDate') && <td className="release-cell compact-clue-cell" data-label={t('table.releaseDate')}>{renderFeedback(result.releaseMatch)}</td>}
                   {visibleFields.has('owned') && (
-                    <td className="owned-cell">
+                    <td className="owned-cell" data-label={t('table.owned')}>
                       {renderFeedback({
                         fieldName: 'Owned',
                         userValue: ownedAppIds.has(game.appId) ? t('table.ownedYes') : t('table.ownedNo'),
@@ -167,7 +167,7 @@ export function GameTable({ records, correctGame, revealAnswer, visibleFields, o
                     </td>
                   )}
                   {visibleFields.has('companies') && (
-                    <td className="companies-cell">
+                    <td className="companies-cell" data-label={t('table.companies')}>
                       <div className="company-tags-container">
                         {companies.map(company => {
                           const shared = isSharedCompany(company, correctTags);
@@ -182,7 +182,7 @@ export function GameTable({ records, correctGame, revealAnswer, visibleFields, o
                     </td>
                   )}
                   {visibleFields.has('tags') && (
-                    <td className="tags-cell">
+                    <td className="tags-cell" data-label={t('table.tags')}>
                       <div className="user-tags-container">
                         {userTags.map(tag => {
                           const shared = correctTags.user.has(tag.toLocaleLowerCase());
