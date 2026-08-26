@@ -2,23 +2,57 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "SteamGuess 全栈开发（含多人模式）",
+      "name": "SteamGuess：前端开发（推荐）",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/server/index.js",
-      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--host", "127.0.0.1", "--port", "5173"],
+      "cwd": "${workspaceFolder:SteamGuess}",
+      "env": {
+        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
+      },
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Local:\\s+http://127\\.0\\.0\\.1:5173/",
+        "uriFormat": "http://127.0.0.1:5173/"
+      }
+    },
+    {
+      "name": "SteamGuess：难度管理工具",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--host", "127.0.0.1", "--port", "5173"],
+      "cwd": "${workspaceFolder:SteamGuess}",
+      "env": {
+        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
+      },
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Local:\\s+http://127\\.0\\.0\\.1:5173/",
+        "uriFormat": "http://127.0.0.1:5173/labeler"
+      }
+    },
+    {
+      "name": "SteamGuess：完整服务器（含多人模式）",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder:SteamGuess}/server/index.js",
+      "cwd": "${workspaceFolder:SteamGuess}",
       "runtimeArgs": ["--env-file-if-exists=.env"],
       "env": {
         "HOST": "127.0.0.1",
         "PORT": "4173",
         "STEAMGUESS_TRUST_PROXY": "false",
-        "VITE_BACKEND_ENABLED": "true"
+        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
       },
-      "preLaunchTask": "SteamGuess: build",
+      "preLaunchTask": "SteamGuess: Build",
       "console": "integratedTerminal",
       "restart": true,
       "serverReadyAction": {
-        "action": "startBrowser",
+        "action": "openExternally",
         "pattern": "SteamGuess server listening on http://127\\.0\\.0\\.1:4173",
         "uriFormat": "http://127.0.0.1:4173/"
       }

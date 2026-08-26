@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 603850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "廉价历史策略在战略圈有辨识度，普通Steam玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 3117820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "国产独立年度爆款，中文Steam圈层传播强但未到大众公共知识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 22380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "辐射系列口碑代表作，中文PC玩家普遍听过但弱于辐射4",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 782330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "DOOM系列和快节奏FPS地位强，普通PC玩家基本听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 282140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "恐怖游戏圈口碑高，大众Steam玩家较难主动想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 286160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "桌游和联机模拟圈知名，中文区认知明显更窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 582160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "刺客信条全球知名，起源作为主要正传辨识度充分",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 933110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "帝国时代系列是RTS标志，第三代DE仍有较高知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 265630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "老免费西部FPS有玩家基础，但认知集中在小众射击社区",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 582660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "黑色沙漠国服话题和MMO地位高，普通PC玩家较易听过",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 107410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "武装突袭系列军事模拟代表，Steam玩家认知很强",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 621060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "PC装机题材在Steam玩家中有辨识度，但认知偏品类模拟器",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 246900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "恶搞清理模拟有Steam老玩家记忆，但跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1262350,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "独立恐怖圈和奖项中有名，普通玩家较难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1056640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "SEGA动漫网游在JRPG和二次元圈有名，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 8,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "Valve经典僵尸合作射击，中文PC玩家有长期公共认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1091500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "现象级发售与持续讨论，已进入大众PC玩家认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 33930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "军事模拟和DayZ历史地位明确，但具体旧条目认知偏窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 774361,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "像素类魂银河城圈有地位，普通玩家认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 239140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "僵尸开放世界代表作，中文玩家群体认知度高",
+      "reviewPriority": "low"
+    }
+  ]
+}

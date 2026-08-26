@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 412830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "视觉小说与动画圈知名度高，但普通PC玩家认知仍有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 480490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "沉浸式模拟品类地位明确，但普通玩家很难想起具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1085660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "长期免费运营的主流射击游戏，中国Steam玩家认知度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2066020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "幸存者类核心玩家熟知，尚未形成可靠跨圈认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 489520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "免费卡牌对战拥有社区，但认知集中于细分玩家人群",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1845910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "系列和发售争议带来知名度，但大陆普及度不算顶级",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 55150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "战锤IP有辨识度，但老衍生作只有类型玩家熟悉",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2415010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "免费恋爱视觉小说在特定圈层流行，普通玩家很难认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1451940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "中文互联网和主播圈传播强，但未进入大众Steam常识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 6000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "星战品牌有名，但该战术射击条目辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 243470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "育碧开放世界代表作，发售时具有明显大众影响力",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1343400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "西方经典MMORPG，在中国年轻玩家中认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 394360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "大战略门槛明显，但核心PC玩家存在感强",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 225260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "动作音乐题材有独特地位，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 675010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "越野驾驶模拟圈知名，跨圈认知仍较有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "文明系列广为人知，但具体老三部曲辨识度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 641990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "独立合作逃脱题材有玩家基础，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 379720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "经典FPS重启之作，拥有很强的跨圈认知度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 516750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "汽车修理工坊模拟题材特色强，普通玩家较难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 403640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 45,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "潜行沉浸模拟系列知名，普通玩家有合理概率听过",
+      "reviewPriority": "normal"
+    }
+  ]
+}

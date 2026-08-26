@@ -7,8 +7,7 @@ import SinglePlayerPage from './pages/SinglePlayerPage.tsx'
 
 const DifficultyLabeler = lazy(() => import('./labeler/DifficultyLabeler.tsx'))
 const MultiplayerPage = lazy(() => import('./multiplayer/MultiplayerPage.tsx'))
-const labelerRequested = new URLSearchParams(window.location.search).get('tool') === 'labeler'
-  || window.location.pathname.endsWith('/labeler')
+const labelerRequested = window.location.pathname.endsWith('/labeler')
 const multiplayerRequested = window.location.pathname.endsWith('/multiplayer')
 const singlePlayerRequested = window.location.pathname.endsWith('/singleplayer')
 const labelerEnabled = import.meta.env.DEV || import.meta.env.VITE_LABELER_ENABLED === 'true'
@@ -17,7 +16,7 @@ const labelerUnavailable = (
   <main className="centered-state">
     <div className="state-icon" aria-hidden="true">!</div>
     <h1>Internal tool unavailable</h1>
-    <p>The difficulty labeler is disabled in this deployment.</p>
+    <p>The difficulty manager is disabled in this deployment.</p>
     <a className="btn btn-primary" href={import.meta.env.BASE_URL}>Back to SteamGuess</a>
   </main>
 )

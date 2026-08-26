@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 361420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "太空生存建造作品在Steam联机推荐中常见，但尚未形成大众文化级认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 255710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "城市建造品类代表作，在Steam圈层有稳定且较广的认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 108600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "末日生存模拟在Steam玩家中传播很广，但未达到大众公共知识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 223470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "暴力恶搞游戏在英文互联网有经典地位，中文年轻玩家认知明显衰减",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1517290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "战地系列主流FPS，2042发售和争议话题度高，普通PC玩家应听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 244450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "二战实时战术细分圈有稳定口碑，普通玩家和多数Steam用户认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 594650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "撤离射击玩法已具类型地位，Steam玩家认知较强，但仍有明显品类门槛",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 512900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "独立游戏圈知名，但主要靠roguelite和沉浸模拟社区传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1488200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "战棋策略细分玩家口碑好，大众和普通Steam用户基本没听过",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 380600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "免费钓鱼模拟玩家量不小，但认知主要局限于模拟和钓鱼类圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 637090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "机甲战棋IP有忠实玩家，但主要依赖策略与机甲细分社区",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 531510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "音游与弹幕独立圈有辨识度，普通Steam玩家仍未必认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 302510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "老牌主机动作游戏在PC圈留有印象，但已淡出大众讨论",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1361210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "战锤IP联机FPS在对应圈层热度稳定，普通玩家认识有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 945360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "社交推理现象级作品，已进入大众互联网文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1147560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "动作roguelite代表作，核心圈和直播有存在感，但未可靠破圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 40970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "老牌城堡经营RTS有经典地位，但具体HD条目辨识度更依赖策略圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 233450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "监狱管理模拟在经营类玩家和直播中有广泛认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 250900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "肉鸽与独立游戏标杆，长期口碑使普通Steam玩家有合理认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1172620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "海盗多人游戏有较强大众品牌认知，但具体版本名称可能造成混淆",
+      "reviewPriority": "high"
+    }
+  ]
+}

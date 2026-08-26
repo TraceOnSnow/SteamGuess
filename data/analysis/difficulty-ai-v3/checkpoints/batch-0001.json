@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1693980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "经典生存恐怖系列，重制版话题度高，PC玩家普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 655500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "越野摩托模拟圈层地位明确，普通Steam玩家基本不会认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 552990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "大型海战网游代表作，国内PC玩家认知度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 248570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.68,
+      "reason": "老牌物理格斗小众作品，主要存在于独立与格斗社区",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 218230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "大型MMOFPS代表作，但认知集中在科幻FPS与网游社区",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 225540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "开放世界动作系列知名度高，破坏玩法辨识度强",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 740130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "日式RPG代表作品，Steam玩家有辨识度，但跨圈有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 589290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "一战多人射击偏梗文化，认知集中在少数玩家圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3146520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.7,
+      "reason": "近年直播与社交平台出圈，中文网络有大量梗传播",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1290000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "模拟器类热门现象，中文译名和直播讨论传播广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 236850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "Paradox大战略代表作，历史策略圈层认知强，跨圈一般",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 427290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "吸血鬼动作RPG有稳定口碑，但普通Steam玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1029780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.7,
+      "reason": "中世纪殖民地模拟圈层较知名，题材和社区有辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1659040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "杀手系列是潜行动作经典，当前整合版身份明确",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 17480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "红色警戒系列在中国PC玩家中历史悠久，3代仍有认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 17390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典创造与模拟游戏，品牌和玩法在中文互联网知名度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 414700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "逃生系列是恐怖游戏直播代表作，续作辨识度也高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1942280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "土豆兄弟是近年热门肉鸽，Steam玩家较熟悉，但大众认知不及顶级爆款",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 962130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "合作生存代表作，Xbox与PC玩家较熟悉，国内跨圈认知一般",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1501750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "2023年魂like有话题度，但易与同名旧作混淆，大众辨识有限",
+      "reviewPriority": "high"
+    }
+  ]
+}

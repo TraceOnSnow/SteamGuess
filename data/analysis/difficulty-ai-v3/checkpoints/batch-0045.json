@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 278080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "无双系列和三国题材知名度高，具体版本辨识度略弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1259970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "实况足球有稳定玩家群，但具体赛季更新条目辨识度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2623190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "上古卷轴系列高认知，具体作品弱于天际但重制版关注度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "经典解谜名作和网络梗广为人知，未到大众文化级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 47810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "龙腾世纪是经典 RPG，但大陆年轻玩家认知有类型门槛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 319630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "剧情叙事代表作在直播和玩家圈传播广，未进入门档",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 476600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "使命召唤是大众级 FPS，本作知名度弱于系列巅峰",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 392110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "太空 4X 类型内有地位，普通玩家跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2195250,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "足球年货头部作品，但 FC 品牌认知弱于 FIFA 旧名",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1637320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "独立肉鸽塔防有核心口碑，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2527500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "米塔在中文直播和短视频圈传播广，尚未进入入门档",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2670630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "超市模拟器短视频传播广，但持续大众认知尚有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 602960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "拥有稳定社区和玩家规模，但尚未形成可靠跨圈认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 787480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "逆转裁判梗与 AVG 圈知名度高，具体合辑未到入门档",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 611790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "成人喜剧沙盒在特定 Steam 社群流行，跨圈存在感弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 204100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "马克思佩恩经典有名，但第三部已明显退出大众讨论",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 939960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "孤岛惊魂品牌强，但新曙光作为外传辨识度低于正传",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 291650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典 CRPG 复兴代表作，普通 Steam 玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 203770,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "Paradox 大战略经典，圈层内知名度高，跨圈有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 427410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "合作生存近期热度高，但尚未形成广泛圈外认知",
+      "reviewPriority": "high"
+    }
+  ]
+}

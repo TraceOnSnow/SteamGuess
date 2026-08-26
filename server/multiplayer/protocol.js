@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const commandSchema = z.object({ commandId: z.string().min(8).max(100) });
 export const visibleFieldSchema = z.enum(['price', 'popularity', 'reviews', 'rating', 'releaseDate', 'companies', 'tags']);
 export const settingsSchema = z.object({
-  difficulty: z.enum(['easy', 'normal', 'hard', 'hell']).default('normal'),
+  difficulty: z.enum(['beginner', 'easy', 'normal', 'hard', 'hell']).default('normal'),
   bestOf: z.union([z.literal(1), z.literal(3), z.literal(5)]).default(1),
   maxPlayers: z.number().int().min(2).max(8).default(4),
   roundTimeSeconds: z.number().int().min(30).max(600).default(120),

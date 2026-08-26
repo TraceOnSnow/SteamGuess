@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build the browser-playable catalog from the enriched SteamSpy candidate set.
+"""Build the browser Search catalog from the enriched SteamSpy candidate set.
 
-Existing rich Storefront fields (release date and screenshot URL) are preserved.
+Existing rich Storefront fields (release date and screenshot URLs) are preserved.
 New entries are published only from data already present in the catalog; this
 script never performs network requests. Missing screenshots and release dates
 remain missing instead of being fabricated.
@@ -10,13 +10,14 @@ remain missing instead of being fabricated.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
-import re
 import sqlite3
 from pathlib import Path
 from typing import Any
 
 from scripts.catalog.common import split_company_names
+from scripts.catalog.review_redaction import build_redaction_entities, redact_review
 
 
 def values(payload: Any) -> list[dict[str, Any]]:
@@ -41,37 +42,41 @@ def tag_names(source: dict[str, Any]) -> list[str]:
     return [str(tag.get("name") or "").strip() for tag in source.get("tags", []) if str(tag.get("name") or "").strip()][:20]
 
 
-def hint_review(source: dict[str, Any], previous: dict[str, Any]) -> str:
-    """Pick one stored review without making a network request.
+def hint_reviews(
+    source: dict[str, Any],
+    redactions: dict[tuple[int, str, str, str], str] | None = None,
+) -> list[str]:
+    """Publish every stored review using AI or deterministic redaction.
 
-    Prefer the localized review, then English.  Mask the known game names so
-    the hint does not trivially reveal the answer while preserving the review
-    wording and punctuation.
+    Raw review text remains in the persistent catalog. AI-cleaned text wins
+    when its source hash still matches; otherwise the local rule-based
+    redactor provides a safe, zero-cost fallback.
     """
-    old_hints = previous.get("hints", {}) if isinstance(previous.get("hints", {}), dict) else {}
-    existing = str(old_hints.get("funnyReview") or "").strip()
-    if existing:
-        return existing
+    appid = int(source["appId"])
+    entities = build_redaction_entities(source)
+    result: list[str] = []
     reviews = source.get("reviews", {})
-    if not isinstance(reviews, dict):
-        return ""
-    text = ""
-    for language in ("schinese", "english"):
-        items = reviews.get(language, [])
-        if not isinstance(items, list):
-            continue
-        for item in items:
-            if isinstance(item, dict) and str(item.get("text") or "").strip():
-                text = str(item["text"]).strip()
-                break
-        if text:
-            break
-    if not text:
-        return ""
-    names = [source.get("name"), source.get("localizedNames", {}).get("zh") if isinstance(source.get("localizedNames"), dict) else None]
-    for name in sorted({str(value).strip() for value in names if str(value or "").strip()}, key=len, reverse=True):
-        text = re.sub(re.escape(name), "[游戏名称]", text, flags=re.IGNORECASE)
-    return text
+    if isinstance(reviews, dict):
+        for language in ("schinese", "english"):
+            items = reviews.get(language, [])
+            if not isinstance(items, list):
+                continue
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                raw_text = str(item.get("text") or item.get("review") or "").strip()
+                if not raw_text:
+                    continue
+                review_id = str(item.get("reviewId") or item.get("recommendationid") or "")
+                review_hash = hashlib.sha256(raw_text.encode("utf-8")).hexdigest()
+                text = (redactions or {}).get((appid, language, review_id, review_hash), "")
+                if not text:
+                    text = str(item.get("redactedText") or "").strip()
+                if not text:
+                    text = redact_review(raw_text, entities)
+                if text and text not in result:
+                    result.append(text)
+    return result
 
 
 def header_image(appid: int, previous: dict[str, Any]) -> str:
@@ -81,7 +86,12 @@ def header_image(appid: int, previous: dict[str, Any]) -> str:
     return f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appid}/header.jpg"
 
 
-def build_game(source: dict[str, Any], previous: dict[str, Any], cached_user_tags: list[str] | None = None) -> dict[str, Any]:
+def build_game(
+    source: dict[str, Any],
+    previous: dict[str, Any],
+    cached_user_tags: list[str] | None = None,
+    review_redactions: dict[tuple[int, str, str, str], str] | None = None,
+) -> dict[str, Any]:
     appid = int(source["appId"])
     metrics = source.get("metrics", {})
     positive = int(metrics.get("positive", 0) or 0)
@@ -98,19 +108,18 @@ def build_game(source: dict[str, Any], previous: dict[str, Any], cached_user_tag
             popularity[field] = old_popularity[field]
 
     previous_tags = previous.get("tags", {})
-    previous_hints = previous.get("hints", {}) if isinstance(previous.get("hints", {}), dict) else {}
     screenshots = source.get("screenshots", []) if isinstance(source.get("screenshots", []), list) else []
-    source_screenshot = next((str(item.get("path") or "").strip() for item in screenshots if isinstance(item, dict) and item.get("path")), "")
-    source_hints = source.get("hints", {}) if isinstance(source.get("hints", {}), dict) else {}
-    screenshot_url = str(previous_hints.get("screenshotUrl") or source_hints.get("screenshotUrl") or source_screenshot).strip()
-    review_text = hint_review(source, previous)
+    screenshot_urls = list(dict.fromkeys(
+        str(item.get("path") or "").strip()
+        for item in screenshots
+        if isinstance(item, dict) and str(item.get("path") or "").strip()
+    ))
+    review_texts = hint_reviews(source, review_redactions)
     hints = {}
-    if screenshot_url:
-        hints["screenshotUrl"] = screenshot_url
-    if review_text:
-        hints["funnyReview"] = review_text
-    difficulty = source.get("difficulty", {}) if isinstance(source.get("difficulty"), dict) else {}
-    difficulty_score = difficulty.get("score")
+    if screenshot_urls:
+        hints["screenshotUrls"] = screenshot_urls
+    if review_texts:
+        hints["reviewTexts"] = review_texts
     return {
         "appId": appid,
         "name": str(source.get("name") or f"App {appid}"),
@@ -125,15 +134,6 @@ def build_game(source: dict[str, Any], previous: dict[str, Any], cached_user_tag
         },
         "popularity": popularity,
         "reviews": {"total": positive + negative, "positive": positive, "negative": negative},
-        "difficulty": {
-            "score": difficulty_score,
-            "level": difficulty.get("level"),
-            "confidence": 0,
-            "source": difficulty.get("source"),
-            "manualLevel": difficulty.get("manualLevel"),
-        },
-        "difficultyScore": difficulty_score,
-        "difficultyLevel": difficulty.get("level"),
         "catalogStatus": "active",
         "tags": {
             "userTags": previous_tags.get("userTags") or tag_names(source) or (cached_user_tags or []),
@@ -145,46 +145,242 @@ def build_game(source: dict[str, Any], previous: dict[str, Any], cached_user_tag
     }
 
 
-DIFFICULTY_DISTRIBUTION = (
-    ("easy", 75),
-    ("normal", 200),
-    ("hard", 325),
-    ("hell", 600),
-)
+def load_difficulty_overrides(db_path: Path | None) -> dict[int, dict[str, Any]]:
+    """Load editorial scores without coupling weekly imports to them."""
+    if db_path is None or not db_path.exists():
+        return {}
+    connection = sqlite3.connect(db_path)
+    try:
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'difficulty_overrides'"
+        ).fetchone()
+        if not exists:
+            return {}
+        rows = connection.execute(
+            "SELECT appid, manual_score, locked, updated_at FROM difficulty_overrides"
+        ).fetchall()
+    finally:
+        connection.close()
+    return {
+        int(appid): {
+            "manualScore": float(manual_score) if manual_score is not None else None,
+            "locked": bool(locked),
+            "updatedAt": updated_at,
+        }
+        for appid, manual_score, locked, updated_at in rows
+    }
 
 
-def calibrated_counts(total: int) -> dict[str, int]:
-    """Scale cumulative reference targets to the current playable size."""
-    if total <= 0:
-        return {level: 0 for level, _ in DIFFICULTY_DISTRIBUTION}
-    boundaries = [min(total, round(total * target / DIFFICULTY_DISTRIBUTION[-1][1])) for _, target in DIFFICULTY_DISTRIBUTION]
-    return {level: boundary for (level, _), boundary in zip(DIFFICULTY_DISTRIBUTION, boundaries, strict=True)}
+def load_catalog_exclusions(db_path: Path | None) -> set[int]:
+    if db_path is None or not db_path.exists():
+        return set()
+    connection = sqlite3.connect(db_path)
+    try:
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'catalog_exclusions'"
+        ).fetchone()
+        if not exists:
+            return set()
+        return {
+            int(row[0])
+            for row in connection.execute("SELECT appid FROM catalog_exclusions")
+        }
+    finally:
+        connection.close()
 
 
-def calibrate_difficulty_distribution(games: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    """Assign every published game a level using the reference pool proportions.
+def load_ai_candidates(db_path: Path | None) -> dict[int, dict[str, Any]]:
+    """Load the AI-reviewed baseline and its game eligibility decision."""
+    if db_path is None or not db_path.exists():
+        return {}
+    connection = sqlite3.connect(db_path)
+    try:
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'difficulty_ai_candidates'"
+        ).fetchone()
+        if not exists:
+            return {}
+        rows = connection.execute(
+            """
+            SELECT appid, score, level, confidence, eligible, exclusion_reason
+            FROM difficulty_ai_candidates
+            """
+        ).fetchall()
+    finally:
+        connection.close()
+    return {
+        int(appid): {
+            "score": int(score),
+            "level": str(level),
+            "confidence": float(confidence),
+            "eligible": bool(eligible),
+            "exclusionReason": exclusion_reason,
+        }
+        for appid, score, level, confidence, eligible, exclusion_reason in rows
+    }
 
-    The games themselves are not filtered. Existing numeric difficulty scores are
-    retained for display/analysis; only the preset level is quantile-calibrated.
+
+def select_publishable_catalog(
+    catalog: dict[str, Any],
+    excluded_appids: set[int],
+    ai_candidates: dict[int, dict[str, Any]],
+    active_limit: int,
+) -> dict[str, Any]:
+    """Select searchable rows from the literal SteamSpy Active window.
+
+    Editorial exclusions are removed before the Active limit so the next
+    ranked row fills their slot. Difficulty eligibility is intentionally
+    applied *after* that window is fixed: an unscored or AI-ineligible row must
+    not pull a lower-ranked game into Active merely because it cannot currently
+    be used as an answer.
+
+    Missing AI candidates remain searchable. An explicit ``eligible=false``
+    decision means the row is software, noise, or otherwise unsuitable and is
+    therefore removed from both search and answer catalogs.
     """
-    ordered = sorted(
-        games.values(),
-        key=lambda game: (
-            float(game.get("difficultyScore") if isinstance(game.get("difficultyScore"), (int, float)) else 50.0),
-            int(game["appId"]),
-        ),
-    )
-    boundaries = calibrated_counts(len(ordered))
-    cursor = 0
-    for level, boundary in DIFFICULTY_DISTRIBUTION:
-        end = boundaries[level]
-        for game in ordered[cursor:end]:
-            game["difficulty"]["level"] = level
-            game["difficulty"]["source"] = "calibrated-distribution-v1"
-            game["difficultyLevel"] = level
-        cursor = end
+    games = catalog.get("games")
+    if not isinstance(games, list):
+        return catalog
+    active = [
+        game for game in games
+        if isinstance(game, dict)
+        and game.get("appId")
+        and int(game["appId"]) not in excluded_appids
+    ]
+    if active_limit > 0:
+        active = active[:active_limit]
+    searchable = [
+        game
+        for game in active
+        if ai_candidates.get(int(game["appId"]), {}).get("eligible") is not False
+    ]
+    return {**catalog, "games": searchable}
+
+
+def level_for_score(score: float) -> str:
+    if score < 15:
+        return "beginner"
+    if score < 25:
+        return "easy"
+    if score < 50:
+        return "normal"
+    if score < 75:
+        return "hard"
+    return "hell"
+
+
+def apply_effective_difficulties(
+    games: dict[str, dict[str, Any]],
+    ai_candidates: dict[int, dict[str, Any]],
+    overrides: dict[int, dict[str, Any]],
+    feedback_scores: dict[int, dict[str, Any]] | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Materialize AI baseline, accepted feedback, then editorial locks."""
+    for game in games.values():
+        appid = int(game["appId"])
+        candidate = ai_candidates.get(appid)
+        if not candidate or not candidate.get("eligible"):
+            continue
+        base_score = float(candidate["score"])
+        difficulty = {
+            "score": base_score,
+            "level": level_for_score(base_score),
+            "confidence": float(candidate.get("confidence", 0)),
+            "source": "ai-candidate",
+            "aiCandidateScore": base_score,
+            "aiCandidateLevel": candidate.get("level") or level_for_score(base_score),
+        }
+        game["difficulty"] = difficulty
+        game["difficultyScore"] = base_score
+        game["difficultyLevel"] = difficulty["level"]
+        feedback = (feedback_scores or {}).get(appid)
+        difficulty["feedbackScore"] = feedback.get("score") if feedback else None
+        difficulty["feedbackStatus"] = feedback.get("status") if feedback else None
+        difficulty["feedbackCount"] = feedback.get("sampleCount", 0) if feedback else 0
+        if feedback and isinstance(feedback.get("score"), (int, float)):
+            effective_score = float(feedback["score"])
+            effective_level = level_for_score(effective_score)
+            difficulty["score"] = effective_score
+            difficulty["level"] = effective_level
+            difficulty["source"] = "player-feedback"
+            game["difficultyScore"] = effective_score
+            game["difficultyLevel"] = effective_level
+        override = overrides.get(appid)
+        if not override:
+            difficulty["manualScore"] = None
+            difficulty["locked"] = False
+            continue
+        manual_score = override.get("manualScore")
+        locked = bool(override.get("locked"))
+        difficulty["manualScore"] = manual_score
+        difficulty["locked"] = locked
+        difficulty["overrideUpdatedAt"] = override.get("updatedAt")
+        if locked and isinstance(manual_score, (int, float)):
+            effective_score = float(manual_score)
+            effective_level = level_for_score(effective_score)
+            difficulty["score"] = effective_score
+            difficulty["level"] = effective_level
+            difficulty["source"] = "editorial-lock"
+            game["difficultyScore"] = effective_score
+            game["difficultyLevel"] = effective_level
     return games
 
+
+def load_feedback_scores(db_path: Path | None) -> dict[int, dict[str, Any]]:
+    if db_path is None or not db_path.exists():
+        return {}
+    connection = sqlite3.connect(db_path)
+    try:
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'difficulty_feedback_scores'"
+        ).fetchone()
+        if not exists:
+            return {}
+        rows = connection.execute(
+            """
+            SELECT appid, current_score, status, sample_count
+            FROM difficulty_feedback_scores
+            WHERE current_score IS NOT NULL
+            """
+        ).fetchall()
+    finally:
+        connection.close()
+    return {
+        int(appid): {
+            "score": float(score),
+            "status": str(status),
+            "sampleCount": int(sample_count),
+        }
+        for appid, score, status, sample_count in rows
+    }
+
+
+def load_review_redactions(
+    db_path: Path | None,
+) -> dict[tuple[int, str, str, str], str]:
+    if db_path is None or not db_path.exists():
+        return {}
+    connection = sqlite3.connect(db_path)
+    try:
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'review_redactions'"
+        ).fetchone()
+        if not exists:
+            return {}
+        rows = connection.execute(
+            """
+            SELECT appid, language, review_id, review_hash, redacted_text
+            FROM review_redactions
+            WHERE redacted_text <> ''
+            ORDER BY imported_at
+            """
+        ).fetchall()
+    finally:
+        connection.close()
+    return {
+        (int(appid), str(language), str(review_id), str(review_hash)): str(text)
+        for appid, language, review_id, review_hash, text in rows
+    }
 
 def load_cached_user_tags(db_path: Path | None) -> dict[int, list[str]]:
     """Load persistent PICS tags when a refreshed JSON catalog lacks them."""
@@ -209,16 +405,26 @@ def load_cached_user_tags(db_path: Path | None) -> dict[int, list[str]]:
 def build_playable_catalog(
     catalog: dict[str, Any],
     playable_payload: Any,
-    include_non_games: bool = False,
     cached_user_tags: dict[int, list[str]] | None = None,
+    review_redactions: dict[tuple[int, str, str, str], str] | None = None,
 ) -> dict[str, dict[str, Any]]:
+    """Materialize every row already admitted to Search.
+
+    PICS ``type`` is retained as metadata but is not a publication authority:
+    valid games can carry values such as Tool, Config, or advertising. Software
+    and noise are hidden earlier through editorial exclusions or explicit AI
+    ``eligible=false`` decisions.
+    """
     previous = {int(game["appId"]): game for game in values(playable_payload) if game.get("appId")}
     result: dict[str, dict[str, Any]] = {}
     for source in catalog["games"]:
-        if not include_non_games and str(source.get("type") or "").lower() != "game":
-            continue
         appid = int(source["appId"])
-        result[str(appid)] = build_game(source, previous.get(appid, {}), (cached_user_tags or {}).get(appid))
+        result[str(appid)] = build_game(
+            source,
+            previous.get(appid, {}),
+            (cached_user_tags or {}).get(appid),
+            review_redactions,
+        )
     return result
 
 
@@ -243,28 +449,52 @@ def main() -> None:
     parser.add_argument("--playable", default="public/games_demo.json")
     parser.add_argument("--db", default="data/catalog/catalog.sqlite", help="Persistent catalog DB used as a PICS-tag cache")
     parser.add_argument("--out", default="public/games_demo.json")
-    parser.add_argument("--include-non-games", action="store_true")
     parser.add_argument("--active-limit", type=int, default=0, help="Publish only the first N catalog rows; 0 means all")
     args = parser.parse_args()
 
     catalog = json.loads(Path(args.catalog).read_text(encoding="utf-8"))
-    if args.active_limit > 0 and isinstance(catalog.get("games"), list):
-        catalog = {**catalog, "games": catalog["games"][:args.active_limit]}
     playable_path = Path(args.playable)
     playable_payload = json.loads(playable_path.read_text(encoding="utf-8")) if playable_path.exists() else {}
-    cached_user_tags = load_cached_user_tags(Path(args.db) if args.db else None)
-    published = build_playable_catalog(catalog, playable_payload, args.include_non_games, cached_user_tags)
-    published = calibrate_difficulty_distribution(published)
+    db_path = Path(args.db) if args.db else None
+    excluded_appids = load_catalog_exclusions(db_path)
+    ai_candidates = load_ai_candidates(db_path)
+    catalog = select_publishable_catalog(catalog, excluded_appids, ai_candidates, args.active_limit)
+    cached_user_tags = load_cached_user_tags(db_path)
+    review_redactions = load_review_redactions(db_path)
+    feedback_scores = load_feedback_scores(db_path)
+    difficulty_overrides = load_difficulty_overrides(db_path)
+    published = build_playable_catalog(
+        catalog,
+        playable_payload,
+        cached_user_tags,
+        review_redactions,
+    )
+    published = apply_effective_difficulties(
+        published,
+        ai_candidates,
+        difficulty_overrides,
+        feedback_scores,
+    )
 
     out = Path(args.out)
     out.write_text(json.dumps(published, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    screenshots = sum(bool(game.get("hints", {}).get("screenshotUrl")) for game in published.values())
-    reviews = sum(bool(game.get("hints", {}).get("funnyReview")) for game in published.values())
+    screenshots = sum(bool(game.get("hints", {}).get("screenshotUrls")) for game in published.values())
+    reviews = sum(bool(game.get("hints", {}).get("reviewTexts")) for game in published.values())
     localized = sum(bool(game.get("localizedNames", {}).get("zh")) for game in published.values())
     cn_prices = sum("regular" in game.get("price", {}).get("cn", {}) for game in published.values())
-    counts = {level: sum(game.get("difficulty", {}).get("level") == level for game in published.values()) for level, _ in DIFFICULTY_DISTRIBUTION}
+    levels = ("beginner", "easy", "normal", "hard", "hell")
+    counts = {level: sum(game.get("difficulty", {}).get("level") == level for game in published.values()) for level in levels}
     tagged = sum(bool(game.get("tags", {}).get("userTags")) for game in published.values())
-    print(f"source={len(catalog['games'])} published={len(published)} localized={localized} cn_prices={cn_prices} screenshots={screenshots} reviews={reviews} tagged={tagged} difficulty={counts} out={out}")
+    difficulty_sources: dict[str, int] = {}
+    for game in published.values():
+        source = str(game.get("difficulty", {}).get("source") or "missing")
+        difficulty_sources[source] = difficulty_sources.get(source, 0) + 1
+    print(
+        f"selected={len(catalog['games'])} published={len(published)} "
+        f"localized={localized} cn_prices={cn_prices} screenshots={screenshots} "
+        f"reviews={reviews} tagged={tagged} difficulty={counts} "
+        f"difficulty_sources={difficulty_sources} out={out}"
+    )
 
 
 if __name__ == "__main__":

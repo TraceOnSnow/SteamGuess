@@ -110,6 +110,76 @@ const MIGRATIONS = [
       CREATE INDEX IF NOT EXISTS difficulty_feedback_summary_score_idx ON difficulty_feedback_summary(average_score);
     `,
   },
+  {
+    version: 4,
+    sql: `
+      ALTER TABLE game_sessions
+        ADD COLUMN starting_hint_mode TEXT
+        CHECK(starting_hint_mode IN ('screenshot', 'review', 'none') OR starting_hint_mode IS NULL);
+
+      ALTER TABLE difficulty_feedback RENAME TO difficulty_feedback_v3;
+      DROP INDEX IF EXISTS difficulty_feedback_app_idx;
+      CREATE TABLE difficulty_feedback (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player_id TEXT,
+        session_id TEXT,
+        app_id INTEGER NOT NULL,
+        score REAL NOT NULL CHECK(score >= 0 AND score <= 100),
+        level TEXT NOT NULL CHECK(level IN ('beginner', 'easy', 'normal', 'hard', 'hell')),
+        reason TEXT NOT NULL DEFAULT 'difficulty_unreasonable',
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(player_id) REFERENCES players(id),
+        FOREIGN KEY(session_id) REFERENCES game_sessions(id)
+      );
+      INSERT INTO difficulty_feedback(
+        id, player_id, session_id, app_id, score, level, reason, created_at
+      )
+      SELECT id, player_id, session_id, app_id, score, level, reason, created_at
+      FROM difficulty_feedback_v3;
+      DROP TABLE difficulty_feedback_v3;
+      CREATE INDEX difficulty_feedback_app_idx
+        ON difficulty_feedback(app_id, created_at);
+      CREATE INDEX difficulty_feedback_player_app_idx
+        ON difficulty_feedback(player_id, app_id, created_at DESC, id DESC);
+
+      ALTER TABLE difficulty_feedback_summary
+        ADD COLUMN beginner_count INTEGER NOT NULL DEFAULT 0;
+      DELETE FROM difficulty_feedback_summary;
+      INSERT INTO difficulty_feedback_summary(
+        app_id, feedback_count, score_sum, average_score,
+        easy_count, normal_count, hard_count, hell_count, updated_at, beginner_count
+      )
+      WITH ranked AS (
+        SELECT
+          feedback.*,
+          ROW_NUMBER() OVER (
+            PARTITION BY feedback.player_id, feedback.app_id
+            ORDER BY feedback.created_at DESC, feedback.id DESC
+          ) AS feedback_rank
+        FROM difficulty_feedback AS feedback
+        JOIN game_sessions AS session ON session.id = feedback.session_id
+        WHERE feedback.player_id IS NOT NULL
+          AND session.player_id = feedback.player_id
+          AND session.answer_app_id = feedback.app_id
+          AND session.finished_at IS NOT NULL
+          AND session.outcome IN ('won', 'lost', 'surrendered')
+      )
+      SELECT
+        app_id,
+        COUNT(*),
+        SUM(score),
+        AVG(score),
+        SUM(level = 'easy'),
+        SUM(level = 'normal'),
+        SUM(level = 'hard'),
+        SUM(level = 'hell'),
+        MAX(created_at),
+        SUM(level = 'beginner')
+      FROM ranked
+      WHERE feedback_rank = 1
+      GROUP BY app_id;
+    `,
+  },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS.at(-1)?.version ?? 0;
@@ -161,13 +231,14 @@ export function upsertSession(db, session, now = new Date().toISOString()) {
   db.prepare(`
     INSERT INTO game_sessions(
       id, player_id, mode, difficulty, answer_app_id, outcome, guesses,
-      hints_used, started_at, finished_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      hints_used, started_at, finished_at, starting_hint_mode
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(id) DO UPDATE SET
       outcome = excluded.outcome,
       guesses = excluded.guesses,
       hints_used = excluded.hints_used,
-      finished_at = excluded.finished_at
+      finished_at = excluded.finished_at,
+      starting_hint_mode = excluded.starting_hint_mode
   `).run(
     session.id,
     session.playerId,
@@ -179,48 +250,97 @@ export function upsertSession(db, session, now = new Date().toISOString()) {
     session.hintsUsed ?? 0,
     session.startedAt,
     session.finishedAt ?? null,
+    session.startingHintMode ?? 'none',
   );
 }
 
+export function getSession(db, sessionId) {
+  return db.prepare('SELECT * FROM game_sessions WHERE id = ?').get(sessionId) ?? null;
+}
+
+function latestFeedbackRows(db, appId) {
+  return db.prepare(`
+    WITH ranked AS (
+      SELECT
+        feedback.*,
+        ROW_NUMBER() OVER (
+          PARTITION BY feedback.player_id, feedback.app_id
+          ORDER BY feedback.created_at DESC, feedback.id DESC
+        ) AS feedback_rank
+      FROM difficulty_feedback AS feedback
+      JOIN game_sessions AS session ON session.id = feedback.session_id
+      WHERE feedback.app_id = ?
+        AND feedback.player_id IS NOT NULL
+        AND session.player_id = feedback.player_id
+        AND session.answer_app_id = feedback.app_id
+        AND session.finished_at IS NOT NULL
+        AND session.outcome IN ('won', 'lost', 'surrendered')
+    )
+    SELECT score, level
+    FROM ranked
+    WHERE feedback_rank = 1
+  `).all(appId);
+}
+
+export function refreshDifficultyFeedbackSummary(db, appId, now = new Date().toISOString()) {
+  const rows = latestFeedbackRows(db, appId);
+  if (rows.length === 0) {
+    db.prepare('DELETE FROM difficulty_feedback_summary WHERE app_id = ?').run(appId);
+    return null;
+  }
+  const scoreSum = rows.reduce((total, row) => total + Number(row.score), 0);
+  const counts = { beginner: 0, easy: 0, normal: 0, hard: 0, hell: 0 };
+  for (const row of rows) counts[row.level] += 1;
+  db.prepare(`
+    INSERT INTO difficulty_feedback_summary(
+      app_id, feedback_count, score_sum, average_score,
+      easy_count, normal_count, hard_count, hell_count, updated_at, beginner_count
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(app_id) DO UPDATE SET
+      feedback_count = excluded.feedback_count,
+      score_sum = excluded.score_sum,
+      average_score = excluded.average_score,
+      easy_count = excluded.easy_count,
+      normal_count = excluded.normal_count,
+      hard_count = excluded.hard_count,
+      hell_count = excluded.hell_count,
+      updated_at = excluded.updated_at,
+      beginner_count = excluded.beginner_count
+  `).run(
+    appId,
+    rows.length,
+    scoreSum,
+    scoreSum / rows.length,
+    counts.easy,
+    counts.normal,
+    counts.hard,
+    counts.hell,
+    now,
+    counts.beginner,
+  );
+  return getDifficultyFeedbackSummary(db, appId);
+}
+
 export function insertDifficultyFeedback(db, feedback, now = new Date().toISOString()) {
+  const session = feedback.sessionId ? getSession(db, feedback.sessionId) : null;
+  if (!session || !session.finished_at) throw new Error('Difficulty feedback requires a completed game session.');
+  if (session.player_id !== feedback.playerId || Number(session.answer_app_id) !== feedback.appId) {
+    throw new Error('Difficulty feedback does not match the completed game session.');
+  }
   upsertPlayer(db, feedback.playerId, now);
-  const sessionId = feedback.sessionId && db.prepare('SELECT 1 FROM game_sessions WHERE id = ?').get(feedback.sessionId)
-    ? feedback.sessionId
-    : null;
   const result = db.prepare(`
     INSERT INTO difficulty_feedback(player_id, session_id, app_id, score, level, reason, created_at)
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `).run(
     feedback.playerId,
-    sessionId,
+    feedback.sessionId,
     feedback.appId,
     feedback.score,
     feedback.level,
     feedback.reason ?? 'difficulty_unreasonable',
     now,
   );
-  db.prepare(`
-    INSERT INTO difficulty_feedback_summary(
-      app_id, feedback_count, score_sum, average_score,
-      easy_count, normal_count, hard_count, hell_count, updated_at
-    ) VALUES (?, 1, ?, ?, ?, ?, ?, ?, ?)
-    ON CONFLICT(app_id) DO UPDATE SET
-      feedback_count = difficulty_feedback_summary.feedback_count + 1,
-      score_sum = difficulty_feedback_summary.score_sum + excluded.score_sum,
-      average_score = (difficulty_feedback_summary.score_sum + excluded.score_sum) / (difficulty_feedback_summary.feedback_count + 1),
-      easy_count = difficulty_feedback_summary.easy_count + excluded.easy_count,
-      normal_count = difficulty_feedback_summary.normal_count + excluded.normal_count,
-      hard_count = difficulty_feedback_summary.hard_count + excluded.hard_count,
-      hell_count = difficulty_feedback_summary.hell_count + excluded.hell_count,
-      updated_at = excluded.updated_at
-  `).run(
-    feedback.appId, feedback.score, feedback.score,
-    feedback.level === 'easy' ? 1 : 0,
-    feedback.level === 'normal' ? 1 : 0,
-    feedback.level === 'hard' ? 1 : 0,
-    feedback.level === 'hell' ? 1 : 0,
-    now,
-  );
+  refreshDifficultyFeedbackSummary(db, feedback.appId, now);
   return Number(result.lastInsertRowid);
 }
 

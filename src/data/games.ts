@@ -1,76 +1,28 @@
 import { localizedGameNames } from './localization';
-import type { Game } from '../types/game';
-import { loadLabelingCatalog } from '../labeler/data';
-import { loadStoredLabels } from '../labeler/labels';
-import { loadDifficultyModel, saveDifficultyModel, trainDifficultyModel, type DifficultyModel } from '../difficulty/model';
+import type { Game, ScoredGame } from '../types/game';
 
-const CATALOG_URL = `${import.meta.env.BASE_URL}games_demo.json`;
+const API_CATALOG_URL = '/api/catalog/games';
+const STATIC_CATALOG_URL = `${import.meta.env.BASE_URL}games_demo.json`;
 
 
 export interface GameExperience {
   games: Game[];
-  model: DifficultyModel | null;
 }
 
+/** Load the searchable catalog. Only scored rows are eligible as answers. */
 export async function loadGameExperience(signal?: AbortSignal): Promise<GameExperience> {
-  const games = await loadGames(signal);
-  try {
-    const catalog = await loadLabelingCatalog(signal);
-    const labels = loadStoredLabels();
-    const trained = trainDifficultyModel(catalog.games, labels);
-    const model = trained ?? loadDifficultyModel();
-    if (trained) saveDifficultyModel(trained);
-    const metadata = new Map(catalog.games.map(game => [game.appId, game]));
-    const playable = games
-      .map(game => {
-        const catalogGame = metadata.get(game.appId);
-        const prediction = model?.predictions[String(game.appId)];
-        const manuallyExcluded = labels.get(game.appId)?.excluded === true;
-        const software = catalogGame?.appType?.toLocaleLowerCase() === 'application';
-        if (prediction?.excluded || manuallyExcluded || software) return null;
-        const serverDifficulty = game.difficulty;
-        const serverCalibrated = serverDifficulty?.source === 'calibrated-distribution-v1';
-        if (serverCalibrated) {
-          return {
-            ...game,
-            localizedNames: catalogGame?.localizedNames ?? game.localizedNames,
-            difficulty: serverDifficulty,
-          };
-        }
-        if (prediction) {
-          return {
-            ...game,
-            localizedNames: catalogGame?.localizedNames ?? game.localizedNames,
-            difficulty: {
-              level: prediction.level,
-              score: prediction.score,
-              confidence: prediction.confidence,
-              source: prediction.source,
-            },
-          };
-        }
-        return catalogGame ? {
-          ...game,
-          localizedNames: catalogGame.localizedNames ?? game.localizedNames,
-          difficulty: {
-            level: catalogGame.suggestedLevel,
-            score: Math.round((100 - catalogGame.recognitionScore) * 10) / 10,
-            confidence: 0,
-            source: 'fallback' as const,
-          },
-        } : game;
-      })
-      .filter((game): game is Game => Boolean(game));
-    return { games: playable, model };
-  } catch (error) {
-    if (error instanceof DOMException && error.name === 'AbortError') throw error;
-    console.warn('Difficulty model unavailable; using the base game catalog.', error);
-    return { games, model: null };
-  }
+  return { games: await loadGames(signal) };
 }
 
 export async function loadGames(signal?: AbortSignal): Promise<Game[]> {
-  const response = await fetch(CATALOG_URL, { signal, cache: 'no-store' });
+  let response: Response;
+  try {
+    response = await fetch(API_CATALOG_URL, { signal, cache: 'no-store' });
+    if (!response.ok) throw new Error(`Dynamic catalog returned ${response.status}`);
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') throw error;
+    response = await fetch(STATIC_CATALOG_URL, { signal, cache: 'no-store' });
+  }
   if (!response.ok) throw new Error(`Failed to load game catalog (${response.status})`);
 
   const raw: unknown = await response.json();
@@ -98,7 +50,7 @@ export function searchGames(games: Game[], query: string, excludedAppIds: Readon
     .slice(0, limit);
 }
 
-export function getRandomGame(games: Game[], previousAppId?: number): Game {
+export function getRandomGame<T extends Game>(games: T[], previousAppId?: number): T {
   if (games.length === 0) throw new Error('Cannot choose a game from an empty catalog.');
   if (games.length === 1) return games[0];
 
@@ -107,6 +59,14 @@ export function getRandomGame(games: Game[], previousAppId?: number): Game {
     game = games[Math.floor(Math.random() * games.length)];
   }
   return game;
+}
+
+export function hasDifficulty(game: Game): game is ScoredGame {
+  return typeof game.difficulty?.score === 'number'
+    && Number.isFinite(game.difficulty.score)
+    && game.difficulty.score >= 0
+    && game.difficulty.score <= 100
+    && ['beginner', 'easy', 'normal', 'hard', 'hell'].includes(game.difficulty.level);
 }
 
 function isGame(value: unknown): value is Game {
@@ -118,5 +78,6 @@ function isGame(value: unknown): value is Game {
     && typeof game.price?.us?.regular === 'number'
     && typeof game.popularity?.ccu === 'number'
     && typeof game.reviews?.total === 'number'
-    && Array.isArray(game.tags?.userTags);
+    && Array.isArray(game.tags?.userTags)
+    && (game.difficulty === undefined || hasDifficulty(game as Game));
 }

@@ -1,83 +1,97 @@
-# Internal difficulty labeler
+# Internal difficulty manager
 
-## Open
+The difficulty manager is an authenticated administration page backed directly
+by `data/catalog/catalog.sqlite`. It does not use browser-local label files.
+
+## Start and open
+
+For local development, run `npm run dev` and open `/labeler`. The Vite
+development API uses the canonical catalog database and permits local access
+without an admin token.
+
+For the production-style server:
 
 ```bash
-npm run dev
+VITE_LABELER_ENABLED=true npm run build
+STEAMGUESS_ADMIN_TOKEN=change-me npm start
 ```
 
-Open the URL printed by Vite and append:
+Open `/labeler` and enter the same token. It is stored in `sessionStorage` for
+the current tab only.
+
+## Difficulty authority
+
+The effective score has one fixed precedence order:
 
 ```text
-?tool=labeler
+locked manual override > accepted player feedback > eligible AI candidate
 ```
 
-For a production build, the same query parameter works on the deployed site.
+Relevant tables:
 
-## Fast labeling
+```text
+difficulty_ai_candidates       baseline score and game eligibility
+difficulty_feedback_scores     accepted aggregate player adjustment
+difficulty_feedback_history    append-only adjustment audit
+difficulty_overrides           manual score and lock
+catalog_exclusions             unsuitable / too_obscure editorial removal
+```
 
-- `1`: Easy
-- `2`: Normal
-- `3`: Hard
-- `4`: Hell
-- `5`: Exclude
-- `S`: Skip without labeling
-- `Z`: Undo the latest label
+AI candidates with `eligible = false` are software, tools, noisy apps, or other
+unsuitable entries. They are absent from the manager, Search catalog, and
+Playable answer pool. A row with no AI candidate may remain searchable but is
+not an answer until it receives an authoritative difficulty. Manual
+`catalog_exclusions` are separate and survive weekly updates.
 
-Use **查看分类** to browse Easy, Normal, Hard, Hell, and Excluded lists. Every
-row shows its Steam tags and has a selector for moving it to another category or
-removing its label.
+## Page behavior
 
-The four difficulty pools are nested. Choose the earliest pool where the game
-should appear. Use **Exclude** for non-games, unusable assets, or candidates that
-should never become questions.
+The page uses:
 
-## Persistence
+```text
+GET /api/admin/difficulties
+PUT /api/admin/difficulties/:appid
+```
 
-Labels are saved only in browser `localStorage`; they are not automatically
-written into the Git repository or a server database. If the progress counter
-still shows the previous count after refresh, persistence succeeded. Export JSON regularly. Import
-merges the file with local labels by App ID; imported values overwrite matching
-local values.
+It supports search, Active/all scope, filters, score sorting, integer input,
+sliders, locking, and editorial removal.
 
-The exported file is directly accepted by:
+- **Unlocked manual score:** saved as an editor draft; it does not affect play.
+- **Locked manual score:** immediately becomes the final effective score.
+- **Reset:** clears the manual draft and returns to feedback or AI baseline.
+- **Remove from Active:** records a durable editorial exclusion.
+- **Restore candidate:** removes that editorial exclusion; the next catalog
+  rebuild may select the game again.
+
+Difficulty ranges:
+
+```text
+0–14    beginner
+15–24   easy
+25–49   normal
+50–74   hard
+75–100  hell
+```
+
+## Publishing and feedback
+
+The weekly catalog runner publishes a Search snapshot. Rows with eligible AI
+candidates receive effective difficulties after accepted feedback and locked
+manual values are overlaid; those scored rows form the Playable answer pool.
+AI reevaluation is intentionally a separate explicit operation; weekly Steam
+metadata updates do not invoke an AI provider.
+
+Player feedback is synchronized with:
 
 ```bash
-npm run data:fit -- --labels path/to/difficulty_labels_YYYY-MM-DD.json
+./scripts/ops/update_difficulty_from_feedback.sh
 ```
 
-## Refresh the browser catalog
+After synchronization, run the normal publishing stage or the next weekly
+update to refresh `public/games_demo.json`.
 
-After regenerating the canonical SteamSpy catalog, publish its compact labeling
-copy with:
+## Retired workflows
 
-```bash
-npm run data:publish-labeler
-```
-
-The labeler contains all 1,999 current candidates. The existing 903-game demo
-catalog supplies richer images and tags where available; other games use their
-standard Steam header image URL.
-
-
-## Automatic software exclusion
-
-The labeling catalog is enriched with PICS app types and ordered tags. Apps whose
-PICS type is `Application` are automatically labeled as excluded and are never
-placed in the random labeling queue. This currently covers 24 software entries.
-Legacy PICS `Tool`, `Config`, and `DLC` values are not excluded automatically
-because several real games have historically incorrect types.
-
-## Browser-side trial model
-
-After at least 20 non-excluded manual labels exist, the labeler retrains the
-small ordinal ridge regression automatically after every edit. The model and
-all predictions are stored under `steamguess-difficulty-model-v1` in the same
-browser origin, so the main game can use the Easy/Normal/Hard/Hell pools without
-a manual JSON export. The original labels remain under
-`steamguess-difficulty-labels-v1`; exporting JSON is still recommended as a
-portable backup and is required before labels can be committed to Git.
-
-The four playable pools are nested: Easy contains Easy games, Normal contains
-Easy + Normal, Hard adds Hard, and Hell contains every non-excluded game in the
-current playable catalog.
+The browser-local label JSON, curated-pool importer, generated
+`labeling_catalog.json`, and difficulty fitting workflow are retired and must
+not be restored. Historical logs may retain old command names as immutable run
+records.

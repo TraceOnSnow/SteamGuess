@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1296830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国产动作肉鸽代表作，中文 Steam 圈传播较广，但仍偏品类玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 447530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "赛博朋克调酒题材在独立游戏圈地位高，大众认识范围仍窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "FPS 经典合集的系列认知强，具体条目对中国年轻玩家辨识度中等",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 686810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "写实二战多人射击有稳定社区和一定跨圈认识，但热度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 285920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 66,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "载具建造沙盒在特定玩家群较有名，普通玩家很少接触",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1774580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "星战 IP 和 AAA 续作认知较强，普通 PC 玩家大概率听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 704850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "小偷模拟题材在直播和模拟器圈有传播，仍偏特定类型",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1369630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "独立银河城代表作之一，认知主要集中在该类型玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 257350,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "经典 CRPG 地位高，但具体重制版对大众辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1987080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "后室题材短视频传播广，具体游戏在恐怖联机圈较知名",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 246420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "经典塔防系列在移动和休闲玩家中有名，Steam 条目认知一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1277400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "怪物猎人 IP 强，但回合制衍生作本身辨识度明显较低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2420110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "索尼开放世界续作有较广知名度，但未达大众入门级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2001120,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "近作口碑与联机热度高，但尚未沉淀为公共常识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 513710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "多人生存老牌作品玩家规模大，普通 Steam 玩家有合理认识机会",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1483870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "联机你画我猜在中文休闲玩家中较常见，辨识度稳定",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 268500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "回合制战术代表作，策略玩家认知强，普通玩家也有机会知道",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 207140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "派对竞速游戏在多人联机玩家中有名，近年大众热度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2680010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "DNF 衍生魂类作品新近热度不低，但认知集中于动作玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1868140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "休闲独立黑马口碑和销量广，普通 Steam 玩家多数听过",
+      "reviewPriority": "low"
+    }
+  ]
+}

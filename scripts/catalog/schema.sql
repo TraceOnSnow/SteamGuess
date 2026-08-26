@@ -104,16 +104,66 @@ CREATE TABLE IF NOT EXISTS app_metrics (
 );
 CREATE INDEX IF NOT EXISTS idx_app_metrics_latest ON app_metrics(appid, observed_at DESC);
 
-CREATE TABLE IF NOT EXISTS app_scores (
+-- Editorial difficulty values are independent from weekly catalog imports.
+-- Only locked values override player feedback and the AI candidate baseline.
+CREATE TABLE IF NOT EXISTS difficulty_overrides (
     appid INTEGER PRIMARY KEY REFERENCES apps(appid) ON DELETE CASCADE,
-    recognition_score REAL,
-    recognition_features_json TEXT,
-    difficulty_score REAL,
-    difficulty_level TEXT CHECK (difficulty_level IN ('easy', 'normal', 'hard', 'hell') OR difficulty_level IS NULL),
-    difficulty_source TEXT,
-    manual_level TEXT CHECK (manual_level IN ('easy', 'normal', 'hard', 'hell') OR manual_level IS NULL),
+    manual_score REAL CHECK (manual_score IS NULL OR manual_score BETWEEN 0 AND 100),
+    locked INTEGER NOT NULL DEFAULT 0 CHECK (locked IN (0, 1)),
     updated_at TEXT NOT NULL
 );
+CREATE INDEX IF NOT EXISTS idx_difficulty_overrides_locked
+    ON difficulty_overrides(locked, updated_at);
+
+-- Accepted player-feedback adjustments start from the AI candidate baseline.
+-- Editorial locks still win. The full audit trail remains append-only.
+CREATE TABLE IF NOT EXISTS difficulty_feedback_scores (
+    appid INTEGER PRIMARY KEY REFERENCES apps(appid) ON DELETE CASCADE,
+    base_score REAL NOT NULL CHECK (base_score BETWEEN 0 AND 100),
+    candidate_score REAL NOT NULL CHECK (candidate_score BETWEEN 0 AND 100),
+    current_score REAL CHECK (current_score IS NULL OR current_score BETWEEN 0 AND 100),
+    sample_count INTEGER NOT NULL CHECK (sample_count >= 0),
+    mean_score REAL NOT NULL CHECK (mean_score BETWEEN 0 AND 100),
+    stddev REAL NOT NULL CHECK (stddev >= 0),
+    prior_weight REAL NOT NULL CHECK (prior_weight >= 0),
+    max_delta REAL NOT NULL CHECK (max_delta >= 0),
+    status TEXT NOT NULL CHECK (status IN ('applied', 'review', 'insufficient', 'locked')),
+    source_digest TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_difficulty_feedback_scores_status
+    ON difficulty_feedback_scores(status, sample_count, updated_at);
+
+CREATE TABLE IF NOT EXISTS difficulty_feedback_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
+    base_score REAL NOT NULL CHECK (base_score BETWEEN 0 AND 100),
+    candidate_score REAL NOT NULL CHECK (candidate_score BETWEEN 0 AND 100),
+    result_score REAL CHECK (result_score IS NULL OR result_score BETWEEN 0 AND 100),
+    sample_count INTEGER NOT NULL CHECK (sample_count >= 0),
+    mean_score REAL NOT NULL CHECK (mean_score BETWEEN 0 AND 100),
+    stddev REAL NOT NULL CHECK (stddev >= 0),
+    prior_weight REAL NOT NULL CHECK (prior_weight >= 0),
+    max_delta REAL NOT NULL CHECK (max_delta >= 0),
+    status TEXT NOT NULL CHECK (status IN ('applied', 'review', 'insufficient', 'locked')),
+    source_digest TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    UNIQUE(appid, source_digest)
+);
+CREATE INDEX IF NOT EXISTS idx_difficulty_feedback_history_app
+    ON difficulty_feedback_history(appid, created_at DESC);
+
+-- Editorial catalog exclusions survive weekly rank refreshes. This is separate
+-- from apps.excluded, which describes eligibility derived from imported source
+-- data and may legitimately change on the next import.
+CREATE TABLE IF NOT EXISTS catalog_exclusions (
+    appid INTEGER PRIMARY KEY REFERENCES apps(appid) ON DELETE CASCADE,
+    reason TEXT NOT NULL CHECK (reason IN ('unsuitable', 'too_obscure')),
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_catalog_exclusions_reason
+    ON catalog_exclusions(reason, updated_at);
 
 CREATE TABLE IF NOT EXISTS source_batches (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -162,23 +212,6 @@ CREATE TABLE IF NOT EXISTS catalog_memberships (
 );
 CREATE INDEX IF NOT EXISTS idx_catalog_memberships_app ON catalog_memberships(appid, catalog);
 
--- Human-curated preset pool. This is intentionally separate from the
--- regression score so weekly catalog refreshes cannot erase editorial choices.
-CREATE TABLE IF NOT EXISTS curated_pool_entries (
-    pool_version TEXT NOT NULL,
-    appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
-    source_name TEXT NOT NULL,
-    difficulty_rank INTEGER NOT NULL CHECK (difficulty_rank BETWEEN 1 AND 4),
-    tier TEXT NOT NULL CHECK (tier IN ('easy', 'normal', 'hard', 'hell')),
-    basis TEXT,
-    user_rating REAL,
-    match_method TEXT NOT NULL,
-    included_at TEXT NOT NULL,
-    PRIMARY KEY (pool_version, appid)
-);
-CREATE INDEX IF NOT EXISTS idx_curated_pool_entries_difficulty
-    ON curated_pool_entries(pool_version, difficulty_rank);
-
 CREATE TABLE IF NOT EXISTS enrichment_jobs (
     appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
     service TEXT NOT NULL,
@@ -218,7 +251,7 @@ WHERE price.retrieved_at = (
 CREATE TABLE IF NOT EXISTS app_reviews (
     appid INTEGER NOT NULL REFERENCES apps(appid) ON DELETE CASCADE,
     language TEXT NOT NULL CHECK (language IN ('english', 'schinese')),
-    position INTEGER NOT NULL CHECK (position >= 1 AND position <= 10),
+    position INTEGER NOT NULL CHECK (position >= 1 AND position <= 100),
     review_id TEXT NOT NULL,
     review_text TEXT NOT NULL,
     voted_up INTEGER,
@@ -234,3 +267,41 @@ CREATE TABLE IF NOT EXISTS app_reviews (
     UNIQUE (appid, language, review_hash)
 );
 CREATE INDEX IF NOT EXISTS idx_app_reviews_app ON app_reviews(appid, language, position);
+
+-- AI redactions are a derived sidecar keyed by the exact source review hash.
+-- Raw review text remains authoritative in app_reviews.
+CREATE TABLE IF NOT EXISTS review_redactions (
+    task_id TEXT PRIMARY KEY,
+    appid INTEGER NOT NULL,
+    language TEXT NOT NULL CHECK (language IN ('english', 'schinese')),
+    review_id TEXT NOT NULL,
+    review_hash TEXT NOT NULL,
+    redacted_text TEXT NOT NULL,
+    entities_json TEXT NOT NULL,
+    model TEXT NOT NULL,
+    prompt_version TEXT NOT NULL,
+    processed_at TEXT NOT NULL,
+    imported_at TEXT NOT NULL,
+    source_path TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_review_redactions_review
+    ON review_redactions(appid, language, review_id);
+
+-- Independent AI difficulty candidates. These are review inputs, never the
+-- effective published score until explicitly copied/locked by an editor.
+CREATE TABLE IF NOT EXISTS difficulty_ai_candidates (
+    appid INTEGER PRIMARY KEY REFERENCES apps(appid) ON DELETE CASCADE,
+    score INTEGER NOT NULL CHECK (score BETWEEN 0 AND 100),
+    level TEXT NOT NULL CHECK (level IN ('beginner', 'easy', 'normal', 'hard', 'hell')),
+    confidence REAL NOT NULL CHECK (confidence BETWEEN 0 AND 1),
+    reason TEXT NOT NULL,
+    eligible INTEGER NOT NULL CHECK (eligible IN (0, 1)),
+    exclusion_reason TEXT,
+    review_priority TEXT NOT NULL CHECK (review_priority IN ('high', 'normal', 'low')),
+    model TEXT NOT NULL,
+    prompt_version TEXT NOT NULL,
+    evaluated_at TEXT NOT NULL,
+    source_path TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_difficulty_ai_candidates_priority
+    ON difficulty_ai_candidates(review_priority, eligible, score);

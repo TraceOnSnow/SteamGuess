@@ -1,32 +1,35 @@
 # SteamGuess 多人模式调研与落地方案
 
-> 状态：首版 MVP 已实现，待线上反向代理与真实浏览器验证  
-> 调研日期：2026-08-05  
-> 目标仓库：[TraceOnSnow/SteamGuess](https://github.com/TraceOnSnow/SteamGuess)  
+> 状态：MVP 与同机多 Node Redis 扩展已实现，待线上反向代理与真实浏览器验证
+> 调研日期：2026-08-05
+> 实施更新：2026-08-16
+> 目标仓库：[TraceOnSnow/SteamGuess](https://github.com/TraceOnSnow/SteamGuess)
 > 参考仓库：[kennylimz/anime-character-guessr](https://github.com/kennylimz/anime-character-guessr)、[shnlfriberg/csgofriberg](https://github.com/shnlfriberg/csgofriberg)
 
 ## 实施记录
 
-本方案已经在当前工作区完成首版实现，范围为 1v1 私人房间、BO1/BO3/BO5、服务端权威猜测、重连宽限、回合倒计时、超时补偿调度、SQLite 完赛记录和基础负载验证。当前仍是单进程 `MemoryRoomStore`；截图提示、个人库题池、匹配、排行榜、聊天和多实例 Redis 化不属于本次 MVP。
+本方案已经在当前工作区完成 MVP 与 Redis 扩展，范围为 2–8 人私人房间、BO1/BO3/BO5、服务端权威猜测、重连宽限、回合倒计时、超时补偿调度、SQLite 完赛记录、Redis `RoomStore`、Socket.IO Redis Adapter、分布式房间锁和跨 Node 实例恢复。未配置 Redis 时仍可使用单进程 `MemoryRoomStore` 作为本地回退。
 
-验证结果以当前工作区为准：`npm run release:check`、生产 Docker 构建、生产容器 WebSocket 负载和 SIGTERM 关闭测试均已通过。
+当前 Redis 只承担活动比赛状态，不启用磁盘持久化；Redis 或整机重启会结束活动房间。SQLite 完赛记录在 Redis 权威状态提交后 best-effort 写入，进程若恰好在两者之间崩溃，历史记录可能缺失。排行榜上线前需要补结果 outbox/重试机制。截图提示、个人库题池、匹配、排行榜和聊天仍不属于当前多人范围。
+
+本地发布验证已通过 `npm run release:check`，其中包括前端测试、Node API/多人测试、79 项数据流水线测试、生产构建和发布预检。Redis 专项测试使用真实 Redis，覆盖陈旧写入 fencing 和两个 Node 实例共享同一权威房间。
 
 ---
 
 ## 1. 结论先行
 
-SteamGuess 第一版多人模式建议采用下面这条路线：
+以下是最初的 MVP 路线；其中共享房间状态阶段已经于 2026-08-16 落地：
 
 1. **产品形态先做“1v1 私人房间、同题竞速、BO1/BO3/BO5”**，底层数据结构预留 2–8 人，不在首版同时做匹配、排行榜、聊天、观战和大型公开房间。
 2. **在现有 Node HTTP Server 上直接挂载 Socket.IO**，继续维持一个应用、一个端口、同域部署，不先拆微服务。
 3. **服务端权威**：答案选择、题库过滤、猜测校验、属性比较、回合计时、胜负结算全部在服务端完成。客户端只提交 `guessAppId`，不能上报“我猜对了”或自行结算。
-4. **首版房间实时状态保存在单进程内存中，SQLite 只保存已经结束的比赛与回合记录**。从第一天定义 `RoomStore`、`Scheduler`、`MatchRecorder` 接口，后续再平滑替换成 Redis/PostgreSQL。
+4. **活动房间实时状态保存在 Redis，SQLite 保存已经结束的比赛与回合记录**。未配置 Redis 时使用 `MemoryRoomStore` 本地回退；当前不承诺 Redis/整机重启后的活动房间恢复。
 5. **重连身份不能依赖 Socket ID、用户名或头像**。应使用稳定 `playerId` 加服务端签发的随机 `resumeToken`；Socket ID 只代表本次连接。
 6. **活动回合中绝不向浏览器发送答案，即使是“加密答案”也不发送**。浏览器里存在的密钥无法提供真正保密性。
 7. **多人首版关闭截图提示与“是否拥有”线索**：当前截图 URL 包含 Steam AppID，可直接泄露答案；“是否拥有”依赖每位玩家各自本地游戏库，不适合作为共享竞技规则。
 8. **借鉴两个参考项目的设计，不直接复制其源码**。前者声明 CC BY-NC 4.0，带非商业限制；后者为 AGPL-3.0。SteamGuess 当前快照未发现根目录 `LICENSE`，正式吸收外部代码前应先明确自身许可证策略。
 
-一句话概括：**先复用当前单体部署，增加一个边界清晰的服务端权威实时层；先把游戏做对，再为扩容加 Redis，而不是一开始照搬完整分布式架构。**
+一句话概括：**复用当前单体部署和服务端权威实时层，用 Redis 支持同机多 Node 扩展，但暂不引入 PostgreSQL、匹配和长期恢复等更重基础设施。**
 
 ---
 
@@ -236,7 +239,7 @@ SteamGuess 应采用更简单、更安全的原则：**回合结束前，答案�
 - 测试成本；
 - 对当前单机 SQLite 架构的改造范围。
 
-SteamGuess 现在还没有验证多人玩法本身，首版更需要快速得到真实对局反馈。因此应借鉴它的**边界和数据模型**，而不是立刻复制全部基础设施。
+SteamGuess 已经选择性落地 Redis RoomStore、Redis Adapter 和分布式房间锁，但仍未引入 PostgreSQL、Redis Stream/outbox、自动匹配和完整持久化调度。原则仍是借鉴它的**边界和数据模型**，而不是复制全部基础设施。
 
 ### 5.4 对 SteamGuess 的结论
 
@@ -252,15 +255,20 @@ SteamGuess 现在还没有验证多人玩法本身，首版更需要快速得到
 - 可替换 RoomStore；
 - 集成与负载测试。
 
-应当延后到出现真实扩容需求后再做：
+已经实施：
 
 - Redis RoomStore；
 - Socket.IO Redis Adapter；
-- 分布式锁；
-- Redis 可恢复调度；
+- Redis 分布式房间锁和 fencing；
+- 跨 Node 实例共享房间与断线恢复；
+
+仍应延后到出现真实产品需求后再做：
+
+- 跨 Redis/整机重启的持久房间恢复；
+- 可靠结果 outbox/重试；
 - 自动匹配队列；
 - PostgreSQL；
-- 持久化重试队列。
+- 排行榜与长期统计。
 
 ---
 
@@ -269,14 +277,14 @@ SteamGuess 现在还没有验证多人玩法本身，首版更需要快速得到
 | 维度 | anime-character-guessr | csgofriberg | SteamGuess 建议 |
 |---|---|---|---|
 | 实时通信 | Socket.IO | Socket.IO | Socket.IO |
-| 活动房间 | 单进程 Map | Redis，含本地降级 | 首版 MemoryRoomStore，预留 RedisStore |
-| 数据库 | MongoDB + 内存房间 | PostgreSQL + Redis | 首版 SQLite 记录结果，不保存实时 tick |
+| 活动房间 | 单进程 Map | Redis，含本地降级 | RedisRoomStore，未配置时回退 MemoryRoomStore |
+| 数据库 | MongoDB + 内存房间 | PostgreSQL + Redis | Redis 保存活动状态，SQLite 记录结果 |
 | 权威判定 | 服务端重新判定 | 服务端完整判定 | 必须服务端判定 |
 | 答案保密 | 加密后仍发客户端 | 回合结束后才公开 | 不发送答案，结束后再 reveal |
 | 身份 | 用户名/头像/Socket 迁移 | 稳定身份与会话 | playerId + 服务端 resumeToken |
 | 重连 | 快照恢复 | 身份索引、deadline、快照 | 30 秒宽限 + 快照 |
-| 并发控制 | 主要依赖单进程事件顺序 | 房间锁 + revision | 本地房间锁 + revision |
-| 定时器 | 进程内 timer | Redis 可恢复调度 + 本地 timer | 本地 timer + 周期核对，后续 Redis |
+| 并发控制 | 主要依赖单进程事件顺序 | 房间锁 + revision | Redis 锁/fencing + revision；内存模式使用本地锁 |
+| 定时器 | 进程内 timer | Redis 可恢复调度 + 本地 timer | 绝对 deadline + 本地 timer + 跨实例周期核对 |
 | 状态同步 | 多个细粒度事件 | snapshot/patch + version | 首版完整 snapshot，后续再 patch |
 | payload 校验 | 手工校验 | Zod | 推荐 Zod或等价 schema |
 | 测试 | 有多人集成测试 | 单元、集成、负载、基准 | 至少单元 + 双客户端集成 + 简单负载 |
@@ -307,7 +315,7 @@ SteamGuess 现在还没有验证多人玩法本身，首版更需要快速得到
 
 建议只保留：
 
-- `difficulty`: `easy | normal | hard | hell`；
+- `difficulty`: `beginner | easy | normal | hard | hell`；
 - `bestOf`: `1 | 3 | 5`；
 - `roundTimeSeconds`: 首版固定 120，暂不开放任意数值；
 - `visibleFields`: 由房主决定，且双方一致；
@@ -370,12 +378,14 @@ flowchart LR
     PROTOCOL --> RM[RoomManager]
     RM --> ENGINE[MatchEngine]
     ENGINE --> CATALOG[服务端题库与比较规则]
-    RM --> STORE[MemoryRoomStore]
+    RM --> STORE[RedisRoomStore]
     RM --> SCHED[Local Scheduler]
     RM --> REC[MatchRecorder]
     REC --> SQLITE[(SQLite)]
-    STORE -. 扩容后替换 .-> REDIS[(Redis)]
-    SCHED -. 扩容后替换 .-> REDIS
+    STORE --> REDIS[(Redis)]
+    IO <--> ADAPTER[Socket.IO Redis Adapter]
+    ADAPTER <--> REDIS
+    STORE -. 未配置 Redis 时回退 .-> MEMORY[MemoryRoomStore]
 ```
 
 ### 8.1 传输层
@@ -413,15 +423,23 @@ interface RoomStore {
 }
 ```
 
-首版实现 `MemoryRoomStore`：
+当前实现两个可替换的存储：
+
+`MemoryRoomStore` 用于未配置 Redis 的本地回退：
 
 - 内部使用 `Map<string, RoomState>`；
 - 每个房间维护 Promise mutation queue，保证同一房间命令串行；
 - 返回前做结构化拷贝或严格限制可变引用；
 - 房间有 TTL 与清理任务；
-- 单实例部署。
+- 仅支持单实例进程。
 
-未来实现 `RedisRoomStore` 时，调用方不需要重写比赛引擎。
+`RedisRoomStore` 用于 Compose 和多 Node 部署：
+
+- Redis 保存房间快照、房间码索引和活动房间索引；
+- Socket.IO Redis Adapter 负责跨实例广播；
+- Redis 锁、续租和 fencing 防止陈旧实例覆盖新状态；
+- TTL 回收过期房间；
+- 同机不同 Node 进程可以恢复同一玩家席位。
 
 ### 8.4 调度层
 
@@ -442,7 +460,9 @@ interface RoomStore {
 - 活动房间结构变化频繁；
 - 后续 Redis 化时迁移困难。
 
-建议在回合结束或比赛结束时，由服务端以事务写入历史表。首版服务器重启会关闭活动房间，这是明确接受的 MVP 限制；不能通过把每个 UI 状态塞进 SQLite 来伪装成可靠恢复。
+建议在比赛结束时，由服务端以事务写入历史表。当前 Redis 房间状态是活动比赛的权威来源，SQLite 写入发生在状态提交之后且为 best-effort，因此存在极小的崩溃窗口会导致历史记录缺失。排行榜上线前应增加 Redis Stream 或同等级别的 outbox/重试机制。
+
+当前 Compose 中 Redis 使用 `--save "" --appendonly no`，所以 Redis 或整机重启会关闭活动房间。这是当前明确接受的边界，不能通过把每个 UI 状态同步塞进 SQLite 来伪装成可靠恢复。
 
 ---
 
@@ -963,9 +983,11 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 
 ---
 
-## 19. 分阶段实施建议
+## 19. 分阶段实施状态
 
-### PR 1：无行为变化的结构重构
+以下阶段已经完成。标题保留最初的拆分方式，便于追溯设计到实现的演进。
+
+### PR 1：无行为变化的结构重构（已完成）
 
 - 把当前 `App.tsx` 迁到 `SinglePlayerPage`；
 - 建立正式页面路由；
@@ -975,7 +997,7 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 
 完成标准：单人体验与当前一致，没有引入 Socket。
 
-### PR 2：实时基础设施
+### PR 2：实时基础设施（已完成）
 
 - 添加 Socket.IO 服务端与客户端；
 - 修改生产 Dockerfile 安装运行时依赖；
@@ -984,14 +1006,14 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 - 实现 playerId + resumeToken；
 - 只做 ping/hello 和连接恢复测试。
 
-### PR 3：房间大厅
+### PR 3：房间大厅（已完成）
 
 - 服务端生成房间码；
 - 建房、加入、离开、准备、房主设置；
 - MemoryRoomStore、房间锁、revision、TTL；
 - 大厅 UI 和双客户端集成测试。
 
-### PR 4：比赛引擎
+### PR 4：比赛引擎（已完成）
 
 - 服务端加载 `dist/games_demo.json`；
 - 服务端选题；
@@ -1000,7 +1022,7 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 - BO1/BO3/BO5 状态机；
 - 活动回合信息泄露测试。
 
-### PR 5：重连、计时与记录
+### PR 5：重连、计时与记录（已完成）
 
 - 绝对 deadline；
 - 本地 timer + reconciliation；
@@ -1009,7 +1031,7 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 - SQLite 多人 migration 与 MatchRecorder；
 - 优雅退出和操作日志。
 
-### PR 6：加固与发布
+### PR 6：加固与发布（代码完成，线上验证待完成）
 
 - 速率限制；
 - 恶意 payload 测试；
@@ -1018,25 +1040,25 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 - 多人指标与告警；
 - 更新 README、部署文档和隐私说明。
 
-### 之后再评估 Redis/PostgreSQL
+### Redis 同机多 Node 扩展（已完成）
 
-只有出现以下需求时再进入分布式阶段：
-
-- 需要运行两个以上应用实例；
-- 部署/重启不能中断活动房间；
-- 单实例房间或连接数达到实际瓶颈；
-- 需要跨实例随机匹配；
-- SQLite 单写节点成为历史记录瓶颈；
-- 需要更强的任务恢复和结果重试。
-
-届时的目标架构为：
+当前已经实现：
 
 - Redis RoomStore；
 - Socket.IO Redis Adapter；
-- Redis 房间锁；
-- Sorted Set deadline scheduler；
+- Redis 房间锁、续租与 fencing；
+- 跨 Node 实例广播；
+- 跨 Node 实例断线恢复；
+- 未配置 Redis 时的 MemoryRoomStore 回退。
+
+下一阶段只在出现对应产品需求时再做：
+
+- Redis AOF/RDB 或其他活动房间持久化方案；
+- 可靠的比赛结果 outbox/重试 worker；
+- 跨整机重启恢复；
+- 自动匹配和排行榜；
 - PostgreSQL 历史库；
-- 结果 outbox/重试 worker。
+- 跨区域部署。
 
 不要把 SQLite 文件挂到多个应用副本上共同写入。
 
@@ -1044,38 +1066,41 @@ SteamGuess 的题库本身会发布到浏览器，玩家可以编写脚本辅助
 
 ## 20. MVP 验收清单
 
-- [ ] 两个浏览器可以创建、加入并完成一场 1v1 比赛。
-- [ ] 房间码由服务端生成，输错房间码不会自动创建新房间。
-- [ ] 非房主不能修改设置或开始比赛。
-- [ ] 双方规则、题池、答案和回合时间由服务端统一决定。
-- [ ] 回合结束前，网络消息中不存在答案 AppID、答案对象或 `correctValue`。
-- [ ] 对手看不到当前回合的具体猜测，只看到进度。
-- [ ] 同一 `commandId` 重发不会重复扣次数。
-- [ ] 同一回合重复猜测同一 AppID 被拒绝。
-- [ ] 旧 roundId 的迟到事件被拒绝。
-- [ ] 客户端修改倒计时不会影响服务端结算。
-- [ ] 断线 30 秒内可使用新 Socket 恢复完整状态。
-- [ ] 超过重连 deadline 后只结算一次。
-- [ ] 比赛记录由服务端写 SQLite，客户端不能伪造赢家。
-- [ ] 生产 Docker 镜像包含服务端运行依赖。
+- [x] 两个以上浏览器可以创建、加入并完成一场比赛。
+- [x] 房间码由服务端生成，输错房间码不会自动创建新房间。
+- [x] 非房主不能修改设置或开始比赛。
+- [x] 规则、题池、答案和回合时间由服务端统一决定。
+- [x] 回合结束前，网络消息中不存在答案 AppID、答案对象或 `correctValue`。
+- [x] 对手看不到当前回合的具体猜测，只看到进度。
+- [x] 同一 `commandId` 重发不会重复扣次数。
+- [x] 同一回合重复猜测同一 AppID 被拒绝。
+- [x] 旧 roundId 的迟到事件被拒绝。
+- [x] 客户端修改倒计时不会影响服务端结算。
+- [x] 断线宽限内可使用新 Socket 恢复完整状态。
+- [x] 超过重连 deadline 后只结算一次。
+- [x] 两个 Node 实例可以通过 Redis 共享房间并恢复玩家。
+- [x] 比赛记录由服务端写 SQLite，客户端不能伪造赢家。
+- [x] 生产 Docker 镜像包含服务端运行依赖。
 - [ ] 反向代理环境下 WebSocket 可连接。
-- [ ] SIGTERM 能优雅关闭多人模块。
-- [ ] `npm run release:check` 覆盖新增测试。
-- [ ] README 明确首版活动房间在服务重启后会关闭。
+- [x] SIGTERM 能优雅关闭多人模块。
+- [x] `npm run release:check` 覆盖新增测试。
+- [x] README 明确 Redis/整机重启会关闭活动房间。
+- [ ] Redis 权威状态与 SQLite 历史记录之间具备可靠 outbox。
 
 ---
 
 ## 21. 最终建议
 
-SteamGuess 不需要为了多人模式重写整个项目，也不需要第一天就部署 Redis 和 PostgreSQL。当前最合适的工程选择是：
+SteamGuess 不需要为了多人模式重写整个项目。当前实施结果是：
 
 - **保留现有 React + Node + SQLite 单体**；
 - **把 Socket.IO 挂到现有 HTTP Server**；
 - **把当前浏览器内的规则抽成服务端权威引擎**；
-- **用 MemoryRoomStore 快速验证 1v1 同题竞速**；
+- **生产 Compose 使用 RedisRoomStore 和 Socket.IO Redis Adapter，支持同机多 Node**；
+- **本地未配置 Redis 时回退到 MemoryRoomStore**；
 - **借鉴 csgofriberg 的身份、revision、deadline、房间锁和私有视图设计**；
 - **借鉴 anime-character-guessr 的 ACK、快照重连和房间功能经验，但避免把答案发到客户端**；
-- **用清晰接口为 Redis 化留路，而不是提前承担分布式复杂度**。
+- **暂不引入 PostgreSQL、匹配、排行榜和跨整机持久恢复**。
 
 真正决定多人模式质量的，不是 Socket 事件数量，而是四件事：
 

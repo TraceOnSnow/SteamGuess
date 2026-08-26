@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 10180,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "现代战争系列是FPS大众经典，但2009年原版易与新版混淆",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1809540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "国产类银河恶魔城核心圈口碑好，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 601150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "鬼泣系列和动作游戏地位突出，属普通玩家大概率听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1817190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "漫威蜘蛛侠IP大众认知极高，具体游戏覆盖也明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1272080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 47,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "收获日系列有稳定玩家基础，但本作口碑失败且热度低于前作",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2420510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "认知高度依赖VTuber和Hololive同人圈，普通玩家很难认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1703340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典旁白梗有跨圈传播，但具体Ultra Deluxe版本辨识度一般",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1203620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "生存建造新作在Steam圈层传播明显，但尚未成为大众常识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1128810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "经典桌游IP有名，但该Steam改编作认知局限于桌游与策略圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 508440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "物理沙盘对战梗传播广泛，年轻玩家普遍见过但非最顶级作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 310560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "拟真拉力赛车圈层代表作，普通玩家对具体作品认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1129190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "独立视觉小说社区知名，普通Steam玩家基本不会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 646910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 41,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "育碧开放世界赛车代表作，赛车圈熟悉但大众认知弱于顶级竞速",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1332010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "猫咪主角和赛博朋克氛围具强跨圈传播，普通玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1222670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.93,
+      "reason": "模拟人生是大众级生活模拟文化符号，年轻玩家覆盖面很广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 10,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.91,
+      "reason": "CS系列和反恐精英历史地位极高，原版本身也是标志性版本",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 221680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "吉他学习类节奏游戏圈层有名，普通玩家基本不会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1627720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 37,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "近年最受关注的魂like之一，动作玩家圈知名但未成大众常识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 242050,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "刺客信条IP与海盗题材大众认知高，黑旗是系列代表作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 15620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "RTS圈层经典，战锤IP有稳定核心社区，但大众认知有限",
+      "reviewPriority": "normal"
+    }
+  ]
+}

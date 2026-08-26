@@ -1,0 +1,48 @@
+.language-toggle {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.language-toggle button {
+  min-width: 38px;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 7px;
+  color: rgba(255, 255, 255, .72);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-toggle button:hover,
+.language-toggle button:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+}
+
+.language-toggle button[aria-pressed="true"] {
+  color: var(--brand-dark, #123c2b);
+  background: #fff;
+}
+
+.language-toggle button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.mp-shell .language-toggle {
+  border-color: rgba(255, 255, 255, .18);
+}
+
+.mp-shell .language-toggle button[aria-pressed="true"] {
+  color: #14202b;
+}

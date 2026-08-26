@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 11020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "老牌竞速系列有圈层地位，但普通Steam玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 208580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "老式星战CRPG，认知依赖CRPG或星战核心圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1850570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "小岛秀夫现象级作品，Steam玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 223850,
+      "eligible": false,
+      "exclusionReason": "benchmark",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "硬件基准测试软件，不构成游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 205100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "经典潜行动作游戏，Steam玩家圈层辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 251060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "军事RTS与兵棋社区知名，普通玩家难以识别",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1938090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.94,
+      "reason": "使命召唤系列核心大作，年轻PC玩家普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 438100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "社交VR平台经短视频和梗广泛出圈，年轻玩家多听过",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1304930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "恐怖系列联机新作，直播传播较广且辨识度可靠",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1282730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "独立肉鸽曾走红，Steam圈层有稳定认知但热度回落",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2054970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "卡普空动作RPG新作，玩家圈层知名但未达大众简单档",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1325200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "仁王系列在动作游戏圈有地位，普通玩家需一定类型认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 312660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "狙击精英系列在射击玩家中认知可靠，但类型限制大众化",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 387290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "口碑极高的独立动作平台游戏，已进入主流Steam认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 410340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "FPV无人机模拟细分领域知名，普通玩家几乎不会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 469600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "源于War3自定义地图，在TD圈层有稳固玩家和品类地位",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 470220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "UNO本体家喻户晓，作为Steam游戏也容易辨认",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 779340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "三国题材加全面战争系列，中国Steam玩家中知名度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1118200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "物理沙盘恶搞游戏经短视频传播，年轻玩家认知较广",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 206440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "经典催泪独立游戏，中文玩家圈有长期口碑",
+      "reviewPriority": "normal"
+    }
+  ]
+}

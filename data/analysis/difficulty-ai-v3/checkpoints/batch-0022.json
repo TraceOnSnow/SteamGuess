@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 526870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "工厂自动化代表作，Steam圈层传播强，普通玩家已有较高认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 427520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "自动化建造类型标杆，玩家圈知名度高但未达到大众简单档",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 246620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "疫情题材带来明显大众认知，但具体Steam版本热度弱于移动端",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 230290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "太空物理模拟在科普和沙盒圈层有名，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2186680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "战锤IP与CRPG玩家群内有名，但具体作品尚难进入更广认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 766570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "钓鱼模拟细分圈层玩家群稳定，大众几乎不会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 39140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "经典JRPG与最终幻想IP认知极高，具体原作仍广为人知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 39210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "最终幻想品牌与知名MMORPG身份带来可靠认知，但仍有游戏圈门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 219740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "饥荒在中文玩家圈长期高知名度，是生存类早期爆款",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 285900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "派对乱斗以视频传播走红，普通玩家有较高概率听过",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 962730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "滑板模拟细分圈层地位明确，普通玩家基本不会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2669320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "足球年货与FIFA/EA FC品牌大众认知度高，具体版本仍广为人知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 548430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "合作射击代表作，玩家圈传播强但尚未进入大众简单档",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1989270,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "独立恐怖互动小说圈层知名，普通玩家认知仍明显有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1476970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "放置类MMO在放置与增量社区有受众，大众认知很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1238860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "战地系列代表作，PC射击玩家认知度高，但热度已不如巅峰",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 677620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "传送门玩法曾带动破圈，但热度退潮后普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1665460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "实况足球正代延续，足球游戏玩家和PC玩家中有较高认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 805550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "模拟赛车领域代表作，认知集中在赛车模拟圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 346010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "物理建造类早期网红作品，玩家有印象但热度已明显回落",
+      "reviewPriority": "normal"
+    }
+  ]
+}

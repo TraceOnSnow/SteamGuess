@@ -40,14 +40,22 @@ export function createMatchEngine({ catalog, random = Math.random, now = () => D
       if (!guess || !answer) return { error: ['INVALID_GAME', 'That game is not in the server catalog.'] };
       state.guesses.push(appId);
       const feedback = compareGames(guess, answer);
+      let roundEnd = null;
       if (feedback.isCorrect) {
         state.finished = true;
-        onRoundEnd(room, playerId, 'correct');
+        roundEnd = onRoundEnd(room, playerId, 'correct');
       } else if (state.guesses.length >= MAX_GUESSES) {
         state.finished = true;
-        if (Object.values(round.players).every(value => value.finished)) onRoundEnd(room, null, 'guesses_exhausted');
+        if (Object.values(round.players).every(value => value.finished)) {
+          roundEnd = onRoundEnd(room, null, 'guesses_exhausted');
+        }
       }
-      return { feedback, guessesUsed: state.guesses.length, guessesLeft: MAX_GUESSES - state.guesses.length };
+      return {
+        feedback,
+        guessesUsed: state.guesses.length,
+        guessesLeft: MAX_GUESSES - state.guesses.length,
+        roundEnd,
+      };
     },
     maxGuesses: MAX_GUESSES,
   };

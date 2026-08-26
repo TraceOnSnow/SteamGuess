@@ -1,4 +1,4 @@
-import type { DifficultyLevel } from '../labeler/types';
+import type { DifficultyLevel, StartingHintMode } from '../difficulty/types';
 
 const PLAYER_ID_KEY = 'steamguess-player-id-v1';
 
@@ -40,6 +40,7 @@ export interface CompletedSession {
   outcome: 'won' | 'lost' | 'surrendered';
   guesses: number;
   hintsUsed: number;
+  startingHintMode: StartingHintMode;
   startedAt: string;
 }
 

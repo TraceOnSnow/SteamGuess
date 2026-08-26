@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 582010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "系列地位和大众认知都很高，但弱于最顶级现象作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 501300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "叙事冒险代表作，媒体评价高但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 12120,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 7,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "GTA经典作品，网络梗和移植认知极广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 601430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "恐怖游戏名作续篇，但具体条目不如一代出圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 581320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "战术FPS圈层知名度高，但跨圈存在感有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 488860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "脱胎于Flash动画IP，核心圈层明确但大众认知很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1718570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "独立JRPG圈口碑高，但普通Steam玩家很难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 65800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "合作塔防ARPG代表作，认知集中在较早Steam圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 767560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "移动端机甲PVP有稳定玩家，但中国大陆Steam用户认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 610080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "放置类游戏圈层地位明确，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2334730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "动作肉鸽圈近期知名，但尚未形成稳定跨圈认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 200710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "ARPG圈经典，曾有较广中文玩家认知但当前热度下降",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 257510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "哲学解谜代表作，核心玩家熟悉但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2593370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "中文视觉小说圈爆款，但普通玩家认知仍有明显边界",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 414340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "获奖叙事动作游戏知名度较高，但中国普通玩家未必都认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 362680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "独立恐怖解谜老牌作品，核心社区认知稳定但跨圈有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 251570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "僵尸生存建造代表作，Steam圈知名度高但大众出圈有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 359870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "FF系列经典，但该重制条目的年轻玩家辨识度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1824220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "中世纪多人对战特色鲜明，主要认知限于多人动作游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 383120,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 79,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "太空建造生存圈层知名，但普通玩家很难认识",
+      "reviewPriority": "normal"
+    }
+  ]
+}

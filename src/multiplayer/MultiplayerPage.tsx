@@ -3,9 +3,12 @@ import { io, type Socket } from 'socket.io-client';
 import { loadGames } from '../data/games';
 import type { Game } from '../types/game';
 import { SearchBox } from '../components/SearchBox/SearchBox';
+import { LanguageToggle } from '../components/LanguageToggle/LanguageToggle';
+import { MainMenuDialog } from '../components/MainMenuDialog/MainMenuDialog';
 import { getPlayerId } from '../api/client';
 import type { Ack, GuessResult, MultiplayerField, MultiplayerSettings, RoomSnapshot, RoundEnd } from './types';
 import './MultiplayerPage.css';
+import { useTranslation } from 'react-i18next';
 
 const SESSION_KEY = 'steamguess-multiplayer-session-v1';
 const ALL_FIELDS: { key: MultiplayerField; label: string }[] = [{ key: 'price', label: '价格' }, { key: 'popularity', label: '峰值在线' }, { key: 'reviews', label: '评测数' }, { key: 'rating', label: '好评率' }, { key: 'releaseDate', label: '发行日期' }, { key: 'companies', label: '厂商' }, { key: 'tags', label: '用户标签' }];
@@ -22,6 +25,7 @@ function emit<T>(socket: Socket, event: string, payload: object): Promise<Ack<T>
 }
 
 export default function MultiplayerPage() {
+  const { t } = useTranslation();
   const socketRef = useRef<Socket | null>(null);
   const [games, setGames] = useState<Game[]>([]);
   const [room, setRoom] = useState<RoomSnapshot | null>(null);
@@ -42,10 +46,12 @@ export default function MultiplayerPage() {
   const [roundEnd, setRoundEnd] = useState<RoundEnd | null>(null);
   const [clock, setClock] = useState(() => Date.now());
   const [copiedRoomCode, setCopiedRoomCode] = useState(false);
+  const [showMainMenuDialog, setShowMainMenuDialog] = useState(false);
+  const [leaving, setLeaving] = useState(false);
 
   useEffect(() => { void loadGames().then(setGames).catch(() => setError('题库加载失败。')); }, []);
   useEffect(() => {
-    const socket = io({ path: '/socket.io', transports: ['websocket', 'polling'] });
+    const socket = io({ path: '/socket.io', transports: ['websocket'] });
     let resumeTimer: number | undefined;
     let resumeAttempt = 0;
     socketRef.current = socket;
@@ -162,21 +168,35 @@ export default function MultiplayerPage() {
     }
   }
   async function leave() {
-    if (room) await send('room:leave', { roomId: room.id });
+    if (room && connected) await send('room:leave', { roomId: room.id });
     resumeIdentityRef.current = null;
     setIdentity(null);
     sessionStorage.removeItem(SESSION_KEY);
     window.location.assign('/');
   }
+  async function leaveToMainMenu() {
+    setLeaving(true);
+    await leave();
+  }
+  function requestMainMenu() {
+    if (!room) {
+      window.location.assign('/');
+      return;
+    }
+    setShowMainMenuDialog(true);
+  }
   const rematch = () => room && send('match:rematch', { roomId: room.id, accept: !me?.rematch });
 
   if (!room) return (
     <main className="mp-shell mp-entry">
-      <a href="/" className="mp-back">← 单人模式</a>
+      <div className="mp-entry-nav">
+        <a href="/" className="mp-back">← {t('app.mainMenu')}</a>
+        <LanguageToggle />
+      </div>
       <section className="mp-card">
         <p className="eyebrow">SteamGuess Multiplayer</p><h1>多人同题竞速</h1><p className="mp-muted">创建 2–8 人私人房间，一起猜同一款游戏。</p>
         <label>昵称<input value={displayName} maxLength={32} onChange={event => setDisplayName(event.target.value)} /></label>
-        <div className="mp-settings-row"><label>难度<select value={settings.difficulty} onChange={event => setSettings({ ...settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={settings.bestOf} onChange={event => setSettings({ ...settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={settings.maxPlayers} onChange={event => setSettings({ ...settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div>
+        <div className="mp-settings-row"><label>难度<select value={settings.difficulty} onChange={event => setSettings({ ...settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={settings.bestOf} onChange={event => setSettings({ ...settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={settings.maxPlayers} onChange={event => setSettings({ ...settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div>
         <button className="btn btn-primary" disabled={!connected || !displayName.trim()} onClick={() => void enter('room:create')}>创建房间</button>
         <div className="mp-divider"><span>或者加入</span></div>
         <div className="mp-join"><input aria-label="房间码" placeholder="房间码" value={roomCode} maxLength={8} onChange={event => setRoomCode(event.target.value.toUpperCase())} /><button className="btn btn-quiet" disabled={!connected || !roomCode.trim()} onClick={() => void enter('room:join')}>加入</button></div>
@@ -187,7 +207,16 @@ export default function MultiplayerPage() {
 
   return (
     <main className="mp-shell">
-      <header className="mp-top"><div><a className="mp-home-link" href="/">← 返回主页</a><strong>{room.status === 'lobby' ? '等待开始' : `第 ${room.match?.roundNumber ?? 1} 回合`}</strong></div><button className="btn btn-quiet" onClick={() => void leave()}>离开房间</button></header>
+      <header className="mp-top">
+        <div className="mp-top-left">
+          <LanguageToggle />
+          <div>
+            <button className="mp-home-link" type="button" onClick={requestMainMenu}>← {t('app.mainMenu')}</button>
+            <strong>{room.status === 'lobby' ? '等待开始' : `第 ${room.match?.roundNumber ?? 1} 回合`}</strong>
+          </div>
+        </div>
+        <button className="btn btn-quiet" type="button" onClick={requestMainMenu}>{t('app.mainMenu')}</button>
+      </header>
       <section className="mp-room-code" aria-label="房间代码">
         <div><span>房间代码</span><strong>{room.code}</strong></div>
         <button className="btn btn-primary" type="button" onClick={() => void copyRoomCode()}>{copiedRoomCode ? '已复制' : '复制代码'}</button>
@@ -202,7 +231,7 @@ export default function MultiplayerPage() {
         <span className="mp-muted">房间规则已锁定，服务端正在同步题目。</span>
       </section> : room.status === 'lobby' ? <section className="mp-card mp-lobby">
         <h2>房间设置</h2>
-        {room.hostPlayerId === identity?.playerId ? <div className="mp-settings-row"><label>难度<select value={room.settings.difficulty} onChange={event => void updateSettings({ ...room.settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={room.settings.bestOf} onChange={event => void updateSettings({ ...room.settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={room.settings.maxPlayers} onChange={event => void updateSettings({ ...room.settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div> : <p>{room.settings.difficulty} · BO{room.settings.bestOf} · 最多 {room.settings.maxPlayers} 人</p>}
+        {room.hostPlayerId === identity?.playerId ? <div className="mp-settings-row"><label>难度<select value={room.settings.difficulty} onChange={event => void updateSettings({ ...room.settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={room.settings.bestOf} onChange={event => void updateSettings({ ...room.settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={room.settings.maxPlayers} onChange={event => void updateSettings({ ...room.settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div> : <p>{room.settings.difficulty} · BO{room.settings.bestOf} · 最多 {room.settings.maxPlayers} 人</p>}
         {room.hostPlayerId === identity?.playerId && <fieldset className="mp-fields-setting"><legend>本局展示字段</legend>{ALL_FIELDS.map(field => <label key={field.key}><input type="checkbox" checked={room.settings.visibleFields.includes(field.key)} onChange={() => toggleField(field.key)} />{field.label}</label>)}</fieldset>}
         <p className="mp-muted">已加入 {room.players.length}/{room.settings.maxPlayers} 人 · 把上面的房间代码发给朋友</p>
         <div className="mp-actions"><button className={`btn ${me?.ready ? 'btn-quiet' : 'btn-primary'}`} disabled={!canInteract} onClick={() => void ready()}>{me?.ready ? '取消准备' : '准备'}</button>{room.hostPlayerId === identity?.playerId && <button className="btn btn-primary" disabled={!canInteract || room.players.length < 2 || room.players.some(player => !player.ready)} onClick={() => void start()}>开始比赛</button>}</div>
@@ -213,6 +242,12 @@ export default function MultiplayerPage() {
         <section className="mp-results">{currentResults.length === 0 ? <p className="mp-muted">搜索并提交你的第一款游戏。</p> : [...currentResults].reverse().map(result => { const game = games.find(item => item.appId === result.guessAppId); return <article key={`${result.roundId}-${result.guessAppId}`} className={result.feedback.isCorrect ? 'correct' : ''}><header><strong>{game?.localizedNames?.zh || game?.name || result.guessAppId}</strong><span>{result.feedback.isCorrect ? '正确' : `剩余 ${result.guessesLeft} 次`}</span></header><div className="mp-fields">{result.feedback.fields.map(field => <span key={field.fieldName} className={`match-${field.status}`}>{field.fieldName}: {String(field.userValue ?? '—')} {field.direction === 'higher' ? '↑' : field.direction === 'lower' ? '↓' : ''}</span>)}</div><div className="mp-tags">{result.feedback.matchingCompanies.map(value => <span key={`c-${value}`}>{value}</span>)}{result.feedback.matchingTags.map(value => <span key={`t-${value}`}>{value}</span>)}</div></article> })}</section>
       </>}
       {error && <p className="mp-error">{error}</p>}
+      <MainMenuDialog
+        open={showMainMenuDialog}
+        busy={leaving}
+        onCancel={() => setShowMainMenuDialog(false)}
+        onConfirm={() => void leaveToMainMenu()}
+      />
     </main>
   );
 }

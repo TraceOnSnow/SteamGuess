@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1435790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "合作解谜游戏有稳定传播，但未形成大众级知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2212330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "格斗沙盒视频圈走红，普通玩家很难对应具体作品",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 200260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "蝙蝠侠IP和经典动作游戏地位突出，Steam用户认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2878980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "NBA2K系列和篮球题材认知广泛，具体年度版本也较易识别",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 291480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "免费射击老牌IP有玩家基础，但Clutch条目辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 552500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "战锤合作战斗游戏在Steam玩家中有稳定存在感，仍偏品类圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 703080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "动物园经营题材知名度高，玩家主要集中于模拟经营圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 413410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "动漫悬疑游戏圈知名度高，但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1113000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "Persona系列带动认知，但本作弱于P5R的破圈程度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 444200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "坦克世界IP知名，Blitz具体版本认知较窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1029690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "狙击题材射击游戏有明确玩家圈，但未形成广泛大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 738060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "FNAF IP有很强圈层存在感，具体衍生条目认知更窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 41700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "硬核生存射击经典，普通玩家较难对应具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 466560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "维京RTS在策略圈有稳固地位，跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 690830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "建造经营爱好者中知名，普通Steam玩家大概率不认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1100600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "足球经理系列是题材标杆，具体年度版本辨识有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1222140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "叙事互动游戏现象级，中文社区和直播传播很广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1761390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "初音未来IP高度出圈，但该节奏游戏本身认知集中在音游圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 305620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 37,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "生存类型代表作，玩家基础稳定但未突破类型圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 393380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 45,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "拟真战术FPS玩家圈知名度强，普通玩家未必听过",
+      "reviewPriority": "high"
+    }
+  ]
+}

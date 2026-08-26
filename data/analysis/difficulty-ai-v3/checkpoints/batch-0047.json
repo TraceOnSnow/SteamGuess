@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1888160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "FromSoftware近期大作，圈内热度高，但机甲题材和具体作品属性限制大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 274190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立合作游戏圈知名，玩法梗有辨识度，但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 518790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "现代狩猎模拟代表作，玩家规模稳定，但认知集中在狩猎和开放世界模拟圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 391540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.94,
+      "reason": "梗、音乐和剧情广泛出圈，已成为年轻玩家公共文化级独立游戏",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1066780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "运输模拟细分品类有地位，但普通玩家和一般策略玩家都很难想起",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2358720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "中文互联网现象级作品，已明显突破单机玩家圈层",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 612880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "经典FPS系列续作，品牌认知存在，但具体作品热度明显低于系列巅峰",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 611500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典竞技射击IP下的失势续作，认知主要停留在老Quake社区",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1150690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "独立RPG核心圈和媒体评价高，但大众Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2322560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.9,
+      "reason": "中文互联网现象级出圈，恋爱模拟题材本身已不重要",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1250410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "模拟飞行历史IP知名度高，2020版也获得大众科技游戏报道",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 329110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "三消RPG细分品类有稳定玩家，但认知圈层非常窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 728880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "合作烹饪游戏代表作，已进入普通玩家和家庭朋友联机话题",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1089980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "网络梗和动画风格有辨识度，但具体合集仍偏独立游戏圈认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 35450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "二战硬核射击圈有地位，但当前大众和普通PC玩家认知很弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1681430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典电影IP有加成，但具体游戏仍主要靠FPS和怀旧授权玩家认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 42680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "使命召唤现代战争系列代表作，旧作名称广为人知但易与新版混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1206560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "上帝模拟沙盒在短视频和休闲玩家中有传播，但普通Steam圈层认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 700330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "SCP题材和免费联机带来稳定玩家，年轻Steam用户中有一定认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 269950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "飞行模拟细分领域地位明确，但普通玩家和大众游戏圈很难认识",
+      "reviewPriority": "high"
+    }
+  ]
+}

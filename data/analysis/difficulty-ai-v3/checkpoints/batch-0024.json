@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 699130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "电影IP知名度高，游戏本身仍是联机打僵尸圈层内较熟",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 788100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "国产肉鸽射击有稳定玩家圈，但未形成大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 238460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "独立合作平台跳跃经典，认知集中在联机独立游戏圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 16900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "硬核战术FPS，主要在军事拟真射击社群有存在感",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 560130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "经典CRPG续作，认知限于CRPG与核心媒体圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 374320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "魂系代表作，已是国内年轻玩家公共级认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 881100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "独立肉鸽圈知名度高，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1818750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "WB角色格斗曾有一定热度，但国区认知与当前存在感弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1904540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "足球经理系列有固定群体，具体年度版更难形成圈外认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 4580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典RTS资料片，Warhammer题材在中国认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 493340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "主题公园模拟代表作，经营模拟玩家圈知名度稳定",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2239150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "近年精品独立塔防，主要靠独立游戏和直播传播",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 967050,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 37,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "廉价联机恐怖游戏曾靠主播走红，但大众记忆有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 214950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 41,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "全面战争系列经典，在策略玩家群体中认知较强",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1621690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "类Terraria生存沙盒有稳定热度，但主要覆盖生存玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 858810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "殖民模拟细分品类知名，普通Steam玩家较难认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 221380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "帝国时代是RTS经典公共记忆，但该旧条目本身非当代热点",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 254700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "生化危机4属于经典名作，但旧版条目易与重制版混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 249130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "乐高和漫威IP加持，但具体作品在Steam玩家中认知一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1604030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "吸血鬼生存沙盒代表作，有跨圈热度但未到人人知晓",
+      "reviewPriority": "normal"
+    }
+  ]
+}

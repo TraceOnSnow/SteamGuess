@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 212680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "Roguelike策略品类代表作，Steam核心圈知名但大众认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 524220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 14,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.88,
+      "reason": "2B形象和游戏梗高度出圈，年轻玩家中认知很强",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1331550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "商业经营模拟有稳定玩家群，但认知集中在模拟经营圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1172380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "大型星战IP动作游戏，大众玩家普遍听过但非现象级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 383870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "独立叙事冒险媒体评价高，但普通Steam玩家认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 494840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "潜艇模拟在细分玩家中知名，普通玩家很难主动想起",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 105450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "帝国时代IP有名，但具体三代条目不如二代和四代突出",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 322170,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.92,
+      "reason": "音游平台跳跃在年轻玩家和网络梗中认知很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1337520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "前作和二代有Steam知名度，但具体回归版辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 270880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "卡车模拟系列在Steam圈层广为人知，美国篇略弱于欧卡",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1397920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "放置挖矿品类有稳定玩家，但认知高度集中在特定长尾圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 333420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "历史RTS玩家熟悉，但普通Steam玩家基本不会主动想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1419170,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "移动怪物收集游戏有玩家基础，但中国Steam圈认知较窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 262060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "暗黑风回合Roguelike代表作，Steam核心圈有可靠认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 569480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "中型城市建造作品有口碑，但主要认知集中在模拟经营圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 275850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "发售争议和多年更新带来高知名度，未进入大众公共常识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 234140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "电影IP和开放世界有认知，但具体游戏辨识度不算突出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 774801,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "合作动作Roguelike在直播和Steam圈流行，跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1158310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "大战略代表作之一，Steam圈层知名度稳定但门槛明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 389730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "格斗游戏经典IP，年轻玩家和PC玩家普遍听过",
+      "reviewPriority": "low"
+    }
+  ]
+}

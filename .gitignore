@@ -44,8 +44,6 @@ __pycache__/
 /data/catalog/*.sqlite-wal
 /data/catalog/steamspy_candidates.json
 
-# Versioned bootstrap snapshot used to continue catalog work on another host.
-!/data/catalog/catalog.sqlite.gz
 !data/raw/
 /data/raw/*
 !data/raw/pics/

@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import re
 import time
 from datetime import datetime, timezone
@@ -21,7 +20,6 @@ OBVIOUS_NON_GAME = re.compile(
     r"(?:\bdedicated server\b|\bserver tool\b|\bsoundtrack\b|\bplaytest\b|\bbenchmark\b)",
     re.IGNORECASE,
 )
-LEVELS = ("easy", "normal", "hard", "hell")
 
 
 def utc_now() -> str:
@@ -86,65 +84,6 @@ def fetch_page(page: int, timeout: int, retries: int, retry_delay: float = 30.0)
     raise RuntimeError(f"SteamSpy page {page} failed after all transports: {'; '.join(errors)}")
 
 
-def percentile(values: list[float], value: float) -> float:
-    """Return a stable 0..1 empirical percentile, handling ties by upper rank."""
-    if not values:
-        return 0.0
-    ordered = sorted(values)
-    lo, hi = 0, len(ordered)
-    while lo < hi:
-        mid = (lo + hi) // 2
-        if ordered[mid] <= value:
-            lo = mid + 1
-        else:
-            hi = mid
-    return lo / len(ordered)
-
-
-def raw_features(row: dict[str, Any]) -> dict[str, float]:
-    owners_min, owners_max = parse_owners(row.get("owners"))
-    owners_mid = (owners_min + owners_max) / 2
-    positive = as_int(row.get("positive"))
-    negative = as_int(row.get("negative"))
-    reviews = positive + negative
-    return {
-        "owners": math.log1p(owners_mid),
-        "ccu": math.log1p(as_int(row.get("ccu"))),
-        "reviews": math.log1p(reviews),
-        "playtime": math.log1p(as_int(row.get("average_forever"))),
-        "positiveRatio": positive / reviews if reviews else 0.0,
-    }
-
-
-def recognition_scores(rows: list[dict[str, Any]]) -> list[tuple[float, dict[str, float]]]:
-    features = [raw_features(row) for row in rows]
-    columns = {key: [item[key] for item in features] for key in features[0]} if features else {}
-    weights = {
-        "owners": 0.35,
-        "ccu": 0.25,
-        "reviews": 0.25,
-        "playtime": 0.10,
-        "positiveRatio": 0.05,
-    }
-    result = []
-    for item in features:
-        ranked = {key: percentile(columns[key], value) for key, value in item.items()}
-        score = 100 * sum(weights[key] * ranked[key] for key in weights)
-        result.append((round(score, 3), {key: round(value, 6) for key, value in ranked.items()}))
-    return result
-
-
-def level_from_rank(index: int, total: int) -> str:
-    fraction = index / max(total, 1)
-    if fraction < 0.20:
-        return "easy"
-    if fraction < 0.50:
-        return "normal"
-    if fraction < 0.80:
-        return "hard"
-    return "hell"
-
-
 def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str, Any]:
     seen: set[int] = set()
     candidates: list[tuple[dict[str, Any], int, str]] = []
@@ -171,22 +110,14 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
             seen.add(appid)
             candidates.append((row, page, retrieved_at, transport))
 
-    rows = [item[0] for item in candidates]
-    scores = recognition_scores(rows)
-    sortable = []
-    for candidate, scored in zip(candidates, scores, strict=True):
-        row, page, retrieved_at, transport = candidate
-        recognition, features = scored
-        sortable.append((recognition, row, page, retrieved_at, transport, features))
-    sortable.sort(key=lambda item: (-item[0], as_int(item[1].get("appid"))))
-
     games = []
-    for index, (recognition, row, page, retrieved_at, transport, features) in enumerate(sortable):
+    # SteamSpy request=all pages are already ranked. Preserve their page and
+    # response order so an active limit means the literal SteamSpy Top N.
+    for row, page, retrieved_at, transport in candidates:
         appid = as_int(row.get("appid"))
         positive = as_int(row.get("positive"))
         negative = as_int(row.get("negative"))
         owners_min, owners_max = parse_owners(row.get("owners"))
-        difficulty = round(100 - recognition, 3)
         games.append({
             "appId": appid,
             "name": str(row.get("name") or "").strip(),
@@ -213,14 +144,6 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
                 "initialPriceCents": as_int(row.get("initialprice")),
                 "discountPercent": as_int(row.get("discount")),
             },
-            "recognition": {"score": recognition, "features": features},
-            "difficulty": {
-                "score": difficulty,
-                "level": level_from_rank(index, len(sortable)),
-                "source": "heuristic",
-                "excluded": False,
-                "manualLevel": None,
-            },
             "sources": [{
                 "service": "steamspy",
                 "endpoint": f"request=all&page={page}",
@@ -232,26 +155,16 @@ def normalize(raw_pages: list[tuple[int, dict[str, Any], str, str]]) -> dict[str
                 "developers": "steamspy",
                 "publishers": "steamspy",
                 "metrics": "steamspy",
-                "recognition": "derived:steamspy",
-                "difficulty": "derived:heuristic-v1",
             },
         })
 
-    level_counts = {level: sum(game["difficulty"]["level"] == level for game in games) for level in LEVELS}
     return {
         "schemaVersion": 1,
         "generatedAt": utc_now(),
-        "model": {
-            "name": "popularity-percentile-heuristic",
-            "version": "heuristic-v1",
-            "weights": {"owners": 0.35, "ccu": 0.25, "reviews": 0.25, "playtime": 0.10, "positiveRatio": 0.05},
-            "note": "Temporary baseline until manual labels are available for linear regression.",
-        },
         "stats": {
             "rawRows": sum(len(payload) for _, payload, _, _ in raw_pages),
             "accepted": len(games),
             "rejected": len(rejected),
-            "levelCounts": level_counts,
             "rejectionReasons": {reason: sum(row["reason"] == reason for row in rejected) for reason in sorted({r["reason"] for r in rejected})},
         },
         "rejected": rejected,
@@ -267,7 +180,10 @@ def preserve_enrichment(catalog: dict[str, Any], previous: dict[str, Any]) -> No
         old = old_games.get(int(game["appId"]))
         if not old:
             continue
-        for field in ("localizedNames", "type", "picsChangeNumber", "tags"):
+        for field in (
+            "localizedNames", "type", "picsChangeNumber", "tags", "regionalPrices",
+            "releaseDate", "headerImage", "screenshots", "reviews", "reviewFetchLimits",
+        ):
             if old.get(field) not in (None, [], {}):
                 game[field] = old[field]
         old_metrics = old.get("metrics", {})
@@ -280,7 +196,11 @@ def preserve_enrichment(catalog: dict[str, Any], previous: dict[str, Any]) -> No
         ]
         game["sources"].extend(preserved_sources)
         for field, source in old.get("fieldSources", {}).items():
-            if field not in {"identity", "developers", "publishers", "metrics", "recognition", "difficulty"}:
+            if field in {
+                "localizedNames", "type", "picsChangeNumber", "tags",
+                "regionalPrices", "releaseDate", "headerImage", "screenshots",
+                "reviews", "reviewFetchLimits",
+            }:
                 game["fieldSources"][field] = source
 
 def parse_args() -> argparse.Namespace:
@@ -288,6 +208,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pages", default="0,1", help="Comma-separated SteamSpy page numbers")
     parser.add_argument("--raw-dir", default="data/raw/steamspy")
     parser.add_argument("--out", default="data/catalog/steamspy_top_2000.json")
+    parser.add_argument(
+        "--preserve-from",
+        help=(
+            "Optional enriched catalog used as the carry-forward source. "
+            "Defaults to the existing --out file."
+        ),
+    )
     parser.add_argument("--timeout", type=int, default=45)
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument("--retry-delay", type=float, default=30.0, help="Base delay between retries for a failed page")
@@ -333,7 +260,12 @@ def main() -> None:
         raw_pages.append((page, payload, retrieved_at, transport))
 
     out = Path(args.out)
-    previous = json.loads(out.read_text(encoding="utf-8")) if out.exists() else None
+    previous_path = Path(args.preserve_from) if args.preserve_from else out
+    previous = (
+        json.loads(previous_path.read_text(encoding="utf-8"))
+        if previous_path.exists()
+        else None
+    )
     catalog = normalize(raw_pages)
     if isinstance(previous, dict):
         preserve_enrichment(catalog, previous)

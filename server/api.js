@@ -1,9 +1,20 @@
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { openDatabase, insertDifficultyFeedback, upsertSession } from './database.js';
+import { getSession, openDatabase, insertDifficultyFeedback, upsertSession } from './database.js';
+import {
+  getEffectiveDifficultyMap,
+  getDifficultyRow,
+  listDifficulties,
+  openCatalogDatabase,
+  getHiddenCatalogAppIds,
+  setCatalogExclusion,
+  upsertDifficultyOverride,
+} from './catalog-difficulty.js';
 
-const LEVELS = new Set(['easy', 'normal', 'hard', 'hell']);
+const LEVELS = new Set(['beginner', 'easy', 'normal', 'hard', 'hell']);
 const OUTCOMES = new Set(['won', 'lost', 'surrendered']);
 const MODES = new Set(['difficulty', 'library']);
+const STARTING_HINT_MODES = new Set(['screenshot', 'review', 'none']);
 
 class HttpError extends Error {
   constructor(status, message) {
@@ -77,6 +88,54 @@ function clientAddress(request, trustProxy) {
   return request.socket?.remoteAddress || 'unknown';
 }
 
+function createCatalogReader(rootDir, catalogDatabase) {
+  let cached = null;
+  return () => {
+    // Local development must not be shadowed by a stale build artifact.
+    // Production images only contain dist, so the same order is safe there.
+    const candidates = [resolve(rootDir, 'public/games_demo.json'), resolve(rootDir, 'dist/games_demo.json')];
+    const path = candidates.find(existsSync);
+    if (!path) throw new HttpError(503, 'Published game catalog is unavailable.');
+    const stat = statSync(path);
+    if (!cached || cached.path !== path || cached.mtimeMs !== stat.mtimeMs || cached.size !== stat.size) {
+      const payload = JSON.parse(readFileSync(path, 'utf8'));
+      const games = Array.isArray(payload) ? payload : Object.values(payload);
+      cached = { path, mtimeMs: stat.mtimeMs, size: stat.size, games };
+    }
+
+    let effective;
+    let hidden;
+    try {
+      const catalog = catalogDatabase();
+      effective = getEffectiveDifficultyMap(catalog);
+      hidden = getHiddenCatalogAppIds(catalog);
+    } catch (error) {
+      console.warn('Unable to overlay catalog difficulty; serving the published snapshot.', error);
+      return cached.games;
+    }
+    return cached.games
+      .filter(game => !hidden.has(Number(game?.appId)))
+      .map(game => {
+        const difficulty = effective.get(Number(game.appId));
+        if (!difficulty) {
+          const { difficulty: _difficulty, difficultyScore: _score, difficultyLevel: _level, ...searchableGame } = game;
+          return searchableGame;
+        }
+        return {
+          ...game,
+          difficulty: {
+            ...(game.difficulty || {}),
+            score: difficulty.score,
+            level: difficulty.level,
+            source: difficulty.source,
+          },
+          difficultyScore: difficulty.score,
+          difficultyLevel: difficulty.level,
+        };
+      });
+  };
+}
+
 export function createRateLimiter({ limit, windowMs }) {
   const entries = new Map();
   return {
@@ -116,6 +175,9 @@ function applyLimit(response, result) {
 export function createApiHandler({
   rootDir = process.cwd(),
   dbPath,
+  catalogDbPath,
+  adminToken = '',
+  allowAdminWithoutToken = false,
   steamApiKey = '',
   trustProxy = false,
   writeRateLimit = 60,
@@ -124,7 +186,18 @@ export function createApiHandler({
   health = () => ({}),
 } = {}) {
   let db;
+  let catalogDb;
   const database = () => db ??= openDatabase(dbPath ?? resolve(rootDir, 'data/runtime/steamguess.sqlite'));
+  const resolvedCatalogDbPath = catalogDbPath ?? resolve(rootDir, 'data/catalog/catalog.sqlite');
+  const catalogDatabase = () => catalogDb ??= openCatalogDatabase(resolvedCatalogDbPath);
+  const readCatalog = createCatalogReader(rootDir, catalogDatabase);
+  const authorizeAdmin = request => {
+    if (allowAdminWithoutToken && !adminToken) return true;
+    if (!adminToken) throw new HttpError(503, 'Difficulty administration is not configured.');
+    const authorization = request.headers.authorization || '';
+    if (authorization !== `Bearer ${adminToken}`) throw new HttpError(401, 'Invalid admin token.');
+    return true;
+  };
   const writeLimiter = createRateLimiter({ limit: writeRateLimit, windowMs: rateLimitWindowMs });
   const profileLimiter = createRateLimiter({ limit: profileRateLimit, windowMs: rateLimitWindowMs });
 
@@ -137,6 +210,62 @@ export function createApiHandler({
 
     try {
       const address = clientAddress(request, trustProxy);
+      if (url.pathname === '/api/catalog/games' && request.method === 'GET') {
+        return json(response, 200, readCatalog());
+      }
+
+      if (url.pathname === '/api/admin/difficulties' && request.method === 'GET') {
+        authorizeAdmin(request);
+        const result = listDifficulties(catalogDatabase(), {
+          query: url.searchParams.get('q') || '',
+          filter: url.searchParams.get('filter') || 'all',
+          scope: url.searchParams.get('scope') || 'active',
+          sort: url.searchParams.get('sort') || 'effective',
+          direction: url.searchParams.get('direction') || 'asc',
+          page: url.searchParams.get('page') || '1',
+          pageSize: url.searchParams.get('pageSize') || '100',
+        });
+        return json(response, 200, result);
+      }
+
+      const difficultyMatch = url.pathname.match(/^\/api\/admin\/difficulties\/(\d+)$/);
+      if (difficultyMatch && request.method === 'PUT') {
+        if (!applyLimit(response, writeLimiter.consume(address))) return;
+        authorizeAdmin(request);
+        const appId = Number(difficultyMatch[1]);
+        const body = await readJson(request);
+        if (!validAppId(appId)) throw new HttpError(400, 'Invalid AppID.');
+        let manualScore;
+        if (Object.hasOwn(body, 'manualScore')) {
+          manualScore = body.manualScore === null || body.manualScore === '' ? null : Number(body.manualScore);
+          if (manualScore !== null && (!Number.isInteger(manualScore) || manualScore < 0 || manualScore > 100)) {
+            throw new HttpError(400, 'Manual score must be an integer between 0 and 100.');
+          }
+        }
+        if (Object.hasOwn(body, 'locked') && typeof body.locked !== 'boolean') throw new HttpError(400, 'Locked must be boolean.');
+        if (Object.hasOwn(body, 'excluded') && typeof body.excluded !== 'boolean') throw new HttpError(400, 'Excluded must be boolean.');
+        if (Object.hasOwn(body, 'exclusionReason') && !['unsuitable', 'too_obscure'].includes(body.exclusionReason)) {
+          throw new HttpError(400, 'Exclusion reason must be unsuitable or too_obscure.');
+        }
+        const catalog = catalogDatabase();
+        let row;
+        if (Object.hasOwn(body, 'manualScore') || Object.hasOwn(body, 'locked')) {
+          row = upsertDifficultyOverride(catalog, appId, {
+            manualScore,
+            locked: Object.hasOwn(body, 'locked') ? body.locked : undefined,
+          });
+        }
+        if (Object.hasOwn(body, 'excluded')) {
+          row = setCatalogExclusion(catalog, appId, {
+            excluded: body.excluded,
+            reason: body.exclusionReason,
+          });
+        }
+        if (!row) row = getDifficultyRow(catalog, appId);
+        if (!row) throw new HttpError(404, 'Game was not found in the catalog.');
+        return json(response, 200, row);
+      }
+
       if (request.method === 'GET' && url.pathname === '/api/steam-library') {
         if (!applyLimit(response, profileLimiter.consume(address))) return;
       } else if (request.method === 'POST') {
@@ -192,6 +321,7 @@ export function createApiHandler({
           outcome: body.outcome,
           guesses: Math.max(0, Math.min(100, Number(body.guesses) || 0)),
           hintsUsed: Math.max(0, Math.min(10, Number(body.hintsUsed) || 0)),
+          startingHintMode: STARTING_HINT_MODES.has(body.startingHintMode) ? body.startingHintMode : 'none',
           startedAt: typeof body.startedAt === 'string' ? body.startedAt : new Date().toISOString(),
           finishedAt: new Date().toISOString(),
         });
@@ -204,9 +334,17 @@ export function createApiHandler({
         if (!validId(body.playerId) || !validAppId(body.appId) || !Number.isFinite(score) || score < 0 || score > 100 || !LEVELS.has(body.level)) {
           return json(response, 400, { error: 'Invalid difficulty feedback.' });
         }
+        if (!validId(body.sessionId)) return json(response, 400, { error: 'Difficulty feedback requires a completed game session.' });
+        const completedSession = getSession(database(), body.sessionId);
+        if (!completedSession || !completedSession.finished_at) {
+          return json(response, 409, { error: 'Complete the game session before submitting difficulty feedback.' });
+        }
+        if (completedSession.player_id !== body.playerId || Number(completedSession.answer_app_id) !== body.appId) {
+          return json(response, 409, { error: 'Difficulty feedback does not match this game session.' });
+        }
         const id = insertDifficultyFeedback(database(), {
           playerId: body.playerId,
-          sessionId: validId(body.sessionId) ? body.sessionId : null,
+          sessionId: body.sessionId,
           appId: body.appId,
           score,
           level: body.level,
@@ -217,7 +355,7 @@ export function createApiHandler({
 
       return json(response, 404, { error: 'API endpoint not found.' });
     } catch (error) {
-      const status = error instanceof HttpError ? error.status : 500;
+      const status = error instanceof HttpError ? error.status : Number(error?.status) || 500;
       if (status >= 500) console.error(error);
       return json(response, status, { error: error instanceof Error ? error.message : 'Internal server error.' });
     }
@@ -225,7 +363,9 @@ export function createApiHandler({
 
   apiHandler.close = () => {
     db?.close();
+    catalogDb?.close();
     db = undefined;
+    catalogDb = undefined;
   };
   return apiHandler;
 }

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1238810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "战地系列是大众级FPS品牌，第五部虽争议但知名度明确",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2027330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "物理沙盒血腥游戏在短视频圈有热度，普通玩家认知仍有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 493520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "合作恐怖射击有稳定核心社区，普通Steam玩家未必听过",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 471710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "VR社交游戏在VR圈知名，脱离该场景认知覆盖很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1102190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "卡牌构筑圈层有代表性，但未能形成跨圈知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 207610,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "IP与Telltale叙事代表作认知度都高，但略弱于入门级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 460930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "育碧开放世界射击有知名度，但具体条目辨识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1328670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "系列名气仍在，但传奇版具体认知在国内不如顶级RPG",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 231430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "二战RTS代表作，玩家基础稳定，但跨圈认知明显有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 690790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "拟真拉力赛游戏在赛车圈有地位，普通玩家较难想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 976730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "光环IP全球知名，但国内具体合集版本辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 329050,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "鬼泣系列认知高，该特殊版容易与五代混淆且略旧",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 4000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "Steam沙盒元老，玩家基数巨大，但认知偏向资深PC用户",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1151640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "第一方开放世界代表作，中文玩家圈有稳定知名度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2780980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "社交推理新作有直播传播，但大陆普通玩家认知尚不稳固",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 286690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "地铁系列在FPS圈有辨识度，具体老作重制版知名度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 204880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "太空4X/RTS核心圈经典，普通玩家很难主动想起",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 337320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "物理格斗沙盒有固定受众，尚未形成跨圈传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1721470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "Huggy Wuggy角色梗出圈，但具体章节游戏认知偏年轻圈层",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 33230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "刺客信条与Ezio在中国有很高大众认知，具体二代辨识度强",
+      "reviewPriority": "low"
+    }
+  ]
+}

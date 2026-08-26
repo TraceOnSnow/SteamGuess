@@ -2,7 +2,7 @@
 """Incremental weekly catalog update planner and orchestrator.
 
 The command is safe to run with --plan-only first. Network enrichment is only
-performed for active apps whose corresponding job is not complete.
+performed for detail-window apps whose corresponding job is not complete.
 """
 from __future__ import annotations
 
@@ -14,12 +14,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.database import connect, initialize
+from scripts.catalog.database import catalog_exclusion_ids, connect, initialize, partition_catalog_rows
+
+REVIEWS_PER_LANGUAGE = 100
 
 @dataclass(frozen=True)
 class UpdatePlan:
     catalog_appids: tuple[int, ...]
     active_appids: tuple[int, ...]
+    detail_appids: tuple[int, ...]
     reserve_appids: tuple[int, ...]
     new_active_appids: tuple[int, ...]
     missing_pics: tuple[int, ...]
@@ -130,29 +133,58 @@ def restore_cached_pics(catalog_path: Path, db_path: Path) -> int:
     return restored
 
 
-def build_plan(db_path: Path, catalog_path: Path, active_limit: int = 6000) -> UpdatePlan:
+def build_plan(
+    db_path: Path,
+    catalog_path: Path,
+    active_limit: int = 1000,
+    detail_limit: int | None = None,
+) -> UpdatePlan:
     games = load_games(catalog_path)
-    active = games[:max(0, active_limit)]
-    active_ids = tuple(int(game["appId"]) for game in active)
-    reserve_ids = tuple(int(game["appId"]) for game in games[max(0, active_limit):])
+    detail_limit = active_limit if detail_limit is None else detail_limit
     connection = connect(db_path)
     try:
         initialize(connection)
+        excluded_ids = catalog_exclusion_ids(connection)
+        active, reserve, _excluded = partition_catalog_rows(
+            games, excluded_ids, active_limit
+        )
+        detail, _outside_detail, _excluded = partition_catalog_rows(
+            games, excluded_ids, detail_limit
+        )
+        active_ids = tuple(int(game["appId"]) for game in active)
+        detail_ids = tuple(int(game["appId"]) for game in detail)
+        reserve_ids = tuple(int(game["appId"]) for game in reserve)
         rows = connection.execute("SELECT appid, service, locale, country, status FROM enrichment_jobs").fetchall()
         jobs = {(int(row["appid"]), row["service"], row["locale"], row["country"]): row["status"] for row in rows}
         known_active = {int(row["appid"]) for row in connection.execute("SELECT appid FROM catalog_memberships WHERE catalog = 'active'")}
     finally:
         connection.close()
     new_active = tuple(appid for appid in active_ids if appid not in known_active)
-    missing_pics = tuple(appid for appid in active_ids if jobs.get((appid, "pics", "", "")) != "complete")
-    active_by_id = {int(game["appId"]): game for game in active}
+    missing_pics = tuple(appid for appid in detail_ids if jobs.get((appid, "pics", "", "")) != "complete")
+    detail_by_id = {int(game["appId"]): game for game in detail}
     missing_storefront = tuple(
-        appid for appid in active_ids
+        appid for appid in detail_ids
         if jobs.get((appid, "storefront", "schinese", "cn")) != "complete"
-        or not storefront_fields_complete(active_by_id[appid])
+        or not storefront_fields_complete(detail_by_id[appid])
     )
-    missing_reviews = tuple(appid for appid in active_ids if any(jobs.get((appid, "reviews", language, "")) != "complete" for language in ("english", "schinese")))
-    return UpdatePlan(tuple(int(game["appId"]) for game in games), active_ids, reserve_ids, new_active, missing_pics, missing_storefront, missing_reviews)
+    missing_reviews = tuple(
+        appid for appid in detail_ids
+        if any(
+            jobs.get((appid, "reviews", language, "")) != "complete"
+            or int(detail_by_id[appid].get("reviewFetchLimits", {}).get(language, 0) or 0) < REVIEWS_PER_LANGUAGE
+            for language in ("english", "schinese")
+        )
+    )
+    return UpdatePlan(
+        tuple(int(game["appId"]) for game in games),
+        active_ids,
+        detail_ids,
+        reserve_ids,
+        new_active,
+        missing_pics,
+        missing_storefront,
+        missing_reviews,
+    )
 
 def write_appids(path: Path, appids: tuple[int, ...]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -162,13 +194,74 @@ def run(command: list[str]) -> None:
     print("$ " + " ".join(command), flush=True)
     subprocess.run(command, check=True)
 
+
+def fetch_pics_checkpoints(
+    appids: tuple[int, ...],
+    catalog_path: Path,
+    runner: Path,
+    chunk_size: int,
+    timeout: int,
+) -> Path:
+    """Fetch missing PICS rows in durable chunks and merge one import snapshot."""
+    checkpoint_dir = catalog_path.with_name("pics-checkpoints")
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    snapshots: list[dict[str, Any]] = []
+    for offset in range(0, len(appids), chunk_size):
+        chunk = appids[offset:offset + chunk_size]
+        number = offset // chunk_size
+        appids_path = checkpoint_dir / f"chunk-{number:04d}-appids.json"
+        snapshot_path = checkpoint_dir / f"chunk-{number:04d}.json"
+        write_appids(appids_path, chunk)
+        reusable = False
+        if snapshot_path.exists():
+            try:
+                existing = json.loads(snapshot_path.read_text(encoding="utf-8"))
+                reusable = tuple(int(value) for value in existing.get("requestedAppIds", [])) == chunk
+            except (json.JSONDecodeError, OSError, TypeError, ValueError):
+                reusable = False
+        if reusable:
+            print(f"PICS chunk {number + 1} resumed from {snapshot_path}", flush=True)
+        else:
+            run([
+                "node", str(runner),
+                "--file", str(appids_path),
+                "--out", str(snapshot_path),
+                "--batch-size", "50",
+                "--timeout", str(timeout),
+                "--no-stdout",
+            ])
+        snapshots.append(json.loads(snapshot_path.read_text(encoding="utf-8")))
+
+    merged = {
+        "generatedAt": max(
+            (str(snapshot.get("generatedAt") or "") for snapshot in snapshots),
+            default="",
+        ),
+        "language": "english",
+        "tagNameSource": "checkpoint-merge",
+        "requestedAppIds": list(appids),
+        "unknownAppIds": [
+            value
+            for snapshot in snapshots
+            for value in snapshot.get("unknownAppIds", [])
+        ],
+        "games": {
+            str(appid): game
+            for snapshot in snapshots
+            for appid, game in snapshot.get("games", {}).items()
+        },
+    }
+    output = checkpoint_dir / "merged.json"
+    output.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return output
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog", type=Path, default=Path("data/catalog/steamspy_candidates.json"))
     parser.add_argument("--db", type=Path, default=Path("data/catalog/catalog.sqlite"))
     parser.add_argument("--playable", type=Path, default=Path("public/games_demo.json"))
-    parser.add_argument("--labeling", type=Path, default=Path("public/labeling_catalog.json"))
-    parser.add_argument("--active-limit", type=int, default=6000)
+    parser.add_argument("--active-limit", type=int, default=1000)
+    parser.add_argument("--detail-limit", type=int, default=4000)
     parser.add_argument("--pages", default=",".join(str(page) for page in range(20)))
     parser.add_argument("--interval", type=float, default=120.0, help="SteamSpy delay between pages")
     parser.add_argument("--steamspy-retries", type=int, default=2, help="Retries for each SteamSpy page")
@@ -181,12 +274,20 @@ def main() -> None:
     parser.add_argument("--raw-dir", type=Path, default=Path("data/raw/steamspy"))
     parser.add_argument("--resume-discovery", action="store_true")
     parser.add_argument("--pics", type=Path, help="Prepared PICS JSON; omitted means preserve existing PICS data")
+    parser.add_argument("--auto-pics", action="store_true", help="Fetch missing PICS rows with the anonymous Steam client")
+    parser.add_argument("--pics-runner", type=Path, default=Path("scripts/experimental/pics-poc/pics_tags_poc.mjs"))
+    parser.add_argument("--pics-chunk-size", type=int, default=500)
+    parser.add_argument("--pics-timeout", type=int, default=600, help="Timeout in seconds for each PICS checkpoint chunk")
     parser.add_argument("--plan-only", action="store_true")
     parser.add_argument("--from-existing-catalog", action="store_true")
     parser.add_argument("--skip-enrichment", action="store_true")
     args = parser.parse_args()
     if args.active_limit < 1:
         raise SystemExit("--active-limit must be positive")
+    if args.detail_limit < args.active_limit:
+        raise SystemExit("--detail-limit must be greater than or equal to --active-limit")
+    if args.pics_chunk_size < 1 or args.pics_timeout < 1:
+        raise SystemExit("PICS chunk size and timeout must be positive")
     if not args.from_existing_catalog:
         discovery = [sys.executable, "-m", "scripts.catalog.discover_steamspy", "--pages", args.pages,
                      "--interval", str(args.interval), "--retries", str(args.steamspy_retries),
@@ -197,16 +298,28 @@ def main() -> None:
     restored = restore_cached_pics(args.catalog, args.db)
     if restored:
         print(f"restored_cached_pics={restored}", flush=True)
-    plan = build_plan(args.db, args.catalog, args.active_limit)
+    plan = build_plan(args.db, args.catalog, args.active_limit, args.detail_limit)
     print(json.dumps({
-        "catalog": len(plan.catalog_appids), "active": len(plan.active_appids), "reserve": len(plan.reserve_appids),
+        "catalog": len(plan.catalog_appids), "active": len(plan.active_appids),
+        "detail": len(plan.detail_appids), "reserve": len(plan.reserve_appids),
         "newActive": len(plan.new_active_appids), "missingPics": len(plan.missing_pics),
         "missingStorefront": len(plan.missing_storefront), "missingReviews": len(plan.missing_reviews),
     }, indent=2))
     if args.plan_only:
         return
-    if args.pics:
-        run([sys.executable, "-m", "scripts.catalog.enrich_pics", "--catalog", str(args.catalog), "--pics", str(args.pics), "--out", str(args.catalog)])
+    pics_snapshot = args.pics
+    if not args.skip_enrichment and not pics_snapshot and args.auto_pics and plan.missing_pics:
+        if not args.pics_runner.exists():
+            raise SystemExit(f"PICS runner not found: {args.pics_runner}")
+        pics_snapshot = fetch_pics_checkpoints(
+            plan.missing_pics,
+            args.catalog,
+            args.pics_runner,
+            args.pics_chunk_size,
+            args.pics_timeout,
+        )
+    if pics_snapshot:
+        run([sys.executable, "-m", "scripts.catalog.enrich_pics", "--catalog", str(args.catalog), "--pics", str(pics_snapshot), "--out", str(args.catalog)])
     if not args.skip_enrichment:
         appids_path = args.catalog.with_name("weekly_active_appids.json")
         write_appids(appids_path, plan.missing_storefront)
@@ -216,11 +329,13 @@ def main() -> None:
         if plan.missing_reviews:
             run([sys.executable, "-m", "scripts.catalog.enrich_reviews", "--catalog", str(args.catalog), "--appids", str(appids_path), "--out", str(args.catalog), "--delay", str(args.reviews_delay),
                    "--retries", str(args.reviews_retries), "--retry-delay", str(args.reviews_retry_delay)])
-    # Export first so import_current can derive search/playable membership from
-    # the same catalog snapshot rather than one-week-old public data.
+    # Import normalized source data before publishing so the browser snapshot
+    # can materialize AI candidates, accepted feedback, and editorial locks
+    # stored in catalog SQLite. Weekly metadata imports never touch those tables.
+    run([sys.executable, "-m", "scripts.catalog.import_current", "--db", str(args.db), "--catalog", str(args.catalog), "--playable", str(args.playable), "--active-limit", str(args.active_limit)])
     run([sys.executable, "-m", "scripts.catalog.publish_playable", "--catalog", str(args.catalog), "--db", str(args.db), "--playable", str(args.playable), "--out", str(args.playable), "--active-limit", str(args.active_limit)])
-    run([sys.executable, "-m", "scripts.catalog.publish_labeling", "--catalog", str(args.catalog), "--demo", str(args.playable), "--out", str(args.labeling), "--active-limit", str(args.active_limit)])
-    run([sys.executable, "-m", "scripts.catalog.import_current", "--db", str(args.db), "--catalog", str(args.catalog), "--playable", str(args.playable), "--labeling", str(args.labeling), "--active-limit", str(args.active_limit)])
+    # Refresh Search/Playable memberships from the newly published snapshot.
+    run([sys.executable, "-m", "scripts.catalog.import_current", "--db", str(args.db), "--catalog", str(args.catalog), "--playable", str(args.playable), "--active-limit", str(args.active_limit)])
     run([sys.executable, "-m", "scripts.catalog.status", "--db", str(args.db)])
 
 if __name__ == "__main__":

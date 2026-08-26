@@ -15,12 +15,19 @@ from pathlib import Path
 from typing import Any
 
 from scripts.catalog.common import split_company_names
-from scripts.catalog.database import connect, file_sha256, initialize, json_text, payload_sha256, utc_now
+from scripts.catalog.database import (
+    connect,
+    file_sha256,
+    initialize,
+    json_text,
+    replace_ranked_memberships,
+    payload_sha256,
+    utc_now,
+)
 
 DEFAULT_DB = Path("data/catalog/catalog.sqlite")
 DEFAULT_CATALOG = Path("data/catalog/steamspy_top_2000.json")
 DEFAULT_PLAYABLE = Path("public/games_demo.json")
-DEFAULT_LABELING = Path("public/labeling_catalog.json")
 
 
 def load_json(path: Path) -> Any:
@@ -58,12 +65,25 @@ def source_time(game: dict[str, Any], service: str, fallback: str) -> str:
     return max(times, default=fallback)
 
 
-def upsert_app(connection: Any, game: dict[str, Any], playable: dict[str, Any], imported_at: str) -> None:
+def valid_difficulty(game: dict[str, Any]) -> bool:
+    difficulty = game.get("difficulty")
+    if not isinstance(difficulty, dict):
+        return False
+    score = difficulty.get("score")
+    return (
+        isinstance(score, (int, float))
+        and not isinstance(score, bool)
+        and 0 <= float(score) <= 100
+        and difficulty.get("level") in {"beginner", "easy", "normal", "hard", "hell"}
+    )
+
+
+def upsert_app(connection: Any, game: dict[str, Any], published: dict[str, Any], imported_at: str) -> None:
     appid = int(game["appId"])
-    difficulty = game.get("difficulty", {})
-    release_date = first_text(game.get("releaseDate"), playable.get("releaseDate"))
-    canonical_name = first_text(game.get("name"), playable.get("name"), f"App {appid}")
-    is_playable = bool(playable) or (str(game.get("type") or "").lower() == "game" and not bool(difficulty.get("excluded")))
+    release_date = first_text(game.get("releaseDate"), published.get("releaseDate"))
+    canonical_name = first_text(game.get("name"), published.get("name"), f"App {appid}")
+    is_searchable = bool(published)
+    is_playable = is_searchable and valid_difficulty(published)
     connection.execute(
         """
         INSERT INTO apps(
@@ -86,9 +106,9 @@ def upsert_app(connection: Any, game: dict[str, Any], playable: dict[str, Any], 
             first_text(game.get("type")),
             release_date,
             game.get("picsChangeNumber"),
+            int(is_searchable),
             int(is_playable),
-            int(is_playable),
-            int(bool(difficulty.get("excluded"))),
+            0,
             imported_at,
             imported_at,
         ),
@@ -191,22 +211,41 @@ def insert_prices(connection: Any, game: dict[str, Any], playable: dict[str, Any
 
 def replace_media(connection: Any, game: dict[str, Any], playable: dict[str, Any], imported_at: str) -> None:
     appid = int(game["appId"])
-    media = [
-        ("header", first_text(playable.get("header_image")), "storefront"),
-        ("screenshot", first_text(playable.get("hints", {}).get("screenshotUrl")), "storefront"),
-    ]
-    for kind, url, source in media:
-        if not url:
-            continue
+    retrieved_at = source_time(game, "storefront", imported_at)
+    header = first_text(playable.get("header_image"))
+    if header:
         connection.execute(
             """
             INSERT INTO app_media(appid, kind, position, url, source, retrieved_at)
-            VALUES (?, ?, 0, ?, ?, ?)
+            VALUES (?, 'header', 0, ?, 'storefront', ?)
             ON CONFLICT(appid, kind, position) DO UPDATE SET
                 url = excluded.url, source = excluded.source,
                 retrieved_at = COALESCE(excluded.retrieved_at, app_media.retrieved_at)
             """,
-            (appid, kind, url, source, source_time(game, "storefront", imported_at)),
+            (appid, header, retrieved_at),
+        )
+
+    catalog_screenshots = game.get("screenshots", []) if isinstance(game.get("screenshots"), list) else []
+    normalized_urls = list(dict.fromkeys(
+        str(item.get("path") or "").strip()
+        for item in catalog_screenshots
+        if isinstance(item, dict) and str(item.get("path") or "").strip()
+    ))
+    if not normalized_urls:
+        hints = playable.get("hints", {}) if isinstance(playable.get("hints"), dict) else {}
+        screenshot_urls = hints.get("screenshotUrls", [])
+        if isinstance(screenshot_urls, list):
+            normalized_urls = list(dict.fromkeys(
+                str(url).strip() for url in screenshot_urls if str(url or "").strip()
+            ))
+    connection.execute("DELETE FROM app_media WHERE appid = ? AND kind = 'screenshot'", (appid,))
+    for position, url in enumerate(normalized_urls):
+        connection.execute(
+            """
+            INSERT INTO app_media(appid, kind, position, url, source, retrieved_at)
+            VALUES (?, 'screenshot', ?, ?, 'storefront', ?)
+            """,
+            (appid, position, url, retrieved_at),
         )
 
 
@@ -244,40 +283,6 @@ def insert_metrics(connection: Any, game: dict[str, Any], imported_at: str) -> N
     )
 
 
-def upsert_scores(connection: Any, game: dict[str, Any], imported_at: str, playable: dict[str, Any] | None = None) -> None:
-    recognition = game.get("recognition", {})
-    difficulty = game.get("difficulty", {})
-    playable_difficulty = playable.get("difficulty", {}) if isinstance(playable, dict) else {}
-    if isinstance(playable_difficulty, dict) and playable_difficulty.get("level"):
-        difficulty = {**difficulty, **playable_difficulty}
-    connection.execute(
-        """
-        INSERT INTO app_scores(
-            appid, recognition_score, recognition_features_json, difficulty_score,
-            difficulty_level, difficulty_source, manual_level, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        ON CONFLICT(appid) DO UPDATE SET
-            recognition_score = COALESCE(excluded.recognition_score, app_scores.recognition_score),
-            recognition_features_json = COALESCE(excluded.recognition_features_json, app_scores.recognition_features_json),
-            difficulty_score = COALESCE(excluded.difficulty_score, app_scores.difficulty_score),
-            difficulty_level = COALESCE(excluded.difficulty_level, app_scores.difficulty_level),
-            difficulty_source = COALESCE(excluded.difficulty_source, app_scores.difficulty_source),
-            manual_level = COALESCE(excluded.manual_level, app_scores.manual_level),
-            updated_at = excluded.updated_at
-        """,
-        (
-            int(game["appId"]),
-            recognition.get("score"),
-            json_text(recognition.get("features", {})),
-            difficulty.get("score"),
-            difficulty.get("level"),
-            difficulty.get("source"),
-            difficulty.get("manualLevel"),
-            imported_at,
-        ),
-    )
-
-
 def replace_reviews(connection: Any, game: dict[str, Any], imported_at: str) -> None:
     """Replace the bounded helpful-review snapshot for each requested language."""
     appid = int(game["appId"])
@@ -299,12 +304,12 @@ def replace_reviews(connection: Any, game: dict[str, Any], imported_at: str) -> 
             review_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
             # Steam can return duplicate review bodies (especially localized
             # snapshots). The database deliberately enforces one body per app
-            # and language, so skip duplicates while retaining up to ten rows.
+            # and language, so skip duplicates while retaining up to one hundred rows.
             if review_hash in seen_hashes:
                 continue
             seen_hashes.add(review_hash)
             position += 1
-            if position > 10:
+            if position > 100:
                 break
             review_id = first_text(item.get("reviewId"), item.get("recommendationid"), f"{appid}:{language}:{position}") or f"{appid}:{language}:{position}"
             connection.execute(
@@ -363,7 +368,10 @@ def insert_observations(connection: Any, game: dict[str, Any], batch_id: int, ca
             game.get("picsChangeNumber"),
             str(catalog_path),
             payload_sha256(game),
-            json_text(game),
+            # The normalized catalog file is already retained and hashed as a
+            # source batch. Repeating the full game JSON once per AppID made
+            # every import add hundreds of megabytes without adding evidence.
+            None,
         ),
     )
     for source in game.get("sources", []):
@@ -416,13 +424,16 @@ def create_batch(connection: Any, path: Path, service: str, endpoint: str, retri
     return int(row["id"])
 
 
-def import_catalog(database: Path, catalog_path: Path, playable_path: Path, labeling_path: Path, active_limit: int = 6000) -> dict[str, int]:
+def import_catalog(database: Path, catalog_path: Path, playable_path: Path, active_limit: int = 6000) -> dict[str, int]:
     catalog_payload = load_json(catalog_path)
     playable_payload = load_json(playable_path)
-    labeling_payload = load_json(labeling_path)
     catalog_rows = rows(catalog_payload)
-    playable = by_appid(playable_payload)
-    labeling = by_appid(labeling_payload)
+    published = by_appid(playable_payload)
+    searchable_appids = set(published)
+    playable_appids = {
+        appid for appid, game in published.items()
+        if valid_difficulty(game)
+    }
     imported_at = utc_now()
     generated_at = first_text(catalog_payload.get("generatedAt") if isinstance(catalog_payload, dict) else None, imported_at) or imported_at
 
@@ -431,27 +442,26 @@ def import_catalog(database: Path, catalog_path: Path, playable_path: Path, labe
         initialize(connection)
         with connection:
             batch_id = create_batch(connection, catalog_path, "catalog-import", str(catalog_path), generated_at, len(catalog_rows))
-            create_batch(connection, playable_path, "catalog-import", str(playable_path), generated_at, len(playable))
-            labeling_generated = first_text(labeling_payload.get("generatedAt") if isinstance(labeling_payload, dict) else None, generated_at) or generated_at
-            create_batch(connection, labeling_path, "catalog-import", str(labeling_path), labeling_generated, len(labeling))
-            # The normalized import is a snapshot, not a new upstream observation on every rerun.
+            create_batch(connection, playable_path, "catalog-import", str(playable_path), generated_at, len(published))
+            # The normalized import is a snapshot, not a new upstream
+            # observation on every rerun or staging path. Keep exactly one
+            # current set; upstream SteamSpy/PICS/Storefront observations remain
+            # independent and historical.
             connection.execute(
-                "DELETE FROM source_observations WHERE service = 'catalog-import' AND endpoint = ?",
-                (str(catalog_path),),
+                "DELETE FROM source_observations WHERE service = 'catalog-import'",
             )
 
             for game in catalog_rows:
                 appid = int(game["appId"])
-                playable_game = playable.get(appid, {})
-                upsert_app(connection, game, playable_game, imported_at)
+                published_game = published.get(appid, {})
+                upsert_app(connection, game, published_game, imported_at)
                 replace_names(connection, game, imported_at)
                 replace_companies(connection, game, imported_at)
                 replace_tags(connection, game, imported_at)
                 replace_reviews(connection, game, imported_at)
-                insert_prices(connection, game, playable_game, imported_at)
-                replace_media(connection, game, playable_game, imported_at)
+                insert_prices(connection, game, published_game, imported_at)
+                replace_media(connection, game, published_game, imported_at)
                 insert_metrics(connection, game, imported_at)
-                upsert_scores(connection, game, imported_at, playable_game)
                 insert_provenance(connection, game, imported_at)
                 insert_observations(connection, game, batch_id, catalog_path, generated_at)
 
@@ -469,44 +479,33 @@ def import_catalog(database: Path, catalog_path: Path, playable_path: Path, labe
                     (appid,),
                 ).fetchone()
                 upsert_job(connection, appid, "pics", "", "", bool(state["pics_complete"]), game.get("picsChangeNumber"), imported_at)
-                if playable_game:
-                    upsert_job(connection, appid, "storefront", "english", "us", bool(state["english_complete"]), None, imported_at)
-                    upsert_job(connection, appid, "storefront", "schinese", "cn", bool(state["chinese_complete"]), None, imported_at)
+                # Detailed enrichment is intentionally wider than the playable
+                # answer pool. Persist job completion for every discovered row
+                # so reserve metadata is reusable and is not fetched again on
+                # every weekly run.
+                upsert_job(connection, appid, "storefront", "english", "us", bool(state["english_complete"]), None, imported_at)
+                upsert_job(connection, appid, "storefront", "schinese", "cn", bool(state["chinese_complete"]), None, imported_at)
                 reviews = game.get("reviews", {})
                 for language in ("english", "schinese"):
-                    review_complete = isinstance(reviews, dict) and isinstance(reviews.get(language), list) and len(reviews.get(language, [])) >= 10
+                    fetch_limits = game.get("reviewFetchLimits", {}) if isinstance(game.get("reviewFetchLimits"), dict) else {}
+                    review_complete = int(fetch_limits.get(language, 0) or 0) >= 100
                     upsert_job(connection, appid, "reviews", language, "", review_complete, None, imported_at)
 
-            for catalog_name in ("discovery", "active", "reserve", "search", "playable", "labeling"):
+            for catalog_name in ("discovery", "labeling"):
                 connection.execute("DELETE FROM catalog_memberships WHERE catalog = ?", (catalog_name,))
             for game in catalog_rows:
                 connection.execute(
                     "INSERT INTO catalog_memberships(catalog, appid, included_at, reason) VALUES ('discovery', ?, ?, 'SteamSpy candidate')",
                     (int(game["appId"]), imported_at),
                 )
-            active_appids = {int(game["appId"]) for game in catalog_rows[:max(0, active_limit)]}
-            for game in catalog_rows:
-                appid = int(game["appId"])
-                membership = "active" if appid in active_appids else "reserve"
-                connection.execute(
-                    "INSERT INTO catalog_memberships(catalog, appid, included_at, reason) VALUES (?, ?, ?, ?)",
-                    (membership, appid, imported_at, f"SteamSpy rank window; active_limit={active_limit}"),
-                )
-            for appid in playable:
-                connection.execute(
-                    "INSERT INTO catalog_memberships(catalog, appid, included_at, reason) VALUES ('search', ?, ?, 'current searchable catalog')",
-                    (appid, imported_at),
-                )
-                connection.execute(
-                    "INSERT INTO catalog_memberships(catalog, appid, included_at, reason) VALUES ('playable', ?, ?, 'current answer pool')",
-                    (appid, imported_at),
-                )
-            for appid in labeling:
-                connection.execute(
-                    "INSERT INTO catalog_memberships(catalog, appid, included_at, reason) VALUES ('labeling', ?, ?, 'current labeling catalog')",
-                    (appid, imported_at),
-                )
-
+            replace_ranked_memberships(
+                connection,
+                catalog_rows,
+                searchable_appids,
+                playable_appids,
+                active_limit,
+                imported_at,
+            )
             for key, value in {
                 "schema_version": "2",
                 "active_limit": str(active_limit),
@@ -536,6 +535,7 @@ def database_stats(connection: Any) -> dict[str, int]:
         "apps": scalar(connection, "SELECT COUNT(*) FROM apps"),
         "active": scalar(connection, "SELECT COUNT(*) FROM catalog_memberships WHERE catalog = 'active'"),
         "reserve": scalar(connection, "SELECT COUNT(*) FROM catalog_memberships WHERE catalog = 'reserve'"),
+        "editorial_excluded": scalar(connection, "SELECT COUNT(*) FROM catalog_exclusions"),
         "searchable": scalar(connection, "SELECT COUNT(*) FROM catalog_memberships WHERE catalog = 'search'"),
         "playable": scalar(connection, "SELECT COUNT(*) FROM catalog_memberships WHERE catalog = 'playable'"),
         "reviews": scalar(connection, "SELECT COUNT(DISTINCT appid) FROM app_reviews"),
@@ -552,10 +552,9 @@ def main() -> None:
     parser.add_argument("--db", type=Path, default=DEFAULT_DB)
     parser.add_argument("--catalog", type=Path, default=DEFAULT_CATALOG)
     parser.add_argument("--playable", type=Path, default=DEFAULT_PLAYABLE)
-    parser.add_argument("--labeling", type=Path, default=DEFAULT_LABELING)
     parser.add_argument("--active-limit", type=int, default=6000)
     args = parser.parse_args()
-    stats = import_catalog(args.db, args.catalog, args.playable, args.labeling, args.active_limit)
+    stats = import_catalog(args.db, args.catalog, args.playable, args.active_limit)
     print(f"db={args.db}")
     print(" ".join(f"{key}={value}" for key, value in stats.items()))
 

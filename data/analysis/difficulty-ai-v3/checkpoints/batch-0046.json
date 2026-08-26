@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 992300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "国产动作游戏在Steam圈有一定传播，但大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "经典Valve多人FPS，历史地位高但当前年轻玩家辨识度有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1184370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "CRPG圈层代表作，普通Steam玩家很难直接想到具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 645630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "修车模拟细分品类有玩家基础，但跨圈认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1404210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "依托RDR2的知名IP，线上模式认知随本作普及",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 729040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "无主之地系列经典首作，但增强版具体条目辨识度低于续作",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 823130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "恶搞吃鸡曾短期流行，如今多靠沙雕视频圈传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 242760,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "生存恐怖联机代表作，普通Steam玩家有合理认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1250,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "经典合作僵尸FPS，品类地位明确但大众认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 541570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "独立恐怖叙事在特定圈层知名，普通玩家接触较少",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 49520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "无主之地系列代表作，刷宝射击普及度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 304390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "育碧大型多人动作游戏，PC玩家群体认知稳定",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1584090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "东方同人圈和休闲模拟圈知名，未进入大众认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "FPS历史代表作，游戏圈有基础知名度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1672970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "Minecraft IP加持，但具体衍生作辨识度弱于本传",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 281990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "太空大战略代表作，跨圈认知可靠但品类门槛明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "经典免费英雄射击，互联网梗文化流传广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 20900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "巫师系列极有名，但初代增强版独立辨识度有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 331470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "视觉小说圈层地位明确，普通Steam玩家很难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 637650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "最终幻想系列大作，PC版有基础知名度但不入入门",
+      "reviewPriority": "normal"
+    }
+  ]
+}

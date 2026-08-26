@@ -16,15 +16,15 @@ const resources = {
         settings: 'Settings',
         closeSettings: 'Close',
         tools: 'Tools',
-        openLabeler: 'Difficulty labeler',
+        mainMenu: 'Main menu',
+        openLabeler: 'Difficulty manager',
         language: 'Language',
         difficulty: 'Difficulty',
         questionPool: 'Question pool',
         presetPool: 'Preset difficulty',
         libraryPool: 'My library',
         libraryPoolStatus: 'Personal library · {{count}} matching games',
-        modelReady: 'Local model: {{count}} labels · {{pool}} games in this pool',
-        modelFallback: 'Baseline pool · {{pool}} games',
+        modelPublished: 'Published catalog · {{pool}} games in this pool',
         attempts: 'Attempts left',
         attemptsLeft: '{{count}} attempts left',
         surrender: 'Reveal answer',
@@ -32,6 +32,13 @@ const resources = {
         guessHelp: 'Search by game title. Each result tells you how close the guess is to the answer.',
         playAgain: 'Play another game',
         footer: 'SteamGuess · A small game built around Steam data',
+      },
+      navigation: {
+        returnToMenuTitle: 'Return to main menu?',
+        returnToMenuMessage: 'Your current game progress will be cleared and this round cannot be continued.',
+        cancel: 'Cancel',
+        confirmReturnToMenu: 'Return to main menu',
+        returning: 'Returning…',
       },
       hint: {
         button: 'Hint',
@@ -50,6 +57,13 @@ const resources = {
         reviewHelp: 'Reveal one saved Steam review from this game.',
         reviewTitle: 'A Steam review',
         reviewCaption: 'Review hint · the game title may be masked',
+        startingHeading: 'Starting clue',
+        startingHelp: 'This clue opens automatically and does not consume a hint.',
+        startingMode: {
+          screenshot: 'Screenshot',
+          review: 'Review',
+          none: 'Off',
+        },
       },
       feedback: {
         open: 'Difficulty feels wrong?',
@@ -57,7 +71,7 @@ const resources = {
         title: 'What difficulty should this game be?',
         close: 'Close difficulty feedback',
         levelLabel: 'Difficulty level',
-        level: { easy: 'Easy', normal: 'Normal', hard: 'Hard', hell: 'Hell' },
+        level: { beginner: 'Beginner', easy: 'Easy', normal: 'Normal', hard: 'Hard', hell: 'Hell' },
         scoreLabel: 'Difficulty score',
         scoreInput: 'Difficulty score from 0 to 100',
         submit: 'Submit feedback',
@@ -170,6 +184,7 @@ const resources = {
         settings: '设置',
         closeSettings: '关闭',
         tools: '工具',
+        mainMenu: '主菜单',
         openLabeler: '进入难度标注',
         language: '语言',
         difficulty: '题库难度',
@@ -177,8 +192,7 @@ const resources = {
         presetPool: '预制难度',
         libraryPool: '我的游戏库',
         libraryPoolStatus: '个人题库 · 当前匹配 {{count}} 款',
-        modelReady: '本地模型：{{count}} 条人工标注 · 当前题库 {{pool}} 款',
-        modelFallback: '基线题库 · 当前 {{pool}} 款',
+        modelPublished: '已发布题库 · 当前 {{pool}} 款',
         attempts: '剩余机会',
         attemptsLeft: '还剩 {{count}} 次机会',
         surrender: '揭晓答案',
@@ -186,6 +200,13 @@ const resources = {
         guessHelp: '按游戏名称搜索。每次提交后，表格会告诉你各项属性离答案有多近。',
         playAgain: '再来一局',
         footer: 'SteamGuess · 一个围绕 Steam 数据构建的小游戏',
+      },
+      navigation: {
+        returnToMenuTitle: '返回主菜单？',
+        returnToMenuMessage: '当前游戏进度会被清除，无法继续本局。你可以取消，或者返回主菜单。',
+        cancel: '取消',
+        confirmReturnToMenu: '返回主菜单',
+        returning: '正在返回…',
       },
       hint: {
         button: '提示',
@@ -204,6 +225,13 @@ const resources = {
         reviewHelp: '展示一条已保存的 Steam 评论。',
         reviewTitle: '一条 Steam 评论',
         reviewCaption: '评论提示 · 游戏名称可能已打码',
+        startingHeading: '开局线索',
+        startingHelp: '开局自动展示，不计入提示次数；素材缺失时会自动切换。',
+        startingMode: {
+          screenshot: '截图',
+          review: '评论',
+          none: '关闭',
+        },
       },
       feedback: {
         open: '难度不合理？',
@@ -211,7 +239,7 @@ const resources = {
         title: '你认为这款游戏应该是什么难度？',
         close: '关闭难度反馈',
         levelLabel: '难度等级',
-        level: { easy: '简单', normal: '普通', hard: '困难', hell: '地狱' },
+        level: { beginner: '入门', easy: '简单', normal: '普通', hard: '困难', hell: '地狱' },
         scoreLabel: '难度分数',
         scoreInput: '输入 0 到 100 的难度分数',
         submit: '提交反馈',
@@ -324,3 +352,9 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
+
+export function changeLanguage(language: 'zh' | 'en') {
+  void i18n.changeLanguage(language);
+  localStorage.setItem('steamguess-language', language);
+  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+}

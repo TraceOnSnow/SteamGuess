@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1135690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立游戏奖项和治愈题材有名，但未进入普通玩家认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1794680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "现象级独立玩法席卷Steam圈，已形成可靠跨圈认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 55230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "开放世界恶搞名作，系列和角色辨识度较高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1934680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典RTS衍生作重制，品类地位明确但大众辨识有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 492720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "海岛经营系列在策略模拟圈有稳定地位，尚具可靠认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 447020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "模拟农场系列有固定玩家盘，具体旧作难被普通玩家想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 8930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "文明系列和五代都是策略游戏公共常识，受众广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2021910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "免费概念游戏有直播和梗传播，但认知仍偏网络游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 346110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "恐龙生存代表作，Steam和直播圈知名度都很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 35140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "蝙蝠侠IP和名作辨识度强，具体版本不影响认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2531310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "主机名作PC重制，争议话题和IP认知都很广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 409720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "生化奇兵系列有名，但二代重制版具体辨识度明显更低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 70,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.92,
+      "reason": "PC游戏史标志性作品，入门玩家也多听说过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 239820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "独立经营模拟经典，Steam老玩家较熟悉，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1211020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "物理沙盒联机小游戏在视频平台有传播，但未成大众常识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 646570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "肉鸽卡牌代表作，Steam核心玩家中认知极强",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 262410,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "属于枪械拆解教学工具，不是正常猜题游戏",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 109600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 68,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "DND题材免费MMO有稳定玩家盘，普通玩家认知有限",
+      "reviewPriority": "high"
+    }
+  ]
+}

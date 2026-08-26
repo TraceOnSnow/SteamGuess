@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 47780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典生存恐怖系列，大众有印象但具体续作辨识度不如重制版与初代",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1468810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.92,
+      "reason": "国产修仙现象级爆款，中文玩家圈公共认知很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 228200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "二战 RTS 代表作，核心 PC 玩家熟悉，跨圈传播有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 475550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "反乌托邦题材独立游戏有辨识度，普通玩家较难主动想起",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 553850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "近年联机射击现象级作品，直播与社交媒体传播广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1222680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "极品飞车系列知名度高，Heat 也是大众常见的系列近作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 269210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 75,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "像素刷宝 ARPG 有稳定玩家，但认知集中在折扣长尾和细分圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 40700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典手绘解谜独立作品，视觉辨识度高，但仍偏解谜玩家圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 289650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "刺客信条系列广泛知名，本作在系列内辨识度中等偏上",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 386180,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "载具战斗网游有稳定玩家，认知集中在 Gaijin 与载具对战圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 799600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "舰船建造沙盒在细分圈有地位，普通玩家认知很低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1080110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "赛车拟真年货有品类地位，具体年份作品难称大众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 838350,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "国产武侠沙盒名作，中国 Steam 圈认知高但未达大众文化级",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1286680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "无主之地系列加持明显，但衍生作自身认知弱于主系列",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 464920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "火星殖民经营有稳定受众，认知仍以策略经营圈为主",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 942970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "国产口碑推理独立游戏，中文玩家圈传播广，尚未大众化",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3241660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "近期联机恐怖喜剧爆款，直播热度高但长期文化认知尚浅",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2479810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "战术撤离射击圈层明确，普通玩家认知多停留在发行热度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 753640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "口碑探索解谜代表作，媒体和独立圈知名，未进入简单",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 326460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "休闲坦克对战有稳定玩家，但认知主要依赖联机对战圈",
+      "reviewPriority": "high"
+    }
+  ]
+}

@@ -2,6 +2,9 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 export interface ApiOptions {
   rootDir?: string;
   dbPath?: string;
+  catalogDbPath?: string;
+  adminToken?: string;
+  allowAdminWithoutToken?: boolean;
   steamApiKey?: string;
   trustProxy?: boolean;
   writeRateLimit?: number;

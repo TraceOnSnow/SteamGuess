@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 544810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "二战卡牌对战有稳定玩家基础，但认知集中在卡牌与战棋圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1139900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "动作游戏圈有较高知名度，但未形成稳定大众常识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 529340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "大战略与经济模拟门槛明显，普通玩家多靠Paradox圈层认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1366800,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "属于准星叠加软件，不是可猜题的游戏",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1313140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "独立游戏爆款且Steam圈传播明显，但尚未进入大众入门",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 585420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "载具建造沙盒有稳定玩家群，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1151340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "Fallout系列大众知名度高，76本身也因争议被广泛知道",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "Valve的PC历史名作，普通Steam玩家普遍认识但非当代爆款",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 220200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "航天模拟代表作，靠趣味传播和圈层口碑形成知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1222690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 44,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "曾获年度游戏，西方RPG圈层知名，但大陆普及度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1363080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "城市建造热门新品，短期热度高但认知仍偏策略圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 412220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费高难平台跳跃有稳定圈子，普通玩家基本不认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1401590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "迪士尼IP带来强辨识度，但具体游戏未成大众级常识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 444090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "免费英雄射击有庞大玩家群，常作为守望同类被认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 9450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "战锤RTS经典，但具体资料片认知局限于核心圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1106840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "挖矿自动化沙盒有稳定玩家，普通玩家认知依赖品类",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 230410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "长期热门免费刷宝射击，Steam圈内有稳定广泛认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 310950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "街霸系列是大众格斗常识，五代知名度低于新作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2231450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立平台跳跃爆款，靠梗和社区传播但未入大众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1385380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "合作Roguelike卡牌有固定受众，但独立圈外认知较弱",
+      "reviewPriority": "normal"
+    }
+  ]
+}

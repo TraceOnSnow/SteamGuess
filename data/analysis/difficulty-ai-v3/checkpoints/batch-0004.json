@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1817230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "节奏动作玩法出圈，2023年游戏圈话题度高，但未达大众入门级认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 571740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "派对高尔夫品类有稳定玩家，认知主要依赖休闲联机圈，跨圈度低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 222880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "战术FPS经典原作，硬核射击圈有名，但具体条目大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 899770,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "ARPG发布期热度高，核心玩家认知强，普通玩家跨圈认知仍有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1196590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "生化危机系列热门续作，恐怖游戏圈外也有广泛认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 203140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "杀手系列知名度高，该老作品具体辨识度弱于现代本篇",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 236390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "免费军事载具网游长期存在，玩家规模大，普通PC玩家较常听说",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1549970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "异形IP认知强，该合作射击游戏具体辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 377160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.98,
+      "reason": "开放世界RPG代表作，系列与梗文化认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1388770,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "反主流怪奇FPS有亚文化热度，普通玩家基本不认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 601510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "游戏王IP大众化，但该具体免费卡牌作品在PC圈认知中等",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 4500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "PC经典生存FPS，长期影响力强但年轻玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 860510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "暗黑解谜平台游戏经主播视频传播，普通玩家较常听说",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 220440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "鬼泣系列知名度高，该重制衍生作认知弱于现代正传",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 240720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.9,
+      "reason": "高难攀岩游戏已成中文互联网现象级梗，公共认知高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 38410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "辐射IP有大众认知，该经典CRPG具体作品对年轻玩家门槛高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1161580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "太空拆解模拟有稳定独立玩家群，普通Steam玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 412020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "地铁系列在PC FPS圈传播广，该作知名度和口碑均较高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 41070,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "经典老派FPS有固定受众，具体第三作对年轻玩家辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1268750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "电影IP知名，该合作射击作品在国内认知较窄",
+      "reviewPriority": "normal"
+    }
+  ]
+}

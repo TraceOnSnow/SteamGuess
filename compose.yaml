@@ -1,4 +1,14 @@
 services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
   steamguess:
     build:
       context: .
@@ -6,6 +16,9 @@ services:
         VITE_LABELER_ENABLED: "false"
         VITE_BACKEND_ENABLED: "true"
     restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
     ports:
       - "127.0.0.1:4173:4173"
     environment:
@@ -13,10 +26,14 @@ services:
       PORT: 4173
       STEAM_WEB_API_KEY: ${STEAM_WEB_API_KEY:-}
       STEAMGUESS_DB_PATH: /app/data/runtime/steamguess.sqlite
+      STEAMGUESS_CATALOG_DB_PATH: /app/data/catalog/catalog.sqlite
       STEAMGUESS_TRUST_PROXY: "true"
       STEAMGUESS_WRITE_RATE_LIMIT: 60
       STEAMGUESS_PROFILE_RATE_LIMIT: 12
       STEAMGUESS_REQUEST_LOG: "true"
+      STEAMGUESS_ROOM_STORE: redis
+      STEAMGUESS_REDIS_URL: redis://redis:6379
+      STEAMGUESS_REDIS_PREFIX: steamguess:multiplayer
     volumes:
       - steamguess-data:/app/data
 

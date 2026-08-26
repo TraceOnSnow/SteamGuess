@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "Half-Life 系列地位极高，但具体章节的独立辨识度低于本篇",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1599600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "联机烹饪类已有稳定传播，但普通 Steam 玩家未必都认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 304430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "独立游戏名作，艺术风格辨识度高，但认知仍偏游戏圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 578650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "Obsidian 出品和太空 RPG 设定较有名，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 360430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "系列知名度高，但本作及 Definitive Edition 条目辨识度偏弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 211820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "沙盒建造圈知名度不错，但远低于 Terraria 的大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1388880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "DDLC 梗文化出圈，但 Plus 版本作为具体条目认知较弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 261640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.77,
+      "reason": "Borderlands 系列有名，但前传本身辨识度明显弱于正传",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1687950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "JRPG 和动画圈层内均具高知名度，已进入普通玩家认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1238840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "战地系列和一战题材知名度高，Steam 玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1384160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "格斗游戏与动画风格圈层地位明确，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "CS 系列极有名，但 Condition Zero 具体条目已不突出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 361280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "经营管理与独立游戏圈有玩家基础，大众跨圈认知较低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1237970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "优质单人战役和高评价使其在 PC 玩家中有较高知名度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 238320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "恐怖游戏代表作，直播与网络文化传播很广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 105600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "沙盒建造公共认知极高，已进入入门级常识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 239030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "独立游戏经典且梗文化出圈，普通玩家较容易听过",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 108710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "Remedy 叙事动作圈较有名，但大众和年轻玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1119730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "模拟经营主播圈有存在感，普通 Steam 玩家仍难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2709570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "免费联机经营类有传播热度，但长期大众认知仍待观察",
+      "reviewPriority": "high"
+    }
+  ]
+}

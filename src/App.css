@@ -50,6 +50,12 @@
   justify-content: space-between;
 }
 
+.header-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .brand-mark {
   display: grid;
   width: 44px;
@@ -331,6 +337,22 @@
     padding: 18px 20px 66px;
   }
 
+  .game-started .app-header {
+    padding: 10px 12px;
+  }
+
+  .game-started .header-topbar {
+    gap: 8px;
+  }
+
+  .game-started .header-actions {
+    gap: 4px;
+  }
+
+  .game-started .header-actions .icon-button {
+    padding-inline: 10px;
+  }
+
   .hero-copy {
     margin-top: 48px;
   }
@@ -354,8 +376,14 @@
   }
 }
 
-/* Once the first guess is submitted, the game surface becomes the page header. */
+/* Keep navigation available while compacting the marketing copy after the first guess. */
 .game-started .app-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.game-started .app-header::after,
+.game-started .hero-copy {
   display: none;
 }
 

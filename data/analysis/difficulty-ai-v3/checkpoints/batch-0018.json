@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 291550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "免费平台格斗在Steam有体量，但中国大陆跨圈认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 871720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "FNAF系列知名度极高，此具体作在粉丝圈外认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1876890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "中文武侠RPG口碑不错，但认知主要限于国风RPG玩家圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 21090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "经典恐怖FPS有品类地位，但年轻普通玩家当前认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2881650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "曾随联机恐怖直播走红，但当前认知更集中在联机圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 200510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "回合战术策略代表作，玩家圈认知可靠但仍有类型门槛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1022450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "免费RTS有稳定玩家，但认知属于Steam长尾细分圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 678950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "龙珠IP很强，格斗游戏本身也较出圈但低于大众级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 213610,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "索尼克IP知名，但具体旧作认知主要限平台跳跃玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 632470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 41,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "获奖CRPG在中文PC圈有可靠认知，仍具明显类型门槛",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1084600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国产生活模拟续作在中文玩家圈有口碑，但未广泛破圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 204360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "经典合作清版游戏老玩家多听过，当前跨圈热度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1468260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "放置游戏圈有玩家基础，认知基本局限于增量游戏长尾",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2300320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "模拟农场系列是品类代表，但具体新作大众认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2218750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "动作肉鸽社区较认可，普通Steam玩家认知仍偏窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 7940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.88,
+      "reason": "使命召唤经典作及现代战争梗有很强大众认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 337000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "沉浸式模拟经典系列续作，具体作品主要限核心玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 274520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "独立恐怖生存佳作在恐怖圈有地位，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 568220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "Project Moon圈层地位明确，中文圈有传播但整体小众",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 253230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立3D平台跳跃代表作，核心玩家熟悉但跨圈不足",
+      "reviewPriority": "normal"
+    }
+  ]
+}

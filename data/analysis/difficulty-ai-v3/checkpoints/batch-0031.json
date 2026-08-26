@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 223710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费恐怖游戏经典，主要认知集中在恐怖游戏与Steam老玩家圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1888930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "IP和剧集跨圈认知极高，PC版具体作品也容易被认出",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 761890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "MMO沙盒圈层有名，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1284410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "依靠巫师IP和昆特牌梗有跨圈认知，但独立卡牌版本热度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 588650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "动作肉鸽代表作，Steam玩家普遍听过但未达大众公共知识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1240440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "光环系列全球知名，国内普通PC玩家认识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 640820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "CRPG核心圈有地位，普通Steam玩家很难认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 599140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "模拟经营独立圈知名度尚可，但跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 368500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "刺客信条系列大众知名度高，具体作品辨识度略降",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 201790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典塔防合作游戏，但认知偏老Steam和品类玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 555160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "VR射击代表作，认知局限于VR和射击玩家圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 629760,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "中世纪多人近战有稳定玩家，但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 824270,
+      "eligible": false,
+      "exclusionReason": "tool",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "瞄准练习工具，不适合作为游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 477160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "休闲联机解谜有较高知名度，仍未到大众公共知识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 670290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 83,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "免费台球小游戏，认知集中在休闲免费游戏长尾",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 287450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "经典RTS但当前普通Steam玩家认知有限，具体重制版更弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 434650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国产肉鸽在中文Steam圈有认知，但大众知名度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1286830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "星战IP加持但MMO本体在国内认知主要限圈层玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 692890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "动作肉鸽圈有口碑，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1086940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "TGA年度游戏和中文玩家圈认知极高，属于入门公共知识",
+      "reviewPriority": "low"
+    }
+  ]
+}

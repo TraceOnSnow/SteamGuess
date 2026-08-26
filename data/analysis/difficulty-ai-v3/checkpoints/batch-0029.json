@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 273110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "CS系列知名，但该Nexon衍生作在中文玩家认知很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1092790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立卡牌叙事佳作，Steam圈知名度较高但未达大众",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 47890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "模拟人生系列大众认知强，三代具体条目辨识度略弱",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 466240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "免费恐怖社交推理曾有人气，但认知主要限多人恐怖圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1295660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "文明系列与2025新作关注度高，普通Steam玩家较可能知道",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 863550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "杀手系列和潜行玩法知名度高，2代条目仍易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 235460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "雷电与梗文化出圈，动作玩家和中文互联网认知较高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 570940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.88,
+      "reason": "黑魂系列与魂系文化已是中文玩家公共知识，重制版辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2399830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "方舟系列知名，生存飞升作为重制条目仍有较强辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1506830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "FIFA系列大众认知极高，但年度版本具体辨识度略降",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 627270,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "DC与格斗圈层知名，但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 744900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "免费僵尸网游有稳定玩家，但中文玩家几乎不认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1611910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "战锤战棋属于明确细分圈层，具体条目更不为人知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 250320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "Telltale叙事冒险经典，但中文玩家认知偏类型圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "PopCap休闲经典有地位，但中国年轻Steam玩家认知弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 550650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "免费FPS拥有规模用户，但中文玩家与作品辨识度均低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 460950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "独立动作佳作在Steam圈较知名，但未形成跨圈大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 552520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "孤岛惊魂系列主流开放世界代表，5代辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1127400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "自动化塔防在策略圈有口碑，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 232090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "合作打僵尸FPS有稳定知名度，但主要局限射击联机圈",
+      "reviewPriority": "normal"
+    }
+  ]
+}

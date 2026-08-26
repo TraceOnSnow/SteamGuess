@@ -1,0 +1,5955 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Independent trial evaluation; legacy fields are context/conflict evidence, not ground truth.",
+  "targetAudience": "Chinese-speaking Steam/PC players with broad mainstream gaming awareness.",
+  "scale": {
+    "easy": "0-24",
+    "normal": "25-49",
+    "hard": "50-74",
+    "hell": "75-100",
+    "direction": "higher means harder to identify"
+  },
+  "games": [
+    {
+      "appId": 2358720,
+      "name": "Black Myth: Wukong",
+      "localizedNames": {
+        "en": "Black Myth: Wukong",
+        "zh-cn": "黑神话：悟空"
+      },
+      "appType": "game",
+      "releaseDate": "2024 年 8 月 19 日",
+      "tags": [
+        "Mythology",
+        "Action RPG",
+        "Action",
+        "Souls-like",
+        "RPG",
+        "Combat",
+        "Story Rich",
+        "Singleplayer",
+        "Action-Adventure",
+        "Dark Fantasy",
+        "Atmospheric",
+        "Adventure",
+        "3D",
+        "Fantasy",
+        "Hack and Slash",
+        "Difficult",
+        "Third Person",
+        "Music",
+        "Violent",
+        "Open World"
+      ],
+      "developers": [
+        "Game Science"
+      ],
+      "publishers": [
+        "Game Science"
+      ],
+      "metrics": {
+        "ccu": 15004,
+        "peak_yesterday": 15004,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 1111720,
+        "negative": 38378,
+        "reviews_total": 1150098,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 0.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1086940,
+      "name": "Baldur's Gate 3",
+      "localizedNames": {
+        "en": "Baldur's Gate 3",
+        "zh-cn": "博德之门3"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 8 月 3 日",
+      "tags": [
+        "RPG",
+        "Character Customization",
+        "Choices Matter",
+        "Turn-Based Combat",
+        "Story Rich",
+        "Sexual Content",
+        "CRPG",
+        "Fantasy",
+        "Adventure",
+        "Romance",
+        "Online Co-Op",
+        "Multiplayer",
+        "Strategy",
+        "Nudity",
+        "Singleplayer",
+        "Co-op Campaign",
+        "Class-Based",
+        "Dark Fantasy",
+        "Combat",
+        "LGBTQ+"
+      ],
+      "developers": [
+        "Larian Studios"
+      ],
+      "publishers": [
+        "Larian Studios"
+      ],
+      "metrics": {
+        "ccu": 54771,
+        "peak_yesterday": 54771,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 736688,
+        "negative": 23974,
+        "reviews_total": 760662,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 1.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 431960,
+      "name": "Wallpaper Engine",
+      "localizedNames": {
+        "en": "Wallpaper Engine",
+        "zh-cn": "Wallpaper Engine：壁纸引擎"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 11 月 16 日",
+      "tags": [
+        "Utilities",
+        "Anime",
+        "Software",
+        "Design & Illustration",
+        "Animation & Modeling",
+        "First-Person",
+        "Indie",
+        "Cute",
+        "Memes",
+        "Action",
+        "Singleplayer",
+        "Funny",
+        "Early Access",
+        "Photo Editing",
+        "Sandbox",
+        "Gaming",
+        "Horror",
+        "Game Development",
+        "Souls-like",
+        "Dating Sim"
+      ],
+      "developers": [
+        "Wallpaper Engine Team"
+      ],
+      "publishers": [
+        "Wallpaper Engine Team"
+      ],
+      "metrics": {
+        "ccu": 91184,
+        "peak_yesterday": 91184,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 876898,
+        "negative": 17560,
+        "reviews_total": 894458,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 15.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Heuristic fill",
+          "user_rating": null,
+          "match_method": "heuristic-fill"
+        }
+      }
+    },
+    {
+      "appId": 1447430,
+      "name": "小黑盒加速器",
+      "localizedNames": {
+        "en": "小黑盒加速器",
+        "zh-cn": "小黑盒加速器"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 5 月 24 日",
+      "tags": [
+        "Game Development",
+        "Software Training",
+        "Utilities",
+        "Software"
+      ],
+      "developers": [
+        "Qing Feng Beijing Technology"
+      ],
+      "publishers": [
+        "Qing Feng Beijing Technology"
+      ],
+      "metrics": {
+        "ccu": 3328,
+        "peak_yesterday": 3328,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 7088,
+        "negative": 1800,
+        "reviews_total": 8888,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 1245620,
+      "name": "ELDEN RING",
+      "localizedNames": {
+        "en": "ELDEN RING",
+        "zh-cn": "艾尔登法环"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 2 月 24 日",
+      "tags": [
+        "Souls-like",
+        "Open World",
+        "Dark Fantasy",
+        "RPG",
+        "Difficult",
+        "Action RPG",
+        "Multiplayer",
+        "Third Person",
+        "Fantasy",
+        "Singleplayer",
+        "Online Co-Op",
+        "Action",
+        "Co-op",
+        "Atmospheric",
+        "Great Soundtrack",
+        "PvP",
+        "Violent",
+        "3D",
+        "Character Customization",
+        "Family Friendly"
+      ],
+      "developers": [
+        "FromSoftware, Inc."
+      ],
+      "publishers": [
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
+      ],
+      "metrics": {
+        "ccu": 29529,
+        "peak_yesterday": 29529,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 981540,
+        "negative": 75137,
+        "reviews_total": 1056677,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 2622380,
+      "name": "ELDEN RING NIGHTREIGN",
+      "localizedNames": {
+        "en": "ELDEN RING NIGHTREIGN",
+        "zh-cn": "艾尔登法环 黑夜君临"
+      },
+      "appType": "game",
+      "releaseDate": "2025 年 5 月 29 日",
+      "tags": [
+        "Souls-like",
+        "Online Co-Op",
+        "Multiplayer",
+        "Roguelike",
+        "Co-op",
+        "Singleplayer",
+        "PvE",
+        "Action",
+        "Third Person",
+        "Roguelite",
+        "Action RPG",
+        "Open World",
+        "RPG",
+        "Dark",
+        "Violent",
+        "3D",
+        "Survival",
+        "Lore-Rich",
+        "Story Rich",
+        "Dating Sim"
+      ],
+      "developers": [
+        "FromSoftware, Inc."
+      ],
+      "publishers": [
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
+      ],
+      "metrics": {
+        "ccu": 163599,
+        "peak_yesterday": 163599,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 48901,
+        "negative": 16771,
+        "reviews_total": 65672,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 1091500,
+      "name": "Cyberpunk 2077",
+      "localizedNames": {
+        "en": "Cyberpunk 2077",
+        "zh-cn": "赛博朋克 2077"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 12 月 9 日",
+      "tags": [
+        "Cyberpunk",
+        "Open World",
+        "Nudity",
+        "RPG",
+        "Singleplayer",
+        "Story Rich",
+        "Sci-fi",
+        "FPS",
+        "Futuristic",
+        "First-Person",
+        "Atmospheric",
+        "Exploration",
+        "Action",
+        "Violent",
+        "Great Soundtrack",
+        "Action RPG",
+        "Adventure",
+        "Character Customization",
+        "Immersive Sim",
+        "LGBTQ+"
+      ],
+      "developers": [
+        "CD PROJEKT RED"
+      ],
+      "publishers": [
+        "CD PROJEKT RED"
+      ],
+      "metrics": {
+        "ccu": 22265,
+        "peak_yesterday": 22265,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 713071,
+        "negative": 131850,
+        "reviews_total": 844921,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "localizedNames": {
+        "en": "Counter-Strike: Global Offensive",
+        "zh-cn": "Counter-Strike 2"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 9 月 15 日",
+      "tags": [
+        "FPS",
+        "Shooter",
+        "Multiplayer",
+        "Competitive",
+        "Action",
+        "Team-Based",
+        "eSports",
+        "Tactical",
+        "First-Person",
+        "PvP",
+        "Online Co-Op",
+        "Co-op",
+        "Strategy",
+        "Military",
+        "War",
+        "Trading",
+        "Difficult",
+        "Realistic",
+        "Fast-Paced",
+        "Moddable"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 1013936,
+        "peak_yesterday": 1013936,
+        "peak_7d": null,
+        "owners_min": 100000000,
+        "owners_max": 200000000,
+        "positive": 7642084,
+        "negative": 1173003,
+        "reviews_total": 8815087,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 413150,
+      "name": "Stardew Valley",
+      "localizedNames": {
+        "en": "Stardew Valley",
+        "zh-cn": "Stardew Valley"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 2 月 26 日",
+      "tags": [
+        "Farming Sim",
+        "Pixel Graphics",
+        "Multiplayer",
+        "Life Sim",
+        "RPG",
+        "Relaxing",
+        "Simulation",
+        "Agriculture",
+        "Crafting",
+        "Indie",
+        "Sandbox",
+        "Building",
+        "Casual",
+        "Open World",
+        "Singleplayer",
+        "2D",
+        "Dating Sim",
+        "Cute",
+        "Great Soundtrack",
+        "Fishing"
+      ],
+      "developers": [
+        "ConcernedApe"
+      ],
+      "publishers": [
+        "ConcernedApe"
+      ],
+      "metrics": {
+        "ccu": 50662,
+        "peak_yesterday": 50662,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 872384,
+        "negative": 13811,
+        "reviews_total": 886195,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 10.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 550,
+      "name": "Left 4 Dead 2",
+      "localizedNames": {
+        "en": "Left 4 Dead 2",
+        "zh-cn": "Left 4 Dead 2"
+      },
+      "appType": "game",
+      "releaseDate": "2009 年 11 月 16 日",
+      "tags": [
+        "Zombies",
+        "Co-op",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "Online Co-Op",
+        "Action",
+        "Survival",
+        "Horror",
+        "First-Person",
+        "Gore",
+        "Team-Based",
+        "Moddable",
+        "Survival Horror",
+        "Post-apocalyptic",
+        "Singleplayer",
+        "Adventure",
+        "Local Co-Op",
+        "Replay Value",
+        "Tactical"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 25122,
+        "peak_yesterday": 25122,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 940221,
+        "negative": 23762,
+        "reviews_total": 963983,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 8.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 4000,
+      "name": "Garry's Mod",
+      "localizedNames": {
+        "en": "Garry's Mod",
+        "zh-cn": "Garry's Mod"
+      },
+      "appType": "game",
+      "releaseDate": "2006 年 11 月 29 日",
+      "tags": [
+        "Sandbox",
+        "Moddable",
+        "Multiplayer",
+        "Physics",
+        "Building",
+        "Casual",
+        "Funny",
+        "First-Person",
+        "Singleplayer",
+        "FPS",
+        "Simulation",
+        "Comedy",
+        "Shooter",
+        "Online Co-Op",
+        "Co-op",
+        "Action",
+        "Indie",
+        "PvP",
+        "Realistic",
+        "Exploration"
+      ],
+      "developers": [
+        "Facepunch Studios"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 18400,
+        "peak_yesterday": 18400,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 1122546,
+        "negative": 37161,
+        "reviews_total": 1159707,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 20.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 227300,
+      "name": "Euro Truck Simulator 2",
+      "localizedNames": {
+        "en": "Euro Truck Simulator 2",
+        "zh-cn": "Euro Truck Simulator 2"
+      },
+      "appType": "game",
+      "releaseDate": "2012 年 10 月 12 日",
+      "tags": [
+        "Driving",
+        "Transportation",
+        "Simulation",
+        "Open World",
+        "Automobile Sim",
+        "Realistic",
+        "Moddable",
+        "Relaxing",
+        "Exploration",
+        "Economy",
+        "Immersive Sim",
+        "Management",
+        "Atmospheric",
+        "Multiplayer",
+        "Controller",
+        "Family Friendly",
+        "Third Person",
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "developers": [
+        "SCS Software"
+      ],
+      "publishers": [
+        "SCS Software"
+      ],
+      "metrics": {
+        "ccu": 17281,
+        "peak_yesterday": 17281,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 844480,
+        "negative": 22924,
+        "reviews_total": 867404,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 15.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 292030,
+      "name": "The Witcher 3: Wild Hunt",
+      "localizedNames": {
+        "en": "The Witcher 3: Wild Hunt",
+        "zh-cn": "巫师 3：狂猎"
+      },
+      "appType": "game",
+      "releaseDate": "2015 年 5 月 18 日",
+      "tags": [
+        "Open World",
+        "RPG",
+        "Story Rich",
+        "Atmospheric",
+        "Fantasy",
+        "Adventure",
+        "Singleplayer",
+        "Nudity",
+        "Choices Matter",
+        "Great Soundtrack",
+        "Third Person",
+        "Medieval",
+        "Action",
+        "Multiple Endings",
+        "Action RPG",
+        "Dark Fantasy",
+        "Magic",
+        "Dark",
+        "Sandbox",
+        "Sexual Content"
+      ],
+      "developers": [
+        "CD PROJEKT RED"
+      ],
+      "publishers": [
+        "CD PROJEKT RED"
+      ],
+      "metrics": {
+        "ccu": 15893,
+        "peak_yesterday": 15893,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 802993,
+        "negative": 32356,
+        "reviews_total": 835349,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 3.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 3164500,
+      "name": "Schedule I",
+      "localizedNames": {
+        "en": "Schedule I",
+        "zh-cn": "Schedule I"
+      },
+      "appType": "game",
+      "releaseDate": "2025 年 3 月 24 日",
+      "tags": [
+        "Simulation",
+        "Crime",
+        "Co-op",
+        "Management",
+        "Multiplayer",
+        "Open World",
+        "First-Person",
+        "Crafting",
+        "Automation",
+        "Base Building",
+        "Action",
+        "Building",
+        "Stealth",
+        "Strategy",
+        "Character Customization",
+        "Driving",
+        "Shooter",
+        "Early Access",
+        "FPS",
+        "Indie"
+      ],
+      "developers": [
+        "TVGS"
+      ],
+      "publishers": [
+        "TVGS"
+      ],
+      "metrics": {
+        "ccu": 22757,
+        "peak_yesterday": 22757,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 200803,
+        "negative": 3238,
+        "reviews_total": 204041,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 35.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Heuristic fill",
+          "user_rating": null,
+          "match_method": "heuristic-fill"
+        }
+      }
+    },
+    {
+      "appId": 1172470,
+      "name": "Apex Legends",
+      "localizedNames": {
+        "en": "Apex Legends",
+        "zh-cn": "Apex Legends™"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 11 月 4 日",
+      "tags": [
+        "Free to Play",
+        "Multiplayer",
+        "Battle Royale",
+        "FPS",
+        "Shooter",
+        "First-Person",
+        "PvP",
+        "Action",
+        "Hero Shooter",
+        "Team-Based",
+        "Tactical",
+        "Sci-fi",
+        "Loot",
+        "Co-op",
+        "Survival",
+        "Character Customization",
+        "Funny",
+        "Cyberpunk",
+        "Lore-Rich",
+        "Cinematic"
+      ],
+      "developers": [
+        "Respawn"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ],
+      "metrics": {
+        "ccu": 124262,
+        "peak_yesterday": 124262,
+        "peak_7d": null,
+        "owners_min": 100000000,
+        "owners_max": 200000000,
+        "positive": 668053,
+        "negative": 326926,
+        "reviews_total": 994979,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 578080,
+      "name": "PUBG: BATTLEGROUNDS",
+      "localizedNames": {
+        "en": "PUBG: BATTLEGROUNDS",
+        "zh-cn": "PUBG: BATTLEGROUNDS"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 12 月 21 日",
+      "tags": [
+        "Survival",
+        "Shooter",
+        "Battle Royale",
+        "Multiplayer",
+        "FPS",
+        "PvP",
+        "Third-Person Shooter",
+        "Action",
+        "Online Co-Op",
+        "Tactical",
+        "Co-op",
+        "First-Person",
+        "Strategy",
+        "Early Access",
+        "Competitive",
+        "Third Person",
+        "Team-Based",
+        "Difficult",
+        "Simulation",
+        "Stealth"
+      ],
+      "developers": [
+        "PUBG Corporation"
+      ],
+      "publishers": [
+        "KRAFTON, Inc."
+      ],
+      "metrics": {
+        "ccu": 314682,
+        "peak_yesterday": 314682,
+        "peak_7d": null,
+        "owners_min": 100000000,
+        "owners_max": 200000000,
+        "positive": 1520457,
+        "negative": 1037487,
+        "reviews_total": 2557944,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 271590,
+      "name": "Grand Theft Auto V Legacy",
+      "localizedNames": {
+        "en": "Grand Theft Auto V Legacy",
+        "zh-cn": "Grand Theft Auto V 传承版"
+      },
+      "appType": "game",
+      "releaseDate": "2015 年 4 月 13 日",
+      "tags": [
+        "Open World",
+        "Action",
+        "Multiplayer",
+        "Crime",
+        "Automobile Sim",
+        "Third Person",
+        "First-Person",
+        "Shooter",
+        "Adventure",
+        "Singleplayer",
+        "Third-Person Shooter",
+        "Racing",
+        "Co-op",
+        "Sandbox",
+        "Atmospheric",
+        "Funny",
+        "Great Soundtrack",
+        "Comedy",
+        "Moddable",
+        "RPG"
+      ],
+      "developers": [
+        "Rockstar North"
+      ],
+      "publishers": [
+        "Rockstar Games"
+      ],
+      "metrics": {
+        "ccu": 67851,
+        "peak_yesterday": 67851,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 1739980,
+        "negative": 250576,
+        "reviews_total": 1990556,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 252490,
+      "name": "Rust",
+      "localizedNames": {
+        "en": "Rust",
+        "zh-cn": "Rust"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 2 月 8 日",
+      "tags": [
+        "Survival",
+        "Crafting",
+        "Multiplayer",
+        "Open World",
+        "Open World Survival Craft",
+        "Building",
+        "PvP",
+        "Sandbox",
+        "Adventure",
+        "First-Person",
+        "Action",
+        "Nudity",
+        "FPS",
+        "Shooter",
+        "Co-op",
+        "Online Co-Op",
+        "Indie",
+        "Post-apocalyptic",
+        "Early Access",
+        "Simulation"
+      ],
+      "developers": [
+        "Facepunch Studios"
+      ],
+      "publishers": [
+        "Facepunch Studios"
+      ],
+      "metrics": {
+        "ccu": 143870,
+        "peak_yesterday": 143870,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 1071135,
+        "negative": 156649,
+        "reviews_total": 1227784,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1623730,
+      "name": "Palworld",
+      "localizedNames": {
+        "en": "Palworld",
+        "zh-cn": "Palworld / 幻兽帕鲁"
+      },
+      "appType": "game",
+      "releaseDate": "2026 年 7 月 9 日",
+      "tags": [
+        "Open World",
+        "Survival",
+        "Creature Collector",
+        "Multiplayer",
+        "Open World Survival Craft",
+        "Crafting",
+        "Online Co-Op",
+        "Indie",
+        "Co-op",
+        "Adventure",
+        "Base Building",
+        "Sandbox",
+        "Building",
+        "Automation",
+        "Third-Person Shooter",
+        "RPG",
+        "Action",
+        "Anime",
+        "Exploration",
+        "Singleplayer"
+      ],
+      "developers": [
+        "Pocketpair"
+      ],
+      "publishers": [
+        "Pocketpair"
+      ],
+      "metrics": {
+        "ccu": 18028,
+        "peak_yesterday": 18028,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 358266,
+        "negative": 22443,
+        "reviews_total": 380709,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 5.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Conversation calibration",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1426210,
+      "name": "It Takes Two",
+      "localizedNames": {
+        "en": "It Takes Two",
+        "zh-cn": "双人成行"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 3 月 25 日",
+      "tags": [
+        "Co-op",
+        "Multiplayer",
+        "Split Screen",
+        "Local Co-Op",
+        "Online Co-Op",
+        "Puzzle",
+        "Adventure",
+        "Story Rich",
+        "Co-op Campaign",
+        "Local Multiplayer",
+        "Puzzle Platformer",
+        "Action-Adventure",
+        "3D Platformer",
+        "Emotional",
+        "Platformer",
+        "Action",
+        "Exploration",
+        "Atmospheric",
+        "Minigames",
+        "Female Protagonist"
+      ],
+      "developers": [
+        "Hazelight Studios"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ],
+      "metrics": {
+        "ccu": 5018,
+        "peak_yesterday": 5018,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 208042,
+        "negative": 10341,
+        "reviews_total": 218383,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 9.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 374320,
+      "name": "DARK SOULS III",
+      "localizedNames": {
+        "en": "DARK SOULS III",
+        "zh-cn": "DARK SOULS™ III"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 4 月 11 日",
+      "tags": [
+        "Souls-like",
+        "Dark Fantasy",
+        "Difficult",
+        "RPG",
+        "Atmospheric",
+        "Lore-Rich",
+        "Third Person",
+        "Exploration",
+        "Story Rich",
+        "Action RPG",
+        "Co-op",
+        "Great Soundtrack",
+        "Adventure",
+        "Action",
+        "Multiplayer",
+        "PvP",
+        "Open World",
+        "Singleplayer",
+        "Character Customization",
+        "Replay Value"
+      ],
+      "developers": [
+        "FromSoftware, Inc."
+      ],
+      "publishers": [
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
+      ],
+      "metrics": {
+        "ccu": 4381,
+        "peak_yesterday": 4381,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 390326,
+        "negative": 23449,
+        "reviews_total": 413775,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 10.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 105600,
+      "name": "Terraria",
+      "localizedNames": {
+        "en": "Terraria",
+        "zh-cn": "Terraria"
+      },
+      "appType": "game",
+      "releaseDate": "2011 年 5 月 16 日",
+      "tags": [
+        "Open World Survival Craft",
+        "Sandbox",
+        "Survival",
+        "2D",
+        "Multiplayer",
+        "Pixel Graphics",
+        "Adventure",
+        "Crafting",
+        "Building",
+        "Exploration",
+        "Co-op",
+        "Open World",
+        "Indie",
+        "Online Co-Op",
+        "Action",
+        "RPG",
+        "Singleplayer",
+        "Replay Value",
+        "Platformer",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Re-Logic"
+      ],
+      "publishers": [
+        "Re-Logic"
+      ],
+      "metrics": {
+        "ccu": 24580,
+        "peak_yesterday": 24580,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 1373979,
+        "negative": 35494,
+        "reviews_total": 1409473,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 5.0,
+        "manualLocked": true,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 242760,
+      "name": "The Forest",
+      "localizedNames": {
+        "en": "The Forest",
+        "zh-cn": "The Forest"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 4 月 30 日",
+      "tags": [
+        "Open World Survival Craft",
+        "Survival",
+        "Horror",
+        "Open World",
+        "Crafting",
+        "Adventure",
+        "Building",
+        "Survival Horror",
+        "First-Person",
+        "Action",
+        "Exploration",
+        "Sandbox",
+        "Singleplayer",
+        "Atmospheric",
+        "Simulation",
+        "Gore",
+        "Realistic",
+        "Indie",
+        "Zombies",
+        "Early Access"
+      ],
+      "developers": [
+        "Endnight Games Ltd"
+      ],
+      "publishers": [
+        "Endnight Games Ltd"
+      ],
+      "metrics": {
+        "ccu": 2892,
+        "peak_yesterday": 2892,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 599805,
+        "negative": 27986,
+        "reviews_total": 627791,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 24.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1118200,
+      "name": "People Playground",
+      "localizedNames": {
+        "en": "People Playground",
+        "zh-cn": "People Playground"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 7 月 23 日",
+      "tags": [
+        "Sandbox",
+        "Gore",
+        "Physics",
+        "Violent",
+        "Moddable",
+        "2D",
+        "Singleplayer",
+        "Destruction",
+        "Simulation",
+        "Funny",
+        "Building",
+        "Pixel Graphics",
+        "Psychological Horror",
+        "Indie",
+        "Action",
+        "Casual",
+        "Comedy",
+        "Horror",
+        "Choose Your Own Adventure",
+        "Multiplayer"
+      ],
+      "developers": [
+        "mestiez"
+      ],
+      "publishers": [
+        "Studio Minus"
+      ],
+      "metrics": {
+        "ccu": 4505,
+        "peak_yesterday": 4505,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 277746,
+        "negative": 4017,
+        "reviews_total": 281763,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 40.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Heuristic fill",
+          "user_rating": null,
+          "match_method": "heuristic-fill"
+        }
+      }
+    },
+    {
+      "appId": 548430,
+      "name": "Deep Rock Galactic",
+      "localizedNames": {
+        "en": "Deep Rock Galactic",
+        "zh-cn": "深岩银河"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 5 月 13 日",
+      "tags": [
+        "Dwarves",
+        "Co-op",
+        "PvE",
+        "FPS",
+        "Procedural Generation",
+        "Class-Based",
+        "Shooter",
+        "Exploration",
+        "First-Person",
+        "Loot",
+        "Sci-fi",
+        "Action",
+        "Space",
+        "Atmospheric",
+        "Looter Shooter",
+        "Combat",
+        "Survival",
+        "Horror",
+        "Dark",
+        "Action Roguelike"
+      ],
+      "developers": [
+        "Ghost Ship Games"
+      ],
+      "publishers": [
+        "Coffee Stain Publishing"
+      ],
+      "metrics": {
+        "ccu": 5216,
+        "peak_yesterday": 5216,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 333587,
+        "negative": 9413,
+        "reviews_total": 343000,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 27.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 427520,
+      "name": "Factorio",
+      "localizedNames": {
+        "en": "Factorio",
+        "zh-cn": "Factorio"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 8 月 14 日",
+      "tags": [
+        "Automation",
+        "Base Building",
+        "Resource Management",
+        "Sandbox",
+        "Crafting",
+        "Strategy",
+        "Multiplayer",
+        "Survival",
+        "Management",
+        "Open World",
+        "Building",
+        "Co-op",
+        "2D",
+        "Moddable",
+        "Singleplayer",
+        "Trains",
+        "Simulation",
+        "Pixel Graphics",
+        "City Builder",
+        "Indie"
+      ],
+      "developers": [
+        "Wube Software LTD."
+      ],
+      "publishers": [
+        "Wube Software LTD."
+      ],
+      "metrics": {
+        "ccu": 16426,
+        "peak_yesterday": 16426,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 208770,
+        "negative": 6439,
+        "reviews_total": 215209,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 18.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 367520,
+      "name": "Hollow Knight",
+      "localizedNames": {
+        "en": "Hollow Knight",
+        "zh-cn": "Hollow Knight"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 2 月 24 日",
+      "tags": [
+        "Metroidvania",
+        "Platformer",
+        "Souls-like",
+        "Difficult",
+        "Great Soundtrack",
+        "2D",
+        "Indie",
+        "Singleplayer",
+        "Exploration",
+        "Atmospheric",
+        "Adventure",
+        "Story Rich",
+        "Hand-drawn",
+        "Multiple Endings",
+        "Action",
+        "Dark Fantasy",
+        "Open World",
+        "Cute",
+        "Controller",
+        "Side Scroller"
+      ],
+      "developers": [
+        "Team Cherry"
+      ],
+      "publishers": [
+        "Team Cherry"
+      ],
+      "metrics": {
+        "ccu": 4912,
+        "peak_yesterday": 4912,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 403641,
+        "negative": 12305,
+        "reviews_total": 415946,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 10.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 8930,
+      "name": "Sid Meier's Civilization V",
+      "localizedNames": {
+        "en": "Sid Meier's Civilization V",
+        "zh-cn": "Sid Meier's Civilization® V"
+      },
+      "appType": "game",
+      "releaseDate": "2010 年 9 月 23 日",
+      "tags": [
+        "Turn-Based Strategy",
+        "Strategy",
+        "Turn-Based",
+        "Multiplayer",
+        "Historical",
+        "4X",
+        "Addictive",
+        "Singleplayer",
+        "Hex Grid",
+        "Grand Strategy",
+        "Replay Value",
+        "Co-op",
+        "Economy",
+        "Tactical",
+        "Diplomacy",
+        "Moddable",
+        "Simulation",
+        "Classic",
+        "Great Soundtrack",
+        "Touch-Friendly"
+      ],
+      "developers": [
+        "Firaxis Games",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
+      ],
+      "publishers": [
+        "2K",
+        "Aspyr (Mac)",
+        "Aspyr (Linux)"
+      ],
+      "metrics": {
+        "ccu": 12206,
+        "peak_yesterday": 12206,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 195724,
+        "negative": 8541,
+        "reviews_total": 204265,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 23.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 240,
+      "name": "Counter-Strike: Source",
+      "localizedNames": {
+        "en": "Counter-Strike: Source",
+        "zh-cn": "Counter-Strike: Source"
+      },
+      "appType": "game",
+      "releaseDate": "2004 年 11 月 1 日",
+      "tags": [
+        "Shooter",
+        "FPS",
+        "Action",
+        "Multiplayer",
+        "Team-Based",
+        "First-Person",
+        "Competitive",
+        "Tactical",
+        "PvP",
+        "eSports",
+        "Military",
+        "War",
+        "Strategy",
+        "Moddable",
+        "Singleplayer",
+        "Difficult",
+        "Atmospheric",
+        "Survival",
+        "Simulation",
+        "Sandbox"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 6187,
+        "peak_yesterday": 6187,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 175426,
+        "negative": 6808,
+        "reviews_total": 182234,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 20.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 646570,
+      "name": "Slay the Spire",
+      "localizedNames": {
+        "en": "Slay the Spire",
+        "zh-cn": "Slay the Spire"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 1 月 23 日",
+      "tags": [
+        "Roguelike Deckbuilder",
+        "Card Game",
+        "Card Battler",
+        "Roguelike",
+        "Deckbuilding",
+        "Turn-Based",
+        "Strategy",
+        "Singleplayer",
+        "Roguelite",
+        "Replay Value",
+        "Indie",
+        "Difficult",
+        "Dungeon Crawler",
+        "Mouse Only",
+        "RPG",
+        "2D",
+        "Fantasy",
+        "Procedural Generation",
+        "Great Soundtrack",
+        "Casual"
+      ],
+      "developers": [
+        "Mega Crit"
+      ],
+      "publishers": [
+        "Mega Crit"
+      ],
+      "metrics": {
+        "ccu": 15038,
+        "peak_yesterday": 15038,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 178250,
+        "negative": 4027,
+        "reviews_total": 182277,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 4.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 739630,
+      "name": "Phasmophobia",
+      "localizedNames": {
+        "en": "Phasmophobia",
+        "zh-cn": "Phasmophobia 恐鬼症"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 9 月 18 日",
+      "tags": [
+        "Horror",
+        "Online Co-Op",
+        "Multiplayer",
+        "Psychological Horror",
+        "Co-op",
+        "VR",
+        "Supernatural",
+        "First-Person",
+        "Investigation",
+        "Dark",
+        "Detective",
+        "Demons",
+        "Mystery",
+        "Thriller",
+        "3D",
+        "Early Access",
+        "Indie",
+        "Action",
+        "Tactical",
+        "Singleplayer"
+      ],
+      "developers": [
+        "Kinetic Games"
+      ],
+      "publishers": [
+        "Kinetic Games"
+      ],
+      "metrics": {
+        "ccu": 9978,
+        "peak_yesterday": 9978,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 736611,
+        "negative": 32168,
+        "reviews_total": 768779,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 42.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "User label",
+          "user_rating": 3.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 3241660,
+      "name": "R.E.P.O.",
+      "localizedNames": {
+        "en": "R.E.P.O.",
+        "zh-cn": "R.E.P.O."
+      },
+      "appType": "game",
+      "releaseDate": "2025 年 2 月 26 日",
+      "tags": [
+        "Horror",
+        "Online Co-Op",
+        "Multiplayer",
+        "Comedy",
+        "Co-op",
+        "Physics",
+        "First-Person",
+        "3D",
+        "Stealth",
+        "Survival",
+        "Robots",
+        "Exploration",
+        "Funny",
+        "Action",
+        "Action Roguelike",
+        "Procedural Generation",
+        "Post-apocalyptic",
+        "Sci-fi",
+        "Perma Death",
+        "Early Access"
+      ],
+      "developers": [
+        "semiwork"
+      ],
+      "publishers": [
+        "semiwork"
+      ],
+      "metrics": {
+        "ccu": 32349,
+        "peak_yesterday": 32349,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 179154,
+        "negative": 6488,
+        "reviews_total": 185642,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 27.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Heuristic fill",
+          "user_rating": null,
+          "match_method": "heuristic-fill"
+        }
+      }
+    },
+    {
+      "appId": 322330,
+      "name": "Don't Starve Together",
+      "localizedNames": {
+        "en": "Don't Starve Together",
+        "zh-cn": "饥荒联机版"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 4 月 21 日",
+      "tags": [
+        "Survival",
+        "Open World Survival Craft",
+        "Multiplayer",
+        "Co-op",
+        "Open World",
+        "Adventure",
+        "Crafting",
+        "Online Co-Op",
+        "Sandbox",
+        "Difficult",
+        "Indie",
+        "2D",
+        "Atmospheric",
+        "Survival Horror",
+        "Funny",
+        "Strategy",
+        "Horror",
+        "Singleplayer",
+        "Action",
+        "Roguelike"
+      ],
+      "developers": [
+        "Klei Entertainment"
+      ],
+      "publishers": [
+        "Klei Entertainment"
+      ],
+      "metrics": {
+        "ccu": 30542,
+        "peak_yesterday": 30542,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 475393,
+        "negative": 23668,
+        "reviews_total": 499061,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 10.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 294100,
+      "name": "RimWorld",
+      "localizedNames": {
+        "en": "RimWorld",
+        "zh-cn": "边缘世界 RimWorld"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 10 月 17 日",
+      "tags": [
+        "Colony Sim",
+        "Base Building",
+        "Survival",
+        "Strategy",
+        "Management",
+        "Sandbox",
+        "Singleplayer",
+        "Moddable",
+        "Simulation",
+        "Sci-fi",
+        "Story Rich",
+        "Replay Value",
+        "Open World",
+        "2D",
+        "Procedural Generation",
+        "Indie",
+        "City Builder",
+        "Tactical RPG",
+        "Building",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Ludeon Studios"
+      ],
+      "publishers": [
+        "Ludeon Studios"
+      ],
+      "metrics": {
+        "ccu": 19211,
+        "peak_yesterday": 19211,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 206216,
+        "negative": 4301,
+        "reviews_total": 210517,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 22.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 284160,
+      "name": "BeamNG.drive",
+      "localizedNames": {
+        "en": "BeamNG.drive",
+        "zh-cn": "BeamNG.drive"
+      },
+      "appType": "game",
+      "releaseDate": "2015 年 5 月 29 日",
+      "tags": [
+        "Simulation",
+        "Driving",
+        "Physics",
+        "Realistic",
+        "Destruction",
+        "Automobile Sim",
+        "Sandbox",
+        "Open World",
+        "Racing",
+        "Multiplayer",
+        "Moddable",
+        "Singleplayer",
+        "Early Access",
+        "First-Person",
+        "VR",
+        "Third Person",
+        "Funny",
+        "Action",
+        "Adventure",
+        "Exploration"
+      ],
+      "developers": [
+        "BeamNG"
+      ],
+      "publishers": [
+        "BeamNG"
+      ],
+      "metrics": {
+        "ccu": 15863,
+        "peak_yesterday": 15863,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 313873,
+        "negative": 8405,
+        "reviews_total": 322278,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 29.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 250900,
+      "name": "The Binding of Isaac: Rebirth",
+      "localizedNames": {
+        "en": "The Binding of Isaac: Rebirth",
+        "zh-cn": "The Binding of Isaac: Rebirth"
+      },
+      "appType": "game",
+      "releaseDate": "2014 年 11 月 4 日",
+      "tags": [
+        "Action Roguelike",
+        "Roguelike",
+        "Indie",
+        "Replay Value",
+        "Difficult",
+        "Pixel Graphics",
+        "Dungeon Crawler",
+        "Great Soundtrack",
+        "Singleplayer",
+        "Dark",
+        "2D",
+        "Local Co-Op",
+        "Gore",
+        "Remake",
+        "Procedural Generation",
+        "Roguelite",
+        "Co-op",
+        "Atmospheric",
+        "Action",
+        "Horror"
+      ],
+      "developers": [
+        "Nicalis, Inc.",
+        "Edmund McMillen"
+      ],
+      "publishers": [
+        "Nicalis, Inc."
+      ],
+      "metrics": {
+        "ccu": 14904,
+        "peak_yesterday": 14904,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 334165,
+        "negative": 9255,
+        "reviews_total": 343420,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 18.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 10,
+      "name": "Counter-Strike",
+      "localizedNames": {
+        "en": "Counter-Strike",
+        "zh-cn": "Counter-Strike"
+      },
+      "appType": "game",
+      "releaseDate": "2000 年 11 月 1 日",
+      "tags": [
+        "Action",
+        "FPS",
+        "Multiplayer",
+        "Shooter",
+        "Classic",
+        "Team-Based",
+        "First-Person",
+        "Competitive",
+        "Tactical",
+        "1990's",
+        "eSports",
+        "PvP",
+        "Old School",
+        "Military",
+        "Strategy",
+        "Assassins",
+        "Survival",
+        "Score Attack",
+        "1980s",
+        "Nostalgia"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 7323,
+        "peak_yesterday": 7323,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 243818,
+        "negative": 6427,
+        "reviews_total": 250245,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 2.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1966720,
+      "name": "Lethal Company",
+      "localizedNames": {
+        "en": "Lethal Company",
+        "zh-cn": "Lethal Company"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 10 月 23 日",
+      "tags": [
+        "Online Co-Op",
+        "Horror",
+        "First-Person",
+        "Co-op",
+        "Survival Horror",
+        "Funny",
+        "Exploration",
+        "Psychological Horror",
+        "Sci-fi",
+        "PvE",
+        "Atmospheric",
+        "Procedural Generation",
+        "Aliens",
+        "Time Management",
+        "Adventure",
+        "Dungeon Crawler",
+        "Action",
+        "Early Access",
+        "Action-Adventure",
+        "Perma Death"
+      ],
+      "developers": [
+        "Zeekerss"
+      ],
+      "publishers": [
+        "Zeekerss"
+      ],
+      "metrics": {
+        "ccu": 6199,
+        "peak_yesterday": 6199,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 473422,
+        "negative": 13738,
+        "reviews_total": 487160,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 15.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 526870,
+      "name": "Satisfactory",
+      "localizedNames": {
+        "en": "Satisfactory",
+        "zh-cn": "幸福工厂"
+      },
+      "appType": "game",
+      "releaseDate": "2024 年 9 月 10 日",
+      "tags": [
+        "Base Building",
+        "Automation",
+        "Open World",
+        "Crafting",
+        "Multiplayer",
+        "Co-op",
+        "Building",
+        "Resource Management",
+        "Sandbox",
+        "Exploration",
+        "Open World Survival Craft",
+        "Adventure",
+        "Survival",
+        "First-Person",
+        "Simulation",
+        "Strategy",
+        "Singleplayer",
+        "Sci-fi",
+        "Indie",
+        "Early Access"
+      ],
+      "developers": [
+        "Coffee Stain Studios"
+      ],
+      "publishers": [
+        "Coffee Stain Publishing"
+      ],
+      "metrics": {
+        "ccu": 12596,
+        "peak_yesterday": 12596,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 225479,
+        "negative": 6585,
+        "reviews_total": 232064,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 30.0,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 360430,
+      "name": "Mafia III: Definitive Edition",
+      "localizedNames": {
+        "en": "Mafia III: Definitive Edition",
+        "zh-cn": "Mafia III: Definitive Edition"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 5 月 19 日",
+      "tags": [
+        "Crime",
+        "Open World",
+        "Action",
+        "Story Rich",
+        "Singleplayer",
+        "Third Person",
+        "Violent",
+        "Shooter",
+        "Atmospheric",
+        "Great Soundtrack",
+        "Third-Person Shooter",
+        "Adventure",
+        "Nudity",
+        "Stealth",
+        "Multiplayer",
+        "Classic",
+        "Sandbox",
+        "Gore",
+        "FPS",
+        "Co-op"
+      ],
+      "developers": [
+        "Hangar 13",
+        "Aspyr (Mac)"
+      ],
+      "publishers": [
+        "2K",
+        "Aspyr (Mac)"
+      ],
+      "metrics": {
+        "ccu": 869,
+        "peak_yesterday": 869,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 32366,
+        "negative": 24142,
+        "reviews_total": 56508,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 0.0,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 2552430,
+      "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
+      "localizedNames": {
+        "en": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
+        "zh-cn": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-"
+      },
+      "appType": "game",
+      "releaseDate": "2024 年 6 月 13 日",
+      "tags": [
+        "Action",
+        "RPG",
+        "Adventure",
+        "JRPG",
+        "Great Soundtrack",
+        "Action-Adventure",
+        "Emotional",
+        "Story Rich",
+        "Singleplayer",
+        "Fantasy",
+        "Magic",
+        "Colorful",
+        "3D",
+        "Action RPG",
+        "Hack and Slash",
+        "Anime",
+        "Atmospheric",
+        "Character Action Game",
+        "Cute",
+        "Classic"
+      ],
+      "developers": [
+        "Square Enix"
+      ],
+      "publishers": [
+        "Square Enix"
+      ],
+      "metrics": {
+        "ccu": 886,
+        "peak_yesterday": 886,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 6361,
+        "negative": 1241,
+        "reviews_total": 7602,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": 8.0,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 220,
+      "name": "Half-Life 2",
+      "localizedNames": {
+        "en": "Half-Life 2",
+        "zh-cn": "Half-Life 2"
+      },
+      "appType": "game",
+      "releaseDate": "2004 年 11 月 16 日",
+      "tags": [
+        "FPS",
+        "Action",
+        "Sci-fi",
+        "Classic",
+        "Singleplayer",
+        "Story Rich",
+        "Shooter",
+        "First-Person",
+        "Adventure",
+        "Dystopian",
+        "Atmospheric",
+        "Silent Protagonist",
+        "Zombies",
+        "Physics",
+        "Great Soundtrack",
+        "Aliens",
+        "Horror",
+        "Multiplayer",
+        "Puzzle",
+        "Moddable"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 1555,
+        "peak_yesterday": 1555,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 239721,
+        "negative": 5906,
+        "reviews_total": 245627,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 8870,
+      "name": "BioShock Infinite",
+      "localizedNames": {
+        "en": "BioShock Infinite",
+        "zh-cn": "生化奇兵：无限 完全版"
+      },
+      "appType": "game",
+      "releaseDate": "2013 年 3 月 25 日",
+      "tags": [
+        "Action",
+        "Shooter",
+        "First-Person",
+        "FPS",
+        "Singleplayer",
+        "Story Rich",
+        "RPG",
+        "Adventure",
+        "Fantasy",
+        "Atmospheric",
+        "Sci-fi",
+        "Gore",
+        "Alternate History",
+        "Dystopian",
+        "Steampunk",
+        "Immersive",
+        "Time Travel",
+        "Linear",
+        "Combat",
+        "Dark"
+      ],
+      "developers": [
+        "Irrational Games",
+        "Virtual Programming (Linux)"
+      ],
+      "publishers": [
+        "2K"
+      ],
+      "metrics": {
+        "ccu": 301,
+        "peak_yesterday": 301,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 131970,
+        "negative": 8712,
+        "reviews_total": 140682,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 281990,
+      "name": "Stellaris",
+      "localizedNames": {
+        "en": "Stellaris",
+        "zh-cn": "Stellaris"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 5 月 9 日",
+      "tags": [
+        "Space",
+        "Strategy",
+        "Grand Strategy",
+        "Sci-fi",
+        "4X",
+        "Exploration",
+        "Sandbox",
+        "Simulation",
+        "Multiplayer",
+        "Real-Time with Pause",
+        "Singleplayer",
+        "Moddable",
+        "Management",
+        "Diplomacy",
+        "Military",
+        "Futuristic",
+        "Replay Value",
+        "Great Soundtrack",
+        "Procedural Generation",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Paradox Development Studio"
+      ],
+      "publishers": [
+        "Paradox Interactive"
+      ],
+      "metrics": {
+        "ccu": 13727,
+        "peak_yesterday": 13727,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 159527,
+        "negative": 25906,
+        "reviews_total": 185433,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "User label",
+          "user_rating": 1.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 394360,
+      "name": "Hearts of Iron IV",
+      "localizedNames": {
+        "en": "Hearts of Iron IV",
+        "zh-cn": "Hearts of Iron IV"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 6 月 6 日",
+      "tags": [
+        "Strategy",
+        "World War II",
+        "Grand Strategy",
+        "War",
+        "Historical",
+        "Military",
+        "Alternate History",
+        "Multiplayer",
+        "Simulation",
+        "Tactical",
+        "Singleplayer",
+        "RTS",
+        "Real-Time with Pause",
+        "Diplomacy",
+        "Sandbox",
+        "Co-op",
+        "Strategy RPG",
+        "Open World",
+        "Competitive",
+        "Action"
+      ],
+      "developers": [
+        "Paradox Development Studio"
+      ],
+      "publishers": [
+        "Paradox Interactive"
+      ],
+      "metrics": {
+        "ccu": 32112,
+        "peak_yesterday": 32112,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 305168,
+        "negative": 36982,
+        "reviews_total": 342150,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 477160,
+      "name": "Human Fall Flat",
+      "localizedNames": {
+        "en": "Human Fall Flat",
+        "zh-cn": "人类一败涂地 / Human Fall Flat"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 7 月 22 日",
+      "tags": [
+        "Co-op",
+        "Funny",
+        "Puzzle",
+        "Multiplayer",
+        "Adventure",
+        "Physics",
+        "Sandbox",
+        "Puzzle Platformer",
+        "Open World",
+        "Action",
+        "Local Co-Op",
+        "Indie",
+        "Local Multiplayer",
+        "Comedy",
+        "Parkour",
+        "Casual",
+        "Split Screen",
+        "Singleplayer",
+        "3D Platformer",
+        "Simulation"
+      ],
+      "developers": [
+        "No Brakes Games"
+      ],
+      "publishers": [
+        "Curve Games"
+      ],
+      "metrics": {
+        "ccu": 950,
+        "peak_yesterday": 950,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 202253,
+        "negative": 11387,
+        "reviews_total": 213640,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 814380,
+      "name": "Sekiro: Shadows Die Twice - GOTY Edition",
+      "localizedNames": {
+        "en": "Sekiro: Shadows Die Twice - GOTY Edition",
+        "zh-cn": "Sekiro™: Shadows Die Twice - GOTY Edition"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 3 月 21 日",
+      "tags": [
+        "Souls-like",
+        "Difficult",
+        "Action",
+        "Singleplayer",
+        "Ninja",
+        "Stealth",
+        "Adventure",
+        "Third Person",
+        "Open World",
+        "Story Rich",
+        "Violent",
+        "Assassins",
+        "Atmospheric",
+        "Hack and Slash",
+        "Dark Fantasy",
+        "RPG",
+        "Gore",
+        "Great Soundtrack",
+        "Rhythm",
+        "Dark"
+      ],
+      "developers": [
+        "FromSoftware, Inc."
+      ],
+      "publishers": [
+        "Activision (Excluding Japan and Asia)",
+        "FromSoftware",
+        "Inc. (Japan)",
+        "方块游戏 (Asia)"
+      ],
+      "metrics": {
+        "ccu": 6767,
+        "peak_yesterday": 6767,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 307041,
+        "negative": 15193,
+        "reviews_total": 322234,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "base-name"
+        }
+      }
+    },
+    {
+      "appId": 1196590,
+      "name": "Resident Evil Village",
+      "localizedNames": {
+        "en": "Resident Evil Village",
+        "zh-cn": "Resident Evil Village"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 5 月 6 日",
+      "tags": [
+        "Survival Horror",
+        "Horror",
+        "First-Person",
+        "Singleplayer",
+        "Action",
+        "Sexual Content",
+        "Zombies",
+        "Gore",
+        "Story Rich",
+        "VR",
+        "FPS",
+        "Atmospheric",
+        "Violent",
+        "Dark",
+        "Psychological Horror",
+        "Survival",
+        "Adventure",
+        "Multiplayer",
+        "Open World",
+        "Nudity"
+      ],
+      "developers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "publishers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 1284,
+        "peak_yesterday": 1284,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 114131,
+        "negative": 5219,
+        "reviews_total": 119350,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1325200,
+      "name": "Nioh 2 – The Complete Edition",
+      "localizedNames": {
+        "en": "Nioh 2 – The Complete Edition",
+        "zh-cn": "仁王２ Complete Edition"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 2 月 5 日",
+      "tags": [
+        "Action",
+        "RPG",
+        "Character Customization",
+        "Souls-like",
+        "Difficult",
+        "Co-op",
+        "Multiplayer",
+        "JRPG",
+        "Dark Fantasy",
+        "Fantasy",
+        "Hack and Slash",
+        "Historical",
+        "Story Rich",
+        "Violent",
+        "Singleplayer",
+        "Dark",
+        "Atmospheric",
+        "Medieval",
+        "Loot",
+        "Female Protagonist"
+      ],
+      "developers": [
+        "KOEI TECMO GAMES CO., LTD."
+      ],
+      "publishers": [
+        "KOEI TECMO GAMES CO., LTD."
+      ],
+      "metrics": {
+        "ccu": 1441,
+        "peak_yesterday": 1441,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 39965,
+        "negative": 5531,
+        "reviews_total": 45496,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "User label",
+          "user_rating": 1.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 400,
+      "name": "Portal",
+      "localizedNames": {
+        "en": "Portal",
+        "zh-cn": "Portal"
+      },
+      "appType": "game",
+      "releaseDate": "2007 年 10 月 10 日",
+      "tags": [
+        "Puzzle",
+        "Puzzle Platformer",
+        "First-Person",
+        "3D Platformer",
+        "Singleplayer",
+        "Sci-fi",
+        "Comedy",
+        "Female Protagonist",
+        "Physics",
+        "Funny",
+        "Action",
+        "Classic",
+        "Story Rich",
+        "Platformer",
+        "Science",
+        "Atmospheric",
+        "Dark Humor",
+        "Short",
+        "FPS",
+        "Adventure"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 638,
+        "peak_yesterday": 638,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 175024,
+        "negative": 2717,
+        "reviews_total": 177741,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 200510,
+      "name": "XCOM: Enemy Unknown",
+      "localizedNames": {
+        "en": "XCOM: Enemy Unknown",
+        "zh-cn": "XCOM: Enemy Unknown"
+      },
+      "appType": "game",
+      "releaseDate": "2012 年 10 月 11 日",
+      "tags": [
+        "Turn-Based Strategy",
+        "Tactical",
+        "Strategy",
+        "Sci-fi",
+        "Turn-Based",
+        "Aliens",
+        "Singleplayer",
+        "Difficult",
+        "Base Building",
+        "Turn-Based Tactics",
+        "Replay Value",
+        "Addictive",
+        "Character Customization",
+        "Perma Death",
+        "Multiplayer",
+        "RPG",
+        "Action",
+        "Atmospheric",
+        "Futuristic",
+        "Reboot"
+      ],
+      "developers": [
+        "Firaxis Games",
+        "Feral Interactive (Linux)"
+      ],
+      "publishers": [
+        "2K",
+        "Feral Interactive (Linux)"
+      ],
+      "metrics": {
+        "ccu": 590,
+        "peak_yesterday": 590,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 52717,
+        "negative": 3697,
+        "reviews_total": 56414,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 238010,
+      "name": "Deus Ex: Human Revolution - Director's Cut",
+      "localizedNames": {
+        "en": "Deus Ex: Human Revolution - Director's Cut",
+        "zh-cn": "Deus Ex: Human Revolution - Director's Cut"
+      },
+      "appType": "game",
+      "releaseDate": "2013 年 10 月 25 日",
+      "tags": [
+        "Cyberpunk",
+        "Stealth",
+        "RPG",
+        "Sci-fi",
+        "FPS",
+        "Action",
+        "Singleplayer",
+        "Story Rich",
+        "Great Soundtrack",
+        "Transhumanism",
+        "Dystopian",
+        "First-Person",
+        "Atmospheric",
+        "Immersive Sim",
+        "Adventure",
+        "Inventory Management",
+        "Immersive",
+        "Shooter",
+        "Futuristic",
+        "Replay Value"
+      ],
+      "developers": [
+        "Eidos Montreal"
+      ],
+      "publishers": [
+        "Eidos Interactive Corp."
+      ],
+      "metrics": {
+        "ccu": 193,
+        "peak_yesterday": 193,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 25909,
+        "negative": 2216,
+        "reviews_total": 28125,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 261550,
+      "name": "Mount & Blade II: Bannerlord",
+      "localizedNames": {
+        "en": "Mount & Blade II: Bannerlord",
+        "zh-cn": "Mount & Blade II: Bannerlord"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 10 月 25 日",
+      "tags": [
+        "Medieval",
+        "Strategy",
+        "Open World",
+        "RPG",
+        "War",
+        "Multiplayer",
+        "Sandbox",
+        "Singleplayer",
+        "Action",
+        "Character Customization",
+        "Simulation",
+        "Moddable",
+        "Adventure",
+        "Horses",
+        "Realistic",
+        "Third Person",
+        "Historical",
+        "First-Person",
+        "Great Soundtrack",
+        "Early Access"
+      ],
+      "developers": [
+        "TaleWorlds Entertainment"
+      ],
+      "publishers": [
+        "TaleWorlds Entertainment"
+      ],
+      "metrics": {
+        "ccu": 14477,
+        "peak_yesterday": 14477,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 232360,
+        "negative": 32031,
+        "reviews_total": 264391,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 346110,
+      "name": "ARK: Survival Evolved",
+      "localizedNames": {
+        "en": "ARK: Survival Evolved",
+        "zh-cn": "ARK: Survival Evolved"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 8 月 27 日",
+      "tags": [
+        "Open World Survival Craft",
+        "Survival",
+        "Multiplayer",
+        "Open World",
+        "Dinosaurs",
+        "Crafting",
+        "Building",
+        "Adventure",
+        "Base Building",
+        "Co-op",
+        "Action",
+        "Sandbox",
+        "First-Person",
+        "Massively Multiplayer",
+        "Singleplayer",
+        "Early Access",
+        "Dragons",
+        "RPG",
+        "Sci-fi",
+        "Indie"
+      ],
+      "developers": [
+        "Studio Wildcard",
+        "Instinct Games",
+        "Efecto Studios",
+        "Virtual Basement LLC"
+      ],
+      "publishers": [
+        "Studio Wildcard",
+        "Snail Games USA"
+      ],
+      "metrics": {
+        "ccu": 22170,
+        "peak_yesterday": 22170,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 612177,
+        "negative": 117993,
+        "reviews_total": 730170,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 418370,
+      "name": "Resident Evil 7 Biohazard",
+      "localizedNames": {
+        "en": "Resident Evil 7 Biohazard",
+        "zh-cn": "Resident Evil 7 Biohazard"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 1 月 23 日",
+      "tags": [
+        "Horror",
+        "Survival Horror",
+        "First-Person",
+        "Singleplayer",
+        "VR",
+        "Gore",
+        "Atmospheric",
+        "Zombies",
+        "Psychological Horror",
+        "Action",
+        "Violent",
+        "Survival",
+        "Puzzle",
+        "Multiplayer",
+        "Story Rich",
+        "Adventure",
+        "FPS",
+        "Exploration",
+        "Shooter",
+        "Classic"
+      ],
+      "developers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "publishers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 792,
+        "peak_yesterday": 792,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 93214,
+        "negative": 4632,
+        "reviews_total": 97846,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 527230,
+      "name": "For The King",
+      "localizedNames": {
+        "en": "For The King",
+        "zh-cn": "为了吾王 / For The King"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 4 月 19 日",
+      "tags": [
+        "RPG",
+        "Online Co-Op",
+        "Turn-Based",
+        "Roguelike",
+        "Strategy",
+        "Open World",
+        "Multiplayer",
+        "Co-op",
+        "Turn-Based Combat",
+        "Tabletop",
+        "Adventure",
+        "Roguelite",
+        "Turn-Based Strategy",
+        "Party-Based RPG",
+        "Local Co-Op",
+        "Board Game",
+        "Indie",
+        "Fantasy",
+        "Hex Grid",
+        "Strategy RPG"
+      ],
+      "developers": [
+        "IronOak Games"
+      ],
+      "publishers": [
+        "Curve Games"
+      ],
+      "metrics": {
+        "ccu": 428,
+        "peak_yesterday": 428,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 36581,
+        "negative": 4906,
+        "reviews_total": 41487,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 644930,
+      "name": "They Are Billions",
+      "localizedNames": {
+        "en": "They Are Billions",
+        "zh-cn": "They Are Billions"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 6 月 18 日",
+      "tags": [
+        "Base Building",
+        "Colony Sim",
+        "Strategy",
+        "Zombies",
+        "Survival",
+        "RTS",
+        "Tower Defense",
+        "City Builder",
+        "Steampunk",
+        "Building",
+        "Post-apocalyptic",
+        "Singleplayer",
+        "Resource Management",
+        "Real-Time with Pause",
+        "Difficult",
+        "Tactical",
+        "Management",
+        "Indie",
+        "Isometric",
+        "Multiplayer"
+      ],
+      "developers": [
+        "Numantian Games"
+      ],
+      "publishers": [
+        "Numantian Games"
+      ],
+      "metrics": {
+        "ccu": 2751,
+        "peak_yesterday": 2751,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 41508,
+        "negative": 7257,
+        "reviews_total": 48765,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 752590,
+      "name": "A Plague Tale: Innocence",
+      "localizedNames": {
+        "en": "A Plague Tale: Innocence",
+        "zh-cn": "A Plague Tale: Innocence"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 5 月 14 日",
+      "tags": [
+        "Story Rich",
+        "Adventure",
+        "Stealth",
+        "Female Protagonist",
+        "Medieval",
+        "Atmospheric",
+        "Singleplayer",
+        "Third Person",
+        "Action",
+        "Dark",
+        "Horror",
+        "Historical",
+        "Great Soundtrack",
+        "Emotional",
+        "Violent",
+        "Survival",
+        "Puzzle",
+        "Dark Fantasy",
+        "Post-apocalyptic",
+        "Walking Simulator"
+      ],
+      "developers": [
+        "Asobo Studio"
+      ],
+      "publishers": [
+        "Focus Entertainment"
+      ],
+      "metrics": {
+        "ccu": 145,
+        "peak_yesterday": 145,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 58909,
+        "negative": 4133,
+        "reviews_total": 63042,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 945360,
+      "name": "Among Us",
+      "localizedNames": {
+        "en": "Among Us",
+        "zh-cn": "Among Us"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 11 月 16 日",
+      "tags": [
+        "Multiplayer",
+        "Online Co-Op",
+        "Social Deduction",
+        "Space",
+        "Survival",
+        "2D",
+        "Funny",
+        "Party Game",
+        "Psychological",
+        "Co-op",
+        "Cartoony",
+        "Local Multiplayer",
+        "Casual",
+        "PvP",
+        "Action",
+        "Sci-fi",
+        "Minigames",
+        "Aliens",
+        "Colorful",
+        "Top-Down"
+      ],
+      "developers": [
+        "Innersloth"
+      ],
+      "publishers": [
+        "Innersloth"
+      ],
+      "metrics": {
+        "ccu": 3832,
+        "peak_yesterday": 3832,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 643681,
+        "negative": 57104,
+        "reviews_total": 700785,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1085660,
+      "name": "Destiny 2",
+      "localizedNames": {
+        "en": "Destiny 2",
+        "zh-cn": "命运2"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 10 月 1 日",
+      "tags": [
+        "Free to Play",
+        "Open World",
+        "Looter Shooter",
+        "Multiplayer",
+        "MMORPG",
+        "FPS",
+        "Co-op",
+        "PvE",
+        "PvP",
+        "Shooter",
+        "Loot",
+        "Massively Multiplayer",
+        "First-Person",
+        "Sci-fi",
+        "Action",
+        "Adventure",
+        "Space",
+        "Lore-Rich",
+        "Atmospheric",
+        "Competitive"
+      ],
+      "developers": [
+        "Bungie"
+      ],
+      "publishers": [
+        "Bungie"
+      ],
+      "metrics": {
+        "ccu": 24619,
+        "peak_yesterday": 24619,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 497891,
+        "negative": 127725,
+        "reviews_total": 625616,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1259420,
+      "name": "Days Gone",
+      "localizedNames": {
+        "en": "Days Gone",
+        "zh-cn": "Days Gone"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 5 月 17 日",
+      "tags": [
+        "Open World",
+        "Zombies",
+        "Singleplayer",
+        "Survival",
+        "Post-apocalyptic",
+        "Multiplayer",
+        "Story Rich",
+        "Action",
+        "Action-Adventure",
+        "Third Person",
+        "Open World Survival Craft",
+        "Adventure",
+        "Horror",
+        "Motorbike",
+        "Third-Person Shooter",
+        "Survival Horror",
+        "Crafting",
+        "Violent",
+        "Gore",
+        "Cinematic"
+      ],
+      "developers": [
+        "Bend Studio"
+      ],
+      "publishers": [
+        "PlayStation Publishing LLC"
+      ],
+      "metrics": {
+        "ccu": 1600,
+        "peak_yesterday": 1600,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 95697,
+        "negative": 7446,
+        "reviews_total": 103143,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 39210,
+      "name": "FINAL FANTASY XIV Online",
+      "localizedNames": {
+        "en": "FINAL FANTASY XIV Online",
+        "zh-cn": "FINAL FANTASY XIV Online"
+      },
+      "appType": "game",
+      "releaseDate": "2014 年 2 月 18 日",
+      "tags": [
+        "MMORPG",
+        "RPG",
+        "Character Customization",
+        "Massively Multiplayer",
+        "Fantasy",
+        "JRPG",
+        "Open World",
+        "Story Rich",
+        "Multiplayer",
+        "Magic",
+        "Adventure",
+        "Online Co-Op",
+        "Third Person",
+        "Co-op",
+        "Crafting",
+        "Action",
+        "Exploration",
+        "Atmospheric",
+        "Action RPG",
+        "Female Protagonist"
+      ],
+      "developers": [
+        "Square Enix"
+      ],
+      "publishers": [
+        "Square Enix"
+      ],
+      "metrics": {
+        "ccu": 19824,
+        "peak_yesterday": 19824,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 70254,
+        "negative": 9782,
+        "reviews_total": 80036,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 232090,
+      "name": "Killing Floor 2",
+      "localizedNames": {
+        "en": "Killing Floor 2",
+        "zh-cn": "Killing Floor 2"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 11 月 18 日",
+      "tags": [
+        "Gore",
+        "Zombies",
+        "Multiplayer",
+        "Online Co-Op",
+        "FPS",
+        "Post-apocalyptic",
+        "Hack and Slash",
+        "Shooter",
+        "Horror",
+        "Action",
+        "Survival",
+        "Moddable",
+        "First-Person",
+        "Co-op",
+        "Survival Horror",
+        "Team-Based",
+        "Atmospheric",
+        "PvE",
+        "Character Customization",
+        "Dark"
+      ],
+      "developers": [
+        "Tripwire Interactive"
+      ],
+      "publishers": [
+        "Tripwire Interactive"
+      ],
+      "metrics": {
+        "ccu": 4508,
+        "peak_yesterday": 4508,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 111325,
+        "negative": 15541,
+        "reviews_total": 126866,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "User label",
+          "user_rating": 3.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 264710,
+      "name": "Subnautica",
+      "localizedNames": {
+        "en": "Subnautica",
+        "zh-cn": "Subnautica - 深海迷航"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 1 月 23 日",
+      "tags": [
+        "Open World Survival Craft",
+        "Survival",
+        "Horror",
+        "Underwater",
+        "Open World",
+        "Exploration",
+        "Crafting",
+        "Singleplayer",
+        "Base Building",
+        "Adventure",
+        "First-Person",
+        "Multiplayer",
+        "Sci-fi",
+        "Atmospheric",
+        "Aliens",
+        "Sandbox",
+        "Survival Horror",
+        "VR",
+        "Indie",
+        "Action"
+      ],
+      "developers": [
+        "Unknown Worlds Entertainment"
+      ],
+      "publishers": [
+        "Unknown Worlds Entertainment"
+      ],
+      "metrics": {
+        "ccu": 2719,
+        "peak_yesterday": 2719,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 304449,
+        "negative": 9258,
+        "reviews_total": 313707,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "User label",
+          "user_rating": 3.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 304930,
+      "name": "Unturned",
+      "localizedNames": {
+        "en": "Unturned",
+        "zh-cn": "Unturned"
+      },
+      "appType": "game",
+      "releaseDate": "2017 年 7 月 7 日",
+      "tags": [
+        "Free to Play",
+        "Survival",
+        "Zombies",
+        "Multiplayer",
+        "Open World",
+        "Co-op",
+        "Sandbox",
+        "Crafting",
+        "Shooter",
+        "Post-apocalyptic",
+        "Adventure",
+        "Singleplayer",
+        "First-Person",
+        "Looter Shooter",
+        "FPS",
+        "Action",
+        "Massively Multiplayer",
+        "Indie",
+        "Casual",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Smartly Dressed Games"
+      ],
+      "publishers": [
+        "Smartly Dressed Games"
+      ],
+      "metrics": {
+        "ccu": 10408,
+        "peak_yesterday": 10408,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 506516,
+        "negative": 48852,
+        "reviews_total": 555368,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 379430,
+      "name": "Kingdom Come: Deliverance",
+      "localizedNames": {
+        "en": "Kingdom Come: Deliverance",
+        "zh-cn": "Kingdom Come: Deliverance"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 2 月 13 日",
+      "tags": [
+        "Medieval",
+        "RPG",
+        "Open World",
+        "Singleplayer",
+        "Realistic",
+        "Historical",
+        "Story Rich",
+        "First-Person",
+        "Adventure",
+        "Swordplay",
+        "Nudity",
+        "Action",
+        "Choices Matter",
+        "Choose Your Own Adventure",
+        "Atmospheric",
+        "Horses",
+        "Action RPG",
+        "Indie",
+        "Great Soundtrack",
+        "Multiplayer"
+      ],
+      "developers": [
+        "Warhorse Studios"
+      ],
+      "publishers": [
+        "Warhorse Studios",
+        "Deep Silver"
+      ],
+      "metrics": {
+        "ccu": 2520,
+        "peak_yesterday": 2520,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 136446,
+        "negative": 25760,
+        "reviews_total": 162206,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 546560,
+      "name": "Half-Life: Alyx",
+      "localizedNames": {
+        "en": "Half-Life: Alyx",
+        "zh-cn": "Half-Life: Alyx"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 3 月 23 日",
+      "tags": [
+        "VR",
+        "FPS",
+        "Story Rich",
+        "Horror",
+        "Female Protagonist",
+        "Shooter",
+        "Singleplayer",
+        "First-Person",
+        "Action",
+        "Sci-fi",
+        "Atmospheric",
+        "Zombies",
+        "Beautiful",
+        "Aliens",
+        "Adventure",
+        "Futuristic",
+        "Psychological Horror",
+        "Memes",
+        "Great Soundtrack",
+        "Gore"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 202,
+        "peak_yesterday": 202,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 95555,
+        "negative": 1674,
+        "reviews_total": 97229,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 632360,
+      "name": "Risk of Rain 2",
+      "localizedNames": {
+        "en": "Risk of Rain 2",
+        "zh-cn": "雨中冒险 2"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 8 月 11 日",
+      "tags": [
+        "Third-Person Shooter",
+        "Action Roguelike",
+        "Multiplayer",
+        "Co-op",
+        "Roguelike",
+        "Roguelite",
+        "Action",
+        "Looter Shooter",
+        "Loot",
+        "Online Co-Op",
+        "Shooter",
+        "Great Soundtrack",
+        "Difficult",
+        "Indie",
+        "Third Person",
+        "Survival",
+        "Singleplayer",
+        "Soundtrack",
+        "Early Access",
+        "Bullet Hell"
+      ],
+      "developers": [
+        "Hopoo Games"
+      ],
+      "publishers": [
+        "Gearbox Publishing",
+        "2K"
+      ],
+      "metrics": {
+        "ccu": 7902,
+        "peak_yesterday": 7902,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 293127,
+        "negative": 20450,
+        "reviews_total": 313577,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "User label",
+          "user_rating": 3.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 815370,
+      "name": "Green Hell",
+      "localizedNames": {
+        "en": "Green Hell",
+        "zh-cn": "绿色地狱"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 9 月 5 日",
+      "tags": [
+        "Survival",
+        "Open World Survival Craft",
+        "Multiplayer",
+        "Online Co-Op",
+        "Open World",
+        "Crafting",
+        "Action",
+        "Base Building",
+        "Singleplayer",
+        "Co-op",
+        "Adventure",
+        "Exploration",
+        "First-Person",
+        "Survival Horror",
+        "Sandbox",
+        "Simulation",
+        "Atmospheric",
+        "Realistic",
+        "Building",
+        "Action-Adventure"
+      ],
+      "developers": [
+        "Creepy Jar"
+      ],
+      "publishers": [
+        "Creepy Jar"
+      ],
+      "metrics": {
+        "ccu": 1656,
+        "peak_yesterday": 1656,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 69304,
+        "negative": 11300,
+        "reviews_total": 80604,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1139900,
+      "name": "Ghostrunner",
+      "localizedNames": {
+        "en": "Ghostrunner",
+        "zh-cn": "Ghostrunner - 幽灵行者"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 10 月 27 日",
+      "tags": [
+        "Action",
+        "Cyberpunk",
+        "Fast-Paced",
+        "First-Person",
+        "Difficult",
+        "Swordplay",
+        "Singleplayer",
+        "Hack and Slash",
+        "Futuristic",
+        "Violent",
+        "Sci-fi",
+        "Great Soundtrack",
+        "Action-Adventure",
+        "Combat",
+        "Adventure",
+        "Ninja",
+        "Post-apocalyptic",
+        "Fighting",
+        "Strategy",
+        "Shooter"
+      ],
+      "developers": [
+        "One More Level",
+        "3D Realms",
+        "Slipgate Ironworks™",
+        "All in! Games"
+      ],
+      "publishers": [
+        "505 Games"
+      ],
+      "metrics": {
+        "ccu": 174,
+        "peak_yesterday": 174,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 57713,
+        "negative": 5436,
+        "reviews_total": 63149,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1240440,
+      "name": "Halo Infinite",
+      "localizedNames": {
+        "en": "Halo Infinite",
+        "zh-cn": "Halo Infinite"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 11 月 15 日",
+      "tags": [
+        "Free to Play",
+        "FPS",
+        "Multiplayer",
+        "Singleplayer",
+        "Shooter",
+        "Action",
+        "First-Person",
+        "Open World",
+        "Sci-fi",
+        "Co-op",
+        "PvP",
+        "Competitive",
+        "Story Rich",
+        "Space",
+        "Adventure",
+        "Aliens",
+        "Lore-Rich",
+        "Atmospheric",
+        "Cinematic",
+        "Soundtrack"
+      ],
+      "developers": [
+        "343 Industries"
+      ],
+      "publishers": [
+        "Xbox Game Studios"
+      ],
+      "metrics": {
+        "ccu": 2275,
+        "peak_yesterday": 2275,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 123333,
+        "negative": 53708,
+        "reviews_total": 177041,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1562430,
+      "name": "DREDGE",
+      "localizedNames": {
+        "en": "DREDGE",
+        "zh-cn": "《渔帆暗涌》"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 3 月 30 日",
+      "tags": [
+        "Exploration",
+        "Fishing",
+        "Lovecraftian",
+        "Open World",
+        "Adventure",
+        "Inventory Management",
+        "Mystery",
+        "Atmospheric",
+        "Psychological Horror",
+        "Singleplayer",
+        "Horror",
+        "RPG",
+        "Simulation",
+        "Stylized",
+        "Survival Horror",
+        "Indie",
+        "Story Rich",
+        "Sailing",
+        "Psychological",
+        "3D"
+      ],
+      "developers": [
+        "Black Salt Games"
+      ],
+      "publishers": [
+        "Team17"
+      ],
+      "metrics": {
+        "ccu": 517,
+        "peak_yesterday": 517,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 42127,
+        "negative": 1839,
+        "reviews_total": 43966,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Conversation calibration",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 39510,
+      "name": "Gothic II: Gold Edition",
+      "localizedNames": {
+        "en": "Gothic II: Gold Edition",
+        "zh-cn": "Gothic II: Gold Edition"
+      },
+      "appType": "game",
+      "releaseDate": "2010 年 1 月 13 日",
+      "tags": [],
+      "developers": [
+        "Piranha Bytes"
+      ],
+      "publishers": [
+        "THQ Nordic"
+      ],
+      "metrics": {
+        "ccu": 404,
+        "peak_yesterday": 404,
+        "peak_7d": null,
+        "owners_min": 500000,
+        "owners_max": 1000000,
+        "positive": 14520,
+        "negative": 987,
+        "reviews_total": 15507,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "base-name"
+        }
+      }
+    },
+    {
+      "appId": 244850,
+      "name": "Space Engineers",
+      "localizedNames": {
+        "en": "Space Engineers",
+        "zh-cn": "Space Engineers"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 2 月 28 日",
+      "tags": [
+        "Sandbox",
+        "Building",
+        "Space",
+        "Survival",
+        "Simulation",
+        "Physics",
+        "Open World",
+        "Base Building",
+        "Multiplayer",
+        "Singleplayer",
+        "Co-op",
+        "Moddable",
+        "PvP",
+        "Space Sim",
+        "Combat",
+        "Action",
+        "Exploration",
+        "PvE",
+        "Strategy",
+        "Realistic"
+      ],
+      "developers": [
+        "Keen Software House"
+      ],
+      "publishers": [
+        "Keen Software House"
+      ],
+      "metrics": {
+        "ccu": 4201,
+        "peak_yesterday": 4201,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 117204,
+        "negative": 15143,
+        "reviews_total": 132347,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 291650,
+      "name": "Pillars of Eternity",
+      "localizedNames": {
+        "en": "Pillars of Eternity",
+        "zh-cn": "Pillars of Eternity"
+      },
+      "appType": "game",
+      "releaseDate": "2015 年 3 月 26 日",
+      "tags": [
+        "RPG",
+        "Fantasy",
+        "Isometric",
+        "Story Rich",
+        "CRPG",
+        "Singleplayer",
+        "Party-Based RPG",
+        "Real-Time with Pause",
+        "Adventure",
+        "Character Customization",
+        "Dark Fantasy",
+        "Atmospheric",
+        "Open World",
+        "Exploration",
+        "Classic",
+        "Great Soundtrack",
+        "Strategy",
+        "Indie",
+        "Choices Matter",
+        "Dwarves"
+      ],
+      "developers": [
+        "Obsidian Entertainment"
+      ],
+      "publishers": [
+        "Xbox Game Studios"
+      ],
+      "metrics": {
+        "ccu": 204,
+        "peak_yesterday": 204,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 21751,
+        "negative": 2899,
+        "reviews_total": 24650,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 413410,
+      "name": "Danganronpa: Trigger Happy Havoc",
+      "localizedNames": {
+        "en": "Danganronpa: Trigger Happy Havoc",
+        "zh-cn": "Danganronpa: Trigger Happy Havoc"
+      },
+      "appType": "game",
+      "releaseDate": "2016 年 2 月 18 日",
+      "tags": [
+        "Visual Novel",
+        "Anime",
+        "Detective",
+        "Mystery",
+        "Story Rich",
+        "Great Soundtrack",
+        "Singleplayer",
+        "Psychological Horror",
+        "Horror",
+        "Adventure",
+        "Dark Comedy",
+        "Dark Humor",
+        "Puzzle",
+        "Point & Click",
+        "Funny",
+        "Comedy",
+        "Exploration",
+        "Survival",
+        "Action",
+        "Memes"
+      ],
+      "developers": [
+        "Spike Chunsoft Co., Ltd.",
+        "Abstraction Games"
+      ],
+      "publishers": [
+        "Spike Chunsoft Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 173,
+        "peak_yesterday": 173,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 29230,
+        "negative": 1201,
+        "reviews_total": 30431,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 560130,
+      "name": "Pillars of Eternity II: Deadfire",
+      "localizedNames": {
+        "en": "Pillars of Eternity II: Deadfire",
+        "zh-cn": "Pillars of Eternity II: Deadfire"
+      },
+      "appType": "game",
+      "releaseDate": "2018 年 5 月 8 日",
+      "tags": [
+        "RPG",
+        "Party-Based RPG",
+        "Isometric",
+        "CRPG",
+        "Story Rich",
+        "Singleplayer",
+        "Character Customization",
+        "Fantasy",
+        "Choices Matter",
+        "Open World",
+        "Turn-Based",
+        "Real-Time with Pause",
+        "Pirates",
+        "Adventure",
+        "Nudity",
+        "Exploration",
+        "Romance",
+        "Atmospheric",
+        "Great Soundtrack",
+        "Female Protagonist"
+      ],
+      "developers": [
+        "Obsidian Entertainment"
+      ],
+      "publishers": [
+        "Versus Evil",
+        "Obsidian Entertainment",
+        "Xbox Game Studios"
+      ],
+      "metrics": {
+        "ccu": 233,
+        "peak_yesterday": 233,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 16666,
+        "negative": 2265,
+        "reviews_total": 18931,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 692850,
+      "name": "Bloodstained: Ritual of the Night",
+      "localizedNames": {
+        "en": "Bloodstained: Ritual of the Night",
+        "zh-cn": "Bloodstained: Ritual of the Night"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 6 月 18 日",
+      "tags": [
+        "Metroidvania",
+        "Female Protagonist",
+        "RPG",
+        "Action",
+        "Adventure",
+        "Anime",
+        "Side Scroller",
+        "2.5D",
+        "Platformer",
+        "Great Soundtrack",
+        "Gothic",
+        "Dark Fantasy",
+        "Exploration",
+        "Singleplayer",
+        "Crafting",
+        "2D",
+        "Difficult",
+        "Nudity",
+        "Indie",
+        "Sexual Content"
+      ],
+      "developers": [
+        "ArtPlay"
+      ],
+      "publishers": [
+        "505 Games"
+      ],
+      "metrics": {
+        "ccu": 158,
+        "peak_yesterday": 158,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 36999,
+        "negative": 2486,
+        "reviews_total": 39485,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 788100,
+      "name": "Neon Abyss",
+      "localizedNames": {
+        "en": "Neon Abyss",
+        "zh-cn": "霓虹深渊"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 7 月 14 日",
+      "tags": [
+        "Roguelike",
+        "Platformer",
+        "Loot",
+        "Procedural Generation",
+        "Singleplayer",
+        "Pixel Graphics",
+        "Replay Value",
+        "Shooter",
+        "Cyberpunk",
+        "Adventure",
+        "Bullet Hell",
+        "Roguelite",
+        "Dungeon Crawler",
+        "Action Roguelike",
+        "2D Platformer",
+        "RPG",
+        "Action",
+        "2D",
+        "Action-Adventure",
+        "Character Customization"
+      ],
+      "developers": [
+        "Veewo Games"
+      ],
+      "publishers": [
+        "Team17",
+        "Veewo Games"
+      ],
+      "metrics": {
+        "ccu": 161,
+        "peak_yesterday": 161,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 19957,
+        "negative": 3183,
+        "reviews_total": 23140,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1102190,
+      "name": "Monster Train",
+      "localizedNames": {
+        "en": "Monster Train",
+        "zh-cn": "Monster Train"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 5 月 21 日",
+      "tags": [
+        "Card Battler",
+        "Roguelite",
+        "Card Game",
+        "Deckbuilding",
+        "Turn-Based Tactics",
+        "Roguelike",
+        "Turn-Based Strategy",
+        "Difficult",
+        "Strategy",
+        "PvP",
+        "Roguelike Deckbuilder",
+        "Turn-Based Combat",
+        "RPG",
+        "Choices Matter",
+        "Procedural Generation",
+        "Colorful",
+        "Fantasy",
+        "Demons",
+        "Magic",
+        "Trains"
+      ],
+      "developers": [
+        "Shiny Shoe"
+      ],
+      "publishers": [
+        "Good Shepherd Entertainment"
+      ],
+      "metrics": {
+        "ccu": 595,
+        "peak_yesterday": 595,
+        "peak_7d": null,
+        "owners_min": 500000,
+        "owners_max": 1000000,
+        "positive": 20995,
+        "negative": 873,
+        "reviews_total": 21868,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1217060,
+      "name": "Gunfire Reborn",
+      "localizedNames": {
+        "en": "Gunfire Reborn",
+        "zh-cn": "枪火重生"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 11 月 17 日",
+      "tags": [
+        "Roguelite",
+        "FPS",
+        "Roguelike",
+        "Online Co-Op",
+        "Co-op",
+        "Multiplayer",
+        "Looter Shooter",
+        "Indie",
+        "Action",
+        "Action Roguelike",
+        "RPG",
+        "Shooter",
+        "Adventure",
+        "First-Person",
+        "Dungeon Crawler",
+        "Replay Value",
+        "Singleplayer",
+        "Fast-Paced",
+        "Loot",
+        "Early Access"
+      ],
+      "developers": [
+        "Gunfire Reborn Studio"
+      ],
+      "publishers": [
+        "Duoyi Games"
+      ],
+      "metrics": {
+        "ccu": 1428,
+        "peak_yesterday": 1428,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 92655,
+        "negative": 6517,
+        "reviews_total": 99172,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1385380,
+      "name": "Across the Obelisk",
+      "localizedNames": {
+        "en": "Across the Obelisk",
+        "zh-cn": "Across the Obelisk"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 8 月 16 日",
+      "tags": [
+        "Casual",
+        "Adventure",
+        "Tactical",
+        "Turn-Based Strategy",
+        "Roguelike Deckbuilder",
+        "Card Game",
+        "Roguelike",
+        "Card Battler",
+        "Deckbuilding",
+        "Procedural Generation",
+        "Indie",
+        "Turn-Based",
+        "Strategy",
+        "Co-op",
+        "Tactical RPG",
+        "Singleplayer",
+        "Roguelite",
+        "Replay Value",
+        "Online Co-Op",
+        "Dungeon Crawler"
+      ],
+      "developers": [
+        "Dreamsite Games"
+      ],
+      "publishers": [
+        "Paradox Interactive",
+        "Paradox Arc"
+      ],
+      "metrics": {
+        "ccu": 531,
+        "peak_yesterday": 531,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 9733,
+        "negative": 2133,
+        "reviews_total": 11866,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1637320,
+      "name": "Dome Keeper",
+      "localizedNames": {
+        "en": "Dome Keeper",
+        "zh-cn": "Dome Keeper 穹顶守护者"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 9 月 27 日",
+      "tags": [
+        "Singleplayer",
+        "Post-apocalyptic",
+        "Roguelike",
+        "Action",
+        "Sci-fi",
+        "Combat",
+        "Resource Management",
+        "Tower Defense",
+        "Pixel Graphics",
+        "Atmospheric",
+        "Procedural Generation",
+        "Space",
+        "Replay Value",
+        "Physics",
+        "Exploration",
+        "2D",
+        "Retro",
+        "Controller",
+        "Tactical",
+        "Adventure"
+      ],
+      "developers": [
+        "Bippinbits"
+      ],
+      "publishers": [
+        "Raw Fury"
+      ],
+      "metrics": {
+        "ccu": 402,
+        "peak_yesterday": 402,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 14952,
+        "negative": 1260,
+        "reviews_total": 16212,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1940340,
+      "name": "Darkest Dungeon II",
+      "localizedNames": {
+        "en": "Darkest Dungeon II",
+        "zh-cn": "Darkest Dungeon® II"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 5 月 8 日",
+      "tags": [
+        "Turn-Based Tactics",
+        "Roguelite",
+        "Dark Fantasy",
+        "Dungeon Crawler",
+        "Lovecraftian",
+        "Singleplayer",
+        "Roguelike",
+        "Perma Death",
+        "Turn-Based",
+        "Turn-Based Combat",
+        "Party-Based RPG",
+        "Gothic",
+        "Story Rich",
+        "CRPG",
+        "2D",
+        "RPG",
+        "Hand-drawn",
+        "Turn-Based Strategy",
+        "Procedural Generation",
+        "Stylized"
+      ],
+      "developers": [
+        "Red Hook Studios"
+      ],
+      "publishers": [
+        "Red Hook Studios"
+      ],
+      "metrics": {
+        "ccu": 1054,
+        "peak_yesterday": 1054,
+        "peak_7d": null,
+        "owners_min": 1000000,
+        "owners_max": 2000000,
+        "positive": 16355,
+        "negative": 5184,
+        "reviews_total": 21539,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 4,
+          "tier": "hell",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 230410,
+      "name": "Warframe",
+      "localizedNames": {
+        "en": "Warframe",
+        "zh-cn": "Warframe 星际战甲"
+      },
+      "appType": "game",
+      "releaseDate": "2013 年 3 月 25 日",
+      "tags": [
+        "Free to Play",
+        "Looter Shooter",
+        "Action RPG",
+        "Third-Person Shooter",
+        "Action",
+        "RPG",
+        "Third Person",
+        "Massively Multiplayer",
+        "Online Co-Op",
+        "Character Customization",
+        "Co-op",
+        "PvE",
+        "Sci-fi",
+        "Singleplayer",
+        "Space",
+        "Lore-Rich",
+        "Shooter",
+        "Hack and Slash",
+        "Parkour",
+        "Ninja"
+      ],
+      "developers": [
+        "Digital Extremes"
+      ],
+      "publishers": [
+        "Digital Extremes"
+      ],
+      "metrics": {
+        "ccu": 36195,
+        "peak_yesterday": 36195,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 545393,
+        "negative": 81110,
+        "reviews_total": 626503,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 252950,
+      "name": "Rocket League",
+      "localizedNames": {
+        "en": "Rocket League",
+        "zh-cn": "Rocket League®"
+      },
+      "appType": "game",
+      "releaseDate": "2015 年 7 月 6 日",
+      "tags": [
+        "Multiplayer",
+        "Football (Soccer)",
+        "Competitive",
+        "Sports",
+        "Racing",
+        "Team-Based",
+        "Online Co-Op",
+        "Football (American)",
+        "Fast-Paced",
+        "Co-op",
+        "Action",
+        "Funny",
+        "Great Soundtrack",
+        "Local Multiplayer",
+        "Split Screen",
+        "Local Co-Op",
+        "Singleplayer",
+        "4 Player Local",
+        "Casual",
+        "Indie"
+      ],
+      "developers": [
+        "Psyonix LLC"
+      ],
+      "publishers": [
+        "Psyonix LLC"
+      ],
+      "metrics": {
+        "ccu": 21106,
+        "peak_yesterday": 21106,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 509445,
+        "negative": 73775,
+        "reviews_total": 583220,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1222670,
+      "name": "The Sims 4",
+      "localizedNames": {
+        "en": "The Sims 4",
+        "zh-cn": "The Sims™ 4"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 6 月 18 日",
+      "tags": [
+        "Life Sim",
+        "Free to Play",
+        "Character Customization",
+        "Building",
+        "Simulation",
+        "Romance",
+        "Singleplayer",
+        "Sandbox",
+        "Dating Sim",
+        "Casual",
+        "Relaxing",
+        "Realistic",
+        "Funny",
+        "Family Friendly",
+        "Cute",
+        "Immersive Sim",
+        "Fantasy",
+        "Adventure",
+        "Cartoony",
+        "Nudity"
+      ],
+      "developers": [
+        "Maxis"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ],
+      "metrics": {
+        "ccu": 25276,
+        "peak_yesterday": 25276,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 149064,
+        "negative": 21663,
+        "reviews_total": 170727,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 2183900,
+      "name": "Warhammer 40,000: Space Marine 2",
+      "localizedNames": {
+        "en": "Warhammer 40,000: Space Marine 2",
+        "zh-cn": "Warhammer 40,000: 星际战士2"
+      },
+      "appType": "game",
+      "releaseDate": "2024 年 9 月 9 日",
+      "tags": [
+        "Co-op",
+        "Action",
+        "Multiplayer",
+        "Third-Person Shooter",
+        "PvE",
+        "Adventure",
+        "Action-Adventure",
+        "Third Person",
+        "Sci-fi",
+        "Wargame",
+        "Singleplayer",
+        "War",
+        "Space",
+        "3D",
+        "Fantasy",
+        "Futuristic",
+        "Cinematic",
+        "Realistic",
+        "Gore",
+        "PvP"
+      ],
+      "developers": [
+        "Saber Interactive"
+      ],
+      "publishers": [
+        "Focus Entertainment"
+      ],
+      "metrics": {
+        "ccu": 6851,
+        "peak_yesterday": 6851,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 134739,
+        "negative": 27846,
+        "reviews_total": 162585,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1364780,
+      "name": "Street Fighter 6",
+      "localizedNames": {
+        "en": "Street Fighter 6",
+        "zh-cn": "Street Fighter 6"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 6 月 1 日",
+      "tags": [
+        "2D Fighter",
+        "Fighting",
+        "Arcade",
+        "Character Customization",
+        "Multiplayer",
+        "Action",
+        "PvP",
+        "Competitive",
+        "Adventure",
+        "Local Multiplayer",
+        "eSports",
+        "Singleplayer",
+        "Controller",
+        "Martial Arts",
+        "Open World",
+        "3D",
+        "Action RPG",
+        "Great Soundtrack",
+        "Female Protagonist",
+        "Psychological Horror"
+      ],
+      "developers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "publishers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 14920,
+        "peak_yesterday": 14920,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 48252,
+        "negative": 8414,
+        "reviews_total": 56666,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 440,
+      "name": "Team Fortress 2",
+      "localizedNames": {
+        "en": "Team Fortress 2",
+        "zh-cn": "Team Fortress 2"
+      },
+      "appType": "game",
+      "releaseDate": "2007 年 10 月 10 日",
+      "tags": [
+        "Free to Play",
+        "Hero Shooter",
+        "Multiplayer",
+        "FPS",
+        "Shooter",
+        "Action",
+        "Class-Based",
+        "Team-Based",
+        "Funny",
+        "First-Person",
+        "Online Co-Op",
+        "Competitive",
+        "Cartoony",
+        "Trading",
+        "Co-op",
+        "Comedy",
+        "Robots",
+        "Tactical",
+        "Cartoon",
+        "Crafting"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 43819,
+        "peak_yesterday": 43819,
+        "peak_7d": null,
+        "owners_min": 50000000,
+        "owners_max": 100000000,
+        "positive": 1044264,
+        "negative": 117208,
+        "reviews_total": 1161472,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 218620,
+      "name": "PAYDAY 2",
+      "localizedNames": {
+        "en": "PAYDAY 2",
+        "zh-cn": "PAYDAY 2"
+      },
+      "appType": "game",
+      "releaseDate": "2013 年 8 月 13 日",
+      "tags": [
+        "Co-op",
+        "Action",
+        "FPS",
+        "Heist",
+        "Multiplayer",
+        "Looter Shooter",
+        "Stealth",
+        "Online Co-Op",
+        "Crime",
+        "Shooter",
+        "Team-Based",
+        "First-Person",
+        "Great Soundtrack",
+        "Gun Customization",
+        "Tactical",
+        "PvE",
+        "Strategy",
+        "Singleplayer",
+        "Funny",
+        "Simulation"
+      ],
+      "developers": [
+        "OVERKILL - a Starbreeze Studio."
+      ],
+      "publishers": [
+        "Starbreeze Entertainment"
+      ],
+      "metrics": {
+        "ccu": 27254,
+        "peak_yesterday": 27254,
+        "peak_7d": null,
+        "owners_min": 20000000,
+        "owners_max": 50000000,
+        "positive": 594327,
+        "negative": 68755,
+        "reviews_total": 663082,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "User label",
+          "user_rating": 3.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 107410,
+      "name": "Arma 3",
+      "localizedNames": {
+        "en": "Arma 3",
+        "zh-cn": "武装突袭3"
+      },
+      "appType": "game",
+      "releaseDate": "2013 年 9 月 12 日",
+      "tags": [
+        "Military",
+        "Action",
+        "Multiplayer",
+        "Shooter",
+        "Simulation",
+        "Realistic",
+        "First-Person",
+        "Open World",
+        "Tactical",
+        "FPS",
+        "War",
+        "Co-op",
+        "Sandbox",
+        "Strategy",
+        "Singleplayer",
+        "Moddable",
+        "Combat",
+        "Online Co-Op",
+        "Team-Based",
+        "Third-Person Shooter"
+      ],
+      "developers": [
+        "Bohemia Interactive"
+      ],
+      "publishers": [
+        "Bohemia Interactive"
+      ],
+      "metrics": {
+        "ccu": 7181,
+        "peak_yesterday": 7181,
+        "peak_7d": null,
+        "owners_min": 10000000,
+        "owners_max": 20000000,
+        "positive": 256128,
+        "negative": 27136,
+        "reviews_total": 283264,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 3,
+          "tier": "hard",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1794680,
+      "name": "Vampire Survivors",
+      "localizedNames": {
+        "en": "Vampire Survivors",
+        "zh-cn": "Vampire Survivors - 吸血鬼幸存者"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 10 月 20 日",
+      "tags": [
+        "Action Roguelike",
+        "Bullet Hell",
+        "Roguelite",
+        "Pixel Graphics",
+        "Vampires",
+        "Indie",
+        "2D",
+        "Singleplayer",
+        "Casual",
+        "Arcade",
+        "Roguelike",
+        "Action",
+        "Local Co-Op",
+        "RPG",
+        "Controller",
+        "Score Attack",
+        "Retro",
+        "Dark Fantasy",
+        "Action RPG",
+        "Co-op"
+      ],
+      "developers": [
+        "poncle"
+      ],
+      "publishers": [
+        "poncle"
+      ],
+      "metrics": {
+        "ccu": 2966,
+        "peak_yesterday": 2966,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 246479,
+        "negative": 3855,
+        "reviews_total": 250334,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 2050650,
+      "name": "Resident Evil 4",
+      "localizedNames": {
+        "en": "Resident Evil 4",
+        "zh-cn": "Resident Evil 4"
+      },
+      "appType": "game",
+      "releaseDate": "2023 年 3 月 23 日",
+      "tags": [
+        "Horror",
+        "Action",
+        "Third-Person Shooter",
+        "Survival Horror",
+        "Singleplayer",
+        "Zombies",
+        "Story Rich",
+        "Survival",
+        "Remake",
+        "Dark",
+        "Cinematic",
+        "Gore",
+        "Third Person",
+        "Realistic",
+        "VR",
+        "Resource Management",
+        "Adventure",
+        "Action-Adventure",
+        "Violent",
+        "Psychological Horror"
+      ],
+      "developers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "publishers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 3748,
+        "peak_yesterday": 3748,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 177539,
+        "negative": 4169,
+        "reviews_total": 181708,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 620,
+      "name": "Portal 2",
+      "localizedNames": {
+        "en": "Portal 2",
+        "zh-cn": "Portal 2"
+      },
+      "appType": "game",
+      "releaseDate": "2011 年 4 月 18 日",
+      "tags": [
+        "Singleplayer",
+        "Platformer",
+        "Puzzle",
+        "First-Person",
+        "Dark Humor",
+        "Story Rich",
+        "Puzzle Platformer",
+        "Funny",
+        "Female Protagonist",
+        "3D Platformer",
+        "Action-Adventure",
+        "Co-op",
+        "Action",
+        "FPS",
+        "Physics",
+        "Sci-fi",
+        "Level Editor",
+        "Science",
+        "Comedy",
+        "Atmospheric"
+      ],
+      "developers": [
+        "Valve"
+      ],
+      "publishers": [
+        "Valve"
+      ],
+      "metrics": {
+        "ccu": 1959,
+        "peak_yesterday": 1959,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 427835,
+        "negative": 5675,
+        "reviews_total": 433510,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 3590,
+      "name": "Plants vs. Zombies GOTY Edition",
+      "localizedNames": {
+        "en": "Plants vs. Zombies GOTY Edition",
+        "zh-cn": "Plants vs. Zombies GOTY Edition"
+      },
+      "appType": "game",
+      "releaseDate": "2009 年 5 月 5 日",
+      "tags": [
+        "Tower Defense",
+        "Zombies",
+        "Strategy",
+        "Singleplayer",
+        "Casual",
+        "Classic",
+        "Great Soundtrack",
+        "2D",
+        "Comedy",
+        "Family Friendly",
+        "Funny",
+        "Addictive",
+        "Puzzle",
+        "Cute",
+        "Survival",
+        "Indie",
+        "Tactical",
+        "Adventure",
+        "Touch-Friendly",
+        "Post-apocalyptic"
+      ],
+      "developers": [
+        "PopCap Games, Inc."
+      ],
+      "publishers": [
+        "PopCap Games, Inc.",
+        "Electronic Arts"
+      ],
+      "metrics": {
+        "ccu": 2656,
+        "peak_yesterday": 2656,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 136574,
+        "negative": 3351,
+        "reviews_total": 139925,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    },
+    {
+      "appId": 883710,
+      "name": "Resident Evil 2",
+      "localizedNames": {
+        "en": "Resident Evil 2",
+        "zh-cn": "Resident Evil 2"
+      },
+      "appType": "game",
+      "releaseDate": "2019 年 1 月 24 日",
+      "tags": [
+        "Zombies",
+        "Survival Horror",
+        "Horror",
+        "Singleplayer",
+        "Remake",
+        "Third Person",
+        "Gore",
+        "Action",
+        "Puzzle",
+        "Atmospheric",
+        "Story Rich",
+        "Multiplayer",
+        "Violent",
+        "Survival",
+        "Classic",
+        "Female Protagonist",
+        "Dark",
+        "Shooter",
+        "Adventure",
+        "Difficult"
+      ],
+      "developers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "publishers": [
+        "CAPCOM Co., Ltd."
+      ],
+      "metrics": {
+        "ccu": 1123,
+        "peak_yesterday": 1123,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 167647,
+        "negative": 5210,
+        "reviews_total": 172857,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1593500,
+      "name": "God of War",
+      "localizedNames": {
+        "en": "God of War",
+        "zh-cn": "God of War"
+      },
+      "appType": "game",
+      "releaseDate": "2022 年 1 月 14 日",
+      "tags": [
+        "Action",
+        "Singleplayer",
+        "Story Rich",
+        "Mythology",
+        "Adventure",
+        "Combat",
+        "Third Person",
+        "Hack and Slash",
+        "RPG",
+        "Open World",
+        "Violent",
+        "Fantasy",
+        "Exploration",
+        "Atmospheric",
+        "Action RPG",
+        "Gore",
+        "Souls-like",
+        "Emotional",
+        "3D",
+        "PvE"
+      ],
+      "developers": [
+        "Santa Monica Studio",
+        "Jetpack Interactive"
+      ],
+      "publishers": [
+        "PlayStation Publishing LLC"
+      ],
+      "metrics": {
+        "ccu": 1380,
+        "peak_yesterday": 1380,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 151706,
+        "negative": 6311,
+        "reviews_total": 158017,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 1,
+          "tier": "easy",
+          "basis": "Curated carryover",
+          "user_rating": null,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 1237970,
+      "name": "Titanfall 2",
+      "localizedNames": {
+        "en": "Titanfall 2",
+        "zh-cn": "Titanfall® 2"
+      },
+      "appType": "game",
+      "releaseDate": "2020 年 6 月 18 日",
+      "tags": [
+        "FPS",
+        "Mechs",
+        "Multiplayer",
+        "Shooter",
+        "Singleplayer",
+        "Parkour",
+        "Action",
+        "Sci-fi",
+        "First-Person",
+        "Futuristic",
+        "PvP",
+        "Military",
+        "Combat",
+        "Fast-Paced",
+        "Team-Based",
+        "Time Travel",
+        "Hero Shooter",
+        "Co-op",
+        "Violent",
+        "Gore"
+      ],
+      "developers": [
+        "Respawn Entertainment"
+      ],
+      "publishers": [
+        "Electronic Arts"
+      ],
+      "metrics": {
+        "ccu": 1173,
+        "peak_yesterday": 1173,
+        "peak_7d": null,
+        "owners_min": 5000000,
+        "owners_max": 10000000,
+        "positive": 244524,
+        "negative": 11664,
+        "reviews_total": 256188,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": {
+          "difficulty_rank": 2,
+          "tier": "normal",
+          "basis": "User label",
+          "user_rating": 2.0,
+          "match_method": "exact"
+        }
+      }
+    },
+    {
+      "appId": 508440,
+      "name": "Totally Accurate Battle Simulator",
+      "localizedNames": {
+        "en": "Totally Accurate Battle Simulator",
+        "zh-cn": "Totally Accurate Battle Simulator"
+      },
+      "appType": "game",
+      "releaseDate": "2021 年 4 月 1 日",
+      "tags": [
+        "Sandbox",
+        "Simulation",
+        "Funny",
+        "War",
+        "Strategy",
+        "Physics",
+        "Singleplayer",
+        "Realistic",
+        "Indie",
+        "Adventure",
+        "Colorful",
+        "Fantasy",
+        "3D",
+        "Comedy",
+        "Action",
+        "Historical",
+        "Family Friendly",
+        "Wargame",
+        "Cute",
+        "Memes"
+      ],
+      "developers": [
+        "Landfall"
+      ],
+      "publishers": [
+        "Landfall"
+      ],
+      "metrics": {
+        "ccu": 1299,
+        "peak_yesterday": 1299,
+        "peak_7d": null,
+        "owners_min": 2000000,
+        "owners_max": 5000000,
+        "positive": 132974,
+        "negative": 2969,
+        "reviews_total": 135943,
+        "average_forever_minutes": 0
+      },
+      "legacy": {
+        "manualScore": null,
+        "manualLocked": false,
+        "curated": null
+      }
+    }
+  ]
+}

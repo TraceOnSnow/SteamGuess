@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 42700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "使命召唤系列最知名的FPS之一，Black Ops本身辨识度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 774171,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "国产音游代表作，二次元和B站圈层传播强，普通玩家也常见",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 436150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 84,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "免费扑克网游有稳定玩家，但具体品牌在中文玩家圈几乎无认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 219990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "ARPG品类有地位，依赖刷宝玩家圈，普通Steam玩家不一定认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 24200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "DC品牌有名，但该网游本身在中文玩家圈认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 420530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "独立剧情解谜口碑作，游戏圈有存在感但难及大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 204450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "西部题材FPS邪典佳作，主要在射击玩家圈内有认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1966900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "类吸血鬼幸存者国产热门，中文玩家圈传播广，但大众化仍有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 5,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "国民级免费FPS，当前中文玩家公共知识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2138710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "动作游戏报道和玩法出圈，但认知仍偏向动作玩家",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 653530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "独立解谜名作，口碑强但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 57690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "海岛大亨系列有策略圈地位，具体第四作辨识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1178830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "国产单机FPS话题作，中文玩家圈有认知但整体覆盖有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典FPS历史地位明确，但当代年轻玩家认知下降",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1057090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "知名独立平台跳跃续作，已进入普通Steam玩家认知范围",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1282100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "2023年合作射击热门，Steam圈传播明显但大众化仍有门槛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1919590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "NBA2K系列大众知名度高，具体年度版本认知较强",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1515210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "锈湖系列合作解谜，核心粉丝熟悉，普通玩家覆盖有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 763890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "核心媒体和独立游戏圈有名，普通玩家仍很难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 431730,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "像素绘图软件，不是可猜的游戏题目",
+      "reviewPriority": "high"
+    }
+  ]
+}

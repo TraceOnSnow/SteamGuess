@@ -1,0 +1,57 @@
+.main-menu-dialog-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(7, 17, 12, .58);
+}
+
+.main-menu-dialog {
+  width: min(440px, 100%);
+  padding: 24px;
+  border: 1px solid var(--line, #d7e2da);
+  border-radius: 16px;
+  color: var(--ink, #173324);
+  background: var(--surface, #fff);
+  box-shadow: 0 24px 70px rgba(5, 20, 12, .28);
+}
+
+.main-menu-dialog h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.main-menu-dialog p {
+  margin: 12px 0 0;
+  color: var(--muted, #627066);
+  line-height: 1.6;
+}
+
+.main-menu-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.btn-danger {
+  color: #fff;
+  background: var(--danger, #b23a3a);
+}
+
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background: #962f2f;
+}
+
+@media (max-width: 520px) {
+  .main-menu-dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .main-menu-dialog-actions .btn {
+    width: 100%;
+  }
+}

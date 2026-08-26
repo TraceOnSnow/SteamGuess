@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1943950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "后室梗在网络传播广，但具体游戏主要靠恐怖联机圈层认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1948980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "国产武侠独立热门，在中文Steam圈传播明显但未突破品类",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 12200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "Rockstar经典有辨识度，但具体旧作认知弱于GTA和荒野大镖客",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 268050,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "三上真司恐怖名作，普通玩家可能认识但恐怖类型门槛明显",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 213670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "南方公园IP知名，具体游戏仍有欧美动画和回合RPG门槛",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 22330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "上古卷轴系列地位高，但此条目年代早且辨识度弱于天际",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1426210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.98,
+      "reason": "现象级双人合作游戏，中文玩家圈和直播传播都很广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 813780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "帝国时代经典IP，决定版在PC和RTS圈有极高认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1454400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "点击放置玩法经典且网络梗广，但具体Steam版仍偏独立圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 271590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "GTA V是大众游戏文化常识，传承版仍被直接认作GTA V",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1657630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "可爱牧场玩法代表作续作，休闲和直播圈知名但弱于初代",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 567640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "弹丸论破系列在动画推理圈有名，但具体第三作和视觉小说门槛高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2215430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "PS独占转PC的知名3A，武士题材和画面辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 736190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "国产现象级独立游戏，教育题材曾广泛出圈但热度已回落",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 214490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "异形IP和恐怖游戏圈地位高，但具体作品在中国玩家中不算大众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 644930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "丧尸建造生存代表作，策略圈知名度高，跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 24010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "火车模拟品牌和DLC梗有辨识度，但核心认知仍限模拟器圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 447040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "育碧开放世界系列续作，玩家圈认知较高但弱于顶级3A",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 266840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "经典RTS但知名度明显低于帝国时代，主要停留在老玩家圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 209000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "蝙蝠侠IP和系列地位高，但起源是支线作品辨识度较弱",
+      "reviewPriority": "normal"
+    }
+  ]
+}

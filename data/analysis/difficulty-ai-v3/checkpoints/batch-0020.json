@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 481510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "叙事独立游戏代表作，媒体和核心圈认知高，普通玩家未必认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 823500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "VR物理动作代表作，游戏内容圈有存在感，认知受硬件门槛限制",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1790600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "龙珠IP知名度极高，新作发售热度强，但具体作品未到大众级",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 459820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "免费恋爱挂机类在特定内容圈有名，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 346900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "免费放置游戏经典，覆盖广但认知集中在类型玩家中",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 325610,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "全战系列PC策略圈知名度高，阿提拉作为具体作品辨识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 519860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "复古FPS复兴代表作，FPS核心圈熟悉，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 594570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "全战与奇幻策略代表作，策略玩家群体内认知稳定",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 457140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "殖民模拟代表作，缺氧在国内Steam圈已有稳定认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 977950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "冰与火之舞短视频传播广，年轻玩家认知较强，未到公共知识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1293830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "知名赛车系列，Steam版覆盖广，但热度已部分被续作承接",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1190000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "修车模拟品类头部作品，认知主要依赖模拟器爱好者圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 636480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "沙盒FPS独立作品，视频内容有传播，但普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 794260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "开放世界生存RPG有固定口碑，但具体版本认知局限在RPG圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1201240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "死神IP知名度高，但手游移植作仅动漫与抽卡玩家熟悉",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 606150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "独立圈有知名度的Roguelite，普通Steam玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 368230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "Kingdom系列有策略独立圈地位，Classic旧作辨识度弱于后续",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 952060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "生化危机IP和重制版均有大众认知，但本作辨识度低于RE2",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 4700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "全战系列经典作品，策略老玩家熟悉，但年代感限制大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 377840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "最终幻想IP知名，但九代具体作品主要被JRPG玩家熟悉",
+      "reviewPriority": "high"
+    }
+  ]
+}

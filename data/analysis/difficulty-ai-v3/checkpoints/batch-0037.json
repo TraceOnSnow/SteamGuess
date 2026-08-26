@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 242920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "殖民模拟经营代表作，圈层认可强但大众认知已明显回落",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 307690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "港风开放世界动作名作，中文玩家圈认知较强，版本影响不大",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 211500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 79,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "拟真赛车模拟社区知名，普通玩家基本不会认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2183900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "2024年热门动作射击，但战锤IP门槛限制普通玩家认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 342200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "机甲对战细分类型有稳定社区，大众认知非常有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 553420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "独立动作解谜佳作品类地位高，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 211420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "黑魂系列大众认知高，旧版条目易与重制版混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2835570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "直播短视频带火并出圈，但属于短期热潮且深度有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 201810,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "经典FPS重启有玩家认知，当前大众讨论度不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 433340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "治愈经营类代表，玩家圈认知稳定但未进入大众常识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 454650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "龙珠IP知名度高，游戏本身仍偏动漫粉丝圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1364780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "格斗游戏顶级IP现役作品，跨圈认知较高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 620980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "VR节奏游戏代表，视频出圈但硬件门槛限制普及度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 400040,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "截图工具，不属于可猜游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1263850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "足球经理系列地位高，年度版本单独辨识度较弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 897330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "休闲填色游戏有稳定受众，但几乎无大众辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1462040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "FF7大众认知极强，重制版具体条目容易辨认",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2551020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "免费联机恶搞游戏有短视频热度，但长期认知不稳定",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 444640,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "气球塔防IP有玩家基础，Battles版本认知弱于主线",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 306130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "上古卷轴IP与大型MMO地位高，普通玩家听过但非入门级",
+      "reviewPriority": "normal"
+    }
+  ]
+}

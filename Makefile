@@ -10,7 +10,7 @@ help:
 	@echo "  make normalize        - rebuild the current snapshot from local raw pages"
 	@echo "  make catalog-import   - upsert current JSON data into catalog.sqlite"
 	@echo "  make catalog-status   - show catalog completeness and pending enrichment"
-	@echo "  make publish          - publish labeling and playable browser catalogs"
+	@echo "  make publish          - publish the playable browser catalog"
 	@echo "  make test             - run data pipeline tests"
 	@echo "  make release-check    - run the complete release validation"
 	@echo ""
@@ -32,7 +32,6 @@ catalog-status:
 	npm run data:catalog-status
 
 publish:
-	npm run data:publish-labeler
 	npm run data:publish-playable
 
 test:

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 227300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "卡车模拟游戏代表作，长期玩家规模大，普通 PC 玩家也大多听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 418460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "写实战术射击细分领域知名，普通 Steam 玩家基本不会主动接触",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 851850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "龙珠 IP 大众度极高，该改编作也有明显游戏圈传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2124490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "恐怖游戏名作重制，2024年讨论度高，普通玩家较大概率听过",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 287390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "地铁系列在 PC 玩家中有辨识度，具体重制作认知略低于正传",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 387990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "沙盒建造联机玩家圈层熟悉，普通 Steam 玩家有合理机会认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1677280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "英雄连系列在 RTS 圈有地位，但三代本身跨圈认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 431240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "休闲联机派对游戏有主播传播，但认知主要停留在多人游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 9900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "星际迷航 IP 有全球影响，但该网游在中国玩家中认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 736260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "独立解谜圈标志作品，普通 Steam 玩家认知明显有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 692850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "恶魔城精神续作在银河城核心圈地位高，大众认知不足",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 584400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "索尼克品牌知名度高，该作也是系列近年最出圈作品之一",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 8980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "无主之地系列广为人知，首作年度版亦有稳定辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 961200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "Paragon 精神续作在英文 MOBA 社区有存在感，国内认知极窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 202970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.92,
+      "reason": "使命召唤与黑色行动系列均为大众级认知，具体作品辨识度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 42710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.88,
+      "reason": "黑色行动初代是现象级 COD 作品，虽年代较早仍广为人知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 304240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "生化危机 IP 大众度高，此重制作也是系列经典且有辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 588430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "辐射 IP 加手游式传播让其获得较广认知，但地位低于正传",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 386940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "派对游戏圈和主播圈有稳定知名度，普通玩家合理概率知道",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 924970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "左4死2团队新作与大型宣发带来认知，但热度已明显回落",
+      "reviewPriority": "high"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1562430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "克苏鲁钓鱼冒险在独立游戏圈口碑高，普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 367500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "龙之信条IP有续作热度，但具体旧作主要靠动作RPG玩家识别",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 644560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "Steam成人游戏社区和梗传播有名，但大众玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 731490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "古惑狼是经典平台跳跃系列，重制版在Steam有较高辨识度",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1520470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "国产恐怖非对称竞技有稳定社区，但认知主要限特定联机圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1903340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "2025年回合制RPG话题作，Steam圈传播明显但未成大众认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 221100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "僵尸生存品类经典，PC玩家和直播圈认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 6860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "杀手IP知名度高，但血钱具体条目主要靠潜行老玩家辨识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 993090,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "缩放与图形工具软件，不属于游戏猜题对象",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 350080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "德军总部IP在FPS圈有地位，旧血脉作为外传辨识度不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1536610,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 77,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "经典运输模拟重制在细分社区有地位，普通Steam玩家认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 373420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "Larian CRPG前作圈内知名，但不如神界原罪2跨圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 812140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "刺客信条系列主流开放世界作品，PC泛玩家认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 880940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "多人派对游戏在Steam联机圈传播广，大众层面认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1089090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "海贼王IP知名度极高，但无双改编主要被动漫游戏玩家认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1407200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "坦克世界是长期流行的免费载具射击网游，PC玩家认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 413420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "弹丸论破是动漫推理游戏代表系列，续作在中文ACG圈有知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1677740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "休闲大逃杀在移动端流行，但Steam具体版本大众辨识度一般",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 3240220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 2,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "GTA V增强版延续同一顶级IP，公共认知几乎等同于GTA V",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 955900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国产修仙模拟代表作，中文Steam圈传播明显但品类门槛较高",
+      "reviewPriority": "high"
+    }
+  ]
+}

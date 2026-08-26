@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 2344520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "暗黑破坏神IP长期大众化，新作覆盖主流PC玩家认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 975370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "殖民模拟传奇，但中文圈主要靠策略玩家口口相传，普通玩家难识别",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "半条命2系列极知名，但第二章作为具体条目辨识度稍低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 7,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "植物大战僵尸是中国大众级休闲游戏，版本差异不影响辨识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1593500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.95,
+      "reason": "战神和奎托斯在大众游戏文化中知名度极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 322500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "独立FPS创意出圈，但中文普通Steam玩家认知未达简单档",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1222700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "双人合作叙事佳作有稳定知名度，但弱于It Takes Two级别的出圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1017180,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "驾驶生存怪游靠视频传播，认知依赖梗和联机圈，普通玩家不易识别",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 253710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "累计玩家量不低，但认知主要局限于狩猎模拟圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 939400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "国产恋爱互动游戏有中文社区传播，但认知集中于独立和视觉小说受众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 319510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.96,
+      "reason": "玩偶熊和跳吓已成为年轻网民公共文化记忆",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "求生之路是Steam联机射击经典，中文PC玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 400750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "二战即时战术细分领域地位明确，但普通中文Steam玩家辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 629520,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "属于语音聊天辅助工具，不是可猜游戏",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1203220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "国产武侠吃鸡现象级作品，中文年轻玩家群体认知极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 335300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "黑暗之魂系列大众化，但二代具体版本辨识度低于三代",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 34330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "全面战争历史策略代表作，但主要靠策略玩家圈层认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 335240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "早期网页和Steam休闲多人游戏有怀旧基础，但当前普通玩家很难识别",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 203160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.93,
+      "reason": "古墓丽影和劳拉拥有大众级知名度，2013重启版也有广泛曝光",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1335200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 83,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "成人向动漫动作游戏，认知集中于特定二次元和对魔忍IP圈层",
+      "reviewPriority": "normal"
+    }
+  ]
+}

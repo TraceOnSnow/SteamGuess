@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 883710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "生化危机系列和恐怖游戏代表作，国内 PC 玩家普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 969990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "海绵宝宝 IP 认知高，但具体重制版在中文 Steam 圈并不突出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 997010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "警察模拟类有稳定玩家群，但认知主要停留在模拟器受众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 881020,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "动画风 JRPG 和碧蓝 IP 圈层知名，跨圈认知仍有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 311560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "刺客信条系列知名度高，但 Rogue 具体条目辨识度低于主作",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 8190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "开放世界动作游戏有一定经典地位，但如今大众讨论已明显降温",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1145350,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "一代口碑和独立游戏圈地位高，续作已有圈层认知但未大众化",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 323190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "中文圈知名的生存经营代表作，仍有策略品类门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1244460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "侏罗纪 IP 家喻户晓，但具体经营模拟条目在普通玩家中不突出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 268910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "画面和难度梗传播极广，已成为大众熟知的独立游戏",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1127500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "休闲解谜佳作，但认知仍主要限于独立游戏和轻量策略圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1118310,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "模拟器前端软件，不属于可猜游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 668580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 45,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "发布期话题性较强，热度沉淀后仍具备明显射击动作门槛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 884660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费大逃杀有玩家规模，但具体作品在中文玩家中辨识度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 445220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "太空建造品类里有玩家基础，但认知深度较窄，普通涉猎者难知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 383150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "死亡岛系列有僵尸游戏知名度，但重制版条目辨识度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 674940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "便宜易上手的派对格斗游戏，在联机玩家中有可靠传播",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 371660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "远哭系列很知名，但史前外传明显弱于主系列认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 223750,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "空战模拟领域地位明确，认知高度局限于飞行模拟圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "经典版本 Counter-Strike 历史地位高，但如今常被 CS2 覆盖",
+      "reviewPriority": "low"
+    }
+  ]
+}

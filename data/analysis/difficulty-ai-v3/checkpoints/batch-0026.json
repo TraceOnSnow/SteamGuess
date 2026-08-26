@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 960090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "休闲塔防代表作，Steam与移动端覆盖广，普通玩家多耳闻",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 72850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "开放世界RPG公共认知极高，名称与梗文化长期流传",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 815370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "生存建造圈知名，直播传播较广，但未形成大众级知名度",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 638970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "系列近年PC端口碑出圈，动作游戏圈普遍认识该作",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 750920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "古墓丽影IP大众认知高，本作是重启三部曲末作，辨识度充足",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1302240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "多人恐怖独立游戏有稳定社区，但认知局限于该品类",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 224260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "免费丧尸FPS老作品有玩家规模，但中国普通玩家认知很有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1771300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "2025年大型RPG，媒体与直播曝光强，Steam玩家大概率听过",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1671210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.93,
+      "reason": "Undertale作者续作，中文互联网和游戏圈知名度很高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 34030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "系列知名，但拿破仑独立版本年代较早且辨识度不如主力作",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1569040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "足球模拟管理系列有品类地位，但年度版认知局限于球迷玩家",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 208650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "蝙蝠侠IP大众认知极高，阿卡姆系列也是超级英雄游戏代表作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 394510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "初代旧版本易与二代混淆，当前认知主要来自续作热度",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 20510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "系列有硬核FPS地位，但中间代作品独立辨识度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2058180,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "如龙衍生作在核心玩家中有存在感，普通Steam玩家认知较弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 475150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "经典刷宝ARPG在品类内知名，现代普通玩家了解有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 534380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "僵尸跑酷动作续作有强宣传，主流Steam玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 848450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "前作大众度高，续作仍较有名但独立性略弱于本篇",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 368260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "漫威IP加成但玩法偏战术卡牌，作品本身未形成广泛破圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2384580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "真三国无双系列在中国认知度高，新作首发话题也强",
+      "reviewPriority": "normal"
+    }
+  ]
+}

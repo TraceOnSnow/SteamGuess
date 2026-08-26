@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 397950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "物理跑酷题材有过出圈视频，但主要停留在独立游戏圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 287700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "合金装备系列和本作都很有名，但弱于大众互联网级现象作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 304050,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "免费用户量不小，但认知集中在沙盒 MMORPG 圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 48000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "独立游戏经典，画面辨识度高，普通 Steam 玩家多数听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1817070,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "漫威 IP 和主机版热度拉动，具体重制版认知也很高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1465360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "越野卡车模拟品类代表性作品，跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2142790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "近期农场模拟热作，主要在模拟经营和 cozy 社区传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 784150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "城市建造与经济模拟圈层知名，普通玩家较难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1284210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "老牌 MMORPG 代表作，在 PC 玩家中有稳定认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 20920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "巫师系列知名，但本作具体认知低于三代，仍需一定阅历",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 244850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "太空沙盒建造代表作品，Steam 圈层传播明显",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 252530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "巴士模拟品类经典，玩家圈层明确但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 221040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "生化危机系列知名度高，本作虽非系列最高峰仍属主流",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 10500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "全面战争系列有名，但帝国年代较久且具体条目辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 648800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "生存建造联机热门作品，普通 Steam 玩家大概率听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2273430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "格斗 IP 加动作肉鸽，中文玩家圈内有热度但未跨圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1105670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 61,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "回合制战术肉鸽社区知名，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 220240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "开放世界射击经典，反派梗提升整体认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 578080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "现象级吃鸡作品，已成为大众互联网文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 391220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "古墓丽影系列经典，本作辨识度高但弱于最顶级大众作品",
+      "reviewPriority": "low"
+    }
+  ]
+}

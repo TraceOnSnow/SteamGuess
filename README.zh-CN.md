@@ -13,7 +13,7 @@ SteamGuess 是一个类似 Wordle 的 Steam 游戏猜测游戏。玩家可以使
 
 项目分为两个相互独立但共享数据的部分：
 
-- **可玩产品**：面向玩家的轻量浏览器题库和猜测流程。
+- **可玩产品**：面向玩家的轻量 Search 搜索库，其中带有效难度的游戏构成答案池。
 - **数据与反馈平台**：持久化 catalog、增量数据补全、难度反馈以及多人模式基础设施。
 
 ## 产品入口
@@ -23,7 +23,7 @@ SteamGuess 是一个类似 Wordle 的 Steam 游戏猜测游戏。玩家可以使
 | `/` | 首页模式选择：单人或多人 |
 | `/singleplayer` | 单人猜游戏，支持线索设置和提示 |
 | `/multiplayer` | 2–8 人私人房间同题竞速 |
-| `/labeler` | 内部难度标注工具，生产环境默认关闭 |
+| `/labeler` | 内部 SQLite 难度管理工具，生产环境默认关闭 |
 | `/api/health` | 服务健康检查 |
 
 ### 当前功能
@@ -57,7 +57,7 @@ Steam PICS（可选）───┘
 | HTTP/API 服务 | `server/` | 静态文件、API、限流、迁移、运行时持久化 |
 | Catalog 流水线 | `scripts/catalog/` | 抓取、规范化、补全、发布、导入、状态检查 |
 | 运维脚本 | `scripts/ops/` | 周更入口、发布校验、备份和 smoke test |
-| 浏览器数据 | `public/` | 可玩的题库和内部标注题库 |
+| 浏览器数据 | `public/` | 浏览器运行时游戏题库快照 |
 | 文档 | `docs/` | 数据流水线、数据结构、标注器、多人模式和部署说明 |
 
 Catalog 数据库与玩家运行时数据库相互独立，数据更新不会直接影响玩家会话和反馈。
@@ -107,15 +107,22 @@ npm run release:preflight
 
 ## Catalog 数据流水线
 
-当前浏览器使用的是一个可版本化的 catalog 快照。计划中的每周更新是增量且可恢复的：
+浏览器使用发布后的 Search 快照；其中带有效难度的条目才可以被选为答案。
+每周更新是增量且可恢复的：
 
 1. 抓取 SteamSpy `request=all` 前 20 页，即 page `0..19`。
 2. 按唯一 AppID 规范化、去重并保留原始来源信息。
-3. 前 `6,000` 款进入 active catalog，后续候选保留为 reserve 数据。
-4. 只为 active 中尚未完成的游戏补全 PICS、Storefront 和评论。
+3. 前 `1,000` 款符合排名窗口条件的条目进入 Active，后续候选保留为 Reserve。
+4. 对前 `4,000` 款 Detail 条目补齐缺失的 PICS、Storefront 和评论数据。
 5. 每个原始页面和补全任务都保存 checkpoint。
-6. 生成浏览器数据，执行一致性校验，再原子导入 catalog SQLite。
+6. 发布 Search 数据、派生带难度的答案池，校验 membership 后原子替换正式数据。
 7. 失败时保留 staging 和上一版正式快照，不发布半成品。
+
+运行时固定关系：
+
+```text
+Playable 答案池 ⊆ Search 搜索库 ⊆ Active 排名窗口
+```
 
 生产周更入口：
 
@@ -132,7 +139,8 @@ Storefront 请求间隔：        5 秒
 评论请求间隔：               5 秒
 SteamSpy 单页重试：          2 次
 评论重试：                   3 次
-Active catalog 上限：        6,000 款
+Active catalog 上限：        1,000 款
+Detail 补全上限：            4,000 款
 ```
 
 如果任务失败，保留目录：
@@ -146,7 +154,8 @@ data/catalog/.weekly-work/current
 常用覆盖参数：
 
 ```bash
-STEAMGUESS_ACTIVE_LIMIT=6000
+STEAMGUESS_ACTIVE_LIMIT=1000
+STEAMGUESS_DETAIL_LIMIT=4000
 STEAMGUESS_STEAMSPY_INTERVAL=120
 STEAMGUESS_STEAMSPY_RETRIES=2
 STEAMGUESS_STEAMSPY_RETRY_DELAY=30
@@ -156,7 +165,10 @@ STEAMGUESS_REVIEWS_RETRIES=3
 STEAMGUESS_REVIEWS_RETRY_DELAY=30
 ```
 
-详细说明见：[`docs/data-pipeline.md`](docs/data-pipeline.md)、[`docs/catalog-pipeline.md`](docs/catalog-pipeline.md)、[`docs/data-schema.md`](docs/data-schema.md)。
+详细说明见：[`docs/data-pipeline.md`](docs/data-pipeline.md)、
+[`docs/catalog-pipeline.md`](docs/catalog-pipeline.md)、
+[`docs/data-schema.md`](docs/data-schema.md) 和
+[`docs/chinese-game-names.md`](docs/chinese-game-names.md)。
 
 ## 数据库和生产运维
 
@@ -164,11 +176,14 @@ STEAMGUESS_REVIEWS_RETRY_DELAY=30
 
 ```bash
 npm run db:backup
+npm run db:backup-catalog
 npm run db:stats
 npm run data:catalog-status
 ```
 
-生产环境需要持久化 `data/`，配置定期备份，把备份复制到服务器之外，并在上线前实际演练一次恢复。Docker Compose 示例：
+生产环境需要持久化 `data/`，配置定期备份，把备份复制到服务器之外，并在上线前实际演练一次恢复。Catalog 数据库不再以压缩 bootstrap 文件提交到 Git：它体积大、会持续变化，而且过期快照曾让旧 schema 和旧 Labeler 数据在新机器上重新出现。迁移机器时应传输 `db:backup-catalog` 生成的备份，或恢复生产数据卷。
+
+Docker Compose 示例：
 
 ```bash
 docker compose up -d --build
@@ -189,29 +204,33 @@ cp .env.example .env
 STEAMGUESS_TRUST_PROXY=true
 ```
 
-内部标注工具生产环境需要显式打开：
+内部难度管理工具在生产环境需要显式打开，并配置服务端管理员 Token：
 
 ```env
-VITE_LABELER_ENABLED=false
+VITE_LABELER_ENABLED=true
+STEAMGUESS_ADMIN_TOKEN=请替换为高强度密钥
 ```
 
 ## 多人模式状态
 
 多人 MVP 当前支持 2–8 人私人房间、BO1/BO3/BO5、准备状态、房间码分享、服务端选题和结算、回合计时、投降、再来一局以及短时间断线恢复。
 
-当前房间状态保存在单个 Node.js 进程内。服务重启会结束活动房间，因此生产环境暂时保持单实例；后续需要多人房间共享状态和持久恢复时，再接入 Redis 或其他共享存储。排行榜、匹配系统和社交功能暂不属于当前范围。
+Docker Compose 现在默认启用 Redis。同一台机器上的多个 Node.js 进程可以共享活动房间、Socket.IO 广播、房间锁和断线恢复状态；未配置 Redis 的本地开发环境会回退到单进程 `MemoryRoomStore`。
+
+当前 Redis 有意关闭了磁盘持久化，因此 Redis 或整机重启仍会结束活动房间。权威房间状态提交后的 SQLite 完赛记录目前也是 best-effort；跨整机重启的持久恢复、结果 outbox、排行榜、匹配系统和社交功能暂不属于当前范围。
 
 多人模式设计记录见 [`docs/multiplayer-research.md`](docs/multiplayer-research.md)。
 
 ## 路线图
 
-- [x] 单人猜游戏流程和四档难度题库
+- [x] 单人猜游戏流程和五档难度题库
 - [x] 玩家反馈和 catalog SQLite 持久化
 - [x] 可恢复的每周 catalog 更新
 - [x] 截图/评论提示接口
 - [x] 多人模式 MVP 基础设施
+- [x] Redis 共享多人房间状态与跨实例断线恢复
 - [ ] 更完整的中文元数据和评论覆盖
-- [ ] 共享多人房间状态与可靠断线恢复
+- [ ] 跨整机重启的房间恢复与可靠结果 outbox
 - [ ] 匹配系统、排行榜和社交功能
 
 ## 数据来源与版权

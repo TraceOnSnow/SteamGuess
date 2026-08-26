@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 843380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "可爱动物吃鸡有直播传播，但热度消退后普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2694490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "当前 ARPG 话题大作，普通 PC 玩家大概率听过，尚未进入大众文化层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1256670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "ProjectMoon 卡牌叙事核心圈知名，普通 Steam 玩家很难认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 418240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "潜行战术代表作，知名度集中在策略与潜行玩家圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 376210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 66,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "恐龙生存模拟细分圈有稳定社区，圈外认知明显有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 546560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "VR 标杆且 Valve 品牌加持，普通玩家有合理认识概率",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 113200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "独立肉鸽元老级作品，原版被重制版分流，认知中等",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1139980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "酒馆经营模拟在小品类内流行，普通玩家认识概率较低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 261570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "独立平台跳跃代表作，Steam 玩家普遍听过且辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 648350,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "恐龙题材经营建造有电影 IP 加持，但游戏本身认知中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 21690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "生化危机系列经典，玩家辨识度高，但热度弱于近期作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1260320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 15,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "国产派对游戏曾现象级出圈，仍属易认但未到公共常识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 920210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "乐高与星战双 IP 有辨识度，具体作品认知更偏向电影粉丝",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 617290,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "联机魂系射击有稳定口碑，普通 Steam 玩家合理概率认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 460790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "动作游戏经典与标志性角色，但国内认知弱于鬼泣系列",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 582500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "免费双人解谜系列核心圈知名，普通玩家较难想到具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 435150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "CRPG 标杆，口碑与博德之门3带动下认知可靠",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 418530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "roguelike 平台跳跃元祖续作，独立游戏圈外认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 12210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "GTA 系列地位极高，但 IV 具体版本知名度低于 GTA V",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 32440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "经典合家欢但年代久远，当前年轻玩家多难定位此版本",
+      "reviewPriority": "high"
+    }
+  ]
+}

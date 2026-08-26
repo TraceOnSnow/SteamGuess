@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 282070,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "战争生存题材的代表作，中文玩家圈内传播广泛，无需深入独立游戏圈",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 297000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "英雄无敌系列是经典回合策略IP，但具体HD版辨识度略低于本篇",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 17470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "死亡空间是知名恐怖射击系列，原版2008条目仍能被普通PC玩家认出",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1016920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "多人合作小品游戏有一定社区基础，但普通玩家很难主动认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1210320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "炼金模拟题材在Steam和直播圈传播明显，但认知仍带品类门槛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 505460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "大型战争模拟有稳定玩家群，但主要被战争策略圈了解",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1174180,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "R星现象级开放世界作品，认知远超普通游戏玩家圈层",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 669330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "机甲自动战斗游戏在策略圈有存在感，但尚未形成广泛跨圈认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 681280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "山地车运动题材独立游戏，口碑不错但认知局限于运动类玩家",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2322010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 14,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.86,
+      "reason": "战神系列知名度高，PC版推出后中国大陆年轻玩家普遍听过",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1811260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 15,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "FIFA作为足球游戏系列广为人知，但具体年度版本辨识稍弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 270150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.77,
+      "reason": "俯视角战术射击老牌作品，玩家基础明确但主要限于军事射击圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2072450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "人中之龙系列有较强玩家认知，但第八部具体条目跨圈度有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 609320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "氛围向独立冒险作品口碑良好，但主要被独立游戏玩家认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 438040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "网页挂机MMO有一定真实玩家群，但认知高度局限于该类型",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1562700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "韩国独立动作平台游戏评价很高，但需要较广的独立游戏阅历才认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 632360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "动作Roguelike代表作，已形成可靠且较广的Steam玩家认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 678960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "动漫风格魂类游戏有扎实玩家基础，但认知主要集中在相应品类",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 332950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.75,
+      "reason": "免费恐怖跑酷游戏靠实况传播，普通Steam玩家未必能认出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1229490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "复古快节奏FPS已成为品类现象级作品，普通Steam玩家有合理认知",
+      "reviewPriority": "high"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 595520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "最终幻想品牌有名，但本作辨识度低于系列代表作，主要靠JRPG圈认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 359550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "战术射击与电竞赛事长期热门，普通PC玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 214510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "魔戒IP广为人知，但这款乐高游戏本身不算突出，主要靠休闲家庭玩家认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 760160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 81,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费大逃杀曾短暂入圈，作品已停运，普通玩家基本不会想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 814380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "魂系代表作，中文互联网和玩家圈均有很高大众认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1449690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "行尸走肉IP有名，但合集形态辨识度低于单独章节，普通玩家较难定位",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1149620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "模拟经营主播和Steam圈层有稳定传播，认知强于小众独立游戏",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 341800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "派对合作解谜口碑稳定，但主要流行于联机和社交玩家圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 460920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "滑雪开放世界有固定受众，认知集中在运动游戏和育碧玩家",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 365360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "回合制战术名作，主要被策略游戏社区熟悉",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 8500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "太空MMO长期有媒体存在感，但玩法门槛让大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 780310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "基地建造加动作RPG在Steam圈有知名度，普通玩家较难想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 916440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "城市经营策略代表作，在经营模拟圈认知可靠但未达到大众层面",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1062090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "海狸建造题材有趣，认知仍主要限于建造模拟社区",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 24240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "Payday系列更出名，初代具体作品辨识度明显偏低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1289310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "免费游戏与角色梗高度出圈，年轻玩家有较高认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 261030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "系列第一季更出名，本作有稳定粉丝认知但大众记忆较弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2198150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "治愈建造品类有热度，主要靠独立游戏和社交传播圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 8870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "经典3A叙事射击，中文PC玩家普遍听过但未进入入门级大众文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 50300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "叙事射击经典多被老玩家讨论，年轻普通玩家认识有限",
+      "reviewPriority": "high"
+    }
+  ]
+}

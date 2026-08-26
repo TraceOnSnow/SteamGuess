@@ -156,6 +156,21 @@ def has_regional_price_status(game: dict[str, Any], country: str) -> bool:
     return isinstance(price, dict) and price.get("status") in {"available", "free", "unavailable"}
 
 
+def primary_localized_name(
+    details_by_country: dict[str, dict[str, Any]],
+    primary_country: str,
+) -> str | None:
+    """Return only the requested locale/country title.
+
+    A fallback-country response may supply type, companies, release date, and
+    media, but its title is not a localized name for the primary country.
+    """
+    primary = details_by_country.get(primary_country.lower())
+    if not primary:
+        return None
+    return str(primary.get("name") or "").strip() or None
+
+
 def retry_after_seconds(error: HTTPError, default: float) -> float:
     value = error.headers.get("Retry-After") if error.headers else None
     try:
@@ -178,7 +193,11 @@ def main() -> None:
     parser.add_argument("--state", default=DEFAULT_STATE_PATH)
     parser.add_argument("--language", default="schinese")
     parser.add_argument("--country", default="cn")
-    parser.add_argument("--fallback-country", default="us", help="Fallback used only when the primary response has no title")
+    parser.add_argument(
+        "--fallback-country",
+        default="us",
+        help="Fallback for non-localized rich metadata; its title is never stored as the primary localized name",
+    )
     parser.add_argument("--delay", type=float, default=2.0, help="Minimum delay between Store requests")
     parser.add_argument("--timeout", type=float, default=15)
     parser.add_argument("--limit", type=int, default=0, help="Maximum App IDs; 0 means all pending entries")
@@ -214,7 +233,11 @@ def main() -> None:
             continue
         localized = game.get("localizedNames")
         missing_name = not str(localized.get(language_key, "") if isinstance(localized, dict) else "").strip()
-        name_known_unavailable = app_state.get(str(appid), {}).get("status") == "unavailable"
+        state_entry = app_state.get(str(appid), {})
+        name_known_unavailable = (
+            state_entry.get("status") == "unavailable"
+            or state_entry.get("localizedNameStatus") == "unavailable"
+        )
         missing_price = not has_regional_price_status(game, primary_country)
         # A prior job can be marked complete while the current catalog snapshot
         # still lacks fields (for example after a fresh SteamSpy discovery).
@@ -276,7 +299,10 @@ def main() -> None:
             retrieved_at = utc_now()
             primary = details_by_country.get(primary_country)
             any_details = primary or next(iter(details_by_country.values()), None)
-            name = next((item.get("name") for item in details_by_country.values() if item.get("name")), None)
+            localized_name = primary_localized_name(details_by_country, primary_country)
+            display_name = localized_name or (
+                str(any_details.get("name") or "").strip() if any_details else ""
+            )
 
             if any_details:
                 # Storefront appdetails is the authoritative rich metadata response.
@@ -297,7 +323,6 @@ def main() -> None:
                 screenshots = any_details.get("screenshots") or []
                 if screenshots:
                     game["screenshots"] = screenshots
-                    game.setdefault("hints", {})["screenshotUrl"] = screenshots[0].get("path")
                     game.setdefault("fieldSources", {})["screenshots"] = "storefront"
 
             if primary:
@@ -313,23 +338,32 @@ def main() -> None:
                     "retrievedAt": retrieved_at,
                 }
 
-            if name:
-                game.setdefault("localizedNames", {})[language_key] = name
-                game.setdefault("fieldSources", {})["localizedNames"] = "storefront"
-                source_country = next(country for country, item in details_by_country.items() if item.get("name"))
-                add_source(game, args.language, source_country, retrieved_at)
+            if localized_name:
+                game.setdefault("localizedNames", {})[language_key] = localized_name
+                game.setdefault("fieldSources", {})["localizedNames"] = (
+                    f"storefront:{args.language}/{primary_country}"
+                )
+                add_source(game, args.language, primary_country, retrieved_at)
                 localized += 1
 
             price_status = game.get("regionalPrices", {}).get(primary_country, {}).get("status")
-            if name or any_details:
+            if any_details:
                 app_state[str(appid)] = {
                     "status": "success",
-                    "name": name,
-                    "country": primary_country if primary else next(iter(details_by_country), None),
+                    "name": localized_name,
+                    "localizedNameStatus": "success" if localized_name else "unavailable",
+                    "country": primary_country,
+                    "metadataCountry": primary_country if primary else next(iter(details_by_country), None),
                     "priceStatus": price_status,
                     "retrievedAt": retrieved_at,
                 }
-                print(f"[{index}/{len(pending)}] {appid}: {name or 'no title'}; {primary_country} price={price_status}", flush=True)
+                print(
+                    f"[{index}/{len(pending)}] {appid}: "
+                    f"{display_name or 'no title'}; localized="
+                    f"{'yes' if localized_name else 'unavailable'}; "
+                    f"{primary_country} price={price_status}",
+                    flush=True,
+                )
             elif last_error:
                 app_state[str(appid)] = {"status": "error", "lastError": last_error, "retrievedAt": retrieved_at}
                 transient_failures += 1

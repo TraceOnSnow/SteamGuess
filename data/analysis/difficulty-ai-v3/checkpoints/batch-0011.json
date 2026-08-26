@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 977400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费放置类有稳定受众，但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1455840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "轻松拼图名作，主要靠独立与休闲玩家圈传播",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1030840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "四海兄弟是经典犯罪题材系列，重制版也有明显大众曝光",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 339800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "成人向独立游戏靠梗传播，但受众相对特定",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 410900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "物理攻城游戏在视频社区有热度，但Steam玩家覆盖面不广",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 996580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "欧美经典3D平台跳跃，国内年轻玩家认知明显偏低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 311690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "弹幕地牢Roguelike代表作，Steam核心玩家普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 837470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "鹅梗曾大规模出圈，普通玩家也大多听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 527230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "桌游式多人RPG有稳定联机受众，跨圈但未达到简单",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1040200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "新晋模拟小品类靠短视频走红，长期认知尚未沉淀",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1142710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "全战系列招牌，但战锤世界观仍有明显策略门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 217200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "百战天虫经典代表作，老玩家认知高但当下热度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1259420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "PlayStation移植大作，开放世界僵尸题材认知面广",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 680420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 44,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "首发宣传较大但热度回落快，核心刷装玩家更熟",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1253920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "续作有一定玩家基础，但独立Roguelite圈外认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 219150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "独立动作经典，像素风格和配乐长期具有辨识度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 949230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "城市天际线系列知名度高，续作发布期话题度强",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 367520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "现象级独立游戏，中文玩家圈公共认知极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 976310,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "真人快打系列招牌，IP知名度覆盖普通格斗玩家",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 38400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "Fallout IP出名，但初代老CRPG仅系列或复古玩家熟悉",
+      "reviewPriority": "normal"
+    }
+  ]
+}

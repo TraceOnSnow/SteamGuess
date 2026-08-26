@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 2379780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "近年爆款卡牌肉鸽，已形成明显跨圈大众认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 573090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "工程建造模拟定位鲜明，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 613100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "模拟装修热门作，在Steam休闲圈有稳定传播",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 597170,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "体素机器人动作独立游戏，认知集中于直播和动作圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 427730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "恶搞联机小品曾大量传播，但当前大众讨论度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1284190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "生存建造社区较流行，尚未形成可靠跨圈认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 362890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "半条命IP带动认知，但具体重制作仍偏FPS玩家圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2252570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "足球经理系列圈层地位高，具体年度作辨识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 356190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "魔戒IP提升认知，但作品本身未达大众级",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 365670,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "3D建模软件，不属于正式游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 927380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "系列有知名度，但具体重制作辨识度明显较低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 12110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "经典GTA国民认知度高，但热度弱于现代作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 415200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "赛车经营管理细分圈知名，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1235140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "人中之龙系列有认知基础，该作未形成跨圈热度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1049410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立解谜口碑作，普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2108330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "赛车运动圈层明显，年度作品具体辨识度一般",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 463530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "蚂蚁题材战略游戏有稳定社区，但认知圈层窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 359320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "太空模拟类型代表，但品类门槛明显",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1669980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国产热门养成模拟，Steam圈熟知但未达大众级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1167630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "物理破坏玩法传播度高，普通玩家有合理认知",
+      "reviewPriority": "high"
+    }
+  ]
+}

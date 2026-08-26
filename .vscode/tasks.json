@@ -2,12 +2,51 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "SteamGuess: build",
+      "label": "SteamGuess: Dev",
+      "type": "process",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder:SteamGuess}",
+        "env": {
+          "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
+        }
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "steamguess-dev",
+        "pattern": {
+          "regexp": "^(.*)$",
+          "message": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "Local:"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "steamguess",
+        "clear": true
+      }
+    },
+    {
+      "label": "SteamGuess: Build",
       "type": "process",
       "command": "npm",
       "args": ["run", "build"],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder:SteamGuess}"
       },
       "problemMatcher": ["$tsc"],
       "presentation": {

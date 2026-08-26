@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": 1,
+  "model": "gpt-5.6-luna",
+  "rubricVersion": "v1",
+  "targetAudience": "Chinese-speaking Steam/PC players with broad mainstream gaming awareness.",
+  "evaluations": [
+    {
+      "appId": 2358720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 8,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "国产现象级作品，题材和画面辨识度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1086940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "confidence": 0.96,
+      "reason": "主流年度大作，博德之门系列辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 431960,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 90,
+      "level": "hell",
+      "confidence": 0.99,
+      "reason": "壁纸软件，不适合形成合理猜题体验",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1447430,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 95,
+      "level": "hell",
+      "confidence": 0.99,
+      "reason": "游戏加速器软件，不适合作为游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1245620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 8,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "现象级魂类作品，中文玩家认知度极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2622380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "confidence": 0.87,
+      "reason": "艾尔登法环衍生作，知名但容易与本篇混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1091500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "confidence": 0.97,
+      "reason": "知名科幻开放世界大作，视觉风格鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 5,
+      "level": "easy",
+      "confidence": 0.99,
+      "reason": "电竞级国民游戏，界面和玩法高度标志性",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 413150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "confidence": 0.96,
+      "reason": "独立名作，像素农场与角色风格鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 7,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "经典合作射击名作，僵尸题材极易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 4000,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "confidence": 0.92,
+      "reason": "沙盒与物理模组名作，核心玩家认知度高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 227300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "confidence": 0.82,
+      "reason": "卡车模拟代表作，但具体版本容易混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 292030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "confidence": 0.97,
+      "reason": "巫师系列旗舰作品，角色和世界观很鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 3164500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "近期热门独立模拟游戏，标题本身辨识度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1172470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "主流吃鸡英雄射击，角色和界面很鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 578080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 5,
+      "level": "easy",
+      "confidence": 0.99,
+      "reason": "吃鸡品类代表作，中文玩家几乎都认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 271590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 4,
+      "level": "easy",
+      "confidence": 0.99,
+      "reason": "全球现象级开放世界作品，辨识度极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 252490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "confidence": 0.95,
+      "reason": "生存沙盒代表作，题材与玩法线索明确",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1623730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "confidence": 0.95,
+      "reason": "宝可梦式生存建造爆款，中文认知度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1426210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "confidence": 0.97,
+      "reason": "双人合作名作，题材和玩法标签很鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 374320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "confidence": 0.94,
+      "reason": "魂系列知名作品，具体序号仍可能混淆",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 105600,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 15,
+      "level": "easy",
+      "confidence": 0.94,
+      "reason": "经典像素生存沙盒，画面和玩法辨识度高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 242760,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "confidence": 0.88,
+      "reason": "森林生存恐怖名作，线索较鲜明但非全民作",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1118200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "confidence": 0.78,
+      "reason": "物理沙盒较小众，截图容易与同类工具混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 548430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "合作矮人射击特色鲜明，但大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 427520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "confidence": 0.86,
+      "reason": "自动化工厂代表作，核心玩家熟悉但不全民",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 367520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "confidence": 0.93,
+      "reason": "独立动作名作，骑士形象和美术风格鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 8930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "文明系列知名，但第五代版本需要更多线索",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 240,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "confidence": 0.86,
+      "reason": "反恐精英经典条目，容易与其他版本混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 646570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 39,
+      "level": "normal",
+      "confidence": 0.82,
+      "reason": "卡牌肉鸽名作，核心玩家熟悉但视觉线索有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 739630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "confidence": 0.92,
+      "reason": "恐怖联机热门作，鬼魂调查玩法很有辨识度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 3241660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "confidence": 0.78,
+      "reason": "新近热门联机恐怖作，品牌辨识度仍在形成",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 322330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "confidence": 0.95,
+      "reason": "饥荒美术与生存玩法极具标志性",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 294100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "confidence": 0.86,
+      "reason": "殖民地模拟名作，核心玩家认知高于大众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 284160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "车辆物理模拟特色强，但具体作品较小众",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 250900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "confidence": 0.81,
+      "reason": "以撒系列知名，具体画面可能与肉鸽混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 10,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "confidence": 0.81,
+      "reason": "初代反恐精英历史地位高，但版本识别困难",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1966720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "confidence": 0.89,
+      "reason": "联机恐怖爆款，抓取和搬运玩法较有特色",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 526870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "confidence": 0.87,
+      "reason": "自动化建造名作，工业场景较有辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 360430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "confidence": 0.75,
+      "reason": "系列知名度有限，具体作品与开放世界同类混淆",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2552430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "confidence": 0.77,
+      "reason": "日式系列合集，中文玩家群体和版本辨识有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 220,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "confidence": 0.97,
+      "reason": "经典科幻射击名作，场景和玩法非常标志性",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 8870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 25,
+      "level": "normal",
+      "confidence": 0.87,
+      "reason": "生化奇兵系列有影响力，但具体作品需线索",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 281990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "confidence": 0.82,
+      "reason": "宏大策略名作，界面线索多但大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 394360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "confidence": 0.81,
+      "reason": "钢铁雄心系列知名，具体版本和界面较难辨",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 477160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "confidence": 0.92,
+      "reason": "魔性物理闯关作品，人物形象辨识度较高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 814380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 14,
+      "level": "easy",
+      "confidence": 0.96,
+      "reason": "只狼是魂类名作，狼与日本场景非常鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1196590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "confidence": 0.9,
+      "reason": "生化危机主系列知名，村庄场景仍有辨识度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1325200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "仁王系列有固定受众，具体续作容易混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "confidence": 0.91,
+      "reason": "传送门系列标志性强，但初代与续作可能混淆",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 200510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 47,
+      "level": "normal",
+      "confidence": 0.78,
+      "reason": "经典策略作品，核心玩家熟悉但版本辨识较难",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 238010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "confidence": 0.76,
+      "reason": "老牌沉浸式科幻 RPG，中文大众认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 261550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "confidence": 0.86,
+      "reason": "骑砍系列知名，沙盒战争线索较鲜明",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 346110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "confidence": 0.91,
+      "reason": "恐龙生存代表作，题材和画面容易定位",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 418370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "confidence": 0.9,
+      "reason": "生化危机系列知名，七代视角和场景有特征",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 527230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "confidence": 0.77,
+      "reason": "合作回合制肉鸽，作品名和画面相对小众",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 644930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "confidence": 0.75,
+      "reason": "高压僵尸 RTS，受众集中且具体作品不够大众",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 752590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 48,
+      "level": "normal",
+      "confidence": 0.8,
+      "reason": "叙事冒险作品有辨识度，但中文影响力一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 945360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "confidence": 0.99,
+      "reason": "社交推理爆款，太空人形象极易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1085660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "confidence": 0.9,
+      "reason": "科幻射击长线作品，品牌知名但内容版本多",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1259420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "末日开放世界作品，玩法常见且版本需区分",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 39210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "confidence": 0.83,
+      "reason": "大型 MMO 名作，但具体版本线索未必唯一",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 232090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "confidence": 0.79,
+      "reason": "合作僵尸射击有固定玩家群，视觉同质化明显",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 264710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "confidence": 0.93,
+      "reason": "深海生存题材鲜明，海底场景非常容易定位",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 304930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 44,
+      "level": "normal",
+      "confidence": 0.8,
+      "reason": "免费像素生存作，知名度尚可但同类很多",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 379430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "confidence": 0.81,
+      "reason": "写实中世纪 RPG，中文玩家知道但不算全民",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 546560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "confidence": 0.87,
+      "reason": "半条命 VR 续作，设备门槛限制了大众认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 632360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 39,
+      "level": "normal",
+      "confidence": 0.82,
+      "reason": "肉鸽射击名作，核心玩家熟悉但作品名普通",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 815370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 47,
+      "level": "normal",
+      "confidence": 0.78,
+      "reason": "生存制作题材常见，中文玩家认知中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1139900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 44,
+      "level": "normal",
+      "confidence": 0.8,
+      "reason": "高速赛博动作特色明显，但总体受众有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1240440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "光环品牌知名，Infinite 版本需要进一步区分",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1562430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 43,
+      "level": "normal",
+      "confidence": 0.79,
+      "reason": "钓鱼与克苏鲁组合独特，但仍属独立小众作",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 39510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "confidence": 0.72,
+      "reason": "老牌 RPG 在中文玩家中较小众，版本信息难辨",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 244850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "confidence": 0.77,
+      "reason": "太空建造模拟受众集中，截图容易与同类混淆",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 291650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "confidence": 0.73,
+      "reason": "经典 CRPG 但中文大众认知有限，视觉不唯一",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 413410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "confidence": 0.78,
+      "reason": "日式推理视觉小说，受众明确但非大众作品",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 560130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 72,
+      "level": "hard",
+      "confidence": 0.7,
+      "reason": "CRPG 续作受众更窄，具体版本较难从泛线索定位",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 692850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 63,
+      "level": "hard",
+      "confidence": 0.74,
+      "reason": "复古类银河恶魔城，玩家圈层和画面同质化较高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 788100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "confidence": 0.8,
+      "reason": "国产独立肉鸽有一定知名度，但同类作品很多",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1102190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 67,
+      "level": "hard",
+      "confidence": 0.72,
+      "reason": "卡牌肉鸽佳作，具体作品需要较强类型经验",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1217060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "confidence": 0.86,
+      "reason": "中文玩家较熟悉的合作肉鸽射击",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1385380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 82,
+      "level": "hell",
+      "confidence": 0.7,
+      "reason": "卡牌肉鸽小众，作品名和视觉线索都不突出",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1637320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 68,
+      "level": "hard",
+      "confidence": 0.72,
+      "reason": "独立防守肉鸽较小众，题材线索不足",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1940340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "confidence": 0.78,
+      "reason": "知名系列续作，但具体二代辨识需要更多线索",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 230410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 23,
+      "level": "easy",
+      "confidence": 0.92,
+      "reason": "长线免费网游，机甲与刷装备标签很鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 252950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "confidence": 0.97,
+      "reason": "足球赛车结合的现象级作品，玩法极易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1222670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 15,
+      "level": "easy",
+      "confidence": 0.95,
+      "reason": "模拟人生品牌极强，角色与建造线索明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2183900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 29,
+      "level": "normal",
+      "confidence": 0.85,
+      "reason": "战锤品牌明确，但具体作品仍可能和系列混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1364780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "confidence": 0.92,
+      "reason": "街霸品牌知名，角色和格斗画面较易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 14,
+      "level": "easy",
+      "confidence": 0.96,
+      "reason": "经典英雄射击，角色和美术风格极具辨识度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 218620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 26,
+      "level": "normal",
+      "confidence": 0.87,
+      "reason": "合作劫案射击知名，具体线索仍有同类混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 107410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 47,
+      "level": "normal",
+      "confidence": 0.79,
+      "reason": "军事模拟代表作，核心玩家熟悉但大众较远",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1794680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "confidence": 0.94,
+      "reason": "吸血鬼幸存者带动品类，像素弹幕特征明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2050650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "confidence": 0.95,
+      "reason": "生化危机经典重制，角色和场景辨识度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 7,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "传送门系列现象级，传送门和机器人线索鲜明",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 3590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 9,
+      "level": "easy",
+      "confidence": 0.98,
+      "reason": "植物大战僵尸品牌大众化，视觉元素极易识别",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 883710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "confidence": 0.94,
+      "reason": "生化危机经典重制，浣熊市和角色线索明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1593500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "confidence": 0.96,
+      "reason": "战神品牌和奎托斯形象辨识度极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1237970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "confidence": 0.88,
+      "reason": "机甲 FPS 口碑突出，但具体作品仍需更多线索",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 508440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "confidence": 0.84,
+      "reason": "搞笑物理战斗特色明显，但品牌认知不算全民",
+      "reviewPriority": "normal"
+    }
+  ]
+}

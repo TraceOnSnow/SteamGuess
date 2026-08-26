@@ -16,12 +16,13 @@ from typing import Any
 
 ENDPOINT = "https://store.steampowered.com/appreviews/{appid}"
 LANGUAGES = ("english", "schinese")
+REVIEWS_PER_LANGUAGE = 100
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 def fetch_reviews(appid: int, language: str, timeout: float = 30) -> list[dict[str, Any]]:
-    query = urlencode({"json": 1, "language": language, "filter": "all", "day_range": 365, "num_per_page": 10, "cursor": "*"})
+    query = urlencode({"json": 1, "language": language, "filter": "all", "day_range": 365, "num_per_page": REVIEWS_PER_LANGUAGE, "cursor": "*"})
     request = Request(ENDPOINT.format(appid=appid) + "?" + query, headers={"User-Agent": "SteamGuess review enrichment/1.0"})
     with urlopen(request, timeout=timeout) as response:
         payload = json.load(response)
@@ -49,7 +50,7 @@ def normalize_reviews(payload: Any, language: str, retrieved_at: str) -> list[di
             "language": language,
             "retrievedAt": retrieved_at,
         })
-    return result[:10]
+    return result[:REVIEWS_PER_LANGUAGE]
 
 def save_checkpoint(path: Path, payload: Any) -> None:
     """Atomically persist progress so an interrupted run can be resumed."""
@@ -104,7 +105,8 @@ def main() -> None:
         game_reviews = game.setdefault("reviews", {})
         for language in LANGUAGES:
             completed += 1
-            if language in game_reviews:
+            fetched_limits = game.setdefault("reviewFetchLimits", {})
+            if language in game_reviews and int(fetched_limits.get(language, 0) or 0) >= REVIEWS_PER_LANGUAGE:
                 cached += 1
                 print(f"[{completed}/{total}] {appid}: {language} cached", flush=True)
                 continue
@@ -115,6 +117,7 @@ def main() -> None:
                 try:
                     items = fetch_reviews(appid, language, args.timeout)
                     game_reviews[language] = items
+                    fetched_limits[language] = REVIEWS_PER_LANGUAGE
                     counts[language] += 1
                     save_checkpoint(out_path, catalog)
                     print(f"[{completed}/{total}] {appid}: {language} ok reviews={len(items)}", flush=True)

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 489830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.97,
+      "reason": "开放世界经典，模组与老滚文化认知极高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 282800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "日系桌游派对有稳定圈层，但普通玩家认知很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 397540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "刷宝射击系列代表作，普通Steam玩家广泛知晓",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 488790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "IP知名度高，但具体作品更依赖剧集与RPG玩家认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2103140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "国区肉鸽有传播，但认知仍主要在动作Roguelike圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 381210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "多人恐怖游戏长期热门，直播与玩家社区认知广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1929610,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "灵异合作恐怖有直播玩家基础，具体作品覆盖有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1267910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "放置类代表作品，主要被类型玩家和挂机社区认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 274170,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "系列是独立游戏经典，续作在PC玩家中辨识度尚可",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 787860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "模拟农场系列较知名，但具体代数辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1366540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "国产自动化建造代表作，Steam圈层传播明显",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 10090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "使命召唤经典二战作品，僵尸模式加强长期辨识度",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2378900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "社交媒体话题度高，但认知集中在恐怖独立游戏圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1258080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "免费经营放置有玩家基础，主流Steam圈认知很低",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 312530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 35,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "派对游戏经典，主播传播使其有可靠圈层认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 9420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "经典RTS扩展作，主要被即时战略玩家和怀旧社区认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 313160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "模拟农场系列有名，但旧代数具体作品辨识度偏低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 433850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "H1Z1历史热度高，但现名和当前大众认知已明显衰退",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 394690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "社交沙盒有稳定社区，但普通Steam玩家基本不认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 629730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "VR近战沙盒代表作，认知主要来自VR视频和VR玩家圈",
+      "reviewPriority": "normal"
+    }
+  ]
+}

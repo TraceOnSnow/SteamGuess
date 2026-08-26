@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1551360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.97,
+      "reason": "赛车开放世界代表作，跨品类知名度稳定，普通PC玩家普遍听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 22370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "Fallout系列与三代均有较高知名度，具体年度版辨识度稍弱",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 238960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.93,
+      "reason": "暗黑类ARPG代表作，核心圈知名度强，但跨圈认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 293760,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "汽车设计与模拟经营细分圈层有地位，普通玩家很难想到",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 960170,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "音游圈经典系列，具体作品认知集中在节奏游戏玩家中",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 673950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "休闲种田联机有一定玩家基础，但未形成普通玩家广泛认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1062520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "生活模拟独立作品有稳定玩家，普通Steam玩家仍未必认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 667970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "VR飞行模拟细分领域知名，普通玩家基本没有接触",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2567870,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "2024年直播热潮带来较高知名度，但长期大众认知尚不稳定",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1659420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "神秘海域系列知名度高，但合辑具体条目辨识度略弱",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 6060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 50,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "星战IP加成明显，但2005经典版本身更偏向老玩家与射击圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 282440,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "老牌竞技FPS圈层知名，普通玩家更熟悉泛称而非具体版本",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1446780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "怪猎系列主流作品，PC玩家普遍听过，但弱于World级大众认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 502500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "皇牌空战是飞行射击代表作，但认知集中在军武飞行游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 590380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "独立策略圈知名，普通Steam玩家较难立即想到具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1046930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "刀塔IP与自走棋热潮带来认知，但当前话题热度已明显下降",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 322330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.98,
+      "reason": "饥荒联机版在国内联机生存玩家中认知广泛，属于经典常青作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1274570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "联机恐怖作品有直播传播，但认知主要集中于恐怖合作游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2161700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "P系列知名度高，但本作作为重制条目比P5R的跨圈认知弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 311210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "使命召唤系列与黑色行动三代均属主流FPS公共认知",
+      "reviewPriority": "low"
+    }
+  ]
+}

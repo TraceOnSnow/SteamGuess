@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 57300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "恐怖游戏经典，但国内认知主要集中于恐怖与独立游戏圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1044720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "城建策略圈层知名，普通 Steam 玩家认识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1096530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "CRPG 与 DND 圈子地位清晰，但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 252490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "生存联机代表作，Steam 玩家普遍认识但未达大众入门级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 532210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "系列有名但续作辨识度较低，主要留在剧情游戏圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 50,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "半条命系列知名，具体资料片的独立认知明显更窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1343370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "欧美经典 MMO，但中国大陆玩家认知覆盖很低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2246340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.93,
+      "reason": "怪物猎人当前旗舰，国内玩家与直播圈认知都很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1049590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "韩系免费竞技作品有玩家基础，但国内大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 953490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "反套路独立恐怖有话题度，仍主要限于独立游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1643320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "硬核 FPS 品类代表作，新作发布带来较广媒体曝光",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 489630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "战锤与 4X 双重门槛，具体作品认知很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 440900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "生存建造品类较知名，但具体增强版辨识度一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1144200,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "战术射击代表作，主播与 FPS 玩家认知较高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 453480,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "动画卡牌圈层知名，普通 Steam 玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1172470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.93,
+      "reason": "主流大逃杀之一，游戏玩家圈普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 40800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "独立平台跳跃经典，国内普通玩家认识度不算高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1527950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "策略 RPG 玩家熟悉，但缺少跨圈知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 627690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "DND 挂机题材，仅限相关类型与 IP 圈层认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1623730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 2,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "幻兽帕鲁现象级破圈，中文互联网认知极高",
+      "reviewPriority": "low"
+    }
+  ]
+}

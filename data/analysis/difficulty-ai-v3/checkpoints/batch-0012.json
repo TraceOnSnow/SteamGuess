@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 228380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "竞速破坏类代表作，但普通玩家和国内认知都有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 265930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "恶搞模拟器病毒式传播，知名度高但弱于顶级现象作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2622380,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.91,
+      "reason": "艾尔登法环IP新作热度高，但具体条目弱于正传",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 3070070,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "卡牌店模拟热潮代表作，认知集中在模拟经营与直播圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 365450,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "黑客题材独立游戏圈知名，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 314160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "微软飞行模拟品牌知名，但旧版Steam条目辨识度较低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 870780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "Remedy动作游戏口碑强，国内普通玩家认知偏窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 535930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "医院经营模拟代表作，有稳定玩家圈但未广泛破圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 994280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 16,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "国产单机RPG代表作，国内玩家认知强但弱于大众级爆款",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1063730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "亚马逊MMO首发声势大，但具体新版国内认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 3830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "欧美经典平台游戏，核心媒体知名但国内玩家小众",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2296990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "双人合作解谜系列衍生作，认知主要限合作游戏圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1097150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 8,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "糖豆人曾是大众级派对游戏，文化认知牢固",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1336490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "肉鸽城市建造口碑作，认知集中在策略独立圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 633230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "火影IP极强，但该具体游戏认知弱于系列代表作",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 418370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "生化危机系列名作，恐怖游戏玩家普遍认识",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 892970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 31,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "开放世界生存建造爆款，在Steam圈层认知稳定",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 19680,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "经典哥特动作游戏，怀旧玩家熟悉但普通认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2050650,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.96,
+      "reason": "生化危机4重制版知名度高，是系列近期代表作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 241930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "指环王IP加主流动作游戏，Steam玩家普遍听过",
+      "reviewPriority": "normal"
+    }
+  ]
+}

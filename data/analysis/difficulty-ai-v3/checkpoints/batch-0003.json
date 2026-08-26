@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 2630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "使命召唤系列经典FPS，老玩家认知强，但具体第2代已不如今作突出",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 298110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "远哭系列在中文PC玩家中知名度高，第4代辨识度也不错",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2427700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "背包整理自动对战在Steam圈层传播较广，但大众认知尚不稳定",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1533390,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "VR社区和短视频圈认知强，普通Steam玩家未必听过",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1144400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "中文Galgame圈知名，但普通Steam玩家认知很窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 698780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 13,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.85,
+      "reason": "免费心理恐怖名作，Monika等梗已进入大众网络文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1686940,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "多人物理派对游戏在主播圈传播，但普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 756800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "边境检查模拟玩法在特定直播和模拟器圈知名，圈外认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 349040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "火影IP和终极风暴系列在国内认知很高，具体第4代辨识清晰",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1189490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "中文修仙RPG在Steam圈层有稳定地位，品类受众明确",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 671860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "曾是Steam多人FPS热点，核心玩家知道，但长期大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 110800,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 34,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "Rockstar侦探题材名作，游戏玩家熟悉但不及GTA或RDR大众化",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3164500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "近年Steam现象级独立作品，玩家覆盖面广，但热度仍偏新",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 429660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "传说系列在JRPG圈有地位，但具体作品难有广泛圈外认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 212500,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "指环王IP响亮，但该MMO具体条目主要靠老网游和粉丝圈认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1840,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "Valve动画制作软件，不是可猜的游戏题目",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 261550,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "骑砍系列在中文PC圈认知稳固，但玩法受众有门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1466860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "帝国时代IP家喻户晓，第4代相对2代认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1509960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "派对合作游戏经直播传播较广，但当前热度已回落",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1922560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "植物大战僵尸IP家喻户晓，但花园战争射击衍生认知较窄",
+      "reviewPriority": "normal"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 import SteamUser from 'steam-user';
 
-const PROJECT_ROOT = fileURLToPath(new URL('../..', import.meta.url));
+const PROJECT_ROOT = fileURLToPath(new URL('../../..', import.meta.url));
 
 function projectPath(value) {
   return isAbsolute(value) ? value : resolve(PROJECT_ROOT, value);
@@ -40,6 +40,7 @@ Options:
   --batch-size <n>     PICS appids per batch (default: ${DEFAULT_BATCH_SIZE})
   --language <name>    Steam language name (default: english)
   --out <path>         Also write the complete result as JSON
+  --no-stdout          Do not print the complete JSON payload to stdout
   --timeout <seconds>  Overall timeout (default: ${DEFAULT_TIMEOUT_MS / 1000})
   --help               Show this help
 `);
@@ -61,6 +62,7 @@ function parseArgs(argv) {
     batchSize: DEFAULT_BATCH_SIZE,
     language: 'english',
     out: '',
+    stdout: true,
     timeoutMs: DEFAULT_TIMEOUT_MS,
     help: false,
   };
@@ -80,6 +82,8 @@ function parseArgs(argv) {
       options.language = argv[++index] ?? '';
     } else if (arg === '--out') {
       options.out = argv[++index] ?? '';
+    } else if (arg === '--no-stdout') {
+      options.stdout = false;
     } else if (arg === '--timeout') {
       options.timeoutMs = positiveInteger(argv[++index], '--timeout') * 1000;
     } else if (arg.startsWith('--')) {
@@ -117,8 +121,8 @@ async function loadAppids(options) {
     const parsed = JSON.parse(await readFile(projectPath(options.file), 'utf8'));
     if (Array.isArray(parsed)) {
       values.push(...parsed);
-    } else if (parsed && Array.isArray(parsed.appids)) {
-      values.push(...parsed.appids);
+    } else if (parsed && (Array.isArray(parsed.appids) || Array.isArray(parsed.appIds))) {
+      values.push(...(parsed.appids ?? parsed.appIds));
     } else if (parsed && Array.isArray(parsed.games)) {
       values.push(...parsed.games.map((game) => game?.appId));
     } else {
@@ -328,7 +332,9 @@ async function run() {
 
     const result = await Promise.race([workPromise, timeoutPromise]);
     const json = JSON.stringify(result, null, 2);
-    console.log(json);
+    if (options.stdout) {
+      console.log(json);
+    }
 
     if (options.out) {
       await writeFile(projectPath(options.out), `${json}\n`, 'utf8');

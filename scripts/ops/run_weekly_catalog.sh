@@ -8,12 +8,12 @@ cd "$root"
 catalog=${STEAMGUESS_CATALOG_PATH:-data/catalog/steamspy_candidates.json}
 db=${STEAMGUESS_CATALOG_DB_PATH:-data/catalog/catalog.sqlite}
 playable=${STEAMGUESS_PLAYABLE_PATH:-public/games_demo.json}
-labeling=${STEAMGUESS_LABELING_PATH:-public/labeling_catalog.json}
 state=${STEAMGUESS_STOREFRONT_STATE:-data/processed/storefront_localized_names_schinese.json}
 raw_dir=${STEAMGUESS_STEAMSPY_RAW_DIR:-data/raw/steamspy}
 work_root=${STEAMGUESS_CATALOG_WORK_DIR:-data/catalog/.weekly-work}
 pics=${STEAMGUESS_PICS_FILE:-}
-active_limit=${STEAMGUESS_ACTIVE_LIMIT:-6000}
+active_limit=${STEAMGUESS_ACTIVE_LIMIT:-1000}
+detail_limit=${STEAMGUESS_DETAIL_LIMIT:-4000}
 interval=${STEAMGUESS_STEAMSPY_INTERVAL:-120}
 steamspy_retries=${STEAMGUESS_STEAMSPY_RETRIES:-2}
 steamspy_retry_delay=${STEAMGUESS_STEAMSPY_RETRY_DELAY:-30}
@@ -78,7 +78,6 @@ copy_or_init() {
 copy_or_init "$catalog" "$work/catalog.json"
 copy_or_init "$db" "$work/catalog.sqlite"
 copy_or_init "$playable" "$work/games_demo.json"
-copy_or_init "$labeling" "$work/labeling_catalog.json"
 copy_or_init "$state" "$work/storefront-state.json"
 mkdir -p "$work/raw-steamspy"
 
@@ -86,10 +85,10 @@ args=(
   --catalog "$work/catalog.json"
   --db "$work/catalog.sqlite"
   --playable "$work/games_demo.json"
-  --labeling "$work/labeling_catalog.json"
   --storefront-state "$work/storefront-state.json"
   --raw-dir "$work/raw-steamspy"
   --active-limit "$active_limit"
+  --detail-limit "$detail_limit"
   --interval "$interval"
   --steamspy-retries "$steamspy_retries"
   --steamspy-retry-delay "$steamspy_retry_delay"
@@ -99,6 +98,9 @@ args=(
   --reviews-retry-delay "$reviews_retry_delay"
 )
 [[ -n "$pics" ]] && args+=(--pics "$pics")
+[[ ${STEAMGUESS_AUTO_PICS:-1} == 1 ]] && args+=(--auto-pics)
+args+=(--pics-chunk-size "${STEAMGUESS_PICS_CHUNK_SIZE:-500}")
+args+=(--pics-timeout "${STEAMGUESS_PICS_TIMEOUT:-600}")
 [[ ${STEAMGUESS_WEEKLY_FROM_EXISTING:-0} == 1 ]] && args+=(--from-existing-catalog)
 [[ ${STEAMGUESS_WEEKLY_SKIP_ENRICHMENT:-0} == 1 ]] && args+=(--skip-enrichment)
 [[ "$resuming" == 1 ]] && args+=(--resume-discovery)
@@ -111,7 +113,6 @@ fi
 python3 scripts/ops/validate_catalog_release.py \
   --catalog "$work/catalog.json" \
   --playable "$work/games_demo.json" \
-  --labeling "$work/labeling_catalog.json" \
   --db "$work/catalog.sqlite" \
   --active-limit "$active_limit"
 
@@ -120,11 +121,10 @@ stamp=$(date -u +%Y%m%dT%H%M%SZ)
 if [[ -f "$db" ]]; then cp -a "$db" "$backup_dir/catalog-$stamp.sqlite"; fi
 if [[ -f "$catalog" ]]; then cp -a "$catalog" "$backup_dir/catalog-$stamp.json"; fi
 
-mkdir -p "$(dirname "$catalog")" "$(dirname "$db")" "$(dirname "$playable")" "$(dirname "$labeling")" "$(dirname "$state")"
+mkdir -p "$(dirname "$catalog")" "$(dirname "$db")" "$(dirname "$playable")" "$(dirname "$state")"
 mv -f "$work/catalog.json" "$catalog"
 mv -f "$work/catalog.sqlite" "$db"
 mv -f "$work/games_demo.json" "$playable"
-mv -f "$work/labeling_catalog.json" "$labeling"
 if [[ -f "$work/storefront-state.json" ]]; then
   mv -f "$work/storefront-state.json" "$state"
 fi

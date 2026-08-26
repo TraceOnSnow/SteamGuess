@@ -7,6 +7,8 @@ import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 import { io as createClient } from 'socket.io-client';
 import { createMultiplayerServer } from '../multiplayer/index.js';
+import { difficultyPool } from '../multiplayer/catalog.js';
+import { settingsSchema } from '../multiplayer/protocol.js';
 import { openDatabase } from '../database.js';
 
 const cleanup = [];
@@ -21,24 +23,63 @@ const testCatalog = [10, 30].map((appId, index) => ({
   popularity: { current: 100 + index, peak: 1000 + index },
   reviews: { total: 100 + index, positive: 90 + index, negative: 10 },
   tags: { developers: [`Test Dev ${appId}`], publishers: [`Test Pub ${appId}`], userTags: [`Test Tag ${appId}`] },
+  difficulty: { score: index * 25, level: index === 0 ? 'easy' : 'normal', confidence: 1, source: 'ai-candidate' },
 }));
 function emit(socket, event, payload) { return new Promise(resolve => socket.emit(event, payload, resolve)); }
 async function fixture(options = {}) {
   const http = createServer((_, response) => response.end('ok'));
   const dbPath = join(tmpdir(), `steamguess-mp-${randomUUID()}.sqlite`);
-  const multiplayer = createMultiplayerServer(http, { rootDir: process.cwd(), dbPath, catalog: testCatalog, random: () => 0, countdownMs: 5, nextRoundDelayMs: 5, disconnectGraceMs: 15, ...options });
+  const multiplayer = createMultiplayerServer(http, { rootDir: process.cwd(), dbPath, catalog: testCatalog, random: () => 0, countdownMs: 5, nextRoundDelayMs: 5, disconnectGraceMs: 15, roomStore: 'memory', ...options });
+  await multiplayer.ready;
   await new Promise(resolve => http.listen(0, '127.0.0.1', resolve));
   const { port } = http.address();
   const connect = () => createClient(`http://127.0.0.1:${port}`, { transports: ['websocket'], forceNew: true });
-  cleanup.push(async () => { await multiplayer.close(); await new Promise(resolve => http.close(resolve)); for (const suffix of ['', '-wal', '-shm']) rmSync(dbPath + suffix, { force: true }); });
-  return { connect, dbPath };
+  cleanup.push(async () => {
+    await multiplayer.close();
+    if (http.listening) await new Promise(resolve => http.close(resolve));
+    for (const suffix of ['', '-wal', '-shm']) rmSync(dbPath + suffix, { force: true });
+  });
+  return { connect, dbPath, multiplayer };
 }
 function waitFor(socket, event) { return new Promise(resolve => socket.once(event, resolve)); }
 function waitForWhere(socket, event, predicate) { return new Promise(resolve => { const listener = value => { if (!predicate(value)) return; socket.off(event, listener); resolve(value); }; socket.on(event, listener); }); }
 
 describe('multiplayer server', () => {
+  it('uses memory by default without Redis configuration and rejects incomplete Redis configuration', async () => {
+    const { multiplayer } = await fixture({ roomStore: '', redisUrl: '' });
+    assert.equal(multiplayer.health().roomStore, 'memory');
+
+    const http = createServer();
+    assert.throws(() => createMultiplayerServer(http, {
+      catalog: testCatalog,
+      roomStore: 'redis',
+      redisUrl: '',
+    }), /STEAMGUESS_REDIS_URL is required/);
+  });
+
+  it('builds cumulative multiplayer pools starting at beginner', () => {
+    const catalog = ['beginner', 'easy', 'normal', 'hard', 'hell'].map((level, index) => ({
+      appId: index + 1,
+      difficulty: { level, score: index * 20 },
+    }));
+
+    assert.deepEqual(difficultyPool(catalog, 'beginner').map(game => game.appId), [1]);
+    assert.deepEqual(difficultyPool(catalog, 'easy').map(game => game.appId), [1, 2]);
+    assert.deepEqual(difficultyPool(catalog, 'normal').map(game => game.appId), [1, 2, 3]);
+    assert.deepEqual(difficultyPool(catalog, 'hard').map(game => game.appId), [1, 2, 3, 4]);
+    assert.deepEqual(difficultyPool(catalog, 'hell').map(game => game.appId), [1, 2, 3, 4, 5]);
+    assert.equal(settingsSchema.parse({
+      difficulty: 'beginner',
+      bestOf: 1,
+      maxPlayers: 2,
+      roundTimeSeconds: 120,
+      visibleFields: ['price'],
+    }).difficulty, 'beginner');
+  });
+
   it('runs a server-authoritative 1v1 round without leaking the answer', async () => {
-    const { connect, dbPath } = await fixture(); const a = connect(); let b = connect(); cleanup.push(async () => { a.close(); b.close(); });
+    const { connect, dbPath, multiplayer } = await fixture(); const a = connect(); let b = connect(); cleanup.push(async () => { a.close(); b.close(); });
+    assert.equal(multiplayer.health().roomStore, 'memory');
     await Promise.all([waitFor(a, 'connect'), waitFor(b, 'connect')]);
     const created = await emit(a, 'room:create', { playerId: 'player_test_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, roundTimeSeconds: 120, visibleFields: ['price'] }, commandId: 'command_create_a' });
     assert.equal(created.ok, true); assert.equal('answerAppId' in created.data.room, false);

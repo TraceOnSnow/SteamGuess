@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1061910,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 57,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "节奏FPS类型特色鲜明，但认知集中在动作射击与音乐游戏交叉圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1012880,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.81,
+      "reason": "黑色幽默末日生存玩法有记忆点，普通玩家认知仍有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1030830,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "黑帮开放世界名作，具体最终版辨识度弱于系列核心印象",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 424840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "恐怖解谜题材跨圈认知较强，普通玩家多已听过小小梦魇",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1966720,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.87,
+      "reason": "联机恐怖直播爆款，已在年轻玩家中形成公共认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1128920,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "太空飞行射击续作，认知主要集中在太空与刷宝射击圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1007040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 66,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "B级合作射击代表作，但国内普通玩家认知范围很窄",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1158160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.72,
+      "reason": "种田生活模拟新作，在同类玩家中有口碑但缺少大众认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1382330,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "依赖P5 IP辨识，具体衍生作认知不如本篇广泛",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 631510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 39,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "DMC经典合集，动作玩家熟悉但具体条目不及5代出圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 400,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 12,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.94,
+      "reason": "Valve经典解谜，玩法与梗已进入大众游戏文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 334230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 59,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "社交推理早期名作，认知集中在特定玩家圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 32370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "星战经典RPG地位明确，但具体游戏国内认知较窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 364360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 44,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "全面战争战锤有策略圈存在感，仍明显依赖类型门槛",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 225840,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 84,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "经典半条命合作模组，认知集中在Mod与老玩家社区",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1522820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "塔防动作续作有稳定玩家基础，缺乏跨圈知名度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1169040,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "2D生存建造圈口碑作品，普通玩家基本无法认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 752590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.79,
+      "reason": "叙事冒险名作，单机玩家较熟但未到大众级认知",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 50130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 41,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.76,
+      "reason": "经典黑帮开放世界名作，当前主要靠单机老玩家记忆",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 294100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "模拟经营与殖民生存代表作，已形成可靠跨圈认知",
+      "reviewPriority": "low"
+    }
+  ]
+}

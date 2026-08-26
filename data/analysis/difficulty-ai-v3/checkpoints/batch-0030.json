@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 751780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "独立沙盒生存建造在Steam和直播圈有知名度，但跨圈认知不稳定",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 552100,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "积木物理沙盒有稳定社区，但认知主要限于建造破坏玩法圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 80,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "CS系列知名度极高，但这一具体版本较老且辨识度低于主流作",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 236110,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "塔防加联机ARPG有核心受众，普通玩家很难联想到具体作品",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2000950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "使命召唤重启作知名度高，但具体条目容易与后续续作混淆",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 504370,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "竞技场MOBA曾进入电竞视野，热度消退后认知明显缩窄",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1213210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "老牌RTS系列地位高，但重制合集在年轻玩家中认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2221490,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "育碧AAA射击RPG知名度高，但热度已明显回落",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 409710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 22,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "生化奇兵是经典名作，重制版身份比原版认知稍弱",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 666140,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "国产生活模拟代表作之一，Steam玩家有概率听过但圈层有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1338770,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "狙击题材射击系列有稳定受众，认知集中在特定FPS圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1782210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 27,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.74,
+      "reason": "曾随鱿鱼游戏梗直播爆红，但热度消退后认知缩回Steam玩家圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 307780,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 24,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "格斗游戏头部IP，具体代作有辨识度但难成大众公共知识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1325860,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "虚拟主播面部捕捉工具，不是可猜游戏",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 39510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "欧美经典老派RPG在怀旧圈有名，普通玩家基本不认识",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 202990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "使命召唤经典代作，知名度高但已离开大众热点",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3097560,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "2024年直播和社交平台爆火，短期认知强但持久度待观察",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2679460,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "年度JRPG口碑强，核心玩家熟悉但新IP仍有人群门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 990080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 6,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.96,
+      "reason": "哈利波特IP加持，销量和话题度都达到大众级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 252950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "载具足球多人代表作，知名度高但尚非全民级认知",
+      "reviewPriority": "low"
+    }
+  ]
+}

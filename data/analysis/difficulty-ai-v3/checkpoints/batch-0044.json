@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 2456740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "模拟生活品类有话题度，但长期跨圈认知仍需保守",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 625960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "早期回合制生存RPG圈层有存在感，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 3017860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "DOOM系列知名度高，本作认知略弱于系列前作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1583230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 53,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "有主播传播但国内普通玩家认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 392160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "太空模拟品类地位稳固，认知主要局限于该类玩家",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 960990,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "互动电影名厂作品，热度弱于底特律等代表",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 872790,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "足球经理系列有固定受众，年度旧版辨识度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 554620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "奇异人生系列有认知，前传辨识度明显低于本篇",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 972660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "独立佳作口碑强，但普通玩家认知仍以特定圈层为主",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1557740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "派对格斗借主播传播，大众玩家认识度仍不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 7670,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 17,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "经典FPS和叙事地位稳固，普通玩家大概率知道",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 383980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "平台格斗圈层地位明确，大众认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 247080,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "节奏肉鸽经典，影响力集中在独立与节奏游戏圈",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 236430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 19,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.94,
+      "reason": "黑魂系列广为人知，本作认知略低于三代但仍是正传",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 2321470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "借原IP传播的独立续作，普通玩家未必认识该具体作品",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 504230,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "独立平台跳跃代表作，已在主流玩家中有较高认知",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 365590,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "育碧刷宝射击曾广泛破圈，当前仍有较高认知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 228280,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "BG3带火IP，但旧作增强版本身仍属CRPG圈层",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1134570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.89,
+      "reason": "F1品牌知名，年度赛事游戏在普通玩家中辨识度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 379430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "写实中世纪RPG口碑强，认知低于主流开放世界代表作",
+      "reviewPriority": "high"
+    }
+  ]
+}

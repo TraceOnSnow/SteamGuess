@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 233860,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.91,
+      "reason": "开放世界生存RPG有稳定核心玩家，但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 313120,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "生存建造圈有一定名气，但热度消退且大众辨识度不足",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1237950,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "星战IP与EA大作知名度高，国内认知略弱于顶级作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 990630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 76,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "Hello Games旗下解谜小品，有独立圈口碑但大众认知很弱",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 17410,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 21,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "跑酷动作代表作，PC玩家圈知名度高但热度已淡",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1599340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "MMO圈知名度高且Steam首发声势大，但国内跨圈认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 218620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "合作劫案射击代表作，玩家规模大但大众认知有品类门槛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 48190,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "刺客信条系列知名度高，具体续作稍弱于系列代表作",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 495420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.83,
+      "reason": "僵尸生存基地管理有明确受众，但大众Steam认知明显有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2141730,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.78,
+      "reason": "后室题材互联网知名度高，但具体游戏条目辨识度不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1778820,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "格斗游戏代表作且近年声量大，但类型门槛让大众认知受限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 4760,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "全战经典在策略玩家中地位明确，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 238010,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "赛博朋克潜入RPG在PC核心圈地位明确，但大众认知有限",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1248130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "模拟经营大IP且新作销量高，但国内Steam认知弱于卡车模拟",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1245620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 2,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "现象级开放世界代表作，已进入大众游戏文化",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 413150,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 11,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.98,
+      "reason": "牧场模拟代表作，跨圈认知极高但弱于顶级现象作品",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 312520,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 65,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "独立平台跳跃经典，核心圈口碑强但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 635260,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "漂移赛车细分领域有稳定玩家群，但大众Steam认知不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 450540,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 80,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "VR射击沙盒在VR圈有口碑，普通Steam玩家基本不认识",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 292030,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 10,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "开放世界RPG标杆，已形成广泛大众认知",
+      "reviewPriority": "low"
+    }
+  ]
+}

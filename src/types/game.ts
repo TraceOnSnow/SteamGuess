@@ -33,15 +33,15 @@ export interface GameTags {
 }
 
 export interface GameHints {
-  screenshotUrl?: string;
-  funnyReview?: string;
+  screenshotUrls?: string[];
+  reviewTexts?: string[];
 }
 
 export interface GameDifficulty {
-  level: 'easy' | 'normal' | 'hard' | 'hell';
+  level: 'beginner' | 'easy' | 'normal' | 'hard' | 'hell';
   score: number;
   confidence: number;
-  source: 'manual' | 'regression' | 'fallback' | 'calibrated-distribution-v1';
+  source: 'ai-candidate' | 'editorial-lock' | 'player-feedback' | string;
 }
 
 export interface Game {
@@ -55,6 +55,8 @@ export interface Game {
   reviews: GameReviews;
   tags: GameTags;
   hints?: GameHints;
+  /** Present only when this game may be selected as an answer. */
   difficulty?: GameDifficulty;
 }
 
+export type ScoredGame = Game & { difficulty: GameDifficulty };

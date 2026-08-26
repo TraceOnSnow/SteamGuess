@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 4570,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "PC即时战略经典，Warhammer圈层有名但年轻玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 22320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "上古卷轴系列知名，但本作具体条目需要较深PC/RPG阅历",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1088850,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "漫威IP极广为人知，但该游戏本体传播度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 264710,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "生存建造代表作，中文社区普及度很高",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1262580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "极品飞车系列广为人知，但Payback具体作品辨识度一般",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1145360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "肉鸽动作代表作，玩家圈层广泛但仍非大众级",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1371980,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 36,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "近年在Steam和中文媒体热度高，但长期认知尚待沉淀",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 2552430,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 54,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "王国之心IP有辨识度，但合集在国区PC玩家中偏JRPG圈层",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 747660,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "FNAF互联网梗传播广，但具体新作认知弱于初代",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 48700,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 28,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "骑马与砍杀是PC圈经典，但当前年轻玩家认知中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 289070,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 20,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.96,
+      "reason": "文明系列公共认知度高，中文玩家群体广泛",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 683320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 33,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "独立游戏圈传播广，艺术风格带来一定大众辨识度",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 320,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "Half-Life主线极知名，但独立Deathmatch条目辨识度有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 244210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "竞速模拟品类代表，跨出竞速圈的认知有限",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1129580,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 52,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "生存建造类有一定玩家基础，但跨圈知名度不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 289130,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 60,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "奇幻4X策略在策略圈有地位，普通玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 204300,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "早期独立2D MOBA，现社区和大众认知都很有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 200210,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "像素弹幕MMO有稳定小众社区，圈外基本不知",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 404790,
+      "eligible": false,
+      "exclusionReason": "software",
+      "score": 0,
+      "level": "easy",
+      "beginner": true,
+      "confidence": 0.99,
+      "reason": "开源游戏引擎，属于软件工具，不应作为游戏题",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1326470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "森林续作发布热度高，中文玩家圈有较广认知",
+      "reviewPriority": "normal"
+    }
+  ]
+}

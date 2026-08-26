@@ -7,7 +7,6 @@
   "properties": {
     "schemaVersion": { "const": 1 },
     "generatedAt": { "type": "string", "format": "date-time" },
-    "model": { "type": "object" },
     "stats": { "type": "object" },
     "games": {
       "type": "array",
@@ -27,7 +26,7 @@
     },
     "game": {
       "type": "object",
-      "required": ["appId", "name", "metrics", "recognition", "difficulty", "sources", "fieldSources"],
+      "required": ["appId", "name", "metrics", "sources", "fieldSources"],
       "properties": {
         "appId": { "type": "integer", "minimum": 1 },
         "name": { "type": "string", "minLength": 1 },
@@ -55,25 +54,6 @@
             "averageTwoWeeksMinutes": { "type": "integer", "minimum": 0 }
           },
           "additionalProperties": true
-        },
-        "recognition": {
-          "type": "object",
-          "required": ["score", "features"],
-          "properties": {
-            "score": { "type": "number", "minimum": 0, "maximum": 100 },
-            "features": { "type": "object" }
-          }
-        },
-        "difficulty": {
-          "type": "object",
-          "required": ["score", "level", "source", "excluded"],
-          "properties": {
-            "score": { "type": "number", "minimum": 0, "maximum": 100 },
-            "level": { "enum": ["easy", "normal", "hard", "hell"] },
-            "source": { "enum": ["heuristic", "regression", "manual"] },
-            "excluded": { "type": "boolean" },
-            "manualLevel": { "type": ["string", "null"], "enum": ["easy", "normal", "hard", "hell", null] }
-          }
         },
         "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
         "fieldSources": { "type": "object", "additionalProperties": { "type": "string" } }

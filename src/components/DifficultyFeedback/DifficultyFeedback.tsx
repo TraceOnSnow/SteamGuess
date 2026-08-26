@@ -1,48 +1,44 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DIFFICULTY_TARGETS, levelForValue } from '../../difficulty/model';
-import type { DifficultyLevel } from '../../labeler/types';
+import { DIFFICULTY_LEVELS, DIFFICULTY_SCORE_TARGETS, levelForScore } from '../../difficulty/pools';
+import type { DifficultyLevel } from '../../difficulty/types';
 import { submitDifficultyFeedback } from '../../api/client';
 import './DifficultyFeedback.css';
-
-const LEVELS: DifficultyLevel[] = ['easy', 'normal', 'hard', 'hell'];
 
 interface DifficultyFeedbackProps {
   appId: number;
   initialScore?: number;
   playerId: string;
   sessionId: string;
+  beforeSubmit?: () => Promise<void>;
   onClose: () => void;
 }
 
-function levelFromScore(score: number): DifficultyLevel {
-  return levelForValue(score / 100 * 3);
-}
-
-export function DifficultyFeedback({ appId, initialScore, playerId, sessionId, onClose }: DifficultyFeedbackProps) {
+export function DifficultyFeedback({ appId, initialScore, playerId, sessionId, beforeSubmit, onClose }: DifficultyFeedbackProps) {
   const { t } = useTranslation();
   const startingScore = Math.round(Math.max(0, Math.min(100, initialScore ?? 50)));
   const [score, setScore] = useState(startingScore);
-  const [level, setLevel] = useState<DifficultyLevel>(levelFromScore(startingScore));
+  const [level, setLevel] = useState<DifficultyLevel>(levelForScore(startingScore));
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
   const scoreText = useMemo(() => String(Math.round(score)), [score]);
 
   const changeScore = (next: number) => {
     const normalized = Math.max(0, Math.min(100, Number.isFinite(next) ? next : 0));
     setScore(normalized);
-    setLevel(levelFromScore(normalized));
+    setLevel(levelForScore(normalized));
     if (status !== 'idle') setStatus('idle');
   };
 
   const selectLevel = (next: DifficultyLevel) => {
     setLevel(next);
-    setScore(Math.round(DIFFICULTY_TARGETS[next] / 3 * 100));
+    setScore(DIFFICULTY_SCORE_TARGETS[next]);
     if (status !== 'idle') setStatus('idle');
   };
 
   const submit = async () => {
     setStatus('saving');
     try {
+      await beforeSubmit?.();
       await submitDifficultyFeedback({ playerId, sessionId, appId, score, level });
       setStatus('saved');
     } catch {
@@ -61,7 +57,7 @@ export function DifficultyFeedback({ appId, initialScore, playerId, sessionId, o
       </div>
 
       <div className="difficulty-level-options" aria-label={t('feedback.levelLabel')}>
-        {LEVELS.map(item => (
+        {DIFFICULTY_LEVELS.map(item => (
           <button
             key={item}
             type="button"

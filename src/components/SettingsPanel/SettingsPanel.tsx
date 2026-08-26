@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DIFFICULTY_LEVELS, type DifficultyModel } from '../../difficulty/model';
-import type { DifficultyLevel } from '../../labeler/types';
+import { DIFFICULTY_LEVELS } from '../../difficulty/pools';
+import type { DifficultyLevel, StartingHintMode } from '../../difficulty/types';
 import {
   DISPLAY_FIELDS,
   type DisplayField,
@@ -15,21 +15,26 @@ import {
 } from '../../library/steamLibrary';
 import './SettingsPanel.css';
 
-const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = { easy: '简单', normal: '普通', hard: '困难', hell: '地狱' };
+const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = {
+  beginner: '入门',
+  easy: '简单',
+  normal: '普通',
+  hard: '困难',
+  hell: '地狱',
+};
 
 type PoolMode = 'difficulty' | 'library';
 
 interface SettingsPanelProps {
-  language: string;
   difficulty: DifficultyLevel;
-  difficultyModel: DifficultyModel | null;
+  startingHintMode: StartingHintMode;
   answerPoolSize: number;
   visibleFields: ReadonlySet<DisplayField>;
   library: SteamLibrary | null;
   matchedLibraryGames: number;
   poolMode: PoolMode;
-  onLanguageChange: (language: 'zh' | 'en') => void;
   onDifficultyChange: (level: DifficultyLevel) => void;
+  onStartingHintModeChange: (mode: StartingHintMode) => void;
   onVisibleFieldChange: (field: DisplayField, visible: boolean) => void;
   onLibraryChange: (library: SteamLibrary | null) => void;
   onPoolModeChange: (mode: PoolMode) => void;
@@ -37,22 +42,21 @@ interface SettingsPanelProps {
 }
 
 export function SettingsPanel({
-  language,
   difficulty,
-  difficultyModel,
+  startingHintMode,
   answerPoolSize,
   visibleFields,
   library,
   matchedLibraryGames,
   poolMode,
-  onLanguageChange,
   onDifficultyChange,
+  onStartingHintModeChange,
   onVisibleFieldChange,
   onLibraryChange,
   onPoolModeChange,
   onClose,
 }: SettingsPanelProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState('');
   const [appIdsText, setAppIdsText] = useState('');
   const [importError, setImportError] = useState('');
@@ -87,14 +91,6 @@ export function SettingsPanel({
         <strong>{t('app.settings')}</strong>
         <button className="text-button close-settings" type="button" onClick={onClose}>{t('app.closeSettings')}</button>
       </div>
-      <section className="settings-section settings-inline">
-        <h2>{t('app.language')}</h2>
-        <div className="segmented-control" aria-label={t('app.language')}>
-          <button type="button" onClick={() => onLanguageChange('zh')} aria-pressed={language.startsWith('zh')}>中文</button>
-          <button type="button" onClick={() => onLanguageChange('en')} aria-pressed={language.startsWith('en')}>English</button>
-        </div>
-      </section>
-
       <section className="settings-section">
         <h2>{t('app.questionPool')}</h2>
         <div className="segmented-control pool-control" aria-label={t('app.questionPool')}>
@@ -105,7 +101,7 @@ export function SettingsPanel({
           <div className="segmented-control difficulty-control" aria-label={t('app.difficulty')}>
             {DIFFICULTY_LEVELS.map(level => (
               <button type="button" key={level} onClick={() => onDifficultyChange(level)} aria-pressed={difficulty === level}>
-                {language.startsWith('zh') ? DIFFICULTY_LABELS[level] : level[0].toUpperCase() + level.slice(1)}
+                {i18n.language.startsWith('zh') ? DIFFICULTY_LABELS[level] : level[0].toUpperCase() + level.slice(1)}
               </button>
             ))}
           </div>
@@ -113,10 +109,26 @@ export function SettingsPanel({
         <small className="model-status">
           {poolMode === 'library'
             ? t('app.libraryPoolStatus', { count: answerPoolSize })
-            : difficultyModel
-              ? t('app.modelReady', { count: difficultyModel.trainingLabels, pool: answerPoolSize })
-              : t('app.modelFallback', { pool: answerPoolSize })}
+            : t('app.modelPublished', { pool: answerPoolSize })}
         </small>
+        {poolMode === 'difficulty' && (difficulty === 'beginner' || difficulty === 'easy') && (
+          <div className="starting-hint-settings">
+            <h3>{t('hint.startingHeading')}</h3>
+            <div className="segmented-control" aria-label={t('hint.startingHeading')}>
+              {(['screenshot', 'review', 'none'] as StartingHintMode[]).map(mode => (
+                <button
+                  type="button"
+                  key={mode}
+                  onClick={() => onStartingHintModeChange(mode)}
+                  aria-pressed={startingHintMode === mode}
+                >
+                  {t(`hint.startingMode.${mode}`)}
+                </button>
+              ))}
+            </div>
+            <small>{t('hint.startingHelp')}</small>
+          </div>
+        )}
       </section>
 
       <section className="settings-section">

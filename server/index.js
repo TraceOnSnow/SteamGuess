@@ -14,6 +14,8 @@ const databasePath = process.env.STEAMGUESS_DB_PATH || resolve(rootDir, 'data/ru
 const api = createApiHandler({
   rootDir,
   dbPath: databasePath,
+  catalogDbPath: process.env.STEAMGUESS_CATALOG_DB_PATH || resolve(rootDir, 'data/catalog/catalog.sqlite'),
+  adminToken: process.env.STEAMGUESS_ADMIN_TOKEN || '',
   steamApiKey: process.env.STEAM_WEB_API_KEY || '',
   trustProxy,
   writeRateLimit: Number(process.env.STEAMGUESS_WRITE_RATE_LIMIT || 60),

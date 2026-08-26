@@ -1,16 +1,23 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Game } from '../types/game';
 import type { GuessRecord } from '../types/comparison';
 import { ComparisonEngine } from '../engine/ComparisonEngine';
-import { getRandomGame, loadGameExperience } from '../data/games';
-import { DIFFICULTY_LEVELS, isLevelInPool, type DifficultyModel } from '../difficulty/model';
-import type { DifficultyLevel } from '../labeler/types';
+import { getRandomGame, hasDifficulty, loadGameExperience } from '../data/games';
+import { DIFFICULTY_LEVELS, isLevelInPool } from '../difficulty/pools';
+import type { DifficultyLevel, StartingHintMode } from '../difficulty/types';
+import {
+  DEFAULT_STARTING_HINTS,
+  resolveStartingHintMode,
+  type StartingHintPreferences,
+} from '../difficulty/startingHints';
 import { SearchBox } from '../components/SearchBox/SearchBox';
 import { GameTable } from '../components/GameTable/GameTable';
 import { SettingsPanel } from '../components/SettingsPanel/SettingsPanel';
 import { HintPanel } from '../components/HintPanel/HintPanel';
 import { DifficultyFeedback } from '../components/DifficultyFeedback/DifficultyFeedback';
+import { LanguageToggle } from '../components/LanguageToggle/LanguageToggle';
+import { MainMenuDialog } from '../components/MainMenuDialog/MainMenuDialog';
 import { loadDisplayFields, saveDisplayFields, type DisplayField } from '../settings/displayFields';
 import { clearSteamLibrary, loadSteamLibrary, saveSteamLibrary, type SteamLibrary } from '../library/steamLibrary';
 import { completeSession, createGameSession, getPlayerId } from '../api/client';
@@ -19,8 +26,15 @@ import '../App.css';
 const MAX_ATTEMPTS = 10;
 const comparisonEngine = new ComparisonEngine();
 const DIFFICULTY_STORAGE_KEY = 'steamguess-selected-difficulty-v1';
-const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = { easy: '简单', normal: '普通', hard: '困难', hell: '地狱' };
+const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = {
+  beginner: '入门',
+  easy: '简单',
+  normal: '普通',
+  hard: '困难',
+  hell: '地狱',
+};
 const POOL_MODE_STORAGE_KEY = 'steamguess-pool-mode-v1';
+const STARTING_HINT_STORAGE_KEY = 'steamguess-starting-hints-v1';
 type PoolMode = 'difficulty' | 'library';
 
 function loadPoolMode(): PoolMode {
@@ -31,10 +45,23 @@ function loadSelectedDifficulty(): DifficultyLevel {
   const saved = localStorage.getItem(DIFFICULTY_STORAGE_KEY);
   return DIFFICULTY_LEVELS.includes(saved as DifficultyLevel) ? saved as DifficultyLevel : 'normal';
 }
+
+function loadStartingHintPreferences(): StartingHintPreferences {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STARTING_HINT_STORAGE_KEY) || '{}') as Partial<StartingHintPreferences>;
+    return {
+      beginner: ['screenshot', 'review', 'none'].includes(saved.beginner || '') ? saved.beginner! : DEFAULT_STARTING_HINTS.beginner,
+      easy: ['screenshot', 'review', 'none'].includes(saved.easy || '') ? saved.easy! : DEFAULT_STARTING_HINTS.easy,
+    };
+  } catch {
+    return DEFAULT_STARTING_HINTS;
+  }
+}
+
 type GamePhase = 'playing' | 'won' | 'lost' | 'surrendered';
 
 function SinglePlayerPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [games, setGames] = useState<Game[]>([]);
   const [currentGame, setCurrentGame] = useState<Game | null>(null);
   const [records, setRecords] = useState<GuessRecord[]>([]);
@@ -44,31 +71,32 @@ function SinglePlayerPage() {
   const [loadAttempt, setLoadAttempt] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
   const [difficulty, setDifficulty] = useState<DifficultyLevel>(loadSelectedDifficulty);
-  const [difficultyModel, setDifficultyModel] = useState<DifficultyModel | null>(null);
+  const [startingHintPreferences, setStartingHintPreferences] = useState<StartingHintPreferences>(loadStartingHintPreferences);
   const [visibleFields, setVisibleFields] = useState<Set<DisplayField>>(loadDisplayFields);
   const [library, setLibrary] = useState<SteamLibrary | null>(loadSteamLibrary);
   const [poolMode, setPoolMode] = useState<PoolMode>(loadPoolMode);
   const [hintCount, setHintCount] = useState(0);
   const [showDifficultyFeedback, setShowDifficultyFeedback] = useState(false);
+  const [showMainMenuDialog, setShowMainMenuDialog] = useState(false);
   const [session, setSession] = useState(createGameSession);
+  const sessionCompletionRef = useRef<Promise<void> | null>(null);
   const playerId = useMemo(() => getPlayerId(), []);
 
   useEffect(() => {
     const controller = new AbortController();
     const initialDifficulty = loadSelectedDifficulty();
     loadGameExperience(controller.signal)
-      .then(({ games: catalog, model }) => {
-        const presetPool = catalog.filter(game => !game.difficulty || isLevelInPool(game.difficulty.level, initialDifficulty));
+      .then(({ games: catalog }) => {
+        const presetPool = catalog.filter(hasDifficulty).filter(game => isLevelInPool(game.difficulty.level, initialDifficulty));
         const savedLibrary = loadSteamLibrary();
         const savedLibraryIds = new Set(savedLibrary?.appIds ?? []);
-        const savedLibraryPool = catalog.filter(game => savedLibraryIds.has(game.appId));
+        const savedLibraryPool = catalog.filter(hasDifficulty).filter(game => savedLibraryIds.has(game.appId));
         const useLibrary = loadPoolMode() === 'library' && savedLibraryPool.length > 0;
         if (!useLibrary && loadPoolMode() === 'library') {
           setPoolMode('difficulty');
           localStorage.setItem(POOL_MODE_STORAGE_KEY, 'difficulty');
         }
         setGames(catalog);
-        setDifficultyModel(model);
         setCurrentGame(getRandomGame(useLibrary ? savedLibraryPool : (presetPool.length > 0 ? presetPool : catalog)));
       })
       .catch(error => {
@@ -89,15 +117,26 @@ function SinglePlayerPage() {
   );
   const ownedAppIds = useMemo(() => new Set(library?.appIds ?? []), [library]);
   const difficultyPool = useMemo(
-    () => games.filter(game => !game.difficulty || isLevelInPool(game.difficulty.level, difficulty)),
+    () => games.filter(hasDifficulty).filter(game => isLevelInPool(game.difficulty.level, difficulty)),
     [difficulty, games],
   );
-  const libraryPool = useMemo(() => games.filter(game => ownedAppIds.has(game.appId)), [games, ownedAppIds]);
+  const libraryPool = useMemo(
+    () => games.filter(hasDifficulty).filter(game => ownedAppIds.has(game.appId)),
+    [games, ownedAppIds],
+  );
   const answerPool = poolMode === 'library' && libraryPool.length > 0 ? libraryPool : difficultyPool;
   const attemptsLeft = MAX_ATTEMPTS - records.length;
   const gameOver = phase !== 'playing';
   const revealAnswer = phase === 'lost' || phase === 'surrendered';
   const hasStarted = records.length > 0 || phase !== 'playing';
+  const startingHintMode = resolveStartingHintMode(currentGame, difficulty, startingHintPreferences);
+  const requestMainMenu = () => {
+    if (!hasStarted) {
+      window.location.assign('/');
+      return;
+    }
+    setShowMainMenuDialog(true);
+  };
 
   const handleSelectGame = (guessedGame: Game) => {
     if (!currentGame || gameOver || guessedAppIds.has(guessedGame.appId)) return;
@@ -109,7 +148,7 @@ function SinglePlayerPage() {
     const completedPhase = result.isCorrect ? 'won' : nextRecords.length >= MAX_ATTEMPTS ? 'lost' : null;
     if (completedPhase) {
       setPhase(completedPhase);
-      void completeSession({
+      const completion = completeSession({
         sessionId: session.id,
         playerId,
         mode: poolMode,
@@ -118,8 +157,11 @@ function SinglePlayerPage() {
         outcome: completedPhase,
         guesses: nextRecords.length,
         hintsUsed: hintCount,
+        startingHintMode,
         startedAt: session.startedAt,
-      }).catch(error => console.warn('Could not save game session.', error));
+      });
+      sessionCompletionRef.current = completion;
+      void completion.catch(error => console.warn('Could not save game session.', error));
     }
   };
 
@@ -128,6 +170,7 @@ function SinglePlayerPage() {
     setPhase('playing');
     setHintCount(0);
     setShowDifficultyFeedback(false);
+    sessionCompletionRef.current = null;
     setSession(createGameSession());
   };
 
@@ -140,7 +183,7 @@ function SinglePlayerPage() {
   const handleSurrender = () => {
     if (!currentGame || gameOver) return;
     setPhase('surrendered');
-    void completeSession({
+    const completion = completeSession({
       sessionId: session.id,
       playerId,
       mode: poolMode,
@@ -149,14 +192,11 @@ function SinglePlayerPage() {
       outcome: 'surrendered',
       guesses: records.length,
       hintsUsed: hintCount,
+      startingHintMode,
       startedAt: session.startedAt,
-    }).catch(error => console.warn('Could not save game session.', error));
-  };
-
-  const changeLanguage = (language: 'zh' | 'en') => {
-    void i18n.changeLanguage(language);
-    localStorage.setItem('steamguess-language', language);
-    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+    });
+    sessionCompletionRef.current = completion;
+    void completion.catch(error => console.warn('Could not save game session.', error));
   };
 
   const resetWithPool = (pool: Game[]) => {
@@ -167,7 +207,7 @@ function SinglePlayerPage() {
   const changeDifficulty = (level: DifficultyLevel) => {
     setDifficulty(level);
     localStorage.setItem(DIFFICULTY_STORAGE_KEY, level);
-    const pool = games.filter(game => !game.difficulty || isLevelInPool(game.difficulty.level, level));
+    const pool = games.filter(hasDifficulty).filter(game => isLevelInPool(game.difficulty.level, level));
     resetWithPool(pool);
   };
 
@@ -179,6 +219,16 @@ function SinglePlayerPage() {
       saveDisplayFields(next);
       return next;
     });
+  };
+
+  const changeStartingHintMode = (mode: StartingHintMode) => {
+    if (difficulty !== 'beginner' && difficulty !== 'easy') return;
+    setStartingHintPreferences(previous => {
+      const next = { ...previous, [difficulty]: mode };
+      localStorage.setItem(STARTING_HINT_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+    prepareNewRound();
   };
 
   const changePoolMode = (mode: PoolMode) => {
@@ -199,7 +249,7 @@ function SinglePlayerPage() {
     }
     saveSteamLibrary(nextLibrary);
     const nextOwned = new Set(nextLibrary.appIds);
-    const nextPool = games.filter(game => nextOwned.has(game.appId));
+    const nextPool = games.filter(hasDifficulty).filter(game => nextOwned.has(game.appId));
     if (nextPool.length > 0) {
       setPoolMode('library');
       localStorage.setItem(POOL_MODE_STORAGE_KEY, 'library');
@@ -241,10 +291,16 @@ function SinglePlayerPage() {
   return (
     <div className={`app ${hasStarted ? 'game-started' : ''}`}>
       <a className="skip-link" href="#game-main">{t('app.skipToGame')}</a>
-      <header className="app-header" aria-hidden={hasStarted}>
+      <header className={`app-header ${hasStarted ? 'app-header-compact' : ''}`}>
         <div className="header-topbar">
-          <div className="brand-mark" aria-hidden="true">SG</div>
+          <div className="header-identity">
+            <div className="brand-mark" aria-hidden="true">SG</div>
+            <LanguageToggle />
+          </div>
           <nav className="header-actions" aria-label={t('app.tools')}>
+            <button className="icon-button" type="button" onClick={requestMainMenu}>
+              <span>{t('app.mainMenu')}</span>
+            </button>
             <button
               className="icon-button"
               type="button"
@@ -268,16 +324,15 @@ function SinglePlayerPage() {
 
         {showSettings && (
           <SettingsPanel
-            language={i18n.language}
             difficulty={difficulty}
-            difficultyModel={difficultyModel}
+            startingHintMode={startingHintMode}
             answerPoolSize={answerPool.length}
             visibleFields={visibleFields}
             library={library}
             matchedLibraryGames={libraryPool.length}
             poolMode={poolMode}
-            onLanguageChange={changeLanguage}
             onDifficultyChange={changeDifficulty}
+            onStartingHintModeChange={changeStartingHintMode}
             onVisibleFieldChange={changeVisibleField}
             onLibraryChange={changeLibrary}
             onPoolModeChange={changePoolMode}
@@ -302,8 +357,9 @@ function SinglePlayerPage() {
               </div>
               <HintPanel
                 key={`${currentGame.appId}-${session.id}`}
-                screenshotUrl={currentGame.hints?.screenshotUrl}
-                reviewText={currentGame.hints?.funnyReview}
+                screenshotUrls={currentGame.hints?.screenshotUrls}
+                reviewTexts={currentGame.hints?.reviewTexts}
+                initialHintMode={startingHintMode}
                 revealOriginal={gameOver}
                 onUseHint={() => setHintCount(count => count + 1)}
               />
@@ -339,9 +395,10 @@ function SinglePlayerPage() {
           {phase !== 'playing' && showDifficultyFeedback && (
             <DifficultyFeedback
               appId={currentGame.appId}
-              initialScore={currentGame.difficulty?.score}
+              initialScore={currentGame.difficulty?.score ?? 50}
               playerId={playerId}
               sessionId={session.id}
+              beforeSubmit={() => sessionCompletionRef.current ?? Promise.resolve()}
               onClose={() => setShowDifficultyFeedback(false)}
             />
           )}
@@ -353,6 +410,15 @@ function SinglePlayerPage() {
       <footer className="app-footer">
         <p>{t('app.footer')}</p>
       </footer>
+
+      <MainMenuDialog
+        open={showMainMenuDialog}
+        onCancel={() => setShowMainMenuDialog(false)}
+        onConfirm={() => {
+          setShowMainMenuDialog(false);
+          window.location.assign('/');
+        }}
+      />
     </div>
   );
 }

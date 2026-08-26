@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "model": "deepseek-v4-flash",
+  "rubricVersion": "steamguess-difficulty-v3",
+  "evaluations": [
+    {
+      "appId": 1940340,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 45,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "前作知名度高，续作有Steam核心认知但具体条目辨识度略低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 363970,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "早期点击挂机代表作，Steam老用户熟悉但已淡出主流",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 739630,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.95,
+      "reason": "联机恐怖调查曾大量直播传播，中文Steam玩家认知稳定",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 1716740,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 18,
+      "level": "easy",
+      "beginner": false,
+      "confidence": 0.92,
+      "reason": "贝塞斯达太空RPG，发售前后话题度极高，普通Steam玩家大概率听过",
+      "reviewPriority": "low"
+    },
+    {
+      "appId": 493900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 64,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "地下城经营RTS系列有玩家基础，中文圈认知集中在策略爱好者",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1227890,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.82,
+      "reason": "成人向像素模拟RPG，中文Steam圈有话题度但主流认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 238090,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 38,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "二战狙击系列有一定认知，第三部具体条目辨识度中等",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 99900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "早期Steam免费地牢网游，历史玩家多但中文圈认知极低",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 2051620,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 58,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "军武二战FPS有稳定免费玩家，但主要限于Gaijin射击圈",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 1217060,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 56,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "国产肉鸽FPS代表作，中文玩家圈层知名但跨圈一般",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 42960,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 66,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "P社大战略有固定受众，但该作认知明显窄于HOI4",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 834530,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 42,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.84,
+      "reason": "如龙系列中文玩家认知较高，重制首作辨识度不如系列代表作",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 32470,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 66,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.86,
+      "reason": "星战IP知名度高，但该老RTS具体条目认知主要限于策略与星战玩家",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 386360,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 55,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "欧美第三人称MOBA有长期玩家群，中文圈存在感不高",
+      "reviewPriority": "high"
+    },
+    {
+      "appId": 206420,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.85,
+      "reason": "开放世界恶搞系列曾流行，Steam玩家有印象但当前热度有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 485510,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 40,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "战国魂类代表作，中文动作玩家熟知，但大众认知不及魂系",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 397900,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 30,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.8,
+      "reason": "Steam免费大富翁题材有中文玩家基础，但具体作品辨识度不高",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 701160,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 62,
+      "level": "hard",
+      "beginner": false,
+      "confidence": 0.9,
+      "reason": "极简策略系列有独立游戏圈地位，但普通Steam玩家认知有限",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 304930,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 32,
+      "level": "normal",
+      "beginner": false,
+      "confidence": 0.87,
+      "reason": "Steam免费生存沙盒代表作，年轻玩家基础广但已退出主流讨论",
+      "reviewPriority": "normal"
+    },
+    {
+      "appId": 1147690,
+      "eligible": true,
+      "exclusionReason": null,
+      "score": 78,
+      "level": "hell",
+      "beginner": false,
+      "confidence": 0.88,
+      "reason": "挂机与增量游戏社区代表作，认知集中在细分类型圈层",
+      "reviewPriority": "high"
+    }
+  ]
+}

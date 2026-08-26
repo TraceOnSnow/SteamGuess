@@ -2,7 +2,7 @@ import type { Game } from '../types/game';
 import type { MatchStatus, ComparisonDirection } from '../types/comparison';
 
 export type MultiplayerField = 'price' | 'popularity' | 'reviews' | 'rating' | 'releaseDate' | 'companies' | 'tags';
-export type MultiplayerSettings = { difficulty: 'easy' | 'normal' | 'hard' | 'hell'; bestOf: 1 | 3 | 5; maxPlayers: number; roundTimeSeconds: number; visibleFields: MultiplayerField[] };
+export type MultiplayerSettings = { difficulty: 'beginner' | 'easy' | 'normal' | 'hard' | 'hell'; bestOf: 1 | 3 | 5; maxPlayers: number; roundTimeSeconds: number; visibleFields: MultiplayerField[] };
 export type RoomPlayer = { id: string; displayName: string; ready: boolean; connected: boolean; rematch: boolean; guessCount: number; finished: boolean };
 export type RoomSnapshot = {
   id: string; code: string; status: 'lobby' | 'countdown' | 'playing' | 'round_over' | 'finished'; revision: number; hostPlayerId: string; countdownEndsAt: number | null;
