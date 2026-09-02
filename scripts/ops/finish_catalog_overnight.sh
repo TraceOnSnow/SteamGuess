@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Watch the current staged 4K catalog job, resume it after transient failure,
-# then verify the canonical DB and restore independent AI difficulty candidates.
+# Watch the current staged catalog job, resume it after transient failure,
+# then verify the canonical converged database.
 set -Eeuo pipefail
 cd "$(dirname "$0")/../.."
 
@@ -38,9 +38,6 @@ if [[ -d "$work" ]]; then
   exit 1
 fi
 
-python3 -m scripts.catalog.import_ai_candidates \
-  --db data/catalog/catalog.sqlite \
-  --candidates data/analysis/difficulty-ai-v3/deepseek-v4-flash-candidates.json
 python3 -m scripts.catalog.status --db data/catalog/catalog.sqlite
 python3 scripts/ops/validate_catalog_release.py \
   --catalog data/catalog/steamspy_candidates.json \

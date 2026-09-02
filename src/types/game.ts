@@ -40,8 +40,8 @@ export interface GameHints {
 export interface GameDifficulty {
   level: 'beginner' | 'easy' | 'normal' | 'hard' | 'hell';
   score: number;
-  confidence: number;
-  source: 'ai-candidate' | 'editorial-lock' | 'player-feedback' | string;
+  source: 'manual' | 'manual_locked' | 'player_feedback' | string;
+  locked?: boolean;
 }
 
 export interface Game {

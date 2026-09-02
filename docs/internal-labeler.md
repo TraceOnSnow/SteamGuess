@@ -1,97 +1,52 @@
 # Internal difficulty manager
 
-The difficulty manager is an authenticated administration page backed directly
-by `data/catalog/catalog.sqlite`. It does not use browser-local label files.
+The labeler is an authenticated editor for the `games` table. It does not use a
+labeling JSON file or browser-local storage.
 
-## Start and open
-
-For local development, run `npm run dev` and open `/labeler`. The Vite
-development API uses the canonical catalog database and permits local access
-without an admin token.
-
-For the production-style server:
+## Start
 
 ```bash
-VITE_LABELER_ENABLED=true npm run build
-STEAMGUESS_ADMIN_TOKEN=change-me npm start
+npm run dev
 ```
 
-Open `/labeler` and enter the same token. It is stored in `sessionStorage` for
-the current tab only.
+Open `/labeler`. In production, set `STEAMGUESS_ADMIN_TOKEN` and use the same
+token in the page.
 
-## Difficulty authority
+## What it edits
 
-The effective score has one fixed precedence order:
+The page lists games by current score and supports search, sorting, integer or
+slider editing, locking and pool status changes.
+
+- **Manual score** writes `games.difficulty_manual_score` and updates the current
+  `difficulty_score`.
+- **Lock** writes `games.difficulty_locked`. A locked score is not changed by
+  player-feedback synchronization.
+- **软件 / 不适合** sets `pool_status = excluded`.
+- **太冷门** sets `pool_status = search_only`.
+- **恢复候选** returns the row to `eligible`.
+
+The old AI score, regression score, labeling catalog and historical difficulty
+side tables are not used.
+
+## Difficulty ranges
 
 ```text
-locked manual override > accepted player feedback > eligible AI candidate
+0–14 beginner    15–24 easy    25–49 normal
+50–74 hard       75–100 hell
 ```
 
-Relevant tables:
+`heat_rank` is visible catalog metadata only. It is not used to decide whether
+a game is allowed in the answer pool.
 
-```text
-difficulty_ai_candidates       baseline score and game eligibility
-difficulty_feedback_scores     accepted aggregate player adjustment
-difficulty_feedback_history    append-only adjustment audit
-difficulty_overrides           manual score and lock
-catalog_exclusions             unsuitable / too_obscure editorial removal
-```
+## Player feedback
 
-AI candidates with `eligible = false` are software, tools, noisy apps, or other
-unsuitable entries. They are absent from the manager, Search catalog, and
-Playable answer pool. A row with no AI candidate may remain searchable but is
-not an answer until it receives an authoritative difficulty. Manual
-`catalog_exclusions` are separate and survive weekly updates.
-
-## Page behavior
-
-The page uses:
-
-```text
-GET /api/admin/difficulties
-PUT /api/admin/difficulties/:appid
-```
-
-It supports search, Active/all scope, filters, score sorting, integer input,
-sliders, locking, and editorial removal.
-
-- **Unlocked manual score:** saved as an editor draft; it does not affect play.
-- **Locked manual score:** immediately becomes the final effective score.
-- **Reset:** clears the manual draft and returns to feedback or AI baseline.
-- **Remove from Active:** records a durable editorial exclusion.
-- **Restore candidate:** removes that editorial exclusion; the next catalog
-  rebuild may select the game again.
-
-Difficulty ranges:
-
-```text
-0–14    beginner
-15–24   easy
-25–49   normal
-50–74   hard
-75–100  hell
-```
-
-## Publishing and feedback
-
-The weekly catalog runner publishes a Search snapshot. Rows with eligible AI
-candidates receive effective difficulties after accepted feedback and locked
-manual values are overlaid; those scored rows form the Playable answer pool.
-AI reevaluation is intentionally a separate explicit operation; weekly Steam
-metadata updates do not invoke an AI provider.
-
-Player feedback is synchronized with:
+Completed games can submit a score and tier. Raw submissions remain in
+`data/runtime/steamguess.sqlite`. The batch synchronizer aggregates valid latest
+feedback per player/game and writes the aggregate to the matching `games` row.
 
 ```bash
 ./scripts/ops/update_difficulty_from_feedback.sh
 ```
 
-After synchronization, run the normal publishing stage or the next weekly
-update to refresh `public/games_demo.json`.
-
-## Retired workflows
-
-The browser-local label JSON, curated-pool importer, generated
-`labeling_catalog.json`, and difficulty fitting workflow are retired and must
-not be restored. Historical logs may retain old command names as immutable run
-records.
+Unlocked games may receive a feedback-based update; locked games retain their
+manual score while their feedback statistics can still be recorded.

@@ -9,24 +9,17 @@ interface DifficultyRow {
   manualScore: number | null;
   locked: boolean;
   feedbackScore: number | null;
-  feedbackCandidateScore: number | null;
   feedbackCount: number;
   feedbackMean: number | null;
   feedbackStddev: number | null;
-  feedbackStatus: 'applied' | 'review' | 'insufficient' | 'locked' | null;
   feedbackUpdatedAt: string | null;
   effectiveScore: number | null;
   effectiveLevel: DifficultyLevel | null;
-  aiCandidateScore: number | null;
-  aiCandidateLevel: DifficultyLevel | null;
-  aiCandidateConfidence: number | null;
-  aiCandidateReason: string | null;
-  aiCandidateEligible: boolean | null;
-  aiCandidatePriority: 'high' | 'normal' | 'low' | null;
   updatedAt: string | null;
   active: boolean;
+  searchOnly: boolean;
   excluded: boolean;
-  exclusionReason: 'unsuitable' | 'too_obscure' | null;
+  exclusionReason: 'software' | 'test_app' | 'manual_exclusion' | 'duplicate' | 'too_obscure' | null;
   exclusionUpdatedAt: string | null;
 }
 
@@ -38,8 +31,8 @@ interface DifficultyList {
   pages: number;
 }
 
-type Filter = 'all' | 'candidate' | 'feedback' | 'review' | 'locked' | 'unlocked' | 'edited' | 'excluded';
-type Sort = 'effective' | 'manual' | 'feedback' | 'ai' | 'difference' | 'name';
+type Filter = 'all' | 'feedback' | 'review' | 'locked' | 'unlocked' | 'edited' | 'excluded';
+type Sort = 'effective' | 'manual' | 'feedback' | 'difference' | 'name';
 type Direction = 'asc' | 'desc';
 type SaveState = 'idle' | 'saving' | 'saved' | 'error';
 
@@ -51,7 +44,13 @@ const LEVEL_NAMES: Record<DifficultyLevel, string> = {
   hard: '困难',
   hell: '地狱',
 };
-const EXCLUSION_NAMES = { unsuitable: '不适合', too_obscure: '太冷门' } as const;
+const EXCLUSION_NAMES = {
+  software: '软件',
+  test_app: '测试应用',
+  manual_exclusion: '不适合',
+  duplicate: '重复项',
+  too_obscure: '太冷门（仅搜索）',
+} as const;
 
 function requestHeaders(token: string, json = false): HeadersInit {
   return {
@@ -86,15 +85,15 @@ interface ScoreEditorProps {
 }
 
 function ScoreEditor({ row, state, onSave }: ScoreEditorProps) {
-  const [draft, setDraft] = useState(row.manualScore ?? row.feedbackScore ?? row.aiCandidateScore ?? 50);
+  const [draft, setDraft] = useState(row.manualScore ?? row.feedbackScore ?? row.effectiveScore ?? 50);
   const previousAppId = useRef(row.appId);
 
   useEffect(() => {
     if (previousAppId.current !== row.appId || state === 'saved') {
       previousAppId.current = row.appId;
-      setDraft(row.manualScore ?? row.feedbackScore ?? row.aiCandidateScore ?? 50);
+      setDraft(row.manualScore ?? row.feedbackScore ?? row.effectiveScore ?? 50);
     }
-  }, [row.appId, row.aiCandidateScore, row.feedbackScore, row.manualScore, state]);
+  }, [row.appId, row.effectiveScore, row.feedbackScore, row.manualScore, state]);
 
   const commit = () => {
     const normalized = Math.max(0, Math.min(100, Math.round(Number(draft))));
@@ -128,7 +127,7 @@ function ScoreEditor({ row, state, onSave }: ScoreEditorProps) {
         aria-label={`${row.name} 人工难度数字`}
       />
       {row.manualScore != null && (
-        <button className="score-reset" type="button" onClick={() => onSave(null)} title="清除人工分，恢复使用玩家反馈或 AI 候选分">重置</button>
+        <button className="score-reset" type="button" onClick={() => onSave(null)} title="清除人工分，恢复使用玩家反馈分">重置</button>
       )}
       <span className={`save-state ${state}`}>{state === 'saving' ? '保存中' : state === 'saved' ? '已保存' : state === 'error' ? '失败' : ''}</span>
     </div>
@@ -235,7 +234,7 @@ export default function DifficultyLabeler() {
         <div>
           <a className="home-link" href="/">← 返回主页</a>
           <h1>难度管理</h1>
-          <p>AI 候选分是基础难度；玩家反馈可以调整；人工分只有锁定后才覆盖网站使用的有效分。</p>
+          <p>人工分用于编辑初始难度；未锁定的游戏可以由玩家反馈更新，锁定后不会自动修改。</p>
         </div>
         <div className="difficulty-header-actions">
           <div className="header-summary">
@@ -264,10 +263,10 @@ export default function DifficultyLabeler() {
           if (next === 'excluded') setScope('all');
           setPage(1);
         }} aria-label="编辑状态">
-          <option value="all">全部状态</option><option value="candidate">有 AI 候选分</option><option value="feedback">有玩家反馈</option><option value="review">反馈待审核</option><option value="locked">已锁定</option><option value="unlocked">未锁定</option><option value="edited">有人工分</option><option value="excluded">已移出 Active</option>
+          <option value="all">全部状态</option><option value="feedback">有玩家反馈</option><option value="review">反馈待审核</option><option value="locked">已锁定</option><option value="unlocked">未锁定</option><option value="edited">有人工分</option><option value="excluded">已移出 Active</option>
         </select>
         <select value={sort} onChange={event => { setSort(event.target.value as Sort); setPage(1); }} aria-label="排序字段">
-          <option value="effective">有效分</option><option value="feedback">玩家反馈分</option><option value="ai">AI候选分</option><option value="manual">人工分</option><option value="difference">与 AI 偏差</option><option value="name">名称</option>
+          <option value="effective">有效分</option><option value="feedback">玩家反馈分</option><option value="manual">人工分</option><option value="difference">与玩家反馈偏差</option><option value="name">名称</option>
         </select>
         <button type="button" className="direction-button" onClick={() => setDirection(value => value === 'asc' ? 'desc' : 'asc')}>{direction === 'asc' ? '升序 ↑' : '降序 ↓'}</button>
         <label className="scope-toggle"><input type="checkbox" checked={scope === 'all'} onChange={event => { setScope(event.target.checked ? 'all' : 'active'); setPage(1); }} /> 包含备用库</label>
@@ -278,7 +277,7 @@ export default function DifficultyLabeler() {
 
       <section className="difficulty-table-wrap" aria-busy={loading}>
         <table className="difficulty-table">
-          <thead><tr><th>游戏</th><th>玩家反馈</th><th>AI 候选</th><th>人工分</th><th>有效分 / 等级</th><th>编辑人工分</th><th>锁定</th><th>Active</th></tr></thead>
+          <thead><tr><th>游戏</th><th>玩家反馈</th><th>人工分</th><th>有效分 / 等级</th><th>编辑人工分</th><th>锁定</th><th>题库状态</th></tr></thead>
           <tbody>
             {result?.rows.map(row => (
               <tr key={row.appId} className={row.locked ? 'is-locked' : ''}>
@@ -294,12 +293,6 @@ export default function DifficultyLabeler() {
                       ? `${row.feedbackCount} 人 · 均值 ${displayScore(row.feedbackMean)} · σ ${row.feedbackStddev == null ? '—' : row.feedbackStddev.toFixed(1)}`
                       : '暂无反馈'}
                   </small>
-                  {row.feedbackStatus && <em>{row.feedbackStatus === 'review' ? '分歧过大，待审核' : row.feedbackStatus}</em>}
-                </td>
-                <td className="ai-candidate-cell">
-                  <strong>{displayScore(row.aiCandidateScore)}</strong>
-                  <small>{row.aiCandidateLevel ? `${levelName(row.aiCandidateLevel)} · ${row.aiCandidateConfidence == null ? '' : `${Math.round(row.aiCandidateConfidence * 100)}%`}` : '暂无候选分'}</small>
-                  {row.aiCandidateReason && <em title={row.aiCandidateReason}>{row.aiCandidateReason}</em>}
                 </td>
                 <td><strong>{displayScore(row.manualScore)}</strong><small>{row.manualScore == null ? '未编辑' : row.locked ? '已采用' : '未锁定'}</small></td>
                 <td><strong className={`level-score ${row.effectiveLevel || ''}`}>{displayScore(row.effectiveScore)}</strong><small>{levelName(row.effectiveLevel)}</small></td>
@@ -310,21 +303,22 @@ export default function DifficultyLabeler() {
                   </button>
                 </td>
                 <td className="catalog-state-cell">
-                  {row.excluded ? (
+                  {row.excluded || row.searchOnly ? (
                     <>
-                      <small>{row.exclusionReason ? EXCLUSION_NAMES[row.exclusionReason] : '已移出'}</small>
+                      <small>{row.exclusionReason ? EXCLUSION_NAMES[row.exclusionReason] : row.excluded ? '已移出' : '仅搜索'}</small>
                       <button type="button" className="restore-button" onClick={() => void save(row.appId, { excluded: false })} disabled={saveStates[row.appId] === 'saving'}>恢复候选</button>
                     </>
                   ) : (
                     <div className="exclude-actions">
-                      <button type="button" onClick={() => void save(row.appId, { excluded: true, exclusionReason: 'unsuitable' })} disabled={saveStates[row.appId] === 'saving'}>不适合</button>
+                      <button type="button" onClick={() => void save(row.appId, { excluded: true, exclusionReason: 'software' })} disabled={saveStates[row.appId] === 'saving'}>软件</button>
+                      <button type="button" onClick={() => void save(row.appId, { excluded: true, exclusionReason: 'manual_exclusion' })} disabled={saveStates[row.appId] === 'saving'}>不适合</button>
                       <button type="button" onClick={() => void save(row.appId, { excluded: true, exclusionReason: 'too_obscure' })} disabled={saveStates[row.appId] === 'saving'}>太冷门</button>
                     </div>
                   )}
                 </td>
               </tr>
             ))}
-            {!loading && result?.rows.length === 0 && <tr><td colSpan={8} className="empty-row">没有符合条件的游戏</td></tr>}
+            {!loading && result?.rows.length === 0 && <tr><td colSpan={7} className="empty-row">没有符合条件的游戏</td></tr>}
           </tbody>
         </table>
         {loading && <div className="table-loading">正在读取数据库…</div>}

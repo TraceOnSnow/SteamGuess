@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.database import catalog_exclusion_ids, connect, initialize, partition_catalog_rows
+from scripts.catalog.database import catalog_exclusion_ids, connect, initialize, json_load, partition_catalog_rows
 
 REVIEWS_PER_LANGUAGE = 100
 
@@ -53,12 +53,13 @@ def storefront_fields_complete(game: dict[str, Any]) -> bool:
         and price_status in {"available", "free", "unavailable"}
     )
 
-def restore_cached_pics(catalog_path: Path, db_path: Path) -> int:
-    """Materialize completed PICS metadata back into the normalized catalog.
+def restore_cached_metadata(catalog_path: Path, db_path: Path) -> int:
+    """Hydrate a fresh SteamSpy snapshot from the canonical one-row catalog.
 
-    SteamSpy discovery deliberately creates a fresh row with ``tags=[]``.
-    PICS is not fetched every week, so the persistent catalog DB is the
-    authoritative cache and must be merged before publishing or planning.
+    Discovery intentionally contains only the current ranking fields.  All
+    expensive metadata already present in ``games`` is copied into the staged
+    JSON before planning, so a weekly run only requests genuinely missing
+    fields and never depends on legacy task tables.
     """
     if not db_path.exists():
         return 0
@@ -68,69 +69,69 @@ def restore_cached_pics(catalog_path: Path, db_path: Path) -> int:
     connection = connect(db_path)
     try:
         initialize(connection)
-        app_rows = connection.execute(
-            "SELECT appid, app_type, pics_change_number FROM apps"
-        ).fetchall()
-        tag_rows = connection.execute(
-            """
-            SELECT appid, position, tag_id, name, retrieved_at
-            FROM app_tags
-            WHERE source = 'pics'
-            ORDER BY appid, position
-            """
-        ).fetchall()
+        rows = connection.execute("SELECT * FROM games").fetchall()
     finally:
         connection.close()
 
-    app_meta = {int(row["appid"]): row for row in app_rows}
-    tags_by_app: dict[int, list[dict[str, Any]]] = {}
-    retrieved_by_app: dict[int, str] = {}
-    for row in tag_rows:
-        appid = int(row["appid"])
-        tags_by_app.setdefault(appid, []).append({
-            "id": row["tag_id"],
-            "rank": int(row["position"]) + 1,
-            "name": str(row["name"]),
-        })
-        if row["retrieved_at"]:
-            retrieved_by_app[appid] = str(row["retrieved_at"])
+    by_app = {int(row["appid"]): row for row in rows}
 
     restored = 0
     for game in payload["games"]:
         appid = int(game["appId"])
-        cached_tags = tags_by_app.get(appid)
-        if not cached_tags and appid not in app_meta:
+        row = by_app.get(appid)
+        if row is None:
             continue
         changed = False
-        if cached_tags and not game.get("tags"):
-            game["tags"] = cached_tags[:20]
-            game.setdefault("fieldSources", {})["tags"] = "pics"
-            game.setdefault("sources", []).append({
-                "service": "pics",
-                "endpoint": "SQLite cache",
-                "retrievedAt": retrieved_by_app.get(appid),
-            })
-            changed = True
-        if cached_tags and game.setdefault("fieldSources", {}).get("tags") == "pics:sqlite-cache":
-            game["fieldSources"]["tags"] = "pics"
-            changed = True
-        row = app_meta.get(appid)
-        if row:
-            if not game.get("type") and row["app_type"]:
-                game["type"] = row["app_type"]
-                game.setdefault("fieldSources", {})["type"] = "pics"
+        def restore(field: str, value: Any, *, allow_empty: bool = False) -> None:
+            nonlocal changed
+            if value is None:
+                return
+            if not allow_empty and value in ("", [], {}, "[]", "{}"):
+                return
+            if game.get(field) in (None, "", [], {}):
+                game[field] = value
                 changed = True
-            if game.setdefault("fieldSources", {}).get("type") == "pics:sqlite-cache":
-                game["fieldSources"]["type"] = "pics"
-                changed = True
-            if not game.get("picsChangeNumber") and row["pics_change_number"]:
-                game["picsChangeNumber"] = row["pics_change_number"]
-                changed = True
+
+        restore("type", row["app_type"])
+        restore("picsChangeNumber", row["pics_change_number"])
+        restore("releaseDate", row["release_date"])
+        restore("headerImage", row["cover_url"])
+        restore("localizedNames", {"zh": row["name_zh"]} if row["name_zh"] else {})
+        restore("developers", json_load(row["developers_json"], []))
+        restore("publishers", json_load(row["publishers_json"], []))
+        restore("tags", json_load(row["tags_json"], []))
+        restore("screenshots", [
+            {"path": url} for url in json_load(row["screenshot_urls_json"], [])
+        ])
+        restore("regionalPrices", {
+            country: {
+                "currency": row[f"price_{country}_currency"],
+                "status": row[f"price_{country}_status"],
+                "regularCents": row[f"price_{country}_regular_cents"],
+            }
+            for country in ("us", "cn")
+            if row[f"price_{country}_status"]
+        })
+        restore("metrics", json_load(row["steam_metrics_json"], {}))
+        restore("reviews", {
+            "english": json_load(row["reviews_en_json"], []),
+            "schinese": json_load(row["reviews_zh_json"], []),
+        })
+        status = json_load(row["enrichment_status_json"], {})
+        if isinstance(status, dict) and status.get("reviews"):
+            restore("reviewFetchLimits", status["reviews"])
+        if row["raw_pics_json"]:
+            restore("rawPics", json_load(row["raw_pics_json"], {}))
         restored += int(changed)
 
     if restored:
         catalog_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return restored
+
+
+# Kept as a small compatibility alias for local scripts that used the old
+# function name.  It now restores every persisted metadata field, not only PICS.
+restore_cached_pics = restore_cached_metadata
 
 
 def build_plan(
@@ -154,24 +155,29 @@ def build_plan(
         active_ids = tuple(int(game["appId"]) for game in active)
         detail_ids = tuple(int(game["appId"]) for game in detail)
         reserve_ids = tuple(int(game["appId"]) for game in reserve)
-        rows = connection.execute("SELECT appid, service, locale, country, status FROM enrichment_jobs").fetchall()
-        jobs = {(int(row["appid"]), row["service"], row["locale"], row["country"]): row["status"] for row in rows}
-        known_active = {int(row["appid"]) for row in connection.execute("SELECT appid FROM catalog_memberships WHERE catalog = 'active'")}
+        known_active = {
+            int(row["appid"])
+            for row in connection.execute(
+                "SELECT appid FROM games WHERE pool_status = 'eligible'"
+            )
+        }
     finally:
         connection.close()
     new_active = tuple(appid for appid in active_ids if appid not in known_active)
-    missing_pics = tuple(appid for appid in detail_ids if jobs.get((appid, "pics", "", "")) != "complete")
     detail_by_id = {int(game["appId"]): game for game in detail}
+    missing_pics = tuple(
+        appid for appid in detail_ids
+        if not detail_by_id[appid].get("tags")
+        and not detail_by_id[appid].get("rawPics")
+    )
     missing_storefront = tuple(
         appid for appid in detail_ids
-        if jobs.get((appid, "storefront", "schinese", "cn")) != "complete"
-        or not storefront_fields_complete(detail_by_id[appid])
+        if not storefront_fields_complete(detail_by_id[appid])
     )
     missing_reviews = tuple(
         appid for appid in detail_ids
         if any(
-            jobs.get((appid, "reviews", language, "")) != "complete"
-            or int(detail_by_id[appid].get("reviewFetchLimits", {}).get(language, 0) or 0) < REVIEWS_PER_LANGUAGE
+            int(detail_by_id[appid].get("reviewFetchLimits", {}).get(language, 0) or 0) < REVIEWS_PER_LANGUAGE
             for language in ("english", "schinese")
         )
     )
@@ -330,8 +336,9 @@ def main() -> None:
             run([sys.executable, "-m", "scripts.catalog.enrich_reviews", "--catalog", str(args.catalog), "--appids", str(appids_path), "--out", str(args.catalog), "--delay", str(args.reviews_delay),
                    "--retries", str(args.reviews_retries), "--retry-delay", str(args.reviews_retry_delay)])
     # Import normalized source data before publishing so the browser snapshot
-    # can materialize AI candidates, accepted feedback, and editorial locks
-    # stored in catalog SQLite. Weekly metadata imports never touch those tables.
+    # can materialize editorial difficulty, accepted feedback, and locks stored
+    # in catalog SQLite. Weekly metadata imports never create or recompute
+    # difficulty scores.
     run([sys.executable, "-m", "scripts.catalog.import_current", "--db", str(args.db), "--catalog", str(args.catalog), "--playable", str(args.playable), "--active-limit", str(args.active_limit)])
     run([sys.executable, "-m", "scripts.catalog.publish_playable", "--catalog", str(args.catalog), "--db", str(args.db), "--playable", str(args.playable), "--out", str(args.playable), "--active-limit", str(args.active_limit)])
     # Refresh Search/Playable memberships from the newly published snapshot.

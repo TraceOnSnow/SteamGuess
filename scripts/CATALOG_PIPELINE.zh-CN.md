@@ -31,7 +31,7 @@ flowchart TD
 
 ```text
 data/catalog/catalog.sqlite
-  唯一持久化真源：应用、metadata、任务、难度和历史
+  唯一持久化真源：游戏、metadata、难度和玩家反馈聚合
 
 data/catalog/steamspy_candidates.json
   本周规范化候选快照：流水线输入/中间产物
@@ -46,7 +46,7 @@ data/runtime/steamguess.sqlite
 难度管理页面直接通过 Admin API 读写 `catalog.sqlite`。旧的
 `labeling_catalog.json` 和浏览器 localStorage 标签流程已经废弃。
 
-难度管理页中的“不适合/太冷门”写入 `catalog_exclusions`。该状态不会被
+难度管理页中的“不适合/太冷门”写入 `games.pool_status`。该状态不会被
 SteamSpy 周更覆盖；Active 选池会先跳过这些 AppID，再应用数量上限，因此
 后续排名游戏会自动补位。恢复操作只解除排除，不会强行把游戏塞入 Active。
 
@@ -56,7 +56,7 @@ SteamSpy 周更覆盖；Active 选池会先跳过这些 AppID，再应用数量�
 - **Active**：排除人工禁用项之后固定的 SteamSpy 排名窗口，默认 `STEAMGUESS_ACTIVE_LIMIT=1000`。
 - **Detail**：保证执行 PICS、Storefront、评论补全的窗口，默认 `STEAMGUESS_DETAIL_LIMIT=4000`。
 - **Reserve**：其余候选，保留在 SQLite 中备用。
-- **Search**：Active 中会出现在搜索框、可以作为一次猜测提交的游戏。
+- **Search**：所有非 `excluded` 游戏都可以被搜索；Active 主要控制本周题库窗口。
 - **Playable**：Search 中带有有效难度、可以被随机选为正确答案的游戏。
 
 固定关系为：
@@ -65,15 +65,8 @@ SteamSpy 周更覆盖；Active 选池会先跳过这些 AppID，再应用数量�
 Playable ⊆ Search ⊆ Active
 ```
 
-难度资格在 Active 排名窗口确定之后处理：
-
-- AI 明确 `eligible=false`：软件、工具或噪音，不进入 Search，也不进入 Playable；
-- AI 明确 `eligible=true`：进入 Search，并凭有效难度进入 Playable；
-- 尚无 AI candidate：仍进入 Search，但没有难度，暂时不能成为答案。
-
-因此 `active=1000` 不保证 `search=1000`，更不保证 `playable=1000`。
-PICS `type` 只作为元数据保存，不再直接决定是否发布，因为正常游戏也可能被
-Steam 标为 `Tool`、`Config` 或 `advertising`。
+因此 `active=1000` 不代表数据库只有 1000 条，也不代表所有搜索结果都有难度。
+`pool_status` 才是是否可搜索/可出题的唯一规则；`heat_rank` 只用于展示。
 
 ## 3. 数据来源
 
@@ -226,13 +219,13 @@ STEAMGUESS_WEEKLY_SKIP_ENRICHMENT=1 \
 
 ## 7. 难度管理与发布
 
-难度唯一真源仍是 SQLite：
+难度唯一真源是 SQLite 的 `games` 表：
 
 ```text
-difficulty_overrides.manual_score  人工分
-difficulty_overrides.locked        是否锁定最终值
-difficulty_ai_candidates            AI 基础分与是否适合作为游戏
-difficulty_feedback_scores          玩家反馈形成的有效候选分
+games.difficulty_manual_score  人工分
+games.difficulty_locked        是否锁定最终值
+games.difficulty_score          当前生效分
+games.player_feedback_*         玩家反馈聚合统计
 ```
 
 候选顺序严格沿用 SteamSpy `request=all` 的页面与响应顺序，不再计算或保存
@@ -246,10 +239,8 @@ difficulty_feedback_scores          玩家反馈形成的有效候选分
 → PUT /api/admin/difficulties/:appid
 ```
 
-AI candidate 是基础难度。`eligible=false` 的软件、工具和噪音条目不会进入
-难度管理页、Search 或实际答案池。没有 candidate 的游戏仍可搜索，但不能
-成为答案。未锁定人工分仅是编辑草稿；锁定后才成为最终值。AI 重评是显式、
-独立的操作，周更不会自动调用 AI 服务。
+没有有效难度的游戏仍可搜索，但不能成为答案。未锁定人工分是编辑中的当前
+值；锁定后不会被玩家反馈同步覆盖。周更不会自动调用 AI 服务。
 
 玩家反馈从 runtime DB 同步回 catalog DB：
 
@@ -258,12 +249,14 @@ AI candidate 是基础难度。`eligible=false` 的软件、工具和噪音条�
 ```
 
 该任务只采纳每个玩家对同一游戏的最新有效反馈，并使用最小样本数、方差
-阈值、先验权重和单次最大变化限制。结果写入
-`difficulty_feedback_scores`，每次计算的审计记录写入
-`difficulty_feedback_history`。公开有效难度的固定优先级为：
+阈值、先验权重和单次最大变化限制。结果聚合后直接写回
+`games.player_feedback_*`，并更新未锁定行的 `difficulty_score`。
+公开有效难度的规则为：
 
 ```text
-locked 人工覆盖 > 玩家反馈分 > eligible AI candidate
+锁定人工分：保持人工分
+未锁定人工分：可由玩家反馈聚合结果更新
+没有人工分或有效反馈：暂不进入答案池
 ```
 
 同步完成后需要重新发布 `games_demo.json`（可由后续周更完成），反馈分才会
@@ -306,7 +299,9 @@ npm run build
 - `scripts/experimental/`：实验，不得被生产入口依赖；
 - `scripts/legacy/`：历史参考，已废弃，不得从 `package.json`、Makefile 或周更入口调用。
 
-已废弃并删除的旧产物包括 `public/labeling_catalog.json`、`scripts/catalog/publish_labeling.py`、浏览器 localStorage 难度代码、旧难度拟合脚本，以及 `data/labels/difficulty_labels.example.json`。旧难度拟合链路不再参与抓取、发布或运行时逻辑。
+已废弃并删除的旧产物包括 `public/labeling_catalog.json`、旧难度拟合脚本、
+AI 难度候选脚本、浏览器 localStorage 难度代码，以及旧的难度 side tables。
+旧难度拟合链路不再参与抓取、发布或运行时逻辑。
 
 `data/logs/` 中出现 `publish_labeling` 或 `labeling_catalog.json` 属于过去运行的不可变日志，不代表当前架构。不要为了“清理引用”篡改历史日志。
 

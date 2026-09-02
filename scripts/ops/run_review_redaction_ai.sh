@@ -4,7 +4,7 @@ cd "$(dirname "$0")/../.."
 
 catalog=${STEAMGUESS_CATALOG_PATH:-data/catalog/steamspy_candidates.json}
 out=${STEAMGUESS_REDACTION_OUT:-data/analysis/review-redaction/review_redactions.jsonl}
-model=${STEAMGUESS_REDACTION_MODEL:-${DIFFICULTY_AI_MODEL:-}}
+model=${STEAMGUESS_REDACTION_MODEL:-}
 scope=${STEAMGUESS_REDACTION_SCOPE:-detail}
 active_limit=${STEAMGUESS_ACTIVE_LIMIT:-1000}
 detail_limit=${STEAMGUESS_DETAIL_LIMIT:-4000}

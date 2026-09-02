@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print completeness and enrichment queue status for the canonical catalog."""
+"""Print completeness status for the converged one-table catalog."""
 
 from __future__ import annotations
 
@@ -22,17 +22,11 @@ def main() -> None:
         stats = database_stats(connection)
         for key, value in stats.items():
             print(f"{key}={value}")
-        print("jobs:")
+        print("pool:")
         for row in connection.execute(
-            """
-            SELECT service, locale, country, status, COUNT(*) AS count
-            FROM enrichment_jobs
-            GROUP BY service, locale, country, status
-            ORDER BY service, locale, country, status
-            """
+            "SELECT pool_status, COUNT(*) AS count FROM games GROUP BY pool_status ORDER BY pool_status"
         ):
-            target = "/".join(part for part in (row["service"], row["locale"], row["country"]) if part)
-            print(f"  {target} {row['status']}={row['count']}")
+            print(f"  {row['pool_status']}={row['count']}")
     finally:
         connection.close()
 

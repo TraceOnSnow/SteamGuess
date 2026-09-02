@@ -1,128 +1,80 @@
 # SteamGuess catalog schema
 
-The canonical catalog is SQLite-backed. Its versioned schema is
-`scripts/catalog/schema.sql`; the generated local database is
-`data/catalog/catalog.sqlite`.
+## Storage boundary
 
-## Identity
-
-`apps.appid` is the primary key. Canonical identity and eligibility live in
-`apps`; active, search, and playable membership live in `catalog_memberships`.
-
-Membership semantics are:
+The catalog database is `data/catalog/catalog.sqlite`. The application catalog
+has one business table:
 
 ```text
-active    SteamSpy rank window after durable editorial exclusions
-search    Active rows exposed for search and guess submission
-playable  Search rows with a valid effective difficulty, eligible as answers
+games              one row per Steam AppID
+catalog_meta       release-level key/value metadata
+schema_migrations  schema version history
 ```
 
-The database must maintain `playable ⊆ search ⊆ active`.
-
-## Metadata tables
-
-- `app_names`: localized names by locale, country and source.
-- `app_companies`: ordered developers and publishers.
-- `app_tags`: ordered tags by source.
-- `app_prices`: regional price history; regular and current price are separate.
-- `app_media`: headers, screenshots and future media kinds.
-- `app_metrics`: timestamped SteamSpy popularity and review observations.
-- `app_reviews`: original English and Simplified Chinese review snapshots.
-- `review_redactions`: AI-cleaned review text sidecar keyed by AppID, language,
-  review identity and source hash. It does not overwrite `app_reviews`.
-- `difficulty_overrides`: manual difficulty scores and editorial locks.
-- `difficulty_feedback_scores`: validated aggregate player-feedback score and
-  its sample/variance status.
-- `difficulty_feedback_history`: append-only audit history of feedback
-  synchronization results.
-- `difficulty_ai_candidates`: baseline difficulty and game eligibility.
-- `catalog_exclusions`: durable editorial removal from the active answer pool,
-  with `unsuitable` or `too_obscure` as the reason.
-
-The published effective difficulty follows:
+Player/session data is intentionally separate:
 
 ```text
-locked manual override > accepted player feedback > eligible AI candidate
+data/runtime/steamguess.sqlite
 ```
 
-`beginner` is the 0–14 score tier. The remaining tiers continue from 15
-through 100.
+It stores players, sessions and raw difficulty feedback. A feedback aggregation
+job writes the current aggregate back to the corresponding `games` row.
 
-An explicit AI decision with `eligible = false` removes a row from both Search
-and Playable. A row without an AI candidate can remain in Search, but it has no
-published difficulty and cannot become an answer.
+## `games`
 
-## Provenance and refresh state
+`appid` is the primary key. Columns are grouped by purpose:
 
-- `source_batches`: page/file-level fetch metadata, path and SHA-256.
-- `source_observations`: per-App upstream source metadata and optional payload
-  JSON. Normalized `catalog-import` rows retain only path/hash metadata because
-  `source_batches` already hashes the complete catalog file; full per-App JSON
-  is not duplicated on every import.
-- `field_provenance`: source currently responsible for each canonical field.
-- `enrichment_jobs`: resumable PICS, Storefront, and Reviews work queue.
+### Identity and display
 
-Null or absent incoming values do not erase known enrichment. Metric and price
-rows are historical rather than destructive replacements.
+`name_en`, `name_zh`, `app_type`, `release_date`, `cover_url`,
+`developers_json`, `publishers_json`, `tags_json`, `screenshot_urls_json`.
 
-Discovery membership follows the original SteamSpy `request=all` order. The
-catalog does not store or apply a derived popularity score.
+### Prices and Steam metrics
 
-## Runtime database separation
+The database stores regular US/CN prices, never the current discount price:
 
-`data/runtime/steamguess.sqlite` stores players, sessions and feedback. It must
-not be merged with the catalog database: they have different backup, deployment
-and update lifecycles.
+`price_us_*`, `price_cn_*`, `steam_*`, `heat_score`, `heat_rank`.
 
-Feedback is copied into validated catalog-side aggregates by:
+`heat_rank` is display information only and is not a pool-membership rule.
 
-```bash
-./scripts/ops/update_difficulty_from_feedback.sh
-```
+### Pool and editorial difficulty
 
-The raw submissions remain in the runtime database.
-
-## Published hint schema
-
-`public/games_demo.json` is the runtime Search snapshot. Every row can be used
-as a guess; only rows with a valid `difficulty` object are in the answer pool.
-It publishes hint material as arrays:
+`pool_status` is the single availability flag:
 
 ```text
-hints.screenshotUrls[]   screenshot URLs
-hints.reviewTexts[]      redacted reviews selected during publication
+eligible     searchable and valid as an answer
+search_only  searchable but never an answer
+excluded     not searchable and not an answer
 ```
 
-For `beginner` (0–14), the client may show a blurred screenshot or redacted
-review as a free opening hint. That starting hint is distinct from a hint the
-player explicitly requests during the round.
+`status_reason` records why an editorial status was chosen. Difficulty is
+stored directly on the row:
 
-The LiteLLM redaction pipeline writes a resumable JSONL checkpoint first,
-imports current hash-matching results into `review_redactions`, and only then
-affects `reviewTexts[]` on the next publish. Original review rows remain
-available for reprocessing and audit.
+`difficulty_score`, `difficulty_tier`, `difficulty_manual_score`,
+`difficulty_locked`, `difficulty_source`, and the player feedback aggregate
+columns.
 
-## Production storage
+Valid tiers are `beginner`, `easy`, `normal`, `hard`, `hell`, with ranges
+`0–14`, `15–24`, `25–49`, `50–74`, and `75–100`.
 
-The production catalog database must be persisted on the shared application
-volume at:
+### Source preservation
 
-```text
-/app/data/catalog/catalog.sqlite
-```
+The following JSON columns preserve the latest source payloads and provenance:
 
-All production instances must use that same mounted database. A database
-inside the container image or its ephemeral filesystem is not a production
-source of truth.
+`raw_steamspy_json`, `raw_pics_json`, `raw_storefront_json`,
+`raw_reviews_json`, `raw_sources_json`, `source_meta_json`,
+`enrichment_status_json`, `field_provenance_json`.
 
-## Commands
+Array fields and raw payloads stay on the same game row. Weekly imports merge
+new non-empty source values and do not erase existing expensive metadata when a
+partial response is received.
 
-```bash
-npm run data:catalog-import
-npm run data:catalog-status
-./scripts/ops/update_difficulty_from_feedback.sh
-npm run test:data
-```
+## Published snapshot
 
-See `docs/catalog-pipeline.md` and `scripts/README.md` for the complete workflow
-and script classification.
+`public/games_demo.json` is generated from `games` and is a deployment artifact,
+not a second source of truth. It contains the current search catalog; only rows
+with `pool_status = eligible` and a valid difficulty are answer candidates.
+
+The old normalized tables and old difficulty tables are not created by the new
+schema. `scripts/catalog/migrate_catalog.py` can read them once during offline
+migration, but they are not part of the resulting database.

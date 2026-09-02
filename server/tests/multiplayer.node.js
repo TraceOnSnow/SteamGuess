@@ -23,7 +23,7 @@ const testCatalog = [10, 30].map((appId, index) => ({
   popularity: { current: 100 + index, peak: 1000 + index },
   reviews: { total: 100 + index, positive: 90 + index, negative: 10 },
   tags: { developers: [`Test Dev ${appId}`], publishers: [`Test Pub ${appId}`], userTags: [`Test Tag ${appId}`] },
-  difficulty: { score: index * 25, level: index === 0 ? 'easy' : 'normal', confidence: 1, source: 'ai-candidate' },
+  difficulty: { score: index * 25, level: index === 0 ? 'easy' : 'normal', source: 'manual' },
 }));
 function emit(socket, event, payload) { return new Promise(resolve => socket.emit(event, payload, resolve)); }
 async function fixture(options = {}) {

@@ -244,8 +244,9 @@ export function createApiHandler({
         }
         if (Object.hasOwn(body, 'locked') && typeof body.locked !== 'boolean') throw new HttpError(400, 'Locked must be boolean.');
         if (Object.hasOwn(body, 'excluded') && typeof body.excluded !== 'boolean') throw new HttpError(400, 'Excluded must be boolean.');
-        if (Object.hasOwn(body, 'exclusionReason') && !['unsuitable', 'too_obscure'].includes(body.exclusionReason)) {
-          throw new HttpError(400, 'Exclusion reason must be unsuitable or too_obscure.');
+        const exclusionReasons = ['software', 'test_app', 'manual_exclusion', 'duplicate', 'too_obscure'];
+        if (Object.hasOwn(body, 'exclusionReason') && !exclusionReasons.includes(body.exclusionReason)) {
+          throw new HttpError(400, 'Exclusion reason must be software, test_app, manual_exclusion, duplicate, or too_obscure.');
         }
         const catalog = catalogDatabase();
         let row;

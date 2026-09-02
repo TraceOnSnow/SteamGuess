@@ -14,7 +14,7 @@ const game: Game = {
     publishers: ['Other Company'],
     userTags: ['Action'],
   },
-  difficulty: { score: 25, level: 'normal', confidence: 1, source: 'ai-candidate' },
+  difficulty: { score: 25, level: 'normal', source: 'manual' },
 };
 
 describe('GameTable metadata matching', () => {

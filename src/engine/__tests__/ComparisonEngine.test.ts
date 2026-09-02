@@ -11,7 +11,7 @@ function makeGame(overrides: Partial<Game> = {}): Game {
     popularity: { ccu: 1_000 },
     reviews: { total: 100, positive: 80, negative: 20 },
     tags: { userTags: ['Action'], developers: ['Studio'], publishers: ['Publisher'] },
-    difficulty: { score: 25, level: 'normal', confidence: 1, source: 'ai-candidate' },
+    difficulty: { score: 25, level: 'normal', source: 'manual' },
     ...overrides,
   };
 }

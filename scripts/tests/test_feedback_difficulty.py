@@ -16,20 +16,10 @@ class FeedbackDifficultyTest(unittest.TestCase):
         initialize(self.catalog)
         self.catalog.execute(
             """
-            INSERT INTO apps(
-                appid, canonical_name, created_at, updated_at
-            ) VALUES (10, 'Test Game', '2026-08-16T00:00:00Z', '2026-08-16T00:00:00Z')
-            """
-        )
-        self.catalog.execute(
-            """
-            INSERT INTO difficulty_ai_candidates(
-                appid, score, level, confidence, reason, eligible,
-                review_priority, model, prompt_version, evaluated_at, source_path
-            ) VALUES (
-                10, 40, 'normal', 0.8, 'test candidate', 1,
-                'normal', 'test-ai', 'v3', '2026-08-16T00:00:00Z', 'test'
-            )
+            INSERT INTO games(
+                appid, name_en, difficulty_score, difficulty_tier,
+                created_at, updated_at
+            ) VALUES (10, 'Test Game', 40, 'normal', 'old', 'old')
             """
         )
         self.catalog.commit()
@@ -70,7 +60,7 @@ class FeedbackDifficultyTest(unittest.TestCase):
             (player_id, session_id, appid, score),
         )
 
-    def test_applies_shrunk_change_with_three_point_cap_and_is_idempotent(self) -> None:
+    def test_updates_games_and_is_idempotent(self) -> None:
         for player in range(10):
             self.add_feedback(player, 70)
         self.runtime.commit()
@@ -83,21 +73,22 @@ class FeedbackDifficultyTest(unittest.TestCase):
         )
         self.assertEqual(result["applied"], 1)
         saved = self.catalog.execute(
-            "SELECT current_score, candidate_score, sample_count, status FROM difficulty_feedback_scores WHERE appid = 10"
+            """
+            SELECT difficulty_score, difficulty_tier, player_feedback_count,
+                   player_feedback_mean, player_feedback_stddev
+            FROM games WHERE appid = 10
+            """
         ).fetchone()
-        self.assertEqual(saved["current_score"], 43)
-        self.assertEqual(saved["candidate_score"], 50)
-        self.assertEqual(saved["sample_count"], 10)
-        self.assertEqual(saved["status"], "applied")
+        self.assertEqual(saved["difficulty_score"], 43)
+        self.assertEqual(saved["difficulty_tier"], "normal")
+        self.assertEqual(saved["player_feedback_count"], 10)
+        self.assertEqual(saved["player_feedback_mean"], 70)
+        self.assertEqual(saved["player_feedback_stddev"], 0)
 
         repeated = synchronize(self.runtime, self.catalog, apply=True)
         self.assertEqual(repeated["unchanged"], 1)
-        self.assertEqual(
-            self.catalog.execute("SELECT COUNT(*) FROM difficulty_feedback_history").fetchone()[0],
-            1,
-        )
 
-    def test_uses_latest_feedback_per_player_and_rejects_high_disagreement(self) -> None:
+    def test_uses_latest_feedback_and_rejects_high_disagreement(self) -> None:
         for player in range(10):
             self.add_feedback(player, 0 if player < 5 else 100)
         self.runtime.execute(
@@ -111,11 +102,10 @@ class FeedbackDifficultyTest(unittest.TestCase):
         result = synchronize(self.runtime, self.catalog, apply=True)
         self.assertEqual(result["review"], 1)
         saved = self.catalog.execute(
-            "SELECT current_score, sample_count, status FROM difficulty_feedback_scores WHERE appid = 10"
+            "SELECT difficulty_score, player_feedback_count FROM games WHERE appid = 10"
         ).fetchone()
-        self.assertIsNone(saved["current_score"])
-        self.assertEqual(saved["sample_count"], 10)
-        self.assertEqual(saved["status"], "review")
+        self.assertEqual(saved["difficulty_score"], 40)
+        self.assertEqual(saved["player_feedback_count"], 10)
 
     def test_ignores_feedback_whose_session_answer_does_not_match(self) -> None:
         for player in range(10):
@@ -128,8 +118,11 @@ class FeedbackDifficultyTest(unittest.TestCase):
     def test_locked_editorial_score_never_changes(self) -> None:
         self.catalog.execute(
             """
-            INSERT INTO difficulty_overrides(appid, manual_score, locked, updated_at)
-            VALUES (10, 12, 1, '2026-08-16T00:00:00Z')
+            UPDATE games
+            SET difficulty_manual_score = 12, difficulty_score = 12,
+                difficulty_tier = 'beginner', difficulty_locked = 1,
+                difficulty_source = 'manual_locked'
+            WHERE appid = 10
             """
         )
         self.catalog.commit()
@@ -139,10 +132,10 @@ class FeedbackDifficultyTest(unittest.TestCase):
         result = synchronize(self.runtime, self.catalog, apply=True)
         self.assertEqual(result["locked"], 1)
         saved = self.catalog.execute(
-            "SELECT current_score, status FROM difficulty_feedback_scores WHERE appid = 10"
+            "SELECT difficulty_score, player_feedback_count FROM games WHERE appid = 10"
         ).fetchone()
-        self.assertIsNone(saved["current_score"])
-        self.assertEqual(saved["status"], "locked")
+        self.assertEqual(saved["difficulty_score"], 12)
+        self.assertEqual(saved["player_feedback_count"], 10)
 
 
 if __name__ == "__main__":

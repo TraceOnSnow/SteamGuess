@@ -33,6 +33,10 @@ def main() -> None:
             type_counts[app_type] += 1
         game["type"] = app_type
         game["picsChangeNumber"] = info.get("changeNumber")
+        # Keep the exact PICS item on the same catalog row.  The weekly
+        # importer stores this in games.raw_pics_json, so a future run can
+        # rebuild the published fields without another PICS request.
+        game["rawPics"] = info
         game["tags"] = [
             {
                 "id": int(tag["id"]),

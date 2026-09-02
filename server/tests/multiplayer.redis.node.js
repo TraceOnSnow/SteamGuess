@@ -39,7 +39,6 @@ const testCatalog = [10, 30].map((appId, index) => ({
   difficulty: {
     score: index * 25,
     level: index === 0 ? 'easy' : 'normal',
-    confidence: 1,
     source: 'test',
   },
 }));

@@ -498,18 +498,18 @@ def run(args: argparse.Namespace) -> int:
     )
     if not args.resume and Path(args.out).exists():
         raise ValueError(f"output exists; pass --resume to continue: {args.out}")
-    model = args.model or os.environ.get("STEAMGUESS_REDACTION_MODEL") or os.environ.get("DIFFICULTY_AI_MODEL")
+    model = args.model or os.environ.get("STEAMGUESS_REDACTION_MODEL")
     if not model and not args.dry_run:
         raise ValueError("missing model; pass --model or set STEAMGUESS_REDACTION_MODEL")
     model = model or "dry-run"
-    api_base = args.api_base or os.environ.get("STEAMGUESS_REDACTION_API_BASE") or os.environ.get("DIFFICULTY_AI_BASE_URL")
+    api_base = args.api_base or os.environ.get("STEAMGUESS_REDACTION_API_BASE")
     api_key = None
     if args.api_key_env:
         api_key = os.environ.get(args.api_key_env)
         if not api_key and not args.dry_run:
             raise ValueError(f"environment variable {args.api_key_env} is not set")
     else:
-        api_key = os.environ.get("STEAMGUESS_REDACTION_API_KEY") or os.environ.get("DIFFICULTY_AI_API_KEY")
+        api_key = os.environ.get("STEAMGUESS_REDACTION_API_KEY")
     adapter = None if args.dry_run else LiteLLMAdapter(
         model=model,
         api_base=api_base,

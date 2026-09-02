@@ -1,35 +1,25 @@
 #!/usr/bin/env python3
-"""Import successful review-redaction checkpoints into a SQLite sidecar table."""
+"""Import review-redaction checkpoints into the canonical ``games`` rows.
+
+Review text is stored as JSON on ``games``. The original text remains in each
+review object and in ``raw_reviews_json``; only the derived hint fields are
+added beside it. No redaction sidecar table is created.
+"""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
-import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.redact_reviews_ai import _record_key, _load_json_records, read_jsonl
+from scripts.catalog.redact_reviews_ai import _load_json_records, _record_key, read_jsonl
 
 DEFAULT_DB = "data/catalog/catalog.sqlite"
 DEFAULT_INPUT = "data/analysis/review-redaction/review_redactions.jsonl"
-TABLE = "review_redactions"
-REQUIRED_COLUMNS = {
-    "task_id",
-    "appid",
-    "language",
-    "review_id",
-    "review_hash",
-    "redacted_text",
-    "entities_json",
-    "model",
-    "prompt_version",
-    "processed_at",
-    "imported_at",
-    "source_path",
-}
 
 
 def utc_now() -> str:
@@ -38,8 +28,6 @@ def utc_now() -> str:
 
 def load_checkpoint(path: Path) -> list[dict[str, Any]]:
     records = read_jsonl(path) if path.suffix.lower() == ".jsonl" else _load_json_records(path)
-    # Checkpoints are append-only while running. Import only the final state for
-    # each task while retaining deterministic first-seen order.
     latest = {_record_key(record): record for record in records}
     seen: set[str] = set()
     result: list[dict[str, Any]] = []
@@ -49,44 +37,6 @@ def load_checkpoint(path: Path) -> list[dict[str, Any]]:
             seen.add(key)
             result.append(latest[key])
     return result
-
-
-def table_exists(connection: sqlite3.Connection, name: str) -> bool:
-    return connection.execute(
-        "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
-        (name,),
-    ).fetchone() is not None
-
-
-def create_or_validate_table(connection: sqlite3.Connection) -> None:
-    if not table_exists(connection, TABLE):
-        connection.executescript(
-            """
-            CREATE TABLE review_redactions (
-                task_id TEXT PRIMARY KEY,
-                appid INTEGER NOT NULL,
-                language TEXT NOT NULL,
-                review_id TEXT NOT NULL,
-                review_hash TEXT NOT NULL,
-                redacted_text TEXT NOT NULL,
-                entities_json TEXT NOT NULL,
-                model TEXT NOT NULL,
-                prompt_version TEXT NOT NULL,
-                processed_at TEXT NOT NULL,
-                imported_at TEXT NOT NULL,
-                source_path TEXT NOT NULL
-            );
-            CREATE INDEX idx_review_redactions_review
-                ON review_redactions(appid, language, review_id);
-            """
-        )
-        return
-    columns = {str(row[1]) for row in connection.execute(f"PRAGMA table_info({TABLE})")}
-    missing = REQUIRED_COLUMNS - columns
-    if missing:
-        raise ValueError(
-            f"existing {TABLE} table is incompatible; missing columns: {', '.join(sorted(missing))}"
-        )
 
 
 def _validated_record(record: dict[str, Any]) -> dict[str, Any] | None:
@@ -116,47 +66,53 @@ def _validated_record(record: dict[str, Any]) -> dict[str, Any] | None:
         "review_id": str(record.get("reviewId") or ""),
         "review_hash": source_hash,
         "redacted_text": redacted_text,
-        "entities_json": json.dumps(entities, ensure_ascii=False, separators=(",", ":"), sort_keys=True),
+        "entities": entities,
         "model": str(record.get("model") or ""),
         "prompt_version": str(record.get("promptVersion") or ""),
         "processed_at": str(record.get("updatedAt") or ""),
     }
 
 
-def _review_state(
-    connection: sqlite3.Connection,
+def _review_column(language: str) -> str:
+    return "reviews_en_json" if language == "english" else "reviews_zh_json"
+
+
+def _review_text(item: dict[str, Any]) -> str:
+    return str(item.get("text") or item.get("review") or "")
+
+
+def _find_review(
+    connection: Any,
     record: dict[str, Any],
-    has_reviews: bool,
-) -> str:
-    if not has_reviews:
-        return "current"
-    if record["review_id"]:
-        row = connection.execute(
-            """
-            SELECT review_hash
-            FROM app_reviews
-            WHERE appid = ? AND language = ? AND review_id = ?
-            LIMIT 1
-            """,
-            (record["appid"], record["language"], record["review_id"]),
-        ).fetchone()
-    else:
-        row = connection.execute(
-            """
-            SELECT review_hash
-            FROM app_reviews
-            WHERE appid = ? AND language = ? AND review_hash = ?
-            LIMIT 1
-            """,
-            (record["appid"], record["language"], record["review_hash"]),
-        ).fetchone()
+) -> tuple[Any, list[dict[str, Any]], dict[str, Any]] | None:
+    row = connection.execute(
+        f"SELECT appid, {_review_column(record['language'])} AS reviews_json "
+        "FROM games WHERE appid = ?",
+        (record["appid"],),
+    ).fetchone()
     if row is None:
-        return "missing"
-    return "current" if str(row[0]) == record["review_hash"] else "stale"
+        return None
+    try:
+        reviews = json.loads(row["reviews_json"] or "[]")
+    except (TypeError, json.JSONDecodeError):
+        return None
+    if not isinstance(reviews, list):
+        return None
+    for item in reviews:
+        if not isinstance(item, dict):
+            continue
+        review_id = str(item.get("reviewId") or item.get("recommendationid") or "")
+        source_hash = hashlib.sha256(_review_text(item).encode("utf-8")).hexdigest()
+        if (
+            (record["review_id"] and review_id == record["review_id"])
+            or (not record["review_id"] and source_hash == record["review_hash"])
+        ):
+            return row, reviews, item
+    return None
 
 
 def import_records(
-    connection: sqlite3.Connection,
+    connection: Any,
     records: list[dict[str, Any]],
     *,
     source_path: str,
@@ -171,8 +127,6 @@ def import_records(
         "stale": 0,
         "missing": 0,
     }
-    has_reviews = table_exists(connection, "app_reviews")
-    imported_at = utc_now()
     prepared: list[dict[str, Any]] = []
     for raw in records:
         if raw.get("status") != "ok":
@@ -183,9 +137,14 @@ def import_records(
             stats["invalid"] += 1
             continue
         stats["eligible"] += 1
-        state = _review_state(connection, record, has_reviews)
-        if state != "current":
-            stats[state] += 1
+        found = _find_review(connection, record)
+        if found is None:
+            stats["missing"] += 1
+            continue
+        _row, _reviews, item = found
+        current_hash = hashlib.sha256(_review_text(item).encode("utf-8")).hexdigest()
+        if current_hash != record["review_hash"]:
+            stats["stale"] += 1
             continue
         prepared.append(record)
 
@@ -193,42 +152,48 @@ def import_records(
         stats["imported"] = len(prepared)
         return stats
 
-    create_or_validate_table(connection)
+    imported_at = utc_now()
+    # Group updates so a game containing several reviews is written once.
+    grouped: dict[tuple[int, str], list[dict[str, Any]]] = {}
     for record in prepared:
+        grouped.setdefault((record["appid"], record["language"]), []).append(record)
+
+    for (appid, language), game_records in grouped.items():
+        column = _review_column(language)
+        found = _find_review(connection, game_records[0])
+        if found is None:
+            continue
+        _row, reviews, _ = found
+        by_id = {
+            str(item.get("reviewId") or item.get("recommendationid") or ""): item
+            for item in reviews
+            if isinstance(item, dict)
+        }
+        for record in game_records:
+            target = None
+            if record["review_id"]:
+                target = by_id.get(record["review_id"])
+            else:
+                target = next(
+                    (
+                        item for item in reviews
+                        if isinstance(item, dict)
+                        and hashlib.sha256(_review_text(item).encode("utf-8")).hexdigest()
+                        == record["review_hash"]
+                    ),
+                    None,
+                )
+            if target is None:
+                continue
+            target["redactedText"] = record["redacted_text"]
+            target["redactionEntities"] = record["entities"]
+            target["redactionModel"] = record["model"]
+            target["redactionPromptVersion"] = record["prompt_version"]
+            target["redactedAt"] = record["processed_at"] or imported_at
+            target["redactionSource"] = source_path
         connection.execute(
-            """
-            INSERT INTO review_redactions(
-                task_id, appid, language, review_id, review_hash, redacted_text,
-                entities_json, model, prompt_version, processed_at, imported_at,
-                source_path
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(task_id) DO UPDATE SET
-                appid = excluded.appid,
-                language = excluded.language,
-                review_id = excluded.review_id,
-                review_hash = excluded.review_hash,
-                redacted_text = excluded.redacted_text,
-                entities_json = excluded.entities_json,
-                model = excluded.model,
-                prompt_version = excluded.prompt_version,
-                processed_at = excluded.processed_at,
-                imported_at = excluded.imported_at,
-                source_path = excluded.source_path
-            """,
-            (
-                record["task_id"],
-                record["appid"],
-                record["language"],
-                record["review_id"],
-                record["review_hash"],
-                record["redacted_text"],
-                record["entities_json"],
-                record["model"],
-                record["prompt_version"],
-                record["processed_at"],
-                imported_at,
-                source_path,
-            ),
+            f"UPDATE games SET {column} = ?, updated_at = ? WHERE appid = ?",
+            (json.dumps(reviews, ensure_ascii=False, separators=(",", ":")), imported_at, appid),
         )
     stats["imported"] = len(prepared)
     return stats
@@ -246,9 +211,12 @@ def run(args: argparse.Namespace) -> dict[str, int]:
         raise ValueError("--limit must be non-negative")
     if args.limit:
         records = records[: args.limit]
+
+    import sqlite3
+
     connection = sqlite3.connect(database)
+    connection.row_factory = sqlite3.Row
     try:
-        connection.execute("PRAGMA foreign_keys = ON")
         if args.dry_run:
             stats = import_records(connection, records, source_path=str(source), dry_run=True)
         else:
@@ -265,14 +233,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", default=DEFAULT_INPUT, help="Redaction .json or .jsonl checkpoint")
     parser.add_argument("--db", default=DEFAULT_DB, help="Existing SQLite catalog database")
     parser.add_argument("--limit", type=int, default=0, help="Maximum final checkpoint records; 0 means all")
-    parser.add_argument("--dry-run", action="store_true", help="Validate and report without creating or writing tables")
+    parser.add_argument("--dry-run", action="store_true", help="Validate and report without writing games")
     return parser
 
 
 def main() -> None:
     try:
         run(build_parser().parse_args())
-    except (OSError, ValueError, json.JSONDecodeError, sqlite3.Error) as error:
+    except (OSError, ValueError, json.JSONDecodeError) as error:
         raise SystemExit(f"error: {error}") from error
 
 

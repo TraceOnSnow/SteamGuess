@@ -65,5 +65,3 @@ input, select { padding: 0 11px; }
 @media (max-width: 560px) { .difficulty-console { padding: 18px 10px 35px; }.token-panel { align-items: stretch; flex-direction: column; }.difficulty-table tr { grid-template-columns: repeat(2, 1fr); }.editor-cell { grid-column: 1 / -1; }.difficulty-table td:last-child { grid-column: 1 / -1; }.lock-button { width: 100%; }.header-summary { grid-template-columns: repeat(2, auto); } }
 .difficulty-header-actions { display: flex; align-items: flex-end; flex-direction: column; gap: 12px; }
 @media (max-width: 900px) { .difficulty-header-actions { width: 100%; align-items: stretch; } }
-.ai-candidate-cell em { display: block; max-width: 240px; overflow: hidden; margin-top: 4px; color: #7896ad; font-size: 10px; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
-.ai-candidate-cell small { color: #9fb4c7; }

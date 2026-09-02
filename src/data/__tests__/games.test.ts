@@ -11,7 +11,7 @@ function game(appId: number, name: string): Game {
     popularity: { ccu: 0 },
     reviews: { total: 1, positive: 1, negative: 0 },
     tags: { userTags: [], developers: [], publishers: [] },
-    difficulty: { score: 25, level: 'normal', confidence: 1, source: 'ai-candidate' },
+    difficulty: { score: 25, level: 'normal', source: 'manual' },
   };
 }
 

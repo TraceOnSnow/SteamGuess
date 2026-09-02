@@ -21,6 +21,39 @@ function testDb() {
   return openDatabase(path);
 }
 
+function createCatalogFixture() {
+  const path = join(tmpdir(), `steamguess-catalog-${randomUUID()}.sqlite`);
+  paths.push(path);
+  const seed = new DatabaseSync(path);
+  seed.exec(`
+    CREATE TABLE games (
+      appid INTEGER PRIMARY KEY,
+      name_en TEXT NOT NULL,
+      name_zh TEXT,
+      pool_status TEXT NOT NULL DEFAULT 'eligible',
+      status_reason TEXT,
+      difficulty_score INTEGER,
+      difficulty_tier TEXT,
+      difficulty_manual_score INTEGER,
+      difficulty_locked INTEGER NOT NULL DEFAULT 0,
+      difficulty_source TEXT,
+      player_feedback_count INTEGER NOT NULL DEFAULT 0,
+      player_feedback_mean REAL,
+      player_feedback_stddev REAL,
+      player_feedback_updated_at TEXT,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      developers_json TEXT NOT NULL DEFAULT '[]',
+      publishers_json TEXT NOT NULL DEFAULT '[]',
+      tags_json TEXT NOT NULL DEFAULT '[]',
+      cover_url TEXT,
+      heat_rank INTEGER
+    );
+  `);
+  seed.close();
+  return path;
+}
+
 describe('feedback database', () => {
   it('stores sessions and difficulty feedback for an anonymous player', () => {
     const db = testDb();
@@ -194,9 +227,8 @@ describe('rate limiter', () => {
 });
 
 describe('catalog difficulty overrides', () => {
-  it('keeps AI and manual scores separate and only applies manual score when locked', async () => {
-    const path = join(tmpdir(), `steamguess-catalog-${randomUUID()}.sqlite`);
-    paths.push(path);
+  it('reads and writes the converged games row', async () => {
+    const path = createCatalogFixture();
     const {
       listDifficulties,
       openCatalogDatabase,
@@ -205,19 +237,15 @@ describe('catalog difficulty overrides', () => {
     } = await import('../catalog-difficulty.js');
     const db = openCatalogDatabase(path);
     db.exec(`
-      CREATE TABLE IF NOT EXISTS apps (appid INTEGER PRIMARY KEY, canonical_name TEXT NOT NULL);
-      CREATE TABLE IF NOT EXISTS app_names (appid INTEGER, locale TEXT, country TEXT, name TEXT, retrieved_at TEXT);
-      CREATE TABLE IF NOT EXISTS catalog_memberships (catalog TEXT, appid INTEGER);
-      INSERT INTO apps VALUES (10, 'Test Game');
-      INSERT INTO app_names VALUES (10, 'schinese', 'CN', '测试游戏', '2026-08-12T00:00:00Z');
-      INSERT INTO difficulty_ai_candidates VALUES
-        (10, 25, 'normal', 0.8, 'candidate', 1, NULL, 'normal', 'test-ai', 'v3', '2026-08-12T00:00:00Z', 'test');
-      INSERT INTO catalog_memberships VALUES ('active', 10);
+      INSERT INTO games(appid, name_en, name_zh, pool_status, difficulty_score,
+        difficulty_tier, created_at, updated_at)
+      VALUES (10, 'Test Game', '测试游戏', 'eligible', 25, 'normal',
+        '2026-08-12T00:00:00Z', '2026-08-12T00:00:00Z');
     `);
     let row = upsertDifficultyOverride(db, 10, { manualScore: 80, locked: false }, '2026-08-12T00:00:00Z');
-    assert.equal(row.aiCandidateScore, 25);
     assert.equal(row.manualScore, 80);
-    assert.equal(row.effectiveScore, 25);
+    assert.equal(row.effectiveScore, 80);
+    assert.equal(row.effectiveSource, 'manual');
     row = upsertDifficultyOverride(db, 10, { locked: true }, '2026-08-12T00:01:00Z');
     assert.equal(row.effectiveScore, 80);
     assert.equal(row.effectiveLevel, 'hell');
@@ -225,8 +253,14 @@ describe('catalog difficulty overrides', () => {
     assert.equal(listed.total, 1);
     assert.equal(listed.rows[0].localizedName, '测试游戏');
     row = setCatalogExclusion(db, 10, { excluded: true, reason: 'too_obscure' }, '2026-08-12T00:02:00Z');
-    assert.equal(row.excluded, true);
+    assert.equal(row.excluded, false);
+    assert.equal(row.searchOnly, true);
     assert.equal(row.exclusionReason, 'too_obscure');
+    assert.equal(row.active, true);
+    assert.equal(listDifficulties(db, { scope: 'active' }).total, 1);
+    row = setCatalogExclusion(db, 10, { excluded: true, reason: 'software' }, '2026-08-12T00:02:30Z');
+    assert.equal(row.excluded, true);
+    assert.equal(row.exclusionReason, 'software');
     assert.equal(row.active, false);
     assert.equal(listDifficulties(db, { scope: 'active' }).total, 0);
     assert.equal(listDifficulties(db, { scope: 'all', filter: 'excluded' }).total, 1);
@@ -239,18 +273,14 @@ describe('catalog difficulty overrides', () => {
 
 describe('difficulty admin HTTP persistence', () => {
   it('writes an override through PUT and reads it back through GET', async () => {
-    const path = join(tmpdir(), `steamguess-catalog-api-${randomUUID()}.sqlite`);
-    paths.push(path);
+    const path = createCatalogFixture();
     const { openCatalogDatabase } = await import('../catalog-difficulty.js');
     const seed = openCatalogDatabase(path);
     seed.exec(`
-      CREATE TABLE IF NOT EXISTS apps (appid INTEGER PRIMARY KEY, canonical_name TEXT NOT NULL);
-      CREATE TABLE IF NOT EXISTS app_names (appid INTEGER, locale TEXT, country TEXT, name TEXT, retrieved_at TEXT);
-      CREATE TABLE IF NOT EXISTS catalog_memberships (catalog TEXT, appid INTEGER);
-      INSERT INTO apps VALUES (10, 'Test Game');
-      INSERT INTO difficulty_ai_candidates VALUES
-        (10, 25, 'normal', 0.8, 'candidate', 1, NULL, 'normal', 'test-ai', 'v3', '2026-08-12T00:00:00Z', 'test');
-      INSERT INTO catalog_memberships VALUES ('active', 10);
+      INSERT INTO games(appid, name_en, pool_status, difficulty_score,
+        difficulty_tier, created_at, updated_at)
+      VALUES (10, 'Test Game', 'eligible', 25, 'normal',
+        '2026-08-12T00:00:00Z', '2026-08-12T00:00:00Z');
     `);
     seed.close();
     const handler = createApiHandler({ catalogDbPath: path, adminToken: 'secret' });
@@ -274,7 +304,7 @@ describe('difficulty admin HTTP persistence', () => {
     assert.equal(listed.status, 200);
     assert.equal(listed.body.rows[0].manualScore, 83);
     assert.equal(listed.body.rows[0].locked, true);
-    const excluded = await invoke('PUT', '/api/admin/difficulties/10', { excluded: true, exclusionReason: 'unsuitable' });
+    const excluded = await invoke('PUT', '/api/admin/difficulties/10', { excluded: true, exclusionReason: 'software' });
     assert.equal(excluded.status, 200);
     assert.equal(excluded.body.excluded, true);
     assert.equal(excluded.body.active, false);
@@ -284,11 +314,12 @@ describe('difficulty admin HTTP persistence', () => {
     handler.close();
 
     const verify = openCatalogDatabase(path);
-    assert.deepEqual({ ...verify.prepare('SELECT manual_score, locked FROM difficulty_overrides WHERE appid = 10').get() }, {
-      manual_score: 83, locked: 1,
+    assert.deepEqual({ ...verify.prepare('SELECT difficulty_manual_score, difficulty_locked, difficulty_score FROM games WHERE appid = 10').get() }, {
+      difficulty_manual_score: 83, difficulty_locked: 1, difficulty_score: null,
     });
-    assert.deepEqual({ ...verify.prepare('SELECT reason FROM catalog_exclusions WHERE appid = 10').get() }, {
-      reason: 'unsuitable',
+    assert.deepEqual({ ...verify.prepare('SELECT pool_status, status_reason FROM games WHERE appid = 10').get() }, {
+      pool_status: 'excluded',
+      status_reason: 'software',
     });
     verify.close();
   });

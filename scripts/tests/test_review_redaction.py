@@ -12,6 +12,7 @@ from unittest.mock import Mock, patch
 
 from scripts.catalog import import_review_redactions as importer
 from scripts.catalog import redact_reviews_ai as redaction
+from scripts.catalog.database import connect, initialize
 
 
 class ReviewRedactionTests(unittest.TestCase):
@@ -235,22 +236,23 @@ class ReviewRedactionTests(unittest.TestCase):
 
 class ReviewRedactionImportTests(unittest.TestCase):
     def make_database(self, path: Path) -> None:
-        connection = sqlite3.connect(path)
+        connection = connect(path)
+        initialize(connection)
         with connection:
-            connection.execute(
-                """
-                CREATE TABLE app_reviews (
-                    appid INTEGER NOT NULL,
-                    language TEXT NOT NULL,
-                    review_id TEXT NOT NULL,
-                    review_hash TEXT NOT NULL
-                )
-                """
-            )
             text = "Meet Hero in Example Game."
             connection.execute(
-                "INSERT INTO app_reviews VALUES (?, ?, ?, ?)",
-                (10, "english", "r1", sha256(text.encode()).hexdigest()),
+                """
+                INSERT INTO games(
+                    appid, name_en, reviews_en_json, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?)
+                """,
+                (
+                    10,
+                    "Example Game",
+                    json.dumps([{"reviewId": "r1", "text": text}], ensure_ascii=False),
+                    "old",
+                    "old",
+                ),
             )
         connection.close()
 
@@ -285,7 +287,7 @@ class ReviewRedactionImportTests(unittest.TestCase):
             },
         ]
 
-    def test_import_creates_table_and_upserts_current_results(self):
+    def test_import_updates_review_json_and_does_not_create_side_table(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             database = root / "catalog.sqlite"
@@ -303,20 +305,27 @@ class ReviewRedactionImportTests(unittest.TestCase):
             self.assertEqual(stats["notOk"], 1)
             connection = sqlite3.connect(database)
             row = connection.execute(
-                "SELECT redacted_text, model FROM review_redactions WHERE task_id = ?",
-                ("10:english:r1",),
+                "SELECT reviews_en_json FROM games WHERE appid = 10",
             ).fetchone()
+            reviews = json.loads(row[0])
+            self.assertEqual(reviews[0]["redactedText"], "Meet [角色名称] in [游戏名称].")
+            self.assertEqual(reviews[0]["redactionModel"], "mock/model")
+            tables = {
+                value[0]
+                for value in connection.execute(
+                    "SELECT name FROM sqlite_master WHERE type='table'"
+                )
+            }
+            self.assertNotIn("review_redactions", tables)
             records = self.make_records()
             records[0]["redactedText"] = "Updated [游戏名称]."
             checkpoint.write_text(json.dumps(records[0]) + "\n", encoding="utf-8")
             importer.run(args)
             updated = connection.execute(
-                "SELECT redacted_text FROM review_redactions WHERE task_id = ?",
-                ("10:english:r1",),
+                "SELECT reviews_en_json FROM games WHERE appid = 10",
             ).fetchone()
             connection.close()
-            self.assertEqual(row, ("Meet [角色名称] in [游戏名称].", "mock/model"))
-            self.assertEqual(updated, ("Updated [游戏名称].",))
+            self.assertEqual(json.loads(updated[0])[0]["redactedText"], "Updated [游戏名称].")
 
     def test_import_skips_stale_review_and_dry_run_does_not_create_table(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -333,7 +342,11 @@ class ReviewRedactionImportTests(unittest.TestCase):
             stats = importer.run(args)
             self.assertEqual(stats["stale"], 1)
             connection = sqlite3.connect(database)
-            self.assertFalse(importer.table_exists(connection, importer.TABLE))
+            self.assertIsNone(
+                connection.execute(
+                    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='review_redactions'"
+                ).fetchone()
+            )
             connection.close()
 
 
