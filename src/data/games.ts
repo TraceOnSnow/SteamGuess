@@ -38,7 +38,7 @@ export function searchGames(games: Game[], query: string, excludedAppIds: Readon
   if (!normalized) return [];
 
   return games
-    .filter(game => !excludedAppIds.has(game.appId) && localizedGameNames(game).some(name => name.toLocaleLowerCase().includes(normalized)))
+    .filter(game => !excludedAppIds.has(game.appId) && [...localizedGameNames(game), ...(game.aliases || [])].some(name => name.toLocaleLowerCase().includes(normalized)))
     .sort((a, b) => {
       const aName = localizedGameNames(a).find(name => name.toLocaleLowerCase().includes(normalized))?.toLocaleLowerCase() ?? a.name.toLocaleLowerCase();
       const bName = localizedGameNames(b).find(name => name.toLocaleLowerCase().includes(normalized))?.toLocaleLowerCase() ?? b.name.toLocaleLowerCase();

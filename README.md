@@ -1,5 +1,21 @@
 # SteamGuess
 
+**Current release: 300 games.** A fixed answer pool of 300 Steam games and a separate 2,000-game search/guess catalog. Beginner / easy / normal / hard / hell use cumulative pools of 20 / 50 / 100 / 200 / 300 games, all with ten guesses. Screenshot hints are available at any time: open a blurred image, optionally reveal it clearly, and automatically show it clearly when the answer is revealed. Daily puzzles, local round recovery, statistics, answer-free sharing, and private multiplayer rooms are included.
+
+```sh
+npm ci
+npm run build
+npm start
+# http://localhost:4173
+```
+
+A fresh clone works from the committed snapshot without an API key. `npm run data:restore` optionally restores the editable SQLite catalog, using a recovered backup when available or the shipped snapshot otherwise. The selection lives in `data/curated/classics.json`. There are no review or editorial text hints. Prices and metrics are restored snapshots; screenshots require Steam CDN access. The weekly wrapper defaults to this fixed collection; the historical bulk pipeline requires `STEAMGUESS_EDITION=archive`.
+
+Search-only games can be guessed for comparison but never selected as answers, including in multiplayer. The homepage no longer publishes the exact answer list. The pools are frozen release data. Current grading is explicitly a recovered SteamSpy weighted snapshot (85% log-normalized reviews, 15% CCU), not IGDB PopScore. The original five-metric IGDB formula remains available; `npm run data:freeze-difficulty -- --igdb-ranking /path/to/igdb-heat-all.json` imports a complete compatible ranking once, followed by `npm run data:restore`. No runtime or player-feedback regrading is applied.
+
+The infrastructure notes below describe the retained data platform; historical rank windows and five-tier answer pools do not define the current Classics release.
+
+
 > A data-driven Steam game guessing game — built for daily play, explainable clues, and future multiplayer.
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)

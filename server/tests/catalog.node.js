@@ -1,3 +1,4 @@
+import { createMatchEngine } from '../multiplayer/matchEngine.js';
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
@@ -33,4 +34,27 @@ describe('authoritative multiplayer catalog', () => {
     assert.deepEqual(difficultyPool(catalog, 'normal').map(row => row.appId), [1, 2]);
     assert.deepEqual(difficultyPool(catalog, 'hell').map(row => row.appId), [1, 2, 3, 4]);
   });
+});
+
+it('ships five cumulative Classics pools', () => {
+  const catalog = loadCatalog(process.cwd());
+  assert.equal(catalog.length, 2000);
+  const counts = ['beginner', 'easy', 'normal', 'hard', 'hell'].map(level => difficultyPool(catalog, level).length);
+  assert.deepEqual(counts, [20, 50, 100, 200, 300]);
+});
+
+it('accepts search-only guesses while restricting answers, even if a search row has a stale score', () => {
+  const catalog = loadCatalog(process.cwd());
+  const outside = catalog.find(game => game.catalogStatus === 'search_only');
+  const pool = difficultyPool(catalog, 'beginner');
+  const engine = createMatchEngine({ catalog, random: () => 0, onRoundEnd: () => null });
+  const room = { pool, settings: { difficulty: 'beginner', roundTimeSeconds: 120 }, players: [{ id: 'test' }] };
+  engine.startRound(room);
+  assert.ok(pool.some(game => game.appId === room.activeRound.answerAppId));
+  const result = engine.guess(room, 'test', outside.appId);
+  assert.equal(result.error, undefined);
+  assert.equal(result.feedback.isCorrect, false);
+  assert.equal(result.guessesUsed, 1);
+  assert.deepEqual(difficultyPool([{ ...outside, difficulty: pool[0].difficulty }], 'hell'), []);
+  assert.throws(() => engine.startRound({ ...room, pool: [] }), /answer pool is empty/);
 });

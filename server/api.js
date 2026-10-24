@@ -103,6 +103,10 @@ function createCatalogReader(rootDir, catalogDatabase) {
       cached = { path, mtimeMs: stat.mtimeMs, size: stat.size, games };
     }
 
+    // This edition is a frozen release artifact; player feedback and the
+    // legacy admin database must not regrade or shrink its pools at runtime.
+    if (cached.games.every(game => game.edition === 'classics' || game.collection === 'classics')) return cached.games;
+
     let effective;
     let hidden;
     try {
@@ -117,6 +121,7 @@ function createCatalogReader(rootDir, catalogDatabase) {
       .filter(game => !hidden.has(Number(game?.appId)))
       .map(game => {
         const difficulty = effective.get(Number(game.appId));
+        if (!difficulty && game.collection === 'classics') return game;
         if (!difficulty) {
           const { difficulty: _difficulty, difficultyScore: _score, difficultyLevel: _level, ...searchableGame } = game;
           return searchableGame;

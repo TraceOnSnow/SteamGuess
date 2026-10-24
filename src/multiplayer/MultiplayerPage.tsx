@@ -1,3 +1,4 @@
+import { getMaxGuesses } from '../../shared/game-rules.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { io, type Socket } from 'socket.io-client';
 import { loadGames } from '../data/games';
@@ -8,6 +9,9 @@ import { MainMenuDialog } from '../components/MainMenuDialog/MainMenuDialog';
 import { getPlayerId } from '../api/client';
 import type { Ack, GuessResult, MultiplayerField, MultiplayerSettings, RoomSnapshot, RoundEnd } from './types';
 import './MultiplayerPage.css';
+import { Clues } from '../play/Clues';
+import { CHALLENGES } from '../play/rules';
+import edition from '../../shared/edition.json';
 import { useTranslation } from 'react-i18next';
 
 const SESSION_KEY = 'steamguess-multiplayer-session-v1';
@@ -22,6 +26,20 @@ function emit<T>(socket: Socket, event: string, payload: object): Promise<Ack<T>
   return new Promise(resolve => socket.timeout(8000).emit(event, payload, (error: Error | null, response: Ack<T>) => {
     resolve(error ? { ok: false, error: { code: 'TIMEOUT', message: '服务器没有及时响应。' } } : response);
   }));
+}
+
+function RoundScreenshot({ roundId, urls, ended }: { roundId: string; urls: string[]; ended: boolean }) {
+  const key = `steamguess-mp-hint:${roundId}`;
+  const [hint, setHint] = useState(() => {
+    try { const saved = JSON.parse(sessionStorage.getItem(key) || 'null'); return { open: Boolean(saved?.open), clear: Boolean(saved?.clear) }; }
+    catch { return { open: false, clear: false }; }
+  });
+  function update(next: typeof hint) {
+    setHint(next);
+    try { sessionStorage.setItem(key, JSON.stringify(next)); } catch { /* Optional progress. */ }
+  }
+  return <Clues urls={urls} open={hint.open} clear={hint.clear} ended={ended}
+    onToggle={() => update({ ...hint, open: !hint.open })} onClear={() => update({ ...hint, clear: true })} />;
 }
 
 export default function MultiplayerPage() {
@@ -116,12 +134,12 @@ export default function MultiplayerPage() {
   // Keep the just-finished round visible until the server announces the next active round.
   // `activeRound` is cleared before `round:ended` is emitted, so filtering only by
   // `room.activeRound.id` made every guess disappear at the end of a round.
-  const displayedRoundId = room?.activeRound?.id ?? roundEnd?.roundId ?? null;
+  const currentRoundEnd = room?.status === 'round_over' || room?.status === 'finished' ? room.lastRound ?? roundEnd : null;
+  const displayedRoundId = room?.activeRound?.id ?? currentRoundEnd?.roundId ?? null;
   const currentResults = useMemo(
     () => results.filter(result => result.roundId === displayedRoundId),
     [displayedRoundId, results],
   );
-  const currentRoundEnd = room?.status === 'countdown' ? null : roundEnd?.roundId === room?.activeRound?.id || (roundEnd && room?.status !== 'playing') ? roundEnd : null;
   const secondsLeft = room?.activeRound ? Math.max(0, Math.ceil((room.activeRound.endsAt - clock) / 1000)) : 0;
   const excluded = useMemo(() => new Set(currentResults.map(result => result.guessAppId)), [currentResults]);
   const canInteract = connected && !resuming;
@@ -194,9 +212,9 @@ export default function MultiplayerPage() {
         <LanguageToggle />
       </div>
       <section className="mp-card">
-        <p className="eyebrow">SteamGuess Multiplayer</p><h1>多人同题竞速</h1><p className="mp-muted">创建 2–8 人私人房间，一起猜同一款游戏。</p>
+        <p className="eyebrow">SteamGuess Multiplayer</p><h1>多人同题竞速</h1><p className="mp-muted">{edition.answerLimit} 款题库 · 2–8 人</p>
         <label>昵称<input value={displayName} maxLength={32} onChange={event => setDisplayName(event.target.value)} /></label>
-        <div className="mp-settings-row"><label>难度<select value={settings.difficulty} onChange={event => setSettings({ ...settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={settings.bestOf} onChange={event => setSettings({ ...settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={settings.maxPlayers} onChange={event => setSettings({ ...settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div>
+        <div className="mp-settings-row"><label>难度<select value={settings.difficulty} onChange={event => setSettings({ ...settings, difficulty: event.target.value as MultiplayerSettings['difficulty'], roundTimeSeconds: 120 })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={settings.bestOf} onChange={event => setSettings({ ...settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={settings.maxPlayers} onChange={event => setSettings({ ...settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div>
         <button className="btn btn-primary" disabled={!connected || !displayName.trim()} onClick={() => void enter('room:create')}>创建房间</button>
         <div className="mp-divider"><span>或者加入</span></div>
         <div className="mp-join"><input aria-label="房间码" placeholder="房间码" value={roomCode} maxLength={8} onChange={event => setRoomCode(event.target.value.toUpperCase())} /><button className="btn btn-quiet" disabled={!connected || !roomCode.trim()} onClick={() => void enter('room:join')}>加入</button></div>
@@ -223,23 +241,25 @@ export default function MultiplayerPage() {
       </section>
       {(!connected || resuming) && <p className="mp-connection-status" role="status">连接中断，正在自动恢复房间……</p>}
       <section className="mp-scoreboard">
-        {room.players.map(player => <div key={player.id} className={player.id === identity?.playerId ? 'is-me' : ''}><span className={`mp-dot ${player.connected ? 'online' : ''}`} /> <strong>{player.displayName}</strong><span>{room.match?.scores[player.id] ?? 0} 分 · {player.guessCount}/10</span></div>)}
+        {room.players.map(player => <div key={player.id} className={player.id === identity?.playerId ? 'is-me' : ''}><span className={`mp-dot ${player.connected ? 'online' : ''}`} /> <strong>{player.displayName}</strong><span>{room.match?.scores[player.id] ?? 0} 分 · {player.guessCount}/{getMaxGuesses(room.settings.difficulty)}</span></div>)}
       </section>
       {room.status === 'countdown' ? <section className="mp-card mp-countdown">
         <span className="mp-muted">准备开始第 {room.match?.roundNumber === 0 ? 1 : room.match?.roundNumber ?? 1} 回合</span>
         <strong>{Math.max(0, Math.ceil(((room.countdownEndsAt ?? clock) - clock) / 1000))}</strong>
-        <span className="mp-muted">房间规则已锁定，服务端正在同步题目。</span>
+        <span className="mp-muted"></span>
       </section> : room.status === 'lobby' ? <section className="mp-card mp-lobby">
-        <h2>房间设置</h2>
-        {room.hostPlayerId === identity?.playerId ? <div className="mp-settings-row"><label>难度<select value={room.settings.difficulty} onChange={event => void updateSettings({ ...room.settings, difficulty: event.target.value as MultiplayerSettings['difficulty'] })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={room.settings.bestOf} onChange={event => void updateSettings({ ...room.settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={room.settings.maxPlayers} onChange={event => void updateSettings({ ...room.settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div> : <p>{room.settings.difficulty} · BO{room.settings.bestOf} · 最多 {room.settings.maxPlayers} 人</p>}
+        <h2>房间设置</h2><p className="mp-muted">{Object.values(edition.poolCaps).join(' / ')} 款 · 10 次 / 120 秒</p>
+        {room.hostPlayerId === identity?.playerId ? <div className="mp-settings-row"><label>难度<select value={room.settings.difficulty} onChange={event => void updateSettings({ ...room.settings, difficulty: event.target.value as MultiplayerSettings['difficulty'], roundTimeSeconds: 120 })}><option value="beginner">入门</option><option value="easy">简单</option><option value="normal">普通</option><option value="hard">困难</option><option value="hell">地狱</option></select></label><label>赛制<select value={room.settings.bestOf} onChange={event => void updateSettings({ ...room.settings, bestOf: Number(event.target.value) as 1 | 3 | 5 })}><option value="1">BO1</option><option value="3">BO3</option><option value="5">BO5</option></select></label><label>人数<select value={room.settings.maxPlayers} onChange={event => void updateSettings({ ...room.settings, maxPlayers: Number(event.target.value) })}>{[2, 3, 4, 5, 6, 7, 8].map(value => <option key={value} value={value}>{value} 人</option>)}</select></label></div> : <p>{CHALLENGES[room.settings.difficulty].label} · BO{room.settings.bestOf} · 最多 {room.settings.maxPlayers} 人</p>}
         {room.hostPlayerId === identity?.playerId && <fieldset className="mp-fields-setting"><legend>本局展示字段</legend>{ALL_FIELDS.map(field => <label key={field.key}><input type="checkbox" checked={room.settings.visibleFields.includes(field.key)} onChange={() => toggleField(field.key)} />{field.label}</label>)}</fieldset>}
-        <p className="mp-muted">已加入 {room.players.length}/{room.settings.maxPlayers} 人 · 把上面的房间代码发给朋友</p>
+        <p className="mp-muted">已加入 {room.players.length}/{room.settings.maxPlayers} 人</p>
         <div className="mp-actions"><button className={`btn ${me?.ready ? 'btn-quiet' : 'btn-primary'}`} disabled={!canInteract} onClick={() => void ready()}>{me?.ready ? '取消准备' : '准备'}</button>{room.hostPlayerId === identity?.playerId && <button className="btn btn-primary" disabled={!canInteract || room.players.length < 2 || room.players.some(player => !player.ready)} onClick={() => void start()}>开始比赛</button>}</div>
       </section> : <>
         <section className="mp-playbar"><div><span>剩余时间</span><strong>{secondsLeft}s</strong></div>{room.status === 'playing' && <><SearchBox games={games} excludedAppIds={excluded} onSelectGame={game => void guess(game)} isDisabled={!canInteract || !me?.connected || me?.finished} /><button className="btn btn-quiet" disabled={!canInteract} onClick={() => void surrender()}>投降</button></>}</section>
+        {displayedRoundId && <RoundScreenshot key={displayedRoundId} roundId={displayedRoundId}
+          urls={currentRoundEnd?.answer.hints?.screenshotUrls || room.activeRound?.screenshotUrls || []} ended={Boolean(currentRoundEnd)} />}
         {currentRoundEnd && <section className="mp-answer"><span>{currentRoundEnd.winnerPlayerId ? `${room.players.find(player => player.id === currentRoundEnd.winnerPlayerId)?.displayName} 赢得本回合` : '本回合平局'}</span><strong>{currentRoundEnd.answer.localizedNames?.zh || currentRoundEnd.answer.name}</strong></section>}
         {room.status === 'finished' && <section className="mp-card"><h2>{room.match?.winnerPlayerId === identity?.playerId ? '你赢得了比赛' : '比赛结束'}</h2><button className="btn btn-primary" disabled={!canInteract} onClick={() => void rematch()}>{me?.rematch ? '等待其他玩家确认…' : '再来一局'}</button></section>}
-        <section className="mp-results">{currentResults.length === 0 ? <p className="mp-muted">搜索并提交你的第一款游戏。</p> : [...currentResults].reverse().map(result => { const game = games.find(item => item.appId === result.guessAppId); return <article key={`${result.roundId}-${result.guessAppId}`} className={result.feedback.isCorrect ? 'correct' : ''}><header><strong>{game?.localizedNames?.zh || game?.name || result.guessAppId}</strong><span>{result.feedback.isCorrect ? '正确' : `剩余 ${result.guessesLeft} 次`}</span></header><div className="mp-fields">{result.feedback.fields.map(field => <span key={field.fieldName} className={`match-${field.status}`}>{field.fieldName}: {String(field.userValue ?? '—')} {field.direction === 'higher' ? '↑' : field.direction === 'lower' ? '↓' : ''}</span>)}</div><div className="mp-tags">{result.feedback.matchingCompanies.map(value => <span key={`c-${value}`}>{value}</span>)}{result.feedback.matchingTags.map(value => <span key={`t-${value}`}>{value}</span>)}</div></article> })}</section>
+        <section className="mp-results">{currentResults.length === 0 ? <p className="mp-muted">暂无猜测</p> : [...currentResults].reverse().map(result => { const game = games.find(item => item.appId === result.guessAppId); return <article key={`${result.roundId}-${result.guessAppId}`} className={result.feedback.isCorrect ? 'correct' : ''}><header><strong>{game?.localizedNames?.zh || game?.name || result.guessAppId}</strong><span>{result.feedback.isCorrect ? '正确' : `剩余 ${result.guessesLeft} 次`}</span></header><div className="mp-fields">{result.feedback.fields.map(field => <span key={field.fieldName} className={`match-${field.status}`}>{field.fieldName}: {String(field.userValue ?? '—')} {field.direction === 'higher' ? '↑' : field.direction === 'lower' ? '↓' : ''}</span>)}</div><div className="mp-tags">{result.feedback.matchingCompanies.map(value => <span key={`c-${value}`}>{value}</span>)}{result.feedback.matchingTags.map(value => <span key={`t-${value}`}>{value}</span>)}</div></article> })}</section>
       </>}
       {error && <p className="mp-error">{error}</p>}
       <MainMenuDialog

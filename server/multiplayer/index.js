@@ -39,6 +39,7 @@ function publicGame(game) {
     popularity: game.popularity,
     reviews: game.reviews,
     tags: game.tags,
+    hints: { screenshotUrls: game.hints?.screenshotUrls ?? [] },
   };
 }
 
@@ -164,6 +165,7 @@ export function createMultiplayerServer(httpServer, {
 
   function view(room, viewerId) {
     const viewerRound = room.activeRound?.players[viewerId];
+    const lastRound = ['round_over', 'finished'].includes(room.status) && room.match?.rounds.at(-1);
     return {
       id: room.id,
       code: room.code,
@@ -192,6 +194,11 @@ export function createMultiplayerServer(httpServer, {
         startedAt: room.activeRound.startedAt,
         endsAt: room.activeRound.endsAt,
         guesses: viewerRound?.guesses ?? [],
+        screenshotUrls: catalogById.get(room.activeRound.answerAppId)?.hints?.screenshotUrls ?? [],
+      } : null,
+      lastRound: lastRound ? {
+        roomId: room.id, roundId: lastRound.id, winnerPlayerId: lastRound.winnerPlayerId,
+        reason: lastRound.endReason, answer: publicGame(catalogById.get(lastRound.answerAppId)), stateVersion: room.revision,
       } : null,
     };
   }
@@ -610,6 +617,7 @@ export function createMultiplayerServer(httpServer, {
         ) {
           return { response: fail('INVALID_ROOM_STATE', 'At least two players must be ready.') };
         }
+        if (!room.pool.length) return { response: fail('EMPTY_ANSWER_POOL', 'This difficulty has no playable games.') };
         room.match = {
           id: `match_${randomUUID()}`,
           roundNumber: 0,

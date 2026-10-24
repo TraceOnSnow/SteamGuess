@@ -25,6 +25,10 @@ for (const path of ['dist/index.html', 'public/games_demo.json', 'server/index.j
 if (existsSync('public/games_demo.json')) {
   const raw = JSON.parse(readFileSync('public/games_demo.json', 'utf8'));
   const games = Array.isArray(raw) ? raw : Object.values(raw);
+  const classics = games.length > 0 && games.every(game => game.edition === 'classics' || game.collection === 'classics');
+  const selection = JSON.parse(readFileSync('data/curated/classics.json', 'utf8'));
+  const expectedClassics = selection.games.map(game => game.appId);
+  const minimumGames = classics ? 2000 : minimumPlayableGames;
   const appIds = new Set();
   let localized = 0;
   let cnPrices = 0;
@@ -36,6 +40,9 @@ if (existsSync('public/games_demo.json')) {
     if (game.localizedNames?.zh) localized += 1;
     if (Number.isFinite(game.price?.cn?.regular)) cnPrices += 1;
     if (!Array.isArray(game.tags?.userTags) || game.tags.userTags.length > 20) invalid += 1;
+    if (typeof game.releaseDate !== 'string' || !Number.isFinite(game.price?.us?.regular)
+      || !Number.isFinite(game.popularity?.ccu) || !Number.isFinite(game.reviews?.total)) invalid += 1;
+    if (classics && game.collection === 'classics' && (!game.hints?.screenshotUrls?.length || game.hints?.impression || game.hints?.reviewTexts)) invalid += 1;
     if (game.difficulty !== undefined) {
       const difficultyValid = ['beginner', 'easy', 'normal', 'hard', 'hell'].includes(game.difficulty?.level)
         && Number.isFinite(game.difficulty?.score)
@@ -45,9 +52,25 @@ if (existsSync('public/games_demo.json')) {
       else invalid += 1;
     }
   }
-  games.length >= minimumPlayableGames
-    ? pass(`search catalog has ${games.length} games (minimum ${minimumPlayableGames} for active limit ${activeLimit})`)
-    : fail(`search catalog has only ${games.length} games; expected at least ${minimumPlayableGames} for active limit ${activeLimit}`);
+  games.length >= minimumGames
+    ? pass(`search catalog has ${games.length} games (minimum ${minimumGames})`)
+    : fail(`search catalog has only ${games.length} games; expected at least ${minimumGames}`);
+  if (classics) {
+    const answers = games.filter(game => game.difficulty !== undefined);
+    const answerIds = new Set(answers.map(game => game.appId));
+    expectedClassics.length === answerIds.size && expectedClassics.every(id => answerIds.has(id))
+      ? pass('Classics edition exactly matches the reviewed selection') : fail('Classics membership changed');
+    playable === expectedClassics.length ? pass('only the reviewed Classics games are playable') : fail('Classics answer pool is incomplete');
+    games.filter(game => !answerIds.has(game.appId)).every(game => game.catalogStatus === 'search_only' && !game.difficulty && !game.hints)
+      ? pass('search-only games contain comparison data, not answer eligibility or hints') : fail('search-only data boundary broken');
+    const levels = ['beginner', 'easy', 'normal', 'hard', 'hell'];
+    for (const [level, count] of Object.entries(selection.difficultyPolicy.poolCaps)) {
+      const pool = answers.filter(game => levels.indexOf(game.difficulty.level) <= levels.indexOf(level));
+      pool.length === count ? pass(`${level} pool has ${count} games`) : fail(`${level} pool membership changed`);
+    }
+    selection.games.every(entry => games.find(game => game.appId === entry.appId)?.difficulty?.level === entry.difficulty.level)
+      ? pass('published tiers match the frozen selection') : fail('runtime tier drift');
+  }
   playable > 0 ? pass(`answer pool has ${playable} scored games`) : fail('answer pool is empty');
   invalid === 0 ? pass('search catalog shape, AppIDs, and optional difficulty') : fail(`${invalid} catalog records are invalid`);
   localized / games.length >= .95 ? pass(`Chinese names ${localized}/${games.length}`) : warn(`Chinese names only ${localized}/${games.length}`);

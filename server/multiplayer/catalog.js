@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 export const DIFFICULTY_LEVELS = ['beginner', 'easy', 'normal', 'hard', 'hell'];
 
 export function loadCatalog(rootDir) {
-  const candidates = [resolve(rootDir, 'dist/games_demo.json'), resolve(rootDir, 'public/games_demo.json')];
+  const candidates = [resolve(rootDir, 'public/games_demo.json'), resolve(rootDir, 'dist/games_demo.json')];
   const file = candidates.find(existsSync);
   if (!file) throw new Error('Multiplayer catalog not found: build the application first.');
   const raw = JSON.parse(readFileSync(file, 'utf8'));
@@ -17,6 +17,7 @@ export function loadCatalog(rootDir) {
 export function difficultyPool(catalog, difficulty) {
   const max = DIFFICULTY_LEVELS.indexOf(difficulty);
   return catalog.filter(game => {
+    if (game.catalogStatus === 'search_only' || game.catalogStatus === 'excluded') return false;
     if (!DIFFICULTY_LEVELS.includes(game.difficulty?.level)) return false;
     if (!Number.isFinite(game.difficulty?.score) || game.difficulty.score < 0 || game.difficulty.score > 100) return false;
     return DIFFICULTY_LEVELS.indexOf(game.difficulty.level) <= max;

@@ -105,6 +105,7 @@ export function GameTable({ records, correctGame, revealAnswer, visibleFields, o
           {(['exact', 'partial', 'close', 'wrong'] as MatchStatus[]).map(status => (
             <span key={status} className={`legend-item status-${status}`}>{t(`status.${status}`)}</span>
           ))}
+          <span className="table-legend">↑ 答案更高 · ↓ 答案更低</span>
         </div>
       </div>
 

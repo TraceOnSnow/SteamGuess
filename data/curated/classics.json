@@ -1,0 +1,5918 @@
+{
+  "version": 2,
+  "collection": "classics",
+  "description": "固定五档题库，十次猜测，截图提示。",
+  "games": [
+    {
+      "appId": 730,
+      "nameZh": "反恐精英 2",
+      "aliases": [
+        "CS2",
+        "CSGO",
+        "CS:GO",
+        "反恐精英"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 730,
+        "heatScore": 100.0,
+        "heatRank": 1,
+        "reviews": 8815087,
+        "ccu": 1013936,
+        "selectionRank": 1
+      }
+    },
+    {
+      "appId": 578080,
+      "nameZh": "绝地求生",
+      "aliases": [
+        "PUBG",
+        "吃鸡"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 578080,
+        "heatScore": 92.1547,
+        "heatRank": 2,
+        "reviews": 2557944,
+        "ccu": 314682,
+        "selectionRank": 2
+      }
+    },
+    {
+      "appId": 271590,
+      "nameZh": "侠盗猎车手 V",
+      "aliases": [
+        "GTA5",
+        "GTA V",
+        "给他爱"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 271590,
+        "heatScore": 89.1576,
+        "heatRank": 3,
+        "reviews": 1990556,
+        "ccu": 67851,
+        "selectionRank": 3
+      }
+    },
+    {
+      "appId": 252490,
+      "nameZh": "腐蚀",
+      "aliases": [
+        "Rust"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 252490,
+        "heatScore": 87.4045,
+        "heatRank": 4,
+        "reviews": 1227784,
+        "ccu": 143870,
+        "selectionRank": 4
+      }
+    },
+    {
+      "appId": 359550,
+      "nameZh": "彩虹六号：围攻",
+      "aliases": [
+        "Rainbow Six Siege",
+        "R6",
+        "彩六"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 359550,
+        "heatScore": 86.9898,
+        "heatRank": 5,
+        "reviews": 1398584,
+        "ccu": 51847,
+        "selectionRank": 5
+      }
+    },
+    {
+      "appId": 105600,
+      "nameZh": "泰拉瑞亚",
+      "aliases": [
+        "Terraria"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 105600,
+        "heatScore": 86.2215,
+        "heatRank": 6,
+        "reviews": 1409473,
+        "ccu": 24580,
+        "selectionRank": 6
+      }
+    },
+    {
+      "appId": 1172470,
+      "nameZh": "Apex 英雄",
+      "aliases": [
+        "Apex Legends",
+        "APEX"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1172470,
+        "heatScore": 86.1281,
+        "heatRank": 7,
+        "reviews": 994979,
+        "ccu": 124262,
+        "selectionRank": 7
+      }
+    },
+    {
+      "appId": 440,
+      "nameZh": "军团要塞 2",
+      "aliases": [
+        "Team Fortress 2",
+        "TF2"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 440,
+        "heatScore": 85.8199,
+        "heatRank": 8,
+        "reviews": 1161472,
+        "ccu": 43819,
+        "selectionRank": 8
+      }
+    },
+    {
+      "appId": 553850,
+      "nameZh": "HELLDIVERS™ 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 553850,
+        "heatScore": 85.3317,
+        "heatRank": 9,
+        "reviews": 1017635,
+        "ccu": 53399,
+        "selectionRank": 9
+      }
+    },
+    {
+      "appId": 1245620,
+      "nameZh": "艾尔登法环",
+      "aliases": [
+        "Elden Ring",
+        "老头环",
+        "法环"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1245620,
+        "heatScore": 84.8892,
+        "heatRank": 11,
+        "reviews": 1056677,
+        "ccu": 29529,
+        "selectionRank": 10
+      }
+    },
+    {
+      "appId": 4000,
+      "nameZh": "盖瑞模组",
+      "aliases": [
+        "Garry's Mod",
+        "Gmod"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 4000,
+        "heatScore": 84.8707,
+        "heatRank": 12,
+        "reviews": 1159707,
+        "ccu": 18400,
+        "selectionRank": 11
+      }
+    },
+    {
+      "appId": 2358720,
+      "nameZh": "黑神话：悟空",
+      "aliases": [
+        "Black Myth Wukong",
+        "黑神话",
+        "悟空"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2358720,
+        "heatScore": 84.6052,
+        "heatRank": 13,
+        "reviews": 1150098,
+        "ccu": 15004,
+        "selectionRank": 12
+      }
+    },
+    {
+      "appId": 413150,
+      "nameZh": "星露谷物语",
+      "aliases": [
+        "Stardew Valley",
+        "星露谷"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 413150,
+        "heatScore": 84.5395,
+        "heatRank": 14,
+        "reviews": 886195,
+        "ccu": 50662,
+        "selectionRank": 13
+      }
+    },
+    {
+      "appId": 550,
+      "nameZh": "求生之路 2",
+      "aliases": [
+        "Left 4 Dead 2",
+        "L4D2",
+        "求生之路2"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 550,
+        "heatScore": 84.2259,
+        "heatRank": 15,
+        "reviews": 963983,
+        "ccu": 25122,
+        "selectionRank": 14
+      }
+    },
+    {
+      "appId": 381210,
+      "nameZh": "黎明杀机",
+      "aliases": [
+        "Dead by Daylight",
+        "DBD"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 381210,
+        "heatScore": 83.8458,
+        "heatRank": 16,
+        "reviews": 797216,
+        "ccu": 44886,
+        "selectionRank": 15
+      }
+    },
+    {
+      "appId": 1086940,
+      "nameZh": "博德之门 3",
+      "aliases": [
+        "博德之门3",
+        "BG3"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1086940,
+        "heatScore": 83.8122,
+        "heatRank": 17,
+        "reviews": 760662,
+        "ccu": 54771,
+        "selectionRank": 16
+      }
+    },
+    {
+      "appId": 1938090,
+      "nameZh": "使命召唤",
+      "aliases": [
+        "Call of Duty",
+        "COD",
+        "使命召唤现代战争"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1938090,
+        "heatScore": 83.7019,
+        "heatRank": 18,
+        "reviews": 714114,
+        "ccu": 67419,
+        "selectionRank": 17
+      }
+    },
+    {
+      "appId": 236390,
+      "nameZh": "战争雷霆",
+      "aliases": [
+        "War Thunder",
+        "战雷"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 236390,
+        "heatScore": 83.6986,
+        "heatRank": 19,
+        "reviews": 757086,
+        "ccu": 50478,
+        "selectionRank": 18
+      }
+    },
+    {
+      "appId": 1091500,
+      "nameZh": "赛博朋克 2077",
+      "aliases": [
+        "Cyberpunk",
+        "2077"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1091500,
+        "heatScore": 83.3943,
+        "heatRank": 20,
+        "reviews": 844921,
+        "ccu": 22265,
+        "selectionRank": 19
+      }
+    },
+    {
+      "appId": 227300,
+      "nameZh": "欧洲卡车模拟 2",
+      "aliases": [
+        "Euro Truck Simulator 2",
+        "欧卡2"
+      ],
+      "difficulty": {
+        "level": "beginner",
+        "score": 7,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 227300,
+        "heatScore": 83.259,
+        "heatRank": 21,
+        "reviews": 867404,
+        "ccu": 17281,
+        "selectionRank": 20
+      }
+    },
+    {
+      "appId": 292030,
+      "nameZh": "巫师 3：狂猎",
+      "aliases": [
+        "巫师3",
+        "The Witcher 3"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 292030,
+        "heatScore": 82.9681,
+        "heatRank": 22,
+        "reviews": 835349,
+        "ccu": 15893,
+        "selectionRank": 21
+      }
+    },
+    {
+      "appId": 1174180,
+      "nameZh": "荒野大镖客：救赎 2",
+      "aliases": [
+        "RDR2",
+        "大表哥2",
+        "荒野大镖客2"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1174180,
+        "heatScore": 82.9622,
+        "heatRank": 23,
+        "reviews": 733542,
+        "ccu": 29885,
+        "selectionRank": 22
+      }
+    },
+    {
+      "appId": 346110,
+      "nameZh": "ARK: Survival Evolved",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 346110,
+        "heatScore": 82.6138,
+        "heatRank": 24,
+        "reviews": 730170,
+        "ccu": 22170,
+        "selectionRank": 23
+      }
+    },
+    {
+      "appId": 230410,
+      "nameZh": "星际战甲",
+      "aliases": [
+        "Warframe"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 230410,
+        "heatScore": 82.3316,
+        "heatRank": 25,
+        "reviews": 626503,
+        "ccu": 36195,
+        "selectionRank": 24
+      }
+    },
+    {
+      "appId": 218620,
+      "nameZh": "PAYDAY 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 218620,
+        "heatScore": 82.3255,
+        "heatRank": 26,
+        "reviews": 663082,
+        "ccu": 27254,
+        "selectionRank": 25
+      }
+    },
+    {
+      "appId": 739630,
+      "nameZh": "恐鬼症",
+      "aliases": [
+        "Phasmophobia"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 739630,
+        "heatScore": 82.0218,
+        "heatRank": 27,
+        "reviews": 768779,
+        "ccu": 9978,
+        "selectionRank": 26
+      }
+    },
+    {
+      "appId": 1085660,
+      "nameZh": "命运 2",
+      "aliases": [
+        "Destiny 2",
+        "命运2"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1085660,
+        "heatScore": 81.9061,
+        "heatRank": 28,
+        "reviews": 625616,
+        "ccu": 24619,
+        "selectionRank": 27
+      }
+    },
+    {
+      "appId": 252950,
+      "nameZh": "Rocket League®",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 252950,
+        "heatScore": 81.3661,
+        "heatRank": 29,
+        "reviews": 583220,
+        "ccu": 21106,
+        "selectionRank": 28
+      }
+    },
+    {
+      "appId": 322330,
+      "nameZh": "饥荒联机版",
+      "aliases": [
+        "Don't Starve Together",
+        "饥荒"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 322330,
+        "heatScore": 80.9386,
+        "heatRank": 30,
+        "reviews": 499061,
+        "ccu": 30542,
+        "selectionRank": 29
+      }
+    },
+    {
+      "appId": 945360,
+      "nameZh": "在我们之中",
+      "aliases": [
+        "Among Us",
+        "太空狼人杀"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 945360,
+        "heatScore": 80.4918,
+        "heatRank": 31,
+        "reviews": 700785,
+        "ccu": 3832,
+        "selectionRank": 30
+      }
+    },
+    {
+      "appId": 221100,
+      "nameZh": "DayZ",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 221100,
+        "heatScore": 80.3601,
+        "heatRank": 32,
+        "reviews": 430252,
+        "ccu": 37066,
+        "selectionRank": 31
+      }
+    },
+    {
+      "appId": 304930,
+      "nameZh": "Unturned",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 304930,
+        "heatScore": 80.3392,
+        "heatRank": 33,
+        "reviews": 555368,
+        "ccu": 10408,
+        "selectionRank": 32
+      }
+    },
+    {
+      "appId": 892970,
+      "nameZh": "英灵神殿",
+      "aliases": [
+        "Valheim"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 892970,
+        "heatScore": 80.1342,
+        "heatRank": 34,
+        "reviews": 499828,
+        "ccu": 14439,
+        "selectionRank": 33
+      }
+    },
+    {
+      "appId": 322170,
+      "nameZh": "Geometry Dash",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 322170,
+        "heatScore": 80.0459,
+        "heatRank": 35,
+        "reviews": 429921,
+        "ccu": 27850,
+        "selectionRank": 34
+      }
+    },
+    {
+      "appId": 582010,
+      "nameZh": "Monster Hunter: World",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 582010,
+        "heatScore": 79.8577,
+        "heatRank": 36,
+        "reviews": 493390,
+        "ccu": 11923,
+        "selectionRank": 35
+      }
+    },
+    {
+      "appId": 242760,
+      "nameZh": "森林",
+      "aliases": [
+        "The Forest"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 242760,
+        "heatScore": 79.602,
+        "heatRank": 37,
+        "reviews": 627791,
+        "ccu": 2892,
+        "selectionRank": 36
+      }
+    },
+    {
+      "appId": 1203220,
+      "nameZh": "永劫无间",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1203220,
+        "heatScore": 79.5091,
+        "heatRank": 38,
+        "reviews": 324927,
+        "ccu": 66954,
+        "selectionRank": 37
+      }
+    },
+    {
+      "appId": 108600,
+      "nameZh": "Project Zomboid",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 108600,
+        "heatScore": 79.1347,
+        "heatRank": 39,
+        "reviews": 377063,
+        "ccu": 22864,
+        "selectionRank": 38
+      }
+    },
+    {
+      "appId": 1966720,
+      "nameZh": "致命公司",
+      "aliases": [
+        "Lethal Company"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1966720,
+        "heatScore": 79.0808,
+        "heatRank": 40,
+        "reviews": 487160,
+        "ccu": 6199,
+        "selectionRank": 39
+      }
+    },
+    {
+      "appId": 394360,
+      "nameZh": "钢铁雄心 IV",
+      "aliases": [
+        "Hearts of Iron IV",
+        "钢铁雄心4",
+        "HOI4"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 394360,
+        "heatScore": 78.9866,
+        "heatRank": 41,
+        "reviews": 342150,
+        "ccu": 32112,
+        "selectionRank": 40
+      }
+    },
+    {
+      "appId": 1623730,
+      "nameZh": "幻兽帕鲁",
+      "aliases": [
+        "Palworld",
+        "帕鲁"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1623730,
+        "heatScore": 78.9281,
+        "heatRank": 42,
+        "reviews": 380709,
+        "ccu": 18028,
+        "selectionRank": 41
+      }
+    },
+    {
+      "appId": 289070,
+      "nameZh": "文明 VI",
+      "aliases": [
+        "Civilization VI",
+        "文明6",
+        "文明六"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 289070,
+        "heatScore": 78.8525,
+        "heatRank": 43,
+        "reviews": 349920,
+        "ccu": 25420,
+        "selectionRank": 42
+      }
+    },
+    {
+      "appId": 291550,
+      "nameZh": "Brawlhalla",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 291550,
+        "heatScore": 78.7465,
+        "heatRank": 44,
+        "reviews": 386456,
+        "ccu": 14169,
+        "selectionRank": 43
+      }
+    },
+    {
+      "appId": 251570,
+      "nameZh": "7 Days to Die",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 251570,
+        "heatScore": 78.7163,
+        "heatRank": 45,
+        "reviews": 370046,
+        "ccu": 17045,
+        "selectionRank": 44
+      }
+    },
+    {
+      "appId": 489830,
+      "nameZh": "The Elder Scrolls V: Skyrim Special Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 489830,
+        "heatScore": 78.6391,
+        "heatRank": 46,
+        "reviews": 337058,
+        "ccu": 25085,
+        "selectionRank": 45
+      }
+    },
+    {
+      "appId": 377160,
+      "nameZh": "Fallout 4",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 377160,
+        "heatScore": 78.569,
+        "heatRank": 47,
+        "reviews": 392287,
+        "ccu": 11179,
+        "selectionRank": 46
+      }
+    },
+    {
+      "appId": 239140,
+      "nameZh": "Dying Light",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 239140,
+        "heatScore": 78.5051,
+        "heatRank": 48,
+        "reviews": 457632,
+        "ccu": 4953,
+        "selectionRank": 47
+      }
+    },
+    {
+      "appId": 250900,
+      "nameZh": "The Binding of Isaac: Rebirth",
+      "aliases": [],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 250900,
+        "heatScore": 78.1738,
+        "heatRank": 49,
+        "reviews": 343420,
+        "ccu": 14904,
+        "selectionRank": 48
+      }
+    },
+    {
+      "appId": 275850,
+      "nameZh": "无人深空",
+      "aliases": [
+        "No Man's Sky"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 275850,
+        "heatScore": 78.1088,
+        "heatRank": 50,
+        "reviews": 352858,
+        "ccu": 12291,
+        "selectionRank": 49
+      }
+    },
+    {
+      "appId": 367520,
+      "nameZh": "空洞骑士",
+      "aliases": [
+        "Hollow Knight"
+      ],
+      "difficulty": {
+        "level": "easy",
+        "score": 20,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 367520,
+        "heatScore": 77.9884,
+        "heatRank": 51,
+        "reviews": 415946,
+        "ccu": 4912,
+        "selectionRank": 50
+      }
+    },
+    {
+      "appId": 284160,
+      "nameZh": "BeamNG.drive",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 284160,
+        "heatScore": 77.9037,
+        "heatRank": 52,
+        "reviews": 322278,
+        "ccu": 15863,
+        "selectionRank": 51
+      }
+    },
+    {
+      "appId": 374320,
+      "nameZh": "黑暗之魂 III",
+      "aliases": [
+        "Dark Souls III",
+        "黑魂3",
+        "黑暗之魂3"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 374320,
+        "heatScore": 77.8365,
+        "heatRank": 53,
+        "reviews": 413775,
+        "ccu": 4381,
+        "selectionRank": 52
+      }
+    },
+    {
+      "appId": 960090,
+      "nameZh": "Bloons TD 6",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 960090,
+        "heatScore": 77.5881,
+        "heatRank": 54,
+        "reviews": 353960,
+        "ccu": 7489,
+        "selectionRank": 53
+      }
+    },
+    {
+      "appId": 1172620,
+      "nameZh": "Sea of Thieves: 2026 Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1172620,
+        "heatScore": 77.26,
+        "heatRank": 55,
+        "reviews": 355238,
+        "ccu": 5437,
+        "selectionRank": 54
+      }
+    },
+    {
+      "appId": 620,
+      "nameZh": "传送门 2",
+      "aliases": [
+        "Portal 2",
+        "传送门2"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 620,
+        "heatScore": 77.2115,
+        "heatRank": 56,
+        "reviews": 433510,
+        "ccu": 1959,
+        "selectionRank": 55
+      }
+    },
+    {
+      "appId": 438100,
+      "nameZh": "VRChat",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 438100,
+        "heatScore": 77.1937,
+        "heatRank": 57,
+        "reviews": 240355,
+        "ccu": 34699,
+        "selectionRank": 56
+      }
+    },
+    {
+      "appId": 548430,
+      "nameZh": "深岩银河",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 548430,
+        "heatScore": 77.0286,
+        "heatRank": 58,
+        "reviews": 343000,
+        "ccu": 5216,
+        "selectionRank": 57
+      }
+    },
+    {
+      "appId": 632360,
+      "nameZh": "雨中冒险 2",
+      "aliases": [
+        "Risk of Rain 2",
+        "雨中冒险2"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 632360,
+        "heatScore": 77.0024,
+        "heatRank": 59,
+        "reviews": 313577,
+        "ccu": 7902,
+        "selectionRank": 58
+      }
+    },
+    {
+      "appId": 814380,
+      "nameZh": "只狼：影逝二度",
+      "aliases": [
+        "Sekiro",
+        "只狼"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 814380,
+        "heatScore": 76.979,
+        "heatRank": 60,
+        "reviews": 322234,
+        "ccu": 6767,
+        "selectionRank": 59
+      }
+    },
+    {
+      "appId": 648800,
+      "nameZh": "木筏求生",
+      "aliases": [
+        "Raft"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 648800,
+        "heatScore": 76.9677,
+        "heatRank": 61,
+        "reviews": 346359,
+        "ccu": 4701,
+        "selectionRank": 60
+      }
+    },
+    {
+      "appId": 990080,
+      "nameZh": "霍格沃茨之遗",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 990080,
+        "heatScore": 76.7821,
+        "heatRank": 62,
+        "reviews": 321395,
+        "ccu": 5716,
+        "selectionRank": 61
+      }
+    },
+    {
+      "appId": 49520,
+      "nameZh": "Borderlands 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 49520,
+        "heatScore": 76.7674,
+        "heatRank": 63,
+        "reviews": 295218,
+        "ccu": 8551,
+        "selectionRank": 62
+      }
+    },
+    {
+      "appId": 261550,
+      "nameZh": "Mount & Blade II: Bannerlord",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 261550,
+        "heatScore": 76.7522,
+        "heatRank": 64,
+        "reviews": 264391,
+        "ccu": 14477,
+        "selectionRank": 63
+      }
+    },
+    {
+      "appId": 1097150,
+      "nameZh": "糖豆人",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1097150,
+        "heatScore": 76.5108,
+        "heatRank": 65,
+        "reviews": 473743,
+        "ccu": 664,
+        "selectionRank": 64
+      }
+    },
+    {
+      "appId": 255710,
+      "nameZh": "城市：天际线",
+      "aliases": [
+        "Cities Skylines",
+        "天际线"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 255710,
+        "heatScore": 76.4414,
+        "heatRank": 66,
+        "reviews": 275770,
+        "ccu": 8842,
+        "selectionRank": 65
+      }
+    },
+    {
+      "appId": 107410,
+      "nameZh": "武装突袭3",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 107410,
+        "heatScore": 76.3583,
+        "heatRank": 67,
+        "reviews": 283264,
+        "ccu": 7181,
+        "selectionRank": 66
+      }
+    },
+    {
+      "appId": 1063730,
+      "nameZh": "New World: Aeternum",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1063730,
+        "heatScore": 76.1527,
+        "heatRank": 68,
+        "reviews": 286878,
+        "ccu": 5583,
+        "selectionRank": 67
+      }
+    },
+    {
+      "appId": 1293830,
+      "nameZh": "极限竞速：地平线 4",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1293830,
+        "heatScore": 76.0775,
+        "heatRank": 69,
+        "reviews": 290917,
+        "ccu": 4864,
+        "selectionRank": 68
+      }
+    },
+    {
+      "appId": 526870,
+      "nameZh": "幸福工厂",
+      "aliases": [
+        "Satisfactory"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 526870,
+        "heatScore": 75.9081,
+        "heatRank": 70,
+        "reviews": 232064,
+        "ccu": 12596,
+        "selectionRank": 69
+      }
+    },
+    {
+      "appId": 3164500,
+      "nameZh": "Schedule I",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 3164500,
+        "heatScore": 75.8656,
+        "heatRank": 71,
+        "reviews": 204041,
+        "ccu": 22757,
+        "selectionRank": 70
+      }
+    },
+    {
+      "appId": 294100,
+      "nameZh": "环世界",
+      "aliases": [
+        "RimWorld"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 294100,
+        "heatScore": 75.8479,
+        "heatRank": 72,
+        "reviews": 210517,
+        "ccu": 19211,
+        "selectionRank": 71
+      }
+    },
+    {
+      "appId": 264710,
+      "nameZh": "深海迷航",
+      "aliases": [
+        "Subnautica",
+        "美丽水世界"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 264710,
+        "heatScore": 75.8477,
+        "heatRank": 73,
+        "reviews": 313707,
+        "ccu": 2719,
+        "selectionRank": 72
+      }
+    },
+    {
+      "appId": 1118200,
+      "nameZh": "People Playground",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1118200,
+        "heatScore": 75.8244,
+        "heatRank": 74,
+        "reviews": 281763,
+        "ccu": 4505,
+        "selectionRank": 73
+      }
+    },
+    {
+      "appId": 427520,
+      "nameZh": "异星工厂",
+      "aliases": [
+        "Factorio"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 427520,
+        "heatScore": 75.7952,
+        "heatRank": 75,
+        "reviews": 215209,
+        "ccu": 16426,
+        "selectionRank": 74
+      }
+    },
+    {
+      "appId": 3241660,
+      "nameZh": "R.E.P.O.",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 3241660,
+        "heatScore": 75.7448,
+        "heatRank": 76,
+        "reviews": 185642,
+        "ccu": 32349,
+        "selectionRank": 75
+      }
+    },
+    {
+      "appId": 10,
+      "nameZh": "Counter-Strike",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 10,
+        "heatScore": 75.7208,
+        "heatRank": 77,
+        "reviews": 250245,
+        "ccu": 7323,
+        "selectionRank": 76
+      }
+    },
+    {
+      "appId": 1517290,
+      "nameZh": "《战地风云™ 2042》",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1517290,
+        "heatScore": 75.5924,
+        "heatRank": 78,
+        "reviews": 297774,
+        "ccu": 2774,
+        "selectionRank": 77
+      }
+    },
+    {
+      "appId": 2246340,
+      "nameZh": "Monster Hunter Wilds",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2246340,
+        "heatScore": 75.5771,
+        "heatRank": 79,
+        "reviews": 218415,
+        "ccu": 12494,
+        "selectionRank": 78
+      }
+    },
+    {
+      "appId": 1238810,
+      "nameZh": "战地 V",
+      "aliases": [
+        "Battlefield V",
+        "战地5",
+        "BF5"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1238810,
+        "heatScore": 75.5631,
+        "heatRank": 80,
+        "reviews": 250288,
+        "ccu": 6327,
+        "selectionRank": 79
+      }
+    },
+    {
+      "appId": 1599340,
+      "nameZh": "Lost Ark",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1599340,
+        "heatScore": 75.5188,
+        "heatRank": 81,
+        "reviews": 202021,
+        "ccu": 17355,
+        "selectionRank": 80
+      }
+    },
+    {
+      "appId": 594650,
+      "nameZh": "猎杀：对决 1896",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 594650,
+        "heatScore": 75.5144,
+        "heatRank": 82,
+        "reviews": 248220,
+        "ccu": 6300,
+        "selectionRank": 81
+      }
+    },
+    {
+      "appId": 1551360,
+      "nameZh": "极限竞速：地平线 5",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1551360,
+        "heatScore": 75.5093,
+        "heatRank": 83,
+        "reviews": 225629,
+        "ccu": 10009,
+        "selectionRank": 82
+      }
+    },
+    {
+      "appId": 391540,
+      "nameZh": "传说之下",
+      "aliases": [
+        "Undertale",
+        "UT"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 391540,
+        "heatScore": 75.3278,
+        "heatRank": 84,
+        "reviews": 272932,
+        "ccu": 3331,
+        "selectionRank": 83
+      }
+    },
+    {
+      "appId": 444090,
+      "nameZh": "Paladins®",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 444090,
+        "heatScore": 75.3204,
+        "heatRank": 85,
+        "reviews": 346404,
+        "ccu": 1028,
+        "selectionRank": 84
+      }
+    },
+    {
+      "appId": 1326470,
+      "nameZh": "Sons Of The Forest",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1326470,
+        "heatScore": 75.2502,
+        "heatRank": 86,
+        "reviews": 253546,
+        "ccu": 4450,
+        "selectionRank": 85
+      }
+    },
+    {
+      "appId": 8930,
+      "nameZh": "Sid Meier's Civilization® V",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 8930,
+        "heatScore": 75.1958,
+        "heatRank": 88,
+        "reviews": 204265,
+        "ccu": 12206,
+        "selectionRank": 86
+      }
+    },
+    {
+      "appId": 393380,
+      "nameZh": "Squad",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 393380,
+        "heatScore": 75.0403,
+        "heatRank": 89,
+        "reviews": 210551,
+        "ccu": 9116,
+        "selectionRank": 87
+      }
+    },
+    {
+      "appId": 1145360,
+      "nameZh": "哈迪斯",
+      "aliases": [
+        "Hades",
+        "黑帝斯"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1145360,
+        "heatScore": 75.0348,
+        "heatRank": 90,
+        "reviews": 279741,
+        "ccu": 2253,
+        "selectionRank": 88
+      }
+    },
+    {
+      "appId": 1222670,
+      "nameZh": "The Sims™ 4",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1222670,
+        "heatScore": 75.032,
+        "heatRank": 91,
+        "reviews": 170727,
+        "ccu": 25276,
+        "selectionRank": 89
+      }
+    },
+    {
+      "appId": 238960,
+      "nameZh": "Path of Exile",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 238960,
+        "heatScore": 74.9064,
+        "heatRank": 92,
+        "reviews": 235091,
+        "ccu": 4694,
+        "selectionRank": 90
+      }
+    },
+    {
+      "appId": 1144200,
+      "nameZh": "Ready or Not",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1144200,
+        "heatScore": 74.8353,
+        "heatRank": 93,
+        "reviews": 236196,
+        "ccu": 4296,
+        "selectionRank": 91
+      }
+    },
+    {
+      "appId": 646570,
+      "nameZh": "杀戮尖塔",
+      "aliases": [
+        "Slay the Spire"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 646570,
+        "heatScore": 74.8167,
+        "heatRank": 94,
+        "reviews": 182277,
+        "ccu": 15038,
+        "selectionRank": 92
+      }
+    },
+    {
+      "appId": 281990,
+      "nameZh": "Stellaris",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 281990,
+        "heatScore": 74.809,
+        "heatRank": 95,
+        "reviews": 185433,
+        "ccu": 13727,
+        "selectionRank": 93
+      }
+    },
+    {
+      "appId": 1794680,
+      "nameZh": "吸血鬼幸存者",
+      "aliases": [
+        "Vampire Survivors"
+      ],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1794680,
+        "heatScore": 74.7426,
+        "heatRank": 96,
+        "reviews": 250334,
+        "ccu": 2966,
+        "selectionRank": 94
+      }
+    },
+    {
+      "appId": 976730,
+      "nameZh": "Halo: The Master Chief Collection",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 976730,
+        "heatScore": 74.7,
+        "heatRank": 97,
+        "reviews": 242067,
+        "ccu": 3362,
+        "selectionRank": 95
+      }
+    },
+    {
+      "appId": 1426210,
+      "nameZh": "双人成行",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1426210,
+        "heatScore": 74.587,
+        "heatRank": 98,
+        "reviews": 218383,
+        "ccu": 5018,
+        "selectionRank": 97
+      }
+    },
+    {
+      "appId": 311210,
+      "nameZh": "Call of Duty®: Black Ops III",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 311210,
+        "heatScore": 74.587,
+        "heatRank": 99,
+        "reviews": 215026,
+        "ccu": 5414,
+        "selectionRank": 96
+      }
+    },
+    {
+      "appId": 1468810,
+      "nameZh": "鬼谷八荒",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1468810,
+        "heatScore": 74.5802,
+        "heatRank": 100,
+        "reviews": 227104,
+        "ccu": 4116,
+        "selectionRank": 98
+      }
+    },
+    {
+      "appId": 22380,
+      "nameZh": "Fallout: New Vegas",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 22380,
+        "heatScore": 74.5335,
+        "heatRank": 101,
+        "reviews": 227700,
+        "ccu": 3892,
+        "selectionRank": 99
+      }
+    },
+    {
+      "appId": 2694490,
+      "nameZh": "Path of Exile 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "normal",
+        "score": 37,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2694490,
+        "heatScore": 74.5309,
+        "heatRank": 102,
+        "reviews": 169021,
+        "ccu": 16727,
+        "selectionRank": 100
+      }
+    },
+    {
+      "appId": 700330,
+      "nameZh": "SCP秘密实验室 / SCP: Secret Laboratory",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 700330,
+        "heatScore": 74.415,
+        "heatRank": 103,
+        "reviews": 214309,
+        "ccu": 4696,
+        "selectionRank": 101
+      }
+    },
+    {
+      "appId": 1238840,
+      "nameZh": "Battlefield™ 1",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1238840,
+        "heatScore": 74.1734,
+        "heatRank": 104,
+        "reviews": 192821,
+        "ccu": 6308,
+        "selectionRank": 102
+      }
+    },
+    {
+      "appId": 813780,
+      "nameZh": "Age of Empires II: Definitive Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 813780,
+        "heatScore": 74.0852,
+        "heatRank": 105,
+        "reviews": 162462,
+        "ccu": 13465,
+        "selectionRank": 103
+      }
+    },
+    {
+      "appId": 2379780,
+      "nameZh": "Balatro",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2379780,
+        "heatScore": 74.0466,
+        "heatRank": 106,
+        "reviews": 153566,
+        "ccu": 17123,
+        "selectionRank": 104
+      }
+    },
+    {
+      "appId": 306130,
+      "nameZh": "《上古卷轴®OL》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 306130,
+        "heatScore": 73.991,
+        "heatRank": 107,
+        "reviews": 154113,
+        "ccu": 15987,
+        "selectionRank": 105
+      }
+    },
+    {
+      "appId": 220,
+      "nameZh": "半条命 2",
+      "aliases": [
+        "Half-Life 2",
+        "半条命2",
+        "半衰期2"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 220,
+        "heatScore": 73.9416,
+        "heatRank": 108,
+        "reviews": 245627,
+        "ccu": 1555,
+        "selectionRank": 106
+      }
+    },
+    {
+      "appId": 1237970,
+      "nameZh": "Titanfall® 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1237970,
+        "heatScore": 73.8598,
+        "heatRank": 109,
+        "reviews": 256188,
+        "ccu": 1173,
+        "selectionRank": 107
+      }
+    },
+    {
+      "appId": 240,
+      "nameZh": "Counter-Strike: Source",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 240,
+        "heatScore": 73.8523,
+        "heatRank": 110,
+        "reviews": 182234,
+        "ccu": 6187,
+        "selectionRank": 108
+      }
+    },
+    {
+      "appId": 534380,
+      "nameZh": "消逝的光芒2: 重装上阵版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 534380,
+        "heatScore": 73.7934,
+        "heatRank": 111,
+        "reviews": 194830,
+        "ccu": 4223,
+        "selectionRank": 109
+      }
+    },
+    {
+      "appId": 270880,
+      "nameZh": "American Truck Simulator",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 270880,
+        "heatScore": 73.7389,
+        "heatRank": 112,
+        "reviews": 175287,
+        "ccu": 6742,
+        "selectionRank": 110
+      }
+    },
+    {
+      "appId": 435150,
+      "nameZh": "神界：原罪2 - 终极版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 435150,
+        "heatScore": 73.4629,
+        "heatRank": 113,
+        "reviews": 190124,
+        "ccu": 3510,
+        "selectionRank": 111
+      }
+    },
+    {
+      "appId": 782330,
+      "nameZh": "毁灭战士：永恒",
+      "aliases": [
+        "DOOM Eternal",
+        "毁灭战士"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 782330,
+        "heatScore": 73.4134,
+        "heatRank": 114,
+        "reviews": 206026,
+        "ccu": 2262,
+        "selectionRank": 112
+      }
+    },
+    {
+      "appId": 2183900,
+      "nameZh": "Warhammer 40,000: 星际战士2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2183900,
+        "heatScore": 73.3564,
+        "heatRank": 115,
+        "reviews": 162585,
+        "ccu": 6851,
+        "selectionRank": 113
+      }
+    },
+    {
+      "appId": 2050650,
+      "nameZh": "生化危机 4",
+      "aliases": [
+        "Resident Evil 4",
+        "生化危机4",
+        "RE4"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2050650,
+        "heatScore": 73.2934,
+        "heatRank": 116,
+        "reviews": 181708,
+        "ccu": 3748,
+        "selectionRank": 114
+      }
+    },
+    {
+      "appId": 244210,
+      "nameZh": "神力科莎 Assetto Corsa",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 244210,
+        "heatScore": 73.2684,
+        "heatRank": 117,
+        "reviews": 151391,
+        "ccu": 8961,
+        "selectionRank": 115
+      }
+    },
+    {
+      "appId": 379720,
+      "nameZh": "DOOM",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 379720,
+        "heatScore": 73.0635,
+        "heatRank": 118,
+        "reviews": 207279,
+        "ccu": 1590,
+        "selectionRank": 116
+      }
+    },
+    {
+      "appId": 552990,
+      "nameZh": "World of Warships",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 552990,
+        "heatScore": 73.0408,
+        "heatRank": 119,
+        "reviews": 146552,
+        "ccu": 8518,
+        "selectionRank": 117
+      }
+    },
+    {
+      "appId": 236850,
+      "nameZh": "Europa Universalis IV",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 236850,
+        "heatScore": 72.9933,
+        "heatRank": 120,
+        "reviews": 134436,
+        "ccu": 12445,
+        "selectionRank": 118
+      }
+    },
+    {
+      "appId": 203160,
+      "nameZh": "Tomb Raider Game of the Year",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 203160,
+        "heatScore": 72.8769,
+        "heatRank": 121,
+        "reviews": 247930,
+        "ccu": 556,
+        "selectionRank": 119
+      }
+    },
+    {
+      "appId": 1903340,
+      "nameZh": "光与影：33号远征队",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1903340,
+        "heatScore": 72.8515,
+        "heatRank": 122,
+        "reviews": 111032,
+        "ccu": 27880,
+        "selectionRank": 120
+      }
+    },
+    {
+      "appId": 1158310,
+      "nameZh": "Crusader Kings III",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1158310,
+        "heatScore": 72.8379,
+        "heatRank": 123,
+        "reviews": 126909,
+        "ccu": 14302,
+        "selectionRank": 121
+      }
+    },
+    {
+      "appId": 268910,
+      "nameZh": "茶杯头",
+      "aliases": [
+        "Cuphead"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 268910,
+        "heatScore": 72.8028,
+        "heatRank": 124,
+        "reviews": 186835,
+        "ccu": 2080,
+        "selectionRank": 122
+      }
+    },
+    {
+      "appId": 1716740,
+      "nameZh": "Starfield",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1716740,
+        "heatScore": 72.791,
+        "heatRank": 125,
+        "reviews": 165527,
+        "ccu": 3725,
+        "selectionRank": 123
+      }
+    },
+    {
+      "appId": 1229490,
+      "nameZh": "ULTRAKILL",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1229490,
+        "heatScore": 72.7334,
+        "heatRank": 126,
+        "reviews": 169751,
+        "ccu": 3122,
+        "selectionRank": 124
+      }
+    },
+    {
+      "appId": 1142710,
+      "nameZh": "全面战争：战锤3",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1142710,
+        "heatScore": 72.7114,
+        "heatRank": 127,
+        "reviews": 119858,
+        "ccu": 16842,
+        "selectionRank": 125
+      }
+    },
+    {
+      "appId": 477160,
+      "nameZh": "人类一败涂地 / Human Fall Flat",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 477160,
+        "heatScore": 72.666,
+        "heatRank": 128,
+        "reviews": 213640,
+        "ccu": 950,
+        "selectionRank": 126
+      }
+    },
+    {
+      "appId": 444200,
+      "nameZh": "坦克世界闪电战",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 444200,
+        "heatScore": 72.6645,
+        "heatRank": 129,
+        "reviews": 148161,
+        "ccu": 5707,
+        "selectionRank": 127
+      }
+    },
+    {
+      "appId": 812140,
+      "nameZh": "刺客信条：奥德赛",
+      "aliases": [
+        "Assassin's Creed Odyssey",
+        "刺客信条奥德赛"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 812140,
+        "heatScore": 72.623,
+        "heatRank": 130,
+        "reviews": 172193,
+        "ccu": 2629,
+        "selectionRank": 128
+      }
+    },
+    {
+      "appId": 1240440,
+      "nameZh": "Halo Infinite",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1240440,
+        "heatScore": 72.6138,
+        "heatRank": 131,
+        "reviews": 177041,
+        "ccu": 2275,
+        "selectionRank": 129
+      }
+    },
+    {
+      "appId": 48700,
+      "nameZh": "Mount & Blade: Warband",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 48700,
+        "heatScore": 72.6041,
+        "heatRank": 132,
+        "reviews": 166405,
+        "ccu": 3055,
+        "selectionRank": 130
+      }
+    },
+    {
+      "appId": 518790,
+      "nameZh": "《猎人：荒野的召唤™》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 518790,
+        "heatScore": 72.5979,
+        "heatRank": 133,
+        "reviews": 177610,
+        "ccu": 2207,
+        "selectionRank": 131
+      }
+    },
+    {
+      "appId": 433850,
+      "nameZh": "Z1 Battle Royale",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 433850,
+        "heatScore": 72.4873,
+        "heatRank": 134,
+        "reviews": 204013,
+        "ccu": 1010,
+        "selectionRank": 132
+      }
+    },
+    {
+      "appId": 12210,
+      "nameZh": "Grand Theft Auto IV: The Complete Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 12210,
+        "heatScore": 72.4822,
+        "heatRank": 135,
+        "reviews": 175184,
+        "ccu": 2122,
+        "selectionRank": 133
+      }
+    },
+    {
+      "appId": 588650,
+      "nameZh": "Dead Cells",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 588650,
+        "heatScore": 72.4773,
+        "heatRank": 136,
+        "reviews": 168464,
+        "ccu": 2559,
+        "selectionRank": 134
+      }
+    },
+    {
+      "appId": 1222140,
+      "nameZh": "底特律：化身为人",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1222140,
+        "heatScore": 72.4053,
+        "heatRank": 137,
+        "reviews": 169199,
+        "ccu": 2344,
+        "selectionRank": 135
+      }
+    },
+    {
+      "appId": 262060,
+      "nameZh": "Darkest Dungeon®",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 262060,
+        "heatScore": 72.2833,
+        "heatRank": 138,
+        "reviews": 149456,
+        "ccu": 3848,
+        "selectionRank": 136
+      }
+    },
+    {
+      "appId": 379430,
+      "nameZh": "Kingdom Come: Deliverance",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 379430,
+        "heatScore": 72.2595,
+        "heatRank": 139,
+        "reviews": 162206,
+        "ccu": 2520,
+        "selectionRank": 137
+      }
+    },
+    {
+      "appId": 1604030,
+      "nameZh": "夜族崛起",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1604030,
+        "heatScore": 72.227,
+        "heatRank": 140,
+        "reviews": 119440,
+        "ccu": 10961,
+        "selectionRank": 138
+      }
+    },
+    {
+      "appId": 457140,
+      "nameZh": "缺氧",
+      "aliases": [
+        "Oxygen Not Included"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 457140,
+        "heatScore": 72.206,
+        "heatRank": 141,
+        "reviews": 128390,
+        "ccu": 7545,
+        "selectionRank": 139
+      }
+    },
+    {
+      "appId": 1151340,
+      "nameZh": "Fallout 76",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1151340,
+        "heatScore": 72.1249,
+        "heatRank": 142,
+        "reviews": 122549,
+        "ccu": 8796,
+        "selectionRank": 140
+      }
+    },
+    {
+      "appId": 1782210,
+      "nameZh": "Crab Game",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1782210,
+        "heatScore": 72.0893,
+        "heatRank": 143,
+        "reviews": 152433,
+        "ccu": 2921,
+        "selectionRank": 141
+      }
+    },
+    {
+      "appId": 397540,
+      "nameZh": "无主之地3",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 397540,
+        "heatScore": 72.0572,
+        "heatRank": 144,
+        "reviews": 149065,
+        "ccu": 3164,
+        "selectionRank": 142
+      }
+    },
+    {
+      "appId": 2622380,
+      "nameZh": "艾尔登法环 黑夜君临",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2622380,
+        "heatScore": 71.9796,
+        "heatRank": 145,
+        "reviews": 65672,
+        "ccu": 163599,
+        "selectionRank": 143
+      }
+    },
+    {
+      "appId": 552520,
+      "nameZh": "Far Cry® 5",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 552520,
+        "heatScore": 71.8965,
+        "heatRank": 146,
+        "reviews": 173477,
+        "ccu": 1297,
+        "selectionRank": 144
+      }
+    },
+    {
+      "appId": 244850,
+      "nameZh": "Space Engineers",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 244850,
+        "heatScore": 71.7323,
+        "heatRank": 147,
+        "reviews": 132347,
+        "ccu": 4201,
+        "selectionRank": 145
+      }
+    },
+    {
+      "appId": 698780,
+      "nameZh": "Doki Doki Literature Club!",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 698780,
+        "heatScore": 71.7268,
+        "heatRank": 148,
+        "reviews": 210717,
+        "ccu": 427,
+        "selectionRank": 146
+      }
+    },
+    {
+      "appId": 883710,
+      "nameZh": "Resident Evil 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 883710,
+        "heatScore": 71.7214,
+        "heatRank": 149,
+        "reviews": 172857,
+        "ccu": 1123,
+        "selectionRank": 147
+      }
+    },
+    {
+      "appId": 686810,
+      "nameZh": "人间地狱",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 686810,
+        "heatScore": 71.7064,
+        "heatRank": 150,
+        "reviews": 137677,
+        "ccu": 3380,
+        "selectionRank": 148
+      }
+    },
+    {
+      "appId": 304390,
+      "nameZh": "《荣耀战魂》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 304390,
+        "heatScore": 71.6786,
+        "heatRank": 151,
+        "reviews": 150256,
+        "ccu": 2146,
+        "selectionRank": 149
+      }
+    },
+    {
+      "appId": 513710,
+      "nameZh": "人渣",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 513710,
+        "heatScore": 71.6193,
+        "heatRank": 152,
+        "reviews": 112115,
+        "ccu": 8535,
+        "selectionRank": 150
+      }
+    },
+    {
+      "appId": 232090,
+      "nameZh": "Killing Floor 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 232090,
+        "heatScore": 71.584,
+        "heatRank": 153,
+        "reviews": 126866,
+        "ccu": 4508,
+        "selectionRank": 151
+      }
+    },
+    {
+      "appId": 601150,
+      "nameZh": "Devil May Cry 5",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 601150,
+        "heatScore": 71.581,
+        "heatRank": 154,
+        "reviews": 146133,
+        "ccu": 2248,
+        "selectionRank": 152
+      }
+    },
+    {
+      "appId": 3590,
+      "nameZh": "Plants vs. Zombies GOTY Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 3590,
+        "heatScore": 71.5311,
+        "heatRank": 155,
+        "reviews": 139925,
+        "ccu": 2656,
+        "selectionRank": 153
+      }
+    },
+    {
+      "appId": 1361210,
+      "nameZh": "战锤40K：暗潮",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1361210,
+        "heatScore": 71.4848,
+        "heatRank": 156,
+        "reviews": 112960,
+        "ccu": 7267,
+        "selectionRank": 154
+      }
+    },
+    {
+      "appId": 1593500,
+      "nameZh": "战神",
+      "aliases": [
+        "God of War"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1593500,
+        "heatScore": 71.4676,
+        "heatRank": 157,
+        "reviews": 158017,
+        "ccu": 1380,
+        "selectionRank": 155
+      }
+    },
+    {
+      "appId": 1172380,
+      "nameZh": "《星球大战 绝地：陨落的武士团™》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1172380,
+        "heatScore": 71.4659,
+        "heatRank": 158,
+        "reviews": 158579,
+        "ccu": 1354,
+        "selectionRank": 156
+      }
+    },
+    {
+      "appId": 1868140,
+      "nameZh": "潜水员戴夫 DAVE THE DIVER",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1868140,
+        "heatScore": 71.3698,
+        "heatRank": 159,
+        "reviews": 129331,
+        "ccu": 3367,
+        "selectionRank": 157
+      }
+    },
+    {
+      "appId": 400,
+      "nameZh": "Portal",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 400,
+        "heatScore": 71.2569,
+        "heatRank": 160,
+        "reviews": 177741,
+        "ccu": 638,
+        "selectionRank": 158
+      }
+    },
+    {
+      "appId": 211820,
+      "nameZh": "Starbound",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 211820,
+        "heatScore": 71.224,
+        "heatRank": 161,
+        "reviews": 164906,
+        "ccu": 894,
+        "selectionRank": 159
+      }
+    },
+    {
+      "appId": 570940,
+      "nameZh": "DARK SOULS™: REMASTERED",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 570940,
+        "heatScore": 71.1987,
+        "heatRank": 162,
+        "reviews": 129299,
+        "ccu": 2879,
+        "selectionRank": 160
+      }
+    },
+    {
+      "appId": 2669320,
+      "nameZh": "《EA SPORTS FC™ 25》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2669320,
+        "heatScore": 71.197,
+        "heatRank": 163,
+        "reviews": 74796,
+        "ccu": 42032,
+        "selectionRank": 161
+      }
+    },
+    {
+      "appId": 1677740,
+      "nameZh": "Stumble Guys",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1677740,
+        "heatScore": 71.1638,
+        "heatRank": 164,
+        "reviews": 128011,
+        "ccu": 2928,
+        "selectionRank": 162
+      }
+    },
+    {
+      "appId": 1811260,
+      "nameZh": "EA SPORTS™《FIFA 23》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1811260,
+        "heatScore": 71.1594,
+        "heatRank": 165,
+        "reviews": 151419,
+        "ccu": 1280,
+        "selectionRank": 163
+      }
+    },
+    {
+      "appId": 899770,
+      "nameZh": "Last Epoch",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 899770,
+        "heatScore": 71.1349,
+        "heatRank": 166,
+        "reviews": 110623,
+        "ccu": 5831,
+        "selectionRank": 164
+      }
+    },
+    {
+      "appId": 1665460,
+      "nameZh": "eFootball™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1665460,
+        "heatScore": 71.077,
+        "heatRank": 167,
+        "reviews": 92333,
+        "ccu": 13404,
+        "selectionRank": 165
+      }
+    },
+    {
+      "appId": 552500,
+      "nameZh": "Warhammer: Vermintide 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 552500,
+        "heatScore": 71.0478,
+        "heatRank": 168,
+        "reviews": 133723,
+        "ccu": 2124,
+        "selectionRank": 166
+      }
+    },
+    {
+      "appId": 208650,
+      "nameZh": "Batman™: Arkham Knight",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 208650,
+        "heatScore": 70.9775,
+        "heatRank": 170,
+        "reviews": 140048,
+        "ccu": 1587,
+        "selectionRank": 167
+      }
+    },
+    {
+      "appId": 440900,
+      "nameZh": "Conan Exiles Enhanced",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 440900,
+        "heatScore": 70.9519,
+        "heatRank": 171,
+        "reviews": 107465,
+        "ccu": 5677,
+        "selectionRank": 168
+      }
+    },
+    {
+      "appId": 2195250,
+      "nameZh": "EA SPORTS FC™ 24",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2195250,
+        "heatScore": 70.9411,
+        "heatRank": 172,
+        "reviews": 109574,
+        "ccu": 5110,
+        "selectionRank": 169
+      }
+    },
+    {
+      "appId": 1771300,
+      "nameZh": "天国：拯救2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1771300,
+        "heatScore": 70.9305,
+        "heatRank": 173,
+        "reviews": 102337,
+        "ccu": 7073,
+        "selectionRank": 170
+      }
+    },
+    {
+      "appId": 582660,
+      "nameZh": "Black Desert",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 582660,
+        "heatScore": 70.8294,
+        "heatRank": 174,
+        "reviews": 86919,
+        "ccu": 14345,
+        "selectionRank": 171
+      }
+    },
+    {
+      "appId": 39210,
+      "nameZh": "FINAL FANTASY XIV Online",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 39210,
+        "heatScore": 70.7418,
+        "heatRank": 175,
+        "reviews": 80036,
+        "ccu": 19824,
+        "selectionRank": 172
+      }
+    },
+    {
+      "appId": 1446780,
+      "nameZh": "MONSTER HUNTER RISE",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1446780,
+        "heatScore": 70.7268,
+        "heatRank": 176,
+        "reviews": 112672,
+        "ccu": 3658,
+        "selectionRank": 173
+      }
+    },
+    {
+      "appId": 220200,
+      "nameZh": "Kerbal Space Program",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 220200,
+        "heatScore": 70.6272,
+        "heatRank": 177,
+        "reviews": 127162,
+        "ccu": 1844,
+        "selectionRank": 174
+      }
+    },
+    {
+      "appId": 581320,
+      "nameZh": "Insurgency: Sandstorm",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 581320,
+        "heatScore": 70.6063,
+        "heatRank": 178,
+        "reviews": 126918,
+        "ccu": 1826,
+        "selectionRank": 175
+      }
+    },
+    {
+      "appId": 508440,
+      "nameZh": "Totally Accurate Battle Simulator",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 508440,
+        "heatScore": 70.6023,
+        "heatRank": 179,
+        "reviews": 135943,
+        "ccu": 1299,
+        "selectionRank": 176
+      }
+    },
+    {
+      "appId": 1687950,
+      "nameZh": "女神异闻录5皇家版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1687950,
+        "heatScore": 70.5948,
+        "heatRank": 180,
+        "reviews": 103144,
+        "ccu": 4994,
+        "selectionRank": 177
+      }
+    },
+    {
+      "appId": 1942280,
+      "nameZh": "土豆兄弟(Brotato)",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1942280,
+        "heatScore": 70.5792,
+        "heatRank": 181,
+        "reviews": 97801,
+        "ccu": 6389,
+        "selectionRank": 178
+      }
+    },
+    {
+      "appId": 1222680,
+      "nameZh": "《Need for Speed™ Heat",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1222680,
+        "heatScore": 70.5497,
+        "heatRank": 182,
+        "reviews": 132855,
+        "ccu": 1385,
+        "selectionRank": 179
+      }
+    },
+    {
+      "appId": 779340,
+      "nameZh": "全面战争：三国",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 779340,
+        "heatScore": 70.5144,
+        "heatRank": 183,
+        "reviews": 103745,
+        "ccu": 4507,
+        "selectionRank": 180
+      }
+    },
+    {
+      "appId": 1092790,
+      "nameZh": "邪恶冥刻",
+      "aliases": [
+        "Inscryption"
+      ],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1092790,
+        "heatScore": 70.4431,
+        "heatRank": 184,
+        "reviews": 131890,
+        "ccu": 1301,
+        "selectionRank": 181
+      }
+    },
+    {
+      "appId": 233860,
+      "nameZh": "Kenshi",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 233860,
+        "heatScore": 70.4174,
+        "heatRank": 185,
+        "reviews": 98135,
+        "ccu": 5412,
+        "selectionRank": 182
+      }
+    },
+    {
+      "appId": 359320,
+      "nameZh": "Elite Dangerous",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 359320,
+        "heatScore": 70.3987,
+        "heatRank": 186,
+        "reviews": 100024,
+        "ccu": 4845,
+        "selectionRank": 183
+      }
+    },
+    {
+      "appId": 323190,
+      "nameZh": "冰汽时代",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 323190,
+        "heatScore": 70.385,
+        "heatRank": 187,
+        "reviews": 123546,
+        "ccu": 1699,
+        "selectionRank": 184
+      }
+    },
+    {
+      "appId": 305620,
+      "nameZh": "The Long Dark",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 305620,
+        "heatScore": 70.3416,
+        "heatRank": 188,
+        "reviews": 112575,
+        "ccu": 2575,
+        "selectionRank": 185
+      }
+    },
+    {
+      "appId": 376210,
+      "nameZh": "The Isle",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 376210,
+        "heatScore": 70.3359,
+        "heatRank": 189,
+        "reviews": 94804,
+        "ccu": 5946,
+        "selectionRank": 186
+      }
+    },
+    {
+      "appId": 1332010,
+      "nameZh": "Stray",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1332010,
+        "heatScore": 70.3159,
+        "heatRank": 190,
+        "reviews": 156607,
+        "ccu": 498,
+        "selectionRank": 187
+      }
+    },
+    {
+      "appId": 386360,
+      "nameZh": "SMITE®",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 386360,
+        "heatScore": 70.3153,
+        "heatRank": 191,
+        "reviews": 119796,
+        "ccu": 1853,
+        "selectionRank": 188
+      }
+    },
+    {
+      "appId": 2881650,
+      "nameZh": "前方高能",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2881650,
+        "heatScore": 70.3121,
+        "heatRank": 192,
+        "reviews": 145091,
+        "ccu": 722,
+        "selectionRank": 189
+      }
+    },
+    {
+      "appId": 1643320,
+      "nameZh": "潜行者2：切尔诺贝利之心",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1643320,
+        "heatScore": 70.3029,
+        "heatRank": 193,
+        "reviews": 113346,
+        "ccu": 2403,
+        "selectionRank": 190
+      }
+    },
+    {
+      "appId": 70,
+      "nameZh": "Half-Life",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 70,
+        "heatScore": 70.2848,
+        "heatRank": 194,
+        "reviews": 148221,
+        "ccu": 634,
+        "selectionRank": 191
+      }
+    },
+    {
+      "appId": 594570,
+      "nameZh": "全面战争：战锤2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 594570,
+        "heatScore": 70.254,
+        "heatRank": 195,
+        "reviews": 124252,
+        "ccu": 1464,
+        "selectionRank": 192
+      }
+    },
+    {
+      "appId": 433340,
+      "nameZh": "Slime Rancher",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 433340,
+        "heatScore": 70.2364,
+        "heatRank": 196,
+        "reviews": 138097,
+        "ccu": 858,
+        "selectionRank": 193
+      }
+    },
+    {
+      "appId": 319630,
+      "nameZh": "Life is Strange - Episode 1",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 319630,
+        "heatScore": 70.1569,
+        "heatRank": 197,
+        "reviews": 169201,
+        "ccu": 294,
+        "selectionRank": 194
+      }
+    },
+    {
+      "appId": 231430,
+      "nameZh": "Company of Heroes 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 231430,
+        "heatScore": 70.1017,
+        "heatRank": 198,
+        "reviews": 109825,
+        "ccu": 2330,
+        "selectionRank": 195
+      }
+    },
+    {
+      "appId": 524220,
+      "nameZh": "NieR:Automata™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 524220,
+        "heatScore": 70.0796,
+        "heatRank": 199,
+        "reviews": 140169,
+        "ccu": 690,
+        "selectionRank": 196
+      }
+    },
+    {
+      "appId": 391220,
+      "nameZh": "Rise of the Tomb Raider™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 391220,
+        "heatScore": 70.0547,
+        "heatRank": 200,
+        "reviews": 136180,
+        "ccu": 777,
+        "selectionRank": 197
+      }
+    },
+    {
+      "appId": 335300,
+      "nameZh": "DARK SOULS™ II: Scholar of the First Sin",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 335300,
+        "heatScore": 70.0255,
+        "heatRank": 201,
+        "reviews": 116710,
+        "ccu": 1612,
+        "selectionRank": 198
+      }
+    },
+    {
+      "appId": 361420,
+      "nameZh": "ASTRONEER",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 361420,
+        "heatScore": 70.0253,
+        "heatRank": 202,
+        "reviews": 128956,
+        "ccu": 988,
+        "selectionRank": 199
+      }
+    },
+    {
+      "appId": 268500,
+      "nameZh": "XCOM® 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hard",
+        "score": 62,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 268500,
+        "heatScore": 70.0108,
+        "heatRank": 203,
+        "reviews": 101701,
+        "ccu": 3123,
+        "selectionRank": 200
+      }
+    },
+    {
+      "appId": 1506830,
+      "nameZh": "FIFA 22",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1506830,
+        "heatScore": 69.9943,
+        "heatRank": 204,
+        "reviews": 120871,
+        "ccu": 1319,
+        "selectionRank": 201
+      }
+    },
+    {
+      "appId": 766570,
+      "nameZh": "Russian Fishing 4",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 766570,
+        "heatScore": 69.9819,
+        "heatRank": 205,
+        "reviews": 73485,
+        "ccu": 14950,
+        "selectionRank": 202
+      }
+    },
+    {
+      "appId": 761890,
+      "nameZh": "阿尔比恩 ONLINE",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 761890,
+        "heatScore": 69.9803,
+        "heatRank": 206,
+        "reviews": 83074,
+        "ccu": 8184,
+        "selectionRank": 203
+      }
+    },
+    {
+      "appId": 671860,
+      "nameZh": "BattleBit Remastered",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 671860,
+        "heatScore": 69.9797,
+        "heatRank": 207,
+        "reviews": 143124,
+        "ccu": 568,
+        "selectionRank": 204
+      }
+    },
+    {
+      "appId": 1057090,
+      "nameZh": "Ori and the Will of the Wisps",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1057090,
+        "heatScore": 69.9569,
+        "heatRank": 208,
+        "reviews": 136690,
+        "ccu": 697,
+        "selectionRank": 205
+      }
+    },
+    {
+      "appId": 1454400,
+      "nameZh": "Cookie Clicker",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1454400,
+        "heatScore": 69.9439,
+        "heatRank": 209,
+        "reviews": 79892,
+        "ccu": 9583,
+        "selectionRank": 206
+      }
+    },
+    {
+      "appId": 1203620,
+      "nameZh": "雾锁王国 (Enshrouded)",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1203620,
+        "heatScore": 69.9368,
+        "heatRank": 210,
+        "reviews": 78080,
+        "ccu": 10654,
+        "selectionRank": 207
+      }
+    },
+    {
+      "appId": 2399830,
+      "nameZh": "方舟: 生存飞升",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2399830,
+        "heatScore": 69.9226,
+        "heatRank": 211,
+        "reviews": 75995,
+        "ccu": 12007,
+        "selectionRank": 208
+      }
+    },
+    {
+      "appId": 1167630,
+      "nameZh": "Teardown",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1167630,
+        "heatScore": 69.9098,
+        "heatRank": 212,
+        "reviews": 109462,
+        "ccu": 1984,
+        "selectionRank": 209
+      }
+    },
+    {
+      "appId": 1196590,
+      "nameZh": "Resident Evil Village",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1196590,
+        "heatScore": 69.8978,
+        "heatRank": 213,
+        "reviews": 119350,
+        "ccu": 1284,
+        "selectionRank": 210
+      }
+    },
+    {
+      "appId": 362890,
+      "nameZh": "Black Mesa",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 362890,
+        "heatScore": 69.8803,
+        "heatRank": 214,
+        "reviews": 127693,
+        "ccu": 907,
+        "selectionRank": 211
+      }
+    },
+    {
+      "appId": 582160,
+      "nameZh": "刺客信条：起源",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 582160,
+        "heatScore": 69.8717,
+        "heatRank": 215,
+        "reviews": 113496,
+        "ccu": 1604,
+        "selectionRank": 212
+      }
+    },
+    {
+      "appId": 504230,
+      "nameZh": "蔚蓝",
+      "aliases": [
+        "Celeste"
+      ],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 504230,
+        "heatScore": 69.8562,
+        "heatRank": 216,
+        "reviews": 120602,
+        "ccu": 1174,
+        "selectionRank": 213
+      }
+    },
+    {
+      "appId": 1466860,
+      "nameZh": "Age of Empires IV: Anniversary Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1466860,
+        "heatScore": 69.6808,
+        "heatRank": 217,
+        "reviews": 80870,
+        "ccu": 7084,
+        "selectionRank": 214
+      }
+    },
+    {
+      "appId": 221380,
+      "nameZh": "Age of Empires II (Retired)",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 221380,
+        "heatScore": 69.6504,
+        "heatRank": 218,
+        "reviews": 101351,
+        "ccu": 2278,
+        "selectionRank": 215
+      }
+    },
+    {
+      "appId": 1248130,
+      "nameZh": "Farming Simulator 22",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1248130,
+        "heatScore": 69.6244,
+        "heatRank": 219,
+        "reviews": 84512,
+        "ccu": 5419,
+        "selectionRank": 216
+      }
+    },
+    {
+      "appId": 219990,
+      "nameZh": "Grim Dawn",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 219990,
+        "heatScore": 69.6104,
+        "heatRank": 220,
+        "reviews": 99730,
+        "ccu": 2376,
+        "selectionRank": 217
+      }
+    },
+    {
+      "appId": 219740,
+      "nameZh": "饥荒",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 219740,
+        "heatScore": 69.6034,
+        "heatRank": 221,
+        "reviews": 109816,
+        "ccu": 1472,
+        "selectionRank": 218
+      }
+    },
+    {
+      "appId": 3240220,
+      "nameZh": "Grand Theft Auto V 增强版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 3240220,
+        "heatScore": 69.5801,
+        "heatRank": 222,
+        "reviews": 55881,
+        "ccu": 39502,
+        "selectionRank": 219
+      }
+    },
+    {
+      "appId": 1817070,
+      "nameZh": "Marvel’s Spider-Man Remastered",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1817070,
+        "heatScore": 69.4962,
+        "heatRank": 223,
+        "reviews": 112392,
+        "ccu": 1190,
+        "selectionRank": 220
+      }
+    },
+    {
+      "appId": 1151640,
+      "nameZh": "地平线：零之曙光",
+      "aliases": [
+        "Horizon Zero Dawn",
+        "地平线"
+      ],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1151640,
+        "heatScore": 69.4947,
+        "heatRank": 224,
+        "reviews": 125197,
+        "ccu": 700,
+        "selectionRank": 221
+      }
+    },
+    {
+      "appId": 214950,
+      "nameZh": "全面战争：罗马2 - 帝皇版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 214950,
+        "heatScore": 69.4934,
+        "heatRank": 225,
+        "reviews": 88173,
+        "ccu": 3901,
+        "selectionRank": 222
+      }
+    },
+    {
+      "appId": 1407200,
+      "nameZh": "World of Tanks",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1407200,
+        "heatScore": 69.4641,
+        "heatRank": 226,
+        "reviews": 87836,
+        "ccu": 3869,
+        "selectionRank": 223
+      }
+    },
+    {
+      "appId": 2001120,
+      "nameZh": "双影奇境",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2001120,
+        "heatScore": 69.4466,
+        "heatRank": 228,
+        "reviews": 81558,
+        "ccu": 5476,
+        "selectionRank": 224
+      }
+    },
+    {
+      "appId": 286690,
+      "nameZh": "地铁2033 重制版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 286690,
+        "heatScore": 69.4446,
+        "heatRank": 229,
+        "reviews": 110967,
+        "ccu": 1208,
+        "selectionRank": 225
+      }
+    },
+    {
+      "appId": 1943950,
+      "nameZh": "Escape the Backrooms",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1943950,
+        "heatScore": 69.4297,
+        "heatRank": 230,
+        "reviews": 102529,
+        "ccu": 1756,
+        "selectionRank": 226
+      }
+    },
+    {
+      "appId": 356190,
+      "nameZh": "Middle-earth™: Shadow of War™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 356190,
+        "heatScore": 69.4257,
+        "heatRank": 231,
+        "reviews": 107218,
+        "ccu": 1405,
+        "selectionRank": 227
+      }
+    },
+    {
+      "appId": 1259420,
+      "nameZh": "Days Gone",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1259420,
+        "heatScore": 69.3606,
+        "heatRank": 232,
+        "reviews": 103143,
+        "ccu": 1600,
+        "selectionRank": 228
+      }
+    },
+    {
+      "appId": 412020,
+      "nameZh": "地铁：离乡",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 412020,
+        "heatScore": 69.3304,
+        "heatRank": 233,
+        "reviews": 121315,
+        "ccu": 702,
+        "selectionRank": 229
+      }
+    },
+    {
+      "appId": 1313140,
+      "nameZh": "咩咩启示录",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1313140,
+        "heatScore": 69.32,
+        "heatRank": 234,
+        "reviews": 103228,
+        "ccu": 1535,
+        "selectionRank": 230
+      }
+    },
+    {
+      "appId": 1237950,
+      "nameZh": "《STAR WARS™ 前线™ II",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1237950,
+        "heatScore": 69.2895,
+        "heatRank": 235,
+        "reviews": 71208,
+        "ccu": 9213,
+        "selectionRank": 231
+      }
+    },
+    {
+      "appId": 225540,
+      "nameZh": "Just Cause™ 3",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 225540,
+        "heatScore": 69.2655,
+        "heatRank": 236,
+        "reviews": 122161,
+        "ccu": 639,
+        "selectionRank": 232
+      }
+    },
+    {
+      "appId": 387990,
+      "nameZh": "Scrap Mechanic",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 387990,
+        "heatScore": 69.2463,
+        "heatRank": 237,
+        "reviews": 113283,
+        "ccu": 909,
+        "selectionRank": 233
+      }
+    },
+    {
+      "appId": 8870,
+      "nameZh": "生化奇兵：无限",
+      "aliases": [
+        "BioShock Infinite",
+        "生化奇兵无限"
+      ],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 8870,
+        "heatScore": 69.2012,
+        "heatRank": 238,
+        "reviews": 140682,
+        "ccu": 301,
+        "selectionRank": 234
+      }
+    },
+    {
+      "appId": 774171,
+      "nameZh": "Muse Dash",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 774171,
+        "heatScore": 69.1998,
+        "heatRank": 239,
+        "reviews": 119429,
+        "ccu": 672,
+        "selectionRank": 235
+      }
+    },
+    {
+      "appId": 632470,
+      "nameZh": "Disco Elysium - The Final Cut",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 632470,
+        "heatScore": 69.1827,
+        "heatRank": 240,
+        "reviews": 111712,
+        "ccu": 918,
+        "selectionRank": 236
+      }
+    },
+    {
+      "appId": 1049590,
+      "nameZh": "永恒轮回",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1049590,
+        "heatScore": 69.1255,
+        "heatRank": 241,
+        "reviews": 65046,
+        "ccu": 12341,
+        "selectionRank": 237
+      }
+    },
+    {
+      "appId": 976310,
+      "nameZh": "Mortal Kombat 11",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 976310,
+        "heatScore": 69.0383,
+        "heatRank": 242,
+        "reviews": 106281,
+        "ccu": 1026,
+        "selectionRank": 238
+      }
+    },
+    {
+      "appId": 1888930,
+      "nameZh": "The Last of Us™ Part I",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1888930,
+        "heatScore": 69.0322,
+        "heatRank": 243,
+        "reviews": 79855,
+        "ccu": 4144,
+        "selectionRank": 239
+      }
+    },
+    {
+      "appId": 1217060,
+      "nameZh": "枪火重生",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1217060,
+        "heatScore": 69.0287,
+        "heatRank": 244,
+        "reviews": 99172,
+        "ccu": 1428,
+        "selectionRank": 240
+      }
+    },
+    {
+      "appId": 204360,
+      "nameZh": "Castle Crashers®",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 204360,
+        "heatScore": 69.0164,
+        "heatRank": 245,
+        "reviews": 125598,
+        "ccu": 443,
+        "selectionRank": 241
+      }
+    },
+    {
+      "appId": 629760,
+      "nameZh": "MORDHAU",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 629760,
+        "heatScore": 69.0069,
+        "heatRank": 246,
+        "reviews": 112200,
+        "ccu": 764,
+        "selectionRank": 242
+      }
+    },
+    {
+      "appId": 287700,
+      "nameZh": "METAL GEAR SOLID V: THE PHANTOM PAIN",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 287700,
+        "heatScore": 68.9941,
+        "heatRank": 247,
+        "reviews": 99922,
+        "ccu": 1333,
+        "selectionRank": 243
+      }
+    },
+    {
+      "appId": 703080,
+      "nameZh": "动物园之星",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 703080,
+        "heatScore": 68.9901,
+        "heatRank": 248,
+        "reviews": 87849,
+        "ccu": 2497,
+        "selectionRank": 244
+      }
+    },
+    {
+      "appId": 1366540,
+      "nameZh": "戴森球计划",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1366540,
+        "heatScore": 68.9063,
+        "heatRank": 249,
+        "reviews": 85088,
+        "ccu": 2703,
+        "selectionRank": 245
+      }
+    },
+    {
+      "appId": 460930,
+      "nameZh": "幽灵行动：荒野",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 460930,
+        "heatScore": 68.8975,
+        "heatRank": 250,
+        "reviews": 96577,
+        "ccu": 1441,
+        "selectionRank": 246
+      }
+    },
+    {
+      "appId": 949230,
+      "nameZh": "Cities: Skylines II 都市：天际线2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 949230,
+        "heatScore": 68.8787,
+        "heatRank": 251,
+        "reviews": 73524,
+        "ccu": 5392,
+        "selectionRank": 247
+      }
+    },
+    {
+      "appId": 2054970,
+      "nameZh": "Dragon's Dogma 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2054970,
+        "heatScore": 68.7573,
+        "heatRank": 252,
+        "reviews": 106939,
+        "ccu": 768,
+        "selectionRank": 248
+      }
+    },
+    {
+      "appId": 2527500,
+      "nameZh": "米塔 MiSide",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2527500,
+        "heatScore": 68.7468,
+        "heatRank": 253,
+        "reviews": 111087,
+        "ccu": 631,
+        "selectionRank": 249
+      }
+    },
+    {
+      "appId": 962130,
+      "nameZh": "Grounded",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 962130,
+        "heatScore": 68.7389,
+        "heatRank": 254,
+        "reviews": 84517,
+        "ccu": 2394,
+        "selectionRank": 250
+      }
+    },
+    {
+      "appId": 613100,
+      "nameZh": "房产达人",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 613100,
+        "heatScore": 68.7156,
+        "heatRank": 255,
+        "reviews": 95144,
+        "ccu": 1311,
+        "selectionRank": 251
+      }
+    },
+    {
+      "appId": 1286830,
+      "nameZh": "STAR WARS™: The Old Republic™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1286830,
+        "heatScore": 68.6831,
+        "heatRank": 256,
+        "reviews": 67952,
+        "ccu": 6625,
+        "selectionRank": 252
+      }
+    },
+    {
+      "appId": 220240,
+      "nameZh": "Far Cry 3",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 220240,
+        "heatScore": 68.607,
+        "heatRank": 257,
+        "reviews": 114019,
+        "ccu": 488,
+        "selectionRank": 253
+      }
+    },
+    {
+      "appId": 1364780,
+      "nameZh": "Street Fighter 6",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1364780,
+        "heatScore": 68.5983,
+        "heatRank": 258,
+        "reviews": 56666,
+        "ccu": 14920,
+        "selectionRank": 254
+      }
+    },
+    {
+      "appId": 286160,
+      "nameZh": "Tabletop Simulator",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 286160,
+        "heatScore": 68.5902,
+        "heatRank": 259,
+        "reviews": 70660,
+        "ccu": 5021,
+        "selectionRank": 255
+      }
+    },
+    {
+      "appId": 282070,
+      "nameZh": "This War of Mine",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 282070,
+        "heatScore": 68.4754,
+        "heatRank": 260,
+        "reviews": 101740,
+        "ccu": 756,
+        "selectionRank": 256
+      }
+    },
+    {
+      "appId": 674940,
+      "nameZh": "Stick Fight: The Game",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 674940,
+        "heatScore": 68.3348,
+        "heatRank": 261,
+        "reviews": 122658,
+        "ccu": 265,
+        "selectionRank": 257
+      }
+    },
+    {
+      "appId": 418370,
+      "nameZh": "Resident Evil 7 Biohazard",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 418370,
+        "heatScore": 68.3184,
+        "heatRank": 262,
+        "reviews": 97846,
+        "ccu": 792,
+        "selectionRank": 258
+      }
+    },
+    {
+      "appId": 2709570,
+      "nameZh": "Supermarket Together",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2709570,
+        "heatScore": 68.2712,
+        "heatRank": 263,
+        "reviews": 67435,
+        "ccu": 4704,
+        "selectionRank": 259
+      }
+    },
+    {
+      "appId": 635260,
+      "nameZh": "CarX漂移赛车在线",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 635260,
+        "heatScore": 68.2709,
+        "heatRank": 264,
+        "reviews": 83416,
+        "ccu": 1658,
+        "selectionRank": 260
+      }
+    },
+    {
+      "appId": 516750,
+      "nameZh": "My Summer Car",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 516750,
+        "heatScore": 68.2551,
+        "heatRank": 265,
+        "reviews": 91394,
+        "ccu": 1044,
+        "selectionRank": 261
+      }
+    },
+    {
+      "appId": 223470,
+      "nameZh": "POSTAL 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 223470,
+        "heatScore": 68.2447,
+        "heatRank": 266,
+        "reviews": 116058,
+        "ccu": 320,
+        "selectionRank": 262
+      }
+    },
+    {
+      "appId": 238320,
+      "nameZh": "Outlast",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 238320,
+        "heatScore": 68.2382,
+        "heatRank": 267,
+        "reviews": 125678,
+        "ccu": 215,
+        "selectionRank": 263
+      }
+    },
+    {
+      "appId": 646910,
+      "nameZh": "The Crew™ 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 646910,
+        "heatScore": 68.2031,
+        "heatRank": 268,
+        "reviews": 93865,
+        "ccu": 873,
+        "selectionRank": 264
+      }
+    },
+    {
+      "appId": 2835570,
+      "nameZh": "恶魔轮盘",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2835570,
+        "heatScore": 68.193,
+        "heatRank": 269,
+        "reviews": 95541,
+        "ccu": 793,
+        "selectionRank": 265
+      }
+    },
+    {
+      "appId": 1046930,
+      "nameZh": "Dota Underlords",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1046930,
+        "heatScore": 68.1879,
+        "heatRank": 270,
+        "reviews": 90894,
+        "ccu": 1008,
+        "selectionRank": 266
+      }
+    },
+    {
+      "appId": 2623190,
+      "nameZh": "The Elder Scrolls IV: Oblivion Remastered",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2623190,
+        "heatScore": 68.1613,
+        "heatRank": 271,
+        "reviews": 52558,
+        "ccu": 14420,
+        "selectionRank": 267
+      }
+    },
+    {
+      "appId": 881100,
+      "nameZh": "Noita",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 881100,
+        "heatScore": 68.1601,
+        "heatRank": 272,
+        "reviews": 78477,
+        "ccu": 2019,
+        "selectionRank": 268
+      }
+    },
+    {
+      "appId": 602960,
+      "nameZh": "Barotrauma 潜渊症",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 602960,
+        "heatScore": 68.1171,
+        "heatRank": 273,
+        "reviews": 75334,
+        "ccu": 2371,
+        "selectionRank": 269
+      }
+    },
+    {
+      "appId": 848450,
+      "nameZh": "深海迷航：冰点之下",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 848450,
+        "heatScore": 68.1167,
+        "heatRank": 274,
+        "reviews": 96660,
+        "ccu": 698,
+        "selectionRank": 270
+      }
+    },
+    {
+      "appId": 2479810,
+      "nameZh": "灰区战争",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2479810,
+        "heatScore": 68.1016,
+        "heatRank": 275,
+        "reviews": 59318,
+        "ccu": 7543,
+        "selectionRank": 271
+      }
+    },
+    {
+      "appId": 815370,
+      "nameZh": "绿色地狱",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 815370,
+        "heatScore": 68.0874,
+        "heatRank": 276,
+        "reviews": 80604,
+        "ccu": 1656,
+        "selectionRank": 272
+      }
+    },
+    {
+      "appId": 1721470,
+      "nameZh": "Poppy Playtime",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1721470,
+        "heatScore": 68.0535,
+        "heatRank": 277,
+        "reviews": 98914,
+        "ccu": 588,
+        "selectionRank": 273
+      }
+    },
+    {
+      "appId": 219150,
+      "nameZh": "火线迈阿密",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 219150,
+        "heatScore": 68.0478,
+        "heatRank": 278,
+        "reviews": 106657,
+        "ccu": 404,
+        "selectionRank": 274
+      }
+    },
+    {
+      "appId": 365590,
+      "nameZh": "Tom Clancy’s The Division™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 365590,
+        "heatScore": 68.0348,
+        "heatRank": 279,
+        "reviews": 93198,
+        "ccu": 774,
+        "selectionRank": 275
+      }
+    },
+    {
+      "appId": 311690,
+      "nameZh": "挺进地牢",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 311690,
+        "heatScore": 68.0235,
+        "heatRank": 280,
+        "reviews": 85562,
+        "ccu": 1165,
+        "selectionRank": 276
+      }
+    },
+    {
+      "appId": 1304930,
+      "nameZh": "The Outlast Trials",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1304930,
+        "heatScore": 67.9855,
+        "heatRank": 281,
+        "reviews": 66956,
+        "ccu": 3743,
+        "selectionRank": 277
+      }
+    },
+    {
+      "appId": 304050,
+      "nameZh": "宝藏世界",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 304050,
+        "heatScore": 67.9647,
+        "heatRank": 282,
+        "reviews": 92370,
+        "ccu": 758,
+        "selectionRank": 278
+      }
+    },
+    {
+      "appId": 222880,
+      "nameZh": "Insurgency",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 222880,
+        "heatScore": 67.8441,
+        "heatRank": 283,
+        "reviews": 124871,
+        "ccu": 154,
+        "selectionRank": 279
+      }
+    },
+    {
+      "appId": 1030840,
+      "nameZh": "《四海兄弟: 最终版》​",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1030840,
+        "heatScore": 67.8233,
+        "heatRank": 284,
+        "reviews": 91793,
+        "ccu": 686,
+        "selectionRank": 280
+      }
+    },
+    {
+      "appId": 728880,
+      "nameZh": "Overcooked! 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 728880,
+        "heatScore": 67.8073,
+        "heatRank": 285,
+        "reviews": 72801,
+        "ccu": 2107,
+        "selectionRank": 281
+      }
+    },
+    {
+      "appId": 389730,
+      "nameZh": "TEKKEN 7",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 389730,
+        "heatScore": 67.7348,
+        "heatRank": 286,
+        "reviews": 92807,
+        "ccu": 599,
+        "selectionRank": 282
+      }
+    },
+    {
+      "appId": 1250410,
+      "nameZh": "Microsoft Flight Simulator (2020) 40th Anniversary Edition",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1250410,
+        "heatScore": 67.7273,
+        "heatRank": 287,
+        "reviews": 65666,
+        "ccu": 3245,
+        "selectionRank": 283
+      }
+    },
+    {
+      "appId": 977950,
+      "nameZh": "冰与火之舞 A Dance of Fire and Ice",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 977950,
+        "heatScore": 67.7266,
+        "heatRank": 288,
+        "reviews": 73471,
+        "ccu": 1870,
+        "selectionRank": 284
+      }
+    },
+    {
+      "appId": 753640,
+      "nameZh": "星际拓荒",
+      "aliases": [
+        "Outer Wilds"
+      ],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 753640,
+        "heatScore": 67.7099,
+        "heatRank": 289,
+        "reviews": 84488,
+        "ccu": 928,
+        "selectionRank": 285
+      }
+    },
+    {
+      "appId": 1363080,
+      "nameZh": "庄园领主 Manor Lords",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1363080,
+        "heatScore": 67.6883,
+        "heatRank": 290,
+        "reviews": 72120,
+        "ccu": 1977,
+        "selectionRank": 286
+      }
+    },
+    {
+      "appId": 1778820,
+      "nameZh": "铁拳8",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1778820,
+        "heatScore": 67.6738,
+        "heatRank": 291,
+        "reviews": 61068,
+        "ccu": 4409,
+        "selectionRank": 287
+      }
+    },
+    {
+      "appId": 212680,
+      "nameZh": "FTL: Faster Than Light",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 212680,
+        "heatScore": 67.6475,
+        "heatRank": 292,
+        "reviews": 75052,
+        "ccu": 1566,
+        "selectionRank": 288
+      }
+    },
+    {
+      "appId": 2670630,
+      "nameZh": "Supermarket Simulator",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2670630,
+        "heatScore": 67.641,
+        "heatRank": 293,
+        "reviews": 68341,
+        "ccu": 2464,
+        "selectionRank": 289
+      }
+    },
+    {
+      "appId": 1284190,
+      "nameZh": "星球工匠",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1284190,
+        "heatScore": 67.6023,
+        "heatRank": 294,
+        "reviews": 54316,
+        "ccu": 7330,
+        "selectionRank": 290
+      }
+    },
+    {
+      "appId": 424840,
+      "nameZh": "Little Nightmares",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 424840,
+        "heatScore": 67.5741,
+        "heatRank": 295,
+        "reviews": 110196,
+        "ccu": 222,
+        "selectionRank": 291
+      }
+    },
+    {
+      "appId": 380600,
+      "nameZh": "Fishing Planet",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 380600,
+        "heatScore": 67.5626,
+        "heatRank": 296,
+        "reviews": 65699,
+        "ccu": 2781,
+        "selectionRank": 292
+      }
+    },
+    {
+      "appId": 1260320,
+      "nameZh": "猛兽派对",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1260320,
+        "heatScore": 67.5332,
+        "heatRank": 297,
+        "reviews": 64032,
+        "ccu": 3070,
+        "selectionRank": 293
+      }
+    },
+    {
+      "appId": 447040,
+      "nameZh": "Watch_Dogs® 2",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 447040,
+        "heatScore": 67.4968,
+        "heatRank": 298,
+        "reviews": 82379,
+        "ccu": 863,
+        "selectionRank": 294
+      }
+    },
+    {
+      "appId": 1774580,
+      "nameZh": "星球大战 绝地：幸存者™",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1774580,
+        "heatScore": 67.4899,
+        "heatRank": 299,
+        "reviews": 67054,
+        "ccu": 2353,
+        "selectionRank": 295
+      }
+    },
+    {
+      "appId": 677620,
+      "nameZh": "Splitgate",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 677620,
+        "heatScore": 67.4513,
+        "heatRank": 300,
+        "reviews": 111740,
+        "ccu": 185,
+        "selectionRank": 296
+      }
+    },
+    {
+      "appId": 203770,
+      "nameZh": "Crusader Kings II",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 203770,
+        "heatScore": 67.4161,
+        "heatRank": 301,
+        "reviews": 73809,
+        "ccu": 1373,
+        "selectionRank": 297
+      }
+    },
+    {
+      "appId": 1404210,
+      "nameZh": "Red Dead Online",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1404210,
+        "heatScore": 67.3988,
+        "heatRank": 302,
+        "reviews": 66781,
+        "ccu": 2207,
+        "selectionRank": 298
+      }
+    },
+    {
+      "appId": 2344520,
+      "nameZh": "《暗黑破坏神® IV》",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 2344520,
+        "heatScore": 67.3968,
+        "heatRank": 303,
+        "reviews": 50302,
+        "ccu": 8835,
+        "selectionRank": 299
+      }
+    },
+    {
+      "appId": 1113000,
+      "nameZh": "女神异闻录４ 黄金版",
+      "aliases": [],
+      "difficulty": {
+        "level": "hell",
+        "score": 87,
+        "source": "steamspy-weighted-frozen",
+        "locked": true
+      },
+      "familiarity": {
+        "appId": 1113000,
+        "heatScore": 67.3477,
+        "heatRank": 304,
+        "reviews": 78346,
+        "ccu": 962,
+        "selectionRank": 300
+      }
+    }
+  ],
+  "selectionPolicy": {
+    "source": "recovered-steamspy-weighted",
+    "require": [
+      "game_type",
+      "release_date",
+      "tags",
+      "screenshots"
+    ],
+    "skipped": [
+      {
+        "appId": 72850,
+        "name": "The Elder Scrolls V: Skyrim",
+        "reason": "duplicate_edition"
+      }
+    ]
+  },
+  "difficultyPolicy": {
+    "source": "steamspy-weighted-frozen",
+    "weights": {
+      "logNormalizedReviewCount": 0.85,
+      "logNormalizedCcu": 0.15
+    },
+    "population": 19669,
+    "note": "Recovered Steam snapshot; not IGDB PopScore. No scheduled or feedback-based regrading.",
+    "mode": "frozen",
+    "poolCaps": {
+      "beginner": 20,
+      "easy": 50,
+      "normal": 100,
+      "hard": 200,
+      "hell": 300
+    },
+    "attempts": 10
+  }
+}

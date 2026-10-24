@@ -56,3 +56,6 @@ __pycache__/
 
 # Weekly catalog runtime lock
 data/catalog/.weekly-update.lock
+
+# Generated editorial publishing selection
+/data/catalog/classics-selection.json

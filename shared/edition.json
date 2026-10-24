@@ -1,0 +1,12 @@
+{
+  "answerLimit": 300,
+  "searchLimit": 2000,
+  "poolCaps": {
+    "beginner": 20,
+    "easy": 50,
+    "normal": 100,
+    "hard": 200,
+    "hell": 300
+  },
+  "attempts": 10
+}

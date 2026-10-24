@@ -24,6 +24,7 @@ const testCatalog = [10, 30].map((appId, index) => ({
   reviews: { total: 100 + index, positive: 90 + index, negative: 10 },
   tags: { developers: [`Test Dev ${appId}`], publishers: [`Test Pub ${appId}`], userTags: [`Test Tag ${appId}`] },
   difficulty: { score: index * 25, level: index === 0 ? 'easy' : 'normal', source: 'manual' },
+  hints: { screenshotUrls: [`https://example.com/scene-${index}.jpg`] },
 }));
 function emit(socket, event, payload) { return new Promise(resolve => socket.emit(event, payload, resolve)); }
 async function fixture(options = {}) {
@@ -97,10 +98,16 @@ describe('multiplayer server', () => {
     const countdown = await countdownPromise; assert.equal(countdown.activeRound, null); assert.ok(countdown.countdownEndsAt);
     const snapshot = await snapshotPromise;
     assert.equal(snapshot.status, 'playing'); assert.ok(snapshot.activeRound.id); assert.equal(JSON.stringify(snapshot).includes('answerAppId'), false);
+    assert.deepEqual(snapshot.activeRound.screenshotUrls, testCatalog[0].hints.screenshotUrls);
+    assert.equal(snapshot.lastRound, null);
     const endedPromise = waitFor(a, 'round:ended');
     const guessed = await emit(a, 'round:guess', { roomId: room.id, roundId: snapshot.activeRound.id, guessAppId: 10, commandId: 'command_guess_exact_a' });
     assert.equal(guessed.ok, true); assert.equal(guessed.data.feedback.isCorrect, true); assert.deepEqual(guessed.data.feedback.fields.map(field => field.fieldName), ['price']); assert.deepEqual(guessed.data.feedback.matchingTags, []); assert.equal(JSON.stringify(guessed).includes('correctValue'), false);
     const ended = await endedPromise; assert.equal(ended.answer.appId, 10); assert.equal(ended.winnerPlayerId, created.data.playerId);
+    assert.deepEqual(ended.answer.hints.screenshotUrls, testCatalog[0].hints.screenshotUrls);
+    const finished = await emit(b, 'room:resume', { roomCode: room.code, playerId: joined.data.playerId, resumeToken: joined.data.resumeToken });
+    assert.equal(finished.data.room.lastRound.answer.appId, 10);
+    assert.deepEqual(finished.data.room.lastRound.answer.hints.screenshotUrls, testCatalog[0].hints.screenshotUrls);
     const stored = openDatabase(dbPath); assert.equal(stored.prepare('SELECT COUNT(*) AS count FROM multiplayer_matches').get().count, 1); stored.close();
     const replay = await emit(a, 'round:guess', { roomId: room.id, roundId: snapshot.activeRound.id, guessAppId: 10, commandId: 'command_guess_exact_a' });
     assert.deepEqual(replay, guessed);

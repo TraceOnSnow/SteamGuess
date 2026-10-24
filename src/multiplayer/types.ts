@@ -8,7 +8,8 @@ export type RoomSnapshot = {
   id: string; code: string; status: 'lobby' | 'countdown' | 'playing' | 'round_over' | 'finished'; revision: number; hostPlayerId: string; countdownEndsAt: number | null;
   settings: MultiplayerSettings; players: RoomPlayer[];
   match: null | { id: string; roundNumber: number; scores: Record<string, number>; winnerPlayerId: string | null };
-  activeRound: null | { id: string; startedAt: number; endsAt: number; guesses: number[] };
+  activeRound: null | { id: string; startedAt: number; endsAt: number; guesses: number[]; screenshotUrls: string[] };
+  lastRound: RoundEnd | null;
 };
 export type GuessFeedback = {
   isCorrect: boolean;

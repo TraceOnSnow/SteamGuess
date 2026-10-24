@@ -45,6 +45,10 @@ export interface GameDifficulty {
 }
 
 export interface Game {
+  edition?: 'classics';
+  catalogStatus?: 'eligible' | 'search_only' | 'excluded';
+  collection?: 'classics';
+  aliases?: string[];
   appId: number;
   name: string;
   localizedNames?: { zh?: string };

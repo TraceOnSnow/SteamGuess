@@ -39,3 +39,5 @@ export function parseReleaseDate(value) {
 }
 
 export function compareDateValues(userDate, correctDate, thresholds = COMPARISON_RULES.releaseDate) { const user = parseReleaseDate(userDate); const correct = parseReleaseDate(correctDate); if (!Number.isFinite(user) || !Number.isFinite(correct)) return { status: 'unknown' }; const days = Math.abs(user - correct) / 86400000; const status = days <= thresholds.exactYears * 365.2425 ? 'exact' : days <= thresholds.partialYears * 365.2425 ? 'partial' : days <= thresholds.closeYears * 365.2425 ? 'close' : 'wrong'; return { status, direction: comparisonDirection(user, correct, status) }; }
+
+export function getMaxGuesses() { return 10; }

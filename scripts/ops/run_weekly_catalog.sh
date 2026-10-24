@@ -5,6 +5,18 @@ set -Eeuo pipefail
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 cd "$root"
 
+# The shipped edition is a fixed editorial selection. Bulk discovery is an
+# explicit maintenance operation; it must never silently expand the live pool.
+if [[ ${STEAMGUESS_EDITION:-classics} == classics ]]; then
+  mkdir -p data/catalog
+  exec 9>"${STEAMGUESS_CATALOG_LOCK:-data/catalog/.weekly-update.lock}"
+  flock -n 9 || exit 75
+  python3 -m scripts.catalog.restore_classics \
+    --db "${STEAMGUESS_CATALOG_DB_PATH:-data/catalog/catalog.sqlite}" \
+    --snapshot "${STEAMGUESS_PLAYABLE_PATH:-public/games_demo.json}"
+  exit 0
+fi
+
 catalog=${STEAMGUESS_CATALOG_PATH:-data/catalog/steamspy_candidates.json}
 db=${STEAMGUESS_CATALOG_DB_PATH:-data/catalog/catalog.sqlite}
 playable=${STEAMGUESS_PLAYABLE_PATH:-public/games_demo.json}

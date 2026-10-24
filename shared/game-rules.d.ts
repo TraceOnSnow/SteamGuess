@@ -9,3 +9,5 @@ export function statusByDistance(distance: number, rule: NumericRuleConfig): Mat
 export function comparisonDirection(user: number, correct: number, status: MatchStatus): ComparisonDirection;
 export function compareNumericValues(user: number | undefined, correct: number | undefined, rule: NumericRuleConfig): { status: MatchStatus; direction?: ComparisonDirection };
 export function compareDateValues(userDate: string, correctDate: string, thresholds?: { exactYears: number; partialYears: number; closeYears: number }): { status: MatchStatus; direction?: ComparisonDirection };
+
+export function getMaxGuesses(difficulty: string): number;

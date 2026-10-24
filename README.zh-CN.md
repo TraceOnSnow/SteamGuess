@@ -1,5 +1,50 @@
 # SteamGuess
 
+**当前验收版：300 款。** 答案池按固定热度排名选择 300 款游戏，搜索和猜测范围扩展到 2,000 款；约 1.97 万条历史记录作为数据档案保留。
+
+- 单人保留属性比对猜游戏，支持每日挑战和自由练习。
+- 搜索库与答案池独立：2,000 款游戏均可搜索、提交比对，只有固定的 300 款能出题。搜索结果不显示答案资格，首页也不直接列出答案名单。
+- 入门 / 简单 / 普通 / 困难 / 地狱使用 20 / 50 / 100 / 200 / 300 款累计题库；所有难度均为十次机会，截图提示随时可用。
+- 提示为一张模糊截图，可手动变清晰；猜中、用尽次数或揭晓答案后自动显示清晰截图。没有评论或印象描述提示。截图、价格和评测数字来自恢复时的数据快照。
+- 今日同题按设备日期更新；本机自动续局、统计战绩、复制不含答案的分享文字。
+- 多人支持 2–8 人私人房间，使用同一套五档累计题库，均为 120 秒和十次猜测。
+
+```bash
+npm ci
+npm run build
+npm start
+# 浏览器打开 http://localhost:4173
+```
+
+直接克隆即可运行；随仓题库不依赖 API Key 或外部数据库备份。如需恢复可编辑的本地 catalog：
+
+```bash
+npm run data:restore
+npm run release:check
+```
+
+`data:restore` 优先使用本地恢复备份；没有备份时从随仓快照建立 SQLite，保留已有人工评分并在修改前备份。名单和固定分档在 `data/curated/classics.json`，发布器统一生成前后端共用的 `public/games_demo.json`。本机原始恢复备份位于被 Git 忽略的 `data/backups/recovery-20261022/`，应另行备份。
+
+初次选取使用 `npm run data:select-classics`：从恢复数据中按既有热度权重取 300 款，要求有发行日期、标签和截图，并合并同名不同版本；日常运行无需重选。数量统一配置在 `shared/edition.json`。
+
+五档划分随版本固定在 `data/curated/classics.json`，前台和多人均按发布快照筛选（未评分的搜索库条目永不成为答案）；后台评分与玩家反馈不会改变精选版题库。当前恢复数据没有 IGDB primitives，初始分档明确标为 `steamspy-weighted-frozen`：使用已有的 SteamSpy 85% 评测量 / 15% 峰值（对数归一化）加权排序，仅在选定的 300 款中累计截取 20 / 50 / 100 / 200 / 300 款，不能冒充 IGDB 分数。
+
+项目最后的 IGDB 原公式保留在 `scripts/catalog/rank_igdb_heat.py`：Played 31.25%、Playing 31.25%、Total Reviews 12.5%、24hr Peak Players 12.5%、Visits 12.5%。拿到原公式输出的完整排名快照后，可以一次性替换分档：
+
+```bash
+npm run data:freeze-difficulty -- --igdb-ranking /path/to/igdb-heat-all.json
+# 名称无法唯一对应时增加 --igdb-mapping /path/to/appid-to-igdb.json
+npm run data:restore
+npm run build
+```
+
+导入缺失或歧义会报错并保留上一份分档，不会悄悄填充 Steam 分数。该操作仅在主动发布时执行，不需要常驻评分服务或动态维护。
+
+周更入口默认只重建精选版本，不再自动扩充题库。历史批量发现流程需显式设置 `STEAMGUESS_EDITION=archive`。图片由 Steam CDN 提供；首张失败时自动尝试下一张，全部失败可重试，仍可继续属性比对。
+
+以下为保留的数据平台和历史运维说明；涉及排名窗口与五档题池的旧规则不适用于当前精选前台。
+
+
 > 一个面向 Steam 游戏的猜游戏网页：用结构化线索逐步缩小答案，也为多人竞技和持续更新的数据平台打基础。
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)

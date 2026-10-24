@@ -277,7 +277,7 @@ const resources = {
         importFailed: '无法导入这个 Steam 个人资料。',
       },
       search: {
-        label: '搜索 Steam 游戏题库',
+        label: '搜索游戏',
         placeholder: '输入游戏名称…',
         noResults: '没有找到尚未猜过的游戏。',
       },

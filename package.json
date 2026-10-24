@@ -1,7 +1,7 @@
 {
   "name": "steamguess",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -42,7 +42,11 @@
     "data:enrich-reviews": "python3 -m scripts.catalog.enrich_reviews",
     "data:redact-reviews": "python3 -m scripts.catalog.redact_reviews",
     "data:redact-reviews-ai": "./scripts/ops/run_review_redaction_ai.sh",
-    "data:apply-feedback": "./scripts/ops/update_difficulty_from_feedback.sh"
+    "data:apply-feedback": "./scripts/ops/update_difficulty_from_feedback.sh",
+    "data:restore": "python3 -m scripts.catalog.restore_classics",
+    "data:publish-classics": "python3 -m scripts.catalog.publish_playable --catalog data/curated/classics.json",
+    "data:freeze-difficulty": "python3 -m scripts.catalog.freeze_difficulty",
+    "data:select-classics": "python3 -m scripts.catalog.select_classics"
   },
   "dependencies": {
     "@socket.io/redis-adapter": "^8.3.0",
