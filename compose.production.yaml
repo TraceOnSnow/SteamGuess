@@ -29,8 +29,18 @@ services:
       STEAMGUESS_ROOM_STORE: redis
       STEAMGUESS_REDIS_URL: redis://redis:6379
       STEAMGUESS_REDIS_PREFIX: steamguess:multiplayer
+    networks:
+      default:
+      web:
+        aliases: [steamguess-app]
     volumes:
       - steamguess-data:/app/data
+
+networks:
+  web:
+    # Docker network of the existing Nginx container that terminates HTTPS.
+    external: true
+    name: homepage-web_default
 
 volumes:
   steamguess-data:
