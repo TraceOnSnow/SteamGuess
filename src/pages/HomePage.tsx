@@ -6,6 +6,7 @@ import { TopBar } from '../components/TopBar';
 import { readSavedRound, readStats, roundKey } from '../play/progress';
 import { DAILY_LEVEL, LEVELS, POOL_SIZES, dateKey } from '../play/rules';
 import './home.css';
+import { AUTHOR_URL, REPOSITORY_URL } from '../lib/links';
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();
@@ -81,6 +82,12 @@ export default function HomePage() {
         </dl>
       </section>
     </main>
-    <footer className="home-foot">{t('home.footer')}</footer>
+    <footer className="home-foot">
+      <p>{t('home.footer')}</p>
+      <nav aria-label={t('home.linksLabel')}>
+        <a href={REPOSITORY_URL} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        {AUTHOR_URL && <a href={AUTHOR_URL} target="_blank" rel="noopener">{t('home.author')} ↗</a>}
+      </nav>
+    </footer>
   </div>;
 }

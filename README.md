@@ -1,11 +1,11 @@
 # SteamGuess
 
-[简体中文](README.zh-CN.md)
+**Play:** https://steamguess.traceonsnow.com · [简体中文](README.zh-CN.md) · Made by [TraceOnSnow](https://traceonsnow.com)
 
-Guess a Steam game in ten tries. Search for a game and submit it; the answer is compared with your guess on price, peak players, review count, rating, release date, studios and tags. Colours show how close each clue is and arrows show which way the answer lies. A blurred screenshot is available as a hint at any time.
+Guess a Steam game in ten tries. Search for a game and submit it; the answer is compared with your guess on price, daily peak players, review count, rating, release date, studios and tags. Colours show how close each clue is and arrows show which way the answer lies. A blurred screenshot is available as a hint at any time.
 
 - **Daily challenge** — one game for everyone, new at local midnight.
-- **Free play** — pick a difficulty and play as many rounds as you like.
+- **Free play** — pick a difficulty or a themed preset and play as many rounds as you like; share a link to give a friend the same game.
 - **Multiplayer rooms** — 2–8 players race on the same game.
 - Chinese and English interfaces. Chinese compares mainland prices in CNY; English compares US prices in USD.
 
