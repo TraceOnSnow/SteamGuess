@@ -1,0 +1,8131 @@
+{
+ "version": 3,
+ "generatedAt": "2026-11-11T08:56:20+00:00",
+ "policy": {
+  "ranking": "0.85 * log(reviews) + 0.15 * log(ccu), SteamSpy snapshot",
+  "rankCaps": {
+   "beginner": 20,
+   "easy": 50,
+   "normal": 100,
+   "hard": 300,
+   "unrated": 1000
+  },
+  "note": "Tiers are cumulative. Edit level/aliases here by hand; rebuild with npm run data:build."
+ },
+ "games": [
+  {
+   "appId": 730,
+   "name": "Counter-Strike 2",
+   "nameZh": "反恐精英 2",
+   "aliases": [
+    "CS2",
+    "CSGO",
+    "CS:GO",
+    "反恐精英"
+   ],
+   "level": "beginner",
+   "rank": 1
+  },
+  {
+   "appId": 570,
+   "name": "Dota 2",
+   "nameZh": "刀塔 2",
+   "aliases": [],
+   "level": "beginner",
+   "rank": 2
+  },
+  {
+   "appId": 578080,
+   "name": "PUBG: BATTLEGROUNDS",
+   "nameZh": "绝地求生",
+   "aliases": [
+    "PUBG",
+    "吃鸡"
+   ],
+   "level": "beginner",
+   "rank": 3
+  },
+  {
+   "appId": 271590,
+   "name": "Grand Theft Auto V Legacy",
+   "nameZh": "侠盗猎车手 V",
+   "aliases": [
+    "GTA5",
+    "GTA V",
+    "给他爱"
+   ],
+   "level": "beginner",
+   "rank": 4
+  },
+  {
+   "appId": 105600,
+   "name": "Terraria",
+   "nameZh": "泰拉瑞亚",
+   "aliases": [],
+   "level": "beginner",
+   "rank": 5
+  },
+  {
+   "appId": 1172470,
+   "name": "Apex Legends™",
+   "nameZh": "Apex 英雄",
+   "aliases": [
+    "Apex Legends",
+    "APEX"
+   ],
+   "level": "beginner",
+   "rank": 6
+  },
+  {
+   "appId": 1245620,
+   "name": "ELDEN RING",
+   "nameZh": "艾尔登法环",
+   "aliases": [
+    "Elden Ring",
+    "老头环",
+    "法环"
+   ],
+   "level": "beginner",
+   "rank": 7
+  },
+  {
+   "appId": 2358720,
+   "name": "Black Myth: Wukong",
+   "nameZh": "黑神话：悟空",
+   "aliases": [
+    "Black Myth Wukong",
+    "黑神话",
+    "悟空"
+   ],
+   "level": "beginner",
+   "rank": 8
+  },
+  {
+   "appId": 413150,
+   "name": "Stardew Valley",
+   "nameZh": "星露谷物语",
+   "aliases": [
+    "星露谷"
+   ],
+   "level": "beginner",
+   "rank": 9
+  },
+  {
+   "appId": 550,
+   "name": "Left 4 Dead 2",
+   "nameZh": "求生之路 2",
+   "aliases": [
+    "L4D2",
+    "求生之路2"
+   ],
+   "level": "beginner",
+   "rank": 10
+  },
+  {
+   "appId": 1086940,
+   "name": "Baldur's Gate 3",
+   "nameZh": "博德之门 3",
+   "aliases": [
+    "博德之门3",
+    "BG3"
+   ],
+   "level": "beginner",
+   "rank": 11
+  },
+  {
+   "appId": 1091500,
+   "name": "Cyberpunk 2077",
+   "nameZh": "赛博朋克 2077",
+   "aliases": [
+    "Cyberpunk",
+    "2077"
+   ],
+   "level": "beginner",
+   "rank": 12
+  },
+  {
+   "appId": 292030,
+   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "nameZh": "巫师 3：狂猎",
+   "aliases": [
+    "巫师3",
+    "The Witcher 3"
+   ],
+   "level": "beginner",
+   "rank": 13
+  },
+  {
+   "appId": 1174180,
+   "name": "Red Dead Redemption 2",
+   "nameZh": "荒野大镖客：救赎 2",
+   "aliases": [
+    "RDR2",
+    "大表哥2",
+    "荒野大镖客2"
+   ],
+   "level": "beginner",
+   "rank": 14
+  },
+  {
+   "appId": 582010,
+   "name": "Monster Hunter: World",
+   "nameZh": "怪物猎人：世界",
+   "aliases": [],
+   "level": "beginner",
+   "rank": 15
+  },
+  {
+   "appId": 1203220,
+   "name": "NARAKA: BLADEPOINT",
+   "nameZh": "永劫无间",
+   "aliases": [],
+   "level": "beginner",
+   "rank": 16
+  },
+  {
+   "appId": 1623730,
+   "name": "Palworld",
+   "nameZh": "幻兽帕鲁",
+   "aliases": [
+    "帕鲁"
+   ],
+   "level": "beginner",
+   "rank": 17
+  },
+  {
+   "appId": 374320,
+   "name": "DARK SOULS™ III",
+   "nameZh": "黑暗之魂 III",
+   "aliases": [
+    "Dark Souls III",
+    "黑魂3",
+    "黑暗之魂3"
+   ],
+   "level": "beginner",
+   "rank": 18
+  },
+  {
+   "appId": 814380,
+   "name": "Sekiro™: Shadows Die Twice - GOTY Edition",
+   "nameZh": "只狼：影逝二度",
+   "aliases": [
+    "Sekiro",
+    "只狼"
+   ],
+   "level": "beginner",
+   "rank": 19
+  },
+  {
+   "appId": 1426210,
+   "name": "It Takes Two",
+   "nameZh": "双人成行",
+   "aliases": [],
+   "level": "beginner",
+   "rank": 20
+  },
+  {
+   "appId": 359550,
+   "name": "Tom Clancy's Rainbow Six Siege",
+   "nameZh": "彩虹六号：围攻",
+   "aliases": [
+    "Rainbow Six Siege",
+    "R6",
+    "彩六"
+   ],
+   "level": "easy",
+   "rank": 21
+  },
+  {
+   "appId": 381210,
+   "name": "Dead by Daylight",
+   "nameZh": "黎明杀机",
+   "aliases": [
+    "DBD"
+   ],
+   "level": "easy",
+   "rank": 22
+  },
+  {
+   "appId": 1938090,
+   "name": "Call of Duty®",
+   "nameZh": "使命召唤",
+   "aliases": [
+    "Call of Duty",
+    "COD",
+    "使命召唤现代战争"
+   ],
+   "level": "easy",
+   "rank": 23
+  },
+  {
+   "appId": 227300,
+   "name": "Euro Truck Simulator 2",
+   "nameZh": "欧洲卡车模拟 2",
+   "aliases": [
+    "欧卡2"
+   ],
+   "level": "easy",
+   "rank": 24
+  },
+  {
+   "appId": 322330,
+   "name": "Don't Starve Together",
+   "nameZh": "饥荒联机版",
+   "aliases": [
+    "饥荒"
+   ],
+   "level": "easy",
+   "rank": 25
+  },
+  {
+   "appId": 242760,
+   "name": "The Forest",
+   "nameZh": "森林",
+   "aliases": [],
+   "level": "easy",
+   "rank": 26
+  },
+  {
+   "appId": 289070,
+   "name": "Sid Meier’s Civilization® VI",
+   "nameZh": "文明 VI",
+   "aliases": [
+    "Civilization VI",
+    "文明6",
+    "文明六"
+   ],
+   "level": "easy",
+   "rank": 27
+  },
+  {
+   "appId": 489830,
+   "name": "The Elder Scrolls V: Skyrim Special Edition",
+   "nameZh": "上古卷轴 5：天际 特别版",
+   "aliases": [],
+   "level": "easy",
+   "rank": 28
+  },
+  {
+   "appId": 377160,
+   "name": "Fallout 4",
+   "nameZh": "辐射 4",
+   "aliases": [],
+   "level": "easy",
+   "rank": 29
+  },
+  {
+   "appId": 367520,
+   "name": "Hollow Knight",
+   "nameZh": "空洞骑士",
+   "aliases": [],
+   "level": "easy",
+   "rank": 30
+  },
+  {
+   "appId": 620,
+   "name": "Portal 2",
+   "nameZh": "传送门 2",
+   "aliases": [
+    "传送门2"
+   ],
+   "level": "easy",
+   "rank": 31
+  },
+  {
+   "appId": 990080,
+   "name": "Hogwarts Legacy",
+   "nameZh": "霍格沃茨之遗",
+   "aliases": [],
+   "level": "easy",
+   "rank": 32
+  },
+  {
+   "appId": 2357570,
+   "name": "Overwatch®",
+   "nameZh": "《守望先锋®》",
+   "aliases": [],
+   "level": "easy",
+   "rank": 33
+  },
+  {
+   "appId": 2246340,
+   "name": "Monster Hunter Wilds",
+   "nameZh": "怪物猎人：荒野",
+   "aliases": [],
+   "level": "easy",
+   "rank": 34
+  },
+  {
+   "appId": 1551360,
+   "name": "Forza Horizon 5",
+   "nameZh": "极限竞速：地平线 5",
+   "aliases": [],
+   "level": "easy",
+   "rank": 35
+  },
+  {
+   "appId": 2050650,
+   "name": "Resident Evil 4",
+   "nameZh": "生化危机 4",
+   "aliases": [
+    "生化危机4",
+    "RE4"
+   ],
+   "level": "easy",
+   "rank": 36
+  },
+  {
+   "appId": 1903340,
+   "name": "Clair Obscur: Expedition 33",
+   "nameZh": "光与影：33号远征队",
+   "aliases": [],
+   "level": "easy",
+   "rank": 37
+  },
+  {
+   "appId": 1030300,
+   "name": "Hollow Knight: Silksong",
+   "nameZh": "空洞骑士：丝之歌",
+   "aliases": [],
+   "level": "easy",
+   "rank": 38
+  },
+  {
+   "appId": 1222140,
+   "name": "Detroit: Become Human",
+   "nameZh": "底特律：化身为人",
+   "aliases": [],
+   "level": "easy",
+   "rank": 39
+  },
+  {
+   "appId": 883710,
+   "name": "Resident Evil 2",
+   "nameZh": "生化危机 2 重制版",
+   "aliases": [],
+   "level": "easy",
+   "rank": 40
+  },
+  {
+   "appId": 601150,
+   "name": "Devil May Cry 5",
+   "nameZh": "鬼泣 5",
+   "aliases": [],
+   "level": "easy",
+   "rank": 41
+  },
+  {
+   "appId": 1593500,
+   "name": "God of War",
+   "nameZh": "战神",
+   "aliases": [],
+   "level": "easy",
+   "rank": 42
+  },
+  {
+   "appId": 1868140,
+   "name": "DAVE THE DIVER",
+   "nameZh": "潜水员戴夫 DAVE THE DIVER",
+   "aliases": [],
+   "level": "easy",
+   "rank": 43
+  },
+  {
+   "appId": 2507950,
+   "name": "Delta Force",
+   "nameZh": "三角洲行动",
+   "aliases": [],
+   "level": "easy",
+   "rank": 44
+  },
+  {
+   "appId": 1687950,
+   "name": "Persona 5 Royal",
+   "nameZh": "女神异闻录5皇家版",
+   "aliases": [],
+   "level": "easy",
+   "rank": 45
+  },
+  {
+   "appId": 524220,
+   "name": "NieR:Automata™",
+   "nameZh": "尼尔：机械纪元",
+   "aliases": [],
+   "level": "easy",
+   "rank": 46
+  },
+  {
+   "appId": 1817070,
+   "name": "Marvel’s Spider-Man Remastered",
+   "nameZh": "漫威蜘蛛侠 重制版",
+   "aliases": [],
+   "level": "easy",
+   "rank": 47
+  },
+  {
+   "appId": 2001120,
+   "name": "Split Fiction",
+   "nameZh": "双影奇境",
+   "aliases": [],
+   "level": "easy",
+   "rank": 48
+  },
+  {
+   "appId": 1888930,
+   "name": "The Last of Us™ Part I",
+   "nameZh": "最后生还者 第一部",
+   "aliases": [],
+   "level": "easy",
+   "rank": 49
+  },
+  {
+   "appId": 2215430,
+   "name": "Ghost of Tsushima DIRECTOR'S CUT",
+   "nameZh": "Ghost of Tsushima导演剪辑版",
+   "aliases": [],
+   "level": "easy",
+   "rank": 50
+  },
+  {
+   "appId": 252490,
+   "name": "Rust",
+   "nameZh": "腐蚀",
+   "aliases": [],
+   "level": "normal",
+   "rank": 51
+  },
+  {
+   "appId": 553850,
+   "name": "HELLDIVERS™ 2",
+   "nameZh": "绝地潜兵 2",
+   "aliases": [],
+   "level": "normal",
+   "rank": 52
+  },
+  {
+   "appId": 4000,
+   "name": "Garry's Mod",
+   "nameZh": "盖瑞模组",
+   "aliases": [
+    "Gmod"
+   ],
+   "level": "normal",
+   "rank": 53
+  },
+  {
+   "appId": 346110,
+   "name": "ARK: Survival Evolved",
+   "nameZh": "方舟：生存进化",
+   "aliases": [],
+   "level": "normal",
+   "rank": 54
+  },
+  {
+   "appId": 230410,
+   "name": "Warframe",
+   "nameZh": "星际战甲",
+   "aliases": [],
+   "level": "normal",
+   "rank": 55
+  },
+  {
+   "appId": 218620,
+   "name": "PAYDAY 2",
+   "nameZh": "收获日 2",
+   "aliases": [],
+   "level": "normal",
+   "rank": 56
+  },
+  {
+   "appId": 739630,
+   "name": "Phasmophobia",
+   "nameZh": "恐鬼症",
+   "aliases": [],
+   "level": "normal",
+   "rank": 57
+  },
+  {
+   "appId": 1085660,
+   "name": "Destiny 2",
+   "nameZh": "命运 2",
+   "aliases": [
+    "命运2"
+   ],
+   "level": "normal",
+   "rank": 58
+  },
+  {
+   "appId": 945360,
+   "name": "Among Us",
+   "nameZh": "在我们之中",
+   "aliases": [
+    "太空狼人杀"
+   ],
+   "level": "normal",
+   "rank": 59
+  },
+  {
+   "appId": 892970,
+   "name": "Valheim",
+   "nameZh": "英灵神殿",
+   "aliases": [],
+   "level": "normal",
+   "rank": 60
+  },
+  {
+   "appId": 2767030,
+   "name": "Marvel Rivals",
+   "nameZh": "漫威争锋",
+   "aliases": [],
+   "level": "normal",
+   "rank": 61
+  },
+  {
+   "appId": 1966720,
+   "name": "Lethal Company",
+   "nameZh": "致命公司",
+   "aliases": [],
+   "level": "normal",
+   "rank": 62
+  },
+  {
+   "appId": 1172620,
+   "name": "Sea of Thieves: 2026 Edition",
+   "nameZh": "盗贼之海",
+   "aliases": [],
+   "level": "normal",
+   "rank": 63
+  },
+  {
+   "appId": 548430,
+   "name": "Deep Rock Galactic",
+   "nameZh": "深岩银河",
+   "aliases": [],
+   "level": "normal",
+   "rank": 64
+  },
+  {
+   "appId": 1097150,
+   "name": "Fall Guys",
+   "nameZh": "糖豆人",
+   "aliases": [],
+   "level": "normal",
+   "rank": 65
+  },
+  {
+   "appId": 255710,
+   "name": "Cities: Skylines",
+   "nameZh": "城市：天际线",
+   "aliases": [
+    "Cities Skylines",
+    "天际线"
+   ],
+   "level": "normal",
+   "rank": 66
+  },
+  {
+   "appId": 1326470,
+   "name": "Sons Of The Forest",
+   "nameZh": "森林之子",
+   "aliases": [],
+   "level": "normal",
+   "rank": 67
+  },
+  {
+   "appId": 1145360,
+   "name": "Hades",
+   "nameZh": "哈迪斯",
+   "aliases": [
+    "黑帝斯"
+   ],
+   "level": "normal",
+   "rank": 68
+  },
+  {
+   "appId": 2807960,
+   "name": "Battlefield™ 6",
+   "nameZh": "战地风云™ 6",
+   "aliases": [],
+   "level": "normal",
+   "rank": 69
+  },
+  {
+   "appId": 646570,
+   "name": "Slay the Spire",
+   "nameZh": "杀戮尖塔",
+   "aliases": [],
+   "level": "normal",
+   "rank": 70
+  },
+  {
+   "appId": 1468810,
+   "name": "鬼谷八荒 Tale of Immortal",
+   "nameZh": "鬼谷八荒",
+   "aliases": [],
+   "level": "normal",
+   "rank": 71
+  },
+  {
+   "appId": 2694490,
+   "name": "Path of Exile 2",
+   "nameZh": "流放之路 2",
+   "aliases": [],
+   "level": "normal",
+   "rank": 72
+  },
+  {
+   "appId": 1238840,
+   "name": "Battlefield™ 1",
+   "nameZh": "战地 1",
+   "aliases": [],
+   "level": "normal",
+   "rank": 73
+  },
+  {
+   "appId": 534380,
+   "name": "Dying Light 2 Stay Human: Reloaded Edition",
+   "nameZh": "消逝的光芒2: 重装上阵版",
+   "aliases": [],
+   "level": "normal",
+   "rank": 74
+  },
+  {
+   "appId": 268910,
+   "name": "Cuphead",
+   "nameZh": "茶杯头",
+   "aliases": [],
+   "level": "normal",
+   "rank": 75
+  },
+  {
+   "appId": 1716740,
+   "name": "Starfield",
+   "nameZh": "星空",
+   "aliases": [],
+   "level": "normal",
+   "rank": 76
+  },
+  {
+   "appId": 477160,
+   "name": "Human Fall Flat",
+   "nameZh": "人类一败涂地 / Human Fall Flat",
+   "aliases": [],
+   "level": "normal",
+   "rank": 77
+  },
+  {
+   "appId": 812140,
+   "name": "Assassin's Creed® Odyssey",
+   "nameZh": "刺客信条：奥德赛",
+   "aliases": [
+    "Assassin's Creed Odyssey",
+    "刺客信条奥德赛"
+   ],
+   "level": "normal",
+   "rank": 78
+  },
+  {
+   "appId": 397540,
+   "name": "Borderlands 3",
+   "nameZh": "无主之地3",
+   "aliases": [],
+   "level": "normal",
+   "rank": 79
+  },
+  {
+   "appId": 2622380,
+   "name": "ELDEN RING NIGHTREIGN",
+   "nameZh": "艾尔登法环 黑夜君临",
+   "aliases": [],
+   "level": "normal",
+   "rank": 80
+  },
+  {
+   "appId": 3590,
+   "name": "Plants vs. Zombies GOTY Edition",
+   "nameZh": "植物大战僵尸 年度版",
+   "aliases": [],
+   "level": "normal",
+   "rank": 81
+  },
+  {
+   "appId": 1172380,
+   "name": "STAR WARS Jedi: Fallen Order™",
+   "nameZh": "《星球大战 绝地：陨落的武士团™》",
+   "aliases": [],
+   "level": "normal",
+   "rank": 82
+  },
+  {
+   "appId": 1771300,
+   "name": "Kingdom Come: Deliverance II",
+   "nameZh": "天国：拯救2",
+   "aliases": [],
+   "level": "normal",
+   "rank": 83
+  },
+  {
+   "appId": 1446780,
+   "name": "MONSTER HUNTER RISE",
+   "nameZh": "怪物猎人：崛起",
+   "aliases": [],
+   "level": "normal",
+   "rank": 84
+  },
+  {
+   "appId": 1057090,
+   "name": "Ori and the Will of the Wisps",
+   "nameZh": "奥日与萤火意志",
+   "aliases": [],
+   "level": "normal",
+   "rank": 85
+  },
+  {
+   "appId": 1196590,
+   "name": "Resident Evil Village",
+   "nameZh": "生化危机 8：村庄",
+   "aliases": [],
+   "level": "normal",
+   "rank": 86
+  },
+  {
+   "appId": 582160,
+   "name": "Assassin's Creed® Origins",
+   "nameZh": "刺客信条：起源",
+   "aliases": [],
+   "level": "normal",
+   "rank": 87
+  },
+  {
+   "appId": 1151640,
+   "name": "Horizon Zero Dawn™ Complete Edition",
+   "nameZh": "地平线：零之曙光",
+   "aliases": [
+    "Horizon Zero Dawn",
+    "地平线"
+   ],
+   "level": "normal",
+   "rank": 88
+  },
+  {
+   "appId": 1366540,
+   "name": "Dyson Sphere Program",
+   "nameZh": "戴森球计划",
+   "aliases": [],
+   "level": "normal",
+   "rank": 89
+  },
+  {
+   "appId": 3564740,
+   "name": "Where Winds Meet",
+   "nameZh": "燕云十六声",
+   "aliases": [],
+   "level": "normal",
+   "rank": 90
+  },
+  {
+   "appId": 418370,
+   "name": "Resident Evil 7 Biohazard",
+   "nameZh": "生化危机 7",
+   "aliases": [],
+   "level": "normal",
+   "rank": 91
+  },
+  {
+   "appId": 2344520,
+   "name": "Diablo® IV",
+   "nameZh": "《暗黑破坏神® IV》",
+   "aliases": [],
+   "level": "normal",
+   "rank": 92
+  },
+  {
+   "appId": 1888160,
+   "name": "ARMORED CORE™ VI FIRES OF RUBICON™",
+   "nameZh": "机战佣兵™VI 境界天火™",
+   "aliases": [],
+   "level": "normal",
+   "rank": 93
+  },
+  {
+   "appId": 2073620,
+   "name": "Arena Breakout: Infinite",
+   "nameZh": "暗区突围：无限",
+   "aliases": [],
+   "level": "normal",
+   "rank": 94
+  },
+  {
+   "appId": 1627720,
+   "name": "Lies of P",
+   "nameZh": "匹诺曹的谎言",
+   "aliases": [],
+   "level": "normal",
+   "rank": 95
+  },
+  {
+   "appId": 2161700,
+   "name": "Persona 3 Reload",
+   "nameZh": "女神异闻录３ Reload",
+   "aliases": [],
+   "level": "normal",
+   "rank": 96
+  },
+  {
+   "appId": 1850570,
+   "name": "DEATH STRANDING DIRECTOR'S CUT",
+   "nameZh": "死亡搁浅 导演剪辑版",
+   "aliases": [],
+   "level": "normal",
+   "rank": 97
+  },
+  {
+   "appId": 1462040,
+   "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+   "nameZh": "最终幻想 7 重制版 INTERGRADE",
+   "aliases": [],
+   "level": "normal",
+   "rank": 98
+  },
+  {
+   "appId": 2322010,
+   "name": "God of War Ragnarök",
+   "nameZh": "战神：诸神黄昏",
+   "aliases": [],
+   "level": "normal",
+   "rank": 99
+  },
+  {
+   "appId": 2208920,
+   "name": "Assassin's Creed Valhalla",
+   "nameZh": "刺客信条：英灵殿",
+   "aliases": [],
+   "level": "normal",
+   "rank": 100
+  },
+  {
+   "appId": 440,
+   "name": "Team Fortress 2",
+   "nameZh": "军团要塞 2",
+   "aliases": [
+    "TF2"
+   ],
+   "level": "hard",
+   "rank": 101
+  },
+  {
+   "appId": 236390,
+   "name": "War Thunder",
+   "nameZh": "战争雷霆",
+   "aliases": [
+    "战雷"
+   ],
+   "level": "hard",
+   "rank": 102
+  },
+  {
+   "appId": 252950,
+   "name": "Rocket League®",
+   "nameZh": "火箭联盟",
+   "aliases": [],
+   "level": "hard",
+   "rank": 103
+  },
+  {
+   "appId": 221100,
+   "name": "DayZ",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 104
+  },
+  {
+   "appId": 304930,
+   "name": "Unturned",
+   "nameZh": "未转变者",
+   "aliases": [],
+   "level": "hard",
+   "rank": 105
+  },
+  {
+   "appId": 322170,
+   "name": "Geometry Dash",
+   "nameZh": "几何冲刺",
+   "aliases": [],
+   "level": "hard",
+   "rank": 106
+  },
+  {
+   "appId": 108600,
+   "name": "Project Zomboid",
+   "nameZh": "僵尸毁灭工程",
+   "aliases": [],
+   "level": "hard",
+   "rank": 107
+  },
+  {
+   "appId": 394360,
+   "name": "Hearts of Iron IV",
+   "nameZh": "钢铁雄心 IV",
+   "aliases": [
+    "钢铁雄心4",
+    "HOI4"
+   ],
+   "level": "hard",
+   "rank": 108
+  },
+  {
+   "appId": 291550,
+   "name": "Brawlhalla",
+   "nameZh": "英灵乱战",
+   "aliases": [],
+   "level": "hard",
+   "rank": 109
+  },
+  {
+   "appId": 251570,
+   "name": "7 Days to Die",
+   "nameZh": "七日杀",
+   "aliases": [],
+   "level": "hard",
+   "rank": 110
+  },
+  {
+   "appId": 239140,
+   "name": "Dying Light",
+   "nameZh": "消逝的光芒",
+   "aliases": [],
+   "level": "hard",
+   "rank": 111
+  },
+  {
+   "appId": 250900,
+   "name": "The Binding of Isaac: Rebirth",
+   "nameZh": "以撒的结合：重生",
+   "aliases": [],
+   "level": "hard",
+   "rank": 112
+  },
+  {
+   "appId": 275850,
+   "name": "No Man's Sky",
+   "nameZh": "无人深空",
+   "aliases": [],
+   "level": "hard",
+   "rank": 113
+  },
+  {
+   "appId": 284160,
+   "name": "BeamNG.drive",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 114
+  },
+  {
+   "appId": 960090,
+   "name": "Bloons TD 6",
+   "nameZh": "气球塔防 6",
+   "aliases": [],
+   "level": "hard",
+   "rank": 115
+  },
+  {
+   "appId": 438100,
+   "name": "VRChat",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 116
+  },
+  {
+   "appId": 632360,
+   "name": "Risk of Rain 2",
+   "nameZh": "雨中冒险 2",
+   "aliases": [
+    "雨中冒险2"
+   ],
+   "level": "hard",
+   "rank": 117
+  },
+  {
+   "appId": 648800,
+   "name": "Raft",
+   "nameZh": "木筏求生",
+   "aliases": [],
+   "level": "hard",
+   "rank": 118
+  },
+  {
+   "appId": 1808500,
+   "name": "ARC Raiders",
+   "nameZh": "ARC Raiders 弧光突袭",
+   "aliases": [],
+   "level": "hard",
+   "rank": 119
+  },
+  {
+   "appId": 49520,
+   "name": "Borderlands 2",
+   "nameZh": "无主之地 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 120
+  },
+  {
+   "appId": 261550,
+   "name": "Mount & Blade II: Bannerlord",
+   "nameZh": "骑马与砍杀 2：霸主",
+   "aliases": [],
+   "level": "hard",
+   "rank": 121
+  },
+  {
+   "appId": 107410,
+   "name": "Arma 3",
+   "nameZh": "武装突袭3",
+   "aliases": [],
+   "level": "hard",
+   "rank": 122
+  },
+  {
+   "appId": 1063730,
+   "name": "New World: Aeternum",
+   "nameZh": "新世界：永恒",
+   "aliases": [],
+   "level": "hard",
+   "rank": 123
+  },
+  {
+   "appId": 1293830,
+   "name": "Forza Horizon 4",
+   "nameZh": "极限竞速：地平线 4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 124
+  },
+  {
+   "appId": 526870,
+   "name": "Satisfactory",
+   "nameZh": "幸福工厂",
+   "aliases": [],
+   "level": "hard",
+   "rank": 125
+  },
+  {
+   "appId": 3164500,
+   "name": "Schedule I",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 126
+  },
+  {
+   "appId": 294100,
+   "name": "RimWorld",
+   "nameZh": "环世界",
+   "aliases": [],
+   "level": "hard",
+   "rank": 127
+  },
+  {
+   "appId": 264710,
+   "name": "Subnautica",
+   "nameZh": "深海迷航",
+   "aliases": [
+    "美丽水世界"
+   ],
+   "level": "hard",
+   "rank": 128
+  },
+  {
+   "appId": 427520,
+   "name": "Factorio",
+   "nameZh": "异星工厂",
+   "aliases": [],
+   "level": "hard",
+   "rank": 129
+  },
+  {
+   "appId": 3241660,
+   "name": "R.E.P.O.",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 130
+  },
+  {
+   "appId": 10,
+   "name": "Counter-Strike",
+   "nameZh": "反恐精英 1.6",
+   "aliases": [],
+   "level": "hard",
+   "rank": 131
+  },
+  {
+   "appId": 1517290,
+   "name": "Battlefield™ 2042",
+   "nameZh": "《战地风云™ 2042》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 132
+  },
+  {
+   "appId": 1238810,
+   "name": "Battlefield™ V",
+   "nameZh": "战地 V",
+   "aliases": [
+    "Battlefield V",
+    "战地5",
+    "BF5"
+   ],
+   "level": "hard",
+   "rank": 133
+  },
+  {
+   "appId": 1599340,
+   "name": "Lost Ark",
+   "nameZh": "失落的方舟",
+   "aliases": [],
+   "level": "hard",
+   "rank": 134
+  },
+  {
+   "appId": 594650,
+   "name": "Hunt: Showdown 1896",
+   "nameZh": "猎杀：对决 1896",
+   "aliases": [],
+   "level": "hard",
+   "rank": 135
+  },
+  {
+   "appId": 391540,
+   "name": "Undertale",
+   "nameZh": "传说之下",
+   "aliases": [
+    "UT"
+   ],
+   "level": "hard",
+   "rank": 136
+  },
+  {
+   "appId": 8930,
+   "name": "Sid Meier's Civilization® V",
+   "nameZh": "文明 5",
+   "aliases": [],
+   "level": "hard",
+   "rank": 137
+  },
+  {
+   "appId": 393380,
+   "name": "Squad",
+   "nameZh": "战术小队",
+   "aliases": [],
+   "level": "hard",
+   "rank": 138
+  },
+  {
+   "appId": 1222670,
+   "name": "The Sims™ 4",
+   "nameZh": "模拟人生 4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 139
+  },
+  {
+   "appId": 238960,
+   "name": "Path of Exile",
+   "nameZh": "流放之路",
+   "aliases": [],
+   "level": "hard",
+   "rank": 140
+  },
+  {
+   "appId": 1144200,
+   "name": "Ready or Not",
+   "nameZh": "严阵以待",
+   "aliases": [],
+   "level": "hard",
+   "rank": 141
+  },
+  {
+   "appId": 281990,
+   "name": "Stellaris",
+   "nameZh": "群星",
+   "aliases": [],
+   "level": "hard",
+   "rank": 142
+  },
+  {
+   "appId": 1794680,
+   "name": "Vampire Survivors",
+   "nameZh": "吸血鬼幸存者",
+   "aliases": [],
+   "level": "hard",
+   "rank": 143
+  },
+  {
+   "appId": 976730,
+   "name": "Halo: The Master Chief Collection",
+   "nameZh": "光环：士官长合集",
+   "aliases": [],
+   "level": "hard",
+   "rank": 144
+  },
+  {
+   "appId": 311210,
+   "name": "Call of Duty®: Black Ops III",
+   "nameZh": "使命召唤 12：黑色行动 3",
+   "aliases": [],
+   "level": "hard",
+   "rank": 145
+  },
+  {
+   "appId": 22380,
+   "name": "Fallout: New Vegas",
+   "nameZh": "辐射：新维加斯",
+   "aliases": [],
+   "level": "hard",
+   "rank": 146
+  },
+  {
+   "appId": 700330,
+   "name": "SCP: Secret Laboratory",
+   "nameZh": "SCP秘密实验室 / SCP: Secret Laboratory",
+   "aliases": [],
+   "level": "hard",
+   "rank": 147
+  },
+  {
+   "appId": 2073850,
+   "name": "THE FINALS",
+   "nameZh": "最终决战 THE FINALS",
+   "aliases": [],
+   "level": "hard",
+   "rank": 148
+  },
+  {
+   "appId": 813780,
+   "name": "Age of Empires II: Definitive Edition",
+   "nameZh": "帝国时代 2：决定版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 149
+  },
+  {
+   "appId": 2379780,
+   "name": "Balatro",
+   "nameZh": "小丑牌",
+   "aliases": [],
+   "level": "hard",
+   "rank": 150
+  },
+  {
+   "appId": 306130,
+   "name": "The Elder Scrolls® Online",
+   "nameZh": "《上古卷轴®OL》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 151
+  },
+  {
+   "appId": 220,
+   "name": "Half-Life 2",
+   "nameZh": "半条命 2",
+   "aliases": [
+    "半条命2",
+    "半衰期2"
+   ],
+   "level": "hard",
+   "rank": 152
+  },
+  {
+   "appId": 1237970,
+   "name": "Titanfall® 2",
+   "nameZh": "泰坦陨落 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 153
+  },
+  {
+   "appId": 240,
+   "name": "Counter-Strike: Source",
+   "nameZh": "反恐精英：起源",
+   "aliases": [],
+   "level": "hard",
+   "rank": 154
+  },
+  {
+   "appId": 3527290,
+   "name": "PEAK",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 155
+  },
+  {
+   "appId": 435150,
+   "name": "Divinity: Original Sin 2 - Definitive Edition",
+   "nameZh": "神界：原罪2 - 终极版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 156
+  },
+  {
+   "appId": 782330,
+   "name": "DOOM Eternal",
+   "nameZh": "毁灭战士：永恒",
+   "aliases": [
+    "毁灭战士"
+   ],
+   "level": "hard",
+   "rank": 157
+  },
+  {
+   "appId": 2183900,
+   "name": "Warhammer 40,000: Space Marine 2",
+   "nameZh": "Warhammer 40,000: 星际战士2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 158
+  },
+  {
+   "appId": 244210,
+   "name": "Assetto Corsa",
+   "nameZh": "神力科莎 Assetto Corsa",
+   "aliases": [],
+   "level": "hard",
+   "rank": 159
+  },
+  {
+   "appId": 379720,
+   "name": "DOOM",
+   "nameZh": "毁灭战士",
+   "aliases": [],
+   "level": "hard",
+   "rank": 160
+  },
+  {
+   "appId": 236850,
+   "name": "Europa Universalis IV",
+   "nameZh": "欧陆风云 4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 161
+  },
+  {
+   "appId": 203160,
+   "name": "Tomb Raider Game of the Year",
+   "nameZh": "古墓丽影 9 年度版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 162
+  },
+  {
+   "appId": 1158310,
+   "name": "Crusader Kings III",
+   "nameZh": "十字军之王 3",
+   "aliases": [],
+   "level": "hard",
+   "rank": 163
+  },
+  {
+   "appId": 1229490,
+   "name": "ULTRAKILL",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 164
+  },
+  {
+   "appId": 1142710,
+   "name": "Total War: WARHAMMER III",
+   "nameZh": "全面战争：战锤3",
+   "aliases": [],
+   "level": "hard",
+   "rank": 165
+  },
+  {
+   "appId": 1240440,
+   "name": "Halo Infinite",
+   "nameZh": "光环：无限",
+   "aliases": [],
+   "level": "hard",
+   "rank": 166
+  },
+  {
+   "appId": 48700,
+   "name": "Mount & Blade: Warband",
+   "nameZh": "骑马与砍杀：战团",
+   "aliases": [],
+   "level": "hard",
+   "rank": 167
+  },
+  {
+   "appId": 518790,
+   "name": "theHunter: Call of the Wild™",
+   "nameZh": "《猎人：荒野的召唤™》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 168
+  },
+  {
+   "appId": 12210,
+   "name": "Grand Theft Auto IV: The Complete Edition",
+   "nameZh": "侠盗猎车手 4 完整版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 169
+  },
+  {
+   "appId": 588650,
+   "name": "Dead Cells",
+   "nameZh": "死亡细胞",
+   "aliases": [],
+   "level": "hard",
+   "rank": 170
+  },
+  {
+   "appId": 262060,
+   "name": "Darkest Dungeon®",
+   "nameZh": "暗黑地牢",
+   "aliases": [],
+   "level": "hard",
+   "rank": 171
+  },
+  {
+   "appId": 379430,
+   "name": "Kingdom Come: Deliverance",
+   "nameZh": "天国：拯救",
+   "aliases": [],
+   "level": "hard",
+   "rank": 172
+  },
+  {
+   "appId": 1604030,
+   "name": "V Rising",
+   "nameZh": "夜族崛起",
+   "aliases": [],
+   "level": "hard",
+   "rank": 173
+  },
+  {
+   "appId": 457140,
+   "name": "Oxygen Not Included",
+   "nameZh": "缺氧",
+   "aliases": [],
+   "level": "hard",
+   "rank": 174
+  },
+  {
+   "appId": 552520,
+   "name": "Far Cry® 5",
+   "nameZh": "孤岛惊魂 5",
+   "aliases": [],
+   "level": "hard",
+   "rank": 175
+  },
+  {
+   "appId": 698780,
+   "name": "Doki Doki Literature Club!",
+   "nameZh": "心跳文学部",
+   "aliases": [],
+   "level": "hard",
+   "rank": 176
+  },
+  {
+   "appId": 686810,
+   "name": "Hell Let Loose",
+   "nameZh": "人间地狱",
+   "aliases": [],
+   "level": "hard",
+   "rank": 177
+  },
+  {
+   "appId": 304390,
+   "name": "FOR HONOR™",
+   "nameZh": "《荣耀战魂》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 178
+  },
+  {
+   "appId": 513710,
+   "name": "SCUM",
+   "nameZh": "人渣",
+   "aliases": [],
+   "level": "hard",
+   "rank": 179
+  },
+  {
+   "appId": 232090,
+   "name": "Killing Floor 2",
+   "nameZh": "杀戮空间 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 180
+  },
+  {
+   "appId": 1361210,
+   "name": "Warhammer 40,000: Darktide",
+   "nameZh": "战锤40K：暗潮",
+   "aliases": [],
+   "level": "hard",
+   "rank": 181
+  },
+  {
+   "appId": 2139460,
+   "name": "Once Human",
+   "nameZh": "七日世界",
+   "aliases": [],
+   "level": "hard",
+   "rank": 182
+  },
+  {
+   "appId": 400,
+   "name": "Portal",
+   "nameZh": "传送门",
+   "aliases": [],
+   "level": "hard",
+   "rank": 183
+  },
+  {
+   "appId": 211820,
+   "name": "Starbound",
+   "nameZh": "星界边境",
+   "aliases": [],
+   "level": "hard",
+   "rank": 184
+  },
+  {
+   "appId": 570940,
+   "name": "DARK SOULS™: REMASTERED",
+   "nameZh": "黑暗之魂 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 185
+  },
+  {
+   "appId": 2669320,
+   "name": "EA SPORTS FC™ 25",
+   "nameZh": "《EA SPORTS FC™ 25》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 186
+  },
+  {
+   "appId": 899770,
+   "name": "Last Epoch",
+   "nameZh": "最后纪元",
+   "aliases": [],
+   "level": "hard",
+   "rank": 187
+  },
+  {
+   "appId": 1665460,
+   "name": "eFootball™",
+   "nameZh": "实况足球",
+   "aliases": [],
+   "level": "hard",
+   "rank": 188
+  },
+  {
+   "appId": 208650,
+   "name": "Batman™: Arkham Knight",
+   "nameZh": "蝙蝠侠：阿卡姆骑士",
+   "aliases": [],
+   "level": "hard",
+   "rank": 189
+  },
+  {
+   "appId": 2868840,
+   "name": "Slay the Spire 2",
+   "nameZh": "杀戮尖塔 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 190
+  },
+  {
+   "appId": 582660,
+   "name": "Black Desert",
+   "nameZh": "黑色沙漠",
+   "aliases": [],
+   "level": "hard",
+   "rank": 191
+  },
+  {
+   "appId": 39210,
+   "name": "FINAL FANTASY XIV Online",
+   "nameZh": "最终幻想 14",
+   "aliases": [],
+   "level": "hard",
+   "rank": 192
+  },
+  {
+   "appId": 220200,
+   "name": "Kerbal Space Program",
+   "nameZh": "坎巴拉太空计划",
+   "aliases": [],
+   "level": "hard",
+   "rank": 193
+  },
+  {
+   "appId": 508440,
+   "name": "Totally Accurate Battle Simulator",
+   "nameZh": "全面战争模拟器",
+   "aliases": [],
+   "level": "hard",
+   "rank": 194
+  },
+  {
+   "appId": 1942280,
+   "name": "Brotato",
+   "nameZh": "土豆兄弟(Brotato)",
+   "aliases": [],
+   "level": "hard",
+   "rank": 195
+  },
+  {
+   "appId": 1222680,
+   "name": "Need for Speed™ Heat",
+   "nameZh": "《Need for Speed™ Heat",
+   "aliases": [],
+   "level": "hard",
+   "rank": 196
+  },
+  {
+   "appId": 779340,
+   "name": "Total War: THREE KINGDOMS",
+   "nameZh": "全面战争：三国",
+   "aliases": [],
+   "level": "hard",
+   "rank": 197
+  },
+  {
+   "appId": 1092790,
+   "name": "Inscryption",
+   "nameZh": "邪恶冥刻",
+   "aliases": [],
+   "level": "hard",
+   "rank": 198
+  },
+  {
+   "appId": 233860,
+   "name": "Kenshi",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 199
+  },
+  {
+   "appId": 323190,
+   "name": "Frostpunk",
+   "nameZh": "冰汽时代",
+   "aliases": [],
+   "level": "hard",
+   "rank": 200
+  },
+  {
+   "appId": 1332010,
+   "name": "Stray",
+   "nameZh": "迷失 Stray",
+   "aliases": [],
+   "level": "hard",
+   "rank": 201
+  },
+  {
+   "appId": 2881650,
+   "name": "Content Warning",
+   "nameZh": "前方高能",
+   "aliases": [],
+   "level": "hard",
+   "rank": 202
+  },
+  {
+   "appId": 1643320,
+   "name": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+   "nameZh": "潜行者2：切尔诺贝利之心",
+   "aliases": [],
+   "level": "hard",
+   "rank": 203
+  },
+  {
+   "appId": 70,
+   "name": "Half-Life",
+   "nameZh": "半条命",
+   "aliases": [],
+   "level": "hard",
+   "rank": 204
+  },
+  {
+   "appId": 594570,
+   "name": "Total War: WARHAMMER II",
+   "nameZh": "全面战争：战锤2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 205
+  },
+  {
+   "appId": 433340,
+   "name": "Slime Rancher",
+   "nameZh": "史莱姆牧场",
+   "aliases": [],
+   "level": "hard",
+   "rank": 206
+  },
+  {
+   "appId": 319630,
+   "name": "Life is Strange - Episode 1",
+   "nameZh": "奇异人生 第一章",
+   "aliases": [],
+   "level": "hard",
+   "rank": 207
+  },
+  {
+   "appId": 391220,
+   "name": "Rise of the Tomb Raider™",
+   "nameZh": "古墓丽影：崛起",
+   "aliases": [],
+   "level": "hard",
+   "rank": 208
+  },
+  {
+   "appId": 335300,
+   "name": "DARK SOULS™ II: Scholar of the First Sin",
+   "nameZh": "黑暗之魂 2：原罪学者",
+   "aliases": [],
+   "level": "hard",
+   "rank": 209
+  },
+  {
+   "appId": 361420,
+   "name": "ASTRONEER",
+   "nameZh": "异星探险家",
+   "aliases": [],
+   "level": "hard",
+   "rank": 210
+  },
+  {
+   "appId": 268500,
+   "name": "XCOM® 2",
+   "nameZh": "幽浮 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 211
+  },
+  {
+   "appId": 1203620,
+   "name": "Enshrouded",
+   "nameZh": "雾锁王国 (Enshrouded)",
+   "aliases": [],
+   "level": "hard",
+   "rank": 212
+  },
+  {
+   "appId": 2399830,
+   "name": "ARK: Survival Ascended",
+   "nameZh": "方舟: 生存飞升",
+   "aliases": [],
+   "level": "hard",
+   "rank": 213
+  },
+  {
+   "appId": 1167630,
+   "name": "Teardown",
+   "nameZh": "拆迁 Teardown",
+   "aliases": [],
+   "level": "hard",
+   "rank": 214
+  },
+  {
+   "appId": 362890,
+   "name": "Black Mesa",
+   "nameZh": "黑山起源",
+   "aliases": [],
+   "level": "hard",
+   "rank": 215
+  },
+  {
+   "appId": 504230,
+   "name": "Celeste",
+   "nameZh": "蔚蓝",
+   "aliases": [],
+   "level": "hard",
+   "rank": 216
+  },
+  {
+   "appId": 3321460,
+   "name": "Crimson Desert Enhanced",
+   "nameZh": "红色沙漠：增强版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 217
+  },
+  {
+   "appId": 1466860,
+   "name": "Age of Empires IV: Anniversary Edition",
+   "nameZh": "帝国时代 4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 218
+  },
+  {
+   "appId": 219990,
+   "name": "Grim Dawn",
+   "nameZh": "恐怖黎明",
+   "aliases": [],
+   "level": "hard",
+   "rank": 219
+  },
+  {
+   "appId": 219740,
+   "name": "Don't Starve",
+   "nameZh": "饥荒",
+   "aliases": [],
+   "level": "hard",
+   "rank": 220
+  },
+  {
+   "appId": 214950,
+   "name": "Total War: ROME II - Emperor Edition",
+   "nameZh": "全面战争：罗马2 - 帝皇版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 221
+  },
+  {
+   "appId": 1407200,
+   "name": "World of Tanks",
+   "nameZh": "坦克世界",
+   "aliases": [],
+   "level": "hard",
+   "rank": 222
+  },
+  {
+   "appId": 286690,
+   "name": "METRO 2033 Redux",
+   "nameZh": "地铁2033 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 223
+  },
+  {
+   "appId": 356190,
+   "name": "Middle-earth™: Shadow of War™",
+   "nameZh": "中土世界：战争之影",
+   "aliases": [],
+   "level": "hard",
+   "rank": 224
+  },
+  {
+   "appId": 1259420,
+   "name": "Days Gone",
+   "nameZh": "往日不再",
+   "aliases": [],
+   "level": "hard",
+   "rank": 225
+  },
+  {
+   "appId": 412020,
+   "name": "Metro Exodus",
+   "nameZh": "地铁：离乡",
+   "aliases": [],
+   "level": "hard",
+   "rank": 226
+  },
+  {
+   "appId": 1313140,
+   "name": "Cult of the Lamb",
+   "nameZh": "咩咩启示录",
+   "aliases": [],
+   "level": "hard",
+   "rank": 227
+  },
+  {
+   "appId": 1237950,
+   "name": "STAR WARS™ Battlefront™ II",
+   "nameZh": "《STAR WARS™ 前线™ II",
+   "aliases": [],
+   "level": "hard",
+   "rank": 228
+  },
+  {
+   "appId": 225540,
+   "name": "Just Cause™ 3",
+   "nameZh": "正当防卫 3",
+   "aliases": [],
+   "level": "hard",
+   "rank": 229
+  },
+  {
+   "appId": 8870,
+   "name": "BioShock Infinite",
+   "nameZh": "生化奇兵：无限",
+   "aliases": [
+    "生化奇兵无限"
+   ],
+   "level": "hard",
+   "rank": 230
+  },
+  {
+   "appId": 774171,
+   "name": "Muse Dash",
+   "nameZh": "",
+   "aliases": [],
+   "level": "hard",
+   "rank": 231
+  },
+  {
+   "appId": 632470,
+   "name": "Disco Elysium - The Final Cut",
+   "nameZh": "极乐迪斯科 最终剪辑版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 232
+  },
+  {
+   "appId": 2592160,
+   "name": "Dispatch",
+   "nameZh": "Dispatch 超英派遣中心",
+   "aliases": [],
+   "level": "hard",
+   "rank": 233
+  },
+  {
+   "appId": 1217060,
+   "name": "Gunfire Reborn",
+   "nameZh": "枪火重生",
+   "aliases": [],
+   "level": "hard",
+   "rank": 234
+  },
+  {
+   "appId": 287700,
+   "name": "METAL GEAR SOLID V: THE PHANTOM PAIN",
+   "nameZh": "合金装备 5：幻痛",
+   "aliases": [],
+   "level": "hard",
+   "rank": 235
+  },
+  {
+   "appId": 703080,
+   "name": "Planet Zoo",
+   "nameZh": "动物园之星",
+   "aliases": [],
+   "level": "hard",
+   "rank": 236
+  },
+  {
+   "appId": 460930,
+   "name": "Tom Clancy's Ghost Recon® Wildlands",
+   "nameZh": "幽灵行动：荒野",
+   "aliases": [],
+   "level": "hard",
+   "rank": 237
+  },
+  {
+   "appId": 949230,
+   "name": "Cities: Skylines II",
+   "nameZh": "Cities: Skylines II 都市：天际线2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 238
+  },
+  {
+   "appId": 2835570,
+   "name": "Buckshot Roulette",
+   "nameZh": "恶魔轮盘",
+   "aliases": [],
+   "level": "hard",
+   "rank": 239
+  },
+  {
+   "appId": 2623190,
+   "name": "The Elder Scrolls IV: Oblivion Remastered",
+   "nameZh": "上古卷轴 4：湮灭 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 240
+  },
+  {
+   "appId": 728880,
+   "name": "Overcooked! 2",
+   "nameZh": "胡闹厨房 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 241
+  },
+  {
+   "appId": 977950,
+   "name": "A Dance of Fire and Ice",
+   "nameZh": "冰与火之舞 A Dance of Fire and Ice",
+   "aliases": [],
+   "level": "hard",
+   "rank": 242
+  },
+  {
+   "appId": 753640,
+   "name": "Outer Wilds",
+   "nameZh": "星际拓荒",
+   "aliases": [],
+   "level": "hard",
+   "rank": 243
+  },
+  {
+   "appId": 1363080,
+   "name": "Manor Lords",
+   "nameZh": "庄园领主 Manor Lords",
+   "aliases": [],
+   "level": "hard",
+   "rank": 244
+  },
+  {
+   "appId": 1778820,
+   "name": "TEKKEN 8",
+   "nameZh": "铁拳8",
+   "aliases": [],
+   "level": "hard",
+   "rank": 245
+  },
+  {
+   "appId": 424840,
+   "name": "Little Nightmares",
+   "nameZh": "小小梦魇",
+   "aliases": [],
+   "level": "hard",
+   "rank": 246
+  },
+  {
+   "appId": 1260320,
+   "name": "Party Animals",
+   "nameZh": "猛兽派对",
+   "aliases": [],
+   "level": "hard",
+   "rank": 247
+  },
+  {
+   "appId": 447040,
+   "name": "Watch_Dogs® 2",
+   "nameZh": "看门狗 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 248
+  },
+  {
+   "appId": 1774580,
+   "name": "STAR WARS Jedi: Survivor™",
+   "nameZh": "星球大战 绝地：幸存者™",
+   "aliases": [],
+   "level": "hard",
+   "rank": 249
+  },
+  {
+   "appId": 1113000,
+   "name": "Persona 4 Golden",
+   "nameZh": "女神异闻录４ 黄金版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 250
+  },
+  {
+   "appId": 20920,
+   "name": "The Witcher 2: Assassins of Kings Enhanced Edition",
+   "nameZh": "巫师 2：国王刺客 增强版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 251
+  },
+  {
+   "appId": 952060,
+   "name": "Resident Evil 3",
+   "nameZh": "生化危机 3 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 252
+  },
+  {
+   "appId": 1238860,
+   "name": "Battlefield 4™",
+   "nameZh": "《Battlefield 4》™",
+   "aliases": [],
+   "level": "hard",
+   "rank": 253
+  },
+  {
+   "appId": 349040,
+   "name": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 4",
+   "nameZh": "火影忍者 疾风传 终极风暴4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 254
+  },
+  {
+   "appId": 1145350,
+   "name": "Hades II",
+   "nameZh": "哈迪斯 2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 255
+  },
+  {
+   "appId": 750920,
+   "name": "Shadow of the Tomb Raider: Definitive Edition",
+   "nameZh": "古墓丽影：暗影 决定版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 256
+  },
+  {
+   "appId": 546560,
+   "name": "Half-Life: Alyx",
+   "nameZh": "半条命：爱莉克斯",
+   "aliases": [],
+   "level": "hard",
+   "rank": 257
+  },
+  {
+   "appId": 1328670,
+   "name": "Mass Effect™ Legendary Edition",
+   "nameZh": "《质量效应》传奇版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 258
+  },
+  {
+   "appId": 12120,
+   "name": "Grand Theft Auto: San Andreas",
+   "nameZh": "侠盗猎车手：圣安地列斯",
+   "aliases": [],
+   "level": "hard",
+   "rank": 259
+  },
+  {
+   "appId": 35140,
+   "name": "Batman: Arkham Asylum Game of the Year Edition",
+   "nameZh": "蝙蝠侠：阿卡姆疯人院 年度版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 260
+  },
+  {
+   "appId": 638970,
+   "name": "Yakuza 0",
+   "nameZh": "人中之龙０　誓约的场所",
+   "aliases": [],
+   "level": "hard",
+   "rank": 261
+  },
+  {
+   "appId": 678950,
+   "name": "DRAGON BALL FighterZ",
+   "nameZh": "龙珠斗士 Z",
+   "aliases": [],
+   "level": "hard",
+   "rank": 262
+  },
+  {
+   "appId": 200260,
+   "name": "Batman: Arkham City - Game of the Year Edition",
+   "nameZh": "蝙蝠侠：阿卡姆之城 年度版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 263
+  },
+  {
+   "appId": 239030,
+   "name": "Papers, Please",
+   "nameZh": "请出示文件",
+   "aliases": [],
+   "level": "hard",
+   "rank": 264
+  },
+  {
+   "appId": 1295660,
+   "name": "Sid Meier's Civilization VII",
+   "nameZh": "席德·梅尔的文明VII",
+   "aliases": [],
+   "level": "hard",
+   "rank": 265
+  },
+  {
+   "appId": 838350,
+   "name": "The Scroll of Taiwu : Beyond The Dome",
+   "nameZh": "太吾绘卷：天幕心帷",
+   "aliases": [],
+   "level": "hard",
+   "rank": 266
+  },
+  {
+   "appId": 246620,
+   "name": "Plague Inc: Evolved",
+   "nameZh": "瘟疫公司：进化",
+   "aliases": [],
+   "level": "hard",
+   "rank": 267
+  },
+  {
+   "appId": 17390,
+   "name": "SPORE™",
+   "nameZh": "孢子",
+   "aliases": [],
+   "level": "hard",
+   "rank": 268
+  },
+  {
+   "appId": 500,
+   "name": "Left 4 Dead",
+   "nameZh": "求生之路",
+   "aliases": [],
+   "level": "hard",
+   "rank": 269
+  },
+  {
+   "appId": 240720,
+   "name": "Getting Over It with Bennett Foddy",
+   "nameZh": "掘地求升",
+   "aliases": [],
+   "level": "hard",
+   "rank": 270
+  },
+  {
+   "appId": 1325200,
+   "name": "Nioh 2 – The Complete Edition",
+   "nameZh": "仁王２ Complete Edition",
+   "aliases": [],
+   "level": "hard",
+   "rank": 271
+  },
+  {
+   "appId": 206440,
+   "name": "To the Moon",
+   "nameZh": "To the Moon《去月球》",
+   "aliases": [],
+   "level": "hard",
+   "rank": 272
+  },
+  {
+   "appId": 387290,
+   "name": "Ori and the Blind Forest: Definitive Edition",
+   "nameZh": "奥日与黑暗森林 决定版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 273
+  },
+  {
+   "appId": 870780,
+   "name": "CONTROL Ultimate Edition",
+   "nameZh": "控制 - 终极合辑 / Control Ultimate Edition",
+   "aliases": [],
+   "level": "hard",
+   "rank": 274
+  },
+  {
+   "appId": 304430,
+   "name": "INSIDE",
+   "nameZh": "INSIDE 内部",
+   "aliases": [],
+   "level": "hard",
+   "rank": 275
+  },
+  {
+   "appId": 1693980,
+   "name": "Dead Space",
+   "nameZh": "死亡空间",
+   "aliases": [],
+   "level": "hard",
+   "rank": 276
+  },
+  {
+   "appId": 2679460,
+   "name": "Metaphor: ReFantazio",
+   "nameZh": "暗喻幻想：ReFantazio",
+   "aliases": [],
+   "level": "hard",
+   "rank": 277
+  },
+  {
+   "appId": 386940,
+   "name": "Ultimate Chicken Horse",
+   "nameZh": "超级鸡马",
+   "aliases": [],
+   "level": "hard",
+   "rank": 278
+  },
+  {
+   "appId": 666140,
+   "name": "My Time at Portia",
+   "nameZh": "波西亚时光",
+   "aliases": [],
+   "level": "hard",
+   "rank": 279
+  },
+  {
+   "appId": 33230,
+   "name": "Assassin's Creed 2",
+   "nameZh": "刺客信条2",
+   "aliases": [],
+   "level": "hard",
+   "rank": 280
+  },
+  {
+   "appId": 2124490,
+   "name": "SILENT HILL 2",
+   "nameZh": "寂静岭 2 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 281
+  },
+  {
+   "appId": 2593370,
+   "name": "The Hungry Lamb: Traveling in the Late Ming Dynasty",
+   "nameZh": "饿殍：明末千里行",
+   "aliases": [],
+   "level": "hard",
+   "rank": 282
+  },
+  {
+   "appId": 1669980,
+   "name": "Volcano Princess",
+   "nameZh": "火山的女儿",
+   "aliases": [],
+   "level": "hard",
+   "rank": 283
+  },
+  {
+   "appId": 787480,
+   "name": "Phoenix Wright: Ace Attorney Trilogy",
+   "nameZh": "逆转裁判 123 成步堂精选集",
+   "aliases": [],
+   "level": "hard",
+   "rank": 284
+  },
+  {
+   "appId": 1817190,
+   "name": "Marvel’s Spider-Man: Miles Morales",
+   "nameZh": "漫威蜘蛛侠：迈尔斯·莫拉莱斯",
+   "aliases": [],
+   "level": "hard",
+   "rank": 285
+  },
+  {
+   "appId": 48000,
+   "name": "LIMBO",
+   "nameZh": "地狱边境",
+   "aliases": [],
+   "level": "hard",
+   "rank": 286
+  },
+  {
+   "appId": 1876890,
+   "name": "Wandering Sword",
+   "nameZh": "逸剑风云决",
+   "aliases": [],
+   "level": "hard",
+   "rank": 287
+  },
+  {
+   "appId": 2531310,
+   "name": "The Last of Us™ Part II Remastered",
+   "nameZh": "最后生还者 第二部 重制版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 288
+  },
+  {
+   "appId": 1451940,
+   "name": "NEEDY STREAMER OVERLOAD",
+   "nameZh": "主播女孩重度依赖",
+   "aliases": [],
+   "level": "hard",
+   "rank": 289
+  },
+  {
+   "appId": 668580,
+   "name": "Atomic Heart",
+   "nameZh": "原子之心",
+   "aliases": [],
+   "level": "hard",
+   "rank": 290
+  },
+  {
+   "appId": 916440,
+   "name": "Anno 1800",
+   "nameZh": "纪元1800",
+   "aliases": [],
+   "level": "hard",
+   "rank": 291
+  },
+  {
+   "appId": 994280,
+   "name": "Gujian3(古剑奇谭三)",
+   "nameZh": "古剑奇谭三(Gujian3)",
+   "aliases": [],
+   "level": "hard",
+   "rank": 292
+  },
+  {
+   "appId": 535930,
+   "name": "Two Point Hospital",
+   "nameZh": "双点医院",
+   "aliases": [],
+   "level": "hard",
+   "rank": 293
+  },
+  {
+   "appId": 1235140,
+   "name": "Yakuza: Like a Dragon",
+   "nameZh": "人中之龙7　光与暗的去向　国际版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 294
+  },
+  {
+   "appId": 3017860,
+   "name": "DOOM: The Dark Ages",
+   "nameZh": "毁灭战士：黑暗时代",
+   "aliases": [],
+   "level": "hard",
+   "rank": 295
+  },
+  {
+   "appId": 12200,
+   "name": "Bully: Scholarship Edition",
+   "nameZh": "恶霸鲁尼：奖学金版",
+   "aliases": [],
+   "level": "hard",
+   "rank": 296
+  },
+  {
+   "appId": 2322560,
+   "name": "Love Is All Around",
+   "nameZh": "完蛋！我被美女包围了！",
+   "aliases": [],
+   "level": "hard",
+   "rank": 297
+  },
+  {
+   "appId": 4115450,
+   "name": "Phantom Blade Zero",
+   "nameZh": "影之刃零",
+   "aliases": [],
+   "level": "hard",
+   "rank": 298
+  },
+  {
+   "appId": 4162040,
+   "name": "Zenless Zone Zero",
+   "nameZh": "绝区零",
+   "aliases": [],
+   "level": "hard",
+   "rank": 299
+  },
+  {
+   "appId": 4435490,
+   "name": "Call of Duty®: Modern Warfare® 4",
+   "nameZh": "使命召唤：现代战争 4",
+   "aliases": [],
+   "level": "hard",
+   "rank": 300
+  },
+  {
+   "appId": 1118200,
+   "name": "People Playground",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 301
+  },
+  {
+   "appId": 444090,
+   "name": "Paladins®",
+   "nameZh": "枪火游侠",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 302
+  },
+  {
+   "appId": 1867240,
+   "name": "WARDOGS",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 303
+  },
+  {
+   "appId": 270880,
+   "name": "American Truck Simulator",
+   "nameZh": "美国卡车模拟",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 304
+  },
+  {
+   "appId": 552990,
+   "name": "World of Warships",
+   "nameZh": "战舰世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 305
+  },
+  {
+   "appId": 444200,
+   "name": "World of Tanks Blitz",
+   "nameZh": "坦克世界闪电战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 306
+  },
+  {
+   "appId": 433850,
+   "name": "Z1 Battle Royale",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 307
+  },
+  {
+   "appId": 1151340,
+   "name": "Fallout 76",
+   "nameZh": "辐射 76",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 308
+  },
+  {
+   "appId": 1782210,
+   "name": "Crab Game",
+   "nameZh": "螃蟹游戏",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 309
+  },
+  {
+   "appId": 244850,
+   "name": "Space Engineers",
+   "nameZh": "太空工程师",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 310
+  },
+  {
+   "appId": 1677740,
+   "name": "Stumble Guys",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 311
+  },
+  {
+   "appId": 1811260,
+   "name": "EA SPORTS™ FIFA 23",
+   "nameZh": "EA SPORTS™《FIFA 23》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 312
+  },
+  {
+   "appId": 552500,
+   "name": "Warhammer: Vermintide 2",
+   "nameZh": "战锤：末世鼠疫 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 313
+  },
+  {
+   "appId": 440900,
+   "name": "Conan Exiles Enhanced",
+   "nameZh": "流放者柯南 增强版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 314
+  },
+  {
+   "appId": 2195250,
+   "name": "EA SPORTS FC™ 24",
+   "nameZh": "EA SPORTS FC 24",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 315
+  },
+  {
+   "appId": 581320,
+   "name": "Insurgency: Sandstorm",
+   "nameZh": "叛乱：沙漠风暴",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 316
+  },
+  {
+   "appId": 359320,
+   "name": "Elite Dangerous",
+   "nameZh": "精英：危险",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 317
+  },
+  {
+   "appId": 305620,
+   "name": "The Long Dark",
+   "nameZh": "漫漫长夜",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 318
+  },
+  {
+   "appId": 376210,
+   "name": "The Isle",
+   "nameZh": "恐龙岛 The Isle",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 319
+  },
+  {
+   "appId": 386360,
+   "name": "SMITE®",
+   "nameZh": "神之浩劫",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 320
+  },
+  {
+   "appId": 231430,
+   "name": "Company of Heroes 2",
+   "nameZh": "英雄连 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 321
+  },
+  {
+   "appId": 1506830,
+   "name": "FIFA 22",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 322
+  },
+  {
+   "appId": 766570,
+   "name": "Russian Fishing 4",
+   "nameZh": "俄罗斯钓鱼 4",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 323
+  },
+  {
+   "appId": 761890,
+   "name": "Albion Online",
+   "nameZh": "阿尔比恩 ONLINE",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 324
+  },
+  {
+   "appId": 671860,
+   "name": "BattleBit Remastered",
+   "nameZh": "BattleBit 重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 325
+  },
+  {
+   "appId": 1454400,
+   "name": "Cookie Clicker",
+   "nameZh": "饼干点点乐",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 326
+  },
+  {
+   "appId": 1248130,
+   "name": "Farming Simulator 22",
+   "nameZh": "模拟农场 22",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 327
+  },
+  {
+   "appId": 714010,
+   "name": "Aimlabs",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 328
+  },
+  {
+   "appId": 1943950,
+   "name": "Escape the Backrooms",
+   "nameZh": "逃离后室",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 329
+  },
+  {
+   "appId": 387990,
+   "name": "Scrap Mechanic",
+   "nameZh": "废品机械师",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 330
+  },
+  {
+   "appId": 1049590,
+   "name": "Eternal Return",
+   "nameZh": "永恒轮回",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 331
+  },
+  {
+   "appId": 976310,
+   "name": "Mortal Kombat 11",
+   "nameZh": "真人快打 11",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 332
+  },
+  {
+   "appId": 204360,
+   "name": "Castle Crashers®",
+   "nameZh": "城堡破坏者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 333
+  },
+  {
+   "appId": 629760,
+   "name": "MORDHAU",
+   "nameZh": "雷霆一击 MORDHAU",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 334
+  },
+  {
+   "appId": 2054970,
+   "name": "Dragon's Dogma 2",
+   "nameZh": "龙之信条 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 335
+  },
+  {
+   "appId": 2527500,
+   "name": "MiSide",
+   "nameZh": "米塔 MiSide",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 336
+  },
+  {
+   "appId": 962130,
+   "name": "Grounded",
+   "nameZh": "禁闭求生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 337
+  },
+  {
+   "appId": 613100,
+   "name": "House Flipper",
+   "nameZh": "房产达人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 338
+  },
+  {
+   "appId": 1286830,
+   "name": "STAR WARS™: The Old Republic™",
+   "nameZh": "星球大战：旧共和国",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 339
+  },
+  {
+   "appId": 220240,
+   "name": "Far Cry 3",
+   "nameZh": "孤岛惊魂 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 340
+  },
+  {
+   "appId": 1364780,
+   "name": "Street Fighter™ 6",
+   "nameZh": "Street Fighter 6",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 341
+  },
+  {
+   "appId": 286160,
+   "name": "Tabletop Simulator",
+   "nameZh": "桌游模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 342
+  },
+  {
+   "appId": 282070,
+   "name": "This War of Mine",
+   "nameZh": "这是我的战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 343
+  },
+  {
+   "appId": 1973530,
+   "name": "Limbus Company",
+   "nameZh": "边狱公司",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 344
+  },
+  {
+   "appId": 674940,
+   "name": "Stick Fight: The Game",
+   "nameZh": "火柴人乱斗",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 345
+  },
+  {
+   "appId": 2709570,
+   "name": "Supermarket Together",
+   "nameZh": "超市联营",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 346
+  },
+  {
+   "appId": 635260,
+   "name": "CarX Drift Racing Online",
+   "nameZh": "CarX漂移赛车在线",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 347
+  },
+  {
+   "appId": 516750,
+   "name": "My Summer Car",
+   "nameZh": "我的夏季汽车",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 348
+  },
+  {
+   "appId": 223470,
+   "name": "POSTAL 2",
+   "nameZh": "喋血街头 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 349
+  },
+  {
+   "appId": 238320,
+   "name": "Outlast",
+   "nameZh": "逃生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 350
+  },
+  {
+   "appId": 646910,
+   "name": "The Crew™ 2",
+   "nameZh": "飙酷车神 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 351
+  },
+  {
+   "appId": 1046930,
+   "name": "Dota Underlords",
+   "nameZh": "刀塔霸业",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 352
+  },
+  {
+   "appId": 881100,
+   "name": "Noita",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 353
+  },
+  {
+   "appId": 602960,
+   "name": "Barotrauma",
+   "nameZh": "Barotrauma 潜渊症",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 354
+  },
+  {
+   "appId": 848450,
+   "name": "Subnautica: Below Zero",
+   "nameZh": "深海迷航：冰点之下",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 355
+  },
+  {
+   "appId": 2479810,
+   "name": "Gray Zone Warfare",
+   "nameZh": "灰区战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 356
+  },
+  {
+   "appId": 815370,
+   "name": "Green Hell",
+   "nameZh": "绿色地狱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 357
+  },
+  {
+   "appId": 3419430,
+   "name": "Bongo Cat",
+   "nameZh": "邦戈猫 Bongo Cat",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 358
+  },
+  {
+   "appId": 1721470,
+   "name": "Poppy Playtime",
+   "nameZh": "波比的游戏时间",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 359
+  },
+  {
+   "appId": 219150,
+   "name": "Hotline Miami",
+   "nameZh": "火线迈阿密",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 360
+  },
+  {
+   "appId": 365590,
+   "name": "Tom Clancy’s The Division™",
+   "nameZh": "全境封锁",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 361
+  },
+  {
+   "appId": 311690,
+   "name": "Enter the Gungeon",
+   "nameZh": "挺进地牢",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 362
+  },
+  {
+   "appId": 1304930,
+   "name": "The Outlast Trials",
+   "nameZh": "逃生：试炼",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 363
+  },
+  {
+   "appId": 304050,
+   "name": "Trove",
+   "nameZh": "宝藏世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 364
+  },
+  {
+   "appId": 222880,
+   "name": "Insurgency",
+   "nameZh": "叛乱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 365
+  },
+  {
+   "appId": 1030840,
+   "name": "Mafia: Definitive Edition",
+   "nameZh": "《四海兄弟: 最终版》​",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 366
+  },
+  {
+   "appId": 389730,
+   "name": "TEKKEN 7",
+   "nameZh": "铁拳 7",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 367
+  },
+  {
+   "appId": 1250410,
+   "name": "Microsoft Flight Simulator (2020) 40th Anniversary Edition",
+   "nameZh": "微软模拟飞行 2020",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 368
+  },
+  {
+   "appId": 212680,
+   "name": "FTL: Faster Than Light",
+   "nameZh": "超越光速",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 369
+  },
+  {
+   "appId": 2670630,
+   "name": "Supermarket Simulator",
+   "nameZh": "超市模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 370
+  },
+  {
+   "appId": 1284190,
+   "name": "The Planet Crafter",
+   "nameZh": "星球工匠",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 371
+  },
+  {
+   "appId": 380600,
+   "name": "Fishing Planet",
+   "nameZh": "钓鱼星球",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 372
+  },
+  {
+   "appId": 677620,
+   "name": "Splitgate",
+   "nameZh": "裂隙门 Splitgate",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 373
+  },
+  {
+   "appId": 203770,
+   "name": "Crusader Kings II",
+   "nameZh": "十字军之王 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 374
+  },
+  {
+   "appId": 471710,
+   "name": "Rec Room",
+   "nameZh": "Rec Room 游戏室",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 375
+  },
+  {
+   "appId": 1449850,
+   "name": "Yu-Gi-Oh! Master Duel",
+   "nameZh": "游戏王：大师决斗",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 376
+  },
+  {
+   "appId": 241930,
+   "name": "Middle-earth™: Shadow of Mordor™",
+   "nameZh": "中土世界：暗影魔多",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 377
+  },
+  {
+   "appId": 254700,
+   "name": "Resident Evil 4 (2005)",
+   "nameZh": "生化危机 4（2005）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 378
+  },
+  {
+   "appId": 386180,
+   "name": "Crossout Remastered",
+   "nameZh": "创世战车",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 379
+  },
+  {
+   "appId": 20900,
+   "name": "The Witcher: Enhanced Edition Director's Cut",
+   "nameZh": "巫师：加强版 导演剪辑版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 380
+  },
+  {
+   "appId": 588430,
+   "name": "Fallout Shelter",
+   "nameZh": "辐射：避难所",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 381
+  },
+  {
+   "appId": 787860,
+   "name": "Farming Simulator 19",
+   "nameZh": "模拟农场 19",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 382
+  },
+  {
+   "appId": 1289310,
+   "name": "Helltaker",
+   "nameZh": "地狱把妹王 Helltaker",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 383
+  },
+  {
+   "appId": 234140,
+   "name": "Mad Max",
+   "nameZh": "疯狂的麦克斯",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 384
+  },
+  {
+   "appId": 397900,
+   "name": "Business Tour - Board Game with Online Multiplayer",
+   "nameZh": "Business Tour - Board Game with Online Multiplayer(大富翁)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 385
+  },
+  {
+   "appId": 924970,
+   "name": "Back 4 Blood",
+   "nameZh": "喋血复仇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 386
+  },
+  {
+   "appId": 529340,
+   "name": "Victoria 3",
+   "nameZh": "维多利亚 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 387
+  },
+  {
+   "appId": 1621690,
+   "name": "Core Keeper",
+   "nameZh": "护核纪元",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 388
+  },
+  {
+   "appId": 1384160,
+   "name": "GUILTY GEAR -STRIVE-",
+   "nameZh": "罪恶装备 -奋战-",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 389
+  },
+  {
+   "appId": 363970,
+   "name": "Clicker Heroes",
+   "nameZh": "点击英雄",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 390
+  },
+  {
+   "appId": 2483190,
+   "name": "Forza Horizon 6",
+   "nameZh": "极限竞速：地平线 6",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 391
+  },
+  {
+   "appId": 1274570,
+   "name": "DEVOUR",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 392
+  },
+  {
+   "appId": 1150690,
+   "name": "OMORI",
+   "nameZh": "OMORI 奥莫里",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 393
+  },
+  {
+   "appId": 1533390,
+   "name": "Gorilla Tag",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 394
+  },
+  {
+   "appId": 233450,
+   "name": "Prison Architect",
+   "nameZh": "监狱建筑师",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 395
+  },
+  {
+   "appId": 431240,
+   "name": "Golf With Your Friends",
+   "nameZh": "友尽高尔夫",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 396
+  },
+  {
+   "appId": 466560,
+   "name": "Northgard: Definitive Edition",
+   "nameZh": "北加尔 决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 397
+  },
+  {
+   "appId": 636480,
+   "name": "Ravenfield",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 398
+  },
+  {
+   "appId": 207610,
+   "name": "The Walking Dead",
+   "nameZh": "行尸走肉 第一季",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 399
+  },
+  {
+   "appId": 1282100,
+   "name": "REMNANT II®",
+   "nameZh": "遗迹2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 400
+  },
+  {
+   "appId": 495420,
+   "name": "State of Decay 2: Juggernaut Edition",
+   "nameZh": "腐烂国度 2：主宰版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 401
+  },
+  {
+   "appId": 1818750,
+   "name": "MultiVersus",
+   "nameZh": "华纳大乱斗",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 402
+  },
+  {
+   "appId": 493340,
+   "name": "Planet Coaster",
+   "nameZh": "过山车之星",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 403
+  },
+  {
+   "appId": 1790600,
+   "name": "DRAGON BALL: Sparking! ZERO",
+   "nameZh": "七龙珠 电光炸裂！ZERO",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 404
+  },
+  {
+   "appId": 3393110,
+   "name": "AION 2",
+   "nameZh": "永恒之塔 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 405
+  },
+  {
+   "appId": 205100,
+   "name": "Dishonored",
+   "nameZh": "耻辱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 406
+  },
+  {
+   "appId": 218230,
+   "name": "PlanetSide 2",
+   "nameZh": "行星边际 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 407
+  },
+  {
+   "appId": 224260,
+   "name": "No More Room in Hell",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 408
+  },
+  {
+   "appId": 466240,
+   "name": "Deceit",
+   "nameZh": "黑暗逃生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 409
+  },
+  {
+   "appId": 1290000,
+   "name": "PowerWash Simulator",
+   "nameZh": "冲就完事模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 410
+  },
+  {
+   "appId": 291480,
+   "name": "Warface: Clutch",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 411
+  },
+  {
+   "appId": 2878980,
+   "name": "NBA 2K25",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 412
+  },
+  {
+   "appId": 1222700,
+   "name": "A Way Out",
+   "nameZh": "逃出生天",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 413
+  },
+  {
+   "appId": 620980,
+   "name": "Beat Saber",
+   "nameZh": "节奏光剑",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 414
+  },
+  {
+   "appId": 235460,
+   "name": "METAL GEAR RISING: REVENGEANCE",
+   "nameZh": "合金装备崛起：复仇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 415
+  },
+  {
+   "appId": 223710,
+   "name": "Cry of Fear",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 416
+  },
+  {
+   "appId": 3146520,
+   "name": "WEBFISHING",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 417
+  },
+  {
+   "appId": 289650,
+   "name": "Assassin's Creed® Unity",
+   "nameZh": "刺客信条：大革命",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 418
+  },
+  {
+   "appId": 933110,
+   "name": "Age of Empires III: Definitive Edition",
+   "nameZh": "帝国时代 3：决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 419
+  },
+  {
+   "appId": 307690,
+   "name": "Sleeping Dogs: Definitive Edition",
+   "nameZh": "热血无赖 决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 420
+  },
+  {
+   "appId": 346900,
+   "name": "AdVenture Capitalist",
+   "nameZh": "冒险资本家",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 421
+  },
+  {
+   "appId": 644930,
+   "name": "They Are Billions",
+   "nameZh": "亿万僵尸",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 422
+  },
+  {
+   "appId": 331470,
+   "name": "Everlasting Summer",
+   "nameZh": "无尽夏日",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 423
+  },
+  {
+   "appId": 550650,
+   "name": "Black Squad",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 424
+  },
+  {
+   "appId": 3224770,
+   "name": "Umamusume: Pretty Derby",
+   "nameZh": "赛马娘 Pretty Derby",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 425
+  },
+  {
+   "appId": 3405690,
+   "name": "EA SPORTS FC™ 26",
+   "nameZh": "EA SPORTS FC 26",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 426
+  },
+  {
+   "appId": 573090,
+   "name": "Stormworks: Build and Rescue",
+   "nameZh": "风暴工坊：建造与救援",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 427
+  },
+  {
+   "appId": 2300320,
+   "name": "Farming Simulator 25",
+   "nameZh": "模拟农场 25",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 428
+  },
+  {
+   "appId": 1147560,
+   "name": "Skul: The Hero Slayer",
+   "nameZh": "小骨：英雄杀手(Skul: The Hero Slayer)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 429
+  },
+  {
+   "appId": 823130,
+   "name": "Totally Accurate Battlegrounds",
+   "nameZh": "全面吃鸡模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 430
+  },
+  {
+   "appId": 274170,
+   "name": "Hotline Miami 2: Wrong Number",
+   "nameZh": "火线迈阿密2：空号",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 431
+  },
+  {
+   "appId": 1659040,
+   "name": "HITMAN World of Assassination",
+   "nameZh": "杀手：暗杀世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 432
+  },
+  {
+   "appId": 287390,
+   "name": "METRO Last Light Redux",
+   "nameZh": "地铁：最后的曙光 重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 433
+  },
+  {
+   "appId": 1465360,
+   "name": "SnowRunner",
+   "nameZh": "雪地奔驰",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 434
+  },
+  {
+   "appId": 360430,
+   "name": "Mafia III: Definitive Edition",
+   "nameZh": "《四海兄弟 III：最终版》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 435
+  },
+  {
+   "appId": 880940,
+   "name": "Pummel Party",
+   "nameZh": "揍击派对",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 436
+  },
+  {
+   "appId": 2567870,
+   "name": "Chained Together",
+   "nameZh": "链在一起",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 437
+  },
+  {
+   "appId": 505460,
+   "name": "Foxhole",
+   "nameZh": "散兵坑 Foxhole",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 438
+  },
+  {
+   "appId": 298110,
+   "name": "Far Cry® 4",
+   "nameZh": "孤岛惊魂 4",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 439
+  },
+  {
+   "appId": 2231450,
+   "name": "Pizza Tower",
+   "nameZh": "披萨塔",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 440
+  },
+  {
+   "appId": 383870,
+   "name": "Firewatch",
+   "nameZh": "看火人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 441
+  },
+  {
+   "appId": 2338770,
+   "name": "NBA 2K24",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 442
+  },
+  {
+   "appId": 1272080,
+   "name": "PAYDAY 3",
+   "nameZh": "PAYDAY3 (收获日3)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 443
+  },
+  {
+   "appId": 863550,
+   "name": "HITMAN™ 2",
+   "nameZh": "杀手 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 444
+  },
+  {
+   "appId": 544810,
+   "name": "KARDS - The WW2 Card Game",
+   "nameZh": "KARDS - 二战卡牌游戏",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 445
+  },
+  {
+   "appId": 200210,
+   "name": "Realm of the Mad God Exalt",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 446
+  },
+  {
+   "appId": 629730,
+   "name": "Blade and Sorcery",
+   "nameZh": "剑与魔法 Blade and Sorcery",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 447
+  },
+  {
+   "appId": 1919590,
+   "name": "NBA 2K23",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 448
+  },
+  {
+   "appId": 644560,
+   "name": "Mirror",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 449
+  },
+  {
+   "appId": 213670,
+   "name": "South Park™: The Stick of Truth™",
+   "nameZh": "南方公园：真理之杖",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 450
+  },
+  {
+   "appId": 312660,
+   "name": "Sniper Elite 4",
+   "nameZh": "狙击精英 4",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 451
+  },
+  {
+   "appId": 22330,
+   "name": "The Elder Scrolls IV: Oblivion® Game of the Year Edition (2009)",
+   "nameZh": "上古卷轴 4：湮灭 年度版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 452
+  },
+  {
+   "appId": 209000,
+   "name": "Batman™: Arkham Origins",
+   "nameZh": "蝙蝠侠：阿卡姆起源",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 453
+  },
+  {
+   "appId": 1824220,
+   "name": "Chivalry 2",
+   "nameZh": "骑士精神 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 454
+  },
+  {
+   "appId": 489520,
+   "name": "Minion Masters",
+   "nameZh": "随从大师",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 455
+  },
+  {
+   "appId": 211420,
+   "name": "DARK SOULS™: Prepare To Die™ Edition",
+   "nameZh": "黑暗之魂：受死版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 456
+  },
+  {
+   "appId": 1149460,
+   "name": "ICARUS",
+   "nameZh": "翼星求生 ICARUS",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 457
+  },
+  {
+   "appId": 2252570,
+   "name": "Football Manager 2024",
+   "nameZh": "足球经理 2024",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 458
+  },
+  {
+   "appId": 200510,
+   "name": "XCOM: Enemy Unknown",
+   "nameZh": "幽浮：未知敌人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 459
+  },
+  {
+   "appId": 203140,
+   "name": "Hitman: Absolution™",
+   "nameZh": "杀手：赦免",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 460
+  },
+  {
+   "appId": 1874880,
+   "name": "Arma Reforger",
+   "nameZh": "武装突袭 重铸者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 461
+  },
+  {
+   "appId": 1371980,
+   "name": "No Rest for the Wicked",
+   "nameZh": "《恶意不息》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 462
+  },
+  {
+   "appId": 552100,
+   "name": "Brick Rigs",
+   "nameZh": "积木装置 Brick Rigs",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 463
+  },
+  {
+   "appId": 206420,
+   "name": "Saints Row IV: Re-Elected",
+   "nameZh": "黑道圣徒 4：重新当选",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 464
+  },
+  {
+   "appId": 1250,
+   "name": "Killing Floor",
+   "nameZh": "杀戮空间",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 465
+  },
+  {
+   "appId": 601510,
+   "name": "Yu-Gi-Oh! Duel Links",
+   "nameZh": "游戏王：决斗链接",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 466
+  },
+  {
+   "appId": 403640,
+   "name": "Dishonored 2",
+   "nameZh": "耻辱 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 467
+  },
+  {
+   "appId": 285900,
+   "name": "Gang Beasts",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 468
+  },
+  {
+   "appId": 418460,
+   "name": "Rising Storm 2: Vietnam",
+   "nameZh": "风起云涌 2：越南",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 469
+  },
+  {
+   "appId": 493520,
+   "name": "GTFO",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 470
+  },
+  {
+   "appId": 32470,
+   "name": "STAR WARS™ Empire at War - Gold Pack",
+   "nameZh": "星球大战：帝国战争 黄金版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 471
+  },
+  {
+   "appId": 678960,
+   "name": "CODE VEIN",
+   "nameZh": "噬血代码",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 472
+  },
+  {
+   "appId": 454650,
+   "name": "DRAGON BALL XENOVERSE 2",
+   "nameZh": "龙珠：超宇宙 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 473
+  },
+  {
+   "appId": 1206560,
+   "name": "WorldBox - God Simulator",
+   "nameZh": "世界盒子：上帝模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 474
+  },
+  {
+   "appId": 683320,
+   "name": "GRIS",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 475
+  },
+  {
+   "appId": 10180,
+   "name": "Call of Duty®: Modern Warfare® 2 (2009)",
+   "nameZh": "使命召唤 6：现代战争 2（2009）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 476
+  },
+  {
+   "appId": 1129580,
+   "name": "Medieval Dynasty",
+   "nameZh": "中世纪王朝",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 477
+  },
+  {
+   "appId": 881020,
+   "name": "Granblue Fantasy: Relink",
+   "nameZh": "碧蓝幻想 Relink",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 478
+  },
+  {
+   "appId": 568220,
+   "name": "Lobotomy Corporation | Monster Management Simulation",
+   "nameZh": "脑叶公司",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 479
+  },
+  {
+   "appId": 221040,
+   "name": "Resident Evil 6",
+   "nameZh": "生化危机 6",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 480
+  },
+  {
+   "appId": 8500,
+   "name": "EVE Online",
+   "nameZh": "星战前夜 EVE Online",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 481
+  },
+  {
+   "appId": 55230,
+   "name": "Saints Row: The Third",
+   "nameZh": "黑道圣徒 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 482
+  },
+  {
+   "appId": 409710,
+   "name": "BioShock™ Remastered",
+   "nameZh": "生化奇兵 重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 483
+  },
+  {
+   "appId": 1832640,
+   "name": "Mirror 2: Project X",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 484
+  },
+  {
+   "appId": 307780,
+   "name": "Mortal Kombat X",
+   "nameZh": "真人快打 X",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 485
+  },
+  {
+   "appId": 201810,
+   "name": "Wolfenstein: The New Order",
+   "nameZh": "德军总部：新秩序",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 486
+  },
+  {
+   "appId": 3513350,
+   "name": "Wuthering Waves",
+   "nameZh": "鸣潮",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 487
+  },
+  {
+   "appId": 747660,
+   "name": "Five Nights at Freddy's: Security Breach",
+   "nameZh": "玩具熊的五夜后宫：安全漏洞",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 488
+  },
+  {
+   "appId": 760160,
+   "name": "Vampire: The Masquerade - Bloodhunt",
+   "nameZh": "吸血鬼：避世血族 血猎",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 489
+  },
+  {
+   "appId": 412220,
+   "name": "DDNet",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 490
+  },
+  {
+   "appId": 274190,
+   "name": "Broforce",
+   "nameZh": "武装原型 Broforce",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 491
+  },
+  {
+   "appId": 1128810,
+   "name": "RISK: Global Domination",
+   "nameZh": "战国风云：全球统治",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 492
+  },
+  {
+   "appId": 1846380,
+   "name": "Need for Speed™ Unbound",
+   "nameZh": "《极品飞车™：不羁》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 493
+  },
+  {
+   "appId": 1089350,
+   "name": "NBA 2K20",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 494
+  },
+  {
+   "appId": 617290,
+   "name": "Remnant: From the Ashes",
+   "nameZh": "遗迹：灰烬重生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 495
+  },
+  {
+   "appId": 214490,
+   "name": "Alien: Isolation",
+   "nameZh": "异形：隔离",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 496
+  },
+  {
+   "appId": 774361,
+   "name": "Blasphemous",
+   "nameZh": "神之亵渎",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 497
+  },
+  {
+   "appId": 1139900,
+   "name": "Ghostrunner",
+   "nameZh": "Ghostrunner - 幽灵行者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 498
+  },
+  {
+   "appId": 113200,
+   "name": "The Binding of Isaac",
+   "nameZh": "以撒的结合",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 499
+  },
+  {
+   "appId": 3097560,
+   "name": "Liar's Bar",
+   "nameZh": "骗子酒馆",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 500
+  },
+  {
+   "appId": 3070070,
+   "name": "TCG Card Shop Simulator",
+   "nameZh": "TCG卡牌店模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 501
+  },
+  {
+   "appId": 1184370,
+   "name": "Pathfinder: Wrath of the Righteous - Enhanced Edition",
+   "nameZh": "开拓者：正义之怒",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 502
+  },
+  {
+   "appId": 21690,
+   "name": "Resident Evil 5",
+   "nameZh": "生化危机 5",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 503
+  },
+  {
+   "appId": 1418630,
+   "name": "Dread Hunger",
+   "nameZh": "饥饿之船 Dread Hunger",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 504
+  },
+  {
+   "appId": 972660,
+   "name": "Spiritfarer®: Farewell Edition",
+   "nameZh": "《Spiritfarer®》Farewell版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 505
+  },
+  {
+   "appId": 414340,
+   "name": "Hellblade: Senua's Sacrifice",
+   "nameZh": "地狱之刃：塞娜的献祭",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 506
+  },
+  {
+   "appId": 599140,
+   "name": "Graveyard Keeper",
+   "nameZh": "守墓人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 507
+  },
+  {
+   "appId": 637650,
+   "name": "FINAL FANTASY XV WINDOWS EDITION",
+   "nameZh": "最终幻想 15",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 508
+  },
+  {
+   "appId": 460950,
+   "name": "Katana ZERO",
+   "nameZh": "武士零",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 509
+  },
+  {
+   "appId": 238460,
+   "name": "BattleBlock Theater®",
+   "nameZh": "战斗砖块剧场",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 510
+  },
+  {
+   "appId": 10090,
+   "name": "Call of Duty: World at War",
+   "nameZh": "使命召唤 5：战争世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 511
+  },
+  {
+   "appId": 752590,
+   "name": "A Plague Tale: Innocence",
+   "nameZh": "瘟疫传说：无罪",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 512
+  },
+  {
+   "appId": 680420,
+   "name": "OUTRIDERS",
+   "nameZh": "先驱者 OUTRIDERS",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 513
+  },
+  {
+   "appId": 633230,
+   "name": "NARUTO TO BORUTO: SHINOBI STRIKER",
+   "nameZh": "NARUTO TO BORUTO 新忍出击",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 514
+  },
+  {
+   "appId": 6060,
+   "name": "STAR WARS™ Battlefront II (Classic, 2005)",
+   "nameZh": "星球大战：前线 2（经典版）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 515
+  },
+  {
+   "appId": 805550,
+   "name": "Assetto Corsa Competizione",
+   "nameZh": "神力科莎：竞速 Assetto Corsa Competizione",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 516
+  },
+  {
+   "appId": 920210,
+   "name": "LEGO® Star Wars™: The Skywalker Saga",
+   "nameZh": "乐高星球大战：天行者传奇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 517
+  },
+  {
+   "appId": 871720,
+   "name": "Ultimate Custom Night",
+   "nameZh": "终极定制之夜",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 518
+  },
+  {
+   "appId": 1062090,
+   "name": "Timberborn",
+   "nameZh": "海狸浮生记 Timberborn",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 519
+  },
+  {
+   "appId": 851850,
+   "name": "DRAGON BALL Z: KAKAROT",
+   "nameZh": "七龙珠Z 卡卡洛特",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 520
+  },
+  {
+   "appId": 244450,
+   "name": "Men of War: Assault Squad 2",
+   "nameZh": "战争之人：突击小队 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 521
+  },
+  {
+   "appId": 4700,
+   "name": "Total War: MEDIEVAL II – Definitive Edition",
+   "nameZh": "全面战争：中世纪2 - 终极版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 522
+  },
+  {
+   "appId": 648350,
+   "name": "Jurassic World Evolution",
+   "nameZh": "侏罗纪世界：进化",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 523
+  },
+  {
+   "appId": 204100,
+   "name": "Max Payne 3",
+   "nameZh": "马克思·佩恩 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 524
+  },
+  {
+   "appId": 10500,
+   "name": "Total War: EMPIRE – Definitive Edition",
+   "nameZh": "全面战争：帝国 - 终极版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 525
+  },
+  {
+   "appId": 364360,
+   "name": "Total War: WARHAMMER",
+   "nameZh": "全面战争：战锤",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 526
+  },
+  {
+   "appId": 312520,
+   "name": "Rain World",
+   "nameZh": "雨世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 527
+  },
+  {
+   "appId": 690790,
+   "name": "DiRT Rally 2.0",
+   "nameZh": "尘埃拉力赛 2.0",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 528
+  },
+  {
+   "appId": 1501750,
+   "name": "Lords of the Fallen",
+   "nameZh": "Lords of the Fallen 堕落之主",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 529
+  },
+  {
+   "appId": 603850,
+   "name": "Age of History II",
+   "nameZh": "历史时代 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 530
+  },
+  {
+   "appId": 265930,
+   "name": "Goat Simulator",
+   "nameZh": "模拟山羊",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 531
+  },
+  {
+   "appId": 470220,
+   "name": "UNO",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 532
+  },
+  {
+   "appId": 22370,
+   "name": "Fallout 3: Game of the Year Edition",
+   "nameZh": "辐射 3 年度版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 533
+  },
+  {
+   "appId": 2186680,
+   "name": "Warhammer 40,000: Rogue Trader",
+   "nameZh": "Warhammer 40,000: 行商浪人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 534
+  },
+  {
+   "appId": 50130,
+   "name": "Mafia II (Classic)",
+   "nameZh": "四海兄弟 2（经典版）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 535
+  },
+  {
+   "appId": 824270,
+   "name": "KovaaK's",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 536
+  },
+  {
+   "appId": 1244460,
+   "name": "Jurassic World Evolution 2",
+   "nameZh": "侏罗纪世界：进化 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 537
+  },
+  {
+   "appId": 1419170,
+   "name": "My Singing Monsters",
+   "nameZh": "萌怪合唱团",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 538
+  },
+  {
+   "appId": 438040,
+   "name": "Shakes and Fidget",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 539
+  },
+  {
+   "appId": 1119730,
+   "name": "Ranch Simulator: Build, Hunt, Farm",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 540
+  },
+  {
+   "appId": 1677280,
+   "name": "Company of Heroes 3",
+   "nameZh": "英雄连 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 541
+  },
+  {
+   "appId": 480490,
+   "name": "Prey",
+   "nameZh": "掠食",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 542
+  },
+  {
+   "appId": 1017180,
+   "name": "The Long Drive",
+   "nameZh": "漫长的驾驶 The Long Drive",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 543
+  },
+  {
+   "appId": 1845910,
+   "name": "Dragon Age™: The Veilguard",
+   "nameZh": "龙腾世纪™: 影障守护者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 544
+  },
+  {
+   "appId": 502500,
+   "name": "ACE COMBAT™ 7: SKIES UNKNOWN",
+   "nameZh": "皇牌空战 7：未知空域",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 545
+  },
+  {
+   "appId": 2321470,
+   "name": "Deep Rock Galactic: Survivor",
+   "nameZh": "深岩银河：幸存者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 546
+  },
+  {
+   "appId": 1562430,
+   "name": "DREDGE",
+   "nameZh": "《渔帆暗涌》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 547
+  },
+  {
+   "appId": 301520,
+   "name": "Robocraft",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 548
+  },
+  {
+   "appId": 1971870,
+   "name": "Mortal Kombat 1",
+   "nameZh": "真人快打 1",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 549
+  },
+  {
+   "appId": 1259970,
+   "name": "eFootball PES 2021 SEASON UPDATE",
+   "nameZh": "实况足球 2021",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 550
+  },
+  {
+   "appId": 243470,
+   "name": "Watch_Dogs™",
+   "nameZh": "看门狗",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 551
+  },
+  {
+   "appId": 325610,
+   "name": "Total War: ATTILA",
+   "nameZh": "全面战争：阿提拉",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 552
+  },
+  {
+   "appId": 1313860,
+   "name": "EA SPORTS™ FIFA 21",
+   "nameZh": "FIFA 21",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 553
+  },
+  {
+   "appId": 504370,
+   "name": "Battlerite",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 554
+  },
+  {
+   "appId": 346010,
+   "name": "Besiege",
+   "nameZh": "围攻",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 555
+  },
+  {
+   "appId": 367500,
+   "name": "Dragon's Dogma: Dark Arisen",
+   "nameZh": "龙之信条：黑暗觉者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 556
+  },
+  {
+   "appId": 645630,
+   "name": "Car Mechanic Simulator 2018",
+   "nameZh": "汽车修理工模拟 2018",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 557
+  },
+  {
+   "appId": 1210320,
+   "name": "Potion Craft: Alchemist Simulator",
+   "nameZh": "药剂工艺：炼金模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 558
+  },
+  {
+   "appId": 2551020,
+   "name": "One-armed robber",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 559
+  },
+  {
+   "appId": 655500,
+   "name": "MX Bikes",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 560
+  },
+  {
+   "appId": 834910,
+   "name": "ATLAS",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 561
+  },
+  {
+   "appId": 1256670,
+   "name": "Library Of Ruina",
+   "nameZh": "废墟图书馆",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 562
+  },
+  {
+   "appId": 242920,
+   "name": "Banished",
+   "nameZh": "放逐之城",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 563
+  },
+  {
+   "appId": 414700,
+   "name": "Outlast 2",
+   "nameZh": "逃生 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 564
+  },
+  {
+   "appId": 1089980,
+   "name": "The Henry Stickmin Collection",
+   "nameZh": "火柴人亨利合集",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 565
+  },
+  {
+   "appId": 253710,
+   "name": "theHunter Classic",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 566
+  },
+  {
+   "appId": 895400,
+   "name": "Deadside",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 567
+  },
+  {
+   "appId": 261640,
+   "name": "Borderlands: The Pre-Sequel",
+   "nameZh": "无主之地：前传",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 568
+  },
+  {
+   "appId": 1066780,
+   "name": "Transport Fever 2",
+   "nameZh": "狂热运输 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 569
+  },
+  {
+   "appId": 269210,
+   "name": "Hero Siege",
+   "nameZh": "英雄攻城",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 570
+  },
+  {
+   "appId": 109600,
+   "name": "Neverwinter",
+   "nameZh": "无冬 Online",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 571
+  },
+  {
+   "appId": 1476970,
+   "name": "IdleOn - The Incremental MMO",
+   "nameZh": "IdleOn - 放置类MMO",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 572
+  },
+  {
+   "appId": 2221490,
+   "name": "Tom Clancy’s The Division® 2",
+   "nameZh": "全境封锁2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 573
+  },
+  {
+   "appId": 42700,
+   "name": "Call of Duty®: Black Ops",
+   "nameZh": "使命召唤 7：黑色行动",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 574
+  },
+  {
+   "appId": 202970,
+   "name": "Call of Duty®: Black Ops II",
+   "nameZh": "使命召唤 9：黑色行动 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 575
+  },
+  {
+   "appId": 2231380,
+   "name": "Tom Clancy's Ghost Recon® Breakpoint",
+   "nameZh": "幽灵行动：断点",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 576
+  },
+  {
+   "appId": 527230,
+   "name": "For The King",
+   "nameZh": "为了吾王 / For The King",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 577
+  },
+  {
+   "appId": 438740,
+   "name": "Friday the 13th: The Game",
+   "nameZh": "13 号星期五：游戏",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 578
+  },
+  {
+   "appId": 227940,
+   "name": "Heroes & Generals",
+   "nameZh": "英雄与将军",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 579
+  },
+  {
+   "appId": 273110,
+   "name": "Counter-Strike Nexon",
+   "nameZh": "反恐精英 Nexon",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 580
+  },
+  {
+   "appId": 2420510,
+   "name": "HoloCure - Save the Fans!",
+   "nameZh": "HoloCure 拯救粉丝",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 581
+  },
+  {
+   "appId": 313120,
+   "name": "Stranded Deep",
+   "nameZh": "荒岛求生 Stranded Deep",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 582
+  },
+  {
+   "appId": 612880,
+   "name": "Wolfenstein II: The New Colossus",
+   "nameZh": "德军总部 2：新巨像",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 583
+  },
+  {
+   "appId": 47890,
+   "name": "The Sims™ 3",
+   "nameZh": "模拟人生 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 584
+  },
+  {
+   "appId": 843380,
+   "name": "Super Animal Royale",
+   "nameZh": "超级动物大逃杀",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 585
+  },
+  {
+   "appId": 621060,
+   "name": "PC Building Simulator",
+   "nameZh": "装机模拟器 (PC Building Simulator)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 586
+  },
+  {
+   "appId": 253230,
+   "name": "A Hat in Time",
+   "nameZh": "时之帽",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 587
+  },
+  {
+   "appId": 2051620,
+   "name": "Enlisted",
+   "nameZh": "征召 Enlisted",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 588
+  },
+  {
+   "appId": 108710,
+   "name": "Alan Wake",
+   "nameZh": "心灵杀手",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 589
+  },
+  {
+   "appId": 637090,
+   "name": "BATTLETECH",
+   "nameZh": "暴战机甲兵",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 590
+  },
+  {
+   "appId": 223750,
+   "name": "DCS World Steam Edition",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 591
+  },
+  {
+   "appId": 200710,
+   "name": "Torchlight II",
+   "nameZh": "火炬之光 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 592
+  },
+  {
+   "appId": 476600,
+   "name": "Call of Duty®: WWII",
+   "nameZh": "使命召唤 14：二战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 593
+  },
+  {
+   "appId": 319510,
+   "name": "Five Nights at Freddy's",
+   "nameZh": "玩具熊的五夜后宫",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 594
+  },
+  {
+   "appId": 427410,
+   "name": "Abiotic Factor",
+   "nameZh": "非生物因素",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 595
+  },
+  {
+   "appId": 266840,
+   "name": "Age of Mythology: Extended Edition",
+   "nameZh": "神话时代：扩展版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 596
+  },
+  {
+   "appId": 1987080,
+   "name": "Inside the Backrooms",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 597
+  },
+  {
+   "appId": 4500,
+   "name": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+   "nameZh": "潜行者：切尔诺贝利的阴影",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 598
+  },
+  {
+   "appId": 424370,
+   "name": "Wolcen: Lords of Mayhem",
+   "nameZh": "破坏领主",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 599
+  },
+  {
+   "appId": 1922560,
+   "name": "Plants vs. Zombies™ Garden Warfare 2: Deluxe Edition",
+   "nameZh": "Plants vs. Zombies™ Garden Warfare 2:豪华版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 600
+  },
+  {
+   "appId": 3117820,
+   "name": "Sultan's Game",
+   "nameZh": "苏丹的游戏",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 601
+  },
+  {
+   "appId": 383120,
+   "name": "Empyrion - Galactic Survival",
+   "nameZh": "帝国霸业：银河生存",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 602
+  },
+  {
+   "appId": 1644960,
+   "name": "NBA 2K22",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 603
+  },
+  {
+   "appId": 219640,
+   "name": "Chivalry: Medieval Warfare",
+   "nameZh": "骑士精神：中世纪战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 604
+  },
+  {
+   "appId": 1557740,
+   "name": "ROUNDS",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 605
+  },
+  {
+   "appId": 1527950,
+   "name": "Wartales",
+   "nameZh": "战争传说",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 606
+  },
+  {
+   "appId": 1296830,
+   "name": "暖雪 Warm Snow",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 607
+  },
+  {
+   "appId": 2923300,
+   "name": "Banana",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 608
+  },
+  {
+   "appId": 475150,
+   "name": "Titan Quest Anniversary Edition",
+   "nameZh": "泰坦之旅 周年纪念版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 609
+  },
+  {
+   "appId": 860510,
+   "name": "Little Nightmares II",
+   "nameZh": "小小梦魇2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 610
+  },
+  {
+   "appId": 236430,
+   "name": "DARK SOULS™ II",
+   "nameZh": "黑暗之魂 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 611
+  },
+  {
+   "appId": 1100600,
+   "name": "Football Manager 2020",
+   "nameZh": "足球经理 2020",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 612
+  },
+  {
+   "appId": 420530,
+   "name": "OneShot",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 613
+  },
+  {
+   "appId": 1190000,
+   "name": "Car Mechanic Simulator 2021",
+   "nameZh": "汽车修理工模拟 2021",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 614
+  },
+  {
+   "appId": 1336490,
+   "name": "Against the Storm",
+   "nameZh": "风暴之城 Against the Storm",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 615
+  },
+  {
+   "appId": 8190,
+   "name": "Just Cause 2",
+   "nameZh": "正当防卫 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 616
+  },
+  {
+   "appId": 1189490,
+   "name": "觅长生",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 617
+  },
+  {
+   "appId": 2273430,
+   "name": "BlazBlue Entropy Effect",
+   "nameZh": "苍翼：混沌效应",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 618
+  },
+  {
+   "appId": 228380,
+   "name": "Wreckfest",
+   "nameZh": "撞车嘉年华",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 619
+  },
+  {
+   "appId": 674020,
+   "name": "World War 3",
+   "nameZh": "第三次世界大战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 620
+  },
+  {
+   "appId": 1343400,
+   "name": "RuneScape ®",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 621
+  },
+  {
+   "appId": 751780,
+   "name": "Forager",
+   "nameZh": "浮岛物语",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 622
+  },
+  {
+   "appId": 310950,
+   "name": "Street Fighter V",
+   "nameZh": "街头霸王 5",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 623
+  },
+  {
+   "appId": 704270,
+   "name": "Generation Zero®",
+   "nameZh": "零世代",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 624
+  },
+  {
+   "appId": 640820,
+   "name": "Pathfinder: Kingmaker — Enhanced Plus Edition",
+   "nameZh": "开拓者：拥王者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 625
+  },
+  {
+   "appId": 333930,
+   "name": "Dirty Bomb®",
+   "nameZh": "脏弹",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 626
+  },
+  {
+   "appId": 977400,
+   "name": "Cell to Singularity - Evolution Never Ends",
+   "nameZh": "从细胞到奇点：进化永无止境",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 627
+  },
+  {
+   "appId": 337000,
+   "name": "Deus Ex: Mankind Divided",
+   "nameZh": "杀出重围：人类分裂",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 628
+  },
+  {
+   "appId": 1657630,
+   "name": "Slime Rancher 2",
+   "nameZh": "史莱姆牧场 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 629
+  },
+  {
+   "appId": 1062520,
+   "name": "Dinkum",
+   "nameZh": "Dinkum(金垦小镇)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 630
+  },
+  {
+   "appId": 1213210,
+   "name": "Command & Conquer™ Remastered Collection",
+   "nameZh": "《命令与征服™：重制版》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 631
+  },
+  {
+   "appId": 1080110,
+   "name": "F1® 2020",
+   "nameZh": "F1 2020",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 632
+  },
+  {
+   "appId": 335240,
+   "name": "Transformice",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 633
+  },
+  {
+   "appId": 675010,
+   "name": "MudRunner",
+   "nameZh": "旋转轮胎：泥泞奔驰",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 634
+  },
+  {
+   "appId": 4126040,
+   "name": "Aniimo",
+   "nameZh": "伊莫",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 635
+  },
+  {
+   "appId": 699130,
+   "name": "World War Z",
+   "nameZh": "僵尸世界大战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 636
+  },
+  {
+   "appId": 2212330,
+   "name": "Your Only Move Is HUSTLE",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 637
+  },
+  {
+   "appId": 1088850,
+   "name": "Marvel's Guardians of the Galaxy",
+   "nameZh": "漫威银河护卫队",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 638
+  },
+  {
+   "appId": 1449690,
+   "name": "The Walking Dead: The Telltale Definitive Series",
+   "nameZh": "行尸走肉：终极版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 639
+  },
+  {
+   "appId": 1084600,
+   "name": "My Time at Sandrock",
+   "nameZh": "沙石镇时光",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 640
+  },
+  {
+   "appId": 2406770,
+   "name": "Bodycam",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 641
+  },
+  {
+   "appId": 625960,
+   "name": "Stoneshard",
+   "nameZh": "紫色晶石",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 642
+  },
+  {
+   "appId": 960170,
+   "name": "DJMAX RESPECT V",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 643
+  },
+  {
+   "appId": 975370,
+   "name": "Dwarf Fortress",
+   "nameZh": "矮人要塞",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 644
+  },
+  {
+   "appId": 745920,
+   "name": "Temtem",
+   "nameZh": "Temtem / 腾兽",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 645
+  },
+  {
+   "appId": 400750,
+   "name": "Call to Arms - Gates of Hell: Ostfront",
+   "nameZh": "战争号令：地狱之门 东线",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 646
+  },
+  {
+   "appId": 1282730,
+   "name": "Loop Hero",
+   "nameZh": "循环勇士",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 647
+  },
+  {
+   "appId": 767560,
+   "name": "War Robots",
+   "nameZh": "机甲战队",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 648
+  },
+  {
+   "appId": 1369630,
+   "name": "ENDER LILIES: Quietus of the Knights",
+   "nameZh": "终焉之莉莉：骑士寂夜",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 649
+  },
+  {
+   "appId": 1468260,
+   "name": "Leaf Blower Revolution - Idle Game",
+   "nameZh": "吹叶机革命",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 650
+  },
+  {
+   "appId": 392160,
+   "name": "X4: Foundations",
+   "nameZh": "X4：基石",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 651
+  },
+  {
+   "appId": 383980,
+   "name": "Rivals of Aether",
+   "nameZh": "以太之战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 652
+  },
+  {
+   "appId": 611500,
+   "name": "Quake Champions",
+   "nameZh": "雷神之锤：冠军",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 653
+  },
+  {
+   "appId": 2021910,
+   "name": "FPS Chess",
+   "nameZh": "FPS 象棋",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 654
+  },
+  {
+   "appId": 585420,
+   "name": "Trailmakers",
+   "nameZh": "机械制造者 Trailmakers",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 655
+  },
+  {
+   "appId": 1284210,
+   "name": "Guild Wars 2®",
+   "nameZh": "激战 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 656
+  },
+  {
+   "appId": 1584090,
+   "name": "Touhou Mystia's Izakaya",
+   "nameZh": "东方夜雀食堂 - Touhou Mystia's Izakaya",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 657
+  },
+  {
+   "appId": 418240,
+   "name": "Shadow Tactics: Blades of the Shogun",
+   "nameZh": "影子战术：将军之刃",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 658
+  },
+  {
+   "appId": 326460,
+   "name": "ShellShock Live",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 659
+  },
+  {
+   "appId": 50300,
+   "name": "Spec Ops: The Line",
+   "nameZh": "特殊行动：一线生机",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 660
+  },
+  {
+   "appId": 485510,
+   "name": "Nioh: Complete Edition",
+   "nameZh": "仁王 Complete Edition",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 661
+  },
+  {
+   "appId": 692850,
+   "name": "Bloodstained: Ritual of the Night",
+   "nameZh": "血污：夜之仪式",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 662
+  },
+  {
+   "appId": 1401590,
+   "name": "Disney Dreamlight Valley",
+   "nameZh": "迪士尼梦幻星谷",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 663
+  },
+  {
+   "appId": 784150,
+   "name": "Workers & Resources: Soviet Republic",
+   "nameZh": "工人与资源：苏维埃共和国 Workers & Resources: Soviet Republic",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 664
+  },
+  {
+   "appId": 704850,
+   "name": "Thief Simulator",
+   "nameZh": "小偷模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 665
+  },
+  {
+   "appId": 1135690,
+   "name": "Unpacking",
+   "nameZh": "开箱 Unpacking",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 666
+  },
+  {
+   "appId": 1030830,
+   "name": "Mafia II: Definitive Edition",
+   "nameZh": "四海兄弟II 最终版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 667
+  },
+  {
+   "appId": 32370,
+   "name": "STAR WARS™ Knights of the Old Republic™",
+   "nameZh": "星球大战：旧共和国武士",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 668
+  },
+  {
+   "appId": 1284410,
+   "name": "GWENT: The Witcher Card Game",
+   "nameZh": "巫师之昆特牌",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 669
+  },
+  {
+   "appId": 459820,
+   "name": "Crush Crush",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 670
+  },
+  {
+   "appId": 1225330,
+   "name": "NBA 2K21",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 671
+  },
+  {
+   "appId": 207140,
+   "name": "SpeedRunners",
+   "nameZh": "极速奔跑者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 672
+  },
+  {
+   "appId": 1904540,
+   "name": "Football Manager 2023",
+   "nameZh": "足球经理 2023",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 673
+  },
+  {
+   "appId": 1483870,
+   "name": "Draw & Guess",
+   "nameZh": "Draw & Guess - 你画我猜",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 674
+  },
+  {
+   "appId": 1809540,
+   "name": "Nine Sols",
+   "nameZh": "九日",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 675
+  },
+  {
+   "appId": 501300,
+   "name": "What Remains of Edith Finch",
+   "nameZh": "艾迪芬奇的记忆",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 676
+  },
+  {
+   "appId": 245170,
+   "name": "Skullgirls 2nd Encore",
+   "nameZh": "骷髅女孩 2nd Encore",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 677
+  },
+  {
+   "appId": 493490,
+   "name": "City Car Driving",
+   "nameZh": "城市驾驶",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 678
+  },
+  {
+   "appId": 1144400,
+   "name": "Senren＊Banka",
+   "nameZh": "千恋＊万花",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 679
+  },
+  {
+   "appId": 1180380,
+   "name": "Stay Out",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 680
+  },
+  {
+   "appId": 4019220,
+   "name": "Dressmaker",
+   "nameZh": "针影裁梦",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 681
+  },
+  {
+   "appId": 1056640,
+   "name": "Phantasy Star Online 2 New Genesis",
+   "nameZh": "梦幻之星 Online 2 新世纪",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 682
+  },
+  {
+   "appId": 774801,
+   "name": "Crab Champions",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 683
+  },
+  {
+   "appId": 1659420,
+   "name": "UNCHARTED™: Legacy of Thieves Collection",
+   "nameZh": "UNCHARTED™: 盗贼传奇合辑",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 684
+  },
+  {
+   "appId": 282140,
+   "name": "SOMA",
+   "nameZh": "活体脑细胞 SOMA",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 685
+  },
+  {
+   "appId": 1718570,
+   "name": "ASTLIBRA Revision",
+   "nameZh": "神之天平（ASTLIBRA Revision）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 686
+  },
+  {
+   "appId": 105450,
+   "name": "Age of Empires® III (2007)",
+   "nameZh": "帝国时代 3（2007）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 687
+  },
+  {
+   "appId": 555160,
+   "name": "Pavlov",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 688
+  },
+  {
+   "appId": 1997040,
+   "name": "MARVEL SNAP",
+   "nameZh": "漫威终极逆转",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 689
+  },
+  {
+   "appId": 204450,
+   "name": "Call of Juarez: Gunslinger",
+   "nameZh": "狂野西部：枪手",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 690
+  },
+  {
+   "appId": 532210,
+   "name": "Life is Strange 2",
+   "nameZh": "奇异人生 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 691
+  },
+  {
+   "appId": 1859910,
+   "name": "Legend of Mortal",
+   "nameZh": "活侠传",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 692
+  },
+  {
+   "appId": 34030,
+   "name": "Total War: NAPOLEON – Definitive Edition",
+   "nameZh": "全面战争：拿破仑 决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 693
+  },
+  {
+   "appId": 1149620,
+   "name": "Gas Station Simulator",
+   "nameZh": "加油站大亨",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 694
+  },
+  {
+   "appId": 967050,
+   "name": "Pacify",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 695
+  },
+  {
+   "appId": 365360,
+   "name": "Battle Brothers",
+   "nameZh": "战场兄弟 Battle Brothers",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 696
+  },
+  {
+   "appId": 1562700,
+   "name": "SANABI",
+   "nameZh": "闪避刺客",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 697
+  },
+  {
+   "appId": 2369390,
+   "name": "Far Cry® 6",
+   "nameZh": "孤岛惊魂 6",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 698
+  },
+  {
+   "appId": 312530,
+   "name": "Duck Game",
+   "nameZh": "鸭子游戏 Duck Game",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 699
+  },
+  {
+   "appId": 302510,
+   "name": "Ryse: Son of Rome",
+   "nameZh": "崛起：罗马之子",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 700
+  },
+  {
+   "appId": 740130,
+   "name": "Tales of ARISE",
+   "nameZh": "破晓传奇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 701
+  },
+  {
+   "appId": 239820,
+   "name": "Game Dev Tycoon",
+   "nameZh": "游戏开发大亨",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 702
+  },
+  {
+   "appId": 744900,
+   "name": "Dead Frontier 2",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 703
+  },
+  {
+   "appId": 24010,
+   "name": "Train Simulator Classic",
+   "nameZh": "模拟火车 经典版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 704
+  },
+  {
+   "appId": 371660,
+   "name": "Far Cry® Primal",
+   "nameZh": "孤岛惊魂：原始杀戮",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 705
+  },
+  {
+   "appId": 1520470,
+   "name": "Soul Dossier",
+   "nameZh": "灵境奇谈",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 706
+  },
+  {
+   "appId": 1211020,
+   "name": "Wobbly Life",
+   "nameZh": "晃晃人生 / Wobbly Life",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 707
+  },
+  {
+   "appId": 1263850,
+   "name": "Football Manager 2021",
+   "nameZh": "足球经理 2021",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 708
+  },
+  {
+   "appId": 794260,
+   "name": "Outward Definitive Edition",
+   "nameZh": "物质世界 决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 709
+  },
+  {
+   "appId": 755790,
+   "name": "Ring of Elysium",
+   "nameZh": "无限法则",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 710
+  },
+  {
+   "appId": 492720,
+   "name": "Tropico 6",
+   "nameZh": "海岛大亨 6",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 711
+  },
+  {
+   "appId": 1029690,
+   "name": "Sniper Elite 5",
+   "nameZh": "狙击精英5",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 712
+  },
+  {
+   "appId": 597170,
+   "name": "Clone Drone in the Danger Zone",
+   "nameZh": "危险地带的克隆机器人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 713
+  },
+  {
+   "appId": 3932890,
+   "name": "Escape from Tarkov",
+   "nameZh": "逃离塔科夫",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 714
+  },
+  {
+   "appId": 310560,
+   "name": "DiRT Rally",
+   "nameZh": "尘埃拉力赛",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 715
+  },
+  {
+   "appId": 22320,
+   "name": "The Elder Scrolls III: Morrowind® Game of the Year Edition",
+   "nameZh": "上古卷轴 3：晨风 年度版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 716
+  },
+  {
+   "appId": 1569040,
+   "name": "Football Manager 2022",
+   "nameZh": "足球经理 2022",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 717
+  },
+  {
+   "appId": 1254120,
+   "name": "Bless Unleashed",
+   "nameZh": "神佑释放",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 718
+  },
+  {
+   "appId": 1268750,
+   "name": "Starship Troopers: Extermination",
+   "nameZh": "星河战队：灭绝",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 719
+  },
+  {
+   "appId": 884660,
+   "name": "CRSED: Cuisine Royale",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 720
+  },
+  {
+   "appId": 373420,
+   "name": "Divinity: Original Sin - Enhanced Edition",
+   "nameZh": "神界：原罪增强版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 721
+  },
+  {
+   "appId": 1134570,
+   "name": "F1® 2021",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 722
+  },
+  {
+   "appId": 1227890,
+   "name": "Summer Memories",
+   "nameZh": "夏日狂想曲：乡间的难忘回忆",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 723
+  },
+  {
+   "appId": 113400,
+   "name": "APB Reloaded",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 724
+  },
+  {
+   "appId": 297000,
+   "name": "Heroes® of Might & Magic® III - HD Edition",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 725
+  },
+  {
+   "appId": 2218750,
+   "name": "Halls of Torment",
+   "nameZh": "Halls of Torment 苦痛殿堂",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 726
+  },
+  {
+   "appId": 334230,
+   "name": "Town of Salem",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 727
+  },
+  {
+   "appId": 939960,
+   "name": "Far Cry® New Dawn",
+   "nameZh": "孤岛惊魂：新曙光",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 728
+  },
+  {
+   "appId": 569480,
+   "name": "Kingdoms and Castles",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 729
+  },
+  {
+   "appId": 47810,
+   "name": "Dragon Age: Origins - Ultimate Edition",
+   "nameZh": "龙腾世纪：起源 终极版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 730
+  },
+  {
+   "appId": 571740,
+   "name": "Golf It!",
+   "nameZh": "高尔夫球！ Golf It!",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 731
+  },
+  {
+   "appId": 859580,
+   "name": "Imperator: Rome",
+   "nameZh": "大将军：罗马",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 732
+  },
+  {
+   "appId": 641990,
+   "name": "The Escapists 2",
+   "nameZh": "脱逃者 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 733
+  },
+  {
+   "appId": 2378900,
+   "name": "The Coffin of Andy and Leyley",
+   "nameZh": "安迪和莉莉的棺材",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 734
+  },
+  {
+   "appId": 35450,
+   "name": "Red Orchestra 2: Heroes of Stalingrad with Rising Storm",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 735
+  },
+  {
+   "appId": 464920,
+   "name": "Surviving Mars",
+   "nameZh": "火星求生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 736
+  },
+  {
+   "appId": 110800,
+   "name": "L.A. Noire",
+   "nameZh": "黑色洛城",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 737
+  },
+  {
+   "appId": 337320,
+   "name": "Paint the Town Red",
+   "nameZh": "血洗小镇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 738
+  },
+  {
+   "appId": 39140,
+   "name": "FINAL FANTASY VII",
+   "nameZh": "最终幻想 7",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 739
+  },
+  {
+   "appId": 250320,
+   "name": "The Wolf Among Us",
+   "nameZh": "与狼同行",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 740
+  },
+  {
+   "appId": 1158160,
+   "name": "Coral Island",
+   "nameZh": "珊瑚岛",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 741
+  },
+  {
+   "appId": 394510,
+   "name": "HELLDIVERS™ Dive Harder Edition",
+   "nameZh": "绝地潜兵 加强版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 742
+  },
+  {
+   "appId": 2909400,
+   "name": "FINAL FANTASY VII REBIRTH",
+   "nameZh": "最终幻想 7 重生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 743
+  },
+  {
+   "appId": 261030,
+   "name": "The Walking Dead: Season Two",
+   "nameZh": "行尸走肉 第二季",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 744
+  },
+  {
+   "appId": 2420110,
+   "name": "Horizon Forbidden West™ Complete Edition",
+   "nameZh": "《地平线 西之绝境™》完整版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 745
+  },
+  {
+   "appId": 1241100,
+   "name": "POLYGON",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 746
+  },
+  {
+   "appId": 1124300,
+   "name": "HUMANKIND™",
+   "nameZh": "人类",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 747
+  },
+  {
+   "appId": 4262460,
+   "name": "ROB RUN",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 748
+  },
+  {
+   "appId": 292730,
+   "name": "Call of Duty®: Infinite Warfare",
+   "nameZh": "使命召唤 13：无限战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 749
+  },
+  {
+   "appId": 1599600,
+   "name": "PlateUp!",
+   "nameZh": "速速上菜！",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 750
+  },
+  {
+   "appId": 517630,
+   "name": "Just Cause 4 Reloaded",
+   "nameZh": "正当防卫 4",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 751
+  },
+  {
+   "appId": 1455840,
+   "name": "Dorfromantik",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 752
+  },
+  {
+   "appId": 1583320,
+   "name": "Pro Soccer Online",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 753
+  },
+  {
+   "appId": 230290,
+   "name": "Universe Sandbox",
+   "nameZh": "宇宙沙盘",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 754
+  },
+  {
+   "appId": 729040,
+   "name": "Borderlands Game of the Year Enhanced",
+   "nameZh": "无主之地 年度增强版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 755
+  },
+  {
+   "appId": 314160,
+   "name": "Microsoft Flight Simulator X: Steam Edition",
+   "nameZh": "微软模拟飞行 X",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 756
+  },
+  {
+   "appId": 488790,
+   "name": "South Park™: The Fractured But Whole™",
+   "nameZh": "南方公园：完整破碎",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 757
+  },
+  {
+   "appId": 268050,
+   "name": "The Evil Within",
+   "nameZh": "恶灵附身",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 758
+  },
+  {
+   "appId": 221680,
+   "name": "Rocksmith® 2014 Edition REMASTERED LEARN & PLAY",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 759
+  },
+  {
+   "appId": 1948980,
+   "name": "Hero's Adventure: Road to Passion",
+   "nameZh": "大侠立志传：碧血丹心",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 760
+  },
+  {
+   "appId": 2142790,
+   "name": "Fields of Mistria",
+   "nameZh": "米斯特里亚之地",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 761
+  },
+  {
+   "appId": 2384580,
+   "name": "DYNASTY WARRIORS: ORIGINS",
+   "nameZh": "真・三国无双 起源",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 762
+  },
+  {
+   "appId": 1940340,
+   "name": "Darkest Dungeon® II",
+   "nameZh": "暗黑地牢 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 763
+  },
+  {
+   "appId": 295110,
+   "name": "Just Survive",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 764
+  },
+  {
+   "appId": 216150,
+   "name": "MapleStory",
+   "nameZh": "冒险岛",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 765
+  },
+  {
+   "appId": 2407270,
+   "name": "AI LIMIT",
+   "nameZh": "AI LIMIT 无限机兵",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 766
+  },
+  {
+   "appId": 2515020,
+   "name": "FINAL FANTASY XVI",
+   "nameZh": "最终幻想 16",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 767
+  },
+  {
+   "appId": 1288310,
+   "name": "Firework",
+   "nameZh": "烟火",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 768
+  },
+  {
+   "appId": 1258080,
+   "name": "Shop Titans",
+   "nameZh": "传奇商店",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 769
+  },
+  {
+   "appId": 2622000,
+   "name": "Astral Party",
+   "nameZh": "吉星派对",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 770
+  },
+  {
+   "appId": 208580,
+   "name": "STAR WARS™ Knights of the Old Republic™ II - The Sith Lords™",
+   "nameZh": "星球大战：旧共和国武士 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 771
+  },
+  {
+   "appId": 494840,
+   "name": "UBOAT",
+   "nameZh": "U 型潜艇 UBOAT",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 772
+  },
+  {
+   "appId": 242860,
+   "name": "Verdun",
+   "nameZh": "凡尔登",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 773
+  },
+  {
+   "appId": 1286680,
+   "name": "Tiny Tina's Wonderlands",
+   "nameZh": "小缇娜的奇幻之地",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 774
+  },
+  {
+   "appId": 413410,
+   "name": "Danganronpa: Trigger Happy Havoc",
+   "nameZh": "弹丸论破：希望的学园和绝望高中生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 775
+  },
+  {
+   "appId": 383150,
+   "name": "Dead Island Definitive Edition",
+   "nameZh": "死亡岛 决定版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 776
+  },
+  {
+   "appId": 444640,
+   "name": "Bloons TD Battles",
+   "nameZh": "气球塔防对战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 777
+  },
+  {
+   "appId": 1544020,
+   "name": "The Callisto Protocol™",
+   "nameZh": "《木卫四协议》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 778
+  },
+  {
+   "appId": 2456740,
+   "name": "inZOI",
+   "nameZh": "inZOI (云族裔)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 779
+  },
+  {
+   "appId": 1262580,
+   "name": "Need for Speed™ Payback",
+   "nameZh": "极品飞车 20：复仇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 780
+  },
+  {
+   "appId": 939400,
+   "name": "LoveChoice",
+   "nameZh": "LoveChoice 拣爱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 781
+  },
+  {
+   "appId": 41700,
+   "name": "S.T.A.L.K.E.R.: Call of Pripyat",
+   "nameZh": "潜行者：普里皮亚季的召唤",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 782
+  },
+  {
+   "appId": 40800,
+   "name": "Super Meat Boy",
+   "nameZh": "超级食肉男孩",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 783
+  },
+  {
+   "appId": 368500,
+   "name": "Assassin's Creed® Syndicate",
+   "nameZh": "刺客信条：枭雄",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 784
+  },
+  {
+   "appId": 24240,
+   "name": "PAYDAY™ The Heist",
+   "nameZh": "收获日：掠夺",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 785
+  },
+  {
+   "appId": 447530,
+   "name": "VA-11 Hall-A: Cyberpunk Bartender Action",
+   "nameZh": "VA-11 Hall-A 赛博朋克酒保行动",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 786
+  },
+  {
+   "appId": 955900,
+   "name": "Amazing Cultivation Simulator",
+   "nameZh": "了不起的修仙模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 787
+  },
+  {
+   "appId": 221910,
+   "name": "The Stanley Parable",
+   "nameZh": "史丹利的寓言",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 788
+  },
+  {
+   "appId": 257510,
+   "name": "The Talos Principle",
+   "nameZh": "塔罗斯的法则",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 789
+  },
+  {
+   "appId": 1432860,
+   "name": "Sun Haven",
+   "nameZh": "太阳港 Sun Haven",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 790
+  },
+  {
+   "appId": 1106840,
+   "name": "Hydroneer",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 791
+  },
+  {
+   "appId": 1178830,
+   "name": "Bright Memory: Infinite",
+   "nameZh": "光明记忆：无限",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 792
+  },
+  {
+   "appId": 7940,
+   "name": "Call of Duty® 4: Modern Warfare® (2007)",
+   "nameZh": "使命召唤 4：现代战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 793
+  },
+  {
+   "appId": 322500,
+   "name": "SUPERHOT",
+   "nameZh": "燥热 SUPERHOT",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 794
+  },
+  {
+   "appId": 249130,
+   "name": "LEGO® Marvel™ Super Heroes",
+   "nameZh": "乐高漫威超级英雄",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 795
+  },
+  {
+   "appId": 1127400,
+   "name": "Mindustry",
+   "nameZh": "像素工厂 Mindustry",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 796
+  },
+  {
+   "appId": 1337520,
+   "name": "Risk of Rain Returns",
+   "nameZh": "雨中冒险: 回归",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 797
+  },
+  {
+   "appId": 80,
+   "name": "Counter-Strike: Condition Zero",
+   "nameZh": "反恐精英：零点行动",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 798
+  },
+  {
+   "appId": 960990,
+   "name": "Beyond: Two Souls",
+   "nameZh": "超凡双生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 799
+  },
+  {
+   "appId": 9900,
+   "name": "Star Trek Online",
+   "nameZh": "星际迷航 Online",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 800
+  },
+  {
+   "appId": 1669000,
+   "name": "Age of Wonders 4",
+   "nameZh": "奇迹时代 4",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 801
+  },
+  {
+   "appId": 460920,
+   "name": "Steep™",
+   "nameZh": "极限巅峰",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 802
+  },
+  {
+   "appId": 1817230,
+   "name": "Hi-Fi RUSH",
+   "nameZh": "完美音浪",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 803
+  },
+  {
+   "appId": 2141730,
+   "name": "Backrooms: Escape Together",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 804
+  },
+  {
+   "appId": 601430,
+   "name": "The Evil Within 2",
+   "nameZh": "恶灵附身 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 805
+  },
+  {
+   "appId": 2000950,
+   "name": "Call of Duty®: Modern Warfare®",
+   "nameZh": "使命召唤 16：现代战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 806
+  },
+  {
+   "appId": 42680,
+   "name": "Call of Duty®: Modern Warfare® 3 (2011)",
+   "nameZh": "使命召唤 8：现代战争 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 807
+  },
+  {
+   "appId": 2651280,
+   "name": "Marvel's Spider-Man 2",
+   "nameZh": "漫威蜘蛛侠 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 808
+  },
+  {
+   "appId": 582500,
+   "name": "We Were Here",
+   "nameZh": "我们曾在这里",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 809
+  },
+  {
+   "appId": 2066020,
+   "name": "Soulstone Survivors",
+   "nameZh": "灵魂石幸存者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 810
+  },
+  {
+   "appId": 653530,
+   "name": "Return of the Obra Dinn",
+   "nameZh": "奥伯拉丁的回归",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 811
+  },
+  {
+   "appId": 238010,
+   "name": "Deus Ex: Human Revolution - Director's Cut",
+   "nameZh": "杀出重围：人类革命 导演剪辑版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 812
+  },
+  {
+   "appId": 2280,
+   "name": "DOOM + DOOM II",
+   "nameZh": "毁灭战士 + 毁灭战士 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 813
+  },
+  {
+   "appId": 225840,
+   "name": "Sven Co-op",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 814
+  },
+  {
+   "appId": 212500,
+   "name": "The Lord of the Rings Online™",
+   "nameZh": "指环王 Online",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 815
+  },
+  {
+   "appId": 265630,
+   "name": "Fistful of Frags",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 816
+  },
+  {
+   "appId": 992300,
+   "name": "嗜血印 Bloody Spell",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 817
+  },
+  {
+   "appId": 236870,
+   "name": "HITMAN™",
+   "nameZh": "杀手 HITMAN",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 818
+  },
+  {
+   "appId": 2437170,
+   "name": "SMITE 2",
+   "nameZh": "《神之浩劫2》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 819
+  },
+  {
+   "appId": 17410,
+   "name": "Mirror's Edge™",
+   "nameZh": "镜之边缘",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 820
+  },
+  {
+   "appId": 211500,
+   "name": "RaceRoom Racing Experience",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 821
+  },
+  {
+   "appId": 736190,
+   "name": "Chinese Parents",
+   "nameZh": "中国式家长",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 822
+  },
+  {
+   "appId": 1040200,
+   "name": "Crime Scene Cleaner",
+   "nameZh": "犯罪现场清洁工",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 823
+  },
+  {
+   "appId": 1267910,
+   "name": "Melvor Idle",
+   "nameZh": "Melvor Idle 梅尔沃放置",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 824
+  },
+  {
+   "appId": 3678970,
+   "name": "TBH: Task Bar Hero",
+   "nameZh": "TBH: 塔斯克巴·英雄",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 825
+  },
+  {
+   "appId": 997070,
+   "name": "Marvel's Avengers - The Definitive Edition",
+   "nameZh": "Marvel’s Avengers |《漫威复仇者》终极版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 826
+  },
+  {
+   "appId": 555570,
+   "name": "Infestation: The New Z",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 827
+  },
+  {
+   "appId": 1102190,
+   "name": "Monster Train",
+   "nameZh": "怪物火车",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 828
+  },
+  {
+   "appId": 2071280,
+   "name": "Ravenswatch",
+   "nameZh": "Ravenswatch 鸦卫奇旅",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 829
+  },
+  {
+   "appId": 209160,
+   "name": "Call of Duty®: Ghosts",
+   "nameZh": "使命召唤 10：幽灵",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 830
+  },
+  {
+   "appId": 738060,
+   "name": "Freddy Fazbear's Pizzeria Simulator",
+   "nameZh": "玩具熊的五夜后宫：披萨店模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 831
+  },
+  {
+   "appId": 638230,
+   "name": "Journey",
+   "nameZh": "风之旅人",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 832
+  },
+  {
+   "appId": 1044720,
+   "name": "Farthest Frontier",
+   "nameZh": "最远的边陲",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 833
+  },
+  {
+   "appId": 1371580,
+   "name": "Myth of Empires",
+   "nameZh": "帝国神话",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 834
+  },
+  {
+   "appId": 690830,
+   "name": "Foundation",
+   "nameZh": "基石 Foundation",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 835
+  },
+  {
+   "appId": 282800,
+   "name": "100% Orange Juice",
+   "nameZh": "100% 鲜橙汁",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 836
+  },
+  {
+   "appId": 3489700,
+   "name": "Stellar Blade™",
+   "nameZh": "剑星",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 837
+  },
+  {
+   "appId": 339800,
+   "name": "HuniePop",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 838
+  },
+  {
+   "appId": 57300,
+   "name": "Amnesia: The Dark Descent",
+   "nameZh": "失忆症：黑暗后裔",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 839
+  },
+  {
+   "appId": 287290,
+   "name": "Resident Evil Revelations 2",
+   "nameZh": "生化危机：启示录 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 840
+  },
+  {
+   "appId": 1692250,
+   "name": "F1® 22",
+   "nameZh": "F1 22",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 841
+  },
+  {
+   "appId": 409720,
+   "name": "BioShock™ 2 Remastered",
+   "nameZh": "生化奇兵2 重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 842
+  },
+  {
+   "appId": 413420,
+   "name": "Danganronpa 2: Goodbye Despair",
+   "nameZh": "超级弹丸论破 2：再见绝望学园",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 843
+  },
+  {
+   "appId": 1549970,
+   "name": "Aliens: Fireteam Elite",
+   "nameZh": "异形：火力小队精英",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 844
+  },
+  {
+   "appId": 359870,
+   "name": "FINAL FANTASY X/X-2 HD Remaster",
+   "nameZh": "最终幻想 10/10-2 高清重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 845
+  },
+  {
+   "appId": 220440,
+   "name": "DmC: Devil May Cry",
+   "nameZh": "DmC：鬼泣",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 846
+  },
+  {
+   "appId": 1022450,
+   "name": "War Selection",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 847
+  },
+  {
+   "appId": 32440,
+   "name": "LEGO® Star Wars™ - The Complete Saga",
+   "nameZh": "乐高星球大战：全传奇",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 848
+  },
+  {
+   "appId": 304240,
+   "name": "Resident Evil",
+   "nameZh": "生化危机 HD 重制版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 849
+  },
+  {
+   "appId": 1601580,
+   "name": "Frostpunk 2",
+   "nameZh": "冰汽时代2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 850
+  },
+  {
+   "appId": 213610,
+   "name": "Sonic Adventure 2",
+   "nameZh": "索尼克大冒险 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 851
+  },
+  {
+   "appId": 554620,
+   "name": "Life is Strange: Before the Storm",
+   "nameZh": "奇异人生：暴风前夕",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 852
+  },
+  {
+   "appId": 273350,
+   "name": "Evolve Stage 2",
+   "nameZh": "进化 Evolve",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 853
+  },
+  {
+   "appId": 55150,
+   "name": "Warhammer 40,000: Space Marine - Anniversary Edition",
+   "nameZh": "战锤 40K：星际战士 周年版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 854
+  },
+  {
+   "appId": 1448440,
+   "name": "Wo Long: Fallen Dynasty",
+   "nameZh": "Wo Long: Fallen Dynasty （卧龙：苍天陨落）",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 855
+  },
+  {
+   "appId": 12110,
+   "name": "Grand Theft Auto: Vice City",
+   "nameZh": "侠盗猎车手：罪恶都市",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 856
+  },
+  {
+   "appId": 2488620,
+   "name": "F1® 24",
+   "nameZh": "F1 24",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 857
+  },
+  {
+   "appId": 1966900,
+   "name": "20 Minutes Till Dawn",
+   "nameZh": "黎明前20分钟",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 858
+  },
+  {
+   "appId": 1359090,
+   "name": "Zero Hour",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 859
+  },
+  {
+   "appId": 40970,
+   "name": "Stronghold Crusader HD (2012)",
+   "nameZh": "要塞：十字军东征 HD",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 860
+  },
+  {
+   "appId": 1509960,
+   "name": "PICO PARK",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 861
+  },
+  {
+   "appId": 1335200,
+   "name": "Action Taimanin",
+   "nameZh": "Action对魔忍",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 862
+  },
+  {
+   "appId": 24200,
+   "name": "DC Universe™ Online",
+   "nameZh": "DC 超级英雄 Online",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 863
+  },
+  {
+   "appId": 475550,
+   "name": "Beholder",
+   "nameZh": "旁观者 Beholder",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 864
+  },
+  {
+   "appId": 1113560,
+   "name": "NieR Replicant™ ver.1.22474487139...",
+   "nameZh": "尼尔：伪装者 ver.1.22474487139...",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 865
+  },
+  {
+   "appId": 996470,
+   "name": "eFootball  PES 2020",
+   "nameZh": "实况足球 2020",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 866
+  },
+  {
+   "appId": 1343370,
+   "name": "Old School RuneScape",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 867
+  },
+  {
+   "appId": 589290,
+   "name": "Holdfast: Nations At War",
+   "nameZh": "Holdfast 坚守：国家战争",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 868
+  },
+  {
+   "appId": 368260,
+   "name": "Marvel's Midnight Suns",
+   "nameZh": "漫威暗夜之子",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 869
+  },
+  {
+   "appId": 460790,
+   "name": "Bayonetta",
+   "nameZh": "猎天使魔女",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 870
+  },
+  {
+   "appId": 823500,
+   "name": "BONEWORKS",
+   "nameZh": "骨骼工厂 BONEWORKS",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 871
+  },
+  {
+   "appId": 447020,
+   "name": "Farming Simulator 17",
+   "nameZh": "模拟农场 17",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 872
+  },
+  {
+   "appId": 2080690,
+   "name": "Sunkenland",
+   "nameZh": "沉没之地",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 873
+  },
+  {
+   "appId": 2680010,
+   "name": "The First Berserker: Khazan",
+   "nameZh": "第一狂战士：卡赞",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 874
+  },
+  {
+   "appId": 410900,
+   "name": "Forts",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 875
+  },
+  {
+   "appId": 19680,
+   "name": "Alice: Madness Returns",
+   "nameZh": "爱丽丝：疯狂回归",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 876
+  },
+  {
+   "appId": 1934680,
+   "name": "Age of Mythology: Retold",
+   "nameZh": "神话时代：重述版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 877
+  },
+  {
+   "appId": 2646460,
+   "name": "Soulmask",
+   "nameZh": "灵魂面甲(Soulmask)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 878
+  },
+  {
+   "appId": 2072450,
+   "name": "Like a Dragon: Infinite Wealth",
+   "nameZh": "人中之龙８",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 879
+  },
+  {
+   "appId": 692890,
+   "name": "Roboquest",
+   "nameZh": "Roboquest (机械守护者)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 880
+  },
+  {
+   "appId": 627690,
+   "name": "Idle Champions of the Forgotten Realms",
+   "nameZh": "放置冠军：被遗忘的国度",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 881
+  },
+  {
+   "appId": 942970,
+   "name": "Unheard - Voices of Crime",
+   "nameZh": "疑案追声",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 882
+  },
+  {
+   "appId": 1985810,
+   "name": "Call of Duty®: Black Ops Cold War",
+   "nameZh": "使命召唤 17：黑色行动 冷战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 883
+  },
+  {
+   "appId": 392110,
+   "name": "ENDLESS Space™ 2",
+   "nameZh": "无尽空间 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 884
+  },
+  {
+   "appId": 427730,
+   "name": "Who's Your Daddy?!",
+   "nameZh": "谁是你爸爸？！",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 885
+  },
+  {
+   "appId": 1703340,
+   "name": "The Stanley Parable: Ultra Deluxe",
+   "nameZh": "史丹利的寓言：超级豪华版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 886
+  },
+  {
+   "appId": 291650,
+   "name": "Pillars of Eternity",
+   "nameZh": "永恒之柱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 887
+  },
+  {
+   "appId": 285920,
+   "name": "TerraTech",
+   "nameZh": "泰拉科技 TerraTech",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 888
+  },
+  {
+   "appId": 1374490,
+   "name": "RuneScape: Dragonwilds",
+   "nameZh": "RuneScape: Dragonwilds 符文世界：龙之荒野",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 889
+  },
+  {
+   "appId": 622650,
+   "name": "Bendy and the Ink Machine",
+   "nameZh": "班迪与墨水机器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 890
+  },
+  {
+   "appId": 578650,
+   "name": "The Outer Worlds",
+   "nameZh": "天外世界",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 891
+  },
+  {
+   "appId": 2334730,
+   "name": "Death Must Die",
+   "nameZh": "死神必死 Death Must Die",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 892
+  },
+  {
+   "appId": 236110,
+   "name": "Dungeon Defenders II",
+   "nameZh": "地牢守护者 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 893
+  },
+  {
+   "appId": 1466060,
+   "name": "Tainted Grail: The Fall of Avalon",
+   "nameZh": "污痕圣杯：阿瓦隆的陨落",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 894
+  },
+  {
+   "appId": 1189630,
+   "name": "Path Of Wuxia",
+   "nameZh": "侠之道(PathOfWuxia)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 895
+  },
+  {
+   "appId": 3557620,
+   "name": "Blue Archive",
+   "nameZh": "蔚蓝档案",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 896
+  },
+  {
+   "appId": 41070,
+   "name": "Serious Sam 3: BFE",
+   "nameZh": "英雄萨姆 3：BFE",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 897
+  },
+  {
+   "appId": 16900,
+   "name": "GROUND BRANCH",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 898
+  },
+  {
+   "appId": 2138710,
+   "name": "Sifu",
+   "nameZh": "师父 Sifu",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 899
+  },
+  {
+   "appId": 512900,
+   "name": "Streets of Rogue",
+   "nameZh": "地痞街区",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 900
+  },
+  {
+   "appId": 2475490,
+   "name": "Mouthwashing",
+   "nameZh": "缄默祸运",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 901
+  },
+  {
+   "appId": 813820,
+   "name": "Realm Royale Reforged",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 902
+  },
+  {
+   "appId": 1049410,
+   "name": "Superliminal",
+   "nameZh": "超阈限空间 Superliminal",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 903
+  },
+  {
+   "appId": 1097840,
+   "name": "Gears 5",
+   "nameZh": "战争机器 5",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 904
+  },
+  {
+   "appId": 1029780,
+   "name": "Going Medieval",
+   "nameZh": "Going Medieval ( 前往中世纪 )",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 905
+  },
+  {
+   "appId": 65980,
+   "name": "Sid Meier's Civilization®: Beyond Earth™",
+   "nameZh": "文明：太空",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 906
+  },
+  {
+   "appId": 1433140,
+   "name": "The Texas Chain Saw Massacre",
+   "nameZh": "德州电锯杀人狂",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 907
+  },
+  {
+   "appId": 756800,
+   "name": "Contraband Police",
+   "nameZh": "违禁品警察",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 908
+  },
+  {
+   "appId": 627270,
+   "name": "Injustice™ 2",
+   "nameZh": "不义联盟 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 909
+  },
+  {
+   "appId": 24960,
+   "name": "Battlefield: Bad Company™ 2",
+   "nameZh": "战地：叛逆连队 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 910
+  },
+  {
+   "appId": 1252330,
+   "name": "DEATHLOOP",
+   "nameZh": "死亡循环",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 911
+  },
+  {
+   "appId": 673950,
+   "name": "Farm Together",
+   "nameZh": "一起玩农场",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 912
+  },
+  {
+   "appId": 872410,
+   "name": "ROMANCE OF THE THREE KINGDOMS XIV",
+   "nameZh": "三国志14",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 913
+  },
+  {
+   "appId": 1127500,
+   "name": "Mini Motorways",
+   "nameZh": "迷你高速公路",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 914
+  },
+  {
+   "appId": 1458140,
+   "name": "Pacific Drive",
+   "nameZh": "超自然车旅 Pacific Drive",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 915
+  },
+  {
+   "appId": 1681430,
+   "name": "RoboCop: Rogue City",
+   "nameZh": "机械战警：暴戾都市",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 916
+  },
+  {
+   "appId": 300,
+   "name": "Day of Defeat: Source",
+   "nameZh": "胜利之日：起源",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 917
+  },
+  {
+   "appId": 844870,
+   "name": "KurtzPel",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 918
+  },
+  {
+   "appId": 1397920,
+   "name": "Mr.Mine",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 919
+  },
+  {
+   "appId": 669330,
+   "name": "Mechabellum",
+   "nameZh": "钢铁指挥官",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 920
+  },
+  {
+   "appId": 1096530,
+   "name": "Solasta: Crown of the Magister",
+   "nameZh": "索拉斯塔：魔导师之冠",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 921
+  },
+  {
+   "appId": 427290,
+   "name": "Vampyr",
+   "nameZh": "吸血鬼 Vampyr",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 922
+  },
+  {
+   "appId": 42960,
+   "name": "Victoria II",
+   "nameZh": "维多利亚 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 923
+  },
+  {
+   "appId": 1451190,
+   "name": "Undisputed",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 924
+  },
+  {
+   "appId": 2239150,
+   "name": "Thronefall",
+   "nameZh": "Thronefall《王权陨落》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 925
+  },
+  {
+   "appId": 736260,
+   "name": "Baba Is You",
+   "nameZh": "Baba Is You 巴巴是你",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 926
+  },
+  {
+   "appId": 434570,
+   "name": "Blood and Bacon",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 927
+  },
+  {
+   "appId": 954850,
+   "name": "Kerbal Space Program 2",
+   "nameZh": "坎巴拉太空计划 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 928
+  },
+  {
+   "appId": 1222690,
+   "name": "Dragon Age™ Inquisition",
+   "nameZh": "《龙腾世纪审判》",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 929
+  },
+  {
+   "appId": 2427700,
+   "name": "Backpack Battles",
+   "nameZh": "背包乱斗：福西法的宝藏 Backpack Battles",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 930
+  },
+  {
+   "appId": 979690,
+   "name": "The Ascent",
+   "nameZh": "上行战场 / The Ascent",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 931
+  },
+  {
+   "appId": 11020,
+   "name": "TrackMania Nations Forever",
+   "nameZh": "赛道狂飙：国家永恒",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 932
+  },
+  {
+   "appId": 670290,
+   "name": "Real Pool 3D - Poolians",
+   "nameZh": "真实台球3D - Pool",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 933
+  },
+  {
+   "appId": 1262350,
+   "name": "SIGNALIS",
+   "nameZh": "信号 SIGNALIS",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 934
+  },
+  {
+   "appId": 1929610,
+   "name": "Demonologist",
+   "nameZh": "恶魔学家",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 935
+  },
+  {
+   "appId": 736220,
+   "name": "Squad 44",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 936
+  },
+  {
+   "appId": 657200,
+   "name": "Hand Simulator",
+   "nameZh": "模拟手 Hand Simulator",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 937
+  },
+  {
+   "appId": 996580,
+   "name": "Spyro™ Reignited Trilogy",
+   "nameZh": "小龙斯派罗 重燃三部曲",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 938
+  },
+  {
+   "appId": 1190970,
+   "name": "House Flipper 2",
+   "nameZh": "房产达人 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 939
+  },
+  {
+   "appId": 1961460,
+   "name": "PROJECT: PLAYTIME",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 940
+  },
+  {
+   "appId": 1237320,
+   "name": "Sonic Frontiers",
+   "nameZh": "索尼克 未知边境",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 941
+  },
+  {
+   "appId": 228200,
+   "name": "Company of Heroes",
+   "nameZh": "英雄连",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 942
+  },
+  {
+   "appId": 1686940,
+   "name": "Bopl Battle",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 943
+  },
+  {
+   "appId": 903950,
+   "name": "Last Oasis",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 944
+  },
+  {
+   "appId": 1496790,
+   "name": "Gotham Knights",
+   "nameZh": "哥谭骑士",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 945
+  },
+  {
+   "appId": 1388880,
+   "name": "Doki Doki Literature Club Plus!",
+   "nameZh": "心跳文学部 Plus",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 946
+  },
+  {
+   "appId": 238090,
+   "name": "Sniper Elite 3",
+   "nameZh": "狙击精英 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 947
+  },
+  {
+   "appId": 531510,
+   "name": "Just Shapes & Beats",
+   "nameZh": "节奏与形状 Just Shapes & Beats",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 948
+  },
+  {
+   "appId": 9450,
+   "name": "Warhammer® 40,000: Dawn of War® - Soulstorm",
+   "nameZh": "战锤 40K：战争黎明 灵魂风暴",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 949
+  },
+  {
+   "appId": 299740,
+   "name": "Miscreated",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 950
+  },
+  {
+   "appId": 450540,
+   "name": "Hot Dogs, Horseshoes & Hand Grenades",
+   "nameZh": "热狗、马蹄铁和手榴弹 H3VR",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 951
+  },
+  {
+   "appId": 251060,
+   "name": "Wargame: Red Dragon",
+   "nameZh": "战争游戏：红龙",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 952
+  },
+  {
+   "appId": 418530,
+   "name": "Spelunky 2",
+   "nameZh": "洞穴探险 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 953
+  },
+  {
+   "appId": 1222730,
+   "name": "STAR WARS™: Squadrons",
+   "nameZh": "星球大战™：战机中队",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 954
+  },
+  {
+   "appId": 247080,
+   "name": "Crypt of the NecroDancer",
+   "nameZh": "节奏地牢",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 955
+  },
+  {
+   "appId": 204300,
+   "name": "Awesomenauts",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 956
+  },
+  {
+   "appId": 48190,
+   "name": "Assassin’s Creed® Brotherhood",
+   "nameZh": "刺客信条：兄弟会",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 957
+  },
+  {
+   "appId": 107100,
+   "name": "Bastion",
+   "nameZh": "堡垒 Bastion",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 958
+  },
+  {
+   "appId": 225080,
+   "name": "Brothers - A Tale of Two Sons",
+   "nameZh": "兄弟：双子传说",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 959
+  },
+  {
+   "appId": 1435790,
+   "name": "Escape Simulator",
+   "nameZh": "密室逃脱模拟器",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 960
+  },
+  {
+   "appId": 563560,
+   "name": "Alien Swarm: Reactive Drop",
+   "nameZh": "异形丛生：虫启天降 (Alien Swarm: Reactive Drop)",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 961
+  },
+  {
+   "appId": 788100,
+   "name": "Neon Abyss",
+   "nameZh": "霓虹深渊",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 962
+  },
+  {
+   "appId": 394690,
+   "name": "Tower Unite",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 963
+  },
+  {
+   "appId": 1989270,
+   "name": "Slay the Princess — The Pristine Cut",
+   "nameZh": "杀死公主 原始剪辑版",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 964
+  },
+  {
+   "appId": 489630,
+   "name": "Warhammer 40,000: Gladius - Relics of War",
+   "nameZh": "战锤 40K：格雷迪厄斯 遗迹之战",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 965
+  },
+  {
+   "appId": 961200,
+   "name": "Predecessor",
+   "nameZh": "先驱",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 966
+  },
+  {
+   "appId": 631510,
+   "name": "Devil May Cry HD Collection",
+   "nameZh": "鬼泣 HD 合集",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 967
+  },
+  {
+   "appId": 280790,
+   "name": "Creativerse",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 968
+  },
+  {
+   "appId": 99900,
+   "name": "Spiral Knights",
+   "nameZh": "螺旋骑士",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 969
+  },
+  {
+   "appId": 590380,
+   "name": "Into the Breach",
+   "nameZh": "陷阵之志",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 970
+  },
+  {
+   "appId": 1161580,
+   "name": "Hardspace: Shipbreaker",
+   "nameZh": "迷走深空：碎舰师",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 971
+  },
+  {
+   "appId": 2828860,
+   "name": "The Forever Winter",
+   "nameZh": "永恒寒冬",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 972
+  },
+  {
+   "appId": 47780,
+   "name": "Dead Space™ 2",
+   "nameZh": "死亡空间 2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 973
+  },
+  {
+   "appId": 834530,
+   "name": "Yakuza Kiwami (Legacy)",
+   "nameZh": "人中之龙 极 [传承版]",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 974
+  },
+  {
+   "appId": 584400,
+   "name": "Sonic Mania",
+   "nameZh": "索尼克狂欢",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 975
+  },
+  {
+   "appId": 269950,
+   "name": "X-Plane 11",
+   "nameZh": "X-Plane 11 模拟飞行",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 976
+  },
+  {
+   "appId": 544730,
+   "name": "Catan Universe",
+   "nameZh": "卡坦岛宇宙",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 977
+  },
+  {
+   "appId": 707010,
+   "name": "Will To Live Online",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 978
+  },
+  {
+   "appId": 1147690,
+   "name": "NGU IDLE",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 979
+  },
+  {
+   "appId": 1262540,
+   "name": "Need for Speed™",
+   "nameZh": "极品飞车 19",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 980
+  },
+  {
+   "appId": 324800,
+   "name": "Shadow Warrior 2",
+   "nameZh": "影子武士2",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 981
+  },
+  {
+   "appId": 2198150,
+   "name": "Tiny Glade",
+   "nameZh": "微缩世界 Tiny Glade",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 982
+  },
+  {
+   "appId": 997010,
+   "name": "Police Simulator: Patrol Officers",
+   "nameZh": "警察模拟器：巡警",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 983
+  },
+  {
+   "appId": 527430,
+   "name": "Warhammer 40,000: Inquisitor - Martyr",
+   "nameZh": "战锤 40K：审判官 殉道者",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 984
+  },
+  {
+   "appId": 719040,
+   "name": "Wasteland 3",
+   "nameZh": "废土 3",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 985
+  },
+  {
+   "appId": 2108330,
+   "name": "F1® 23",
+   "nameZh": "F1 23",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 986
+  },
+  {
+   "appId": 288160,
+   "name": "The Room",
+   "nameZh": "未上锁的房间",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 987
+  },
+  {
+   "appId": 1931770,
+   "name": "Chants of Sennaar",
+   "nameZh": "巴别塔圣歌",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 988
+  },
+  {
+   "appId": 1583230,
+   "name": "High On Life",
+   "nameZh": "高能人生",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 989
+  },
+  {
+   "appId": 434650,
+   "name": "Lost Castle / 失落城堡",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 990
+  },
+  {
+   "appId": 1262560,
+   "name": "Need for Speed™ Most Wanted",
+   "nameZh": "极品飞车 17：最高通缉",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 991
+  },
+  {
+   "appId": 474960,
+   "name": "Quantum Break",
+   "nameZh": "量子破碎",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 992
+  },
+  {
+   "appId": 453480,
+   "name": "Shadowverse CCG",
+   "nameZh": "影之诗",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 993
+  },
+  {
+   "appId": 50,
+   "name": "Half-Life: Opposing Force",
+   "nameZh": "半条命：针锋相对",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 994
+  },
+  {
+   "appId": 302670,
+   "name": "Call to Arms",
+   "nameZh": "战争号令",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 995
+  },
+  {
+   "appId": 2537590,
+   "name": "Microsoft Flight Simulator 2024",
+   "nameZh": "微软模拟飞行 2024",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 996
+  },
+  {
+   "appId": 841370,
+   "name": "NBA 2K19",
+   "nameZh": "",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 997
+  },
+  {
+   "appId": 246900,
+   "name": "Viscera Cleanup Detail",
+   "nameZh": "内脏清洁工",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 998
+  },
+  {
+   "appId": 1169040,
+   "name": "Necesse",
+   "nameZh": "奈斯启示录 Necesse",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 999
+  },
+  {
+   "appId": 239160,
+   "name": "Thief",
+   "nameZh": "神偷",
+   "aliases": [],
+   "level": "unrated",
+   "rank": 1000
+  }
+ ]
+}

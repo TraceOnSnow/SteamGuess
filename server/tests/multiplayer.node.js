@@ -59,7 +59,7 @@ describe('multiplayer server', () => {
   });
 
   it('builds cumulative multiplayer pools starting at beginner', () => {
-    const catalog = ['beginner', 'easy', 'normal', 'hard', 'hell'].map((level, index) => ({
+    const catalog = ['beginner', 'easy', 'normal', 'hard', 'unrated'].map((level, index) => ({
       appId: index + 1,
       difficulty: { level, score: index * 20 },
     }));
@@ -68,13 +68,14 @@ describe('multiplayer server', () => {
     assert.deepEqual(difficultyPool(catalog, 'easy').map(game => game.appId), [1, 2]);
     assert.deepEqual(difficultyPool(catalog, 'normal').map(game => game.appId), [1, 2, 3]);
     assert.deepEqual(difficultyPool(catalog, 'hard').map(game => game.appId), [1, 2, 3, 4]);
-    assert.deepEqual(difficultyPool(catalog, 'hell').map(game => game.appId), [1, 2, 3, 4, 5]);
+    assert.deepEqual(difficultyPool(catalog, 'unrated'), []);
+    assert.throws(() => settingsSchema.parse({ difficulty: 'unrated' }));
+    assert.equal(settingsSchema.parse({}).currency, 'CNY');
     assert.equal(settingsSchema.parse({
       difficulty: 'beginner',
       bestOf: 1,
       maxPlayers: 2,
       roundTimeSeconds: 120,
-      visibleFields: ['price'],
     }).difficulty, 'beginner');
   });
 
@@ -82,7 +83,7 @@ describe('multiplayer server', () => {
     const { connect, dbPath, multiplayer } = await fixture(); const a = connect(); let b = connect(); cleanup.push(async () => { a.close(); b.close(); });
     assert.equal(multiplayer.health().roomStore, 'memory');
     await Promise.all([waitFor(a, 'connect'), waitFor(b, 'connect')]);
-    const created = await emit(a, 'room:create', { playerId: 'player_test_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, roundTimeSeconds: 120, visibleFields: ['price'] }, commandId: 'command_create_a' });
+    const created = await emit(a, 'room:create', { playerId: 'player_test_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, roundTimeSeconds: 120 }, commandId: 'command_create_a' });
     assert.equal(created.ok, true); assert.equal('answerAppId' in created.data.room, false);
     const room = created.data.room;
     const joined = await emit(b, 'room:join', { playerId: 'player_test_bravo_456', roomCode: room.code, displayName: 'B', commandId: 'command_join_b' }); assert.equal(joined.ok, true);
@@ -102,11 +103,12 @@ describe('multiplayer server', () => {
     assert.equal(snapshot.lastRound, null);
     const endedPromise = waitFor(a, 'round:ended');
     const guessed = await emit(a, 'round:guess', { roomId: room.id, roundId: snapshot.activeRound.id, guessAppId: 10, commandId: 'command_guess_exact_a' });
-    assert.equal(guessed.ok, true); assert.equal(guessed.data.feedback.isCorrect, true); assert.deepEqual(guessed.data.feedback.fields.map(field => field.fieldName), ['price']); assert.deepEqual(guessed.data.feedback.matchingTags, []); assert.equal(JSON.stringify(guessed).includes('correctValue'), false);
+    assert.equal(guessed.ok, true); assert.equal(guessed.data.feedback.isCorrect, true); assert.deepEqual(Object.keys(guessed.data.feedback.fields), ['price', 'popularity', 'reviews', 'rating', 'releaseDate']); assert.equal(JSON.stringify(guessed).includes('correctValue'), false);
     const ended = await endedPromise; assert.equal(ended.answer.appId, 10); assert.equal(ended.winnerPlayerId, created.data.playerId);
     assert.deepEqual(ended.answer.hints.screenshotUrls, testCatalog[0].hints.screenshotUrls);
     const finished = await emit(b, 'room:resume', { roomCode: room.code, playerId: joined.data.playerId, resumeToken: joined.data.resumeToken });
     assert.equal(finished.data.room.lastRound.answer.appId, 10);
+    assert.deepEqual(finished.data.room.lastRound.results, []);
     assert.deepEqual(finished.data.room.lastRound.answer.hints.screenshotUrls, testCatalog[0].hints.screenshotUrls);
     const stored = openDatabase(dbPath); assert.equal(stored.prepare('SELECT COUNT(*) AS count FROM multiplayer_matches').get().count, 1); stored.close();
     const replay = await emit(a, 'round:guess', { roomId: room.id, roundId: snapshot.activeRound.id, guessAppId: 10, commandId: 'command_guess_exact_a' });
@@ -122,7 +124,7 @@ describe('multiplayer server', () => {
     const a = connect(); const b = connect(); const c = connect(); const d = connect();
     cleanup.push(async () => { a.close(); b.close(); c.close(); d.close(); });
     await Promise.all([waitFor(a, 'connect'), waitFor(b, 'connect'), waitFor(c, 'connect'), waitFor(d, 'connect')]);
-    const created = await emit(a, 'room:create', { playerId: 'player_multi_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, maxPlayers: 3, roundTimeSeconds: 120, visibleFields: ['price'] }, commandId: 'command_multi_create' });
+    const created = await emit(a, 'room:create', { playerId: 'player_multi_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, maxPlayers: 3, roundTimeSeconds: 120 }, commandId: 'command_multi_create' });
     assert.equal(created.ok, true); const room = created.data.room; assert.equal(room.settings.maxPlayers, 3);
     const joinedB = await emit(b, 'room:join', { playerId: 'player_multi_bravo_456', roomCode: room.code, displayName: 'B', commandId: 'command_multi_join_b' });
     const joinedC = await emit(c, 'room:join', { playerId: 'player_multi_charlie_789', roomCode: room.code, displayName: 'C', commandId: 'command_multi_join_c' });
@@ -143,7 +145,7 @@ describe('multiplayer server', () => {
   it('supports BO3 across multiple authoritative rounds', async () => {
     const { connect } = await fixture(); const a = connect(); const b = connect(); cleanup.push(async () => { a.close(); b.close(); });
     await Promise.all([waitFor(a, 'connect'), waitFor(b, 'connect')]);
-    const created = await emit(a, 'room:create', { playerId: 'player_bo3_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 3, roundTimeSeconds: 120, visibleFields: ['price'] }, commandId: 'command_bo3_create' });
+    const created = await emit(a, 'room:create', { playerId: 'player_bo3_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 3, roundTimeSeconds: 120 }, commandId: 'command_bo3_create' });
     const room = created.data.room;
     const joined = await emit(b, 'room:join', { playerId: 'player_bo3_bravo_456', roomCode: room.code, displayName: 'B', commandId: 'command_bo3_join' }); assert.equal(joined.ok, true);
     await emit(a, 'lobby:set-ready', { roomId: room.id, ready: true, commandId: 'command_bo3_ready_a' }); await emit(b, 'lobby:set-ready', { roomId: room.id, ready: true, commandId: 'command_bo3_ready_b' });
@@ -158,7 +160,7 @@ describe('multiplayer server', () => {
     const { connect } = await fixture(); const a = connect(); const b = connect(); cleanup.push(async () => { a.close(); b.close(); });
     await Promise.all([waitFor(a, 'connect'), waitFor(b, 'connect')]);
     const invalid = await emit(a, 'room:create', { playerId: 'bad', displayName: 'x'.repeat(100), commandId: 'bad' }); assert.equal(invalid.ok, false); assert.equal(invalid.error.code, 'INVALID_PAYLOAD');
-    const created = await emit(a, 'room:create', { playerId: 'player_dc_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, roundTimeSeconds: 120, visibleFields: ['price'] }, commandId: 'command_dc_create' }); const room = created.data.room;
+    const created = await emit(a, 'room:create', { playerId: 'player_dc_alpha_123', displayName: 'A', settings: { difficulty: 'normal', bestOf: 1, roundTimeSeconds: 120 }, commandId: 'command_dc_create' }); const room = created.data.room;
     await emit(b, 'room:join', { playerId: 'player_dc_bravo_456', roomCode: room.code, displayName: 'B', commandId: 'command_dc_join' });
     await emit(a, 'lobby:set-ready', { roomId: room.id, ready: true, commandId: 'command_dc_ready_a' }); await emit(b, 'lobby:set-ready', { roomId: room.id, ready: true, commandId: 'command_dc_ready_b' });
     const playingPromise = waitForWhere(a, 'room:snapshot', value => value.status === 'playing'); await emit(a, 'match:start', { roomId: room.id, commandId: 'command_dc_start' }); await playingPromise;

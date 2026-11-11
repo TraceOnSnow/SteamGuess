@@ -1,0 +1,16 @@
+{
+  "note": "The Game Awards 'Game of the Year' nominees that are sold on Steam, by ceremony year. Nominees not on Steam (Nintendo, Epic exclusives) are left out. A remaster or definitive edition stands in for the nominated original. Add a year by hand after each ceremony.",
+  "gameOfTheYear": {
+    "2015": [292030, 377160, 287700],
+    "2016": [379720, 304430, 1237970],
+    "2017": [1151640, 1687950, 578080],
+    "2018": [1593500, 812140, 504230, 1817070, 582010, 1174180],
+    "2019": [814380, 870780, 1850570, 883710, 753640],
+    "2020": [2531310, 782330, 1462040, 2215430, 1145360],
+    "2021": [1426210, 1252330, 607080, 1895880, 1196590],
+    "2022": [1245620, 1182900, 2322010, 2420110, 1332010],
+    "2023": [1086940, 2651280, 2050650],
+    "2024": [2379780, 2358720, 1245620, 2909400, 2679460],
+    "2025": [1903340, 1145350, 1030300, 1771300]
+  }
+}

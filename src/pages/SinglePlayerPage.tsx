@@ -1,132 +1,258 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { compareGames } from '../../shared/game-rules.js';
+import { completeSession, createGameSession, getPlayerId, submitAnswerFeedback } from '../api/client';
+import { CustomPresetEditor } from '../components/CustomPresetEditor';
+import { GuessCard } from '../components/GuessCard';
+import { KnownClues } from '../components/KnownClues';
+import { ResultBanner } from '../components/ResultBanner';
+import { ScreenshotHint } from '../components/ScreenshotHint';
+import { SearchBox } from '../components/SearchBox';
+import { TopBar } from '../components/TopBar';
+import { getRandomGame, loadGames } from '../data/games';
+import { currencyFor } from '../lib/format';
+import { summarize } from '../play/knowledge';
+import { readSavedRound, readStats, recordResult, roundKey, saveRound, type HintState, type Phase } from '../play/progress';
+import { PRESETS, presetFingerprint, presetPool, readCustomPreset, saveCustomPreset, tgaRange, METACRITIC_MIN, type CustomPreset, type PresetId } from '../play/presets';
+import { challengeUrl, decodeChallenge } from '../play/share';
+import { ATTEMPTS, DAILY_LEVEL, LEVELS, POOL_SIZES, answerPool, dailyAnswer, dateKey, normalizeLevel, type Level } from '../play/rules';
 import type { Game } from '../types/game';
-import { loadGames, getRandomGame } from '../data/games';
-import { ComparisonEngine } from '../engine/ComparisonEngine';
-import { SearchBox } from '../components/SearchBox/SearchBox';
-import { GameTable } from '../components/GameTable/GameTable';
-import { completeSession, createGameSession, getPlayerId } from '../api/client';
-import { DISPLAY_FIELDS, loadDisplayFields, saveDisplayFields, type DisplayField } from '../settings/displayFields';
-import { Clues } from '../play/Clues';
-import { CHALLENGES, dailyGame, dateKey, eligibleAnswers, normalizeChallenge, type Challenge } from '../play/rules';
-import { readSavedRound, readStats, recordResult, roundKey, saveRound, type Phase } from '../play/progress';
-import '../App.css';
-import '../play/Play.css';
+import './play.css';
 
-const engine = new ComparisonEngine();
-const FIELD_LABELS: Record<DisplayField, string> = { price: '国区常态价格', activity: '玩家与评测数量', rating: '好评率', releaseDate: '发行时间', companies: '开发商 / 发行商', tags: '游戏标签', owned: '已拥有' };
+const LEVEL_KEY = 'steamguess-level-v2';
+
+/** What a practice round draws from: a cumulative tier or a themed preset. */
+type Choice = { kind: 'level'; level: Level } | { kind: 'preset'; preset: PresetId };
+function readChoice(): Choice {
+  try {
+    const stored = localStorage.getItem(LEVEL_KEY) || '';
+    const preset = stored.startsWith('preset:') ? stored.slice(7) as PresetId : null;
+    return preset && PRESETS.includes(preset) ? { kind: 'preset', preset } : { kind: 'level', level: normalizeLevel(stored) };
+  } catch { return { kind: 'level', level: 'normal' }; }
+}
+function choiceName(choice: Choice) { return choice.kind === 'level' ? choice.level : `preset:${choice.preset}`; }
 
 export default function SinglePlayerPage() {
+  const { t, i18n } = useTranslation();
   const [day] = useState(() => new URLSearchParams(window.location.search).get('daily') === '1' ? dateKey() : undefined);
-  const [difficulty, setDifficulty] = useState<Challenge>(() => {
-    try { return normalizeChallenge(localStorage.getItem('steamguess-classics-challenge')); } catch { return 'normal'; }
-  });
-  const key = roundKey(day, difficulty);
-  const [loadedKey, setLoadedKey] = useState('');
+  // A shared link (?g=) pins the answer so a friend plays the same game.
+  const [challenge] = useState(() => day ? null : decodeChallenge(new URLSearchParams(window.location.search).get('g')));
+  const [practiceChoice, setPracticeChoice] = useState<Choice>(readChoice);
+  const [custom, setCustom] = useState<CustomPreset | null>(readCustomPreset);
+  const choice: Choice = day || challenge ? { kind: 'level', level: DAILY_LEVEL } : practiceChoice;
+  const level: Level = choice.kind === 'level' ? choice.level : 'unrated';
+  const preset = choice.kind === 'preset' ? choice.preset : null;
+  const poolName = preset === 'custom' ? `preset:custom:${presetFingerprint(custom)}` : choiceName(choice);
+  const key = roundKey(day, challenge ? `challenge:${challenge}` : poolName);
+
   const [games, setGames] = useState<Game[]>([]);
+  const [loadedKey, setLoadedKey] = useState('');
   const [answer, setAnswer] = useState<Game | null>(null);
   const [guesses, setGuesses] = useState<number[]>([]);
   const [phase, setPhase] = useState<Phase>('playing');
   const [session, setSession] = useState(createGameSession);
-  const [screenshotOpen, setScreenshotOpen] = useState(false);
-  const [screenshotClear, setScreenshotClear] = useState(false);
-  const [screenshotUsed, setScreenshotUsed] = useState(false);
-  const [visibleFields, setVisibleFields] = useState(loadDisplayFields);
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [hint, setHint] = useState<HintState>('hidden');
+  const [verdict, setVerdict] = useState<'fair' | 'obscure' | undefined>();
   const [stats, setStats] = useState(readStats);
-  const [error, setError] = useState('');
-  const [attempt, setAttempt] = useState(0);
-  const [shareStatus, setShareStatus] = useState('');
-  const [shareFallback, setShareFallback] = useState('');
-  const completed = useRef('');
+  const [failed, setFailed] = useState(false);
+  const [reload, setReload] = useState(0);
+  const [confirmGiveUp, setConfirmGiveUp] = useState(false);
+  const [share, setShare] = useState<{ status: string; text?: string }>({ status: '' });
+  const reported = useRef('');
+
   const ended = phase !== 'playing';
-  const profile = CHALLENGES[difficulty];
-  const pool = useMemo(() => eligibleAnswers(games, difficulty), [games, difficulty]);
+  const ready = loadedKey === key && (Boolean(answer) || preset === 'custom');
+  const currency = currencyFor(i18n.language);
+  const byId = useMemo(() => new Map(games.map(game => [game.appId, game])), [games]);
   const guessedIds = useMemo(() => new Set(guesses), [guesses]);
   const records = useMemo(() => answer ? guesses.flatMap(id => {
-    const game = games.find(game => game.appId === id);
-    return game ? [{ game, result: engine.compare(game, answer) }] : [];
-  }) : [], [answer, games, guesses]);
+    const game = byId.get(id);
+    return game ? [{ game, result: compareGames(game, answer, currency) }] : [];
+  }) : [], [answer, byId, guesses, currency]);
+  const knowledge = useMemo(() => summarize(records, currency), [records, currency]);
 
+  // Load the catalog, then resume the saved round for this key or deal a new one.
   useEffect(() => {
-    const controller = new AbortController();
-    loadGames(controller.signal).then(catalog => {
-      const candidates = eligibleAnswers(catalog, difficulty);
-      if (!candidates.length) throw new Error('题库暂时不可用。');
+    let cancelled = false;
+    loadGames().then(catalog => {
+      if (cancelled) return;
+      const shared = challenge ? catalog.filter(game => game.appId === challenge) : [];
+      const pool = shared.length ? shared : preset ? presetPool(catalog, preset, custom) : answerPool(catalog, level);
+      if (!pool.length) {
+        // An empty custom preset is not an error: show the editor so one can be loaded.
+        if (preset === 'custom') { setGames(catalog); setAnswer(null); setLoadedKey(key); return; }
+        throw new Error('empty pool');
+      }
+      const ids = new Set(catalog.map(game => game.appId));
       const saved = readSavedRound(key);
-      const savedAnswer = saved && candidates.find(game => game.appId === saved.answerAppId);
+      const savedAnswer = saved && pool.find(game => game.appId === saved.answerAppId);
       setGames(catalog);
-      setShareStatus(''); setShareFallback('');
-      if (saved && saved.difficulty === difficulty && savedAnswer && saved.guesses.length <= CHALLENGES[difficulty].attempts
-        && saved.guesses.every(id => catalog.some(game => game.appId === id))) {
-        setAnswer(savedAnswer); setGuesses(saved.guesses); setPhase(saved.phase); setSession(saved.session);
-        setScreenshotOpen(saved.screenshotOpen); setScreenshotClear(saved.screenshotClear); setScreenshotUsed(saved.screenshotUsed);
+      setShare({ status: '' }); setConfirmGiveUp(false);
+      if (saved && savedAnswer && saved.guesses.length <= ATTEMPTS && saved.guesses.every(id => ids.has(id))) {
+        setAnswer(savedAnswer); setGuesses(saved.guesses); setPhase(saved.phase); setSession(saved.session); setHint(saved.hint); setVerdict(saved.verdict);
+        if (saved.phase !== 'playing') reported.current = saved.session.id;
       } else {
-        setAnswer(day ? dailyGame(candidates, day) : getRandomGame(candidates));
-        setGuesses([]); setPhase('playing'); setSession(createGameSession());
-        setScreenshotOpen(false); setScreenshotClear(false); setScreenshotUsed(false);
+        setAnswer(day ? dailyAnswer(catalog, day) : getRandomGame(pool));
+        setGuesses([]); setPhase('playing'); setSession(createGameSession()); setHint('hidden'); setVerdict(undefined);
       }
       setLoadedKey(key);
-    }).catch(reason => {
-      if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : '题库加载失败，请重试。');
-    });
-    return () => controller.abort();
-  }, [attempt, day, key, difficulty]);
+    }).catch(() => { if (!cancelled) setFailed(true); });
+    return () => { cancelled = true; };
+    // `custom` is covered by `key` through its fingerprint.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [day, key, level, preset, challenge, reload]);
 
   useEffect(() => {
-    if (answer && loadedKey === key) saveRound(key, { answerAppId: answer.appId, guesses, phase, difficulty, session, screenshotOpen, screenshotClear, screenshotUsed });
-  }, [answer, guesses, phase, difficulty, session, screenshotOpen, screenshotClear, screenshotUsed, key, loadedKey]);
+    if (answer && ready) saveRound(key, { answerAppId: answer.appId, guesses, phase, level, session, hint, verdict });
+  }, [answer, ready, key, guesses, phase, level, session, hint, verdict]);
 
+  // Report each finished round once: local stats plus the server-side record.
   useEffect(() => {
-    if (!answer || loadedKey !== key || !ended || completed.current === session.id) return;
-    completed.current = session.id;
+    if (!answer || !ready || !ended || reported.current === session.id) return;
+    reported.current = session.id;
     setStats(recordResult(session.id, phase, guesses.length));
-    void completeSession({ sessionId: session.id, playerId: getPlayerId(), mode: 'difficulty', difficulty,
+    void completeSession({
+      sessionId: session.id, playerId: getPlayerId(), mode: day ? 'daily' : preset ? 'preset' : 'practice',
+      difficulty: preset || challenge ? answer.difficulty?.level ?? 'unrated' : level,
       answerAppId: answer.appId, outcome: phase as 'won' | 'lost' | 'surrendered', guesses: guesses.length,
-      hintsUsed: Number(screenshotUsed), startingHintMode: 'none',
-      startedAt: session.startedAt }).catch(() => { /* Local progress remains available if the API is offline. */ });
-  }, [answer, ended, phase, guesses.length, difficulty, session, screenshotUsed, loadedKey, key]);
+      hintsUsed: hint === 'hidden' ? 0 : hint === 'blurred' ? 1 : 2, startedAt: session.startedAt,
+    }).catch(() => { /* Local progress is enough when the API is offline. */ });
+  }, [answer, ready, ended, phase, guesses.length, level, session, hint, day, preset, challenge]);
+
+  const tgaYears = useMemo(() => tgaRange(games), [games]);
+  const poolLabel = preset === 'custom' ? (custom?.name || t('preset.custom')) : preset ? t(`preset.${preset}`) : t(`level.${level}`);
+  const pool = useMemo(() => preset ? presetPool(games, preset, custom) : answerPool(games, level), [games, preset, custom, level]);
 
   function newRound() {
     if (!pool.length) return;
     setAnswer(getRandomGame(pool, answer?.appId));
-    setGuesses([]); setPhase('playing'); setScreenshotOpen(false); setScreenshotClear(false); setScreenshotUsed(false);
-    setSession(createGameSession()); setShareStatus(''); setShareFallback('');
+    setGuesses([]); setPhase('playing'); setHint('hidden'); setVerdict(undefined);
+    setSession(createGameSession()); setShare({ status: '' }); setConfirmGiveUp(false);
+    window.scrollTo({ top: 0 });
   }
-  function changeChallenge(next: Challenge) {
-    if (guesses.length && !ended) return;
-    setDifficulty(next);
-    try { localStorage.setItem('steamguess-classics-challenge', next); } catch { /* Optional preference. */ }
+  function choose(next: Choice) {
+    if (choiceName(next) === choiceName(practiceChoice) || (answer && guesses.length > 0 && !ended)) return;
+    setPracticeChoice(next);
+    try { localStorage.setItem(LEVEL_KEY, choiceName(next)); } catch { /* Optional preference. */ }
   }
-  function selectGame(game: Game) {
+  function applyCustom(next: CustomPreset) {
+    saveCustomPreset(next);
+    setCustom(next);
+  }
+  function guess(game: Game) {
     if (!answer || ended || guessedIds.has(game.appId)) return;
-    const next = [...guesses, game.appId]; setGuesses(next);
+    const next = [...guesses, game.appId];
+    setGuesses(next); setConfirmGiveUp(false);
     if (game.appId === answer.appId) setPhase('won');
-    else if (next.length >= profile.attempts) setPhase('lost');
+    else if (next.length >= ATTEMPTS) setPhase('lost');
   }
-  async function share() {
-    const squares = guesses.map(id => id === answer?.appId ? '🟩' : '⬜').join('');
-    const text = `SteamGuess · ${day || '自由练习'} · ${profile.label}\n${squares || '未猜测'}\n${phase === 'won' ? `${guesses.length}/${profile.attempts} 次猜中` : '未猜中'}${screenshotUsed ? ` · ${screenshotClear ? '清晰' : '模糊'}截图提示` : ''}`;
-    try { await navigator.clipboard.writeText(text); setShareStatus('已复制'); }
-    catch { setShareFallback(text); setShareStatus('复制下方文字'); }
+  function vote(next: 'fair' | 'obscure') {
+    if (!answer) return;
+    setVerdict(next);
+    void submitAnswerFeedback({ sessionId: session.id, playerId: getPlayerId(), appId: answer.appId, verdict: next }).catch(() => { /* Best effort. */ });
+  }
+  async function copyResult() {
+    const squares = records.map(record => record.result.isCorrect ? '🟩' : '⬛').join('');
+    const outcome = phase === 'won' ? `${guesses.length}/${ATTEMPTS}` : t('result.shareMissed');
+    if (!answer) return;
+    const title = day ? `${t('play.daily')} ${day}` : challenge ? t('play.challenge') : `${t('play.practice')} · ${poolLabel}`;
+    const text = [
+      `SteamGuess · ${title}`,
+      `${squares || '—'} ${outcome}${hint !== 'hidden' ? ` · ${t('result.shareHint')}` : ''}`,
+      `${t('result.shareInvite')} ${challengeUrl(window.location.origin, answer.appId)}`,
+    ].join('\n');
+    try { await navigator.clipboard.writeText(text); setShare({ status: t('result.copied') }); }
+    catch { setShare({ status: t('result.copyManually'), text }); }
   }
 
-  if (error) return <main className="centered-state"><h1>题库加载失败</h1><p>{error}</p><button className="btn btn-primary" onClick={() => { setError(''); setAttempt(value => value + 1); }}>重新加载</button><a href="/">返回首页</a></main>;
-  if (!answer || loadedKey !== key) return <main className="centered-state" aria-live="polite"><div className="loader" /><h1>加载中…</h1></main>;
-  const answerName = answer.localizedNames?.zh || answer.name;
+  if (failed) return <main className="state">
+    <h1>{t('play.loadFailed')}</h1><p>{t('play.loadFailedHelp')}</p>
+    <button className="btn" onClick={() => { setFailed(false); setReload(value => value + 1); }}>{t('play.retry')}</button>
+    <a className="link-button" href="/">{t('nav.home')}</a>
+  </main>;
+  if (!ready) return <main className="state" aria-live="polite"><div className="spinner" /><p>{t('play.loading')}</p></main>;
 
-  return <div className="app classics-play">
-    <a className="skip-link" href="#game-main">跳到游戏</a>
-    <header className="play-header"><a className="play-brand" href="/">SG<span>SteamGuess</span></a><div className="play-header-actions"><a href="/">首页</a><button className="btn btn-quiet" aria-expanded={settingsOpen} aria-controls="display-settings" onClick={() => setSettingsOpen(open => !open)}>显示设置</button></div></header>
-    <main id="game-main" className="play-main">
-      <div className="play-heading"><div><h1>{day ? '每日挑战' : '自由练习'}</h1><p>{day && `${day} · `}{profile.label} {pool.length} 款 · 可搜索 {games.length.toLocaleString()} 款</p></div><div className="round-counter"><strong>{profile.attempts - guesses.length}</strong><span>剩余次数 / {profile.attempts}</span></div></div>
-      <div className="challenge-bar"><div className="segmented-control" aria-label="难度">{(Object.keys(CHALLENGES) as Challenge[]).map(value => <button key={value} aria-pressed={value === difficulty} disabled={guesses.length > 0 && !ended} onClick={() => changeChallenge(value)}>{CHALLENGES[value].label}</button>)}</div></div>
-      {settingsOpen && <section id="display-settings" className="play-settings"><h2>比对字段</h2><div className="field-options">{DISPLAY_FIELDS.filter(field => field !== 'owned').map(field => <label key={field}><input type="checkbox" checked={visibleFields.has(field)} onChange={event => { const next = new Set(visibleFields); if (event.target.checked) next.add(field); else next.delete(field); setVisibleFields(next); saveDisplayFields(next); }} />{FIELD_LABELS[field]}</label>)}</div><small>数据为历史快照；灰色表示资料缺失。</small></section>}
-      {!ended && <section className="guess-panel"><SearchBox key={session.id} games={games} excludedAppIds={guessedIds} onSelectGame={selectGame} /><div className="guess-help"><button className="text-button" onClick={() => setPhase('surrendered')}>揭晓答案</button></div></section>}
-      {ended && <section className={`round-result ${phase === 'won' ? 'result-win' : ''}`} role="status"><div><p className="section-kicker">{phase === 'won' ? '猜对了' : '答案'}</p><h2>{answerName}</h2><p>{answer.name} · {guesses.length} 次猜测</p><a href={`https://store.steampowered.com/app/${answer.appId}/`} target="_blank" rel="noreferrer">Steam ↗</a></div><div className="result-buttons"><button className="btn btn-primary" onClick={() => { if (day) window.location.assign('/singleplayer'); else newRound(); }}>{day ? '自由练习' : '再来一局'}</button><button className="btn btn-quiet" onClick={() => void share()}>分享结果</button><small aria-live="polite">{shareStatus}</small></div>{shareFallback && <textarea className="share-fallback" aria-label="分享文字" value={shareFallback} readOnly onFocus={event => event.target.select()} />}</section>}
-      <Clues key={session.id} urls={answer.hints?.screenshotUrls || []} open={screenshotOpen} clear={screenshotClear} ended={ended}
-        onToggle={() => { setScreenshotOpen(value => !value); setScreenshotUsed(true); }} onClear={() => setScreenshotClear(true)} />
-      <GameTable records={records} correctGame={answer} revealAnswer={ended && phase !== 'won'} visibleFields={visibleFields} ownedAppIds={new Set()} />
-      <footer className="play-footer"><span>{stats.won} 胜 / {stats.played} 局{stats.best ? ` · 最佳 ${stats.best} 次` : ''}</span><span>进度保存在本机</span></footer>
+  const left = ATTEMPTS - guesses.length;
+  const locked = guesses.length > 0 && !ended;
+  const kicker = phase === 'won' ? `${t('result.won')} · ${t('result.wonIn', { count: guesses.length })}` : phase === 'lost' ? t('result.lost') : t('result.surrendered');
+
+  return <div className="page">
+    <a className="skip-link" href="#game">{t('nav.skip')}</a>
+    <TopBar><a className="topbar-link" href="/">{t('nav.home')}</a></TopBar>
+    <main id="game" className="play">
+      <div className="play-head">
+        <div>
+          <h1>{day ? t('play.daily') : challenge ? t('play.challenge') : t('play.practice')}</h1>
+          <p>{day ? <span className="num">{day}</span>
+            : challenge ? t('play.challengeHelp')
+            : preset === 'tga' ? t('presetHelp.tga', { count: pool.length, from: tgaYears?.[0], to: tgaYears?.[1] })
+            : preset === 'metacritic' ? t('presetHelp.metacritic', { count: pool.length, score: METACRITIC_MIN })
+            : preset === 'custom' ? t('presetHelp.custom', { name: poolLabel, count: pool.length })
+            : t(`levelHelp.${level}`, { count: Math.min(POOL_SIZES[level], pool.length) })}</p>
+        </div>
+        <div className="attempts" aria-label={t('play.attempts', { used: guesses.length, total: ATTEMPTS })}>
+          <div className="pips" aria-hidden="true">{Array.from({ length: ATTEMPTS }, (_, index) =>
+            <i key={index} className={index < guesses.length ? (phase === 'won' && index === guesses.length - 1 ? 'pip-hit' : 'pip-used') : ''} />)}</div>
+          <span className="num">{ended ? t('play.attempts', { used: guesses.length, total: ATTEMPTS }) : t('play.attemptsLeft', { count: left })}</span>
+        </div>
+      </div>
+
+      {!day && !challenge && <div className="level-row">
+        <div className="segmented" role="group" aria-label={t('mp.difficulty')}>
+          {LEVELS.map(value => <button key={value} type="button" aria-pressed={!preset && value === level} disabled={locked} title={locked ? t('play.locked') : undefined}
+            onClick={() => choose({ kind: 'level', level: value })}>{t(`level.${value}`)}</button>)}
+        </div>
+        <div className="segmented" role="group" aria-label={t('preset.title')}>
+          {PRESETS.map(value => <button key={value} type="button" aria-pressed={preset === value} disabled={locked} title={locked ? t('play.locked') : undefined}
+            onClick={() => choose({ kind: 'preset', preset: value })}>{t(`preset.${value}`)}</button>)}
+        </div>
+      </div>}
+      {!day && !challenge && preset === 'custom' && !locked && <CustomPresetEditor games={games} preset={custom} onApply={applyCustom} />}
+      {!answer ? <p className="board-empty">{t('preset.needList')}</p> : <>
+
+      {ended ? <ResultBanner game={answer} kicker={kicker} tone={phase === 'won' ? 'win' : 'neutral'}>
+        <div className="result-buttons">
+          <button className="btn" onClick={() => { if (day || challenge) window.location.assign('/singleplayer'); else newRound(); }}>{day || challenge ? t('result.toPractice') : t('result.again')}</button>
+          <button className="btn btn-ghost" onClick={() => void copyResult()}>{share.status || t('result.share')}</button>
+        </div>
+        {day && <p className="result-note">{t('result.comeBack')}</p>}
+        {answer.difficulty?.level === 'unrated' && <div className="vote">
+          {verdict ? <p>{t('feedback.thanks')}</p> : <>
+            <p>{t('feedback.ask')}</p>
+            <button className="btn btn-ghost btn-small" onClick={() => vote('fair')}>{t('feedback.fair')}</button>
+            <button className="btn btn-ghost btn-small" onClick={() => vote('obscure')}>{t('feedback.obscure')}</button>
+          </>}
+        </div>}
+        {share.text && <textarea className="share-text" aria-label={t('result.share')} value={share.text} readOnly rows={3} onFocus={event => event.target.select()} />}
+      </ResultBanner> : <div className="guess-entry">
+        <SearchBox key={session.id} games={games} excludedAppIds={guessedIds} onSelectGame={guess} autoFocus={window.matchMedia('(pointer: fine)').matches} />
+        <div className="guess-entry-actions">
+          {confirmGiveUp
+            ? <><span>{t('play.giveUpConfirm')}</span><button className="link-button" onClick={() => setPhase('surrendered')}>{t('play.giveUp')}</button></>
+            : <button className="link-button" onClick={() => setConfirmGiveUp(true)}>{t('play.giveUp')}</button>}
+        </div>
+      </div>}
+
+      <ScreenshotHint key={session.id} urls={answer.hints?.screenshotUrls ?? []} state={hint} ended={ended} onChange={setHint} />
+      {!ended && <KnownClues knowledge={knowledge} currency={currency} />}
+
+      <section className="board" aria-live="polite">
+        {records.length > 0 && <div className="legend" aria-hidden="true">
+          {(['exact', 'partial', 'close', 'wrong'] as const).map(status => <span key={status}><i className={`is-${status}`} />{t(`status.${status}`)}</span>)}
+          <span>↑ {t('direction.higher')}</span><span>↓ {t('direction.lower')}</span>
+        </div>}
+        {ended && phase !== 'won' && <GuessCard game={answer} result={compareGames(answer, answer, currency)} currency={currency} isAnswer />}
+        {[...records].reverse().map((record, index) =>
+          <GuessCard key={record.game.appId} game={record.game} result={record.result} currency={currency} number={records.length - index} />)}
+        {!records.length && !ended && <p className="board-empty">{t('play.empty')}</p>}
+      </section>
+
+      </>}
+
+      <footer className="play-foot">
+        <span>{t('play.statsLine', { won: stats.won, played: stats.played })}</span>
+        <span>{t('play.savedLocally')}</span>
+      </footer>
     </main>
   </div>;
 }

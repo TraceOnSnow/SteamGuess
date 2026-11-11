@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
 export const commandSchema = z.object({ commandId: z.string().min(8).max(100) });
-export const visibleFieldSchema = z.enum(['price', 'popularity', 'reviews', 'rating', 'releaseDate', 'companies', 'tags']);
 export const settingsSchema = z.object({
-  difficulty: z.enum(['beginner', 'easy', 'normal', 'hard', 'hell']).default('normal'),
+  difficulty: z.enum(['beginner', 'easy', 'normal', 'hard']).default('normal'),
+  // Prices are compared in one currency for the whole room (the host's language).
+  currency: z.enum(['CNY', 'USD']).default('CNY'),
   bestOf: z.union([z.literal(1), z.literal(3), z.literal(5)]).default(1),
   maxPlayers: z.number().int().min(2).max(8).default(4),
   roundTimeSeconds: z.number().int().min(30).max(600).default(120),
-  visibleFields: z.array(visibleFieldSchema).min(1).max(7).default(['price', 'popularity', 'reviews', 'rating', 'releaseDate', 'companies', 'tags']),
 }).strict();
 const playerIdSchema = z.string().regex(/^player_[A-Za-z0-9_-]{8,90}$/);
 export const createSchema = commandSchema.extend({ playerId: playerIdSchema, displayName: z.string().trim().min(1).max(32), settings: settingsSchema.optional() });

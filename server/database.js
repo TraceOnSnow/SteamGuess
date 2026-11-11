@@ -180,6 +180,23 @@ const MIGRATIONS = [
       GROUP BY app_id;
     `,
   },
+  {
+    // One-tap verdict after a round: was this a fair answer, or too obscure?
+    // The 0-100 difficulty_feedback tables above are kept only as history.
+    version: 5,
+    sql: `
+      CREATE TABLE answer_feedback (
+        session_id TEXT PRIMARY KEY,
+        player_id TEXT NOT NULL,
+        app_id INTEGER NOT NULL,
+        verdict TEXT NOT NULL CHECK(verdict IN ('fair', 'obscure')),
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(player_id) REFERENCES players(id),
+        FOREIGN KEY(session_id) REFERENCES game_sessions(id)
+      );
+      CREATE INDEX answer_feedback_app_idx ON answer_feedback(app_id);
+    `,
+  },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS.at(-1)?.version ?? 0;
@@ -231,14 +248,13 @@ export function upsertSession(db, session, now = new Date().toISOString()) {
   db.prepare(`
     INSERT INTO game_sessions(
       id, player_id, mode, difficulty, answer_app_id, outcome, guesses,
-      hints_used, started_at, finished_at, starting_hint_mode
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      hints_used, started_at, finished_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(id) DO UPDATE SET
       outcome = excluded.outcome,
       guesses = excluded.guesses,
       hints_used = excluded.hints_used,
-      finished_at = excluded.finished_at,
-      starting_hint_mode = excluded.starting_hint_mode
+      finished_at = excluded.finished_at
   `).run(
     session.id,
     session.playerId,
@@ -250,7 +266,6 @@ export function upsertSession(db, session, now = new Date().toISOString()) {
     session.hintsUsed ?? 0,
     session.startedAt,
     session.finishedAt ?? null,
-    session.startingHintMode ?? 'none',
   );
 }
 
@@ -258,96 +273,19 @@ export function getSession(db, sessionId) {
   return db.prepare('SELECT * FROM game_sessions WHERE id = ?').get(sessionId) ?? null;
 }
 
-function latestFeedbackRows(db, appId) {
-  return db.prepare(`
-    WITH ranked AS (
-      SELECT
-        feedback.*,
-        ROW_NUMBER() OVER (
-          PARTITION BY feedback.player_id, feedback.app_id
-          ORDER BY feedback.created_at DESC, feedback.id DESC
-        ) AS feedback_rank
-      FROM difficulty_feedback AS feedback
-      JOIN game_sessions AS session ON session.id = feedback.session_id
-      WHERE feedback.app_id = ?
-        AND feedback.player_id IS NOT NULL
-        AND session.player_id = feedback.player_id
-        AND session.answer_app_id = feedback.app_id
-        AND session.finished_at IS NOT NULL
-        AND session.outcome IN ('won', 'lost', 'surrendered')
-    )
-    SELECT score, level
-    FROM ranked
-    WHERE feedback_rank = 1
-  `).all(appId);
-}
-
-export function refreshDifficultyFeedbackSummary(db, appId, now = new Date().toISOString()) {
-  const rows = latestFeedbackRows(db, appId);
-  if (rows.length === 0) {
-    db.prepare('DELETE FROM difficulty_feedback_summary WHERE app_id = ?').run(appId);
-    return null;
-  }
-  const scoreSum = rows.reduce((total, row) => total + Number(row.score), 0);
-  const counts = { beginner: 0, easy: 0, normal: 0, hard: 0, hell: 0 };
-  for (const row of rows) counts[row.level] += 1;
-  db.prepare(`
-    INSERT INTO difficulty_feedback_summary(
-      app_id, feedback_count, score_sum, average_score,
-      easy_count, normal_count, hard_count, hell_count, updated_at, beginner_count
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ON CONFLICT(app_id) DO UPDATE SET
-      feedback_count = excluded.feedback_count,
-      score_sum = excluded.score_sum,
-      average_score = excluded.average_score,
-      easy_count = excluded.easy_count,
-      normal_count = excluded.normal_count,
-      hard_count = excluded.hard_count,
-      hell_count = excluded.hell_count,
-      updated_at = excluded.updated_at,
-      beginner_count = excluded.beginner_count
-  `).run(
-    appId,
-    rows.length,
-    scoreSum,
-    scoreSum / rows.length,
-    counts.easy,
-    counts.normal,
-    counts.hard,
-    counts.hell,
-    now,
-    counts.beginner,
-  );
-  return getDifficultyFeedbackSummary(db, appId);
-}
-
-export function insertDifficultyFeedback(db, feedback, now = new Date().toISOString()) {
-  const session = feedback.sessionId ? getSession(db, feedback.sessionId) : null;
-  if (!session || !session.finished_at) throw new Error('Difficulty feedback requires a completed game session.');
+/** Stores one verdict per finished session; a second tap replaces the first. */
+export function saveAnswerFeedback(db, feedback, now = new Date().toISOString()) {
+  const session = getSession(db, feedback.sessionId);
+  if (!session || !session.finished_at) throw new Error('Feedback requires a completed game session.');
   if (session.player_id !== feedback.playerId || Number(session.answer_app_id) !== feedback.appId) {
-    throw new Error('Difficulty feedback does not match the completed game session.');
+    throw new Error('Feedback does not match the completed game session.');
   }
-  upsertPlayer(db, feedback.playerId, now);
-  const result = db.prepare(`
-    INSERT INTO difficulty_feedback(player_id, session_id, app_id, score, level, reason, created_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `).run(
-    feedback.playerId,
-    feedback.sessionId,
-    feedback.appId,
-    feedback.score,
-    feedback.level,
-    feedback.reason ?? 'difficulty_unreasonable',
-    now,
-  );
-  refreshDifficultyFeedbackSummary(db, feedback.appId, now);
-  return Number(result.lastInsertRowid);
+  db.prepare(`
+    INSERT INTO answer_feedback(session_id, player_id, app_id, verdict, created_at)
+    VALUES (?, ?, ?, ?, ?)
+    ON CONFLICT(session_id) DO UPDATE SET verdict = excluded.verdict, created_at = excluded.created_at
+  `).run(feedback.sessionId, feedback.playerId, feedback.appId, feedback.verdict, now);
 }
-
-export function getDifficultyFeedbackSummary(db, appId) {
-  return db.prepare('SELECT * FROM difficulty_feedback_summary WHERE app_id = ?').get(appId) ?? null;
-}
-
 
 export function recordMultiplayerMatch(db, record, now = new Date().toISOString()) {
   db.exec('BEGIN IMMEDIATE;');

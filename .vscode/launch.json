@@ -9,7 +9,6 @@
       "runtimeArgs": ["run", "dev", "--", "--host", "127.0.0.1", "--port", "5173"],
       "cwd": "${workspaceFolder:SteamGuess}",
       "env": {
-        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
       },
       "console": "integratedTerminal",
       "serverReadyAction": {
@@ -26,7 +25,6 @@
       "runtimeArgs": ["run", "dev", "--", "--host", "127.0.0.1", "--port", "5173"],
       "cwd": "${workspaceFolder:SteamGuess}",
       "env": {
-        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
       },
       "console": "integratedTerminal",
       "serverReadyAction": {
@@ -45,8 +43,7 @@
       "env": {
         "HOST": "127.0.0.1",
         "PORT": "4173",
-        "STEAMGUESS_TRUST_PROXY": "false",
-        "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
+        "STEAMGUESS_TRUST_PROXY": "false"
       },
       "preLaunchTask": "SteamGuess: Build",
       "console": "integratedTerminal",

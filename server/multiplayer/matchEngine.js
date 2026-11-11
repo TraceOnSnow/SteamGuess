@@ -1,21 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import { COMPARISON_RULES, compareDateValues, compareNumericValues, getPlayerPeak, getPositiveRate, getRegularPrice, getMaxGuesses } from '../../shared/game-rules.js';
+import { MAX_GUESSES, compareGames } from '../../shared/game-rules.js';
 
-
-function numeric(fieldName, user, correct, rule) { return { fieldName, userValue: Number.isFinite(user) ? user : null, ...compareNumericValues(user, correct, rule) }; }
-export function compareGames(guess, answer) {
-  const fields = [
-    numeric('price', getRegularPrice(guess), getRegularPrice(answer), COMPARISON_RULES.price),
-    numeric('popularity', getPlayerPeak(guess), getPlayerPeak(answer), COMPARISON_RULES.popularity),
-    numeric('reviews', guess.reviews?.total, answer.reviews?.total, COMPARISON_RULES.popularity),
-    numeric('rating', getPositiveRate(guess), getPositiveRate(answer), COMPARISON_RULES.reviewsRate),
-    { fieldName: 'releaseDate', userValue: guess.releaseDate || null, ...compareDateValues(guess.releaseDate, answer.releaseDate) },
-  ];
-  const matchingTags = (guess.tags?.userTags ?? []).filter(tag => (answer.tags?.userTags ?? []).includes(tag));
-  const matchingCompanies = [...(guess.tags?.developers ?? []), ...(guess.tags?.publishers ?? [])]
-    .filter(company => [...(answer.tags?.developers ?? []), ...(answer.tags?.publishers ?? [])].includes(company));
-  return { isCorrect: guess.appId === answer.appId, fields, matchingTags, matchingCompanies };
-}
+export { compareGames };
 
 export function createMatchEngine({ catalog, random = Math.random, now = () => Date.now(), onRoundEnd }) {
   return {
@@ -32,7 +18,7 @@ export function createMatchEngine({ catalog, random = Math.random, now = () => D
     guess(room, playerId, appId) {
       const round = room.activeRound;
       const state = round?.players[playerId];
-      const maxGuesses = getMaxGuesses(room.settings.difficulty);
+      const maxGuesses = MAX_GUESSES;
       if (!round || !state) return { error: ['INVALID_ROOM_STATE', 'No active round.'] };
       if (state.finished) return { error: ['PLAYER_ALREADY_FINISHED', 'You have finished this round.'] };
       if (state.guesses.includes(appId)) return { error: ['GUESS_DUPLICATE', 'You already guessed this game.'] };
@@ -41,7 +27,7 @@ export function createMatchEngine({ catalog, random = Math.random, now = () => D
       const answer = catalog.find(game => game.appId === round.answerAppId);
       if (!guess || !answer) return { error: ['INVALID_GAME', 'That game is not in the server catalog.'] };
       state.guesses.push(appId);
-      const feedback = compareGames(guess, answer);
+      const feedback = compareGames(guess, answer, room.settings.currency);
       let roundEnd = null;
       if (feedback.isCorrect) {
         state.finished = true;
@@ -59,6 +45,6 @@ export function createMatchEngine({ catalog, random = Math.random, now = () => D
         roundEnd,
       };
     },
-    maxGuesses: 10,
+    maxGuesses: MAX_GUESSES,
   };
 }

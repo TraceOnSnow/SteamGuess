@@ -1,66 +1,27 @@
-/**
- * Game data types for SteamGuess
- */
+import type { Level } from '../../shared/game-rules.js';
 
-export interface GamePrice {
-  currency?: string;
-  regular: number;
-}
+export interface GamePrice { regular: number | null }
 
-export interface GamePriceSet {
-  us: GamePrice;
-  cn?: Partial<GamePrice>;
-}
-
-export interface GamePopularity {
-  /** Legacy SteamSpy field: peak concurrent users for the previous day. */
-  ccu: number;
-  peakYesterday?: number;
-  peak7d?: number;
-  peak7dSamples?: number;
-}
-
-export interface GameReviews {
-  total: number;
-  positive: number;
-  negative: number;
-}
-
-export interface GameTags {
-  userTags: string[];
-  developers: string[];
-  publishers: string[];
-}
-
-export interface GameHints {
-  screenshotUrls?: string[];
-  reviewTexts?: string[];
-}
-
-export interface GameDifficulty {
-  level: 'beginner' | 'easy' | 'normal' | 'hard' | 'hell';
-  score: number;
-  source: 'manual' | 'manual_locked' | 'player_feedback' | string;
-  locked?: boolean;
-}
-
+/** One record of the published snapshot (public/games_demo.json). */
 export interface Game {
-  edition?: 'classics';
-  catalogStatus?: 'eligible' | 'search_only' | 'excluded';
-  collection?: 'classics';
-  aliases?: string[];
   appId: number;
+  /** English store name. */
   name: string;
   localizedNames?: { zh?: string };
+  aliases?: string[];
   header_image?: string;
-  releaseDate: string; // YYYY-MM-DD
-  price: GamePriceSet;
-  popularity: GamePopularity;
-  reviews: GameReviews;
-  tags: GameTags;
-  hints?: GameHints;
-  /** Present only when this game may be selected as an answer. */
-  difficulty?: GameDifficulty;
+  /** YYYY-MM-DD, or '' when unknown. */
+  releaseDate: string;
+  /** Regular (undiscounted) price per region; null when not sold there. */
+  price: { us: GamePrice; cn: GamePrice };
+  popularity: { ccu: number; peakYesterday?: number; peak7d?: number };
+  reviews: { total: number; positive: number; negative: number };
+  tags: { userTags: string[]; developers: string[]; publishers: string[] };
+  /** Metacritic score from the Steam store page, when it lists one. */
+  metacritic?: number | null;
+  /** Years of The Game Awards ceremonies that nominated it for Game of the Year. */
+  tga?: number[];
+  /** Present only on answers. */
+  hints?: { screenshotUrls: string[] };
+  difficulty?: { level: Level };
 }
-
-export type ScoredGame = Game & { difficulty: GameDifficulty };

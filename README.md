@@ -1,242 +1,103 @@
 # SteamGuess
 
-**Current release: 300 games.** A fixed answer pool of 300 Steam games and a separate 2,000-game search/guess catalog. Beginner / easy / normal / hard / hell use cumulative pools of 20 / 50 / 100 / 200 / 300 games, all with ten guesses. Screenshot hints are available at any time: open a blurred image, optionally reveal it clearly, and automatically show it clearly when the answer is revealed. Daily puzzles, local round recovery, statistics, answer-free sharing, and private multiplayer rooms are included.
-
-```sh
-npm ci
-npm run build
-npm start
-# http://localhost:4173
-```
-
-A fresh clone works from the committed snapshot without an API key. `npm run data:restore` optionally restores the editable SQLite catalog, using a recovered backup when available or the shipped snapshot otherwise. The selection lives in `data/curated/classics.json`. There are no review or editorial text hints. Prices and metrics are restored snapshots; screenshots require Steam CDN access. The weekly wrapper defaults to this fixed collection; the historical bulk pipeline requires `STEAMGUESS_EDITION=archive`.
-
-Search-only games can be guessed for comparison but never selected as answers, including in multiplayer. The homepage no longer publishes the exact answer list. The pools are frozen release data. Current grading is explicitly a recovered SteamSpy weighted snapshot (85% log-normalized reviews, 15% CCU), not IGDB PopScore. The original five-metric IGDB formula remains available; `npm run data:freeze-difficulty -- --igdb-ranking /path/to/igdb-heat-all.json` imports a complete compatible ranking once, followed by `npm run data:restore`. No runtime or player-feedback regrading is applied.
-
-The infrastructure notes below describe the retained data platform; historical rank windows and five-tier answer pools do not define the current Classics release.
-
-
-> A data-driven Steam game guessing game — built for daily play, explainable clues, and future multiplayer.
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)](https://vite.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-22%2B-5fa04e?logo=node.js&logoColor=white)](https://nodejs.org/)
-
 [简体中文](README.zh-CN.md)
 
-SteamGuess is a Wordle-like web game for identifying Steam games from structured clues. Search by a Chinese or English title, submit a guess, and progressively narrow the answer using price, player activity, review metrics, release date, companies, and Steam user tags.
+Guess a Steam game in ten tries. Search for a game and submit it; the answer is compared with your guess on price, peak players, review count, rating, release date, studios and tags. Colours show how close each clue is and arrows show which way the answer lies. A blurred screenshot is available as a hint at any time.
 
-The project is intentionally split into two layers:
+- **Daily challenge** — one game for everyone, new at local midnight.
+- **Free play** — pick a difficulty and play as many rounds as you like.
+- **Multiplayer rooms** — 2–8 players race on the same game.
+- Chinese and English interfaces. Chinese compares mainland prices in CNY; English compares US prices in USD.
 
-- **Playable experience** — a fast Search catalog whose scored rows form the
-  answer pool.
-- **Data and feedback platform** — a persistent catalog, enrichment jobs, difficulty feedback, and the foundation for multiplayer.
+## Run it
 
-## Product surface
-
-| Entry | Description |
-| --- | --- |
-| `/` | Mode selection: single-player or multiplayer |
-| `/singleplayer` | Main guessing game with configurable clue fields and hints |
-| `/multiplayer` | Private room, same-question race for 2–8 players |
-| `/labeler` | Internal SQLite-backed difficulty manager; disabled in production by default |
-| `/api/health` | Service health check |
-
-### Highlights
-
-- Chinese/English game-name search with keyboard navigation.
-- Ten-guess single-player loop with duplicate-guess prevention.
-- Five preset difficulty pools: Beginner, Easy, Normal, Hard, and Hell.
-- Custom pools from uploaded AppIDs or a public Steam profile.
-- Mainland-China regular prices in CNY; promotional prices are deliberately excluded from statistics.
-- Seven-day player peak when samples are available; SteamSpy's `ccu` is treated as a historical peak, not live online count.
-- Screenshot and review hints when the catalog already contains the required source data.
-- Post-game difficulty feedback on a 0–100 scale or through preset levels.
-- Server-side persistence for sessions, outcomes, and feedback.
-- Multiplayer room codes with one-click copy, ready checks, server-authoritative rounds, surrender, rematch, and reconnect support.
-
-## Architecture
-
-```text
-SteamSpy request=all ─┐
-Steam Storefront API ─┼─> catalog JSON ─> catalog SQLite ─> Search snapshot ─> web client
-Steam Reviews API ────┤              └─> enrichment checkpoints
-Steam PICS (optional) ┘
-
-web client ──HTTP API──> Node.js service ──> runtime SQLite
-             Socket.IO ─> multiplayer room engine
-```
-
-| Area | Location | Responsibility |
-| --- | --- | --- |
-| Frontend | `src/` | React UI, game engine, search, hints, settings, multiplayer client |
-| HTTP/API server | `server/` | Static serving, API routes, rate limits, migrations, runtime persistence |
-| Catalog pipeline | `scripts/catalog/` | Discovery, normalization, enrichment, publishing, import, status |
-| Operations | `scripts/ops/` | Production weekly runner, release validation, backup and smoke tools |
-| Public artifacts | `public/` | Browser-ready runtime game snapshot |
-| Documentation | `docs/` | Pipeline, schema, labeler, multiplayer research and operations |
-
-The catalog database and player/runtime database are separate. This keeps a catalog refresh independent from player sessions and feedback.
-
-## Quick start
-
-Requirements: Node.js 24+, npm, and Python 3.12+ for catalog tooling.
+Requires Node.js 24+.
 
 ```bash
 npm ci
-npm run dev
-```
-
-Open the Vite URL and start at `/`. To run the production-shaped server locally:
-
-```bash
 npm run build
 npm start
 ```
 
-The default server listens on `0.0.0.0:4173`.
+The server listens on `http://localhost:4173`. For development with hot reload use `npm run dev`. A fresh clone works as is: the game data is committed and no API key is needed.
 
-## Quality gates
+## How the game is put together
 
-Run the full local release gate before deployment:
+| Path | What it is |
+| --- | --- |
+| `src/` | React client: pages, guess cards, search, screenshot hint |
+| `shared/game-rules.js` | Comparison thresholds, tiers and the daily pick, shared by client and server |
+| `shared/edition.json` | Sizes of the answer list and of each tier |
+| `server/` | Node HTTP server, JSON API, SQLite persistence, Socket.IO rooms |
+| `public/games_demo.json` | Every searchable game with its clue data |
+| `data/curated/answers.json` | The answer list: which games, at which tier |
+| `scripts/catalog/` | One-off Python tools that fetch and rebuild the data |
+
+Routes: `/` home, `/singleplayer` (add `?daily=1` for the daily), `/multiplayer`, `/api/health`.
+
+## Answers and difficulty
+
+About 2,000 games can be searched and guessed; 1,000 of them can be the answer. Tiers are cumulative:
+
+| Tier | Games | Meaning |
+| --- | --- | --- |
+| Beginner | 20 | Games nearly everyone knows |
+| Easy | 50 | Big hits |
+| Normal | 100 | Familiar games |
+| Hard | 300 | Takes some mileage |
+| Hell | 1,000 | Everything, including a long tail nobody has verified |
+
+The daily challenge and multiplayer rooms draw from Hard and below. Hell is single-player only; after a Hell round whose answer comes from the long tail, the player is asked whether it was a fair answer.
+
+Beginner, Easy and Normal are hand-picked for how well Chinese players know the games; Hard starts from a popularity score and is then edited by hand; everything else is Hell. The score comes from a SteamSpy snapshot: `0.85 × log(reviews) + 0.15 × log(concurrent players)`, each normalised to the largest value. Hand-set tiers live in `data/curated/overrides.json`.
+
+Free play can also draw from a preset instead of a tier:
+
+- **TGA nominees**: Game of the Year nominees from the last ten Game Awards that are sold on Steam. The list is `data/curated/tga.json`; add a line after each ceremony.
+- **MC 80+**: answers with a Metacritic score of 80 or more, as listed on the Steam store.
+- **Custom**: the player pastes or uploads JSON such as `{"name": "My list", "appIds": [730, 570, 292030]}`, or a bare array of AppIDs. It stays in the browser and can be downloaded to share. Games outside the 1,000 answers can be dealt too; they just have no screenshot hint.
+
+Every finished round is stored (answer, outcome, number of guesses, hint use). To see how each answer actually plays:
+
+```bash
+npm run db:stats -- --min 10 --level unrated
+```
+
+Use that to edit `level` in `data/curated/answers.json` or to remove an entry, then run `npm run data:build`.
+
+## Data
+
+The game data is a frozen snapshot, not a live feed. Sources:
+
+| Source | Provides |
+| --- | --- |
+| SteamSpy | Which games exist, review counts, concurrent players, user tags |
+| Steam Storefront API | Names in both languages, release date, regular prices in USD and CNY, screenshots, studios |
+| Steam store page and charts | Review counts and tags for well-known games SteamSpy has no numbers for |
+| Hand-kept (`data/curated/`) | Chinese names the store lacks (`zh_names.json`), TGA nominees (`tga.json`), extra games (`supplement.json`) |
+
+Prices are regular prices, never sale prices. A game that is no longer sold in a region shows "Not sold" there. Player counts are a historical figure, not a live count.
+
+To refresh the data (takes about two hours because of rate limits):
+
+```bash
+npm run data:fetch             # Storefront data for every game, resumable
+npm run data:fetch-supplement  # games listed in data/curated/supplement.json plus Steam's most-played chart
+npm run data:build             # rebuild public/games_demo.json; add -- --reselect to redo the answer list
+```
+
+Fetch progress is checkpointed under `data/processed/`. Without `--reselect` the existing answer list and tiers are kept.
+
+## Tests and release
 
 ```bash
 npm run release:check
 ```
 
-It covers frontend linting, frontend/backend tests, data-pipeline tests, TypeScript compilation, production build, and deployment preflight checks. Useful focused commands:
+This runs lint, client and server tests, the data-tool tests, a production build and a check that the published data matches `shared/edition.json`. The Redis multiplayer tests are skipped when no Redis is running.
 
-```bash
-npm run lint
-npm test
-npm run test:data
-npm run build
-npm run release:preflight
-```
+## Deployment
 
-## Catalog workflow
+`Dockerfile` builds a single image; `compose.yaml` and `compose.production.yaml` run it with Redis. `.github/workflows/deploy-production.yml` builds and deploys on push. Configuration is in `.env.example`; every variable is optional. Runtime data lives in `data/runtime/steamguess.sqlite` (back it up with `npm run db:backup`).
 
-The browser reads a published Search snapshot. Rows with a valid difficulty are
-also eligible as answers. The weekly workflow is incremental and resumable:
-
-1. Fetch SteamSpy `request=all` pages `0..19` (the top 20 pages).
-2. Normalize and deduplicate by unique AppID.
-3. Keep the first `1,000` eligible ranked rows in the Active window and retain later candidates as reserve data.
-4. Enrich the first `4,000` eligible ranked rows when PICS, Storefront, or review fields are missing.
-5. Save raw pages and enrichment state as checkpoints.
-6. Publish Search data, derive the scored answer pool, validate membership consistency, and update catalog SQLite atomically.
-7. Preserve the previous successful snapshot and staging directory on failure.
-
-The runtime relationship is:
-
-```text
-Playable answers ⊆ Search guesses ⊆ Active rank window
-```
-
-The production entry point is:
-
-```bash
-./scripts/ops/run_weekly_catalog.sh
-```
-
-Important defaults:
-
-```text
-SteamSpy pages:              0..19
-Delay between SteamSpy pages: 120 seconds
-Storefront delay:            5 seconds
-Reviews delay:               5 seconds
-SteamSpy retries:            2
-Review retries:              3
-Active catalog limit:        1,000
-Detail enrichment limit:     4,000
-```
-
-A failed run can be resumed by running the same command again. Staging is kept at `data/catalog/.weekly-work/current`. Relevant overrides include:
-
-```bash
-STEAMGUESS_ACTIVE_LIMIT=1000
-STEAMGUESS_DETAIL_LIMIT=4000
-STEAMGUESS_STEAMSPY_INTERVAL=120
-STEAMGUESS_STEAMSPY_RETRIES=2
-STEAMGUESS_STEAMSPY_RETRY_DELAY=30
-STEAMGUESS_STOREFRONT_DELAY=5
-STEAMGUESS_REVIEWS_DELAY=5
-STEAMGUESS_REVIEWS_RETRIES=3
-STEAMGUESS_REVIEWS_RETRY_DELAY=30
-```
-
-For a dry plan from an existing catalog:
-
-```bash
-STEAMGUESS_WEEKLY_FROM_EXISTING=1 \
-STEAMGUESS_WEEKLY_SKIP_ENRICHMENT=1 \
-./scripts/ops/run_weekly_catalog.sh
-```
-
-Further details: [`docs/data-pipeline.md`](docs/data-pipeline.md),
-[`docs/catalog-pipeline.md`](docs/catalog-pipeline.md),
-[`docs/data-schema.md`](docs/data-schema.md), and
-[`docs/chinese-game-names.md`](docs/chinese-game-names.md).
-
-## Database and operations
-
-Schema changes are tracked through `schema_migrations`. The server refuses to open a database newer than the schema it supports.
-
-```bash
-npm run db:backup
-npm run db:backup-catalog
-npm run db:stats
-npm run data:catalog-status
-```
-
-Persist `data/` in production, schedule backups, copy backups off-host, and perform a real restore drill before launch. The catalog database is intentionally not committed as a compressed bootstrap artifact: it is large, mutable operational state and stale snapshots previously caused old schema and Labeler data to reappear on new machines. Transfer a `db:backup-catalog` backup or restore the production volume instead.
-
-Docker Compose is available for a deployment-shaped setup:
-
-```bash
-docker compose up -d --build
-docker compose ps
-```
-
-## Configuration and security
-
-```bash
-cp .env.example .env
-```
-
-`STEAM_WEB_API_KEY` is server-only and is used for public Steam profile/library imports. It is not required for the catalog's review endpoint. Never put it in frontend code or commit it to Git.
-
-The service applies request size limits, write/profile-import rate limits, upstream timeouts, security headers, and SQLite migrations. Set `STEAMGUESS_TRUST_PROXY=true` only when the service is behind a trusted reverse proxy. The internal difficulty manager requires both an explicit production build flag and a server-side admin token:
-
-```env
-VITE_LABELER_ENABLED=true
-STEAMGUESS_ADMIN_TOKEN=replace-with-a-strong-secret
-```
-
-## Multiplayer status
-
-The multiplayer MVP supports private rooms for 2–8 players, BO1/BO3/BO5, ready checks, room-code sharing, server-authoritative answer selection and scoring, round timers, surrender, rematch, and short reconnect recovery.
-
-Docker Compose now enables Redis by default. Multiple Node.js processes on the same host can share active rooms, Socket.IO broadcasts, room locks, and reconnect state. If Redis is not configured, local development falls back to the single-process `MemoryRoomStore`.
-
-Redis is intentionally configured without disk persistence for this release. Restarting Redis or the whole host ends active rooms, and completed-match SQLite writes are currently best-effort after the authoritative Redis state transition. Durable recovery across host restarts, a result outbox, leaderboards, matchmaking, and social features remain out of scope.
-
-See [`docs/multiplayer-research.md`](docs/multiplayer-research.md) for the implementation direction.
-
-## Roadmap
-
-- [x] Single-player guessing loop and difficulty pools
-- [x] Persistent player feedback and catalog database
-- [x] Resumable weekly catalog staging
-- [x] Screenshot/review hint interfaces
-- [x] Multiplayer MVP foundation
-- [x] Redis-backed shared multiplayer room state and cross-instance reconnects
-- [ ] More complete Chinese metadata and review coverage
-- [ ] Durable room recovery and reliable match-result outbox
-- [ ] Matchmaking, rankings, and social features
-
-## License and data attribution
-
-SteamGuess code and generated data are maintained separately. Steam metadata, images, tags, and reviews remain subject to their respective providers' terms and copyrights. Do not redistribute upstream data without checking the applicable terms.
+Not affiliated with Valve. Game images belong to their owners.

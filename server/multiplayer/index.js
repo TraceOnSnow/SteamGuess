@@ -4,7 +4,7 @@ import { createClient } from 'redis';
 import { Server } from 'socket.io';
 import { openDatabase, recordMultiplayerMatch } from '../database.js';
 import { difficultyPool, loadCatalog } from './catalog.js';
-import { createMatchEngine } from './matchEngine.js';
+import { compareGames, createMatchEngine } from './matchEngine.js';
 import { MemoryRoomStore, RedisRoomStore } from './roomStore.js';
 import {
   createSchema,
@@ -25,7 +25,7 @@ const DEFAULT_SETTINGS = {
   bestOf: 1,
   maxPlayers: 4,
   roundTimeSeconds: 120,
-  visibleFields: ['price', 'popularity', 'reviews', 'rating', 'releaseDate', 'companies', 'tags'],
+  currency: 'CNY',
 };
 
 function publicGame(game) {
@@ -163,6 +163,16 @@ export function createMultiplayerServer(httpServer, {
     return entry.count <= 15;
   }
 
+  // Feedback is recomputed for the viewer's own guesses so a reloaded tab
+  // gets its board back without the client ever knowing the answer early.
+  function resultsFor(room, roundId, guesses, answerAppId) {
+    const answer = catalogById.get(answerAppId);
+    return (guesses ?? []).flatMap(appId => {
+      const guess = catalogById.get(appId);
+      return guess && answer ? [{ roomId: room.id, roundId, guessAppId: appId, feedback: compareGames(guess, answer, room.settings.currency) }] : [];
+    });
+  }
+
   function view(room, viewerId) {
     const viewerRound = room.activeRound?.players[viewerId];
     const lastRound = ['round_over', 'finished'].includes(room.status) && room.match?.rounds.at(-1);
@@ -193,12 +203,13 @@ export function createMultiplayerServer(httpServer, {
         id: room.activeRound.id,
         startedAt: room.activeRound.startedAt,
         endsAt: room.activeRound.endsAt,
-        guesses: viewerRound?.guesses ?? [],
+        results: resultsFor(room, room.activeRound.id, viewerRound?.guesses, room.activeRound.answerAppId),
         screenshotUrls: catalogById.get(room.activeRound.answerAppId)?.hints?.screenshotUrls ?? [],
       } : null,
       lastRound: lastRound ? {
         roomId: room.id, roundId: lastRound.id, winnerPlayerId: lastRound.winnerPlayerId,
         reason: lastRound.endReason, answer: publicGame(catalogById.get(lastRound.answerAppId)), stateVersion: room.revision,
+        results: resultsFor(room, lastRound.id, lastRound.players.find(player => player.playerId === viewerId)?.guesses, lastRound.answerAppId),
       } : null,
     };
   }
@@ -663,10 +674,6 @@ export function createMultiplayerServer(httpServer, {
         const result = engine.guess(room, player.id, data.guessAppId);
         if (result.error) return { response: fail(...result.error) };
         const { roundEnd: transition, ...publicResult } = result;
-        const visible = new Set(room.settings.visibleFields);
-        publicResult.feedback.fields = publicResult.feedback.fields.filter(field => visible.has(field.fieldName));
-        if (!visible.has('tags')) publicResult.feedback.matchingTags = [];
-        if (!visible.has('companies')) publicResult.feedback.matchingCompanies = [];
         store.bump(room);
         const response = ok(publicResult, room.revision);
         room.commandResults.set(cacheKey, response);

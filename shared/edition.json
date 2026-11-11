@@ -1,12 +1,15 @@
 {
-  "answerLimit": 300,
+  "answerLimit": 1000,
   "searchLimit": 2000,
-  "poolCaps": {
+  "attempts": 10,
+  "levels": ["beginner", "easy", "normal", "hard", "unrated"],
+  "ratedLevels": ["beginner", "easy", "normal", "hard"],
+  "rankCaps": {
     "beginner": 20,
     "easy": 50,
     "normal": 100,
-    "hard": 200,
-    "hell": 300
+    "hard": 300,
+    "unrated": 1000
   },
-  "attempts": 10
+  "dailyLevel": "hard"
 }

@@ -3,10 +3,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-ARG VITE_LABELER_ENABLED=false
-ARG VITE_BACKEND_ENABLED=true
-ENV VITE_LABELER_ENABLED=$VITE_LABELER_ENABLED
-ENV VITE_BACKEND_ENABLED=$VITE_BACKEND_ENABLED
 RUN npm run build
 
 FROM node:24.18.0-bookworm-slim AS runtime

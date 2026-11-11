@@ -224,7 +224,6 @@ describe('Redis multiplayer room store', () => {
         bestOf: 1,
         maxPlayers: 4,
         roundTimeSeconds: 120,
-        visibleFields: ['price'],
       },
       commandId: 'command_redis_create',
     });

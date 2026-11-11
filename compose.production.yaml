@@ -22,12 +22,9 @@ services:
     environment:
       HOST: 0.0.0.0
       PORT: 4173
-      STEAM_WEB_API_KEY: ${STEAM_WEB_API_KEY:-}
       STEAMGUESS_DB_PATH: /app/data/runtime/steamguess.sqlite
-      STEAMGUESS_CATALOG_DB_PATH: /app/data/catalog/catalog.sqlite
       STEAMGUESS_TRUST_PROXY: "true"
       STEAMGUESS_WRITE_RATE_LIMIT: 60
-      STEAMGUESS_PROFILE_RATE_LIMIT: 12
       STEAMGUESS_REQUEST_LOG: "true"
       STEAMGUESS_ROOM_STORE: redis
       STEAMGUESS_REDIS_URL: redis://redis:6379

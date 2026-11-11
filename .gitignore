@@ -59,3 +59,8 @@ data/catalog/.weekly-update.lock
 
 # Generated editorial publishing selection
 /data/catalog/classics-selection.json
+
+# Resumable fetch checkpoints (rebuildable; the published snapshot is the record)
+/data/processed/gap_fill_state.json
+/data/processed/supplement_state.json
+/data/processed/legacy_snapshot.json

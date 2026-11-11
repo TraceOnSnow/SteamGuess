@@ -1,0 +1,37 @@
+.home { display: grid; gap: clamp(32px, 6vw, 56px); padding-top: clamp(32px, 7vw, 72px); }
+
+.hero { display: grid; gap: 14px; max-width: 720px; }
+.hero h1 { font-size: clamp(48px, 12vw, 112px); font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; }
+.hero-lead { font-size: clamp(16px, 2.2vw, 19px); color: var(--ink-2); max-width: 34em; }
+
+.modes { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
+.mode { position: relative; display: grid; gap: 8px; align-content: start; min-height: 168px; padding: 18px; border: 2px solid var(--line-strong); border-radius: 12px; background: var(--surface); text-decoration: none; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.mode h2 { font-size: 24px; font-weight: 800; margin-top: 14px; }
+.mode p { color: var(--ink-2); font-size: 14px; }
+.mode-go { position: absolute; right: 18px; bottom: 14px; font: 700 22px var(--mono); }
+.mode:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--line-strong); }
+.mode-primary { background: var(--ink); color: var(--paper); }
+.mode-primary .label, .mode-primary p { color: color-mix(in srgb, var(--paper) 70%, transparent); }
+.mode-primary:hover { box-shadow: 6px 6px 0 var(--accent); }
+
+.how { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px 40px; align-items: center; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.how h2 { font-size: 22px; font-weight: 800; }
+.how p { margin: 10px 0 16px; color: var(--ink-2); }
+.example { margin: 0; display: grid; gap: 10px; }
+.example figcaption { font-size: 13px; color: var(--ink-3); }
+
+.facts { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 40px; }
+.facts dl { display: flex; flex-wrap: wrap; gap: 6px 26px; margin: 0; }
+.facts dt { font-size: 13px; color: var(--ink-3); }
+.facts dd { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.2; }
+
+.home-foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-3); }
+
+@media (max-width: 760px) {
+  .modes, .how, .facts { grid-template-columns: minmax(0, 1fr); }
+  .mode { min-height: 0; padding: 16px 52px 16px 16px; }
+  .mode h2 { margin-top: 4px; font-size: 21px; }
+  .mode-go { top: 50%; bottom: auto; transform: translateY(-50%); }
+}
+.example .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.35fr); }
+@media (max-width: 560px) { .example .tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); } }

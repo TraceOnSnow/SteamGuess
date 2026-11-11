@@ -1,0 +1,130 @@
+/* Design tokens. Light is a warm paper sheet; dark is the same sheet at night. */
+:root {
+  color-scheme: light dark;
+  --paper: #f3f0e8;
+  --surface: #fbfaf6;
+  --sunken: #e9e5da;
+  --ink: #1b1a16;
+  --ink-2: #55524a;
+  --ink-3: #8a867b;
+  --line: #d6d1c3;
+  --line-strong: #1b1a16;
+  --accent: #d8432a;
+  --accent-ink: #fff;
+
+  --exact-bg: #2c8f57; --exact-ink: #fff;
+  --partial-bg: #e3c33f; --partial-ink: #2a2405;
+  --close-bg: #f1dfa0; --close-ink: #4a3d05;
+  --wrong-bg: #e4e0d5; --wrong-ink: #55524a;
+  --shared-bg: #d7ecdd; --shared-ink: #14532d; --shared-line: #2c8f57;
+
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  /* Latin glyphs come from the mono face; CJK falls through to the UI sans. */
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --radius: 6px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --page: 1040px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #151412;
+    --surface: #1e1d1a;
+    --sunken: #100f0e;
+    --ink: #efebe0;
+    --ink-2: #b3ae9f;
+    --ink-3: #7d796d;
+    --line: #34322c;
+    --line-strong: #efebe0;
+    --accent: #f0624a;
+    --accent-ink: #1b1a16;
+
+    --exact-bg: #2f9a5e; --exact-ink: #06200f;
+    --partial-bg: #cfae2c; --partial-ink: #1f1a02;
+    --close-bg: #6b5c1d; --close-ink: #f5e9b5;
+    --wrong-bg: #2a2925; --wrong-ink: #a39f92;
+    --shared-bg: #16321f; --shared-ink: #a6e0b9; --shared-line: #2f9a5e;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.015em; text-wrap: balance; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: absolute; left: 12px; top: -48px; z-index: 20; padding: 8px 12px; background: var(--ink); color: var(--paper); border-radius: var(--radius); }
+.skip-link:focus { top: 12px; }
+
+/* Small uppercase mono label used for clue names and section markers. */
+.label { font: 600 11px/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+.page { max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter) 56px; }
+
+/* Top bar */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 700 14px/1 var(--mono); letter-spacing: 0.06em; }
+.brand-mark { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--ink); color: var(--paper); border-radius: 4px; font-size: 13px; letter-spacing: 0; }
+.brand-mark b { color: var(--accent); font-weight: 700; }
+.topbar-actions { display: flex; align-items: center; gap: 14px; }
+.topbar-link { font-size: 14px; color: var(--ink-2); text-decoration: none; background: none; border: 0; padding: 4px 0; }
+.topbar-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+.lang button { border: 0; background: none; padding: 3px 10px; border-radius: 999px; font: 600 12px/1.4 var(--mono); color: var(--ink-3); }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; transition: transform 0.08s ease; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+.btn:disabled { opacity: 0.4; }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--line-strong); }
+.btn-small { min-height: 32px; padding: 0 12px; font-size: 13px; }
+.link-button { border: 0; background: none; padding: 0; color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); }
+.link-button:hover { color: var(--ink); text-decoration-color: currentColor; }
+
+/* Segmented control (difficulty) */
+.segmented { display: inline-flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.segmented button { border: 0; border-right: 1px solid var(--line); background: none; padding: 7px 14px; font-size: 14px; color: var(--ink-2); }
+.segmented button:last-child { border-right: 0; }
+.segmented button[aria-pressed="true"] { background: var(--ink); color: var(--paper); font-weight: 600; }
+.segmented button:disabled:not([aria-pressed="true"]) { opacity: 0.4; }
+
+/* Centered full-page states */
+.state { min-height: 70vh; display: grid; place-content: center; justify-items: center; gap: 14px; text-align: center; padding: 24px; }
+.state p { color: var(--ink-2); }
+.spinner { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--ink); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Status colours, shared by clue tiles and the legend */
+.is-exact { background: var(--exact-bg); color: var(--exact-ink); }
+.is-partial { background: var(--partial-bg); color: var(--partial-ink); }
+.is-close { background: var(--close-bg); color: var(--close-ink); }
+.is-wrong { background: var(--wrong-bg); color: var(--wrong-ink); }
+.is-unknown { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--line); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; }
+
+.notice { padding: 10px 14px; border: 1px solid var(--accent); border-radius: var(--radius); color: var(--accent); font-size: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

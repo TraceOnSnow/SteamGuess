@@ -17,7 +17,6 @@
       "options": {
         "cwd": "${workspaceFolder:SteamGuess}",
         "env": {
-          "STEAMGUESS_CATALOG_DB_PATH": "${workspaceFolder:SteamGuess}/data/catalog/catalog.sqlite"
         }
       },
       "isBackground": true,

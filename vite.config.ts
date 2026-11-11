@@ -2,8 +2,9 @@ import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createApiHandler } from './server/api.js'
 
-function steamGuessApi(rootDir: string, apiKey: string, dbPath?: string, catalogDbPath?: string, adminToken?: string): Plugin {
-  const handler = createApiHandler({ rootDir, steamApiKey: apiKey, dbPath, catalogDbPath, adminToken, allowAdminWithoutToken: true, writeRateLimit: 300, profileRateLimit: 60 })
+/** Serves the same HTTP API in `npm run dev` as the production server. */
+function steamGuessApi(rootDir: string, dbPath?: string): Plugin {
+  const handler = createApiHandler({ rootDir, dbPath, writeRateLimit: 300 })
   return {
     name: 'steamguess-api',
     configureServer(server) {
@@ -15,9 +16,6 @@ function steamGuessApi(rootDir: string, apiKey: string, dbPath?: string, catalog
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    plugins: [
-      react(),
-      steamGuessApi(process.cwd(), env.STEAM_WEB_API_KEY ?? '', env.STEAMGUESS_DB_PATH || undefined, env.STEAMGUESS_CATALOG_DB_PATH || undefined, env.STEAMGUESS_ADMIN_TOKEN || undefined),
-    ],
+    plugins: [react(), steamGuessApi(process.cwd(), env.STEAMGUESS_DB_PATH || undefined)],
   }
 })

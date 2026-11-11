@@ -1,88 +1,38 @@
 #!/usr/bin/env node
+// Release gate: the build exists and the published data matches the edition.
 import { existsSync, readFileSync } from 'node:fs';
 
 const failures = [];
-const warnings = [];
-const pass = message => console.log(`PASS ${message}`);
-const fail = message => failures.push(message);
-const warn = message => warnings.push(message);
-const configuredActiveLimit = Number.parseInt(process.env.STEAMGUESS_ACTIVE_LIMIT || '1000', 10);
-const activeLimit = Number.isSafeInteger(configuredActiveLimit) && configuredActiveLimit > 0
-  ? configuredActiveLimit
-  : 1000;
-const configuredMinimumPlayable = Number.parseInt(process.env.STEAMGUESS_MIN_PLAYABLE_GAMES || '', 10);
-const minimumPlayableGames = Number.isSafeInteger(configuredMinimumPlayable) && configuredMinimumPlayable > 0
-  ? configuredMinimumPlayable
-  : Math.max(1, Math.min(activeLimit, 500));
+const check = (ok, message) => { if (ok) console.log(`PASS ${message}`); else failures.push(message); };
+const json = path => JSON.parse(readFileSync(path, 'utf8'));
 
-const nodeMajor = Number(process.versions.node.split('.')[0]);
-nodeMajor >= 24 ? pass(`Node ${process.versions.node}`) : fail(`Node 24+ required for node:sqlite; found ${process.versions.node}`);
+check(Number(process.versions.node.split('.')[0]) >= 24, `Node ${process.versions.node} (24+ required for node:sqlite)`);
+for (const path of ['dist/index.html', 'public/games_demo.json', 'data/curated/answers.json', 'server/index.js']) check(existsSync(path), `${path} exists`);
 
-for (const path of ['dist/index.html', 'public/games_demo.json', 'server/index.js']) {
-  existsSync(path) ? pass(`${path} exists`) : fail(`${path} is missing`);
+if (!failures.length) {
+  const edition = json('shared/edition.json');
+  const games = Object.values(json('public/games_demo.json'));
+  const listed = json('data/curated/answers.json').games;
+  const answers = games.filter(game => game.difficulty);
+  const ids = new Set(games.map(game => game.appId));
+
+  check(ids.size === games.length && games.every(game => Number.isSafeInteger(game.appId) && game.appId > 0), 'AppIDs are valid and unique');
+  check(games.length >= 1500 && games.length <= edition.searchLimit, `search catalog has ${games.length} games (1500–${edition.searchLimit})`);
+  check(answers.length === edition.answerLimit, `answer list has ${answers.length} games (expected ${edition.answerLimit})`);
+  check(listed.length === answers.length && listed.every(entry => games.find(game => game.appId === entry.appId)?.difficulty?.level === entry.level),
+    'published tiers match data/curated/answers.json');
+  for (const level of edition.levels) {
+    const size = answers.filter(game => edition.levels.indexOf(game.difficulty.level) <= edition.levels.indexOf(level)).length;
+    check(size === edition.rankCaps[level], `${level} pool has ${size} games (expected ${edition.rankCaps[level]})`);
+  }
+  check(games.every(game => /^\d{4}-\d{2}-\d{2}$/.test(game.releaseDate) && game.tags?.userTags?.length > 0 && game.reviews?.total > 0),
+    'every game has a release date, tags and reviews');
+  check(answers.every(game => game.hints?.screenshotUrls?.length > 0), 'every answer has a screenshot');
+  check(games.every(game => game.difficulty || !game.hints), 'search-only games carry no hints');
+  const priced = currency => games.filter(game => Number.isFinite(game.price?.[currency]?.regular)).length;
+  console.log(`INFO prices known: CNY ${priced('cn')}/${games.length}, USD ${priced('us')}/${games.length}`);
 }
 
-if (existsSync('public/games_demo.json')) {
-  const raw = JSON.parse(readFileSync('public/games_demo.json', 'utf8'));
-  const games = Array.isArray(raw) ? raw : Object.values(raw);
-  const classics = games.length > 0 && games.every(game => game.edition === 'classics' || game.collection === 'classics');
-  const selection = JSON.parse(readFileSync('data/curated/classics.json', 'utf8'));
-  const expectedClassics = selection.games.map(game => game.appId);
-  const minimumGames = classics ? 2000 : minimumPlayableGames;
-  const appIds = new Set();
-  let localized = 0;
-  let cnPrices = 0;
-  let invalid = 0;
-  let playable = 0;
-  for (const game of games) {
-    if (!Number.isSafeInteger(game.appId) || game.appId <= 0 || appIds.has(game.appId)) invalid += 1;
-    appIds.add(game.appId);
-    if (game.localizedNames?.zh) localized += 1;
-    if (Number.isFinite(game.price?.cn?.regular)) cnPrices += 1;
-    if (!Array.isArray(game.tags?.userTags) || game.tags.userTags.length > 20) invalid += 1;
-    if (typeof game.releaseDate !== 'string' || !Number.isFinite(game.price?.us?.regular)
-      || !Number.isFinite(game.popularity?.ccu) || !Number.isFinite(game.reviews?.total)) invalid += 1;
-    if (classics && game.collection === 'classics' && (!game.hints?.screenshotUrls?.length || game.hints?.impression || game.hints?.reviewTexts)) invalid += 1;
-    if (game.difficulty !== undefined) {
-      const difficultyValid = ['beginner', 'easy', 'normal', 'hard', 'hell'].includes(game.difficulty?.level)
-        && Number.isFinite(game.difficulty?.score)
-        && game.difficulty.score >= 0
-        && game.difficulty.score <= 100;
-      if (difficultyValid) playable += 1;
-      else invalid += 1;
-    }
-  }
-  games.length >= minimumGames
-    ? pass(`search catalog has ${games.length} games (minimum ${minimumGames})`)
-    : fail(`search catalog has only ${games.length} games; expected at least ${minimumGames}`);
-  if (classics) {
-    const answers = games.filter(game => game.difficulty !== undefined);
-    const answerIds = new Set(answers.map(game => game.appId));
-    expectedClassics.length === answerIds.size && expectedClassics.every(id => answerIds.has(id))
-      ? pass('Classics edition exactly matches the reviewed selection') : fail('Classics membership changed');
-    playable === expectedClassics.length ? pass('only the reviewed Classics games are playable') : fail('Classics answer pool is incomplete');
-    games.filter(game => !answerIds.has(game.appId)).every(game => game.catalogStatus === 'search_only' && !game.difficulty && !game.hints)
-      ? pass('search-only games contain comparison data, not answer eligibility or hints') : fail('search-only data boundary broken');
-    const levels = ['beginner', 'easy', 'normal', 'hard', 'hell'];
-    for (const [level, count] of Object.entries(selection.difficultyPolicy.poolCaps)) {
-      const pool = answers.filter(game => levels.indexOf(game.difficulty.level) <= levels.indexOf(level));
-      pool.length === count ? pass(`${level} pool has ${count} games`) : fail(`${level} pool membership changed`);
-    }
-    selection.games.every(entry => games.find(game => game.appId === entry.appId)?.difficulty?.level === entry.difficulty.level)
-      ? pass('published tiers match the frozen selection') : fail('runtime tier drift');
-  }
-  playable > 0 ? pass(`answer pool has ${playable} scored games`) : fail('answer pool is empty');
-  invalid === 0 ? pass('search catalog shape, AppIDs, and optional difficulty') : fail(`${invalid} catalog records are invalid`);
-  localized / games.length >= .95 ? pass(`Chinese names ${localized}/${games.length}`) : warn(`Chinese names only ${localized}/${games.length}`);
-  cnPrices / games.length >= .75 ? pass(`CN regular prices ${cnPrices}/${games.length}`) : warn(`CN regular prices only ${cnPrices}/${games.length}`);
-}
-
-if (process.env.VITE_LABELER_ENABLED === 'true') warn('VITE_LABELER_ENABLED=true exposes the internal difficulty manager in this build');
-else pass('internal difficulty manager disabled by default');
-if (process.env.STEAM_WEB_API_KEY) pass('Steam Web API key configured');
-else warn('STEAM_WEB_API_KEY is empty; profile import will be unavailable');
-
-for (const message of warnings) console.warn(`WARN ${message}`);
 for (const message of failures) console.error(`FAIL ${message}`);
 if (failures.length) process.exit(1);
-console.log(`READY checks=${7 + (existsSync('public/games_demo.json') ? 5 : 0)} warnings=${warnings.length}`);
+console.log('READY');

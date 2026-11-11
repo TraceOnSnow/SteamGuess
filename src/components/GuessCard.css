@@ -1,0 +1,51 @@
+.guess { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 14px 20px; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.guess-correct { border: 2px solid var(--exact-bg); }
+.guess-answer { border: 2px dashed var(--line-strong); }
+
+.guess-id { grid-row: span 2; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.guess-id img, .guess-thumb { display: block; width: 100%; aspect-ratio: 460 / 215; object-fit: cover; border-radius: 5px; background: var(--sunken); }
+.guess-id h3 { margin-top: 4px; font-size: 18px; font-weight: 700; overflow-wrap: anywhere; }
+.guess-id p { margin-top: 2px; font-size: 13px; color: var(--ink-3); overflow-wrap: anywhere; }
+
+.tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; align-self: start; }
+.tile { display: grid; gap: 6px; align-content: space-between; min-height: 68px; padding: 9px 10px; border-radius: var(--radius); }
+.tile-label { font: 600 11px/1.2 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.78; }
+.tile-value { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; font: 700 16px/1.15 var(--sans); font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 0; }
+.tile-value i { font: 700 15px/1 var(--mono); letter-spacing: -0.12em; }
+
+.guess-meta { grid-column: 2; display: grid; gap: 8px; margin: 0; }
+.guess-meta > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.guess-meta dd { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+.chip { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); background: none; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+.chip-shared { background: var(--shared-bg); border-color: var(--shared-line); color: var(--shared-ink); font-weight: 600; }
+.chip-more { border-style: dashed; color: var(--ink-3); }
+.chip-more:hover { color: var(--ink); border-color: var(--line-strong); }
+.chip-none { font-size: 13px; color: var(--ink-3); padding: 2px 0; margin-right: 4px; }
+
+@media (max-width: 860px) {
+  .guess { grid-template-columns: minmax(0, 1fr); padding: 12px; gap: 12px; }
+  .guess-id { grid-row: auto; grid-template-columns: 128px minmax(0, 1fr); align-items: center; gap: 12px; }
+  .guess-id h3 { font-size: 16px; }
+  .guess-meta { grid-column: 1; }
+  .guess-meta > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .tile { grid-column: span 2; min-height: 60px; padding: 8px; }
+  .tile:nth-child(n + 4) { grid-column: span 3; }
+  .tile-value { font-size: 15px; }
+  .guess-id { grid-template-columns: 104px minmax(0, 1fr); }
+}
+
+/* Field explanations: a quiet "?" that opens a note on hover, focus or tap. */
+.tile { position: relative; }
+.guess-meta dt { position: relative; }
+.field-help { display: inline-grid; place-items: center; width: 14px; height: 14px; margin-left: 5px; border: 1px solid currentColor; border-radius: 50%; font: 700 9px/1 var(--sans); letter-spacing: 0; vertical-align: 1px; opacity: 0.55; cursor: help; text-transform: none; }
+.field-help:hover, .field-help:focus-visible { opacity: 1; outline: none; }
+.field-help-tip { position: absolute; z-index: 20; left: 0; bottom: calc(100% + 6px); width: min(240px, 70vw); padding: 8px 10px; border-radius: var(--radius); background: var(--ink); color: var(--paper); font: 400 12.5px/1.5 var(--sans); letter-spacing: 0; text-transform: none; text-align: left; white-space: normal; box-shadow: 0 6px 18px rgb(0 0 0 / 0.18); opacity: 0; visibility: hidden; transition: opacity 0.12s ease; pointer-events: none; }
+.field-help:hover .field-help-tip, .field-help:focus .field-help-tip { opacity: 1; visibility: visible; }
+.tiles .tile:nth-child(n + 4) .field-help-tip { left: auto; right: 0; }
+@media (max-width: 560px) {
+  .tiles .tile:nth-child(3) .field-help-tip, .tiles .tile:nth-child(5) .field-help-tip { left: auto; right: 0; }
+  .tiles .tile:nth-child(4) .field-help-tip { left: 0; right: auto; }
+}

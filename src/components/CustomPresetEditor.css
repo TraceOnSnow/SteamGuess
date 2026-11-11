@@ -1,0 +1,8 @@
+.custom-preset { display: grid; gap: 8px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.custom-preset-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.custom-preset-current { font-size: 13px; color: var(--ink-2); }
+.custom-preset p { font-size: 14px; color: var(--ink-2); }
+.custom-preset textarea { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--sunken); font: 13px/1.5 var(--mono); resize: vertical; }
+.custom-preset textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+.custom-preset-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.custom-preset .custom-preset-message { color: var(--ink); }
